@@ -2,13 +2,14 @@ COMMON SPECIFICATION FOR INFORMATION PACKAGES
 =============================================
 
 Version: 1.0
+
 February 1, 2017
 
 
 AUTHOR(S)
 ---------
 | Name                             | Organisation                                       |
-|---------------------------------|---------------------------------------------------|
+|----------------------------------|----------------------------------------------------|
 | Karin Bredenberg                 | National Archives of Sweden                        |
 | Björn Skog                       | ES Solutions                                       |
 | Anders Bo Nielsen                | Danish National Archives                           |
