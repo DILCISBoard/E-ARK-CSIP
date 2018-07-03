@@ -1,9 +1,8 @@
-
-REVISION HISTORY
+Revision History
 ----------------
 
 | Revision No. | Date       | Authors(s)                | Organisation | Description                                |
-|--------------|------------|---------------------------|--------------|--------------------------------------------|
+| ------------ | ---------- | ------------------------- | ------------ | ------------------------------------------ |
 | 0.1          | 17.02.2014 | Björn Skog                | ESS          | First version.                             |
 | 0.2          | 21.02.2014 | Karin Bredenberg          | ESS          | Updating content.                          |
 | 0.3          | 24.02.2014 | Björn Skog                | ESS          | Updating content.                          |
