@@ -1,5 +1,5 @@
-1 <a name="1"></a> Introduction
-----------------
+# 1 Introduction
+
 This document introduces the concept of a Common Specification for Information Packages. It aims to serve three main purposes:
 
 1.	Establish a common understanding of the requirements which need to be met in order to achieve interoperability of Information Packages;
@@ -10,11 +10,11 @@ This document introduces the concept of a Common Specification for Information P
 
 Ultimately the goal of the Common Specification for Information Packages (CS IP) is to reach a level of interoperability between all Information Packages so that tools implementing the CS IP can be taken up by institutions without needing further modifications or adaptations.
 
-## <a name="1.1"></a> 1.1 The Common Specification for Information Packages and OAIS
+## 1.1 The Common Specification for Information Packages and OAIS
 In the OAIS  framework three types of Information Packages (IPs) are present in a digital preservation ecosystem: Submission Information Packages (SIPs), Archival Information Packages (AIPs) and Dissemination Information Packages (DIPs) ([Figure 1](#fig1)). These three IP types are respectively used to
 submit data and metadata to digital repositories; store it in long-term preservation facilities; and deliver to consumers.
 
-![veraPDF Features Config](/fig/fig-1-intro.png "OAIS Functional Entities and Information Packages")
+![veraPDF Features Config](../fig/fig-1-intro.png "OAIS Functional Entities and Information Packages")
 
 <a name="fig1"></a>Figure 1: OAIS Functional Entities and Information Packages
 
@@ -51,7 +51,7 @@ default structure of the CS IP (defined in Chapter 4 below). Essentially the AIP
 structure which allows at the same time to securely hold an E-ARK SIP (which itself follows in full the CS IP)
 and at the same time add and modify additional representations over a series of preservation actions.
 
-## <a name="1.2"></a> 1.2 The Common Specification for Information Packages and Content Information Type Specifications
+## 1.2 The Common Specification for Information Packages and Content Information Type Specifications
 As an interoperability standard, it must be possible to use the CS IP regardless of the type and format of the
 content users need to handle. At the same time, each individual content type and file format can have
 specific characteristics which need to be taken into account for purposes of validation, preservation and
@@ -103,7 +103,7 @@ community is implemented by the DILCIS Board.
 For more detailed information about the Content Information Type specifications please look also at
 Chapter 6.1 below and check www.dilcis.eu!
 
-## <a name="1.3"></a> 1.3 Common Specification for Information Packages, OAIS Information Packages’ specifications and Content Information Type Specifications
+## 1.3 Common Specification for Information Packages, OAIS Information Packages’ specifications and Content Information Type Specifications
 Following the discussions in the previous two chapters we can state that the overall ecosystem of E-ARK
 Common Specifications consists of 3-layers ([Figure 4](#fig4)):
 
@@ -122,7 +122,7 @@ and Content Information Type Specifications
 Therefore the “thing encountered in the wild” is the E-ARK SIP, AIP or DIP including data according to one
 or many Content Information Type Specifications.
 
-## <a name="1.4"></a> 1.4. Relation to other documents
+## 1.4. Relation to other documents
 This Common Specification for Information Packages is related to the following documents:
 
 ### International standards and best-practices

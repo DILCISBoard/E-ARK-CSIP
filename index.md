@@ -12,7 +12,19 @@ Front Matter
 
 Contents
 --------
-1. [Introduction][introduction]
+[1 Introduction](introduction)
+- [1.1 The Common Specification for Information Packages and OAIS](introduction#11-the-common-specification-for-information-packages-and-oais)
+- [1.2 The Common Specification for Information Packages and Content Information Type Specifications](introduction#12-the-common-specification-for-information-packages-and-content-information-type-specifications)
+- [1.3 Common Specification for Information Packages, OAIS Information Packages’ specifications and Content Information Type Specifications](introduction#13-common-specification-for-information-packages-oais-information-packages-specifications-and-content-information-type-specifications)
+- [1.4. Relation to other documents](introduction#14-relation-to-other-documents)
+	- [International standards and best-practices](#international-standards-and-best-practices)
+	- [E-ARK project (2014 – 2017) deliverables](#e-ark-project-2014-2017-deliverables)
+	- [Other E-ARK specifications](#other-e-ark-specifications)
+- [1.5. Structure of the document](introduction#15-structure-of-the-document)
+
+[PART I: Common Specification for Information Packages](specification)
+
+[PART II: Implementation of the CS IP](implementation)
 
 Acknowledgements
 ----------------
