@@ -7,8 +7,9 @@ February 1, 2017
 
 AUTHOR(S)
 ---------
+
 | Name                             | Organisation                                       |
-|----------------------------------|----------------------------------------------------|
+| -------------------------------- | -------------------------------------------------- |
 | Karin Bredenberg                 | National Archives of Sweden                        |
 | Björn Skog                       | ES Solutions                                       |
 | Anders Bo Nielsen                | Danish National Archives                           |
@@ -25,7 +26,7 @@ AUTHOR(S)
 
 REVISION HISTORY
 ----------------
-A full revision history of the document is [available here](/history)
+A full revision history of the document is [available here](history)
 
 Contents
 --------
