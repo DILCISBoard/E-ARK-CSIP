@@ -22,7 +22,13 @@ Contents
 	- [Other E-ARK specifications](#other-e-ark-specifications)
 - [1.5. Structure of the document](introduction#15-structure-of-the-document)
 
-[PART I: Common Specification for Information Packages](specification)
+[PART I: Common Specification for Information Packages](specification#part-i-common-specification-for-information-packages)
+- [2.	Need for establishing common ground](specification#2-need-for-establishing-common-ground)
+- [3. Requirements for CS IP Information Packages](specification#3-requirements-for-cs-ip-information-packages)
+	- [3.1. General requirements](specification#31-general-requirements)
+	- [3.2. Identification of the Information Package](specification#32-identification-of-the-information-package)
+	- [3.3.	Structure of the Information Package](specification#33-structure-of-the-information-package)
+	- [3.4.	Information Package Metadata](specification#34-information-package-metadata)
 
 [PART II: Implementation of the CS IP](implementation)
 

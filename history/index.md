@@ -20,7 +20,7 @@ Revision History
 | 0.12         | 08.12.2015 | Kuldar Aas                | NAE          | Update on the implementation, include comments from Sven, Jan (AIT) and Andrew (UPHEC) |
 | 0.13         | 05.01.2016 | Kuldar Aas, all           | NAE, all     | Update to include additional comments from E-ARK WPLs and Common Specification group members version sent for external review |
 | 0.14         | 04.07.2016 | Kuldar Aas                | NAE          | Updated structure -> basis for addressing review comments and required updates |
-| 0.15         | 26.08.2016 | Kuldar Aas                | NAE          | Adding available contributions to individual chapters |
+| 0.15         | 26.08.2016 | Kuldar Aas                | NAE          | Adding available contributions to individual Sections |
 | 0.16         | 05.12.2016 | Andrew Wilson, Kuldar Aas | UoB, NAE     | Major update. Added section on PREMIS. Revision of tables describing use of METS. General text revisions arising from CS meetings. Updates to requirements. |
 | 0.17         | 16.12.2016        | All                | All          | Final discussions, changes and proofreading before delivering the CS to public comment. |
 | 1.0          | 31.01.2017        | Kuldar Aas         | NAE          | Final small editorial additions |
