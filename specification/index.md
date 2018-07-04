@@ -2,7 +2,7 @@
 
 In this part of the document we build the argument for a Common Specification for Information Packages and present the main concepts and requirements for the purpose.
 
-## 2.	Need for establishing common ground
+# 2.	Need for establishing common ground
 
 **The vision:** *All digital preservation systems receive, store and provide access to information, regardless of its size, type or format, according to a set of agreed principles which allow institutions to identify, verify and validate the information in a uniform way.*
 
