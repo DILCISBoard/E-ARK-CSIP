@@ -17,7 +17,7 @@ to use the tools created by other users of the common specification, transfer AI
 The CS IP Information Package folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components.
 
 <a name="fig8"></a>
-![IP Folder Structure](../fig/fig-8-imp.png "CS IP Information Package folder structure.")
+![IP Folder Structure](ip_folder_fig_8.png "CS IP Information Package folder structure.")
 
 **Figure 8:** CS IP Information Package folder structure
 
@@ -59,7 +59,7 @@ Such a simple implementation is reasonable in scenarios where the amount of data
 An example of the full implementation is delivered in Figure 10. The main difference between the simple and full use of the structure is that each representation does essentially repeat the simple structure. Especially structural and preservation metadata in METS and PREMIS formats is available in both the Information Package folder (for package level descriptions) and within representation folders (for representation level descriptions). As such the full structure allows for easier management of single representations and brings further benefits like more straight-forward metadata versioning. It is worth to note that, in order to avoid confusion, it is recommended to have a common approach towards adding metadata into representations or not. In other words, we recommend having all representation-relevant metadata either in the root metadata folder or the representation metadata folder, but not to have a mixed approach (i.e. some representation metadata in the root metadata folder and some within the representation). Further, we do not recommend the duplication of any metadata or the content of optional folders (schemas, documentation, etc.) between the Information Package folder and representation folders.
 
 <a name="fig10"></a>
-![CS IP Example](../fig/fig-10-imp.png "Example of the full use of the CS IP structure.")
+![CS IP Example](cs_ip_full_fig_10.png "Example of the full use of the CS IP structure.")
 
 Figure 10: Example of the full use of the CS IP structure
  
@@ -210,17 +210,13 @@ RECORDSTATUS="NEW" OAISPACKAGETYPE="SIP">
 </metsHdr>
 ```
 
-Use of the METS descriptive metadata section (element dmdSec)
+### 5.3.3 Use of the METS descriptive metadata section (element dmdSec)
 
-The purpose of the METS descriptive data section is to embed or refer to files containing descriptive
-metadata.
+The purpose of the METS descriptive data section is to embed or refer to files containing descriptive metadata.
 
-The CS IP as such does not make any assumptions on the use of specific descriptive metadata schemas. As
-such, implementers are welcome to use descriptive metadata following any standards inside a CS IP
-package.
+The CS IP as such does not make any assumptions on the use of specific descriptive metadata schemas. As such, implementers are welcome to use descriptive metadata following any standards inside a CS IP package.
 
-Specific elements for which the exact use is fixed within this specification are highlighted in the following
-table.
+Specific elements for which the exact use is fixed within this specification are highlighted in the following table.
 
 | Name | Element/Attribute | Description and usage | Cardinality |
 | ---- | ----------------- | --------------------- | ----------- |
@@ -240,241 +236,77 @@ The actual metadata files themselves must either be referenced from the dmdSec u
 | External metadata link | dmdSec/mdRef | Reference to the descriptive metadata file stored in the “metadata” folder of the IP.<br/>In each occurrence of the dmdSec exactly one of the elements mdRef or mdWrap must be present. | 0..1 |
 | Section ID | dmdSec/mdRef/@ID | Unique ID for the mdRef section within the METS document. | 0..1 |
 
-Location group The following group of elements describes the actual location of the references metadata file
-Locator type
-dmdSec/mdRef/@LOC
-TYPE
-Specifies the locator type used in the
-xlink:href which points to the file. Valid
-values are:
-- ARK
-- URN
-- URL
-- PURL
-- HANDLE
-- DOI
-- OTHER
+**Location group**
 
-For interoperability purposes E-ARK
-specifications recommend the use of URL.
-1..1
-Other locator type
-dmdSec/mdRef/@OT
-HERLOCTYPE
-Required when mdRef/@LOCTYPE
-=“OTHER”.
-0..1
-XLink type
-dmdSec/mdRef/@xlin
-k:type
-The type of the link. By default, allowed
-values for this attribute include:
-- Simple
-- Extended
-- Locator
-- Resource
-- Arc
-- Title
+The following group of elements describes the actual location of the references metadata file
 
-This specification requires the use of this
-attribute with the fixed value “simple”.
-1..1
-XLink location
-dmdSec/mdRef/@xlin
-k:href
-The actual location of the resource.
+| Name | Element/Attribute | Description and usage | Cardinality |
+| ---- | ----------------- | --------------------- | ----------- |
+| Locator type | dmdSec/mdRef/@LOCTYPE | Specifies the locator type used in the xlink:href which points to the file. Valid values are:<br/>- ARK<br/>- URN<br/>- URL<br/>- PURL<br/>- HANDLE<br/>- DOI<br/>- OTHER<br/>For interoperability purposes E-ARK specifications recommend the use of URL. | 1..1 |
+| Other locator type | dmdSec/mdRef/@OTHERLOCTYPE | Required when `mdRef/@LOCTYPE=“OTHER”`. | 0..1 |
+| XLink type | dmdSec/mdRef/@xlink:type | The type of the link. By default, allowed values for this attribute include:<br/>- Simple<br/>- Extended<br/>- Locator<br/>- Resource<br/>- Arc<br/>- Title<br/>This specification requires the use of this attribute with the fixed value “simple”. | 1..1 |
+| XLink location | dmdSec/mdRef/@xlink:href | The actual location of the resource.<br/>This specification recommends the recording of an URL type filepath within this attribute.<br/>Further, the filepath must be decoded consistently throughout all mdRef elements within the information package, and follow the requirements for referencing as described in Section 5.2. | 1..1 |
+| XLink role | dmdSec/mdRef/@xlink:role | The role of the link. Not required by this specification. | 0..1 |
+| XLink  arcrole | dmdSec/mdRef/@xlink:arcrole | The location of the linkbase. Not required by this specification. | 0..1 |
+| XLink title | dmdSec/mdRef/@xlink:title | The title or meaning of the linked resource. Not required by this specification | 0..1 |
+| XLink show | dmdSec/mdRef/@xlink:show | These behavioural XLink attributes are not required by this specification | 0..1 |
+| XLink actuate | dmdSec/mdRef/@xlink:actuate | | 0..1 |
 
-This specification recommends the recording
-of an URL type filepath within this attribute.
-
-Further, the filepath must be decoded
-consistently throughout all mdRef elements
-within the information package, and follow
-the requirements for referencing as
-described in Section 5.2.
-1..1
-XLink role
-dmdSec/mdRef/@xlin
-k:role
-The role of the link. Not required by this
-specification.
-0..1
-XLink  arcrole
-dmdSec/mdRef/@xlin
-k:arcrole
-The location of the linkbase. Not required by
-this specification.
-0..1
-XLink title
-dmdSec/mdRef/@xlin
-k:title
-The title or meaning of the linked resource.
-Not required by this specification
-0..1
-XLink show
-dmdSec/mdRef/@xlin
-k:show
-These behavioural XLink attributes are not
-required by this specification
-0..1
-XLink actuate
-dmdSec/mdRef/@xlin
-k:actuate
-
-0..1
-Metadata group
+**Metadata group**
 
 The following group of elements describes the type and version of metadata being referenced.
-Type of metadata
-dmdSec/mdRef/@MD
-TYPE
-Specifies the type of metadata in the linked
-file. Values should be taken from the METS
-list provided.
-1..1
-Type version
-dmdSec/mdRef/@MD
-TYPEVERSION
-The version of the metadata type described
-in attribute `@MDTYPE`
-0..1
-Other metadata
-type
-dmdSec/mdRef/@OT
-HERMDTYPE
-The type of metadata when
-`@MDTYPE=”OTHER”`
-0..1
-File core group
+
+| Name | Element/Attribute | Description and usage | Cardinality |
+| ---- | ----------------- | --------------------- | ----------- |
+| Type of metadata | dmdSec/mdRef/@MDTYPE | Specifies the type of metadata in the linked file. Values should be taken from the METS list provided. | 1..1 |
+| Type version | dmdSec/mdRef/@MDTYPEVERSION | The version of the metadata type described in attribute `@MDTYPE` | 0..1 |
+| Other metadata type | dmdSec/mdRef/@OTHERMDTYPE | The type of metadata when `@MDTYPE=”OTHER”` | 0..1 |
+
+**File core group**
 
 The following elements describe the core characteristics of the referenced metadata file.
-File mime type
-dmdSec/mdRef/@MI
-METYPE
-The IANA media type for the external file.
-0..1
-File size
-dmdSec/mdRef/@SIZE
-Size of linked file in bytes
-0..1
-File creation date
-dmdSec/mdRef/@CRE
-ATED
-Date the linked file was created
-0..1
-File checksum
-dmdSec/mdRef/@CHE
-CKSUM
-The checksum of the linked file
-0..1
-File checksum type
-dmdSec/mdRef/@CHE
-CKSUMTYPE
-The type of checksum used for calculating
-the checksum of the linked file
-0..1
-File name
-dmdSec/mdRef/@LAB
-EL
-A name for the referenced file.
-0..1
-File pointer
-dmdSec/mdRef/@XPT
-R
-Locates the point within a file to which the
-mdRef element refers, if applicable, using
-any valid XPointer scheme.
-0..1
 
-Use of mdWrap (not recommended)
+| Name | Element/Attribute | Description and usage | Cardinality |
+| ---- | ----------------- | --------------------- | ----------- |
+| File mime type | dmdSec/mdRef/@MIMETYPE | The IANA media type for the external file. | 0..1 |
+| File size | dmdSec/mdRef/@SIZE | Size of linked file in bytes | 0..1 |
+| File creation date | dmdSec/mdRef/@CREATED | Date the linked file was created | 0..1 |
+| File checksum | dmdSec/mdRef/@CHECKSUM | The checksum of the linked file | 0..1 |
+| File checksum type | dmdSec/mdRef/@CHECKSUMTYPE | The type of checksum used for calculating the checksum of the linked file | 0..1 |
+| File name | dmdSec/mdRef/@LABEL | A name for the referenced file. | 0..1 |
+| File pointer | dmdSec/mdRef/@XPTR | Locates the point within a file to which the mdRef element refers, if applicable, using any valid XPointer scheme. | 0..1 |
 
-Link to embedded
-metadata files
-dmdSec/mdWrap
-Wrapper for descriptive metadata
-embedded into the METS document.
+**Use of mdWrap (not recommended)**
 
-In each occurrence of the dmdSec exactly
-one of the elements mdRef or mdWrap must
-be present.
-0..1
-Section ID
-dmdSec/mdWrap/@I
-D
-Unique ID for the mdWrap section within the
-METS document.
-0..1
-Metadata group
+| Name | Element/Attribute | Description and usage | Cardinality |
+| ---- | ----------------- | --------------------- | ----------- |
+| Link to embedded metadata files | dmdSec/mdWrap | Wrapper for descriptive metadata embedded into the METS document.<br/>In each occurrence of the dmdSec exactlyone of the elements mdRef or mdWrap must be present. | 0..1 |
+| Section ID | dmdSec/mdWrap/@ID | Unique ID for the mdWrap section within the METS document. | 0..1 |
+
+**Metadata group**
 
 The following group of elements describes the type and version of embedded metadata.
-Type of metadata
-dmdSec/mdWrap/@M
-DTYPE
-Specifies the type of embedded metadata.
-Values should be taken from the METS list
-provided.
-1..1
-Type version
-dmdSec/mdWrap/@M
-DTYPEVERSION
-The version of the metadata type described
-in MDTYPE
-0..1
-Other metadata
-type
-dmdSec/mdWrap/@O
-THERMDTYPE
-The type of metadata when
-MDTYPE=”OTHER”
-0..1
-File core group
+
+| Name | Element/Attribute | Description and usage | Cardinality |
+| ---- | ----------------- | --------------------- | ----------- |
+| Type of metadata | dmdSec/mdWrap/@MDTYPE | Specifies the type of embedded metadata. Values should be taken from the METS list provided. | 1..1 |
+| Type version | dmdSec/mdWrap/@MDTYPEVERSION | The version of the metadata type described in MDTYPE | 0..1 |
+| Other metadata type | dmdSec/mdWrap/@OTHERMDTYPE | The type of metadata when `MDTYPE=”OTHER”` | 0..1 |
+
+**File core group**
 
 The following elements describe the core characteristics of the embedded metadata file.
-File mime type
-dmdSec/mdWrap/@M
-IMETYPE
-The IANA mime type for the wrapped
-metadata.
-0..1
-File name
-dmdSec/mdWrap/@L
-ABEL
-A name for the associated metadata.
-0..1
-File size
-dmdSec/mdWrap/@SI
-ZE
-Size of associated metadata in bytes
-0..1
-File creation date
-dmdSec/mdWrap/@C
-REATED
-Date the embedded metadata was created
-0..1
-File checksum
-dmdSec/mdWrap/@C
-HECKSUM
-The checksum of the wrapped content
-0..1
-File checksum type
-dmdSec/mdWrap/@C
-HECKSUMTYPE
-The type of checksum used for calculating
-the checksum of the embedded metadata
-0..1
-Binary data
-wrapper
-dmdSec/mdWrap/bin
-Data
-A wrapper element to contain Base64
-encoded metadata
-0..1
-XML data wrapper
-dmdSec/mdWrap/xml
-data
-An “any-type” wrapper element to contain
-XML encoded metadata
-0..1
+
+| Name | Element/Attribute | Description and usage | Cardinality |
+| ---- | ----------------- | --------------------- | ----------- |
+| File mime type | dmdSec/mdWrap/@MIMETYPE | The IANA mime type for the wrapped metadata. | 0..1 |
+| File name | dmdSec/mdWrap/@LABEL | A name for the associated metadata. | 0..1 |
+| File size | dmdSec/mdWrap/@SIZE | Size of associated metadata in bytes | 0..1 |
+| File creation date | dmdSec/mdWrap/@CREATED | Date the embedded metadata was created | 0..1 |
+| File checksum | dmdSec/mdWrap/@CHECKSUM | The checksum of the wrapped content | 0..1 |
+| File checksum type | dmdSec/mdWrap/@CHECKSUMTYPE | The type of checksum used for calculating the checksum of the embedded metadata | 0..1 |
+| Binary data wrapper | dmdSec/mdWrap/binData | A wrapper element to contain Base64 encoded metadata | 0..1 |
+| XML data wrapper | dmdSec/mdWrap/xmldata | An “any-type” wrapper element to contain XML encoded metadata | 0..1 |
 
 Example of the METS `<dmdSec>` element using `<mdRef>`:
 ```xml
@@ -498,105 +330,28 @@ file must refer only to the root level preservation metadata and the representat
 The specific requirements for the amdSec element, its sub-elements and attributes are presented in the
 following table.
 
-Name
-Element/ Attribute
-Description and usage
-Cardin
-ality
-Administrative
-metadata
-amdSec
-In case administrative / preservation
-metadata is available, it must be described
-using the amdSec element.
-0..n
-Admin metadata ID
-amdSec/@ID
-Unique ID for the amdSec within the METS
-document
-0..1
-Provenance
-metadata
-amdSec/digiprovMD
-The CS IP recommends the use of PREMIS
-metadata for recording information about
-preservation events. If used, PREMIS
-metadata must appear in a digiprovMD
-element, either embedded or linked. It is
-mandatory to include one digiprovMD
-element for each external file in the
-“metadata/preservation” folder, or for each
-embedded set of PREMIS metadata.
-0..n
-Technical metadata
-amdSec/techMD
-The use of techMD is not recommended.
-Instead, detailed technical metadata should
-be included into or referenced from
-appropriate PREMIS files
-0..n
-Rights metadata
-amdSec/rightsMD
-Optional. The CS IP recommends including a
-simple rights statement which describes the
-overall access status of the package with the
-following values:
-- Open
-- Closed
-- Partially closed
-- Not known.
-However, selecting the exact schema and
-element semantics for encoding this
-information is up to individual
-implementations to decide
-0..n
-Source metadata
-amdSec/sourceMD
-Optional, no further requirements
-0..n
-The following attributes are available for use with each of the four specific metadata areas listed
-above (xxx below stands for amdSec/digiprovMD, amdSec/techMD, amdSec/rightsMD and
-amdSec/sourceMD.
-Metadata section
-ID
-xxx/@ID
-Mandatory for each of the four elements
-amdSec/digiprovMD, amdSec/techMD,
-amdSec/rightsMD and amdSec/sourceMD.
-Identifier must be unique within the package
-1..1
-Metadata group ID
-xxx/@GROUPID
-Optional, no further requirements
-0..1
-Reference to
-administrative
-metadata
-xxx/@ADMID
-In case administrative (provenance)
-metadata is available and described within
-METS about changes to the metadata
-occurrence described here, this element
-must reference the appropriate ID of the
-administrative metadata section.
-0..1
-Metadata creation
-date
-xxx/@CREATED
-Optional, no further requirements
-0..1
-Metadata status
-xxx/@STATUS
-Recommended for describing currency of
-metadata. If used, must include one of the
-two values “superseded” or “current”
-0..1
-Metadata referenced in the amdSec should be linked using either mdRef when the metadata is in
-external files, or mdWrap when the metadata is embedded within the METS file. Use of mdRef and
-mdWrap is described under the dmdSec above and will not be repeated here.
+| Name | Element/Attribute | Description and usage | Cardinality |
+| ---- | ----------------- | --------------------- | ----------- |
+| Administrative metadata | amdSec | In case administrative / preservation metadata is available, it must be described using the amdSec element. | 0..n |
+| Admin metadata ID | amdSec/@ID | Unique ID for the amdSec within the METS document | 0..1 |
+| Provenance metadata | amdSec/digiprovMD | The CS IP recommends the use of PREMIS metadata for recording information about preservation events. If used, PREMIS metadata must appear in a digiprovMD element, either embedded or linked. It is mandatory to include one digiprovMD element for each external file in the “metadata/preservation” folder, or for each embedded set of PREMIS metadata. | 0..n |
+| Technical metadata | amdSec/techMD | The use of techMD is not recommended. Instead, detailed technical metadata should be included into or referenced from appropriate PREMIS files | 0..n |
+| Rights metadata amdSec/rightsMD | Optional. The CS IP recommends including a simple rights statement which describes the overall access status of the package with the following values:<br/>- Open<br/>- Closed<br/>- Partially closed<br/>- Not known.<br/>However, selecting the exact schema and element semantics for encoding this information is up to individual implementations to decide | 0..n |
+| Source metadata | amdSec/sourceMD | Optional, no further requirements | 0..n |
 
-Note: The CS IP recommends the use of mdRef over mdWrap in order to guarantee a physical
-separation of the metadata components of the package!
+The following attributes are available for use with each of the four specific metadata areas listedabove (xxx below stands for amdSec/digiprovMD, amdSec/techMD, amdSec/rightsMD and amdSec/sourceMD.
+
+| Name | Element/Attribute | Description and usage | Cardinality |
+| ---- | ----------------- | --------------------- | ----------- |
+| Metadata section ID | xxx/@ID | Mandatory for each of the four elements amdSec/digiprovMD, amdSec/techMD, amdSec/rightsMD and amdSec/sourceMD. Identifier must be unique within the package | 1..1 |
+| Metadata group ID | xxx/@GROUPID | Optional, no further requirements | 0..1 |
+| Reference to administrative metadata | xxx/@ADMID | In case administrative (provenance) metadata is available and described within METS about changes to the metadata occurrence described here, this element must reference the appropriate ID of the administrative metadata section. | 0..1 |
+| Metadata creation date | xxx/@CREATED | Optional, no further requirements | 0..1 |
+| Metadata status | xxx/@STATUS | Recommended for describing currency of metadata. If used, must include one of the two values “superseded” or “current” | 0..1 |
+
+Metadata referenced in the amdSec should be linked using either mdRef when the metadata is in external files, or mdWrap when the metadata is embedded within the METS file. Use of mdRef and mdWrap is described under the dmdSec above and will not be repeated here.
+
+**Note:** The CS IP recommends the use of mdRef over mdWrap in order to guarantee a physical separation of the metadata components of the package!
 
 Full example of the METS <amdSec> element:
 ```xml
@@ -624,15 +379,16 @@ METS file section is to serve as a “table of contents” or “manifest” and
 The main requirement of the CS IP is that the file section of both the root and representation METS files includes at least one file group (element fileGrp). This so-called “Common Specification file group” should
 follow the requirements below:
 - The file group should be defined by a single fileGrp element
-  - It is mandatory to use the @USE attribute with a fixed value of either “Common Specification root” (for the root METS file) or “Common Specification representation [representation ID]” (for the representation METS file if available)
-  - Example: <fileGrp USE=“Common Specification root”>
+  - It is mandatory to use the `@USE` attribute with a fixed value of either “Common Specification root” (for the root METS file) or “Common Specification representation [representation ID]” (for the representation METS file if available)
+  - Example: `<fileGrp USE=“Common Specification root”>`
 - Each of the structural components (i.e. documentation, schemas, data) should be described by its own nested fileGrp element
-  - The value of the @USE attribute of the nested fileGrp element should reflect the name of the folder (i.e. USE=“documentation”; USE=“data”; USE=“schemas”);
+  - The value of the `@USE` attribute of the nested fileGrp element should reflect the name of the folder (i.e. USE=“documentation”; USE=“data”; USE=“schemas”);
 - In case representations include their own METS files, the components (including data files) of a representation should be described only in the representation METS. The root METS file should still include a fileGrp for each representation but only reference the METS.xml file of the representation.
 
 The specific requirements for elements, sub-elements and attributes are listed in the following table. Note that use of the stream and transformFile elements are not discussed below. Implementers wishing to use either of these METS elements should follow the requirements in the METS documentation.
 
 | Name | Element/Attribute | Description and usage | Cardinality |
+| ---- | ----------------- | --------------------- | ----------- |
 | File section | fileSec | Recommended to include one fileSec element in each METS file | 0..1 |
 | File section ID | fileSec/@ID | Recommended. The identifier must be unique within the METS file. | 0..1 |
 | File group | fileSec/fileGrp | This specification requires that one specific occurrence of the fileGrp element is included as described above. Implementers are welcome to define and add additional file groups necessary for internal purposes. The main fileGrp element includes additional nested fileGrp elements, one for each folder of the package (except metadata described in amdSec and dmdSec). | 1..n |
@@ -654,51 +410,13 @@ The specific requirements for elements, sub-elements and attributes are listed i
 | Related group ID | fileSec/fileGrp/file/@GROUPID | Provides an ID for a fileGrp containing related files. | 0..1 |
 | File intended use | fileSec/fileGrp/file/@USE | Statement about intended use of the files | 0..1 |
 | File location | fileSec/fileGrp/file/FLocat | The location of each external file must be defined by the `<FLocat>` element using the same rules as for referencing metadata files.<br/>All references to files should be made using the XLink href attribute and the file protocol using the relative location of the file.<br/>Example: `xlink:href="schemas/mets.xsd"`
-
-
-File location ID
-fileSec/fileGrp/file/FLo
-cat/@ID
-An ID for the <FLocat> element
-0..1
-File locator
-fileSec/fileGrp/file/FLo
-cat/@LOCTYPE
-Mandatory locator pointing to the external
-file.
-1..1
-File locator type
-fileSec/fileGrp/file/FLo
-cat/@OTHERLOCTYPE
-Description of the type of locator used
-0..1
-File intended use
-fileSec/fileGrp/file/FLo
-cat/@USE
-Statement about intended use of the linked
-file
-0..1
-File content
-fileSec/fileGrp/file/FC
-ontent
-Used for identifying content files wrapped
-within the METS file. The content file must
-be either encoded in base64 and inside an
-<binData> wrapper, or encoded in XML and
-included within an <xmlData> wrapper.
-0..1
-Content file
-element ID
-fileSec/fileGrp/file/FC
-ontent/@ID
-An ID for the <FContent> element
-0..1
-File intended use
-fileSec/fileGrp/file/FC
-ontent/@USE
-Statement about intended use of the
-embedded file
-0..1
+| File location ID | fileSec/fileGrp/file/FLocat/@ID | An ID for the `<FLocat>` element | 0..1 |
+| File locator | fileSec/fileGrp/file/FLocat/@LOCTYPE | Mandatory locator pointing to the external file. | 1..1 |
+| File locator type | fileSec/fileGrp/file/FLocat/@OTHERLOCTYPE | Description of the type of locator used | 0..1 |
+| File intended use | fileSec/fileGrp/file/FLocat/@USE | Statement about intended use of the linked file | 0..1 |
+| File content | fileSec/fileGrp/file/FContent | Used for identifying content files wrapped within the METS file. The content file must be either encoded in base64 and inside an `<binData>` wrapper, or encoded in XML and included within an `<xmlData>` wrapper. | 0..1 |
+| Content file element ID | fileSec/fileGrp/file/FContent/@ID | An ID for the `<FContent>` element | 0..1 |
+| File intended use | fileSec/fileGrp/file/FContent/@USE | Statement about intended use of the embedded file. | 0..1 |
 
 Example of the fileSec element:
 ```xml
@@ -759,6 +477,7 @@ The CS IP requires the inclusion of one structural map according to the principl
 However, implementers are welcome to define additional structural maps for their internal purposes by
 repeating the structMap element.
 The most crucial requirements for the CS IP mandated structural map are as follows:
+
 - The structMap element has a mandatory attribute @LABEL which has the fixed value of “Common
 Specification structural map”. The @LABEL attribute is used to distinguish the Common
 Specification mandated structural map occurrence from any other, user-defined, structural maps.
@@ -772,201 +491,35 @@ representations, schemas, documentation and user-defined folders;
 - In  case both root and representation METS files exist, the structural map in the root METS file
   - Lists all files in all folders with the exception of the content of the representation folders
   - Lists all representations (as separate div elements)
-  - Lists only the appropriate representation METS file using the mptr element as the content
-of the representation
-- The structural map in a representation METS file lists all files within the representation with no
-exceptions
-The specific requirements for elements, sub-elements and attributes are listed in the following table. Note
-that the area, seq and par elements are not discussed below.
-Name
-Element/ Attribute
-Description and usage
-Cardin
-ality
-Structural map
-structMap
-Each METS file needs to include exactly one
-structMap element used exactly as described
-in this table. Institutions can add their own
-additional custom structural maps as
-separate structMap sections.
-1..n
-Structural map ID
-structMap/@ID
-Optional, but if used must be unique within
-the package
-0..1
-Type of structural
-map
-structMap/@TYPE
-Mandatory in this specification. The value
-must be “physical”
-1..1
-Structural map
-name
-structMap/@LABEL
-Mandatory in this specification. The value
-must be “Common Specification structural
-map”
-1..1
-Structural divisions
-structMap/div
-Each folder (and sub-folder) within the
-package must be represented by an
-occurrence of the <div> element. Please
-note that sub-folders must be represented
-as nested div elements.
+  - Lists only the appropriate representation METS file using the mptr element as the contentof the representation
+- The structural map in a representation METS file lists all files within the representation with no exceptions
 
-Example:
+The specific requirements for elements, sub-elements and attributes are listed in the following table. Note that the area, seq and par elements are not discussed below.
 
-<structMap TYPE="physical" LABEL="Common
-Specification structural map">
-   <div LABEL="Package123">
-      <div LABEL="metadata">
-0..n
-Structural division
-ID
-structMap/div/@ID
-Mandatory, identifier must be unique within
-the package
-1..1
-Structural division
-type
-structMap/div/@TYPE
-No specific requirements
-0..1
-Structural division
-name
-structMap/div/@LABE
-L
-Mandatory, value must be the name of the
-folder (“metadata”, “descriptive”,
-“schemas”, “representations”, etc). The
-LABEL value of the first div element in the
-package is the ID of the package
-1..1
-Reference to
-descriptive
-metadata
-structMap/div/@DMD
-ID
-ID attribute values identifying the dmdSec,
-elements in the METS document that
-contain or link to descriptive metadata
-pertaining to the structural division
-represented by the current div element
-0..1
-Reference to
-administrative
-metadata
-structMap/div/@ADM
-ID
-No specific requirements
-0..1
-Structural division
-order
-structMap/div/@ORD
-ER
-Not used in the specific CS IP structMap
-occurrence
-0
-Structural division
-order name
-structMap/div/@ORD
-ERLABEL
-Not used in the specific CS IP structMap
-occurrence
-0
-Structural division
-content IDs
-structMap/div/@CON
-TENTIDS
-IDs for the content in this division. No
-specific use requirements.
-0..1
-File pointer
-structMap/div/fptr
-If the folder which is described by the div
-element includes computer files these must
-be referenced by using the fptr element.
-
-The only exception is the description of
-representations (see below for the use of
-mptr).
-
-The fptr child elements par, seq and area
-must not be used.
-0..n
-File pointer ID
-structMap/div/fptr/@I
-D
-No specific requirements
-0..1
-ID of content
-structMap/div/fptr/@
-FILEID
-Mandatory, must be the ID used in the
-appropriate file or mdRef element
-1..1
-File content IDs
-structMap/div/fptr/@
-CONTENTIDS
-IDs for the content referenced by this fptr
-element. No specific requirements
-0..1
-METS pointer
-structMap/div/div/mp
-tr
-In the case of describing representations
-within the package (i.e.
-representations/representation1) the
-content of the representations must not be
-described. Instead the <div> of the specific
-representation should include one and only
-one occurrence of the <mptr> element,
-pointing to the appropriate representation
-METS file.
-
-The references to representation METS files
-must be made using the XLink href attribute
-and the file protocol using the relative
-location of the file.
-
-Example: xlink:href="representation/
-representation1/mets.xml"
-
-The XLink type attribute is used with the
-fixed value “simple”.
-
-Example: xlink:type="simple"
-
-The LOCTYPE attribute is used with the fixed
-value ”URL”
-0..n
-METS pointer ID
-structMap/div/div/mp
-tr/@ID
-Unique ID for this element
-0..1
-METS pointer
-structMap/div/div/mp
-tr/@LOCTYPE
-The locator type used in the xlink:href
-attribute
-0..1
-METS XLink type
-structMap/div/div/mp
-tr/@OTHERLOCTYPE
-Locator type in xlink:href when
-LOCTYPE=”OTHER”
-0..1
-METS pointer
-content IDs
-structMap/div/div/mp
-tr/@CONTENTIDS
-The content ID for the content represented
-by the mptr element.
-0..1
+| Name | Element/Attribute | Description and usage | Cardinality |
+| ---- | ----------------- | --------------------- | ----------- |
+| Structural map | structMap | Each METS file needs to include exactly one structMap element used exactly as described in this table. Institutions can add their own additional custom structural maps as separate structMap sections. | 1..n |
+| Structural map ID | structMap/@ID | Optional, but if used must be unique within the package | 0..1 |
+| Type of structural map | structMap/@TYPE | Mandatory in this specification. The value must be “physical” | 1..1 |
+| Structural map name | structMap/@LABEL Mandatory in this specification. The value must be “Common Specification structural map” | 1..1 |
+| Structural divisions | structMap/div | Each folder (and sub-folder) within the package must be represented by an occurrence of the `<div>` element. Please note that sub-folders must be represented as nested div elements.<br/>Example:<br/> `<structMap TYPE="physical" LABEL="Common Specification structural map">`<br/>`  <div LABEL="Package123">`<br/>`     <div LABEL="metadata">` | 0..n |
+| Structural division ID | structMap/div/@ID | Mandatory, identifier must be unique within the package | 1..1 |
+| Structural division type | structMap/div/@TYPE | No specific requirements | 0..1 |
+| Structural division name | structMap/div/@LABEL | Mandatory, value must be the name of the folder (“metadata”, “descriptive”, “schemas”, “representations”, etc). The LABEL value of the first div element in the package is the ID of the package | 1..1 |
+| Reference to descriptive metadata | structMap/div/@DMDID | ID attribute values identifying the dmdSec, elements in the METS document that contain or link to descriptive metadata pertaining to the structural division represented by the current div element | 0..1 |
+| Reference to administrative metadata | structMap/div/@ADMID | No specific requirements | 0..1 |
+| Structural division order | structMap/div/@ORDER | Not used in the specific CS IP structMap occurrence | 0 |
+| Structural division order name | structMap/div/@ORDERLABEL | Not used in the specific CS IP structMap occurrence | 0 |
+| Structural division content IDs | structMap/div/@CONTENTIDS | IDs for the content in this division. No specific use requirements. | 0..1 |
+| File pointer | structMap/div/fptr | If the folder which is described by the div element includes computer files these must be referenced by using the fptr element.<br/>The only exception is the description of representations (see below for the use of mptr).<br/>The fptr child elements par, seq and area must not be used. | 0..n |
+| File pointer ID | structMap/div/fptr/@ID | No specific requirements | 0..1 |
+| ID of content | structMap/div/fptr/@FILEID | Mandatory, must be the ID used in the appropriate file or mdRef element | 1..1 |
+| File content IDs | structMap/div/fptr/@CONTENTIDS | IDs for the content referenced by this fptr element. No specific requirements | 0..1 |
+| METS pointer | structMap/div/div/mptr | In the case of describing representations within the package (i.e. representations/representation1) the content of the representations must not be described. Instead the `<div>` of the specific representation should include one and only one occurrence of the `<mptr>` element, pointing to the appropriate representation METS file.<br/> The references to representation METS files must be made using the XLink href attribute and the file protocol using the relative location of the file.<br/>Example: `xlink:href="representation/representation1/mets.xml"`<br/>The XLink type attribute is used with the fixed value “simple”.<br/>Example: `xlink:type="simple"`<br/>The LOCTYPE attribute is used with the fixed value ”URL” | 0..n |
+| METS pointer ID | structMap/div/div/mptr/@ID | Unique ID for this element | 0..1 |
+| METS pointer | structMap/div/div/mptr/@LOCTYPE | The locator type used in the xlink:href attribute | 0..1 |
+| METS XLink type | structMap/div/div/mptr/@OTHERLOCTYPE | Locator type in xlink:href when LOCTYPE=”OTHER” | 0..1 |
+| METS pointer content IDs | structMap/div/div/mptr/@CONTENTIDS | The content ID for the content represented by the mptr element. | 0..1 |
 
 Full example of the Common Specification structMap element (root METS file):
 ```xml
@@ -1198,7 +751,7 @@ possibility of creating a specific sub-folder “descriptive” as seen in Figur
 
 Figure 11: E-ARK IP descriptive metadata
 Further, all descriptive metadata need itself to be described in and referenced from METS metadata (i.e.
-the METS.xml file) using the element <dmdSec> (Figure 12) and as such descriptive metadata are not to be
+the METS.xml file) using the element `<dmdSec>` (Figure 12) and as such descriptive metadata are not to be
 embedded into the METS file directly.
 
 Figure 12: METS descriptive metadata
@@ -1206,7 +759,7 @@ Following the requirement of explicitly and physically separating descriptive me
 also like to note, that for interoperability purposes appropriate descriptive metadata elements must
 explicitly refer to the data content they describe (unless the whole data portion is a single intellectual unit
 described as a discrete set of descriptive metadata). For example, in the case of EAD elements <dao> and
-<daogrp> shall be used to refer to content files from the descriptive metadata. However, regardless of the
+`<daogrp>` shall be used to refer to content files from the descriptive metadata. However, regardless of the
 descriptive metadata standard in question the references from descriptive metadata must always follow
 the requirement posed in Section 5.1 above (i.e. create references according to the format defined in RFC
 3986, or to express references as a relative path to the data files).
