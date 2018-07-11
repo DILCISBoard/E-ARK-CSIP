@@ -73,7 +73,7 @@ Following the discussions in the previous two Sections we can state that the ove
 - The Content Information Type Specifications define detailed requirements for embedding and describing specific content types within a CS IP.
 
 <a name="fig4"></a>
-![TYPE SPECS](../fig/fig-4-intro.png "Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications.")
+![TYPE SPECS](cs_vs_ip_fig_4.png "Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications.")
 
 **Figure 4:** Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications
 
