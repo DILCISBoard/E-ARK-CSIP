@@ -21,7 +21,7 @@ term and long-term management of information into different systems, for example
 systems on one hand and archival systems on the other (Figure 5).
 
 <a name="fig5"></a>
-![OAIS Entities](../fig/fig-5-spec.png "Information flow between live and archival systems")
+![OAIS Entities](oais_ent_fig_5.png "Information flow between live and archival systems")
 
 **Figure 5:** Information flow between live and archival systems
 
@@ -50,7 +50,7 @@ preservation systems;
 - Exchange of DIPs between various access platforms of portals.
 
 <a name="fig6"></a>
-![OAIS Entities](../fig/fig-6-spec.png "Archival workflow and tool ecosystem")
+![OAIS Entities](arch_wrkflw_fig_6.png "Archival workflow and tool ecosystem")
 
 **Figure 6:** Archival workflow and tool ecosystem
 
@@ -209,7 +209,10 @@ components into the Information Package. At the same time these extension points
 
 Based on requirements 3.1 – 3.4 we now present a common structure for any CS IP Information Package ([Figure 7](#fig7)).
 
-Figure 7: Conceptual structure of the Common Specification
+<a name="fig7"></a>
+![Conceptual Structure](cs_con_struct_fig_7.png "Conceptual structure of the Common Specification")
+
+**Figure 7:** Conceptual structure of the Common Specification
 
 Following Requirement 3.4 the structure separates explicitly the representations of data and metadata into a separate structural component.
 
