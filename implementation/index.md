@@ -17,7 +17,7 @@ to use the tools created by other users of the common specification, transfer AI
 The CS IP Information Package folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components.
 
 <a name="fig8"></a>
-![IP Folder Structure](ip_folder_fig_8.png "CS IP Information Package folder structure.")
+![IP Folder Structure](cs_ip_struct_fig_8.png "CS IP Information Package folder structure.")
 
 **Figure 8:** CS IP Information Package folder structure
 
@@ -48,7 +48,7 @@ The requirements presented in Section 4.1 leave room for quite a few decisions d
 In the simplest case the structure can be implemented following mostly just the MUST requirements. An example of this is visible on Figure 9.
 
 <a name="fig9"></a>
-![CS IP Example](../fig/fig-9-imp.png "Example of a simple use of the CS IP structure.")
+![CS IP Example](cs_ip_simple_fig_9.png "Example of a simple use of the CS IP structure.")
 
 **Figure 9:** Example of a simple use of the CS IP structure
 
@@ -62,7 +62,7 @@ An example of the full implementation is delivered in Figure 10. The main differ
 <a name="fig10"></a>
 ![CS IP Example](cs_ip_full_fig_10.png "Example of the full use of the CS IP structure.")
 
-Figure 10: Example of the full use of the CS IP structure
+**Figure 10:** Example of the full use of the CS IP structure
  
 # 5. Use of metadata
 ## 5.1. General requirements for metadata in a CS IP Information Package
@@ -730,40 +730,33 @@ level METS file for a representation segment">
 LOCTYPE="URN"/>
    </div>
 ```
-6.2.5.	Illustration of references between METS files in a segmented IP
-We need to segment an IP at the data folder in the representations level, but according to the Common
-Specification this can only be done at the IP level. Therefore this IP has been segmented at the top IP level,
-and not at the representations level.
+### 6.2.5.	Illustration of references between METS files in a segmented IP
+We need to segment an IP at the data folder in the representations level, but according to the Common Specification this can only be done at the IP level. Therefore this IP has been segmented at the top IP level, and not at the representations level.
+
+![CS IP Example](mets_file_ref.png "Illustration of references between files.")
 
 Please note the following about the example:
 - The Master IP MUST NOT contain representations
 - A representation MAY be segmented
 - The IDs are not just unique but haves implicit value for example purposes only
-- In representation 0 the limits on folder size and amount of files requires three segments (0, 1 and
-2)
-- In representation 1 these limits have been increased and we only need two segments. Further the
-.bin files have been migrated to .tif.
-6.3.	Handling descriptive metadata within the Common Specification
-Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support
-finding and understanding individual information packages. The CS IP allows essentially for the inclusion of
-any kind of descriptive metadata in the IP. However, it is required that all descriptive metadata must be
-placed into the “metadata” folder of the IP, and that it is recommended (should) to also exploit the
-possibility of creating a specific sub-folder “descriptive” as seen in Figure 11 below (cf. EAD.xml).
+- In representation 0 the limits on folder size and amount of files requires three segments (0, 1 and 2)
+- In representation 1 these limits have been increased and we only need two segments. Further the .bin files have been migrated to .tif.
 
-Figure 11: E-ARK IP descriptive metadata
-Further, all descriptive metadata need itself to be described in and referenced from METS metadata (i.e.
-the METS.xml file) using the element `<dmdSec>` (Figure 12) and as such descriptive metadata are not to be
-embedded into the METS file directly.
+### 6.3.	Handling descriptive metadata within the Common Specification
+Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The CS IP allows essentially for the inclusion of any kind of descriptive metadata in the IP. However, it is required that all descriptive metadata must be placed into the “metadata” folder of the IP, and that it is recommended (should) to also exploit the possibility of creating a specific sub-folder “descriptive” as seen in Figure 11 below (cf. EAD.xml).
 
-Figure 12: METS descriptive metadata
-Following the requirement of explicitly and physically separating descriptive metadata and data we would
-also like to note, that for interoperability purposes appropriate descriptive metadata elements must
-explicitly refer to the data content they describe (unless the whole data portion is a single intellectual unit
-described as a discrete set of descriptive metadata). For example, in the case of EAD elements <dao> and
-`<daogrp>` shall be used to refer to content files from the descriptive metadata. However, regardless of the
-descriptive metadata standard in question the references from descriptive metadata must always follow
-the requirement posed in Section 5.1 above (i.e. create references according to the format defined in RFC
-3986, or to express references as a relative path to the data files).
-Finally we would also note that the recommendation of the CS IP is to always include detailed metadata
-about intellectual access restrictions and copyright into descriptive metadata (i.e. not into the METS or
-PREMIS portions of the IP).
+<a name="fig11"></a>
+![CS IP Example](eark_ip_desc_md_fig_11.png "EARK IP descriptive metadata.")
+
+**Figure 11:** E-ARK IP descriptive metadata
+
+Further, all descriptive metadata need itself to be described in and referenced from METS metadata (i.e. the METS.xml file) using the element `<dmdSec>` (Figure 12) and as such descriptive metadata are not to be embedded into the METS file directly.
+
+<a name="fig12"></a>
+![METS desc md](mets_desc_md_fig_12.png "METS descriptive metadata.")
+
+**Figure 12:** METS descriptive metadata
+
+Following the requirement of explicitly and physically separating descriptive metadata and data we would also like to note, that for interoperability purposes appropriate descriptive metadata elements must explicitly refer to the data content they describe (unless the whole data portion is a single intellectual unit described as a discrete set of descriptive metadata). For example, in the case of EAD elements <dao> and `<daogrp>` shall be used to refer to content files from the descriptive metadata. However, regardless of the descriptive metadata standard in question the references from descriptive metadata must always follow the requirement posed in Section 5.1 above (i.e. create references according to the format defined in RFC 3986, or to express references as a relative path to the data files).
+
+Finally we would also note that the recommendation of the CS IP is to always include detailed metadata about intellectual access restrictions and copyright into descriptive metadata (i.e. not into the METS or PREMIS portions of the IP).
