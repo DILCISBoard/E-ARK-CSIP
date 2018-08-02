@@ -170,11 +170,10 @@ In addition to these six attributes the METS root element mets MUST define all r
 | ID | Name | Element/Attribute | Description and usage | Cardinality |
 | -- | ---- | ----------------- | --------------------- | ----------- |
 | CSIP1 | METS root element   | mets | The root level element that is required in all METS documents | 1..1 |
-| CSIP2 | Root ID | mets/@ID | Optional, no further requirements | 0..1 |
 | CSIP3 | Content ID | mets/@OBJID | Mandatory in this specification. It is recommended that it be the same as the name or ID of the package (the name of the root folder). The OBJID must meet the CS IP requirement of being unique at least across the repository | 1..1 |
-| CSIP4 | Package name | mets/@LABEL | Optional, if used should be filled with a human-readable description of the package | 0..1 |
 | CSIP5 |  General content type | mets/@TYPE | Mandatory in this specification. The TYPE attribute must be used for identifying the type of the package (genre), for example ERMS, RDBMS, digitised construction plans. However, there is no fixed vocabulary and as such implementers are welcome to use values most suitable for their needs.| 1..1 |
-| CSIP6 | Content Information Type Specification name | @CONTENTTYPESPECIFICATION | An attribute added by this specification. It describes which content information type specification is used for the content. Values of the attribute are fixed in the following vocabulary:<br/>1. SMURFERMS<br/>2. SMURFSFSB<br/>3. SIARD1<br/>4. SIARD2<br/>5. SIARDDK<br/>6. GeoVectorGML<br/>7. GeoRasterGeotiff<br/>8. MIXED<br/>9. OTHER<br/>NB The vocabulary is extensible as additional content information type specifications are developed. | 0..1 |
+| CSIP6 | Content Information Type Specification name | @CONTENTTYPESPECIFICATION | An attribute added by this specification. It describes which content information type specification is used for the content. Values of the attribute are fixed in the following vocabulary:<br/>1. SMURFERMS<br/>2. SMURFSFSB<br/>3. SIARD1<br/>4. SIARD2<br/>5. SIARDDK<br/>6. GeoVectorGML<br/>7. GeoRasterGeotiff<br/>8. MIXED<br/>9. OTHER<br/>NB The vocabulary is extensible as additional content information type specifications are developed. | 1..1 |
+| CSIP7 | Other Content Information Type Specification | @OTHERCONTENTTYPESPECIFICATION | An attribute added by this specification. In case the value "OTHER" has been selected for the @CONTENTTYPESPECIFICATION attribute, this attribute MUST be used to record the name of the content information type specification  | 0..1 |
 | CSIP8 | METS profile | @PROFILE | Mandatory in this specification. The PROFILE attribute has to have as its value the URL of the official CS IP METS Profile. | 1..1 |
 
 Full example of the METS root element:
@@ -199,34 +198,26 @@ table.
 
 | ID | Name | Element/Attribute | Description and usage | Cardinality |
 | -- | ---- | ----------------- | --------------------- | ----------- |
-| CSIP9 | METS Header | metsHdr | Element for describing the package itself | 0..1 |
-| CSIP10 | METS Header ID | metsHdr/@ID | Optional, no further requirements | 0..1 |
+| CSIP9 | METS Header | metsHdr | Element for describing the package itself. Mandatory within the CS IP | 1..1 |
 | CSIP11 | Administrative Metadata ID | metsHdr/@ADMID | Optional, referring to the appropriate administrative metadata section, if used for metadata about the package as a whole. | 0..1 |
 | CSIP12 | Package creation date | metsHdr/@CREATEDATE | Mandatory, the date of creation of the package | 1..1 |
 | CSIP13 | Package last modification date | metsHdr/@LASTMODDATE | Mandatory if relevant (in case the package has been modified) | 0..1 |
-| CSIP14 | Package status | metsHdr/@RECORDSTATUS | Optional, no further requirements | 0..1 |
 | CSIP15 | OAIS Information Package Type | metsHdr/@OAISPACKAGETYPE | An attribute added by the CS IP for describing the type of the IP. The vocabulary to be used contains values:<br/>- SIP<br/>- AIP<br/>- DIP<br/>- AIU<br/>- AIC<br/>The vocabulary is managed by the DILCIS Board and will be updated when required. | 1..1 |
-| CSIP16 | Agent | metsHdr/agent | The metsHdr must include at least one agent describing the software which has been used to create the package (ROLE=”CREATOR” TYPE=”OTHER” OTHERTYPE=”SOFTWARE”). Description of all other agents is optional. | 1..n |
-| CSIP17 | Agent ID | metsHdr/agent/@ID | An ID for the agent. | 0..1 |
+| CSIP16 | Agent | metsHdr/agent | The metsHdr must include at least one agent describing the software which has been used to create the package (ROLE=”CREATOR” TYPE=”OTHER” OTHERTYPE=”SOFTWARE”). The use of this element for describing additional agents is optional and nor restricted or recommended by this specification. | 1..n |
 | CSIP18 | Agent role | metsHdr/agent/@ROLE | The role of the agent. The CS IP requires describing at least one agent with the agent/@ROLE value “CREATOR”.<br/>For other (optional) occurrences of agent this attribute shall use a value from the fixed list provided by METS. | 1..1 |
 | CSIP19 | Other agent role | metsHdr/agent/@OTHERROLE | A textual description of the role of the agent in case the value of agent/@ROLE is “OTHER”. | 0..1 |
 | CSIP20 | Agent type | metsHdr/agent/@TYPE | The CS IP requires that at least one instance of the agent element includes the agent/@TYPE attribute with the value “OTHER”. In other occurrences of the agent element the attribute is optional. If used, values defined in official METS documentation shall be followed (“individual”, “organisation”, “other"). | 0..1 |
 | CSIP21 | Other agent type | metsHdr/agent/@OTHERTYPE | The CS IP requires that at least one instance of the agent element includes the agent/@OTHERTYPE attribute with the value “SOFTWARE”.<br/>In other occurrences this attribute shall only be used in case the value of agent/@TYPE is “OTHER”. | 0..1 |
 | CSIP22 | Agent name | metsHdr/agent/name | The name of the agent. If the value of the @OTHERTYPE attribute is “SOFTWARE” this element must provide the name of the software tool which was used to create the IP. | 1..1 |
-| CSIP23 | Note about agent | metsHdr/agent/note | Additional information about the agent. If the value of the @OTHERTYPE attribute is “SOFTWARE”  we recommend using this element to provide version information for the tool which was used to create the IP. | 0..1 |
-| CSIP24 | Alternative ID for content | metsHdr/altRecordID | A container for an alternative ID for the package content. | 0..n |
-| CSIP25 | ID of alternative record ID | metsHdr/altRecordID/@ID | An ID for the altRecordID element within the METS document. | 0..1 |
-| CSIP26 | ID type | metsHdr/altRecordID/@TYPE | Used to describe the type of ID assigned. It is recommended to use the Library of Congress vocabulary for this element when used. | 0..1 |
-| CSIP27 | METS document ID | metsHdr/metsDocumentID | A unique identifier for the METS document itself. | 0..1 |
-| CSIP28 | Document ID | metsHdr/metsDocumentID/@ID | The ID of the metsDocumentID element. | 0..1 |
-| CSIP29 | ID type | metsHdr/metsDocumentID/@TYPE | The type of the identifier assigned to the element. | 0..1 |
+| CSIP23 | Note about agent | metsHdr/agent/note | Additional information about the agent. If the value of the @OTHERTYPE attribute is “SOFTWARE” this element MUST provide the version information for the tool which was used to create the IP. | 0..1 |
+| CSIP24 | Type of the note | metsHdr/agent/note/@csip:TYPE | Type attribute for the note element. If the value of the @OTHERTYPE attribute is “SOFTWARE” this attribute must be used with the fixed value "SOFTWARE VERSION" | 0..1 |
 
 Full example of the METS header:
 ```xml
 <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
     <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
         <mets:name>RODA-in</mets:name>
-        <mets:note>2.1.0-beta.7</mets:note>
+        <mets:note csip:TYPE="SOFTWARE VERSION">2.1.0-beta.7</mets:note>
     </mets:agent>
 </mets:metsHdr>
 ```
@@ -243,7 +234,6 @@ Specific elements for which the exact use is fixed within this specification are
 | -- | ---- | ----------------- | --------------------- | ----------- |
 | CSIP30 | Descriptive metadata section | dmdSec | Must be used if descriptive metadata about the package content is available.<br/> NOTE: According to official METS documentation each metadata section must describe one and only one set of metadata. As such, if implementers want to include multiple occurrences of descriptive metadata into the package this must be done by repeating the whole dmdSec element for each individual metadata. | 0..n |
 | CSIP31 | dmdSec ID | dmdSec/@ID | Mandatory, identifier must be unique within the package | 1..1 |
-| CSIP32 | ID of metadata group | dmdSec/@GROUPID | Can be used to group together different metadata sections. | 0..1 |
 | CSIP33 | Reference to administrative metadata | dmdSec/@ADMID | In case administrative (provenance) metadata is available and described within METS about changes to the descriptive metadata, this element must reference the appropriate ID of the administrative metadata section. | 0..1 |
 | CSIP34 | Date created | dmdSec/@CREATED | Required by this specification. Creation date of the metadata in this section, needed to track changes to metadata files. | 1..1 |
 | CSIP35 | Metadata status | dmdSec/@STATUS | Status of the metadata. Recommended for use to indicate currency of package. If used it is recommended to use one of the two values “SUPERSEDED” or “CURRENT”. | 0..1 |
@@ -255,7 +245,6 @@ The actual metadata files themselves must either be referenced from the dmdSec u
 | ID | Name | Element/Attribute | Description and usage | Cardinality |
 | -- | ---- | ----------------- | --------------------- | ----------- |
 | CSIP36 | External metadata link | dmdSec/mdRef | Reference to the descriptive metadata file stored in the “metadata” folder of the IP.<br/>In each occurrence of the dmdSec exactly one of the elements mdRef or mdWrap must be present. | 0..1 |
-| CSIP37 | Section ID | dmdSec/mdRef/@ID | Unique ID for the mdRef section within the METS document. | 0..1 |
 
 **Location group**
 
@@ -263,15 +252,11 @@ The following group of elements describes the actual location of the references 
 
 | ID | Name | Element/Attribute | Description and usage | Cardinality |
 | -- | ---- | ----------------- | --------------------- | ----------- |
-| CSIP38 | Locator type | dmdSec/mdRef/@LOCTYPE | Specifies the locator type used in the xlink:href which points to the file. Valid values are:<br/>- ARK<br/>- URN<br/>- URL<br/>- PURL<br/>- HANDLE<br/>- DOI<br/>- OTHER<br/>For interoperability purposes E-ARK specifications recommend the use of URL. | 1..1 |
-| CSIP40 | Other locator type | dmdSec/mdRef/@OTHERLOCTYPE | Required when `mdRef/@LOCTYPE=“OTHER”`. | 0..1 |
-| XLink type | dmdSec/mdRef/@xlink:type | The type of the link. By default, allowed values for this attribute include:<br/>- Simple<br/>- Extended<br/>- Locator<br/>- Resource<br/>- Arc<br/>- Title<br/>This specification requires the use of this attribute with the fixed value “simple”. | 1..1 |
-| CSIP42 | XLink location | dmdSec/mdRef/@xlink:href | The actual location of the resource.<br/>This specification recommends the recording of an URL type filepath within this attribute.<br/>Further, the filepath must be decoded consistently throughout all mdRef elements within the information package, and follow the requirements for referencing as described in Section 5.2. | 1..1 |
-| CSIP43 | XLink role | dmdSec/mdRef/@xlink:role | The role of the link. Not required by this specification. | 0..1 |
-| CSIP44 | XLink  arcrole | dmdSec/mdRef/@xlink:arcrole | The location of the linkbase. Not required by this specification. | 0..1 |
-| CSIP45 | XLink title | dmdSec/mdRef/@xlink:title | The title or meaning of the linked resource. Not required by this specification | 0..1 |
-| CSIP46 | XLink show | dmdSec/mdRef/@xlink:show | These behavioural XLink attributes are not required by this specification | 0..1 |
-| CSIP47 | XLink actuate | dmdSec/mdRef/@xlink:actuate | | 0..1 |
+| CSIP38 | Locator type | dmdSec/mdRef/@LOCTYPE | Specifies the locator type used in the xlink:href which points to the file. The @LOCTYPE attribute is mandatory in the CS IP | 1..1 |
+| CSIP39 | Locator type | dmdSec/mdRef/@LOCTYPE | Within the CS IP the value of @LOCTYPE attribute must be "URL". | 1..1 |
+| CSIP41 | XLink type | dmdSec/mdRef/@xlink:type | The type of the link. The @xlink:type attribute is mandatory in the CS IP | 1..1 |
+| CSIP42 | XLink type | dmdSec/mdRef/@xlink:type | The CS IP requires the use of @xlink:type attribute with the fixed value “simple” | 1..1 |
+| CSIP43 | XLink location | dmdSec/mdRef/@xlink:href | The actual location of the resource.<br/>This specification recommends the recording of an URL type filepath within this attribute.<br/>Further, the filepath must be decoded consistently throughout all mdRef elements within the information package, and follow the requirements for referencing as described in Section 5.2. | 1..1 |
 
 **Metadata group**
 
@@ -280,8 +265,6 @@ The following group of elements describes the type and version of metadata being
 | ID | Name | Element/Attribute | Description and usage | Cardinality |
 | -- | ---- | ----------------- | --------------------- | ----------- |
 | CSIP48 | Type of metadata | dmdSec/mdRef/@MDTYPE | Specifies the type of metadata in the linked file. Values should be taken from the METS list provided. | 1..1 |
-| CSIP49 | Type version | dmdSec/mdRef/@MDTYPEVERSION | The version of the metadata type described in attribute `@MDTYPE` | 0..1 |
-| CSIP50 | Other metadata type | dmdSec/mdRef/@OTHERMDTYPE | The type of metadata when `@MDTYPE=”OTHER”` | 0..1 |
 
 **File core group**
 
@@ -289,13 +272,11 @@ The following elements describe the core characteristics of the referenced metad
 
 | ID | Name | Element/Attribute | Description and usage | Cardinality |
 | -- | ---- | ----------------- | --------------------- | ----------- |
-| CSIP51 | File mime type | dmdSec/mdRef/@MIMETYPE | The IANA media type for the external file. | 0..1 |
-| CSIP52 | File size | dmdSec/mdRef/@SIZE | Size of linked file in bytes | 0..1 |
-| CSIP53 | File creation date | dmdSec/mdRef/@CREATED | Date the linked file was created | 0..1 |
-| CSIP54 | File checksum | dmdSec/mdRef/@CHECKSUM | The checksum of the linked file | 0..1 |
-| CSIP55 | File checksum type | dmdSec/mdRef/@CHECKSUMTYPE | The type of checksum used for calculating the checksum of the linked file | 0..1 |
-| CSIP56 | File name | dmdSec/mdRef/@LABEL | A name for the referenced file. | 0..1 |
-
+| CSIP51 | File mime type | dmdSec/mdRef/@MIMETYPE | The IANA media type for the external file, mandatory in CS IP | 1..1 |
+| CSIP52 | File size | dmdSec/mdRef/@SIZE | Size of linked file in bytes, mandatory in CS IP | 1..1 |
+| CSIP53 | File creation date | dmdSec/mdRef/@CREATED | Date the linked file was created, mandatory in CS IP | 1..1 |
+| CSIP54 | File checksum | dmdSec/mdRef/@CHECKSUM | The checksum of the linked file, mandatory in CS IP | 1..1 |
+| CSIP55 | File checksum type | dmdSec/mdRef/@CHECKSUMTYPE | The type of checksum used for calculating the checksum of the linked file, mandatory in CS IP | 1..1 |
 
 Example of the METS `<dmdSec>` element using `<mdRef>`:
 ```xml
@@ -380,7 +361,7 @@ The specific requirements for elements, sub-elements and attributes are listed i
 | CSIP99 | Reference to administrative metadata | fileSec/fileGrp/file/@ADMID | In case administrative metadata is available about the file, this element must referencethe appropriate ID of the administrative metadata section. | 0..1 |
 | CSIP100 | Reference to descriptive metadata | fileSec/fileGrp/file/@DMDID | Value for the ID attribute of the dmdSec containing metadata describing the content files listed in this file element. | 0..1 |
 | CSIP102 | File intended use | fileSec/fileGrp/file/@USE | Statement about intended use of the files | 0..1 |
-| CSIP103 | File location | fileSec/fileGrp/file/FLocat | The location of each external file must be defined by the `<FLocat>` element using the same rules as for referencing metadata files.<br/>All references to files should be made using the XLink href attribute and the file protocol using the relative location of the file.<br/>Example: `xlink:href="schemas/mets.xsd"`|
+| CSIP103 | File location | fileSec/fileGrp/file/FLocat | The location of each external file must be defined by the `<FLocat>` element using the same rules as for referencing metadata files.<br/>All references to files should be made using the XLink href attribute and the file protocol using the relative location of the file.<br/>Example: `xlink:href="schemas/mets.xsd"`| 1..1 |
 | CSIP105 | File locator | fileSec/fileGrp/file/FLocat/@LOCTYPE | Mandatory locator pointing to the external file. | 1..1 |
 | CSIP106 | File locator type | fileSec/fileGrp/file/FLocat/@OTHERLOCTYPE | Description of the type of locator used | 0..1 |
 | CSIP107 | File intended use | fileSec/fileGrp/file/FLocat/@USE | Statement about intended use of the linked file | 0..1 |
