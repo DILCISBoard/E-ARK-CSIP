@@ -179,11 +179,17 @@ In addition to these six attributes the METS root element mets MUST define all r
 
 Full example of the METS root element:
 ```xml
-<mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/METS/"
-xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
-LABEL="Sample CS IP Information Package" TYPE="Database" CONTENTTYPESPECIFICATION="SIARD2"
-PROFILE="http://www.eark-project.com/METS/IP.xml" xsi:schemaLocation="http://www.loc.gov/METS/
-schemas/IP.xsd http://www.w3.org/1999/xlink schemas/xlink.xsd">
+<mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:mets="http://www.loc.gov/METS/" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:csip="DILCIS"
+    OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
+    LABEL="Sample CS IP Information Package" 
+    TYPE="Database" 
+    csip:CONTENTTYPESPECIFICATION="SIARD2" 
+    PROFILE="http://www.eark-project.com/METS/IP.xml" 
+    xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd">
+</mets:mets>
 ```
 
 ### 5.3.2.	Use of the METS header (element metsHdr)
@@ -217,13 +223,12 @@ table.
 
 Full example of the METS header:
 ```xml
-<metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00"
-RECORDSTATUS="NEW" OAISPACKAGETYPE="SIP">
-    <agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
-        <name>RODA-in</name>
-        <note>2.1.0-beta.7</note>
-    </agent>
-</metsHdr>
+<mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
+    <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
+        <mets:name>RODA-in</mets:name>
+        <mets:note>2.1.0-beta.7</mets:note>
+    </mets:agent>
+</mets:metsHdr>
 ```
 
 ### 5.3.3 Use of the METS descriptive metadata section (element dmdSec)
@@ -290,49 +295,13 @@ The following elements describe the core characteristics of the referenced metad
 | CSIP54 | File checksum | dmdSec/mdRef/@CHECKSUM | The checksum of the linked file | 0..1 |
 | CSIP55 | File checksum type | dmdSec/mdRef/@CHECKSUMTYPE | The type of checksum used for calculating the checksum of the linked file | 0..1 |
 | CSIP56 | File name | dmdSec/mdRef/@LABEL | A name for the referenced file. | 0..1 |
-| CSIP57| File pointer | dmdSec/mdRef/@XPTR | Locates the point within a file to which the mdRef element refers, if applicable, using any valid XPointer scheme. | 0..1 |
 
-**Use of mdWrap (not recommended)**
-
-| ID | Name | Element/Attribute | Description and usage | Cardinality |
-| -- | ---- | ----------------- | --------------------- | ----------- |
-| CSIP58 | Link to embedded metadata files | dmdSec/mdWrap | Wrapper for descriptive metadata embedded into the METS document.<br/>In each occurrence of the dmdSec exactlyone of the elements mdRef or mdWrap must be present. | 0..1 |
-| CSIP59 | Section ID | dmdSec/mdWrap/@ID | Unique ID for the mdWrap section within the METS document. | 0..1 |
-
-**Metadata group**
-
-The following group of elements describes the type and version of embedded metadata.
-
-| ID | Name | Element/Attribute | Description and usage | Cardinality |
-| -- | ---- | ----------------- | --------------------- | ----------- |
-| CSIP60 | Type of metadata | dmdSec/mdWrap/@MDTYPE | Specifies the type of embedded metadata. Values should be taken from the METS list provided. | 1..1 |
-| CSIP61 | Type version | dmdSec/mdWrap/@MDTYPEVERSION | The version of the metadata type described in MDTYPE | 0..1 |
-| CSIP62 | Other metadata type | dmdSec/mdWrap/@OTHERMDTYPE | The type of metadata when `MDTYPE=”OTHER”` | 0..1 |
-
-**File core group**
-
-The following elements describe the core characteristics of the embedded metadata file.
-
-| ID | Name | Element/Attribute | Description and usage | Cardinality |
-| -- | ---- | ----------------- | --------------------- | ----------- |
-| CSIP63 | File mime type | dmdSec/mdWrap/@MIMETYPE | The IANA mime type for the wrapped metadata. | 0..1 |
-| CSIP64 | File name | dmdSec/mdWrap/@LABEL | A name for the associated metadata. | 0..1 |
-| CSIP65 | File size | dmdSec/mdWrap/@SIZE | Size of associated metadata in bytes | 0..1 |
-| CSIP66 | File creation date | dmdSec/mdWrap/@CREATED | Date the embedded metadata was created | 0..1 |
-| CSIP67 | File checksum | dmdSec/mdWrap/@CHECKSUM | The checksum of the wrapped content | 0..1 |
-| CSIP68 | File checksum type | dmdSec/mdWrap/@CHECKSUMTYPE | The type of checksum used for calculating the checksum of the embedded metadata | 0..1 |
-| CSIP69 | Binary data wrapper | dmdSec/mdWrap/binData | A wrapper element to contain Base64 encoded metadata | 0..1 |
-| CSIP70 | XML data wrapper | dmdSec/mdWrap/xmldata | An “any-type” wrapper element to contain XML encoded metadata | 0..1 |
 
 Example of the METS `<dmdSec>` element using `<mdRef>`:
 ```xml
-<dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
-<mdRef LOCTYPE="URL" MDTYPE="EAD" MDTYPEVERSION="2002" xlink:type="simple"
-xlink:href="metadata/descriptive/ead2002.xml" SIZE="903" CREATED="2018-04-
-24T14:37:49.609+01:00"
-CHECKSUM="F24263BF09994749F335E1664DCE0086DB6DCA323FDB6996938BCD28EA9E8153"
-CHECKSUMTYPE="SHA-256"/>
-</dmdSec>
+<mets:dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
+    <mets:mdRef LOCTYPE="URL" MDTYPE="EAD" MDTYPEVERSION="2002" xlink:type="simple"  xlink:href="metadata/descriptive/ead2002.xml" SIZE="903" CREATED="2018-04-24T14:37:49.609+01:00" CHECKSUM="F24263BF09994749F335E1664DCE0086DB6DCA323FDB6996938BCD28EA9E8153" CHECKSUMTYPE="SHA-256"/>
+</mets:dmdSec>
 ```
 
 ### 5.3.4.	Use of the METS administrative metadata section (element amdSec)
@@ -349,11 +318,8 @@ following table.
 | ID | Name | Element/Attribute | Description and usage | Cardinality |
 | -- | ---- | ----------------- | --------------------- | ----------- |
 | CSIP71 | Administrative metadata | amdSec | In case administrative / preservation metadata is available, it must be described using the amdSec element. | 0..n |
-| CSIP72 | Admin metadata ID | amdSec/@ID | Unique ID for the amdSec within the METS document | 0..1 |
 | CSIP73 | Provenance metadata | amdSec/digiprovMD | The CS IP recommends the use of PREMIS metadata for recording information about preservation events. If used, PREMIS metadata must appear in a digiprovMD element, either embedded or linked. It is mandatory to include one digiprovMD element for each external file in the “metadata/preservation” folder, or for each embedded set of PREMIS metadata. | 0..n |
-| CSIP74 | Technical metadata | amdSec/techMD | The use of techMD is not recommended. Instead, detailed technical metadata should be included into or referenced from appropriate PREMIS files | 0..n |
 | CSIP75 | Rights metadata amdSec/rightsMD | Optional. The CS IP recommends including a simple rights statement which describes the overall access status of the package with the following values:<br/>- Open<br/>- Closed<br/>- Partially closed<br/>- Not known.<br/>However, selecting the exact schema and element semantics for encoding this information is up to individual implementations to decide | 0..n |
-| CSIP76 | Source metadata | amdSec/sourceMD | Optional, no further requirements | 0..n |
 
 The following attributes are available for use with each of the four specific metadata areas listedabove (xxx below stands for amdSec/digiprovMD, amdSec/techMD, amdSec/rightsMD and amdSec/sourceMD.
 
@@ -371,22 +337,14 @@ Metadata referenced in the amdSec should be linked using either mdRef when the m
 
 Full example of the METS <amdSec> element:
 ```xml
-<amdSec CREATED="2018-04-24T14:37:52.783+01:00">
-    <digiprovMD ID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
-        <mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis1.xml"
-MDTYPE="PREMIS:EVENT" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="1211" CREATED="2018-04-
-24T14:37:52.783+01:00"
-CHECKSUM="8aa278038dbad54bbf142e7d72b493e2598a94946ea1304dc82a79c6b4bac3d5" CHECKSUMTYPE="SHA-
-256" LABEL="premis1.xml"/>
-    </digiprovMD>
-    <digiprovMD ID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3">
-        <mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis2.xml"
-MDTYPE="PREMIS:OBJECT" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="2854" CREATED="2018-04-
-24T14:37:52.783+01:00"
-CHECKSUM="d1dfa585dcc9d87268069dc58d5e47956434ec3db4087a75a3885d287f15126f" CHECKSUMTYPE="SHA-
-256" LABEL="premis2.xml"/>
-    </digiprovMD>
-</amdSec>
+<mets:amdSec>
+    <mets:digiprovMD ID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F" CREATED="2018-04-24T14:37:52.783+01:00">
+        <mets:mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis1.xml" MDTYPE="PREMIS:EVENT" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="1211" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="8aa278038dbad54bbf142e7d72b493e2598a94946ea1304dc82a79c6b4bac3d5" CHECKSUMTYPE="SHA-256" LABEL="premis1.xml"/>
+    </mets:digiprovMD>
+    <mets:digiprovMD ID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" CREATED="2018-04-24T14:47:52.783+01:00">
+        <mets:mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis2.xml" MDTYPE="PREMIS:OBJECT" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="2854" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="d1dfa585dcc9d87268069dc58d5e47956434ec3db4087a75a3885d287f15126f" CHECKSUMTYPE="SHA-256" LABEL="premis2.xml"/>
+    </mets:digiprovMD>
+</mets:amdSec>
 ```
 
 ### 5.3.5.	Use of the METS file section (element fileSec)
@@ -406,9 +364,7 @@ The specific requirements for elements, sub-elements and attributes are listed i
 | ID | Name | Element/Attribute | Description and usage | Cardinality |
 | -- | ---- | ----------------- | --------------------- | ----------- |
 | CSIP83 | File section | fileSec | Recommended to include one fileSec element in each METS file | 0..1 |
-| CSIP84 | File section ID | fileSec/@ID | Recommended. The identifier must be unique within the METS file. | 0..1 |
 | CSIP85 | File group | fileSec/fileGrp | This specification requires that one specific occurrence of the fileGrp element is included as described above. Implementers are welcome to define and add additional file groups necessary for internal purposes. The main fileGrp element includes additional nested fileGrp elements, one for each folder of the package (except metadata described in amdSec and dmdSec). | 1..n |
-| CSIP86 | File group ID | fileSec/fileGrp/@ID | Recommended, identifier must be unique within the package | 0..1 |
 | CSIP87 | File group version date | fileSec/fileGrp/@VERSDATE | Version date of the file grouping | 0..1 |
 | CSIP88 | Reference to administrative metadata | fileSec/fileGrp/@ADMID | In case administrative metadata is available about the file group, this element must reference the appropriate ID of the administrative metadata section. | 0..1 |
 | CSIP89 | File group intended use | fileSec/fileGrp/@USE | Recommended in CS IP with one occurrence bearing the values “Common Specification root” (for the root fileGrp element and the names of appropriate folders for nested fileGrp occurrences. | 1..1 |
@@ -423,61 +379,45 @@ The specific requirements for elements, sub-elements and attributes are listed i
 | CSIP98 | File owner ID | fileSec/fileGrp/file/@OWNERID | Unique ID of the file assigned by its owner | 0..1 |
 | CSIP99 | Reference to administrative metadata | fileSec/fileGrp/file/@ADMID | In case administrative metadata is available about the file, this element must referencethe appropriate ID of the administrative metadata section. | 0..1 |
 | CSIP100 | Reference to descriptive metadata | fileSec/fileGrp/file/@DMDID | Value for the ID attribute of the dmdSec containing metadata describing the content files listed in this file element. | 0..1 |
-| CSIP101 | Related group ID | fileSec/fileGrp/file/@GROUPID | Provides an ID for a fileGrp containing related files. | 0..1 |
 | CSIP102 | File intended use | fileSec/fileGrp/file/@USE | Statement about intended use of the files | 0..1 |
-| CSIP103 | File location | fileSec/fileGrp/file/FLocat | The location of each external file must be defined by the `<FLocat>` element using the same rules as for referencing metadata files.<br/>All references to files should be made using the XLink href attribute and the file protocol using the relative location of the file.<br/>Example: `xlink:href="schemas/mets.xsd"`
-| CSIP104 | File location ID | fileSec/fileGrp/file/FLocat/@ID | An ID for the `<FLocat>` element | 0..1 |
+| CSIP103 | File location | fileSec/fileGrp/file/FLocat | The location of each external file must be defined by the `<FLocat>` element using the same rules as for referencing metadata files.<br/>All references to files should be made using the XLink href attribute and the file protocol using the relative location of the file.<br/>Example: `xlink:href="schemas/mets.xsd"`|
 | CSIP105 | File locator | fileSec/fileGrp/file/FLocat/@LOCTYPE | Mandatory locator pointing to the external file. | 1..1 |
 | CSIP106 | File locator type | fileSec/fileGrp/file/FLocat/@OTHERLOCTYPE | Description of the type of locator used | 0..1 |
 | CSIP107 | File intended use | fileSec/fileGrp/file/FLocat/@USE | Statement about intended use of the linked file | 0..1 |
 | CSIP108 | File content | fileSec/fileGrp/file/FContent | Used for identifying content files wrapped within the METS file. The content file must be either encoded in base64 and inside an `<binData>` wrapper, or encoded in XML and included within an `<xmlData>` wrapper. | 0..1 |
-| CSIP109 | Content file element ID | fileSec/fileGrp/file/FContent/@ID | An ID for the `<FContent>` element | 0..1 |
-| CSIP110 | File intended use | fileSec/fileGrp/file/FContent/@USE | Statement about intended use of the embedded file. | 0..1 |
 
 Example of the fileSec element:
 ```xml
-<fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
-<fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C276" USE="Common Specification files root">
-<fileGrp ID="uuid-075D87BB-FAFA-4718-A7E7-FFF5FE2FF210" USE="metadata">
-<fileGrp ID="uuid-6290B550-E965-41CC-9DAF-BA0AA777C320" USE="descriptive"/>
-         <fileGrp ID="uuid-727ADA39-BDA7-4B34-9B83-85C15860EA22" USE="preservation"/>
-</fileGrp>
-      <fileGrp ID="uuid-EB965AD6-198A-40D6-B361-8D179E9909A8" USE="representations">
-<fileGrp ID="uuid-0AF57CAC-667B-4993-9555-99E24BA1093E" USE="Submission">
-<fileGrp ID="uuid-3C1A884C-11AA-4B1-A230-496F3569610D" USE="Data">
-<file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A81"
-MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00"
-CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557"
-CHECKSUMTYPE="SHA-256">
-<FLocat LOCTYPE="URL" xlink:type="simple"
-xlink:href="representations/Submission/File.docx"/>
-</file>
-</fileGrp>
-</fileGrp>
-<fileGrp ID="uuid-7C328264-2BD7-45CD-AF37-4611DC537371" ADMID="uuid-9124DA4D-3736-4F69-
-8355-EB79A22E943F" USE="Ingest">
-<fileGrp ID="uuid-BF73CA45-CC70-4704-ACFA-BCDFD35F9A20" USE="Data">
-<file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FC" MIMETYPE="application/pdf"
-SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00"
-CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667"
-CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3">
-<FLocat LOCTYPE="URL" xlink:type="simple"
-xlink:href="representations/Ingest/File.pdf"/>
-</file>
-</fileGrp>
-</fileGrp>
-</fileGrp>
-<fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F" USE="schemas">
-<file ID="uuid-A1B7B0DA-E129-48EF-B431-E553F2977FD6" MIMETYPE="text/xsd" SIZE="123917"
-CREATED="2018-04-24T14:37:49.617+01:00"
-CHECKSUM="0BF9E16ADE296EF277C7B8E5D249D300F1E1EB59F2DCBD89644B676D66F72DCC"
-CHECKSUMTYPE="SHA-256">
-<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="schemas/ead2002.xsd"/>
-</file>
-</fileGrp>
-</fileGrp>
-</fileSec>
+<mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
+    <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C276" USE="Common Specification files root">
+        <mets:fileGrp ID="uuid-075D87BB-FAFA-4718-A7E7-FFF5FE2FF210" USE="metadata">
+            <mets:fileGrp ID="uuid-6290B550-E965-41CC-9DAF-BA0AA777C320" USE="descriptive"/>
+            <mets:fileGrp ID="uuid-727ADA39-BDA7-4B34-9B83-85C15860EA22" USE="preservation"/>
+        </mets:fileGrp>
+        <mets:fileGrp ID="uuid-EB965AD6-198A-40D6-B361-8D179E9909A8" USE="representations">
+            <mets:fileGrp ID="uuid-0AF57CAC-667B-4993-9555-99E24BA1093E" USE="Submission">
+                <mets:fileGrp ID="uuid-3C1A884C-11AA-4B1-A230-496F3569610D" USE="Data">
+                    <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A81" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
+                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Submission/File.docx"/>
+                    </mets:file>
+                </mets:fileGrp>
+            </mets:fileGrp>
+            <mets:fileGrp ID="uuid-7C328264-2BD7-45CD-AF37-4611DC537371" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F" USE="Ingest">
+                <mets:fileGrp ID="uuid-BF73CA45-CC70-4704-ACFA-BCDFD35F9A20" USE="Data">
+                    <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FC" MIMETYPE="application/pdf" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3">
+                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Ingest/File.pdf"/>
+                    </mets:file>
+                </mets:fileGrp>
+            </mets:fileGrp>
+        </mets:fileGrp>
+        <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F" USE="schemas">
+            <mets:file ID="uuid-A1B7B0DA-E129-48EF-B431-E553F2977FD6" MIMETYPE="text/xsd" SIZE="123917" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="0BF9E16ADE296EF277C7B8E5D249D300F1E1EB59F2DCBD89644B676D66F72DCC" CHECKSUMTYPE="SHA-256">
+                <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="schemas/ead2002.xsd"/>
+            </mets:file>
+        </mets:fileGrp>
+    </mets:fileGrp>
+</mets:fileSec>
+
 ```
 
 ### 5.3.6.	Use of the METS structural map (element structMap)
@@ -515,62 +455,44 @@ The specific requirements for elements, sub-elements and attributes are listed i
 | ID | Name | Element/Attribute | Description and usage | Cardinality |
 | -- | ---- | ----------------- | --------------------- | ----------- |
 | CSIP112 | Structural map | structMap | Each METS file needs to include exactly one structMap element used exactly as described in this table. Institutions can add their own additional custom structural maps as separate structMap sections. | 1..n |
-| CSIP113 | Structural map ID | structMap/@ID | Optional, but if used must be unique within the package | 0..1 |
 | CSIP114 | Type of structural map | structMap/@TYPE | Mandatory in this specification. The value must be “physical” | 1..1 |
 | CSIP115 | Structural map name | structMap/@LABEL Mandatory in this specification. The value must be “Common Specification structural map” | 1..1 |
 | CSIP116 | Structural divisions | structMap/div | Each folder (and sub-folder) within the package must be represented by an occurrence of the `<div>` element. Please note that sub-folders must be represented as nested div elements.<br/>Example:<br/> `<structMap TYPE="physical" LABEL="Common Specification structural map">`<br/>`  <div LABEL="Package123">`<br/>`     <div LABEL="metadata">` | 0..n |
 | CSIP117 | Structural division ID | structMap/div/@ID | Mandatory, identifier must be unique within the package | 1..1 |
-| CSIP118 | Structural division type | structMap/div/@TYPE | No specific requirements | 0..1 |
 | CSIP119 | Structural division name | structMap/div/@LABEL | Mandatory, value must be the name of the folder (“metadata”, “descriptive”, “schemas”, “representations”, etc). The LABEL value of the first div element in the package is the ID of the package | 1..1 |
 | CSIP120 | Reference to descriptive metadata | structMap/div/@DMDID | ID attribute values identifying the dmdSec, elements in the METS document that contain or link to descriptive metadata pertaining to the structural division represented by the current div element | 0..1 |
 | CSIP121 | Reference to administrative metadata | structMap/div/@ADMID | No specific requirements | 0..1 |
-| CSIP122 | Structural division order | structMap/div/@ORDER | Not used in the specific CS IP structMap occurrence | 0 |
-| CSIP123 | Structural division order name | structMap/div/@ORDERLABEL | Not used in the specific CS IP structMap occurrence | 0 |
-| CSIP124 | Structural division content IDs | structMap/div/@CONTENTIDS | IDs for the content in this division. No specific use requirements. | 0..1 |
 | CSIP125 | File pointer | structMap/div/fptr | If the folder which is described by the div element includes computer files these must be referenced by using the fptr element.<br/>The only exception is the description of representations (see below for the use of mptr).<br/>The fptr child elements par, seq and area must not be used. | 0..n |
-| CSIP129 | File pointer ID | structMap/div/fptr/@ID | No specific requirements | 0..1 |
 | CSIP130 | ID of content | structMap/div/fptr/@FILEID | Mandatory, must be the ID used in the appropriate file or mdRef element | 1..1 |
-| CSIP131 | File content IDs | structMap/div/fptr/@CONTENTIDS | IDs for the content referenced by this fptr element. No specific requirements | 0..1 |
 | CSIP132 | METS pointer | structMap/div/div/mptr | In the case of describing representations within the package (i.e. representations/representation1) the content of the representations must not be described. Instead the `<div>` of the specific representation should include one and only one occurrence of the `<mptr>` element, pointing to the appropriate representation METS file.<br/> The references to representation METS files must be made using the XLink href attribute and the file protocol using the relative location of the file.<br/>Example: `xlink:href="representation/representation1/mets.xml"`<br/>The XLink type attribute is used with the fixed value “simple”.<br/>Example: `xlink:type="simple"`<br/>The LOCTYPE attribute is used with the fixed value ”URL” | 0..n |
-| CSIP135 | METS pointer ID | structMap/div/div/mptr/@ID | Unique ID for this element | 0..1 |
-| CSIP136 | METS pointer | structMap/div/div/mptr/@LOCTYPE | The locator type used in the xlink:href attribute | 0..1 |
-| CSIP138 | METS XLink type | structMap/div/div/mptr/@OTHERLOCTYPE | Locator type in xlink:href when LOCTYPE=”OTHER” | 0..1 |
-| CSIP139 | METS pointer content IDs | structMap/div/div/mptr/@CONTENTIDS | The content ID for the content represented by the mptr element. | 0..1 |
 
 Full example of the Common Specification structMap element (root METS file):
 ```xml
-<structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB7" TYPE="physical" LABEL="Common
-Specification structural map">
-<div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A17" LABEL="uuid-4422c185-5407-4918-83b1-
-7abfa77de182">
-<div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F80" LABEL="metadata">
-<div ID="uuid-D0C71206-1087-4F38-9E27-7A077898F663" LABEL="descriptive">
-<fptr FILEID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
-</div>
-<div ID="uuid-A0A8A04A-B7F4-4C30-B084-A119A1C24666" LABEL="preservation">
-<fptr FILEID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F"/>
-<fptr FILEID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3"/>
-</div>
-</div>
-<div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6735" LABEL="representations">
-<div ID="uuid-F0C49415-9597-42D3-9DA2-40ECFC6CDCD8" LABEL="Submission">
-<mptr LOCTYPE="URL" xlink:type="simple"
-xlink:href="representations/Submission/METS.xml"/>
-</div>
-<div ID="uuid-861D5F8D-85F2-4419-BF9E-2C916746E36E" LABEL="Ingest">
-<mptr LOCTYPE="URL" xlink:type="simple"
-xlink:href="representations/Ingest/METS.xml"/>
-</div>
-</div>
-<div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA2" LABEL="schemas">
-<fptr FILEID="uuid-A1B7B0DA-E129-48EF-B431-E553F2977FD6"/>
-</div>
-</div>
-</structMap>
+<mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB7" TYPE="physical" LABEL="Common Specification structural map">
+    <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A17" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
+        <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F80" LABEL="metadata">
+            <mets:div ID="uuid-D0C71206-1087-4F38-9E27-7A077898F663" LABEL="descriptive">
+                <mets:fptr FILEID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
+            </mets:div>
+            <mets:div ID="uuid-A0A8A04A-B7F4-4C30-B084-A119A1C24666" LABEL="preservation">
+                <mets:fptr FILEID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F"/>
+                <mets:fptr FILEID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3"/>
+            </mets:div>
+        </mets:div>
+        <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6735" LABEL="representations">
+            <mets:div ID="uuid-F0C49415-9597-42D3-9DA2-40ECFC6CDCD8" LABEL="Submission">
+                <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Submission/METS.xml"/>
+            </mets:div>
+            <mets:div ID="uuid-861D5F8D-85F2-4419-BF9E-2C916746E36E" LABEL="Ingest">
+                <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Ingest/METS.xml"/>
+            </mets:div>
+        </mets:div>
+        <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA2" LABEL="schemas">
+            <mets:fptr FILEID="uuid-A1B7B0DA-E129-48EF-B431-E553F2977FD6"/>
+        </mets:div>
+    </mets:div>
+</mets:structMap>
 ```
-
-### 5.3.6.	Use of the METS Structural Link Section (element structLink) and Behavior Section (element behaviorSec)
-The CS IP poses no additional requirements on the METS structLink and behaviorSec elements.
 
 ## 5.4.	Use of PREMIS
 The CS IP recommends and advocates the use of the PREMIS metadata standard for recording preservation and technical metadata about digital objects contained within CS IP Information Packages. The CS IP implements version 3.0 of the PREMIS Data Dictionary.  Note that use of PREMIS is not mandatory
