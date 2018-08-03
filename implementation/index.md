@@ -293,6 +293,8 @@ The CS IP allows both the embedding of metadata within the METS.xml file and kee
 The METS amdSec element must include references to all relevant metadata either embedded or in external files located in the folder “metadata/preservation”. This means also that the root level METS.xml
 file must refer only to the root level preservation metadata and the representation METS.xml file must refer only to the representation level preservation metadata.
 
+Decision regarding placement of PREMIS in this section is following the guide lines available from PREMIS EC <http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf>.
+
 The specific requirements for the amdSec element, its sub-elements and attributes are presented in the
 following table.
 
