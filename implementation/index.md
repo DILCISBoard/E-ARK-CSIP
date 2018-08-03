@@ -4,8 +4,8 @@ In this part of the document we present an implementation of the requirements an
 
 As explained above, any implementation is destined to be outdated sooner or later. However, the authors of the CS IP have made their best effort to reuse already available best practices and established core standards, and to carry out intensive discussions within the digital preservation community. All of the above should guarantee that the implementation can be used with only minor updates (for example minor updates to metadata elements) throughout the next few decades.
 
-# 4.	CS IP Information Package structure
-The implementation of the conceptual model described in Requirement 3.6 is a fixed physical (folder) structure which follows exactly the conceptual structure.
+# 4.	CS IP structure
+The preferred implementation of the conceptual model described in Requirement 3.6 is a fixed physical (folder) structure which follows exactly the conceptual structure. While the CS IP doesn't prohibited alternative implementations of the conceptual model such implementations aren't recommended.
 
 The main reason for such an implementation decision is that a fixed physical folder structure makes it clear for both human users and tools where to find what. The main benefit of such a clear decision is that many archival tasks (for example file format risk analysis) can be executed directly on the data portion of the package structure, as opposed to first processing potentially large amounts of metadata for the locations of the files. This, in turn, allows for more efficient processing which is valuable in the case of large collections and bulk operations. In short, we believe that a fixed folder structure allows for more efficiency and scalability.
 
@@ -13,8 +13,8 @@ The authors of this specification are well aware that there are multiple data st
 However, we would like to note that the purpose of this specification is to support Information Package interoperability. As such we believe that even if a storage solution does not allow implementing the physical folder structure as the native AIP storage structure, it is still possible to implement the physical structure described below for SIPs, DIPs and the import/export of AIPs. While the repository needs to support an extra transformation (i.e. Common Specification IP to internal AIP and vice versa), it allows still
 to use the tools created by other users of the common specification, transfer AIPs more easily to new repository systems or storage solutions, and establish cross-repository duplicated storage solutions.
 
-## 4.1.	Folder structure of the CS IP Information Package
-The CS IP Information Package folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components.
+## 4.1.	Folder structure of the CS IP
+The CS IP folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components.
 
 <a name="fig8"></a>
 ![IP Folder Structure](cs_ip_struct_fig_8.png "CS IP Information Package folder structure.")
@@ -174,7 +174,7 @@ In addition to these six attributes the METS root element mets MUST define all r
 | CSIP5 |  General content type | mets/@TYPE | Mandatory in this specification. The TYPE attribute must be used for identifying the type of the package (genre), for example ERMS, RDBMS, digitised construction plans. However, there is no fixed vocabulary and as such implementers are welcome to use values most suitable for their needs.| 1..1 |
 | CSIP6 | Content Information Type Specification name | @CONTENTTYPESPECIFICATION | An attribute added by this specification. It describes which content information type specification is used for the content. Values of the attribute are fixed in the following vocabulary:<br/>1. SMURFERMS<br/>2. SMURFSFSB<br/>3. SIARD1<br/>4. SIARD2<br/>5. SIARDDK<br/>6. GeoVectorGML<br/>7. GeoRasterGeotiff<br/>8. MIXED<br/>9. OTHER<br/>NB The vocabulary is extensible as additional content information type specifications are developed. | 1..1 |
 | CSIP7 | Other Content Information Type Specification | @OTHERCONTENTTYPESPECIFICATION | An attribute added by this specification. In case the value "OTHER" has been selected for the @CONTENTTYPESPECIFICATION attribute, this attribute MUST be used to record the name of the content information type specification  | 0..1 |
-| CSIP8 | METS profile | @PROFILE | Mandatory in this specification. The PROFILE attribute has to have as its value the URL of the official CS IP METS Profile. | 1..1 |
+| CSIP8 | METS profile | @PROFILE | Mandatory in this specification. The PROFILE attribute has to have as its value the URL of the used profile. When this profile is implemented as is the value is the URL for the official CS IP METS Profile. | 1..1 |
 
 Full example of the METS root element:
 ```xml
@@ -202,7 +202,7 @@ table.
 | CSIP11 | Administrative Metadata ID | metsHdr/@ADMID | Optional, referring to the appropriate administrative metadata section, if used for metadata about the package as a whole. | 0..1 |
 | CSIP12 | Package creation date | metsHdr/@CREATEDATE | Mandatory, the date of creation of the package | 1..1 |
 | CSIP13 | Package last modification date | metsHdr/@LASTMODDATE | Mandatory if relevant (in case the package has been modified) | 0..1 |
-| CSIP15 | OAIS Information Package Type | metsHdr/@OAISPACKAGETYPE | An attribute added by the CS IP for describing the type of the IP. The vocabulary to be used contains values:<br/>- SIP<br/>- AIP<br/>- DIP<br/>- AIU<br/>- AIC<br/>The vocabulary is managed by the DILCIS Board and will be updated when required. | 1..1 |
+| CSIP15 | OAIS Information Package Type | metsHdr/@csip:OAISPACKAGETYPE | An attribute added by the CS IP for describing the type of the IP. The vocabulary to be used contains values:<br/>- SIP<br/>- AIP<br/>- DIP<br/>- AIU<br/>- AIC<br/>The vocabulary is managed by the DILCIS Board and will be updated when required. | 1..1 |
 | CSIP16 | Agent | metsHdr/agent | The metsHdr must include at least one agent describing the software which has been used to create the package (ROLE=”CREATOR” TYPE=”OTHER” OTHERTYPE=”SOFTWARE”). The use of this element for describing additional agents is optional and nor restricted or recommended by this specification. | 1..n |
 | CSIP18 | Agent role | metsHdr/agent/@ROLE | The role of the agent. The CS IP requires describing at least one agent with the agent/@ROLE value “CREATOR”.<br/>For other (optional) occurrences of agent this attribute shall use a value from the fixed list provided by METS. | 1..1 |
 | CSIP19 | Other agent role | metsHdr/agent/@OTHERROLE | A textual description of the role of the agent in case the value of agent/@ROLE is “OTHER”. | 0..1 |
@@ -210,7 +210,7 @@ table.
 | CSIP21 | Other agent type | metsHdr/agent/@OTHERTYPE | The CS IP requires that at least one instance of the agent element includes the agent/@OTHERTYPE attribute with the value “SOFTWARE”.<br/>In other occurrences this attribute shall only be used in case the value of agent/@TYPE is “OTHER”. | 0..1 |
 | CSIP22 | Agent name | metsHdr/agent/name | The name of the agent. If the value of the @OTHERTYPE attribute is “SOFTWARE” this element must provide the name of the software tool which was used to create the IP. | 1..1 |
 | CSIP23 | Note about agent | metsHdr/agent/note | Additional information about the agent. If the value of the @OTHERTYPE attribute is “SOFTWARE” this element MUST provide the version information for the tool which was used to create the IP. | 0..1 |
-| CSIP24 | Type of the note | metsHdr/agent/note/@csip:TYPE | Type attribute for the note element. If the value of the @OTHERTYPE attribute is “SOFTWARE” this attribute must be used with the fixed value "SOFTWARE VERSION" | 0..1 |
+| CSIP24 | Type of the note | metsHdr/agent/note/@csip:NOTETYPE | Type attribute for the note element. If the value of the @OTHERTYPE attribute is “SOFTWARE” this attribute must be used with the fixed value "SOFTWARE VERSION" | 0..1 |
 
 Full example of the METS header:
 ```xml
@@ -292,6 +292,8 @@ The CS IP allows both the embedding of metadata within the METS.xml file and kee
 
 The METS amdSec element must include references to all relevant metadata either embedded or in external files located in the folder “metadata/preservation”. This means also that the root level METS.xml
 file must refer only to the root level preservation metadata and the representation METS.xml file must refer only to the representation level preservation metadata.
+
+Decision regarding placement of PREMIS in this section is following the guide lines available from PREMIS EC <http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf>.
 
 The specific requirements for the amdSec element, its sub-elements and attributes are presented in the
 following table.
