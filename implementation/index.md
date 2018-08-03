@@ -4,8 +4,8 @@ In this part of the document we present an implementation of the requirements an
 
 As explained above, any implementation is destined to be outdated sooner or later. However, the authors of the CS IP have made their best effort to reuse already available best practices and established core standards, and to carry out intensive discussions within the digital preservation community. All of the above should guarantee that the implementation can be used with only minor updates (for example minor updates to metadata elements) throughout the next few decades.
 
-# 4.	CS IP Information Package structure
-The implementation of the conceptual model described in Requirement 3.6 is a fixed physical (folder) structure which follows exactly the conceptual structure.
+# 4.	CS IP structure
+The preferred implementation of the conceptual model described in Requirement 3.6 is a fixed physical (folder) structure which follows exactly the conceptual structure. Other ways of implementing the conceptual model should not be used and are not encouraged at the same time the CS IP dont prohibit other solutions of implementing the conceptual model.
 
 The main reason for such an implementation decision is that a fixed physical folder structure makes it clear for both human users and tools where to find what. The main benefit of such a clear decision is that many archival tasks (for example file format risk analysis) can be executed directly on the data portion of the package structure, as opposed to first processing potentially large amounts of metadata for the locations of the files. This, in turn, allows for more efficient processing which is valuable in the case of large collections and bulk operations. In short, we believe that a fixed folder structure allows for more efficiency and scalability.
 
@@ -13,8 +13,8 @@ The authors of this specification are well aware that there are multiple data st
 However, we would like to note that the purpose of this specification is to support Information Package interoperability. As such we believe that even if a storage solution does not allow implementing the physical folder structure as the native AIP storage structure, it is still possible to implement the physical structure described below for SIPs, DIPs and the import/export of AIPs. While the repository needs to support an extra transformation (i.e. Common Specification IP to internal AIP and vice versa), it allows still
 to use the tools created by other users of the common specification, transfer AIPs more easily to new repository systems or storage solutions, and establish cross-repository duplicated storage solutions.
 
-## 4.1.	Folder structure of the CS IP Information Package
-The CS IP Information Package folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components.
+## 4.1.	Folder structure of the CS IP
+The CS IP folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components.
 
 <a name="fig8"></a>
 ![IP Folder Structure](cs_ip_struct_fig_8.png "CS IP Information Package folder structure.")
