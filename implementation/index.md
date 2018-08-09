@@ -367,7 +367,6 @@ The specific requirements for elements, sub-elements and attributes are listed i
 | CSIP105 | File locator | fileSec/fileGrp/file/FLocat/@LOCTYPE | Mandatory locator pointing to the external file. | 1..1 |
 | CSIP106 | File locator type | fileSec/fileGrp/file/FLocat/@OTHERLOCTYPE | Description of the type of locator used | 0..1 |
 | CSIP107 | File intended use | fileSec/fileGrp/file/FLocat/@USE | Statement about intended use of the linked file | 0..1 |
-| CSIP108 | File content | fileSec/fileGrp/file/FContent | Used for identifying content files wrapped within the METS file. The content file must be either encoded in base64 and inside an `<binData>` wrapper, or encoded in XML and included within an `<xmlData>` wrapper. | 0..1 |
 
 Example of the fileSec element:
 ```xml
@@ -445,7 +444,7 @@ The specific requirements for elements, sub-elements and attributes are listed i
 | CSIP119 | Structural division name | structMap/div/@LABEL | Mandatory, value must be the name of the folder (“metadata”, “descriptive”, “schemas”, “representations”, etc). The LABEL value of the first div element in the package is the ID of the package | 1..1 |
 | CSIP120 | Reference to descriptive metadata | structMap/div/@DMDID | ID attribute values identifying the dmdSec, elements in the METS document that contain or link to descriptive metadata pertaining to the structural division represented by the current div element | 0..1 |
 | CSIP121 | Reference to administrative metadata | structMap/div/@ADMID | No specific requirements | 0..1 |
-| CSIP125 | File pointer | structMap/div/fptr | If the folder which is described by the div element includes computer files these must be referenced by using the fptr element.<br/>The only exception is the description of representations (see below for the use of mptr).<br/>The fptr child elements par, seq and area must not be used. | 0..n |
+| CSIP125 | File pointer | structMap/div/fptr | If the folder which is described by the div element includes computer files these must be referenced by using the fptr element.<br/>The only exception is the description of representations (see below for the use of mptr). | 0..n |
 | CSIP130 | ID of content | structMap/div/fptr/@FILEID | Mandatory, must be the ID used in the appropriate file or mdRef element | 1..1 |
 | CSIP132 | METS pointer | structMap/div/div/mptr | In the case of describing representations within the package (i.e. representations/representation1) the content of the representations must not be described. Instead the `<div>` of the specific representation should include one and only one occurrence of the `<mptr>` element, pointing to the appropriate representation METS file.<br/> The references to representation METS files must be made using the XLink href attribute and the file protocol using the relative location of the file.<br/>Example: `xlink:href="representation/representation1/mets.xml"`<br/>The XLink type attribute is used with the fixed value “simple”.<br/>Example: `xlink:type="simple"`<br/>The LOCTYPE attribute is used with the fixed value ”URL” | 0..n |
 
