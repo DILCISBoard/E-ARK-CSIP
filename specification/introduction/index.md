@@ -1,6 +1,4 @@
-
 # 1 Introduction
-
 This document introduces the concept of a Common Specification for Information Packages. It aims to serve three main purposes:
 
 1.	Establish a common understanding of the requirements which need to be met in order to achieve interoperability of Information Packages;
