@@ -1,6 +1,4 @@
-
 # 1 Introduction
-
 This document introduces the concept of a Common Specification for Information Packages. It aims to serve three main purposes:
 
 1.	Establish a common understanding of the requirements which need to be met in order to achieve interoperability of Information Packages;
@@ -16,7 +14,7 @@ In the OAIS  framework three types of Information Packages (IPs) are present in 
 submit data and metadata to digital repositories; store it in long-term preservation facilities; and deliver to consumers.
 
 <a name="fig1"></a>
-![OAIS Entities](oais_ele_ip_fig_1.png "OAIS Functional Entities and Information Packages")
+![OAIS Entities](fig_1_oais_ele_ip.png "OAIS Functional Entities and Information Packages")
 
 **Figure 1:** OAIS Functional Entities and Information Packages
 
@@ -25,7 +23,7 @@ This Common Specification for Information Packages aims to summarise the common 
 However, to allow for interoperability on process level there is still a need for defining more detailed technical specifications for a SIP, AIP and DIP. This is also the case for the E-ARK specifications where, next to this Common Specification for Information Packages, more detailed E-ARK SIP, E-ARK AIP and E-ARK DIP profiles  have been created.
 
 <a name="fig2"></a>
-![CS SCOPE](cs_ip_scope_fig_2.png "The scope of Common Specification for Information Packages in regard to OAIS Information Packages.")
+![CS SCOPE](fig_2_cs_ip_scope.png "The scope of Common Specification for Information Packages in regard to OAIS Information Packages.")
 
 **Figure 2:** The scope of Common Specification for Information Packages in regard to OAIS Information Packages.
 
@@ -53,7 +51,7 @@ Packages:
 - SIARD1, SIARD2 and SIARDDK: These three Content Information Type specifications describe the usage of the CS IP for the archiving, preservation and reuse of relational databases in one of the formats in the SIARD family (Software Independent Archiving of Relational Databases). Note, that SIARD1 and SIARDDK specifications are deemed outdated by the time of writing and are only intended to be used for packaging already available SIARD1 and SIARDDK packages in a CS IP compatible Information Packages. For new occurrences of archiving relational databases the use of the SIARD2 format  and according Content Information Type Specification is recommended.
 
 <a name="fig3"></a>
-![TYPE SPECS](cs_ip_types_fig_3.png "Common Specification for Information Packages and Content Information Type Specifications.")
+![TYPE SPECS](fig_3_cs_ip_types.png "Common Specification for Information Packages and Content Information Type Specifications.")
 
 **Figure 3:** Common Specification for Information Packages and Content Information Type Specifications
 
@@ -73,7 +71,7 @@ Following the discussions in the previous two Sections we can state that the ove
 - The Content Information Type Specifications define detailed requirements for embedding and describing specific content types within a CS IP.
 
 <a name="fig4"></a>
-![TYPE SPECS](cs_vs_ip_fig_4.png "Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications.")
+![TYPE SPECS](fig_4_cs_vs_ip.png "Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications.")
 
 **Figure 4:** Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications
 
