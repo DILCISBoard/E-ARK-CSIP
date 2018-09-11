@@ -641,24 +641,24 @@ The value `ID.AVID.RA.18005.rep0.seg0` must now match the value of the OBJID att
 
 #### Parent METS file
 ```xml
-<div LABEL="representations"> <!-- this top root level METS.xml IP only refers to the 
-  root level METS files in the representations using the <mptr> element -->
-   <div LABEL="representations/ID.AVID.RA.18005.rep0" ORDER="0" > <!-- the value of the
-    attribute LABEL is the ID of the representation -->
-      <div LABEL="child IP" TYPE="representation child"> <!-- we use the attribute 
-        LABEL value 'child IP' in the 'div' element for representations in accordance
-        with the AIP spec.3.3.1.9 -->
+<div LABEL="representations"> <!-- this top root level METS.xml IP only refers to the root level METS 
+  files in the representations using the <mptr> element -->
+   <div LABEL="representations/ID.AVID.RA.18005.rep0" ORDER="0" > <!-- the value of the attribute LABEL
+    is the ID of the representation -->
+      <div LABEL="child IP" TYPE="representation child"> <!-- we use the attribute LABEL value 'child IP'
+        in the 'div' element for representations in accordance with the AIP spec.3.3.1.9 -->
         <mptr xlink:href="urn:sa.dk:ID.AVID.RA.18005.rep0.seg0" 
-              xlink:title="root level METS file for representation 0" xlink:type="simple" LOCTYPE="URN"/>
-          <!-- each root level METS file in the representations refer to its own METS files in the segments and in the
-            representations folder using the <mptr> element --> <!-- we use the attribute LABEL value 'segment' in the 'div' element for representations-->			
+          xlink:title="root level METS file for representation 0" xlink:type="simple" LOCTYPE="URN"/>
+          <!-- each root level METS file in the representations refer to its own METS files in the
+            segments and in the representations folder using the <mptr> element -->
+          <!-- we use the attribute LABEL value 'segment' in the 'div' element for representations-->			
       </div>
    </div>
    <div LABEL="representations/ID.AVID.RA.18005.rep1" ORDER="1"> <!-- the value of the attribute
     LABEL is the ID of the representation -->
       <div LABEL="child IP" TYPE="representation child">
          <mptr xlink:href="urn:sa.dk:ID.AVID.RA.18005.rep1.seg0" 
-               xlink:title="root level METS file for representation 1" xlink:type="simple" LOCTYPE="URN"/>
+            xlink:title="root level METS file for representation 1" xlink:type="simple" LOCTYPE="URN"/>
             <!-- this is an indirect METS reference to another METS file, and this file is in another segment -->
       </div>
    </div>
@@ -668,15 +668,16 @@ The value `ID.AVID.RA.18005.rep0.seg0` must now match the value of the OBJID att
 #### Child METS file
 ```xml
 <mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/METS/"
-      xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.loc.gov/METS/ schemas/mets.xsd"
-      PROFILE="http://www.ra.ee/METS/v01/IP.xml" TYPE="Database segment child"
-      OBJID="ID.AVID.RA.18005.rep0.seg0" LABEL="root level METS file for a representation segment">
+  xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.loc.gov/METS/ schemas/mets.xsd"
+  PROFILE="http://www.ra.ee/METS/v01/IP.xml" TYPE="Database segment child"
+  OBJID="ID.AVID.RA.18005.rep0.seg0" LABEL="root level METS file for a representation segment">
 ..
 ..
 ..
    <div LABEL="parent IP" TYPE="Godfather IP"> 
-      <mptr xlink:href="urn:sa.dk:ID.AVID.RA.18005.godfather" xlink:title="root level METS file for godfather IP" xlink:type="simple" LOCTYPE="URN"/>
-      <!-- this is an indirect METS reference to another METS file. However, the referenced file is in another segment -->
+      <mptr xlink:href="urn:sa.dk:ID.AVID.RA.18005.godfather" xlink:title="root level METS file for godfather IP"     
+        xlink:type="simple" LOCTYPE="URN"/>
+      <!-- this is an indirect METS ref. to another METS file. However, the referenced file is in another segment -->
    </div>
 ```
 ### 6.2.5.	Illustration of references between METS files in a segmented IP
