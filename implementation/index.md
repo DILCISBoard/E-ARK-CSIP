@@ -82,29 +82,29 @@ An example of the full implementation is delivered in Figure 10. The main differ
  
 ## 4.3 Segmenting IPs
 Segmentation of an IP can be necessary due to the size of an IP, i.e. the file size. An IP in a single file or folder with a size of several GB or even TB can be difficult and inefficient to manage.
-## 4.3.1 The structure for IP, their representations and their segments
+### 4.3.1 The structure for IP, their representations and their segments
 According to the Common Specification for IPs, an IP can have several representations.
 All representations contains the same intellectual content, but as the name implies is another representation; in its most simple form this could be another file format such as TIFF instead of JPEG.
 As the content resides in the representations of the IP any segmenting due to size and amount of files will have to take place at the level of the representations.
 According to the Common Specification each representation of an IP has to be an IP itself.
 Further, a segment of an representation must also be an IP itself.
 In order to have an efficient hierarchy of IPs this section  states that a segmented IP can have a master IP which refers to its representations by referring to the first segment IP of a representation. The first segment IP of a representation refers to the following segments by referring to the their IP.
-## 4.3.2 Using METS to refer from parent IP to child IP(s)
+### 4.3.2 Using METS to refer from parent IP to child IP(s)
 The method used to refer from parent to child is based on the ID of the IP of the child.
 One reason for using ID and not URL or other more direct references to a location of the referenced METS file is the flexibility it gives to move the segmented IPs around in different storage locations. This is a flexibility often needed for segmented IPs that accumulated can be very large.
 The value of the xlink:href attribute in the <mptr> element in the METS file of the parent IP is used.
 This value is to be set to the value of the OBJID attribute of the <mets> element in the METS file of the child IP. According to the Common Specification, the OBJID attribute must have the value of the ID of the IP.
 This is therefore sufficient for having the parent know the ID of the child, but the parent does not know the exact child location.
-## 4.3.3 Using METS to refer from child IP to parent IP
+### 4.3.3 Using METS to refer from child IP to parent IP
 The optional reference from child to the parent is based on the ID of the IP of the parent.
 The value of the xlink:href attribute in <mptr> element in the METS file of the child IP is used.
 This value is to be set to the value of the OBJID attribute of the <mets> element in the METS file of the parent IP. According to the Common Specification, the OBJID attribute must have the value of the ID of the IP.
 This is therefore sufficient for having the child know the ID of the parent, but the child does not know the exact parent location.
-## 4.3.4 An example for the Northwind database
+### 4.3.4 An example for the Northwind database
 Here follows a partial example, where the value of the xlink:href attribute in the <mptr> element (inside the <div> element inside the <structMap> element) is “ID.AVID.RA.18005.rep0.seg0” after the urn NID part (urn:<NID>:<NSS>).  
 The value “ID.AVID.RA.18005.rep0.seg0” must now match the value of the OBJID attribute for the <mets> element in the child IP root METS file.
 (Note that in order to save space in this example the CS mandatory ID attribute for the <div> elements have been left out.)
-## 4.3.4.1 Parent IP mets file
+#### 4.3.4.1 Parent IP mets file
 ```xml
 <div LABEL="representations">
 	<div LABEL="representations/ID.AVID.RA.18005.rep0" ORDER="0" >
@@ -120,8 +120,6 @@ The value “ID.AVID.RA.18005.rep0.seg0” must now match the value of the OBJID
 		</div>	
 	</div>	
 </div>	
-```
-```xml
 <!-- this top root level METS.xml IP only refers to the root level METS files in the representations using the <mptr> element -->	
 <!-- we use the attribute LABEL value 'child IP' in the 'div' element for representations in accordance with the AIP spec.3.3.1.9 -->
 <!-- each root level METS file in the representations refer to its own METS files in the segments and in the representations folder using the <mptr> element -->			
@@ -135,7 +133,8 @@ The value “ID.AVID.RA.18005.rep0.seg0” must now match the value of the OBJID
 <!-- this is an indirect METS reference to another METS file, and this file is in another segment - compare with CS v0.13 sec. 5.2, p 36 -->
 ```  
 
-## 4.3.4.2 Child IP METS file
+#### 4.3.4.2 Child IP METS file
+```xml
 <mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" 
 xsi:schemaLocation="http://www.loc.gov/METS/ schemas/mets.xsd"
 PROFILE="http://www.ra.ee/METS/v01/IP.xml" TYPE="SIP" OBJID="ID.AVID.RA.18005.rep0.seg0" LABEL="root level METS file for a representation segment">
@@ -145,9 +144,9 @@ PROFILE="http://www.ra.ee/METS/v01/IP.xml" TYPE="SIP" OBJID="ID.AVID.RA.18005.re
 <div LABEL="parent IP" TYPE="Godfather IP"> <!-- working title - maybe master IP is more appropriate -->
 	<mptr xlink:href="urn:sa.dk:ID.AVID.RA.18005.godfather" xlink:title="root level METS file for godfather IP" xlink:type="simple" LOCTYPE="URN"/>
 	<!-- this is an indirect METS reference to another METS file, and this file is in another segment - compare with CS v0.13 sec. 5.2, p 36 -->
-</div>	 			
-
-## 4.3.5 Illustration of reference between METS files in a segmented IP
+</div>
+```
+### 4.3.5 Illustration of reference between METS files in a segmented IP
 We need to segment an IP at the data folder in the representations level, but reading the Common Specification strictly means this can only be done at the IP level. Therefore this IP has been segmented at the top IP level, and not at the representations level.
 
 LINK TO IMAGE
