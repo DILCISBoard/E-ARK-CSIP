@@ -432,6 +432,196 @@ Full example of the Common Specification structMap element (root METS file):
 </mets:structMap>
 ```
 
+#### 5.3.6.1	Use of an alternative METS structural map (element structMap) 
+
+This sections should be removed when a decision has been made on the use of structMap.
+
+The METS file below contains two structsMaps. The first is refering to all files from the data folder at the representation level. The second is only reflecting the folder structure.
+Refering to 1000 or 10,000 of files can be an performance problem. Both kinds of structMaps should be allowed.
+
+```xml
+<!-- ID.AVID.RA.18006/representations/AVID.RA.18006.rep0/METS.xml - a representation level METS file -->
+<!-- This representation level METS.xml file includes information about only the components of this segment of the representation -->
+<!-- This representation level METS.xml file is not aware of its own root level METS file or any other segments that may exists -->
+<mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xsi:schemaLocation="http://www.loc.gov/METS/ ../../schemas/mets.xsd" 
+	TYPE="representation:database" OBJID="ID.AVID.RA.18006.rep0" LABEL="representations level METS file for a representation">
+	<!-- Note that the OBJID can be replaced with any ID scheme. In this example IDs carring information are used to ease understanding -->
+	<!-- PROFILE is not used at the representations level METS -->
+	<metsHdr RECORDSTATUS="NEW" CREATEDATE="2015-12-14T14:20:00" 
+		LASTMODDATE="2015-12-14T14:20:00"> <!-- CS - LASTMODDATA only mandatory if different from CREATEDATA -->
+		<agent TYPE="OTHER" ROLE="CREATOR" OTHERTYPE="SOFTWARE"> <!-- CS mandatory -->
+			<name>E-ARK SIP Creator</name> <!-- CS optional -->
+			<note>VERSION=0.0.1</note> <!-- CS optional -->
+		</agent>
+		<metsDocumentID>ID.AVID.RA.18006.rep0</metsDocumentID> <!-- CS optional, recommended to be equal to OBJID -->
+	</metsHdr>
+	<fileSec>
+		<!-- In these example IDs are carring information to ease understanding - they look like paths to ease understanding, but are just IDs, similar to the naming of namespaces - these IDs can be replaced with information less UUID -->
+		<fileGrp USE="E-ARK files representation ID.AVID.RA.18006.rep0." ID="ID.AVID.RA.18006.rep0"> <!-- this ID is just for internal reference -->
+			<!--CS requirement for value of USE: "E-ARK files representation [ID]" -->
+			<!-- schemas -->		
+			<fileGrp USE="schemas" ID="ID.AVID.RA.18006.rep0.representations.schemas">  <!-- this ID is just for internal reference -->
+				<!-- METS.xsd -->
+				<file ID="ID.AVID.RA.18006.rep0.schemas.mets.xsd" USE="schema" MIMETYPE="application/xml"  CREATED="2015-12-14T14:20:00" 
+					CHECKSUM="75debd87e3d070e8590a393ac38483e4" CHECKSUMTYPE="MD5" SIZE="134223">
+					<FLocat LOCTYPE="URL" xlink:href="../../schemas/mets.xsd" xlink:type="simple"/>
+				</file>
+				<!-- mets_xlink.xsd -->
+				<file ID="ID.AVID.RA.18006.rep0.schemas.mets_xlink.xsd" USE="schema" MIMETYPE="application/xml"  CREATED="2015-12-14T14:20:00" 
+					CHECKSUM="0aaa1dd8380416f09ac607a06b3ec1a0" CHECKSUMTYPE="MD5" SIZE="3021">
+					<FLocat LOCTYPE="URL" xlink:href="../../schemas/mets_xlink.xsd" xlink:type="simple"/>
+				</file>
+				<!-- xlink.xsd -->
+				<file ID="ID.AVID.RA.18006.rep0.schemas.xlink.xsd" USE="schema" MIMETYPE="application/xml"  CREATED="2015-12-14T14:20:00" 
+					CHECKSUM="90c7527e6d4d3c3a6247ceb94b46bcf5" CHECKSUMTYPE="MD5" SIZE="8322">
+					<FLocat LOCTYPE="URL" xlink:href="../../schemas/xlink.xsd" xlink:type="simple"/>
+				</file>
+			</fileGrp>
+			<!-- documentation -->		
+			<fileGrp USE="documentation" ID="ID.AVID.RA.18006.rep0.representations.documentation">  <!-- this ID is just for internal reference -->
+			</fileGrp>				
+			<!-- metadata -->				
+			<fileGrp USE="metadata" ID="ID.AVID.RA.18006.rep0.representations.metadata">  <!-- this ID is just for internal reference -->
+				<!-- EAD and PREMIS have been described under dmdSec and amdSec and according to the CS they MUST NOT (or SHOULD?) be listed here -->
+			</fileGrp>
+			<fileGrp USE="data" ID="ID.AVID.RA.18006.rep0.representations.data">  <!-- this ID is just for internal reference -->
+				<!-- The following fileGrp is for the SIARD files. Other files in this IP must have their own fileGrp -->
+				<fileGrp ID="ID_SIARD_FILES">
+					<fileGrp ID="ID_SIARD_DDL">
+						<!-- the fileGrp for the central SIARD file named [databasename].siard -->
+						<file ID="ID_NORTHWIND.SIARD" MIMETYPE="OTHER/SIARD" OWNERID="ID.AVID.RA.18006.NORTHWIND" 
+							CHECKSUMTYPE="MD5"	CHECKSUM="ca8771f89a030f7e06cf77bad5f8fbb3" SIZE="54562">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/northwind.siard"/>
+							<transformFile TRANSFORMALGORITHM="ZIP64" TRANSFORMORDER="1" TRANSFORMTYPE="decompression"/>
+							<!-- note that ZIP32 is also allowed for SIARD -->
+						</file>
+					</fileGrp>
+					<!-- The following fileGrp is for a segment of the SIARD files. -->
+					<fileGrp ID="seg_0">
+						<!-- The following OWNERID=table no.row no.column. no -->
+						<!-- The following ID is equal to the OWNERID but does not need to be -->
+						<file ID="s0.t2.c4.r1" MIMETYPE="binary" OWNERID="s0.t2.c4.r1" CHECKSUMTYPE="MD5"     CHECKSUM="74f24080fc9d234d3ac221b8e743c763" SIZE="10151">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table2/lob4/record0.bin"/>
+						</file>
+						<file ID="s0.t2.c4.r2" MIMETYPE="binary" OWNERID="s0.t2.c4.r2" CHECKSUMTYPE="MD5" CHECKSUM="22a0cbe8960b78ce48b07a285ce69e3c" SIZE="12107">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table2/lob4/record1.bin"/>
+						</file>
+						<file ID="s0.t2.c4.r3" MIMETYPE="binary" OWNERID="s0.t2.c4.r3" CHECKSUMTYPE="MD5" CHECKSUM="3e2f2028a9147c29bdcd36ed4e5f25b3" SIZE="12007">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table2/lob4/record2.bin"/>
+						</file>
+						<file ID="s0.t2.c4.r4" MIMETYPE="binary" OWNERID="s0.t2.c4.r4" CHECKSUMTYPE="MD5" CHECKSUM="12f588040e11cc2021ea37d46aa10c51" SIZE="9756">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table2/lob4/record3.bin"/>
+						</file>
+						<file ID="s0.t2.c4.r5" MIMETYPE="binary" OWNERID="s0.t2.c4.r5" CHECKSUMTYPE="MD5" CHECKSUM="e2d8ef03e1b24edd946820dbbf44fdfd" SIZE="12131">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table2/lob4/record4.bin"/>
+						</file>
+						<file ID="s0.t2.c4.r6" MIMETYPE="binary" OWNERID="s0.t2.c4.r6"	CHECKSUMTYPE="MD5" CHECKSUM="814a3eb95253c08137f70bcfc279e00f" SIZE="11280">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table2/lob4/record5.bin"/>
+						</file>
+						<file ID="s0.t2.c4.r7" MIMETYPE="binary" OWNERID="s0.t2.c4.r7" CHECKSUMTYPE="MD5" CHECKSUM="ee114cd7700f566b1f7c7e8e0f68ca0f" SIZE="12338">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table2/lob4/record6.bin"/>
+						</file>
+						<file ID="s0.t2.c4.r8" MIMETYPE="binary" OWNERID="s0.t2.c4.r8" CHECKSUMTYPE="MD5" CHECKSUM="2de1ac4c4e8ebb853e17db01af3fb7c3" SIZE="12069">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table2/lob4/record7.bin"/>
+						</file>
+						<file ID="s0.t4.c15.r1" MIMETYPE="binary" OWNERID="s0.t4.c15.r1" CHECKSUMTYPE="MD5" CHECKSUM="af1c21d8a01777470a52851def9db1c5" SIZE="12315">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table4/lob15/record0.bin"/>
+						</file>
+						<file ID="s0.t4.c15.r2" MIMETYPE="binary" OWNERID="s0.t4.c15.r2" CHECKSUMTYPE="MD5" CHECKSUM="93d7eb0220fdb69bb0c9f4385c741f12" SIZE="12295">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table4/lob15/record1.bin"/>
+						</file>
+						<file ID="s0.t4.c15.r3" MIMETYPE="binary" OWNERID="s0.t4.c15.r3" CHECKSUMTYPE="MD5" CHECKSUM="f5498d7caa5a2eb55786643a75b6b61c" SIZE="11372">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table4/lob15/record2.bin"/>
+						</file>
+						<file ID="s0.t4.c15.r4" MIMETYPE="binary" OWNERID="s0.t4.c15.r4" CHECKSUMTYPE="MD5" CHECKSUM="8e1a6c431ad8a2b25e5e19bee7649de8" SIZE="12121">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table4/lob15/record3.bin"/>
+						</file>
+						<file ID="s0.t4.c15.r5" MIMETYPE="binary" OWNERID="s0.t4.c15.r5" CHECKSUMTYPE="MD5" CHECKSUM="f4a0848773e3ad7b87d2d27340869b8d" SIZE="12163">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table4/lob15/record4.bin"/>
+						</file>
+						<file ID="s0.t4.c15.r6" MIMETYPE="binary" OWNERID="s0.t4.c15.r6" CHECKSUMTYPE="MD5" CHECKSUM="e3f6993081df534b23f22607c514ce6a" SIZE="11872">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table4/lob15/record5.bin"/>
+						</file>
+						<file ID="s0.t4.c15.r7" MIMETYPE="binary" OWNERID="s0.t4.c15.r7" CHECKSUMTYPE="MD5" CHECKSUM="7f123f42616160cce2eeef2d1fd7d48e" SIZE="11899">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table4/lob15/record6.bin"/>
+						</file>
+						<file ID="s0.t4.c15.r8" MIMETYPE="binary" OWNERID="s0.t4.c15.r8" CHECKSUMTYPE="MD5" CHECKSUM="0ad004fe137cf63835bba9418e32492d" SIZE="11949">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table4/lob15/record7.bin"/>
+						</file>
+						<file ID="s0.t4.c15.r9" MIMETYPE="binary" OWNERID="s0.t4.c15.r9" CHECKSUMTYPE="MD5" CHECKSUM="40a5309f5432d87cc9004ab4de65c868" SIZE="12203">
+							<FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/Northwind_lobseg_0/content/schema0/table4/lob15/record8.bin"/>
+						</file>
+					</fileGrp>
+				</fileGrp>
+			</fileGrp>
+		</fileGrp>
+	</fileSec>
+	
+	<structMap TYPE="physical" LABEL="E-ARK structural map"> <!-- According to the CS v0.13 sec. 5.2, p 36 --> <!-- Modified by request of Jan Rörden -->
+		<div LABEL="ID.AVID.RA.18006.rep0"> <!-- CS: LABEL value MUST be ID of the repr.-->
+			<div LABEL="schemas">
+				<fptr FILEID="ID.AVID.RA.18006.rep0.schemas.mets.xsd"/> <!-- this FILEID attr. has a ref. to the ID attribute in the <file> element in the <fileGrp> element in the <fileSec> element -->
+				<fptr FILEID="ID.AVID.RA.18006.rep0.schemas.mets_xlink.xsd"/> 
+				<fptr FILEID="ID.AVID.RA.18006.rep0.schemas.xlink.xsd"/>
+			</div>
+			<div LABEL="documentation"></div>	
+			<div LABEL="metadata">
+				<div LABEL="descriptive"><!-- ead.xml has been described in the dmdSec in ROOT METS so nothing further to describe here according to CS--></div>	
+				<div LABEL="preservation"><!-- premis.xml have been described in the amdSec in ROOT METSso nothing further to describe here according to CS--></div>	
+				<div LABEL="other"></div>	
+			</div>
+			<div LABEL="data">
+				<div LABEL="SIARD LOBs as outside files">  
+					<!-- The Common Specification ver 013 on page 35 states that: 
+						"Inside the representation METS file <fptr> element is used to reference all files within the representation with no exceptions.-->
+					<!-- In this example we only have 17 files in the segment, in reality we should expect 10,000 if a segment size around 1 GB is desired.-->		
+					<!-- We have to reevaluate in the CS the cost and  benefit of another 10,000 elements in the structMap - they are already there as file elements with checksum -->
+					<fptr FILEID="s0.t2.c4.r1"/>	<!-- CS: there MUST be a fptr element for all files -->				
+					<fptr FILEID="s0.t2.c4.r2"/>
+					<fptr FILEID="s0.t2.c4.r3"/>
+					<fptr FILEID="s0.t2.c4.r4"/>
+					<fptr FILEID="s0.t2.c4.r5"/>
+					<fptr FILEID="s0.t2.c4.r6"/>
+					<fptr FILEID="s0.t2.c4.r7"/>
+					<fptr FILEID="s0.t2.c4.r8"/>
+					<fptr FILEID="s0.t4.c15.r1"/>
+					<fptr FILEID="s0.t4.c15.r2"/>
+					<fptr FILEID="s0.t4.c15.r3"/>
+					<fptr FILEID="s0.t4.c15.r4"/>
+					<fptr FILEID="s0.t4.c15.r5"/>
+					<fptr FILEID="s0.t4.c15.r6"/>
+					<fptr FILEID="s0.t4.c15.r7"/>
+					<fptr FILEID="s0.t4.c15.r8"/>
+					<fptr FILEID="s0.t4.c15.r9"/>	
+					<!-- In this example we only have 17 files in the segment, in reality we should expect 10,000 if a segment size around 1 GB is desired.-->		
+				</div>	
+			</div>
+		</div>
+	</structMap>
+	<structMap TYPE="foldersonly" LABEL="DILCIS CSIP struct map compact"> <!-- this structMap does not repeat all files in fileSec for the files in the representation-->
+		<div LABEL="ID.AVID.RA.18006.rep0"> <!-- CS: LABEL value MUST be ID of the repr.-->
+			<div LABEL="schemas"></div>
+			<div LABEL="documentation"></div>	
+			<div LABEL="metadata">
+				<div LABEL="descriptive"><!-- ead.xml has been described in the dmdSec in ROOT METS so nothing further to describe here according to CS--></div>	
+				<div LABEL="preservation"><!-- premis.xml have been described in the amdSec in ROOT METS so nothing further to describe here according to CS--></div>	
+				<div LABEL="other"></div>	
+			</div>
+			<div LABEL="data">
+				<div LABEL="SIARD LOBs as outside files"> <!-- design proposal by Karin Bredenberg, Jan Rörden and Anders Bo Nielsen--> 
+					<fptr CONTENTIDS="ID.AVID.RA.18006"/>  <!-- note the use of CONTENTIDS attribute instead of more than 10,000 elements with FILEID attibutes-->
+					<!-- This design proposal clashed with the Common Specification ver 013 which on page 35 states that:
+					"Inside the representation METS file <fptr> element is used to reference all files within the representation with no exceptions.-->
+					<!-- In this example we only have 17 files in the segment, in reality we should expect 10,000 if a segment size around 1 GB is desired.-->		
+					<!-- We have to reevaluate in the CS the cost and  benefit of another 10,000 elements in the structMap - they are already there as file elements with checksum -->
+				</div>	
+			</div>
+		</div>
+	</structMap>	
+</mets>
+```
+
 ## 5.4.	Use of PREMIS
 The CS IP recommends and advocates the use of the PREMIS metadata standard for recording preservation and technical metadata about digital objects contained within CS IP Information Packages. The CS IP implements version 3.0 of the PREMIS Data Dictionary.  Note that use of PREMIS is not mandatory
 because a SIP will not always be able to include preservation metadata.
