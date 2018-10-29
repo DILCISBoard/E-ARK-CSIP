@@ -15,6 +15,12 @@ Project root
   |- examples/
   |  Sample information packages showing the Common Specification in use.
   |
+  |- profile/
+  |  The CSIP METS Profile and supporting documentation.
+  |
+  |- schema/
+  |  DILCIS METS extensions and defined vocabularies for the CSIP.
+  |
   |- specification/
   |  The Markdown source for the common specification.
   |
