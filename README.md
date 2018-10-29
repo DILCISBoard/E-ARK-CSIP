@@ -9,6 +9,12 @@ Quick Start
 E-ARK-CSIP/
 Project root
   |
+  |- README.md
+  |  This documentation file.
+  |
+  |- index.md
+  |  The Markdown source for the site home page.
+  |
   |- archive/
   |  Archive of old versions of the specification (possibly schema, see TODOs).
   |
@@ -24,11 +30,8 @@ Project root
   |- specification/
   |  The Markdown source for the common specification.
   |
-  |- README.md
-  |  This documentation file.
-  |
-  |- index.md
-     The Markdown source for the site home page.
+  |- utils/
+     Tools and utilities used to create and QA the specification documents.
 ```
 
 TODO
