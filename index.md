@@ -23,3 +23,11 @@ GitHub](https://github.com/DILCISBoard/E-ARK-CSIP/).
 Archive
 -------
 Previous versions of the specification are available from [the archive](./archive/)
+
+METS Profile
+------------
+The E-ARK CSIP METS Profile and associated documenation are in [the profile area](./profile/).
+
+Associated Schema
+-----------------
+The METS schema, DILCIS Board grammars and vocabularies are in [the schema area](./schema/).

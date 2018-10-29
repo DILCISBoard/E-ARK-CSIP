@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="DILCISVocabularies.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<Vocabularies xmlns="https://DILCIS.eu/XML/Vocabularies/IP">
+    <Vocabulary Name="VocabularyContentTypeSpecification">
+        <Information>
+            <p>Vocabulary derived from E-ARK</p>
+        </Information>
+        <Entry>
+            <Term lang="en">SMURFERMS</Term>
+            <Definition>A specification for Electronic records management is used</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">SMURFSFSB</Term>
+            <Definition>A specification for random files is used</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">SIARD1</Term>
+            <Definition>A relational database is described with SIARD version 1</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">SIARD2</Term>
+            <Definition>A relational database is described with SIARD version 2</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="eb">SIARDDK</Term>
+            <Definition>A relational database is described with SIARD version DK</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">GeoVectorGML</Term>
+            <Definition>Geodata is described with a specification for Vector GML</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">GeoRasterGeotiff</Term>
+            <Definition>Geodata is described with a specification for Raster Tiff</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">MIXED</Term>
+            <Definition>A mixed set is described</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">OTHER</Term>
+            <Definition>A term other than present in the vocabulary is used</Definition>
+        </Entry>
+    </Vocabulary>
+    <Vocabulary Name="VocabularyOAISPackageType">
+        <Information>
+            <p>Vocabulary derived from the OAIS Reference model, https://public.ccsds.org/pubs/650x0m2.pdf</p>
+        </Information>
+        <Entry>
+            <Term lang="en">SIP</Term>
+            <Definition>Submission Information Package</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">AIP</Term>
+            <Definition>Archival information Package</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">DIP</Term>
+            <Definition>Dissemination Information Package</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">AIU</Term>
+            <Definition>Archival Information Unit</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">AIC</Term>
+            <Definition>Archival Information Collection</Definition>
+        </Entry>
+    </Vocabulary>
+    <Vocabulary Name="VocabularyAgentOtherType">
+        <Information>
+            <p>Vocabulary derived from E-ARK</p>
+        </Information>
+        <Entry>
+            <Term lang="en">SOFTWARE</Term>
+            <Definition>The agent is of the type software</Definition>
+        </Entry>
+    </Vocabulary>
+    <Vocabulary Name="VocabularyStatus">
+        <Information>
+            <p>Vocabulary derived from E-ARK</p>
+        </Information>
+        <Entry>
+            <Term lang="en">SUPERSEDED</Term>
+            <Definition>This version has been replaced</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">CURRENT</Term>
+            <Definition>This version is currently in use</Definition>
+        </Entry>
+    </Vocabulary>
+    <Vocabulary Name="VocabularyFileGrpAndStructMapDivisionLabel">
+        <Information>
+            <p>Vocabulary derived from E-ARK</p>
+        </Information>
+        <Entry>
+            <Term lang="en">Documentation</Term>
+            <Definition>The file group or structural division contains documentation</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Schemas</Term>
+            <Definition>The file group or structural division contains XML-schemas</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Representations</Term>
+            <Definition>The file group or structural division contains data or representation data</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Metadata</Term>
+            <Definition>The structural division contains metadata</Definition>
+        </Entry>
+    </Vocabulary>
+    <Vocabulary Name="VocabularyStructMapType">
+        <Information>
+            <p>Vocabulary derived from E-ARK</p>
+        </Information>
+        <Entry>
+            <Term lang="en">PHYSICAL</Term>
+            <Definition>A physical description is made</Definition>
+        </Entry>
+    </Vocabulary>
+    <Vocabulary Name="VocabularyStructMapLabel">
+        <Information>
+            <p>Vocabulary derived from E-ARK</p>
+        </Information>
+        <Entry>
+            <Term lang="en">CS IP StructMap</Term>
+            <Definition>A label for the mandatory structural map</Definition>
+        </Entry>
+    </Vocabulary>
+    <Vocabulary Name="VocabularyNoteType">
+        <Information>
+            <p>Vocabulary derived from E-ARK</p>
+        </Information>
+        <Entry>
+            <Term lang="en">SOFTWARE VERSION</Term>
+            <Definition>Describes the version of a software</Definition>
+        </Entry>
+    </Vocabulary>
+    <Vocabulary Name="VocabularyType">
+        <Information>
+            <p>Vocabulary derived from http://www.loc.gov/preservation/resources/rfs/TOC.html and http://www.dublincore.org/documents/dcmi-type-vocabulary/</p>
+            <p>Values mixed and other derived from E-ARK</p>
+        </Information>
+        <Entry>
+            <Term lang="en">Textual works – Print</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Textual works – Digital</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Textual works – Electronic Serials</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Digital Musical Composition (score-based representations)</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Photographs – Print</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Photographs – Digital</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Other Graphic Images – Print</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Other Graphic Images – Digital</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Microforms</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Audio – On Tangible Medium (digital or analog)</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Audio – Media-independent (digital)</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Motion Pictures – Digital and Physical Media</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Video – File-based and Physical Media</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Software</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Datasets</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en"></Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Geospatial Data</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Databases</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Websites</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Collection</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Event</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Interactive resource</Term>
+            <Definition>Definition needed</Definition>
+        </Entry><Entry>
+            <Term lang="en">Physical object</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Service</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Mixed</Term>
+            <Definition>The package contains a mix of content types</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Other</Term>
+            <Definition>A term other than present in the vocabulary is used</Definition>
+        </Entry>
+    </Vocabulary>
+</Vocabularies>
