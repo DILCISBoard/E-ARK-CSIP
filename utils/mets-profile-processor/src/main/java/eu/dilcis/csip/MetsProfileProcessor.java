@@ -36,18 +36,17 @@ public final class MetsProfileProcessor {
 			System.exit(0);
 		}
 		MetsProfileXmlHandler handler = new MetsProfileXmlHandler(opts);
-		handler.processExports();
+		handler.processProfile();
 	}
 
 	private static void usage() {
-		System.out.println("usage: blu-xml-proc [flags] [DIRECTORY]");
+		System.out.println("usage: mets-profile-processor [options] FILE");
 		System.out.println("");
 		System.out.println(
-				"Analyses XML eSafe export file and report details or enhance the XML export.");
+				"Checks E-ARK CSIP METS Profile.");
 		System.out.println("");
 		System.out.println("  -h prints this message.");
-		System.out.println("  -o output enanced XML to STDOUT.");
-		System.out.println(
-				"  -f send enanced XML output to .fix file rather than STDOUT.");
+		System.out.println("  -o [DIRECTORY] output requirements Markdown as files in [DIRECTORY], default to STDOUT.");
+		System.out.println("  [FILE] is the METS Profile XML path.");
 	}
 }
