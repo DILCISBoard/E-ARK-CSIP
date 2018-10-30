@@ -3,6 +3,7 @@ package eu.dilcis.csip;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Path;
+import java.security.AccessControlException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
  */
 
 public final class ProcessorOptions {
+	final static String dirNotWritable = "Output directory: %s is not writeable.";
 	final static String dirNotFoundMess = "Could not find output directory: %s.";
 	final static String dirIsFileMess = "Output path %s must be a directory.";
 	final static String fileNotFoundMess = "Could not find Profile file: %s.";
@@ -28,8 +30,11 @@ public final class ProcessorOptions {
 	/**
 	 * 
 	 */
-	private ProcessorOptions(final Path outDir, final boolean isUsage, List<File> toProcess) {
-		this.outDir = outDir;
+	private ProcessorOptions(final boolean isToCurrentDir, final boolean isUsage, List<File> toProcess) {
+		this.outDir = (isToCurrentDir) ? new File(".").toPath() : null;
+		if (this.outDir != null && !this.outDir.toFile().canWrite()) {
+			throw new AccessControlException(String.format(dirNotWritable, this.outDir.toAbsolutePath().toString()));
+		}
 		this.isUsage = isUsage;
 		this.toProcess = Collections.unmodifiableList(toProcess);
 	}
@@ -50,8 +55,8 @@ public final class ProcessorOptions {
 	 */
 	final static ProcessorOptions fromArgs(final String[] args) throws FileNotFoundException {
 		List<File> toProcess = new ArrayList<>();
-		Path outDir = null; // Hold the output directory path, if any
-		boolean isToFile = false; // Flag when output directory requested
+		// Path outDir = null; // Hold the output directory path, if any
+		boolean isToCurrentDir = false; // Flag when output directory requested
 		boolean isUsage = false; // Flag help requested
 		// Process args in a loop
 		for (String arg : args) {
@@ -62,21 +67,24 @@ public final class ProcessorOptions {
 			}
 			// Output dir
 			if (arg.equals("-o")) {
-				isToFile = true;
+				isToCurrentDir = true;
 				continue;
 			}
 			// It's a file arg of some kind
 			File toTest = new File(arg);
 			// Are we processing an output dir
-			if (isToFile && outDir == null) {
-				if (!toTest.isDirectory()) {
-					// Output directory isn't a directory
-					String message = toTest.exists() ? dirIsFileMess : dirNotFoundMess;
-					throw new FileNotFoundException(String.format(message, toTest.getAbsolutePath()));
-				}
-				outDir = toTest.toPath();
-			// Or treat as a profile file
-			} else if (toTest.isFile()) {
+			// if (isToFile && outDir == null) {
+			// if (!toTest.isDirectory()) {
+			// // Output directory isn't a directory
+			// String message = toTest.exists() ? dirIsFileMess :
+			// dirNotFoundMess;
+			// throw new FileNotFoundException(String.format(message,
+			// toTest.getAbsolutePath()));
+			// }
+			// outDir = toTest.toPath();
+			// // Or treat as a profile file
+			// } else if (toTest.isFile()) {
+			if (toTest.isFile()) {
 				toProcess.add(toTest);
 			} else {
 				// METS Profile file isn't a file
@@ -85,6 +93,6 @@ public final class ProcessorOptions {
 			}
 		}
 		// Return a shiny new ProcessorOptions instance
-		return new ProcessorOptions(outDir, isUsage, toProcess);
+		return new ProcessorOptions(isToCurrentDir, isUsage, toProcess);
 	}
 }

@@ -40,13 +40,15 @@ public final class MetsProfileProcessor {
 	}
 
 	private static void usage() {
-		System.out.println("usage: mets-profile-processor [options] FILE");
+		System.out.println("usage: mets-profile-proc [options] FILE");
 		System.out.println("");
 		System.out.println(
 				"Checks E-ARK CSIP METS Profile.");
 		System.out.println("");
 		System.out.println("  -h prints this message.");
-		System.out.println("  -o [DIRECTORY] output requirements Markdown as files in [DIRECTORY], default to STDOUT.");
+		System.out.println("  -o output requirements Markdown as files to current directory, default to STDOUT.");
+//		System.out.println("  -d [DIRECTORY] output requirements Markdown as files in [DIRECTORY], default to STDOUT.");
+//		System.out.println("  -f [FILE] output requirements Markdown to single [FILE], default to STDOUT.");
 		System.out.println("  [FILE] is the METS Profile XML path.");
 	}
 }
