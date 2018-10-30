@@ -129,4 +129,26 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		String toAdd = new String(buf, offset, len);
 		this.outHandler.addToBuffer(toAdd);
 	}
+
+	static class RequirementId implements Comparable<RequirementId> {
+		final String prefix;
+		final int number;
+		
+		private RequirementId(final String prefix, final int number) {
+			this.prefix = prefix;
+			this.number = number;
+		}
+
+		@Override
+		public int compareTo(RequirementId other) {
+			if (other.prefix.equals(this.prefix)) {
+				return (this.number < other.number) ? -1 : (this.number == other.number) ? 0 : -1;
+			}
+			return this.prefix.compareTo(other.prefix);
+		}
+		
+		static RequirementId fromIdString(final String idString) {
+			return new RequirementId("DEF", 0);
+		}
+	}
 }
