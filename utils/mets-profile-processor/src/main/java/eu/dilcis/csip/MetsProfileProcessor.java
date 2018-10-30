@@ -2,15 +2,13 @@ package eu.dilcis.csip;
 
 import java.io.IOException;
 
-import org.xml.sax.SAXException;
-
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
  *         <a href="https://github.com/carlwilson">carlwilson AT github</a>
  *
  * @version 0.1
  *
- *          Created 22 Jun 2018:00:27:22
+ *          Created 24 Oct 2018:06:37:19
  */
 
 public final class MetsProfileProcessor {
@@ -25,9 +23,9 @@ public final class MetsProfileProcessor {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) throws SAXException, IOException {
+	public static void main(String[] args) throws IOException {
 		ProcessorOptions opts = ProcessorOptions.fromArgs(args);
-		if (opts.toProcess.isEmpty()) {
+		if (opts.profileFile == null) {
 			usage();
 			System.exit(1);
 		}

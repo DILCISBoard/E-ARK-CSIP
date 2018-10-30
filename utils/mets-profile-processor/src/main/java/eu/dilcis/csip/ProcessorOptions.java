@@ -4,39 +4,44 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Path;
 import java.security.AccessControlException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
+ * Parse and validate the command line arg array to a sensible options object.
+ * 
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
  *         <a href="https://github.com/carlwilson">carlwilson AT github</a>
  *
  * @version 0.1
  * 
- *          Created 12 Jul 2018:00:08:51
+ *          Created 23 Oct 2018:20:08:51
  */
 
 public final class ProcessorOptions {
-	final static String dirNotWritable = "Output directory: %s is not writeable.";
-	final static String dirNotFoundMess = "Could not find output directory: %s.";
-	final static String dirIsFileMess = "Output path %s must be a directory.";
-	final static String fileNotFoundMess = "Could not find Profile file: %s.";
-	final static String fileisDirMess = "Profile path %s must be a file.";
+	final static String dirNotWritable = "Output directory: %s is not writeable."; //$NON-NLS-1$
+	// private final static String dirNotFoundMess = "Could not find output directory: %s."; //$NON-NLS-1$
+	// private final static String dirIsFileMess = "Output path %s must be a directory."; //$NON-NLS-1$
+	final static String fileNotFoundMess = "Could not find Profile file: %s."; //$NON-NLS-1$
+	final static String noFileArgMess = "No [FILE] argument passed to processor."; //$NON-NLS-1$
+	final static String fileisDirMess = "Profile path %s must be a file not a directory."; //$NON-NLS-1$
+	final static String usageOpt = "-h"; //$NON-NLS-1$
+	final static String outputOpt = "-o"; //$NON-NLS-1$
+	final static String period = "."; //$NON-NLS-1$
 	final Path outDir;
 	final boolean isUsage;
-	final List<File> toProcess;
+	final Path profileFile;
 
 	/**
 	 * 
 	 */
-	private ProcessorOptions(final boolean isToCurrentDir, final boolean isUsage, List<File> toProcess) {
-		this.outDir = (isToCurrentDir) ? new File(".").toPath() : null;
+	private ProcessorOptions(final boolean isToCurrentDir,
+			final boolean isUsage, final Path profileFile) {
+		this.outDir = (isToCurrentDir) ? new File(period).toPath() : null;
 		if (this.outDir != null && !this.outDir.toFile().canWrite()) {
-			throw new AccessControlException(String.format(dirNotWritable, this.outDir.toAbsolutePath().toString()));
+			throw new AccessControlException(String.format(dirNotWritable,
+					this.outDir.toAbsolutePath().toString()));
 		}
 		this.isUsage = isUsage;
-		this.toProcess = Collections.unmodifiableList(toProcess);
+		this.profileFile = profileFile;
 	}
 
 	boolean isToDir() {
@@ -53,46 +58,43 @@ public final class ProcessorOptions {
 	 *         arguments
 	 * @throws FileNotFoundException
 	 */
-	final static ProcessorOptions fromArgs(final String[] args) throws FileNotFoundException {
-		List<File> toProcess = new ArrayList<>();
+	final static ProcessorOptions fromArgs(final String[] args)
+			throws FileNotFoundException {
 		// Path outDir = null; // Hold the output directory path, if any
 		boolean isToCurrentDir = false; // Flag when output directory requested
 		boolean isUsage = false; // Flag help requested
+		Path profileFile = null;
 		// Process args in a loop
 		for (String arg : args) {
 			// Help
-			if (arg.equals("-h")) {
+			if (arg.equals(usageOpt)) {
 				isUsage = true;
 				continue;
 			}
 			// Output dir
-			if (arg.equals("-o")) {
+			if (arg.equals(outputOpt)) {
 				isToCurrentDir = true;
 				continue;
 			}
-			// It's a file arg of some kind
+			// It's a file arg for the profile file
 			File toTest = new File(arg);
-			// Are we processing an output dir
-			// if (isToFile && outDir == null) {
-			// if (!toTest.isDirectory()) {
-			// // Output directory isn't a directory
-			// String message = toTest.exists() ? dirIsFileMess :
-			// dirNotFoundMess;
-			// throw new FileNotFoundException(String.format(message,
-			// toTest.getAbsolutePath()));
-			// }
-			// outDir = toTest.toPath();
-			// // Or treat as a profile file
-			// } else if (toTest.isFile()) {
 			if (toTest.isFile()) {
-				toProcess.add(toTest);
+				profileFile = toTest.toPath();
 			} else {
 				// METS Profile file isn't a file
-				String message = toTest.exists() ? fileisDirMess : fileNotFoundMess;
-				throw new FileNotFoundException(String.format(message, toTest.getAbsolutePath()));
+				// If it exists it's a directory
+				if (toTest.exists()) {
+					throw new IllegalArgumentException(String.format(fileisDirMess, toTest.getAbsolutePath()));
+				}
+				throw new FileNotFoundException(
+						String.format(fileNotFoundMess, toTest.getAbsolutePath()));
 			}
 		}
+		// No profile file arg and no usage request is a bail
+		if (!isUsage && profileFile == null) {
+			throw new IllegalArgumentException(noFileArgMess);
+		}
 		// Return a shiny new ProcessorOptions instance
-		return new ProcessorOptions(isToCurrentDir, isUsage, toProcess);
+		return new ProcessorOptions(isToCurrentDir, isUsage, profileFile);
 	}
 }

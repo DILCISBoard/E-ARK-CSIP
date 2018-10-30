@@ -15,7 +15,7 @@ import org.xml.sax.SAXException;
  *
  * @version 0.1
  * 
- * Created 10 Jul 2018:09:00:06
+ * Created 25 Oct 2018:09:00:06
  */
 
 public final class OutputHandler {

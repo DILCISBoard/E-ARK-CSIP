@@ -1,8 +1,5 @@
 package eu.dilcis.csip;
 
-import java.io.File;
-import java.io.IOException;
-
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -17,7 +14,7 @@ import org.xml.sax.helpers.DefaultHandler;
  *
  * @version 0.1
  * 
- *          Created 22 Jun 2018:01:25:39
+ * Created 24 Oct 2018:01:25:39
  */
 
 public final class MetsProfileXmlHandler extends DefaultHandler {
@@ -54,20 +51,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	// SAX DocumentHandler methods
 	// ===========================================================
 
-	public void processProfile() throws IOException, SAXException {
-		for (File dirToParse : this.opts.toProcess) {
-			for (File child : dirToParse.listFiles()) {
-				if (child.isFile() && child.getName().toLowerCase()
-						.endsWith(xmlExtension)) {
-					if (this.opts.isToDir()) {
-						this.outHandler = new OutputHandler(child);
-					} else {
-						this.outHandler = new OutputHandler();
-					}
-					saxParser.parse(child, this);
-				}
-			}
-		}
+	public void processProfile() {
 
 	}
 
