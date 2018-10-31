@@ -3,6 +3,7 @@ package eu.dilcis.csip;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -61,6 +62,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private boolean inRequirement = false;
 	private List<Requirement> requirements = new ArrayList<>();
 	private Requirement.Builder reqBuilder = new Requirement.Builder();
+	private String currDefTerm = null;
 
 	public MetsProfileXmlHandler(final ProcessorOptions opts)
 			throws UnsupportedEncodingException, IOException {
@@ -84,12 +86,10 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			Attributes attrs) throws SAXException {
 		// Get the current ele name
 		this.currEleName = qName;
+		this.outHandler.voidBuffer();
 		if (isRequirementEle(this.currEleName)) {
 			this.inRequirement = true;
-			this.reqBuilder = new Requirement.Builder();
 			this.processRequirementAttrs(attrs);
-		} else if (this.inRequirement) {
-
 		} else if (Section.isSection(this.currEleName)) {
 			Section section = Section.fromEleName(this.currEleName);
 			this.processSection(section);
@@ -99,15 +99,21 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	@Override
 	public void endElement(String namespaceURI, String sName, // simple name
 			String qName  // qualified name
-	) {
+	) throws SAXException {
 		this.currEleName = qName;
 		if (isRequirementEle(this.currEleName)) {
-			this.inRequirement = false;
+			this.processRequirementEle();
 		} else if (this.inRequirement) {
+			this.processRequirementChild();
 		}
 		this.outHandler.voidBuffer();
-
 		this.currEleName = null;
+	}
+
+	@Override
+	public void endDocument() throws SAXException {
+		this.outHandler.emit("Total Requirements: " + this.requirements.size());
+		this.outHandler.nl();
 	}
 
 	private void processRequirementAttrs(Attributes attrs) {
@@ -118,6 +124,36 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			if (empty.equals(aName))
 				aName = attrs.getQName(i);
 			this.reqBuilder.processAttr(aName, attrs.getValue(i));
+		}
+	}
+
+	private void processRequirementEle() throws SAXException {
+		this.inRequirement = false;
+		final Requirement req = this.reqBuilder.build();
+		if (req.id == RequirementId.DEFAULT)
+			return;
+		this.requirements.add(req);
+		this.outHandler.emit(req.toString());
+		this.reqBuilder = new Requirement.Builder();
+		this.outHandler.nl();
+	}
+
+	private void processRequirementChild() {
+		switch (this.currEleName) {
+		case MetsProfileXmlHandler.headEle:
+			this.reqBuilder.name(this.outHandler.getBufferValue());
+			break;
+		case MetsProfileXmlHandler.defTermEle:
+			this.currDefTerm = this.outHandler.getBufferValue();
+			break;
+		case MetsProfileXmlHandler.defDefEle:
+			this.reqBuilder.defPair(this.currDefTerm, this.outHandler.getBufferValue());
+			break;
+		case MetsProfileXmlHandler.paraEle:
+			this.reqBuilder.description(this.outHandler.getBufferValue());
+			break;
+		default:
+			break;
 		}
 	}
 
@@ -137,13 +173,29 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	}
 
 	static class RequirementId implements Comparable<RequirementId> {
-		static final String csipPrefix = "CSIP";
+		final static String defPrefix = "PREF";
+		final static int defNumber = -1;
+		public final static RequirementId DEFAULT = new RequirementId();
 		final String prefix;
 		final int number;
 
+		private RequirementId() {
+			this(defPrefix, defNumber);
+		}
+
 		private RequirementId(final String prefix, final int number) {
+			super();
 			this.prefix = prefix;
 			this.number = number;
+		}
+
+		/**
+		 * @see java.lang.Object#toString()
+		 */
+		@Override
+		public String toString() {
+			return "RequirementId [prefix=" + this.prefix + ", number="
+					+ this.number + "]";
 		}
 
 		@Override
@@ -153,6 +205,47 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 						: (this.number == other.number) ? 0 : -1;
 			}
 			return this.prefix.compareTo(other.prefix);
+		}
+
+		/**
+		 * @see java.lang.Object#hashCode()
+		 */
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + this.number;
+			result = prime * result
+					+ ((this.prefix == null) ? 0 : this.prefix.hashCode());
+			return result;
+		}
+
+		/**
+		 * @see java.lang.Object#equals(java.lang.Object)
+		 */
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) {
+				return true;
+			}
+			if (obj == null) {
+				return false;
+			}
+			if (!(obj instanceof RequirementId)) {
+				return false;
+			}
+			RequirementId other = (RequirementId) obj;
+			if (this.number != other.number) {
+				return false;
+			}
+			if (this.prefix == null) {
+				if (other.prefix != null) {
+					return false;
+				}
+			} else if (!this.prefix.equals(other.prefix)) {
+				return false;
+			}
+			return true;
 		}
 
 		static RequirementId fromIdString(final String idString) {
@@ -172,39 +265,160 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	}
 
 	static class Requirement {
+		public final static Requirement DEFAULT = new Requirement();
 		final RequirementId id;
 		final String name;
 		final String reqLevel;
-		final String description;
+		final String relMat;
+		final List<String> description;
 		final List<String> examples;
 		final String xPath;
 		final String cardinality;
 
+		private Requirement() {
+			this(RequirementId.DEFAULT, empty, empty, empty,
+					Collections.emptyList(), Collections.emptyList(), empty, empty);
+		}
+
 		private Requirement(final RequirementId id, final String name,
-				final String reqLevel, final String description,
-				final List<String> examples, final String xPath,
-				final String cardinality) {
+				final String reqLevel, final String relMat,
+				final List<String> description, final List<String> examples,
+				final String xPath, final String cardinality) {
 			super();
 			this.id = id;
 			this.name = name;
 			this.reqLevel = reqLevel;
+			this.relMat = relMat;
 			this.description = description;
 			this.examples = examples;
 			this.xPath = xPath;
 			this.cardinality = cardinality;
 		}
 
+		/**
+		 * @see java.lang.Object#toString()
+		 */
+		@Override
+		public String toString() {
+			return "Requirement [id=" + this.id + ", name=" + this.name
+					+ ", relMat=" + this.relMat + ", reqLevel=" + this.reqLevel
+					+ ", description=" + this.description + ", examples="
+					+ this.examples + ", xPath=" + this.xPath + ", cardinality="
+					+ this.cardinality + "]";
+		}
+
+		/**
+		 * @see java.lang.Object#hashCode()
+		 */
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((this.cardinality == null) ? 0
+					: this.cardinality.hashCode());
+			result = prime * result + ((this.description == null) ? 0
+					: this.description.hashCode());
+			result = prime * result
+					+ ((this.examples == null) ? 0 : this.examples.hashCode());
+			result = prime * result
+					+ ((this.id == null) ? 0 : this.id.hashCode());
+			result = prime * result
+					+ ((this.name == null) ? 0 : this.name.hashCode());
+			result = prime * result
+					+ ((this.relMat == null) ? 0 : this.relMat.hashCode());
+			result = prime * result
+					+ ((this.reqLevel == null) ? 0 : this.reqLevel.hashCode());
+			result = prime * result
+					+ ((this.xPath == null) ? 0 : this.xPath.hashCode());
+			return result;
+		}
+
+		/**
+		 * @see java.lang.Object#equals(java.lang.Object)
+		 */
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) {
+				return true;
+			}
+			if (obj == null) {
+				return false;
+			}
+			if (!(obj instanceof Requirement)) {
+				return false;
+			}
+			Requirement other = (Requirement) obj;
+			if (this.cardinality == null) {
+				if (other.cardinality != null) {
+					return false;
+				}
+			} else if (!this.cardinality.equals(other.cardinality)) {
+				return false;
+			}
+			if (this.description == null) {
+				if (other.description != null) {
+					return false;
+				}
+			} else if (!this.description.equals(other.description)) {
+				return false;
+			}
+			if (this.examples == null) {
+				if (other.examples != null) {
+					return false;
+				}
+			} else if (!this.examples.equals(other.examples)) {
+				return false;
+			}
+			if (this.id == null) {
+				if (other.id != null) {
+					return false;
+				}
+			} else if (!this.id.equals(other.id)) {
+				return false;
+			}
+			if (this.name == null) {
+				if (other.name != null) {
+					return false;
+				}
+			} else if (!this.name.equals(other.name)) {
+				return false;
+			}
+			if (this.relMat == null) {
+				if (other.relMat != null) {
+					return false;
+				}
+			} else if (!this.relMat.equals(other.relMat)) {
+				return false;
+			}
+			if (this.reqLevel == null) {
+				if (other.reqLevel != null) {
+					return false;
+				}
+			} else if (!this.reqLevel.equals(other.reqLevel)) {
+				return false;
+			}
+			if (this.xPath == null) {
+				if (other.xPath != null) {
+					return false;
+				}
+			} else if (!this.xPath.equals(other.xPath)) {
+				return false;
+			}
+			return true;
+		}
+
 		static class Builder {
 			private RequirementId id;
-			private String name = "name";
-			private String reqLevel = "DEFAULT";
-			private String description = "Description";
-			private List<String> examples = new ArrayList<>();
-			private String xPath = "xpath";
-			private String cardinality = "cardinality";
+			private String name;
+			private String reqLevel;
+			private String relMat;
+			private List<String> description;
+			private List<String> examples;
+			private String xPath;
+			private String cardinality;
 
 			public Builder() {
-				super();
+				this(Requirement.DEFAULT);
 			}
 
 			public Builder(Builder builder) {
@@ -216,8 +430,9 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 				this.id = req.id;
 				this.name = req.name;
 				this.reqLevel = req.reqLevel;
-				this.description = req.description;
-				this.examples = req.examples;
+				this.relMat = req.relMat;
+				this.description = new ArrayList<>(req.description);
+				this.examples = new ArrayList<>(req.examples);
 				this.xPath = req.xPath;
 				this.cardinality = req.cardinality;
 			}
@@ -231,6 +446,10 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 
 				case "REQLEVEL":
 					this.reqLevel(attValue);
+					break;
+
+				case "RELATEDMAT":
+					this.relMat(attValue);
 					break;
 
 				case "EXAMPLES":
@@ -267,6 +486,15 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			 * @param reqLevel
 			 *            the reqLevel to set
 			 */
+			public Builder relMat(String rlMt) {
+				this.relMat = rlMt;
+				return this;
+			}
+
+			/**
+			 * @param reqLevel
+			 *            the reqLevel to set
+			 */
 			public Builder reqLevel(String rqLvl) {
 				this.reqLevel = rqLvl;
 				return this;
@@ -277,7 +505,16 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			 *            the description to set
 			 */
 			public Builder description(String dscrptn) {
-				this.description = dscrptn;
+				this.description.add(dscrptn);
+				return this;
+			}
+
+			/**
+			 * @param description
+			 *            the description to set
+			 */
+			public Builder descriptions(List<String> dscrptns) {
+				this.description = new ArrayList<>(dscrptns);
 				return this;
 			}
 
@@ -286,7 +523,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			 *            the examples to set
 			 */
 			public Builder examples(List<String> xmpls) {
-				this.examples = xmpls;
+				this.examples = new ArrayList<>(xmpls);
 				return this;
 			}
 
@@ -294,8 +531,24 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			 * @param example
 			 *            the example to add
 			 */
-			public Builder example(String xmpls) {
-				this.examples.add(xmpls);
+			public Builder example(String xmpl) {
+				this.examples.add(xmpl);
+				return this;
+			}
+
+			/**
+			 * @param xPath
+			 *            the xPath to set
+			 */
+			public Builder defPair(String term, final String def) {
+				switch (term) {
+				case MetsProfileXmlHandler.xPathTerm:
+					return this.xPath(def);
+				case MetsProfileXmlHandler.cardTerm:
+					return this.cardinality(def);
+				default:
+					break;
+				}
 				return this;
 			}
 
@@ -319,8 +572,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 
 			public Requirement build() {
 				return new Requirement(this.id, this.name, this.reqLevel,
-						this.description, this.examples, this.xPath,
-						this.cardinality);
+						this.relMat, this.description, this.examples,
+						this.xPath, this.cardinality);
 			}
 		}
 	}
