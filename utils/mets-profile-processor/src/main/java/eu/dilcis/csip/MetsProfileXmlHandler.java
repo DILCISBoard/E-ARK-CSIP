@@ -31,6 +31,16 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	static final String empty = ""; //$NON-NLS-1$
 	static final String atValOpen = "=\""; //$NON-NLS-1$
 	static final String atValClosed = "\""; //$NON-NLS-1$
+	static final String requirementEle = "requirement"; //$NON-NLS-1$
+	static final String descriptionEle = "description"; //$NON-NLS-1$
+	static final String headEle = "head"; //$NON-NLS-1$
+	static final String paraEle = "p"; //$NON-NLS-1$
+	static final String defListEle = "dl"; //$NON-NLS-1$
+	static final String defTermEle = "dt"; //$NON-NLS-1$
+	static final String defDefEle = "dd"; //$NON-NLS-1$
+	static final String xPathTerm = "METS XPath"; //$NON-NLS-1$
+	static final String cardTerm = "Cardinality"; //$NON-NLS-1$
+	static final String sectHeadTemplate = "5.3.%s Use of the METS %s (element %s)";
 
 	static final String xmlExtension = period + "xml"; //$NON-NLS-1$
 	static final String xmlProcInstr = "<?xml version='1.0' encoding='UTF-8'?>";  //$NON-NLS-1$
@@ -48,6 +58,9 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private OutputHandler outHandler;
 	private String currEleName;
 	private final ProcessorOptions opts;
+	private boolean inRequirement = false;
+	private List<Requirement> requirements = new ArrayList<>();
+	private Requirement.Builder reqBuilder = new Requirement.Builder();
 
 	public MetsProfileXmlHandler(final ProcessorOptions opts)
 			throws UnsupportedEncodingException, IOException {
@@ -66,39 +79,55 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	}
 
 	@Override
-	public void startDocument() throws SAXException {
-		// Output the XML processing instruction
-		this.outHandler.emit(xmlProcInstr);
-		this.outHandler.nl();
-	}
-
-	@Override
-	public void endDocument() {
-	}
-
-	@Override
 	public void startElement(String namespaceURI, String sName, // simple name
 			String qName, // qualified name
-			Attributes attrs) {
-		// Throw the text to output
-		this.outHandler.voidBuffer();
+			Attributes attrs) throws SAXException {
 		// Get the current ele name
-		this.currEleName = deriveEleName(sName, qName);
+		this.currEleName = qName;
+		if (isRequirementEle(this.currEleName)) {
+			this.inRequirement = true;
+			this.reqBuilder = new Requirement.Builder();
+			this.processRequirementAttrs(attrs);
+		} else if (this.inRequirement) {
+
+		} else if (Section.isSection(this.currEleName)) {
+			Section section = Section.fromEleName(this.currEleName);
+			this.processSection(section);
+		}
 	}
 
 	@Override
 	public void endElement(String namespaceURI, String sName, // simple name
 			String qName  // qualified name
 	) {
-		this.currEleName = deriveEleName(sName, qName);
+		this.currEleName = qName;
+		if (isRequirementEle(this.currEleName)) {
+			this.inRequirement = false;
+		} else if (this.inRequirement) {
+		}
 		this.outHandler.voidBuffer();
 
 		this.currEleName = null;
 	}
 
-	private static String deriveEleName(final String sName,
-			final String qName) {
-		return (empty.equals(sName)) ? qName : sName; // element name
+	private void processRequirementAttrs(Attributes attrs) {
+		if (attrs == null)
+			return;
+		for (int i = 0; i < attrs.getLength(); i++) {
+			String aName = attrs.getLocalName(i); // Attr name
+			if (empty.equals(aName))
+				aName = attrs.getQName(i);
+			this.reqBuilder.processAttr(aName, attrs.getValue(i));
+		}
+	}
+
+	private void processSection(final Section section) throws SAXException {
+		this.outHandler.emit(section.getFullHeader());
+		this.outHandler.nl();
+	}
+
+	private static boolean isRequirementEle(final String eleName) {
+		return requirementEle.equals(eleName);
 	}
 
 	@Override
@@ -108,6 +137,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	}
 
 	static class RequirementId implements Comparable<RequirementId> {
+		static final String csipPrefix = "CSIP";
 		final String prefix;
 		final int number;
 
@@ -126,7 +156,18 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		}
 
 		static RequirementId fromIdString(final String idString) {
-			return new RequirementId("DEF", 0);
+			StringBuffer prefixBuff = new StringBuffer();
+			StringBuffer numBuff = new StringBuffer();
+			for (int i = 0; i < idString.length(); i++) {
+				char c = idString.charAt(i);
+				if (Character.isDigit(c)) {
+					numBuff.append(c);
+				} else {
+					prefixBuff.append(c);
+				}
+			}
+			return new RequirementId(prefixBuff.toString(),
+					Integer.parseInt(numBuff.toString()));
 		}
 	}
 
@@ -181,6 +222,29 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 				this.cardinality = req.cardinality;
 			}
 
+			public Builder processAttr(final String attName,
+					final String attValue) {
+				switch (attName) {
+				case "ID":
+					this.id(RequirementId.fromIdString(attValue));
+					break;
+
+				case "REQLEVEL":
+					this.reqLevel(attValue);
+					break;
+
+				case "EXAMPLES":
+					for (String example : attValue.split(" ")) {
+						this.example(example);
+					}
+					break;
+
+				default:
+					break;
+				}
+				return this;
+			}
+
 			/**
 			 * @param id
 			 *            the id to set
@@ -227,6 +291,15 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			}
 
 			/**
+			 * @param example
+			 *            the example to add
+			 */
+			public Builder example(String xmpls) {
+				this.examples.add(xmpls);
+				return this;
+			}
+
+			/**
 			 * @param xPath
 			 *            the xPath to set
 			 */
@@ -249,6 +322,61 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 						this.description, this.examples, this.xPath,
 						this.cardinality);
 			}
+		}
+	}
+
+	static enum Section {
+		ROOT("metsRootElement", "1", "root element", "mets"), HEADER("metsHdr",
+				"2", "header", "metsHdr"), DMD_SEC("dmdSec", "3",
+						"descriptive metadata", "dmdSec"), AMD_SEC("amdSec",
+								"4", "administrative metadata",
+								"amdSec"), FILE_SEC("fileSec", "5",
+										"file section",
+										"fileSec"), STRUCT_MAP("structMap", "6",
+												"structural map",
+												"structMap"), STRUCT_LINK(
+														"structLink", "7",
+														"structural link",
+														"structLink");
+
+		final String eleName;
+		final String sectName;
+		final String sectSubHeadNum;
+		final String metsEleName;
+
+		private Section(final String eleName, final String sectSubHeadNum,
+				final String sectName, final String metsEleName) {
+			this.eleName = eleName;
+			this.sectName = sectName;
+			this.sectSubHeadNum = sectSubHeadNum;
+			this.metsEleName = metsEleName;
+		}
+
+		public String getFullHeader() {
+			return String.format(sectHeadTemplate, this.sectSubHeadNum,
+					this.sectName, this.metsEleName);
+		}
+
+		public String getDirName() {
+			return this.metsEleName;
+		}
+
+		public static boolean isSection(final String eleName) {
+			for (Section sect : Section.values()) {
+				if (sect.eleName.equals(eleName)) {
+					return true;
+				}
+			}
+			return false;
+		}
+
+		public static Section fromEleName(final String eleName) {
+			for (Section sect : Section.values()) {
+				if (sect.eleName.equals(eleName)) {
+					return sect;
+				}
+			}
+			return null;
 		}
 	}
 }
