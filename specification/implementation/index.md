@@ -6,8 +6,8 @@ As explained above, any implementation is destined to be outdated sooner or late
 
 ## Contents
 - [4.	CS IP structure](structure/)
-  - [4.1 Folder structure of the CS IP](structure/#41-folder-structure-of-the-cs-ip)
-  - [4.2 Implementing the structure](structure/#42-implementing-the-structure)
+  - [4.1 Folder structure of the CS IP](structure/folders)
+  - [4.2 Implementing the structure](structure/implementation)
 - [5. Use of metadata](metadata/)
 	- [5.1. General requirements for metadata in a CS IP Information Package](metadata/#51-general-requirements-for-metadata-in-a-cs-ip-information-package)
 	- [5.2. General requirements for the use of metadata](metadata/#52-general-requirements-for-the-use-of-metadata)
