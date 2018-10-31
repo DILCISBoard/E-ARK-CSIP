@@ -12,6 +12,8 @@ In more technical terms the CS IP makes an effort to control metadata which allo
 Most crucially, we regard descriptive metadata and most of detailed technical metadata to not belong in the scope of the CS IP. As such, the CS IP itself does not aim to provide detailed semantic interoperability between different systems. However, as noted in Section 1.2, implementers are welcome to use the
 construct of Content Information Type Specifications to achieve an even higher level of interoperability.
 
+We implement the core metadata requirements with the "Metadata Encoding & Transmission Standard" (METS) http://www.loc.gov/standards/mets/
+
 Some of the core metadata requirements are already visible from the structure presented in the previous Section. Most crucially the CS IP requires that all Information Packages MUST include one and only one METS file in the Information Package folder of the package, named `METS.xml`. In addition, the package CAN include one `METS.xml` file in each of the representation folders. These files will be referred to as “root METS” and “representation METS” respectively in the rest of this document. The detailed specification of using METS within the CS IP is available in Section 5.3.
 
 In addition to the METS files the CS IP recommends the inclusion of PREMIS metadata in appropriate preservation metadata folders. This is especially relevant when aiming for an interoperable approach towards provenance and access to Information Packages. However, we recognise that, especially in the
