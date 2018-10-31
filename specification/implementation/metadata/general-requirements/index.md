@@ -49,7 +49,7 @@ include, validate and modify the package, it also brings the need for a clear me
 
 For example, the METS specification requires for referencing to:
 
-- descriptive and administrative metadata files described in the `amdSec` and dmdSec elements;
+- descriptive and administrative metadata files described in the `amdSec` and `dmdSec` elements;
 - content (data) files, components of documentation and schemas described in the `fileSec` element;
 - representation METS files described in the root METS file’s `structMap` element.
 
