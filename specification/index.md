@@ -32,8 +32,8 @@ Contents
 
 [PART II: Implementation of the CS IP](implementation)
 - [4.	CS IP structure](implementation/structure/)
-  - [4.1 Folder structure of the CS IP](implementation/structure/#41-folder-structure-of-the-cs-ip)
-  - [4.2 Implementing the structure](implementation/structure/#42-implementing-the-structure)
+  - [4.1 Folder structure of the CS IP](implementation/structure/folders)
+  - [4.2 Implementing the structure](implementation/structure/implementation)
 - [5. Use of metadata](implementation/metadata/)
 	- [5.1. General requirements for metadata in a CS IP Information Package](implementation/metadata/#51-general-requirements-for-metadata-in-a-cs-ip-information-package)
 	- [5.2. General requirements for the use of metadata](implementation/metadata/#52-general-requirements-for-the-use-of-metadata)
