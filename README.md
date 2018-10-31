@@ -37,3 +37,4 @@ Project root
 TODO
 ----
 - [] Decide if we want to retain old schema in the archive. Perhaps the archive should store previous versions of the specification site?
+- [] Stronger data typing for [`eu.dilcis.csip.MetsProfileXmlHandler.Requirement`](./utils/mets-profile-processor/src/main/java/eu/dilcis/csip/MetsProfileXmlHandler.java)

@@ -13,7 +13,7 @@ import java.security.AccessControlException;
  *
  * @version 0.1
  * 
- *          Created 23 Oct 2018:20:08:51
+ * Created 23 Oct 2018:20:08:51
  */
 
 public final class ProcessorOptions {
@@ -35,6 +35,7 @@ public final class ProcessorOptions {
 	 */
 	private ProcessorOptions(final boolean isToCurrentDir,
 			final boolean isUsage, final Path profileFile) {
+		super();
 		this.outDir = (isToCurrentDir) ? new File(period).toPath() : null;
 		if (this.outDir != null && !this.outDir.toFile().canWrite()) {
 			throw new AccessControlException(String.format(dirNotWritable,

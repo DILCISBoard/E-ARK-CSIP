@@ -26,6 +26,7 @@ public final class OutputHandler {
 	 * Default constructor, output to STDOUT
 	 */
 	public OutputHandler() throws UnsupportedEncodingException {
+		super();
 		this.out = new OutputStreamWriter(System.out, "UTF8");
 	}
 
@@ -33,6 +34,7 @@ public final class OutputHandler {
 	 * Constructor to output to a fix file named original_filename.fix
 	 */
 	public OutputHandler(final File xmlFile) throws IOException {
+		super();
 		File parent = xmlFile.getParentFile();
 		File output = new File(parent, xmlFile.getName() + ".fix");
 		this.out = new FileWriter(output);
