@@ -60,8 +60,9 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private String currEleName;
 	private final ProcessorOptions opts;
 	private boolean inRequirement = false;
-	private List<Requirement> requirements = new ArrayList<>();
+	private MarkdownTableGenerator tableGen; 
 	private Requirement.Builder reqBuilder = new Requirement.Builder();
+	private int reqCounter = 0;
 	private String currDefTerm = null;
 
 	public MetsProfileXmlHandler(final ProcessorOptions opts)
@@ -83,7 +84,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	@Override
 	public void startElement(String namespaceURI, String sName, // simple name
 			String qName, // qualified name
-			Attributes attrs) throws SAXException {
+			Attributes attrs) {
 		// Get the current ele name
 		this.currEleName = qName;
 		this.outHandler.voidBuffer();
@@ -92,7 +93,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			this.processRequirementAttrs(attrs);
 		} else if (Section.isSection(this.currEleName)) {
 			Section section = Section.fromEleName(this.currEleName);
-			this.processSection(section);
+			this.startSection(section);
 		}
 	}
 
@@ -105,6 +106,9 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			this.processRequirementEle();
 		} else if (this.inRequirement) {
 			this.processRequirementChild();
+		} else if (Section.isSection(this.currEleName)) {
+			this.tableGen.toTable(this.outHandler);
+			this.reqCounter += this.tableGen.requirements.size();
 		}
 		this.outHandler.voidBuffer();
 		this.currEleName = null;
@@ -112,7 +116,11 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 
 	@Override
 	public void endDocument() throws SAXException {
-		this.outHandler.emit("Total Requirements: " + this.requirements.size());
+		this.outHandler.nl();
+		this.outHandler.nl();
+		this.outHandler.emit("=======================================");
+		this.outHandler.nl();
+		this.outHandler.emit("Total Requirements: " + this.reqCounter);
 		this.outHandler.nl();
 	}
 
@@ -127,15 +135,13 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		}
 	}
 
-	private void processRequirementEle() throws SAXException {
+	private void processRequirementEle() {
 		this.inRequirement = false;
 		final Requirement req = this.reqBuilder.build();
 		if (req.id == RequirementId.DEFAULT)
 			return;
-		this.requirements.add(req);
-		this.outHandler.emit(req.toString());
+		this.tableGen.add(req);
 		this.reqBuilder = new Requirement.Builder();
-		this.outHandler.nl();
 	}
 
 	private void processRequirementChild() {
@@ -147,7 +153,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			this.currDefTerm = this.outHandler.getBufferValue();
 			break;
 		case MetsProfileXmlHandler.defDefEle:
-			this.reqBuilder.defPair(this.currDefTerm, this.outHandler.getBufferValue());
+			this.reqBuilder.defPair(this.currDefTerm,
+					this.outHandler.getBufferValue());
 			break;
 		case MetsProfileXmlHandler.paraEle:
 			this.reqBuilder.description(this.outHandler.getBufferValue());
@@ -157,9 +164,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		}
 	}
 
-	private void processSection(final Section section) throws SAXException {
-		this.outHandler.emit(section.getFullHeader());
-		this.outHandler.nl();
+	private void startSection(final Section section) {
+		this.tableGen = new MarkdownTableGenerator(section);
 	}
 
 	private static boolean isRequirementEle(final String eleName) {
@@ -277,7 +283,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 
 		private Requirement() {
 			this(RequirementId.DEFAULT, empty, empty, empty,
-					Collections.emptyList(), Collections.emptyList(), empty, empty);
+					Collections.emptyList(), Collections.emptyList(), empty,
+					empty);
 		}
 
 		private Requirement(final RequirementId id, final String name,
@@ -630,6 +637,60 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 				}
 			}
 			return null;
+		}
+	}
+
+	static class MarkdownTableGenerator {
+		final static String tbleHead1 = "| ID | Name | Element/Attribute | Level | Description and usage | Cardinality |";
+		final static String tbleHead2 = "| -- | ---- | ----------------- |-------| --------------------- | ----------- |";
+
+		final List<Requirement> requirements = new ArrayList<>();
+		final Section section;
+
+		MarkdownTableGenerator(final Section section) {
+			this.section = section;
+		}
+
+		boolean add(Requirement req) {
+			return this.requirements.add(req);
+		}
+
+		void toTable(OutputHandler outHandler) throws SAXException {
+			if (this.requirements.isEmpty()) return;
+			outHandler.emit(tbleHead1);
+			outHandler.nl();
+			outHandler.emit(tbleHead2);
+			outHandler.nl();
+			for (Requirement req : this.requirements) {
+				tableRow(outHandler, req);
+			}
+		}
+		
+		static void tableRow(OutputHandler outputHandler, final Requirement req) throws SAXException {
+			outputHandler.emit("|");
+			outputHandler.emit(tableCell(req.id.prefix + req.id.number));
+			outputHandler.emit(tableCell(req.name));
+			outputHandler.emit(tableCell(req.xPath));
+			outputHandler.emit(tableCell(req.reqLevel));
+			outputHandler.emit(tableCell(concatDescription(req.description)));
+			outputHandler.nl();
+		}
+		
+		static String tableCell(final String cellVal) {
+			StringBuffer buff = new StringBuffer(" ");
+			buff.append(cellVal);
+			buff.append(" |");
+			return buff.toString();
+		}
+		
+		static String concatDescription(List<String> description) {
+			if (description.isEmpty()) return "  ";
+			StringBuffer buff = new StringBuffer(description.get(0));
+			for (int i = 1; i < description.size(); i++) {
+				buff.append("<br/>");
+				buff.append(description.get(i));
+			}
+			return buff.toString();
 		}
 	}
 }
