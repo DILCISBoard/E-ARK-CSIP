@@ -673,6 +673,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			outputHandler.emit(tableCell(req.xPath));
 			outputHandler.emit(tableCell(req.reqLevel));
 			outputHandler.emit(tableCell(concatDescription(req.description)));
+			outputHandler.emit(tableCell(req.cardinality));
 			outputHandler.nl();
 		}
 		
