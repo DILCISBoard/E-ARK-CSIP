@@ -1,0 +1,12 @@
+dist: trusty
+sudo: required
+
+language: java
+jdk:
+  - openjdk8
+  - oraclejdk8
+
+script:
+  - cd utils/mets-profile-processor
+  - mvn clean package
+  - java -jar target/mets-profile-proc.jar ../../profile/CSIP.xml
