@@ -12,32 +12,10 @@ follow the requirements below:
 
 The specific requirements for elements, sub-elements and attributes are listed in the following table. Note that use of the stream and transformFile elements are not discussed below. Implementers wishing to use either of these METS elements should follow the requirements in the METS documentation.
 
-| ID | Name | Element/Attribute | Description and usage | Cardinality |
-| -- | ---- | ----------------- | --------------------- | ----------- |
-| <a name="CSIP56"></a>CSIP56 | File section | fileSec | Recommended to include one fileSec element in each METS file | 0..1 |
-| <a name="CSIP57"></a>CSIP57 | File group | fileSec/fileGrp | This specification requires that one specific occurrence of the fileGrp element is included as described above. Implementers are welcome to define and add additional file groups necessary for internal purposes. The main fileGrp element includes additional nested fileGrp elements, one for each folder of the package (except metadata described in amdSec and dmdSec). | 1..n |
-| <a name="CSIP58"></a>CSIP58 | File group version date | fileSec/fileGrp/@VERSDATE | Version date of the file grouping | 0..1 |
-| <a name="CSIP59"></a>CSIP59 | Reference to administrative metadata | fileSec/fileGrp/@ADMID | In case administrative metadata is available about the file group, this element must reference the appropriate ID of the administrative metadata section. | 0..1 |
-| <a name="CSIP60"></a>CSIP60 | File group intended use | fileSec/fileGrp/@USE | Required in CS IP with one occurrence bearing the values “Root” (for the root fileGrp element and the names of appropriate folders for nested fileGrp occurrences. | 1..1 |
-| <a name="CSIP61"></a>CSIP61 | Files | fileSec/fileGrp/file | The CS IP requires that fileGrp must contain at least one file element pointing to described content files | 1..n |
-| <a name="CSIP62"></a>CSIP62 | File element ID | fileSec/fileGrp/file/@ID | Mandatory, must be unique across the package | 1..1 |
-| <a name="CSIP63"></a>CSIP63 | Mime type of referenced file | fileSec/fileGrp/file/@MIMETYPE | The IANA mime type for the wrapped or linked file. Required by the Common Specification. | 1..1 |
-| <a name="CSIP64"></a>CSIP64 | File sequencing | fileSec/fileGrp/file/@SEQ | Used to describe the sequence of files listed within the fileGrp element | 0..1 |
-| <a name="CSIP65"></a>CSIP65 | File size | fileSec/fileGrp/file/@SIZE | Size of the linked or embedded file in bytes. Required by the Common Specification | 1..1 |
-| <a name="CSIP66"></a>CSIP66 | Date file created | fileSec/fileGrp/file/@CREATED | Date the embedded/linked file was created. Required by the Common Specification | 1..1 |
-| <a name="CSIP67"></a>CSIP67 | File checksum | fileSec/fileGrp/file/@CHECKSUM | The checksum of the embedded/linked file. Required by the Common Specification | 1..1 |
-| <a name="CSIP68"></a>CSIP68 | File checksum type | fileSec/fileGrp/file/@CHECKSUMTYPE | The type of checksum used for the embedded/linked file. Required by the Common Specification | 1..1 |
-| <a name="CSIP69"></a>CSIP69 | File owner ID | fileSec/fileGrp/file/@OWNERID | Unique ID of the file assigned by its owner | 0..1 |
-| <a name="CSIP70"></a>CSIP70 | Reference to administrative metadata | fileSec/fileGrp/file/@ADMID | In case administrative metadata is available about the file, this element must referencethe appropriate ID of the administrative metadata section. | 0..1 |
-| <a name="CSIP71"></a>CSIP71 | Reference to descriptive metadata | fileSec/fileGrp/file/@DMDID | Value for the ID attribute of the dmdSec containing metadata describing the content files listed in this file element. | 0..1 |
-| <a name="CSIP72"></a>CSIP72 | File intended use | fileSec/fileGrp/file/@USE | Statement about intended use of the files | 0..1 |
-| <a name="CSIP73"></a>CSIP73 | File location | fileSec/fileGrp/file/FLocat | The location of each file within the information package must be given by the `<FLocat>` element using the same rules as for referencing metadata files.| 1..1 |
-| <a name="CSIP74"></a>CSIP74 | File locator | fileSec/fileGrp/file/FLocat/@LOCTYPE | Mandatory locator pointing to the external file. | 1..1 |
-| <a name="CSIP75"></a>CSIP75 | Locator type | fileSec/fileGrp/file/FLocat/@LOCTYPE | Within the CS IP the value of @LOCTYPE attribute must be "URL". | 1..1 |
-| <a name="CSIP76"></a>CSIP76 | XLink type | fileSec/fileGrp/file/FLocat/@xlink:type | The type of the link. The @xlink:type attribute is mandatory in the CS IP | 1..1 |
-| <a name="CSIP77"></a>CSIP77 | XLink type | fileSec/fileGrp/file/FLocat/@xlink:type | The CS IP requires the use of @xlink:type attribute with the fixed value “simple” | 1..1 |
-| <a name="CSIP78"></a>CSIP78 | XLink location | dmdSec/mdRef/@xlink:href | The actual location of the resource.<br/>This specification recommends the recording of an URL type filepath within this attribute.<br/>Further, the filepath must be decoded consistently throughout all mdRef elements within the information package, and follow the requirements for referencing as described in Section 5.2. | 1..1 |
-| <a name="CSIP79"></a>CSIP79 | File intended use | fileSec/fileGrp/file/FLocat/@USE | Statement about intended use of the linked file | 0..1 |
+@@DONTDELETE@@
+REQUIREMENTS_TABLE
+Template marker for page generation from profile.
+@@DONTDELETE@@
 
 Example of the fileSec element:
 ```xml
