@@ -18,7 +18,7 @@ CSIPSTR2: The Information Package folder SHOULD be named with the ID or name of 
 CSIPSTR3: The Information Package folder CAN be compressed (for example by using TAR or ZIP);
 
 <a name="CSIPSTR4"></a>
-CSIPSTR4: The Information Package folder MUST include a metadata file named METS.xml, which MUST include information about the identity and structure of the package and its components at a minimum down to a general description or mention of each representation. It CAN include information about the structure of each representation and its components ;
+CSIPSTR4: The Information Package folder MUST include a metadata file named `METS.xml`, which MUST include information about the identity and structure of the package and its components at a minimum down to a general description or mention of each representation. It CAN include information about the structure of each representation and its components;
 
 <a name="CSIPSTR5"></a>
 CSIPSTR5: The Information Package folder MUST include a folder named `metadata`, which MUST include at least all metadata relevant for the whole package
@@ -42,7 +42,7 @@ CSIPSTR10: The `representations` folder MUST include a sub-folder for each indiv
 CSIPSTR11: The representation folder MUST include a sub-folder named `data` which includes all data constituting the representation ;
 
 <a name="CSIPSTR12"></a>
-CSIPSTR12: The representation folder SHOULD include a metadata file named METS.xml which then MUST include information about the identity and structure of the representation and its components ;
+CSIPSTR12: The representation folder SHOULD include a metadata file named `METS.xml` which then MUST include information about the identity and structure of the representation and its components;
 
 <a name="CSIPSTR13"></a>
 CSIPSTR13: The representation folder CAN include a sub-folder named `metadata` which CAN include all metadata about the specific representation
