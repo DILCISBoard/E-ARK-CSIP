@@ -1,8 +1,8 @@
 # 5. Use of metadata
 ## Contents
-- [5. Use of metadata](metadata/)
-	- [5.1. General requirements for metadata in a CS IP Information Package](general-requirments/#51-general-requirements-for-metadata-in-a-cs-ip-information-package)
-	- [5.2. General requirements for the use of metadata](general-requirments/#52-general-requirements-for-the-use-of-metadata)
+- [5. Use of metadata](/)
+	- [5.1. General requirements for metadata in a CS IP Information Package](general-requirements/#51-general-requirements-for-metadata-in-a-cs-ip-information-package)
+	- [5.2. General requirements for the use of metadata](general-requirements/#52-general-requirements-for-the-use-of-metadata)
 	- [5.3. Use of METS](mets/)
     - [5.3.1.	Use of the METS root element (element mets)](mets/mets-root/)
     - [5.3.2.	Use of the METS header (element metsHdr)](mets/metshdr/)
