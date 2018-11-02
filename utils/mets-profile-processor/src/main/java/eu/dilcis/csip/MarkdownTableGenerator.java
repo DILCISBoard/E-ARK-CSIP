@@ -13,7 +13,7 @@ class MarkdownTableGenerator {
 	final static String spcdCellDiv = " |"; //$NON-NLS-1$
 	final static String space = " "; //$NON-NLS-1$
 	final static String anchorOpen = "<a name=\""; //$NON-NLS-1$
-	final static String anchorClose = "></a>"; //$NON-NLS-1$
+	final static String anchorClose = "\"></a>"; //$NON-NLS-1$
 	final static String lineBreak = "<br/>"; //$NON-NLS-1$
 
 
