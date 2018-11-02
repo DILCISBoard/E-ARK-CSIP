@@ -27,7 +27,7 @@ public final class OutputHandler {
 	 */
 	public OutputHandler() throws UnsupportedEncodingException {
 		super();
-		this.out = new OutputStreamWriter(System.out, "UTF8");
+		this.out = new OutputStreamWriter(System.out, "UTF8"); //$NON-NLS-1$
 	}
 
 	/**
