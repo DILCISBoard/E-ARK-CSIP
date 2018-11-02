@@ -80,8 +80,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		if (Requirement.isRequirementEle(this.currEleName)) {
 			this.inRequirement = true;
 			this.processRequirementAttrs(attrs);
-		} else if (MarkdownTableGenerator.Section.isSection(this.currEleName)) {
-			MarkdownTableGenerator.Section section = MarkdownTableGenerator.Section.fromEleName(this.currEleName);
+		} else if (MarkdownTemplater.Section.isSection(this.currEleName)) {
+			MarkdownTemplater.Section section = MarkdownTemplater.Section.fromEleName(this.currEleName);
 			this.startSection(section);
 		}
 	}
@@ -95,9 +95,14 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			this.processRequirementEle();
 		} else if (this.inRequirement) {
 			this.processRequirementChild();
-		} else if (MarkdownTableGenerator.Section.isSection(this.currEleName)) {
-			this.tableGen.toTable(this.outHandler);
-			this.outHandler.nl();
+		} else if (MarkdownTemplater.Section.isSection(this.currEleName)) {
+			
+			try {
+				this.tableGen.toTable(this.outHandler);
+				this.outHandler.nl();
+			} catch (IOException excep) {
+				throw new SAXException("IOException generating markdown tables.", excep);
+			}
 			this.reqCounter += this.tableGen.requirements.size();
 		}
 		this.outHandler.voidBuffer();
@@ -106,12 +111,16 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 
 	@Override
 	public void endDocument() throws SAXException {
-		this.outHandler.nl();
-		this.outHandler.nl();
-		this.outHandler.emit("======================================="); //$NON-NLS-1$
-		this.outHandler.nl();
-		this.outHandler.emit("Total Requirements: " + this.reqCounter); //$NON-NLS-1$
-		this.outHandler.nl();
+		try {
+			this.outHandler.nl();
+			this.outHandler.nl();
+			this.outHandler.emit("======================================="); //$NON-NLS-1$
+			this.outHandler.nl();
+			this.outHandler.emit("Total Requirements: " + this.reqCounter); //$NON-NLS-1$
+			this.outHandler.nl();
+		} catch (IOException excep) {
+			throw new SAXException("IOException generating markdown tables.", excep);
+		}
 	}
 
 	private void processRequirementAttrs(Attributes attrs) {
@@ -154,7 +163,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		}
 	}
 
-	private void startSection(final MarkdownTableGenerator.Section section) {
+	private void startSection(final MarkdownTemplater.Section section) {
 		this.tableGen = new MarkdownTableGenerator(section);
 	}
 

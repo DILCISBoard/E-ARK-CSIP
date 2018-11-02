@@ -7,15 +7,13 @@ import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 
-import org.xml.sax.SAXException;
-
 /**
- * @author  <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
- *          <a href="https://github.com/carlwilson">carlwilson AT github</a>
+ * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
+ *         <a href="https://github.com/carlwilson">carlwilson AT github</a>
  *
  * @version 0.1
  * 
- * Created 25 Oct 2018:09:00:06
+ *          Created 25 Oct 2018:09:00:06
  */
 
 public final class OutputHandler {
@@ -45,7 +43,7 @@ public final class OutputHandler {
 	// ===========================================================
 
 	// Display text accumulated in the character buffer
-	public void echoText() throws SAXException {
+	public void echoText() throws IOException {
 		if (this.textBuffer == null)
 			return;
 		emit(this.textBuffer.toString());
@@ -54,24 +52,16 @@ public final class OutputHandler {
 
 	// Wrap I/O exceptions in SAX exceptions, to
 	// suit handler signature requirements
-	public void emit(String s) throws SAXException {
-		try {
-			this.out.write(s);
-			this.out.flush();
-		} catch (IOException e) {
-			throw new SAXException("I/O error", e);
-		}
+	public void emit(String s) throws IOException {
+		this.out.write(s);
+		this.out.flush();
 	}
 
 	// Start a new line
-	public void nl() throws SAXException {
+	public void nl() throws IOException {
 		String lineEnd = System.getProperty("line.separator");
-		try {
-			this.out.write(lineEnd);
-			this.out.flush();
-		} catch (IOException e) {
-			throw new SAXException("I/O error", e);
-		}
+		this.out.write(lineEnd);
+		this.out.flush();
 	}
 
 	/**
@@ -80,7 +70,7 @@ public final class OutputHandler {
 	public String getBufferValue() {
 		return (this.textBuffer == null) ? null : this.textBuffer.toString();
 	}
-	
+
 	/**
 	 * Get the value of the text buffer and erase the buffer contents
 	 */
@@ -89,7 +79,7 @@ public final class OutputHandler {
 		this.textBuffer = null;
 		return retVal;
 	}
-	
+
 	/**
 	 * Add text to the buffer / start a new bufer if necessary
 	 */
