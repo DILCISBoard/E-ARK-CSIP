@@ -88,7 +88,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		// Get the current ele name
 		this.currEleName = qName;
 		this.outHandler.voidBuffer();
-		if (isRequirementEle(this.currEleName)) {
+		if (Requirement.isRequirementEle(this.currEleName)) {
 			this.inRequirement = true;
 			this.processRequirementAttrs(attrs);
 		} else if (Section.isSection(this.currEleName)) {
@@ -102,12 +102,13 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			String qName  // qualified name
 	) throws SAXException {
 		this.currEleName = qName;
-		if (isRequirementEle(this.currEleName)) {
+		if (Requirement.isRequirementEle(this.currEleName)) {
 			this.processRequirementEle();
 		} else if (this.inRequirement) {
 			this.processRequirementChild();
 		} else if (Section.isSection(this.currEleName)) {
 			this.tableGen.toTable(this.outHandler);
+			this.outHandler.nl();
 			this.reqCounter += this.tableGen.requirements.size();
 		}
 		this.outHandler.voidBuffer();
@@ -166,10 +167,6 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 
 	private void startSection(final Section section) {
 		this.tableGen = new MarkdownTableGenerator(section);
-	}
-
-	private static boolean isRequirementEle(final String eleName) {
-		return requirementEle.equals(eleName);
 	}
 
 	@Override
@@ -412,6 +409,10 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 				return false;
 			}
 			return true;
+		}
+
+		static boolean isRequirementEle(final String eleName) {
+			return requirementEle.equals(eleName);
 		}
 
 		static class Builder {
@@ -668,16 +669,24 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		
 		static void tableRow(OutputHandler outputHandler, final Requirement req) throws SAXException {
 			outputHandler.emit("|");
-			outputHandler.emit(tableCell(req.id.prefix + req.id.number));
-			outputHandler.emit(tableCell(req.name));
-			outputHandler.emit(tableCell(req.xPath));
-			outputHandler.emit(tableCell(req.reqLevel));
-			outputHandler.emit(tableCell(concatDescription(req.description)));
-			outputHandler.emit(tableCell(req.cardinality));
+			outputHandler.emit(anchorCell(req.id.prefix + req.id.number));
+			outputHandler.emit(cell(req.name));
+			outputHandler.emit(cell(req.xPath));
+			outputHandler.emit(cell(req.reqLevel));
+			outputHandler.emit(cell(concatDescription(req.description)));
+			outputHandler.emit(cell(req.cardinality));
 			outputHandler.nl();
 		}
 		
-		static String tableCell(final String cellVal) {
+		static String anchorCell(final String cellVal) {
+			StringBuffer buff = new StringBuffer("<a name=\"");
+			buff.append(cellVal);
+			buff.append("></a>");
+			buff.append(cellVal);
+			return cell(buff.toString());
+		}
+		
+		static String cell(final String cellVal) {
 			StringBuffer buff = new StringBuffer(" ");
 			buff.append(cellVal);
 			buff.append(" |");
