@@ -367,7 +367,7 @@
                     <head>Classification of the agent additional information</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent note is typed with the fixed value of "SOFTWARE VERSION".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPAth</dt><dd>metsHdr/agent/note/@csip:NOTETYPE</dd>
+                        <dt>METS XPath</dt><dd>metsHdr/agent/note/@csip:NOTETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -856,7 +856,6 @@
                     <head>File section</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the section is used only one file section (fileSec) element is present.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer just descriptive metadata and/or adminsitrative metadata without files placed in this section.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml"></p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
