@@ -25,6 +25,7 @@ import eu.dilcis.csip.Requirement;
 public final class MetsProfileXmlHandler extends DefaultHandler {
 	static final SAXParserFactory spf = SAXParserFactory.newInstance();
 	static final String initSaxMess = "Couldn't initialise SAX XML Parser."; //$NON-NLS-1$
+	static final String ioExcepMess = "IOException generating markdown tables."; //$NON-NLS-1$
 	static final String period = "."; //$NON-NLS-1$
 	static final String headEle = "head"; //$NON-NLS-1$
 	static final String paraEle = "p"; //$NON-NLS-1$
@@ -101,7 +102,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 				this.tableGen.toTable(this.outHandler);
 				this.outHandler.nl();
 			} catch (IOException excep) {
-				throw new SAXException("IOException generating markdown tables.", excep);
+				throw new SAXException(ioExcepMess, excep);
 			}
 			this.reqCounter += this.tableGen.requirements.size();
 		}
@@ -119,7 +120,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			this.outHandler.emit("Total Requirements: " + this.reqCounter); //$NON-NLS-1$
 			this.outHandler.nl();
 		} catch (IOException excep) {
-			throw new SAXException("IOException generating markdown tables.", excep);
+			throw new SAXException(ioExcepMess, excep);
 		}
 	}
 

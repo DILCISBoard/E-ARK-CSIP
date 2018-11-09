@@ -17,6 +17,7 @@ import java.io.Writer;
  */
 
 public final class OutputHandler {
+	private static final String lineSepPropName = "line.separator"; //$NON-NLS-1$
 	private StringBuffer textBuffer = null;
 	private final Writer out;
 
@@ -34,7 +35,7 @@ public final class OutputHandler {
 	public OutputHandler(final File xmlFile) throws IOException {
 		super();
 		File parent = xmlFile.getParentFile();
-		File output = new File(parent, xmlFile.getName() + ".fix");
+		File output = new File(parent, xmlFile.getName());
 		this.out = new FileWriter(output);
 	}
 
@@ -59,7 +60,7 @@ public final class OutputHandler {
 
 	// Start a new line
 	public void nl() throws IOException {
-		String lineEnd = System.getProperty("line.separator");
+		String lineEnd = System.getProperty(lineSepPropName);
 		this.out.write(lineEnd);
 		this.out.flush();
 	}
