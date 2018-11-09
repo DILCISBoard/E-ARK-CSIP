@@ -76,5 +76,5 @@ Example:
 ```
 
 ### Referencing other packages
-As with internal referencing it is crucial that external references to other related packages are expressed in an interoperable manner. As such all references to other CS IP Information Packages MUST use the value of the **Content Identifcation**-element ( `mets/@OBJID` ) attribute of the package.
+As with internal referencing it is crucial that external references to other related packages are expressed in an interoperable manner. As such all references to other CS IP Information Packages MUST use the value of the **Content Identification**-element ( `mets/@OBJID` ) attribute of the package.
 
