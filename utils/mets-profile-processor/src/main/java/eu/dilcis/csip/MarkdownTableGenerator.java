@@ -5,14 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 class MarkdownTableGenerator {
-	final static String tbleHead1 = "| ID | Name | Element/Attribute | Description & usage | Level & Cardinality |"; //$NON-NLS-1$
-	final static String tbleHead2 = "| -- | ---- | ----------------- | ------------------- | ------------------- |"; //$NON-NLS-1$
+	final static String tbleHead1 = "| ID | Name & Location | Description & usage | Level & Cardinality |"; //$NON-NLS-1$
+	final static String tbleHead2 = "| -- | --------------- | ------------------- | ------------------- |"; //$NON-NLS-1$
 	final static String cellDiv = "|"; //$NON-NLS-1$
 	final static String spcdCellDiv = " |"; //$NON-NLS-1$
 	final static String space = " "; //$NON-NLS-1$
 	final static String anchorOpen = "<a name=\""; //$NON-NLS-1$
 	final static String anchorClose = "\"></a>"; //$NON-NLS-1$
 	final static String htmlBr = "<br/>"; //$NON-NLS-1$
+	final static String mdBoldMarker = "**"; //$NON-NLS-1$
+	final static String mdConsoleMarker = "`"; //$NON-NLS-1$
 
 
 	final List<Requirement> requirements = new ArrayList<>();
@@ -40,11 +42,9 @@ class MarkdownTableGenerator {
 	static void tableRow(OutputHandler outputHandler, final Requirement req) throws IOException {
 		outputHandler.emit(cellDiv);
 		outputHandler.emit(anchorCell(req.id.prefix + req.id.number));
-		outputHandler.emit(cell(req.name));
-		outputHandler.emit(cell(req.xPath));
-		outputHandler.emit(cell(req.reqLevel));
+		outputHandler.emit(cell(nameString(req)));
 		outputHandler.emit(cell(concatDescription(req.description)));
-		outputHandler.emit(cell(req.cardinality));
+		outputHandler.emit(cell(cardString(req)));
 		outputHandler.nl();
 	}
 
@@ -52,6 +52,27 @@ class MarkdownTableGenerator {
 		StringBuffer buff = new StringBuffer(req.reqLevel);
 		buff.append(htmlBr);
 		buff.append(req.cardinality);
+		return buff.toString();
+	}
+
+	static String nameString(final Requirement req) {
+		StringBuffer buff = new StringBuffer(makeBold(req.name));
+		buff.append(htmlBr);
+		buff.append(makeConsole(req.xPath));
+		return buff.toString();
+	}
+
+	static String makeBold(final String toBold) {
+		StringBuffer buff = new StringBuffer(mdBoldMarker);
+		buff.append(toBold);
+		buff.append(mdBoldMarker);
+		return buff.toString();
+	}
+
+	static String makeConsole(final String toBold) {
+		StringBuffer buff = new StringBuffer(mdConsoleMarker);
+		buff.append(toBold);
+		buff.append(mdConsoleMarker);
 		return buff.toString();
 	}
 
