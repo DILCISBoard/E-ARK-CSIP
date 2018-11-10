@@ -1477,7 +1477,7 @@
                     <head>Type of link</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS Xpath</dt><dd>structMap/div/div/mptr/@xlink:type</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/mptr/@xlink:type</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1487,7 +1487,7 @@
                     <!-- Karin: Done -->
                     <!-- Karin: Text updated -->
                     <head>Type of locator</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">TTe locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/mptr/@LOCTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
