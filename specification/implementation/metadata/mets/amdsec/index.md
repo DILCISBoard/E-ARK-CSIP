@@ -1,3 +1,6 @@
+---
+title: Use of the METS administrative metadata section
+---
 ### 5.3.4.	Use of the METS administrative metadata section (element amdSec)
 The purpose of the METS administrative data section is to embed or refer to files containing administrative metadata about the IP content objects. The CS IP (and METS) categorises preservation metadata as administrative metadata, specifically Digital Provenance metadata, hence all preservation metadata should be referenced from a digiprovMD element within the amdSec.
 

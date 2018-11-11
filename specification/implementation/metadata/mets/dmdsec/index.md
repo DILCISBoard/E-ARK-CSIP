@@ -1,3 +1,6 @@
+---
+title: Use of the METS descriptive metadata section
+---
 ### 5.3.3 Use of the METS descriptive metadata section (element dmdSec)
 
 The purpose of the METS descriptive data section is to embed or refer to files containing descriptive metadata.

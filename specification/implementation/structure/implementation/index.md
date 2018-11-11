@@ -1,3 +1,6 @@
+---
+title: Implementing the structure
+---
 ## 4.2.	Implementing the structure
 The requirements presented in Section 4.1 leave room for quite a few decisions during implementation. For the sake of clarity we provide here examples for two extremes – the simplest and the full use of the structure.
 

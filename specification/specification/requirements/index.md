@@ -1,4 +1,6 @@
-
+---
+title: Principles for interoperable Information Packages
+---
 # 3. Principles for interoperable Information Packages
 At the heart of any standardisation activity has to be a clear understanding of the needs and aims which have to be addressed. This is also the goal of this Section, which presents a series of high level principles to guide the technical details delivered in Part II of this specification.
 

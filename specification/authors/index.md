@@ -1,3 +1,6 @@
+---
+title: E-ARK CSIP Authors
+---
 Authors
 -------
 
