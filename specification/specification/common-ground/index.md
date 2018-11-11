@@ -1,4 +1,7 @@
-# 2 Need for establishing common ground
+---
+title: Need for establishing common ground
+---
+# 2	Need for establishing common ground
 
 **The vision:** *All digital preservation systems receive, store and provide access to information, regardless of its size, type or format, according to a set of agreed principles which allow institutions to identify, verify and validate the information in a uniform way.*
 

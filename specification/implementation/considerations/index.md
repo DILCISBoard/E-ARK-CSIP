@@ -1,3 +1,6 @@
+---
+title: Implementation considerations
+---
 # 6. Implementation considerations
 This Section touches on some additional issues which are relevant in respect to implementing the CS IP in real-life scenarios.
 
@@ -27,6 +30,7 @@ Concluding from the previous we can also see that Content Information Type Speci
 The number of possible Content Information Type Specifications is potentially unlimited. As well, it is the intention of the authors of the CS IP to allow everybody in the wider community to create new specifications.
 
 The maintenance of such a living environment is the role of the DILCIS Board. The core principles of the maintenance regime are as follows:
+
 - The DILCIS Board is responsible for establishing reasonable guidelines and quality requirements for new Content Information Type specifications, and publishing these on the Board website;
 - The Board has the responsibility and mandate to manage a registry of available Content Information Type specifications which meet the guidelines and quality requirements;
 - The Board does NOT take ownership of and have responsibility of maintaining and sustaining any Content Information Type specifications;
@@ -44,6 +48,7 @@ However, it is worth noting that this is a “recommended approach” and is, at
 According to the E-ARK Common Specification for IPs an IP can have several representations. All representations contain the same intellectual content, but as the name implies is another representation; in its most simple form this could be another file format such as TIFF instead of JPEG.
 
 The segmenting approach described here is based on the following considerations:
+
 - Most of the size of an IP is the content (data) which according to the Common Specification resides in the representations folder of the IP. As such also any segmenting should take place within the representations layer of the Common Specification;
 - According to the Common Specification each representation is essentially a Common Specification IP itself, as it can consist of a METS metadata file, data, metadata, and any additional components;
 - A segment of an IP must also be in the Common Specification format, i.e. it shall be possible to validate each individual segment as a Common Specification IP;
@@ -124,6 +129,7 @@ We need to segment an IP at the data folder in the representations level, but ac
 ![CS IP Example](mets_file_ref.png "Illustration of references between files.")
 
 Please note the following about the example:
+
 - The Master IP MUST NOT contain representations
 - A representation MAY be segmented
 - The IDs are not just unique but haves implicit value for example purposes only

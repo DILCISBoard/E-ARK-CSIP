@@ -1,3 +1,6 @@
+---
+title: Introduction
+---
 # 1 Introduction
 This document introduces the concept of a Common Specification for Information Packages. It aims to serve three main purposes:
 

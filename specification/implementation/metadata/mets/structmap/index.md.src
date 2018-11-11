@@ -1,4 +1,11 @@
+<<<<<<< HEAD:specification/implementation/metadata/mets/structmap/index.md.src
 ### 5.3.6 Use of the METS structural map (element structMap)
+=======
+---
+title: Use of the METS structural map
+---
+### 5.3.6.	Use of the METS structural map (element structMap)
+>>>>>>> origin/feat/jekyll-build:specification/implementation/metadata/mets/structmap/index.md
 The METS structural map section is the only element mandatory in the METS specification and it is intended
 to provide an overview of ALL components of a CS IP Information Package. It also links the elements of that
 structure to associated content files and metadata. It is a mandatory and ultimate means to define the full
