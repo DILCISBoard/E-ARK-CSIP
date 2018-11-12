@@ -15,7 +15,7 @@ class MarkdownTableGenerator {
 	final static String htmlBr = "<br/>"; //$NON-NLS-1$
 	final static String mdBoldMarker = "**"; //$NON-NLS-1$
 	final static String mdConsoleMarker = "`"; //$NON-NLS-1$
-
+	final static String empty = ""; //$NON-NLS-1$
 
 	final List<Requirement> requirements = new ArrayList<>();
 	final MarkdownTemplater.Section section;
@@ -29,7 +29,8 @@ class MarkdownTableGenerator {
 	}
 
 	void toTable(OutputHandler outHandler) throws IOException {
-		if (this.requirements.isEmpty()) return;
+		if (this.requirements.isEmpty())
+			return;
 		outHandler.emit(tbleHead1);
 		outHandler.nl();
 		outHandler.emit(tbleHead2);
@@ -39,9 +40,10 @@ class MarkdownTableGenerator {
 		}
 	}
 
-	static void tableRow(OutputHandler outputHandler, final Requirement req) throws IOException {
+	static void tableRow(OutputHandler outputHandler, final Requirement req)
+			throws IOException {
 		outputHandler.emit(cellDiv);
-		outputHandler.emit(anchorCell(req.id.prefix + req.id.number));
+		outputHandler.emit(anchorCell(makeBold(req.id.prefix + req.id.number)));
 		outputHandler.emit(cell(nameString(req)));
 		outputHandler.emit(cell(concatDescription(req.description)));
 		outputHandler.emit(cell(cardString(req)));
@@ -49,9 +51,9 @@ class MarkdownTableGenerator {
 	}
 
 	static String cardString(final Requirement req) {
-		StringBuffer buff = new StringBuffer(req.reqLevel);
+		StringBuffer buff = new StringBuffer(makeBold(req.cardinality));
 		buff.append(htmlBr);
-		buff.append(req.cardinality);
+		buff.append(req.reqLevel);
 		return buff.toString();
 	}
 
@@ -63,15 +65,19 @@ class MarkdownTableGenerator {
 	}
 
 	static String makeBold(final String toBold) {
+		if (toBold == null || toBold.isEmpty())
+			return empty;
 		StringBuffer buff = new StringBuffer(mdBoldMarker);
 		buff.append(toBold);
 		buff.append(mdBoldMarker);
 		return buff.toString();
 	}
 
-	static String makeConsole(final String toBold) {
+	static String makeConsole(final String toConsole) {
+		if (toConsole == null || toConsole.isEmpty())
+			return empty;
 		StringBuffer buff = new StringBuffer(mdConsoleMarker);
-		buff.append(toBold);
+		buff.append(toConsole);
 		buff.append(mdConsoleMarker);
 		return buff.toString();
 	}
@@ -92,7 +98,8 @@ class MarkdownTableGenerator {
 	}
 
 	static String concatDescription(List<String> description) {
-		if (description.isEmpty()) return space;
+		if (description.isEmpty())
+			return space;
 		StringBuffer buff = new StringBuffer(description.get(0));
 		for (int i = 1; i < description.size(); i++) {
 			buff.append(htmlBr);
