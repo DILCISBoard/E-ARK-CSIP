@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class MarkdownTableGenerator {
-	final static String tbleHead1 = "| ID | Name & Location | Description & usage | Level & Cardinality |"; //$NON-NLS-1$
+	final static String tbleHead1 = "| ID | Name & Location | Description & usage | Cardinality & Level |"; //$NON-NLS-1$
 	final static String tbleHead2 = "| -- | --------------- | ------------------- | ------------------- |"; //$NON-NLS-1$
 	final static String cellDiv = "|"; //$NON-NLS-1$
 	final static String spcdCellDiv = " |"; //$NON-NLS-1$
