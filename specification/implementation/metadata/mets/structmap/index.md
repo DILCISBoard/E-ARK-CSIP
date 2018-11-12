@@ -1,11 +1,7 @@
-<<<<<<< HEAD:specification/implementation/metadata/mets/structmap/index.md.src
-### 5.3.6 Use of the METS structural map (element structMap)
-=======
 ---
 title: Use of the METS structural map
 ---
 ### 5.3.6.	Use of the METS structural map (element structMap)
->>>>>>> origin/feat/jekyll-build:specification/implementation/metadata/mets/structmap/index.md
 The METS structural map section is the only element mandatory in the METS specification and it is intended
 to provide an overview of ALL components of a CS IP Information Package. It also links the elements of that
 structure to associated content files and metadata. It is a mandatory and ultimate means to define the full
@@ -36,12 +32,11 @@ representations, schemas, documentation and user-defined folders;
 
 The specific requirements for elements, sub-elements and attributes are listed in the following table. Note that the area, seq and par elements are not discussed below.
 
-@@DONTDELETE@@
-REQUIREMENTS_TABLE
-Template marker for page generation from profile.
-@@DONTDELETE@@
+{% comment %} PAGE TEMPLATING : DO NOT DELETE THIS OR THE FOLLOWING LINE {% endcomment %}
+{% include_relative requirements.md %}
 
 Full example of the Common Specification structMap element (root METS file):
+
 ```xml
 <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB7" TYPE="physical" LABEL="CS IP StructMap">
     <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A17" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">

@@ -5,6 +5,7 @@ title: Implementation considerations
 This Section touches on some additional issues which are relevant in respect to implementing the CS IP in real-life scenarios.
 
 ## 6.1 Content Information Type Specifications
+
 ### 6.1.1 What is a Content Information Type Specification?
 The concept of Content Information Type Specification is essentially an extension method which allows for widening the interoperability scope of the CS IP into a content specific level.
 
@@ -81,6 +82,7 @@ Here follows a partial example, where the value of the xlink:href attribute in t
 The value `ID.AVID.RA.18005.rep0.seg0` must now match the value of the OBJID attribute for the `<mets>` element in the child IP root METS file.
 (Note that in order to save space in this example the CS mandatory ID attribute for the `<div>` elements have been left out.)
 Parent METS file
+
 ```xml
 <!-- this top root level METS.xml IP only refers to the root level METS files in the representations using the <mptr> element -->
 <div LABEL="representations">

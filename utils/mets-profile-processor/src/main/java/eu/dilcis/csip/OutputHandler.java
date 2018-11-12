@@ -6,6 +6,10 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import eu.dilcis.csip.MarkdownTemplater.Section;
 
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
@@ -18,24 +22,25 @@ import java.io.Writer;
 
 public final class OutputHandler {
 	private static final String lineSepPropName = "line.separator"; //$NON-NLS-1$
+	private static final String utf8 = "UTF8"; //$NON-NLS-1$
+	private static final String reqsMd = "requirements.md"; //$NON-NLS-1$
 	private StringBuffer textBuffer = null;
 	private final Writer out;
 
 	/**
 	 * Default constructor, output to STDOUT
 	 */
-	public OutputHandler() throws UnsupportedEncodingException {
+	private OutputHandler() throws UnsupportedEncodingException {
 		super();
-		this.out = new OutputStreamWriter(System.out, "UTF8"); //$NON-NLS-1$
+		this.out = new OutputStreamWriter(System.out, utf8);
 	}
 
 	/**
-	 * Constructor to output to a fix file named original_filename.fix
+	 * Constructor to output to a file
 	 */
-	public OutputHandler(final File xmlFile) throws IOException {
+	private OutputHandler(final File outFile) throws IOException {
 		super();
-		File parent = xmlFile.getParentFile();
-		File output = new File(parent, xmlFile.getName());
+		File output = new File(outFile.getParentFile(), outFile.getName());
 		this.out = new FileWriter(output);
 	}
 
@@ -90,5 +95,15 @@ public final class OutputHandler {
 		} else {
 			this.textBuffer.append(toAdd);
 		}
+	}
+
+	static OutputHandler toStdOut() throws UnsupportedEncodingException {
+		return new OutputHandler();
+	}
+
+	static OutputHandler toSectionRequirements(Path metsReqRoot, Section sect)
+			throws IOException {
+		return new OutputHandler(
+				metsReqRoot.resolve(Paths.get(sect.sectName, reqsMd)).toFile());
 	}
 }

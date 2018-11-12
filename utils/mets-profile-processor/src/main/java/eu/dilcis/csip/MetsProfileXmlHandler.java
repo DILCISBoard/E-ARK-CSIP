@@ -2,6 +2,8 @@ package eu.dilcis.csip;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -10,8 +12,6 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-
-import eu.dilcis.csip.Requirement;
 
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
@@ -50,18 +50,20 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private String currEleName;
 	private final ProcessorOptions opts;
 	private boolean inRequirement = false;
-	private MarkdownTableGenerator tableGen; 
+	private MarkdownTableGenerator tableGen;
 	private Requirement.Builder reqBuilder = new Requirement.Builder();
 	private int reqCounter = 0;
 	private String currDefTerm = null;
+	private final Path metsReqRoot;
 
 	public MetsProfileXmlHandler(final ProcessorOptions opts)
 			throws UnsupportedEncodingException, IOException {
 		super();
 		this.opts = opts;
-		this.outHandler = opts.isToDir()
-				? new OutputHandler(opts.outDir.toFile())
-				: new OutputHandler();
+		Path toReqRoot = Paths.get("..", "specification", "implementation", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				"metadata", "mets");  //$NON-NLS-1$ //$NON-NLS-2$
+		this.metsReqRoot = opts.profileFile.getParent().resolve(toReqRoot);
+		this.outHandler = OutputHandler.toStdOut();
 	}
 	// ===========================================================
 	// SAX DocumentHandler methods
@@ -82,7 +84,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			this.inRequirement = true;
 			this.processRequirementAttrs(attrs);
 		} else if (MarkdownTemplater.Section.isSection(this.currEleName)) {
-			MarkdownTemplater.Section section = MarkdownTemplater.Section.fromEleName(this.currEleName);
+			MarkdownTemplater.Section section = MarkdownTemplater.Section
+					.fromEleName(this.currEleName);
 			this.startSection(section);
 		}
 	}
@@ -97,10 +100,11 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		} else if (this.inRequirement) {
 			this.processRequirementChild();
 		} else if (MarkdownTemplater.Section.isSection(this.currEleName)) {
-			
+			MarkdownTemplater.Section section = MarkdownTemplater.Section
+					.fromEleName(this.currEleName);
 			try {
-				this.tableGen.toTable(this.outHandler);
-				this.outHandler.nl();
+				this.tableGen.toTable(OutputHandler
+						.toSectionRequirements(this.metsReqRoot, section));
 			} catch (IOException excep) {
 				throw new SAXException(ioExcepMess, excep);
 			}
@@ -113,7 +117,6 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	@Override
 	public void endDocument() throws SAXException {
 		try {
-			this.outHandler.nl();
 			this.outHandler.nl();
 			this.outHandler.emit("======================================="); //$NON-NLS-1$
 			this.outHandler.nl();

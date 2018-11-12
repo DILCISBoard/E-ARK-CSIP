@@ -9,25 +9,17 @@ specification. The site current site contents are as follows.
 
 E-ARK CSIP
 ---------
-### Contents
 An HTML version of the E-ARK Common Specification for Information Packages the
 [table of Contents](./specification/) is a good place to start.
 
 ### References and links
-It's possible to refer to the main sections of the specification by URL,
+
+- It's possible to refer to the main sections of the specification by URL,
 e.g. "PART II: Implementation of the CS IP" is located at
-<<<<<<< HEAD
-https://carlwilson.github.io/E-ARK-CSIP/specification/implementation/.
-
-Lower level headings have page anchors, e.g. 5.3 Use of METS has the URL
-https://carlwilson.github.io/E-ARK-CSIP/specification/implementation/metadata/#53-use-of-mets.
-
-=======
 [/specification/implementation/](/specification/implementation/).
-Lower level headings have page anchors, e.g. 5.3 Use of METS has the URL
+- Lower level headings have page anchors, e.g. 5.3 Use of METS has the URL
 [/specification/implementation/metadata/#53-use-of-mets](/specification/implementation/metadata/#53-use-of-mets).
->>>>>>> origin/feat/jekyll-build
-Individual requirements also have page anchors and URLS, e.g.
+- Individual requirements also have page anchors and URLS, e.g.
 [/specification/implementation/metadata/#CSIP80](/specification/implementation/metadata/#CSIP80).
 
 Archive
