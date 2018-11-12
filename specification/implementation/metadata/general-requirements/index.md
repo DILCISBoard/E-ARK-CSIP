@@ -1,3 +1,6 @@
+---
+title: General requirements for metadata
+---
 ## 5.1. General requirements for metadata in a CS IP Information Package
 The number one consideration when discussing metadata requirements is, as with the rest of this specification, the need for interoperability. In more detail, the focus is on high-level technical interoperability and tasks which allow an Information Package to be prepared, transferred and received regardless of the institutions and tools involved. These tasks include:
 
@@ -12,7 +15,7 @@ In more technical terms the CS IP makes an effort to control metadata which allo
 Most crucially, we regard descriptive metadata and most of detailed technical metadata to not belong in the scope of the CS IP. As such, the CS IP itself does not aim to provide detailed semantic interoperability between different systems. However, as noted in Section 1.2, implementers are welcome to use the
 construct of Content Information Type Specifications to achieve an even higher level of interoperability.
 
-We implement the core metadata requirements with METS (Metadata Encoding & Transmission Standard, http://www.loc.gov/standards/mets/ ). In this specification we describe the core elements used, more elements are available in the METS standard and can be used in the own implementation. 
+We implement the core metadata requirements with METS (Metadata Encoding & Transmission Standard, http://www.loc.gov/standards/mets/ ). In this specification we describe the core elements used, more elements are available in the METS standard and can be used in the own implementation.
 
 Some of the core metadata requirements are already visible from the structure presented in the previous Section. Most crucially the CS IP requires that all Information Packages MUST include one and only one METS file in the Information Package folder of the package, named `METS.xml`. In addition, the package CAN include one `METS.xml` file in each of the representation folders. These files will be referred to as “root METS” and “representation METS” respectively in the rest of this document. The detailed specification of using METS within the CS IP is available in Section 5.3.
 
@@ -58,6 +61,7 @@ For example, the METS specification requires for referencing to:
 A common approach towards referencing between metadata, and between metadata and other components of the package, is one of the core needs in Information Package validation and integrity checking. Different technical solutions are available for referencing and not all of these are supported across all digital preservation tools.
 
 In order to guarantee interoperability, all references within a CS IP Information Package must follow the requirements below:
+
 - in all occurrences of the METS `@LOCTYPE` attribute the value of it MUST be “URL”;
 - the W3C recommendation XML Linking Language (XLink) version 1.1  MUST be used for expressing references in metadata;
   - The XLink `@type` attribute MUST be used with the fixed value “simple”;

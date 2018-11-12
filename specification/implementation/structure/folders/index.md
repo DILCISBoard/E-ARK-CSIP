@@ -1,3 +1,6 @@
+---
+title: Folder structure of the CSIP
+---
 ## 4.1.	Folder structure of the CS IP
 The CS IP folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components.
 

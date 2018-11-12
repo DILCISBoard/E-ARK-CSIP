@@ -1,3 +1,6 @@
+---
+title: Use of the METS file section
+---
 ### 5.3.5.	Use of the METS file section (element fileSec)
 Use of the METS fileSec element is highly recommended by the CS IP (although not mandatory). It should describe all components of the IP which have not been already included in the amdSec and dmdSec elements. For all files the location and checksum need to be available. Therefore the main purpose of the
 METS file section is to serve as a “table of contents” or “manifest” and allow validating the integrity of the files included into the package.

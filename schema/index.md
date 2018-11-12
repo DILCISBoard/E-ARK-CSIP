@@ -1,5 +1,9 @@
-Associated Schema Files
+---
+title: CSIP Associated Schema Files
+---
+CSIP Associated Schema Files
 =======================
+
 - [METS XSD Schema](./mets.xsd)
   Version 1.12 of the METS schema
 - [DILCIS METS Extensions](./DILCISExtensionMETS.xsd)

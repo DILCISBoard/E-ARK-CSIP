@@ -1,3 +1,6 @@
+---
+title: Use of the METS root element
+---
 ### 5.3.1.	Use of the METS root element (element mets)
 The purpose of the METS root element is to describe the container for the information being stored and/or transmitted, which is held within the seven sections of the METS file. The root element of a METS document has five attributes derived from the official METS specification and one attribute added for the purposes of the CS IP.
 

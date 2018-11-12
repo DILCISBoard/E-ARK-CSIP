@@ -1,3 +1,6 @@
+---
+title: Use of the METS structural map
+---
 ### 5.3.6.	Use of the METS structural map (element structMap)
 The METS structural map section is the only element mandatory in the METS specification and it is intended
 to provide an overview of ALL components of a CS IP Information Package. It also links the elements of that

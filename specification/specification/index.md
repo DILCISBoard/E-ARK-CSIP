@@ -1,8 +1,12 @@
+---
+title: PART I Common Specification for Information Packages
+---
 # PART I: Common Specification for Information Packages
 
 In this part of the document we build the argument for a Common Specification for Information Packages and present the main concepts and requirements for the purpose.
 
 ## Contents
+
 - [2.	Need for establishing common ground](common-ground)
 - [3. Requirements for CS IP Information Packages](requirements)
 	- [3.1. General requirements](requirements#31-general-requirements)
