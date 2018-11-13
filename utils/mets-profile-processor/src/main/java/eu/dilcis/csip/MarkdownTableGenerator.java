@@ -43,7 +43,7 @@ class MarkdownTableGenerator {
 	static void tableRow(OutputHandler outputHandler, final Requirement req)
 			throws IOException {
 		outputHandler.emit(cellDiv);
-		outputHandler.emit(anchorCell(makeBold(req.id.prefix + req.id.number)));
+		outputHandler.emit(anchorCell(req.id.prefix + req.id.number));
 		outputHandler.emit(cell(nameString(req)));
 		outputHandler.emit(cell(concatDescription(req.description)));
 		outputHandler.emit(cell(cardString(req)));
@@ -86,7 +86,7 @@ class MarkdownTableGenerator {
 		StringBuffer buff = new StringBuffer(anchorOpen);
 		buff.append(cellVal);
 		buff.append(anchorClose);
-		buff.append(cellVal);
+		buff.append(makeBold(cellVal));
 		return cell(buff.toString());
 	}
 
