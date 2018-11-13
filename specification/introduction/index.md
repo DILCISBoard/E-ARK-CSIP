@@ -131,4 +131,4 @@ Information Package.
   - How to split large content objects between multiple physical IPs
   - Generic guidelines on adding (any) descriptive metadata into a CS IP Information Package
 
-Finally, in addition to this document full examples of IPs conforming to the Common Specification for Information  implementation details are available at <https://github.com/DLMArchivalStandardsBoard/>.
+Finally, in addition to this document full examples of IPs conforming to the Common Specification for Information  implementation details are available at <https://github.com/DILCISBoard/>.
