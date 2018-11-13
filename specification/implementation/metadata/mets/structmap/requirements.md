@@ -1,4 +1,4 @@
-| ID | Name & Location | Description & usage | Level & Cardinality |
+| ID | Name & Location | Description & usage | Cardinality & Level |
 | -- | --------------- | ------------------- | ------------------- |
 | <a name="**CSIP80**"></a>**CSIP80** | **Structural description of the package**<br/>`structMap` | Each METS file must include ONE structural map (structMap) element used exactly as described here. Institutions can add their own additional custom structural maps as separate structMap sections. | **1..n**<br/>MUST |
 | <a name="**CSIP81**"></a>**CSIP81** | **Type of structural description**<br/>`structMap/@TYPE` | The type attribute of the structural map (structMap) is set to value “PHYSICAL” from the vocabualry. | **1..1**<br/>MUST |

@@ -1,4 +1,4 @@
-| ID | Name & Location | Description & usage | Level & Cardinality |
+| ID | Name & Location | Description & usage | Cardinality & Level |
 | -- | --------------- | ------------------- | ------------------- |
 | <a name="**CSIP17**"></a>**CSIP17** | **Descriptive metadata**<br/>`dmdSec` | Must be used if descriptive metadata for the package content is available. Each descriptive metadata section (dmdSec) contains one description and thus is repeated when more descriptions are available.<br/>It is possible to transfer metadata in a package using just the descriptive metadata sectiond/or adminstrative metadata section. | **0..n**<br/>SHOULD |
 | <a name="**CSIP18**"></a>**CSIP18** | **Descriptive metadata identifier**<br/>`dmdSec/@ID` | An identifier for the descriptive metadata section (dmdSec) used for referencing inside the package. It must be unique within the package.<br/>The ID must follow the rules for xml:id described in the chapter of the textual description of CS IP named "General requirements for the use of metadata" | **1..1**<br/>MUST |

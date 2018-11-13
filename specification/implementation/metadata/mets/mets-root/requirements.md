@@ -1,4 +1,4 @@
-| ID | Name & Location | Description & usage | Level & Cardinality |
+| ID | Name & Location | Description & usage | Cardinality & Level |
 | -- | --------------- | ------------------- | ------------------- |
 | <a name="**CSIP1**"></a>**CSIP1** | **Content Identification**<br/>`mets/@OBJID` | It is mandatory to use a content ID which is expressed with @OBJID. The value should be the same as the name or ID of the package (the name of the root folder) for the root METS document or the name and folder name for the representation. The OBJID must meet the principle of being unique at least across the repository. | **1..1**<br/>MUST |
 | <a name="**CSIP2**"></a>**CSIP2** | **General content type**<br/>`mets/@TYPE` | The @TYPE attribute must be used for identifying the general type of the package (genre). A vocabulary is used. The vocabulary is going to evolve under the care of the DILCIS Board as additional content information type specifications are developed. | **1..1**<br/>MUST |

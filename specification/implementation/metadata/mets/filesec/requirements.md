@@ -1,4 +1,4 @@
-| ID | Name & Location | Description & usage | Level & Cardinality |
+| ID | Name & Location | Description & usage | Cardinality & Level |
 | -- | --------------- | ------------------- | ------------------- |
 | <a name="**CSIP58**"></a>**CSIP58** | **File section**<br/>`fileSec` | When the section is used only one file section (fileSec) element is present.<br/>It is possible to transfer just descriptive metadata and/or adminsitrative metadata without files placed in this section. | **0..1**<br/>SHOULD |
 | <a name="**CSIP59**"></a>**CSIP59** | **File section identfier**<br/>`fileSec/@ID` | An identifier for the file section used for referencing inside the package. It must be unique within the package.<br/>The ID must follow the rules for xml:id described in the chapter of the textual description of CS IP named "General requirements for the use of metadata" | **1..1**<br/>MUST |

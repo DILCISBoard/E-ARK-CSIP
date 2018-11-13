@@ -1,4 +1,4 @@
-| ID | Name & Location | Description & usage | Level & Cardinality |
+| ID | Name & Location | Description & usage | Cardinality & Level |
 | -- | --------------- | ------------------- | ------------------- |
 | <a name="**CSIP31**"></a>**CSIP31** | **Administrative metadata**<br/>`amdSec` | If administrative / preservation metadata is available, it must be described using the administrative metadata section (amdSec) element.<br/>It is possible to transfer metadata in a package using just the descriptive metadata sectiond/or adminstrative metadata section. | **0..n**<br/>SHOULD |
 | <a name="**CSIP32**"></a>**CSIP32** | **Digital provenance metadata**<br/>`amdSec/digiprovMD` | For recording information about preservation events the standard PREMIS is used. The PREMIS metadata must be either embedded or linked in a digital provenance metadata (digiprovMD) element. It is mandatory to include one digiprovMD element for each external PREMIS file placed in the “metadata/preservation” section, or for each embedded set of PREMIS metadata. | **0..n**<br/>SHOULD |

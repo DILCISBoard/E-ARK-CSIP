@@ -1,4 +1,4 @@
-| ID | Name & Location | Description & usage | Level & Cardinality |
+| ID | Name & Location | Description & usage | Cardinality & Level |
 | -- | --------------- | ------------------- | ------------------- |
 | <a name="**CSIP7**"></a>**CSIP7** | **Package creation date**<br/>`metsHdr/@CREATEDATE` | @CREATEDATE describes the date of creation of the package. | **1..1**<br/>MUST |
 | <a name="**CSIP8**"></a>**CSIP8** | **Package last modification date**<br/>`metsHdr/@LASTMODDATE` | @LASTMODDATE is mandatory if the package has been modified. | **0..1**<br/>SHOULD |
