@@ -40,11 +40,6 @@ final class MarkdownTemplater {
 			this.metsEleName = metsEleName;
 		}
 	
-		public String getFullHeader() {
-			return String.format(MetsProfileXmlHandler.sectHeadTemplate, this.sectSubHeadNum,
-					this.sectName, this.metsEleName);
-		}
-	
 		public String getDirName() {
 			return this.metsEleName;
 		}

@@ -8,6 +8,10 @@ import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
 
 import eu.dilcis.csip.MarkdownTemplater.Section;
 
@@ -24,8 +28,9 @@ public final class OutputHandler {
 	private static final String lineSepPropName = "line.separator"; //$NON-NLS-1$
 	private static final String utf8 = "UTF8"; //$NON-NLS-1$
 	private static final String reqsMd = "requirements.md"; //$NON-NLS-1$
-	private StringBuffer textBuffer = null;
+	private static final String examplesMd = "examples.md"; //$NON-NLS-1$
 	private final Writer out;
+	private int indent = 0;
 
 	/**
 	 * Default constructor, output to STDOUT
@@ -48,17 +53,11 @@ public final class OutputHandler {
 	// Utility Methods ...
 	// ===========================================================
 
-	// Display text accumulated in the character buffer
-	public void echoText() throws IOException {
-		if (this.textBuffer == null)
-			return;
-		emit(this.textBuffer.toString());
-		this.textBuffer = null;
-	}
-
 	// Wrap I/O exceptions in SAX exceptions, to
 	// suit handler signature requirements
 	public void emit(String s) throws IOException {
+		if (s == null)
+			return;
 		this.out.write(s);
 		this.out.flush();
 	}
@@ -70,40 +69,71 @@ public final class OutputHandler {
 		this.out.flush();
 	}
 
-	/**
-	 * Get the value of the text buffer
-	 */
-	public String getBufferValue() {
-		return (this.textBuffer == null) ? null : this.textBuffer.toString();
+	public void outputEleStart(final String eleName, final Attributes attrs) throws SAXException, IOException {
+		this.nl();
+		this.indent();
+		this.emit(eleStartTag(eleName, attrs));
+		this.indent++;
 	}
 
-	/**
-	 * Get the value of the text buffer and erase the buffer contents
-	 */
-	public String voidBuffer() {
-		String retVal = this.getBufferValue();
-		this.textBuffer = null;
-		return retVal;
-	}
-
-	/**
-	 * Add text to the buffer / start a new bufer if necessary
-	 */
-	public void addToBuffer(final String toAdd) {
-		if (this.textBuffer == null) {
-			this.textBuffer = new StringBuffer(toAdd);
+	public void outputEleEnd(final String eleName, final String eleVal) throws SAXException, IOException {
+		this.indent--;
+		if (eleVal == null || eleVal.trim().isEmpty()) {
+			this.nl();
+			this.indent();
 		} else {
-			this.textBuffer.append(toAdd);
+			this.emit(eleVal.trim());
 		}
+		this.emit(eleEndTag(eleName));
+	}
+
+	private void indent() throws IOException {
+		if (this.indent == 0)
+			return;
+		char[] chars = new char[this.indent * 2];
+		Arrays.fill(chars, ' ');
+		this.emit(new String(chars));
+	}
+
+	private static String eleStartTag(final String eleName, final Attributes attrs) {
+		StringBuffer retVal = makeEleTag(eleName, false);
+		if (attrs != null) {
+			for (int i = 0; i < attrs.getLength(); i++) {
+				String aName = attrs.getLocalName(i); // Attr name
+				if ("".equals(aName))
+					aName = attrs.getQName(i);
+				retVal.append(" ");
+				retVal.append(aName);
+				retVal.append("=\"");
+				retVal.append(attrs.getValue(i));
+				retVal.append("\"");
+			}
+		}
+		retVal.append(">");
+		return retVal.toString();
+	}
+
+	private static String eleEndTag(final String eleName) {
+		StringBuffer retVal = makeEleTag(eleName, true);
+		retVal.append(">");
+		return retVal.toString();
+	}
+
+	private static StringBuffer makeEleTag(final String eleName, final boolean isEnd) {
+		StringBuffer retVal = (isEnd) ? new StringBuffer("</") : new StringBuffer("<");
+		retVal.append(eleName);
+		return retVal;
 	}
 
 	static OutputHandler toStdOut() throws UnsupportedEncodingException {
 		return new OutputHandler();
 	}
 
-	static OutputHandler toSectionRequirements(Path metsReqRoot, Section sect)
-			throws IOException {
-		return new OutputHandler(
-				metsReqRoot.resolve(Paths.get(sect.sectName, reqsMd)).toFile());
+	static OutputHandler toSectionRequirements(Path metsReqRoot, Section sect) throws IOException {
+		return new OutputHandler(metsReqRoot.resolve(Paths.get(sect.sectName, reqsMd)).toFile());
+	}
+
+	static OutputHandler toSectionExamples(Path metsReqRoot, Section sect) throws IOException {
+		return new OutputHandler(metsReqRoot.resolve(Paths.get(sect.sectName, examplesMd)).toFile());
 	}
 }
