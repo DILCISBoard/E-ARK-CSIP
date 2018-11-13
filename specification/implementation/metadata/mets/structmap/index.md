@@ -37,29 +37,5 @@ The specific requirements for elements, sub-elements and attributes are listed i
 
 Full example of the Common Specification structMap element (root METS file):
 
-```xml
-<mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB7" TYPE="physical" LABEL="CS IP StructMap">
-    <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A17" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
-        <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F80" LABEL="metadata">
-            <mets:div ID="uuid-D0C71206-1087-4F38-9E27-7A077898F663" LABEL="descriptive">
-                <mets:fptr FILEID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
-            </mets:div>
-            <mets:div ID="uuid-A0A8A04A-B7F4-4C30-B084-A119A1C24666" LABEL="preservation">
-                <mets:fptr FILEID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F"/>
-                <mets:fptr FILEID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3"/>
-            </mets:div>
-        </mets:div>
-        <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6735" LABEL="representations">
-            <mets:div ID="uuid-F0C49415-9597-42D3-9DA2-40ECFC6CDCD8" LABEL="Submission">
-                <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Submission/METS.xml"/>
-            </mets:div>
-            <mets:div ID="uuid-861D5F8D-85F2-4419-BF9E-2C916746E36E" LABEL="Ingest">
-                <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Ingest/METS.xml"/>
-            </mets:div>
-        </mets:div>
-        <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA2" LABEL="schemas">
-            <mets:fptr FILEID="uuid-A1B7B0DA-E129-48EF-B431-E553F2977FD6"/>
-        </mets:div>
-    </mets:div>
-</mets:structMap>
-```
+{% comment %} PAGE TEMPLATING : DO NOT DELETE THIS OR THE FOLLOWING LINE {% endcomment %}
+{% include_relative examples.md %}
