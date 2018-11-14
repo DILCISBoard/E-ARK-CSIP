@@ -1076,7 +1076,7 @@
                    </dl>  
                </description>
             </requirement>
-            <requirement ID="CSIP77" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
+            <requirement ID="CSIP77" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <!-- Karin: done -->
                     <!-- Karin: text updated -->
@@ -1088,7 +1088,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP78" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
+            <requirement ID="CSIP78" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <!-- Karin: done -->
                     <!-- Karin: text updated -->
@@ -1100,7 +1100,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP79" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
+            <requirement ID="CSIP79" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <!-- Karin: done -->
                     <!-- Karin: Text updated -->
