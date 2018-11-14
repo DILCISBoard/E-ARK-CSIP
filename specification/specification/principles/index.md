@@ -90,7 +90,7 @@ It is also worth mentioning that in any implementation it is only necessary to a
 
 The components of a CS IP Information Package are explained in more detail in the following section.
 
-## 3.3.	Structure of the Information Package
+## 3.3 Structure of the Information Package
 
 ### Principle 3.1:
 *A Common Specification Information Package MUST be built in such a way that its data and metadata can be logically separated from one another.*
@@ -150,7 +150,7 @@ At the same time it is clear that any given technical implementation will become
 
 At the time being, the CS IP  mandates a fixed physical folder structure (see Section 4) as the implementation of this and the previous requirements.
 
-## 3.4.	Information Package Metadata
+## 3.4 Information Package Metadata
 
 ### Principle 4.1:
 *Metadata in a CS IP Information Package MUST be based on standards.*
