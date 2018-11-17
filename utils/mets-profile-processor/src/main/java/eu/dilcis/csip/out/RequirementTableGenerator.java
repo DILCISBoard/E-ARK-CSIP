@@ -7,17 +7,8 @@ import java.util.List;
 import eu.dilcis.csip.profile.Requirement;
 
 public class RequirementTableGenerator {
-	final static String tbleHead1 = "| ID | Name & Location | Description & usage | Cardinality & Level |"; //$NON-NLS-1$
-	final static String tbleHead2 = "| -- | --------------- | ------------------- | ------------------- |"; //$NON-NLS-1$
-	final static String cellDiv = "|"; //$NON-NLS-1$
-	final static String spcdCellDiv = " |"; //$NON-NLS-1$
-	final static String space = " "; //$NON-NLS-1$
-	final static String anchorOpen = "<a name=\""; //$NON-NLS-1$
-	final static String anchorClose = "\"></a>"; //$NON-NLS-1$
-	final static String htmlBr = "<br/>"; //$NON-NLS-1$
-	final static String mdBoldMarker = "**"; //$NON-NLS-1$
-	final static String mdConsoleMarker = "`"; //$NON-NLS-1$
-	final static String empty = ""; //$NON-NLS-1$
+	final static String[] tableHeadings = { "ID", "Name & Location", //$NON-NLS-1$ //$NON-NLS-2$
+			"Description & usage", "Cardinality & Level" };  //$NON-NLS-1$ //$NON-NLS-2$
 
 	final List<Requirement> requirements = new ArrayList<>();
 
@@ -33,83 +24,40 @@ public class RequirementTableGenerator {
 		return this.requirements.add(req);
 	}
 
-	public void toTable(OutputHandler outHandler) throws IOException {
+	public void toTable(final OutputHandler outHandler) throws IOException {
 		if (this.requirements.isEmpty())
 			return;
-		outHandler.emit(tbleHead1);
-		outHandler.nl();
-		outHandler.emit(tbleHead2);
-		outHandler.nl();
+		tableHeading(outHandler);
 		for (Requirement req : this.requirements) {
 			tableRow(outHandler, req);
 		}
 	}
 
+	static void tableHeading(final OutputHandler outHandler)
+			throws IOException {
+		boolean isFirst = true;
+		StringBuffer headingLines = new StringBuffer();
+		for (String heading : tableHeadings) {
+			outHandler.emit(MarkdownFormatter.cell(heading, isFirst));
+			headingLines.append(MarkdownFormatter.cell(
+					MarkdownFormatter.makeHeadingLines(heading), isFirst));
+			isFirst = false;
+		}
+		outHandler.nl();
+		outHandler.emit(headingLines.toString());
+		outHandler.nl();
+	}
+
 	static void tableRow(OutputHandler outputHandler, final Requirement req)
 			throws IOException {
-		outputHandler.emit(cellDiv);
-		outputHandler.emit(anchorCell(req.id.prefix + req.id.number));
-		outputHandler.emit(cell(nameString(req)));
-		outputHandler.emit(cell(concatDescription(req.description)));
-		outputHandler.emit(cell(cardString(req)));
+		outputHandler.emit(MarkdownFormatter
+				.anchorCell(req.id.prefix + req.id.number, true));
+		outputHandler.emit(
+				MarkdownFormatter.cell(MarkdownFormatter.nameString(req)));
+		outputHandler.emit(MarkdownFormatter
+				.cell(MarkdownFormatter.concatDescription(req.description)));
+		outputHandler.emit(
+				MarkdownFormatter.cell(MarkdownFormatter.cardString(req)));
 		outputHandler.nl();
-	}
-
-	static String cardString(final Requirement req) {
-		StringBuffer buff = new StringBuffer(makeBold(req.cardinality));
-		buff.append(htmlBr);
-		buff.append(req.reqLevel);
-		return buff.toString();
-	}
-
-	static String nameString(final Requirement req) {
-		StringBuffer buff = new StringBuffer(makeBold(req.name));
-		buff.append(htmlBr);
-		buff.append(makeConsole(req.xPath));
-		return buff.toString();
-	}
-
-	static String makeBold(final String toBold) {
-		if (toBold == null || toBold.isEmpty())
-			return empty;
-		StringBuffer buff = new StringBuffer(mdBoldMarker);
-		buff.append(toBold);
-		buff.append(mdBoldMarker);
-		return buff.toString();
-	}
-
-	static String makeConsole(final String toConsole) {
-		if (toConsole == null || toConsole.isEmpty())
-			return empty;
-		StringBuffer buff = new StringBuffer(mdConsoleMarker);
-		buff.append(toConsole);
-		buff.append(mdConsoleMarker);
-		return buff.toString();
-	}
-
-	static String anchorCell(final String cellVal) {
-		StringBuffer buff = new StringBuffer(anchorOpen);
-		buff.append(cellVal);
-		buff.append(anchorClose);
-		buff.append(makeBold(cellVal));
-		return cell(buff.toString());
-	}
-
-	static String cell(final String cellVal) {
-		StringBuffer buff = new StringBuffer(space);
-		buff.append(cellVal);
-		buff.append(spcdCellDiv);
-		return buff.toString();
-	}
-
-	static String concatDescription(List<String> description) {
-		if (description.isEmpty())
-			return space;
-		StringBuffer buff = new StringBuffer(description.get(0));
-		for (int i = 1; i < description.size(); i++) {
-			buff.append(htmlBr);
-			buff.append(description.get(i));
-		}
-		return buff.toString();
 	}
 }
