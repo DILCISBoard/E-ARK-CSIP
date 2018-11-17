@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class Requirement {
+public class Requirement {
 	public final static Requirement DEFAULT = new Requirement();
-	final Requirement.RequirementId id;
-	final String name;
-	final String reqLevel;
+	public final Requirement.RequirementId id;
+	public final String name;
+	public final String reqLevel;
 	final String relMat;
-	final List<String> description;
+	public final List<String> description;
 	final List<String> examples;
-	final String xPath;
-	final String cardinality;
+	public final String xPath;
+	public final String cardinality;
 	static final String cardTerm = "Cardinality"; //$NON-NLS-1$
 	static final String xPathTerm = "METS XPath"; //$NON-NLS-1$
 	static final String requirementEle = "requirement"; //$NON-NLS-1$
@@ -326,12 +326,12 @@ class Requirement {
 		}
 	}
 
-	static class RequirementId implements Comparable<RequirementId> {
+	public static class RequirementId implements Comparable<RequirementId> {
 		final static String defPrefix = "PREF"; //$NON-NLS-1$
 		final static int defNumber = -1;
 		public final static RequirementId DEFAULT_ID = new RequirementId();
-		final String prefix;
-		final int number;
+		public final String prefix;
+		public final int number;
 	
 		private RequirementId() {
 			this(defPrefix, defNumber);

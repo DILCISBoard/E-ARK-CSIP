@@ -1,4 +1,4 @@
-package eu.dilcis.csip;
+package eu.dilcis.csip.out;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 import org.xml.sax.Attributes;
 
-import eu.dilcis.csip.MarkdownTemplater.Section;
+import eu.dilcis.csip.Section;
 
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
@@ -124,15 +124,15 @@ public final class OutputHandler {
 		return retVal;
 	}
 
-	static OutputHandler toStdOut() throws UnsupportedEncodingException {
+	public static OutputHandler toStdOut() throws UnsupportedEncodingException {
 		return new OutputHandler();
 	}
 
-	static OutputHandler toSectionRequirements(Path metsReqRoot, Section sect) throws IOException {
+	public static OutputHandler toSectionRequirements(Path metsReqRoot, Section sect) throws IOException {
 		return new OutputHandler(metsReqRoot.resolve(Paths.get(sect.sectName, reqsMd)).toFile());
 	}
 
-	static OutputHandler toSectionExamples(Path metsReqRoot, Section sect) throws IOException {
+	public static OutputHandler toSectionExamples(Path metsReqRoot, Section sect) throws IOException {
 		return new OutputHandler(metsReqRoot.resolve(Paths.get(sect.sectName, examplesMd)).toFile());
 	}
 }

@@ -16,7 +16,8 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import eu.dilcis.csip.MarkdownTemplater.Section;
+import eu.dilcis.csip.out.MarkdownTableGenerator;
+import eu.dilcis.csip.out.OutputHandler;
 
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
@@ -90,7 +91,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		this.charBuff.voidBuffer();
 		if (Requirement.isRequirementEle(this.currEleName)) {
 			this.processRequirementAttrs(attrs);
-		} else if (MarkdownTemplater.Section.isSection(this.currEleName)) {
+		} else if (Section.isSection(this.currEleName)) {
 			this.startSection();
 		} else if (exampleEle.equals(this.currEleName)) {
 			this.startExample(attrs);
@@ -131,14 +132,14 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			} catch (IOException excep) {
 				throw new SAXException(ioExcepMess, excep);
 			}
-		} else if (MarkdownTemplater.Section.isSection(this.currEleName)) {
-			this.currentSect = MarkdownTemplater.Section.fromEleName(this.currEleName);
+		} else if (Section.isSection(this.currEleName)) {
+			this.currentSect = Section.fromEleName(this.currEleName);
 			try {
 				this.tableGen.toTable(OutputHandler.toSectionRequirements(this.metsReqRoot, this.currentSect));
 			} catch (IOException excep) {
 				throw new SAXException(ioExcepMess, excep);
 			}
-			this.reqCounter += this.tableGen.requirements.size();
+			this.reqCounter += this.tableGen.getRequirmentCount();
 		}
 		this.charBuff.voidBuffer();
 		this.currEleName = null;
@@ -218,7 +219,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	}
 
 	private void startSection() {
-		this.currentSect = MarkdownTemplater.Section.fromEleName(this.currEleName);
+		this.currentSect = Section.fromEleName(this.currEleName);
 		this.exampleMap.put(this.currentSect, new HashSet<>());
 		this.tableGen = new MarkdownTableGenerator(this.currentSect);
 	}

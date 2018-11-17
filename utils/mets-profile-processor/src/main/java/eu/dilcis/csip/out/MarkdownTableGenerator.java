@@ -1,10 +1,13 @@
-package eu.dilcis.csip;
+package eu.dilcis.csip.out;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-class MarkdownTableGenerator {
+import eu.dilcis.csip.Requirement;
+import eu.dilcis.csip.Section;
+
+public class MarkdownTableGenerator {
 	final static String tbleHead1 = "| ID | Name & Location | Description & usage | Cardinality & Level |"; //$NON-NLS-1$
 	final static String tbleHead2 = "| -- | --------------- | ------------------- | ------------------- |"; //$NON-NLS-1$
 	final static String cellDiv = "|"; //$NON-NLS-1$
@@ -18,17 +21,21 @@ class MarkdownTableGenerator {
 	final static String empty = ""; //$NON-NLS-1$
 
 	final List<Requirement> requirements = new ArrayList<>();
-	final MarkdownTemplater.Section section;
+	final Section section;
 
-	MarkdownTableGenerator(final MarkdownTemplater.Section section) {
+	public MarkdownTableGenerator(final Section section) {
 		this.section = section;
 	}
 
-	boolean add(Requirement req) {
+	public int getRequirmentCount() {
+		return this.requirements.size();
+	}
+
+	public boolean add(Requirement req) {
 		return this.requirements.add(req);
 	}
 
-	void toTable(OutputHandler outHandler) throws IOException {
+	public void toTable(OutputHandler outHandler) throws IOException {
 		if (this.requirements.isEmpty())
 			return;
 		outHandler.emit(tbleHead1);
