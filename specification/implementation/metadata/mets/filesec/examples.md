@@ -1,15 +1,5 @@
 
-**Example:** 
-
-```xml
-<mets:dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
-  <mets:mdRef LOCTYPE="URL" MDTYPE="EAD" type="simple" href="metadata/descriptive/ead2002.xml" mimetype="application/xml" SIZE="903" CREATED="2018-04-24T14:37:49.609+01:00" CHECKSUM="F24263BF09994749F335E1664DCE0086DB6DCA323FDB6996938BCD28EA9E8153" CHECKSUMTYPE="SHA-256">
-  </mets:mdRef>
-</mets:dmdSec>
-```
-
-
-**Example:** 
+**Example:** METS example of structuring the data in the file section
 
 ```xml
 <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
@@ -39,7 +29,7 @@
 ```
 
 
-**Example:** 
+**Example:** METS example of structuring the data in the file section when there are representatins present
 
 ```xml
 <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
