@@ -1,5 +1,5 @@
 
-**Example:** 
+**Example:** METS example of referencing preservation metadata in the form of PREMIS metadata for describing the preservation objects and the events pertaining to the objects
 
 ```xml
 <mets:amdSec>

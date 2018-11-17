@@ -1,5 +1,5 @@
 
-**Example:** 
+**Example:** METS example of the mandatory structural map
 
 ```xml
 <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CS IP StructMap">
@@ -17,7 +17,7 @@
 ```
 
 
-**Example:** 
+**Example:** METS example of the mandatory structural map when there are representations present
 
 ```xml
 <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CS IP StructMap">

@@ -910,7 +910,7 @@
                     <!-- Karin: Renamed -->
                     <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which describes the specific content information type specification used for the transferred content. The attribute is mandatory to use when the file group catagorization is Representations. The vocabulary is going to evolve under the care of the DILCIS Board as additional content information type specifications are developed.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/@csip:CONTENTINFORMATIONTYPE</dd>
+                        <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -923,7 +923,7 @@
                     <head>Other specific content type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must describe the content.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
+                        <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1569,20 +1569,6 @@
             <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
         </note>
     </tool>
-    <Example ID="metsRootElementExample1" LABEL="METS root element example for a representation">
-        <!--Karin: Profile link will be updated -->
-        <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xmlns:mets="http://www.loc.gov/METS/" 
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
-            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
-            LABEL="Sample CS IP Information Package" 
-            TYPE="Database" 
-            csip:CONTENTINFORMATIONTYPE="SIARD2" 
-            PROFILE="http://www.eark-project.com/METS/IP.xml" 
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://DILCIS.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
-        </mets:mets>
-    </Example>
     <Example ID="metsRootElementExample2" LABEL="METS root element example with content not in the value list being transfered">
         <!-- Karin: Profile link will be updated -->
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
