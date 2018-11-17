@@ -17,8 +17,10 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import eu.dilcis.csip.ProcessorOptions;
-import eu.dilcis.csip.out.RequirementTableGenerator;
+import eu.dilcis.csip.out.ExampleGenerator;
 import eu.dilcis.csip.out.OutputHandler;
+import eu.dilcis.csip.out.RequirementTableGenerator;
+import eu.dilcis.csip.out.XmlCharBuffer;
 
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
@@ -33,6 +35,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private static final SAXParserFactory spf = SAXParserFactory.newInstance();
 	private static final String initSaxMess = "Couldn't initialise SAX XML Parser."; //$NON-NLS-1$
 	private static final String ioExcepMess = "IOException generating markdown tables."; //$NON-NLS-1$
+	private static final String empty = ""; //$NON-NLS-1$
 	private static final String period = "."; //$NON-NLS-1$
 	private static final String headEle = "head"; //$NON-NLS-1$
 	private static final String exampleEle = "Example"; //$NON-NLS-1$
@@ -66,7 +69,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private final Path metsReqRoot;
 
 	private final Map<Section, Set<String>> exampleMap = new HashMap<>();
-	private final Map<Section, OutputHandler> exampleHandlers = new HashMap<>();
+	private final Map<Section, ExampleGenerator> exampleHandlers = new HashMap<>();
 
 	public MetsProfileXmlHandler(final ProcessorOptions opts) {
 		super();
@@ -98,8 +101,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			this.startExample(attrs);
 		} else if (this.inExample) {
 			try {
-				OutputHandler handler = this.getSectionExampleHandler(this.currentSect);
-				handler.outputEleStart(this.currEleName, attrs);
+				ExampleGenerator generator = this.getSectionExampleHandler(this.currentSect);
+				generator.outputEleStart(this.currEleName, attrs);
 			} catch (IOException excep) {
 				throw new SAXException(ioExcepMess, excep);
 			}
@@ -116,20 +119,17 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		} else if (this.inRequirement) {
 			this.processRequirementChild();
 		} else if (exampleEle.equals(this.currEleName)) {
-			OutputHandler handler = this.getSectionExampleHandler(this.currentSect);
+			ExampleGenerator gene = this.getSectionExampleHandler(this.currentSect);
 			try {
-				handler.nl();
-				handler.emit("```");
-				handler.nl();
-				handler.nl();
+				gene.endExample();
 			} catch (IOException excep) {
 				throw new SAXException(ioExcepMess, excep);
 			}
 			this.inExample = false;
 		} else if (this.inExample) {
 			try {
-				OutputHandler handler = this.getSectionExampleHandler(this.currentSect);
-				handler.outputEleEnd(this.currEleName, this.charBuff.voidBuffer());
+				ExampleGenerator generator = this.getSectionExampleHandler(this.currentSect);
+				generator.outputEleEnd(this.currEleName, this.charBuff.voidBuffer());
 			} catch (IOException excep) {
 				throw new SAXException(ioExcepMess, excep);
 			}
@@ -222,7 +222,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private void startSection() {
 		this.currentSect = Section.fromEleName(this.currEleName);
 		this.exampleMap.put(this.currentSect, new HashSet<>());
-		this.tableGen = new RequirementTableGenerator();
+		this.tableGen = RequirementTableGenerator.instance();
 	}
 
 	private void startExample(final Attributes attrs) throws SAXException {
@@ -230,13 +230,9 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		final String id = getId(attrs);
 		for (Section section : this.exampleMap.keySet()) {
 			if (this.exampleMap.get(section).contains(id)) {
-				OutputHandler handler = this.getSectionExampleHandler(section);
+				ExampleGenerator gene = this.getSectionExampleHandler(section);
 				try {
-					handler.nl();
-					handler.emit("**Example:** " + getLabel(attrs));
-					handler.nl();
-					handler.nl();
-					handler.emit("```xml");
+					gene.startExample(getLabel(attrs));
 				} catch (IOException e) {
 					throw new SAXException(e);
 				}
@@ -257,27 +253,28 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		if (attrs != null) {
 			for (int i = 0; i < attrs.getLength(); i++) {
 				String aName = attrs.getLocalName(i); // Attr name
-				if ("".equals(aName))
+				if (empty.equals(aName))
 					aName = attrs.getQName(i);
 				if (attName.equals(aName))
 					return attrs.getValue(i);
 			}
 		}
-		return "";
+		return empty;
 	}
 
-	private OutputHandler getSectionExampleHandler(Section section) throws SAXException {
-		OutputHandler handler = this.exampleHandlers.get(section);
+	private ExampleGenerator getSectionExampleHandler(Section section) throws SAXException {
+		ExampleGenerator gene = this.exampleHandlers.get(section);
 		try {
-			if (handler == null) {
-				handler = OutputHandler.toSectionExamples(this.metsReqRoot, section);
-				this.exampleHandlers.put(section, handler);
+			if (gene == null) {
+				OutputHandler handler = OutputHandler.toSectionExamples(this.metsReqRoot, section);
+				gene = new ExampleGenerator(handler);
+				this.exampleHandlers.put(section, gene);
 			}
 		} catch (IOException e) {
 			throw new SAXException(String.format("Error opening example file for section %s.", section.sectName), e);
 		}
 		this.currentSect = section;
-		return handler;
+		return gene;
 	}
 
 	@Override

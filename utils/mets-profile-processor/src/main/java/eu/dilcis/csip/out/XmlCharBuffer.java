@@ -1,13 +1,13 @@
 /**
  * 
  */
-package eu.dilcis.csip.profile;
+package eu.dilcis.csip.out;
 
 /**
  * @author cfw
  *
  */
-final class XmlCharBuffer {
+public final class XmlCharBuffer {
 	private StringBuffer textBuffer = null;
 	/**
 	 * Get the value of the text buffer

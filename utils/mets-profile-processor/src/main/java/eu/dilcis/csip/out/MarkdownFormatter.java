@@ -1,5 +1,6 @@
 package eu.dilcis.csip.out;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,26 +12,25 @@ import java.util.List;
  *          Created 17 Nov 2018:16:17:30
  */
 
-public final class MarkdownFormatter {
+enum MarkdownFormatter {
+	INSTANCE;
 	// Markdown Tags
 	private final static String empty = ""; //$NON-NLS-1$
 	private final static String space = " "; //$NON-NLS-1$
 	private final static String cellDiv = "|"; //$NON-NLS-1$
 	private final static String cellDivCls = space + cellDiv; // $NON-NLS-1$
 	private final static String cellDivOpen = cellDiv + space; // $NON-NLS-1$
-	private final static String hyphen = "-"; // $NON-NLS-1$
+	private final static char hyphen = '-';
 	private final static String mdBoldMarker = "**"; //$NON-NLS-1$
 	private final static String mdConsoleMarker = "`"; //$NON-NLS-1$
-	private final static String mdInlineMarker = "```"; //$NON-NLS-1$
+	final static String mdInlineMarker = "```"; //$NON-NLS-1$
+	private final static String xml = "xml"; //$NON-NLS-1$
+	final static String mdInlineXml = mdInlineMarker + xml;
 
 	// HTML Tags
 	private final static String anchorOpen = "<a name=\""; //$NON-NLS-1$
 	private final static String anchorClose = "\"></a>"; //$NON-NLS-1$
 	final static String htmlBr = "<br/>"; //$NON-NLS-1$
-
-	private MarkdownFormatter() {
-		super();
-	}
 
 	static String makeBold(final String toBold) {
 		if (toBold == null || toBold.isEmpty())
@@ -74,14 +74,10 @@ public final class MarkdownFormatter {
 	}
 
 	static String makeHeadingLines(final String heading) {
-		if (heading == null || heading.isEmpty()) {
-			return hyphen;
-		}
-		StringBuffer retVal = new StringBuffer();
-		for (int i = 0; i < heading.length(); i++) {
-			retVal.append(hyphen);
-		}
-		return retVal.toString();
+		int len = (heading == null || heading.isEmpty()) ? 1 : heading.length();
+		char[] chars = new char[len];
+		Arrays.fill(chars, hyphen);
+		return new String(chars);
 	}
 
 	static String concatDescription(List<String> description) {

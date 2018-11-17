@@ -12,7 +12,7 @@ public class RequirementTableGenerator {
 
 	final List<Requirement> requirements = new ArrayList<>();
 
-	public RequirementTableGenerator() {
+	private RequirementTableGenerator() {
 		super();
 	}
 
@@ -31,6 +31,10 @@ public class RequirementTableGenerator {
 		for (Requirement req : this.requirements) {
 			tableRow(outHandler, req);
 		}
+	}
+
+	public static RequirementTableGenerator instance() {
+		return new RequirementTableGenerator();
 	}
 
 	static void tableHeading(final OutputHandler outHandler)
