@@ -12,6 +12,6 @@ to use the tools created by other users of the common specification, transfer AI
 
 ## Contents
 
-- [4.	CS IP structure](#)
+- [4.	CS IP structure](./)
   - [4.1 Folder structure of the CS IP](folders/)
   - [4.2 Implementing the structure](implementation/)
