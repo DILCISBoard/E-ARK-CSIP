@@ -2,8 +2,6 @@ package eu.dilcis.csip.out;
 
 import java.util.List;
 
-import eu.dilcis.csip.profile.Requirement;
-
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
  *         <a href="https://github.com/carlwilson">carlwilson AT github</a>
@@ -28,24 +26,10 @@ public final class MarkdownFormatter {
 	// HTML Tags
 	private final static String anchorOpen = "<a name=\""; //$NON-NLS-1$
 	private final static String anchorClose = "\"></a>"; //$NON-NLS-1$
-	private final static String htmlBr = "<br/>"; //$NON-NLS-1$
+	final static String htmlBr = "<br/>"; //$NON-NLS-1$
 
 	private MarkdownFormatter() {
 		super();
-	}
-
-	static String cardString(final Requirement req) {
-		StringBuffer buff = new StringBuffer(makeBold(req.cardinality));
-		buff.append(htmlBr);
-		buff.append(req.reqLevel);
-		return buff.toString();
-	}
-
-	static String nameString(final Requirement req) {
-		StringBuffer buff = new StringBuffer(makeBold(req.name));
-		buff.append(htmlBr);
-		buff.append(makeConsole(req.xPath));
-		return buff.toString();
 	}
 
 	static String makeBold(final String toBold) {

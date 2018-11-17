@@ -52,12 +52,26 @@ public class RequirementTableGenerator {
 			throws IOException {
 		outputHandler.emit(MarkdownFormatter
 				.anchorCell(req.id.prefix + req.id.number, true));
-		outputHandler.emit(
-				MarkdownFormatter.cell(MarkdownFormatter.nameString(req)));
+		outputHandler.emit(MarkdownFormatter.cell(nameString(req)));
 		outputHandler.emit(MarkdownFormatter
 				.cell(MarkdownFormatter.concatDescription(req.description)));
-		outputHandler.emit(
-				MarkdownFormatter.cell(MarkdownFormatter.cardString(req)));
+		outputHandler.emit(MarkdownFormatter.cell(cardString(req)));
 		outputHandler.nl();
 	}
+
+	static String cardString(final Requirement req) {
+		return boldHeadPair(req.cardinality, req.reqLevel);
+	}
+
+	static String nameString(final Requirement req) {
+		return boldHeadPair(req.name, MarkdownFormatter.makeConsole(req.xPath));
+	}
+
+	static String boldHeadPair(final String head, final String secondLine) {
+		StringBuffer buff = new StringBuffer(MarkdownFormatter.makeBold(head));
+		buff.append(MarkdownFormatter.htmlBr);
+		buff.append(secondLine);
+		return buff.toString();
+	}
+
 }
