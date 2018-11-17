@@ -6,7 +6,7 @@ import java.util.List;
 
 import eu.dilcis.csip.profile.Requirement;
 
-public class MarkdownTableGenerator {
+public class RequirementTableGenerator {
 	final static String tbleHead1 = "| ID | Name & Location | Description & usage | Cardinality & Level |"; //$NON-NLS-1$
 	final static String tbleHead2 = "| -- | --------------- | ------------------- | ------------------- |"; //$NON-NLS-1$
 	final static String cellDiv = "|"; //$NON-NLS-1$
@@ -21,7 +21,7 @@ public class MarkdownTableGenerator {
 
 	final List<Requirement> requirements = new ArrayList<>();
 
-	public MarkdownTableGenerator() {
+	public RequirementTableGenerator() {
 		super();
 	}
 

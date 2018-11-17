@@ -17,7 +17,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import eu.dilcis.csip.ProcessorOptions;
-import eu.dilcis.csip.out.MarkdownTableGenerator;
+import eu.dilcis.csip.out.RequirementTableGenerator;
 import eu.dilcis.csip.out.OutputHandler;
 
 /**
@@ -58,7 +58,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private final ProcessorOptions opts;
 	private boolean inRequirement = false;
 	private boolean inExample = false;
-	private MarkdownTableGenerator tableGen;
+	private RequirementTableGenerator tableGen;
 	private Requirement.Builder reqBuilder = new Requirement.Builder();
 	private int reqCounter = 0;
 	private String currDefTerm = null;
@@ -222,7 +222,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private void startSection() {
 		this.currentSect = Section.fromEleName(this.currEleName);
 		this.exampleMap.put(this.currentSect, new HashSet<>());
-		this.tableGen = new MarkdownTableGenerator();
+		this.tableGen = new RequirementTableGenerator();
 	}
 
 	private void startExample(final Attributes attrs) throws SAXException {
