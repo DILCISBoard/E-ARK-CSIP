@@ -1,4 +1,4 @@
-package eu.dilcis.csip;
+package eu.dilcis.csip.profile;
 
 public enum Section {
 	ROOT("metsRootElement", "1", "mets-root", "mets"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$

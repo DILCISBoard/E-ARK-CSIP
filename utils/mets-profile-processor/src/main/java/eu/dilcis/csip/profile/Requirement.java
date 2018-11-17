@@ -1,4 +1,4 @@
-package eu.dilcis.csip;
+package eu.dilcis.csip.profile;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 import org.xml.sax.Attributes;
 
-import eu.dilcis.csip.Section;
+import eu.dilcis.csip.profile.Section;
 
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>

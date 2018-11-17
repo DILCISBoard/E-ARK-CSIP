@@ -1,4 +1,4 @@
-package eu.dilcis.csip;
+package eu.dilcis.csip.profile;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -16,6 +16,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import eu.dilcis.csip.ProcessorOptions;
 import eu.dilcis.csip.out.MarkdownTableGenerator;
 import eu.dilcis.csip.out.OutputHandler;
 
@@ -193,7 +194,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private void processRequirementEle() {
 		this.inRequirement = false;
 		final Requirement req = this.reqBuilder.build();
-		if (req.id == eu.dilcis.csip.Requirement.RequirementId.DEFAULT_ID)
+		if (req.id == eu.dilcis.csip.profile.Requirement.RequirementId.DEFAULT_ID)
 			return;
 		this.tableGen.add(req);
 		this.reqBuilder = new Requirement.Builder();

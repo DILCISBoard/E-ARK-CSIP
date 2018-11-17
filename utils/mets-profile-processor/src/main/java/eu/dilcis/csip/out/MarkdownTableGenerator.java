@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import eu.dilcis.csip.Requirement;
-import eu.dilcis.csip.Section;
+import eu.dilcis.csip.profile.Requirement;
+import eu.dilcis.csip.profile.Section;
 
 public class MarkdownTableGenerator {
 	final static String tbleHead1 = "| ID | Name & Location | Description & usage | Cardinality & Level |"; //$NON-NLS-1$
