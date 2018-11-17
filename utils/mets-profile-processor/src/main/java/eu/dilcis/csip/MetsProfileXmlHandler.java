@@ -1,7 +1,6 @@
 package eu.dilcis.csip;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -67,7 +66,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private final Map<Section, Set<String>> exampleMap = new HashMap<>();
 	private final Map<Section, OutputHandler> exampleHandlers = new HashMap<>();
 
-	public MetsProfileXmlHandler(final ProcessorOptions opts) throws UnsupportedEncodingException, IOException {
+	public MetsProfileXmlHandler(final ProcessorOptions opts) {
 		super();
 		this.opts = opts;
 		Path toReqRoot = Paths.get("..", "specification", "implementation", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$

@@ -11,7 +11,6 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 
 import eu.dilcis.csip.MarkdownTemplater.Section;
 
@@ -69,14 +68,14 @@ public final class OutputHandler {
 		this.out.flush();
 	}
 
-	public void outputEleStart(final String eleName, final Attributes attrs) throws SAXException, IOException {
+	public void outputEleStart(final String eleName, final Attributes attrs) throws IOException {
 		this.nl();
 		this.indent();
 		this.emit(eleStartTag(eleName, attrs));
 		this.indent++;
 	}
 
-	public void outputEleEnd(final String eleName, final String eleVal) throws SAXException, IOException {
+	public void outputEleEnd(final String eleName, final String eleVal) throws IOException {
 		this.indent--;
 		if (eleVal == null || eleVal.trim().isEmpty()) {
 			this.nl();
