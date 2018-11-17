@@ -61,7 +61,7 @@ Packages:
 The total number of Content Information Type specifications is, however, unlimited and the long-term commitment of the DILCIS Board  is to keep the overall environment open and inclusive. As such, interested bodies are welcome to develop their own Content Information Type Specifications, for example
 for 3D building projects or electronic publications. An appropriate management regime to facilitate the creation and approval of additional Content Information Type specifications by anyone in the broader community is implemented by the DILCIS Board.
 
-For more detailed information about the Content Information Type specifications please look also at [Section 6.1](../implementation/premis/) below and check www.dilcis.eu!
+For more detailed information about the Content Information Type specifications please look also at [Section 6.1](../implementation/metadata/premis/) below and check www.dilcis.eu!
 
 ## 1.3 Common Specification for Information Packages, OAIS Information Packages’ specifications and Content Information Type Specifications
 
@@ -118,7 +118,7 @@ The first part ([Section 2](../specification/common-ground) and [Section 3](../s
 
 - [Section 3](../specification/principles) presents the core principles which need to be met in order to achieve the interoperability goal described in Section 2. Based on these requirements a set of high-level solutions are introduced regarding, for example, the structure and use of metadata within any implementation of an Information Package.
 
-The second part of this document ([Section 4](../implementation/structure/), [Section 5](../implementation/metadata/) and [Section 6](../implementation/premis/)) presents a practical implementation of the principles described in previous Sections, as implemented according to current state-of-the-art technologies. As such, this part of the document describes the requirements which are needed to achieve
+The second part of this document ([Section 4](../implementation/structure/), [Section 5](../implementation/metadata/) and [Section 6](../implementation/metadata/premis/)) presents a practical implementation of the principles described in previous Sections, as implemented according to current state-of-the-art technologies. As such, this part of the document describes the requirements which are needed to achieve
 practical IP interoperability:
 
 - [Section 4](../implementation/structure/) presents a detailed description of the structure which must be implemented in any CS IP
@@ -126,7 +126,7 @@ Information Package.
 
 - [Section 5](../implementation/metadata/) presents a detailed overview of metadata requirements within CS IP Information Packages with a special focus on the use of metadata elements which are needed for the automation and interoperability of archival validation and identification tasks
 
-- [Section 6](../implementation/premis) describes additional (optional) components extending the practical implementation in regard to specific aspects
+- [Section 6](../implementation/metadata/premis) describes additional (optional) components extending the practical implementation in regard to specific aspects
   - How to create new Content Information Type specifications
   - How to split large content objects between multiple physical IPs
   - Generic guidelines on adding (any) descriptive metadata into a CS IP Information Package
