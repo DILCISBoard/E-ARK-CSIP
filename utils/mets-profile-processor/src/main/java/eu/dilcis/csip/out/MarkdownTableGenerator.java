@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import eu.dilcis.csip.profile.Requirement;
-import eu.dilcis.csip.profile.Section;
 
 public class MarkdownTableGenerator {
 	final static String tbleHead1 = "| ID | Name & Location | Description & usage | Cardinality & Level |"; //$NON-NLS-1$
@@ -21,10 +20,9 @@ public class MarkdownTableGenerator {
 	final static String empty = ""; //$NON-NLS-1$
 
 	final List<Requirement> requirements = new ArrayList<>();
-	final Section section;
 
-	public MarkdownTableGenerator(final Section section) {
-		this.section = section;
+	public MarkdownTableGenerator() {
+		super();
 	}
 
 	public int getRequirmentCount() {

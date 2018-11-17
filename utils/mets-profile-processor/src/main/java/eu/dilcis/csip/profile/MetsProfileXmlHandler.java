@@ -222,7 +222,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private void startSection() {
 		this.currentSect = Section.fromEleName(this.currEleName);
 		this.exampleMap.put(this.currentSect, new HashSet<>());
-		this.tableGen = new MarkdownTableGenerator(this.currentSect);
+		this.tableGen = new MarkdownTableGenerator();
 	}
 
 	private void startExample(final Attributes attrs) throws SAXException {
