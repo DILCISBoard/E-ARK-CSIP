@@ -1,5 +1,5 @@
 ---
-title: Appendix C: A Full List of E-ARK CSIP Requirements
+title: Appendix C A Full List of E-ARK CSIP Requirements
 ---
 ## Appendix C: A Full List of E-ARK CSIP Requirements
 
