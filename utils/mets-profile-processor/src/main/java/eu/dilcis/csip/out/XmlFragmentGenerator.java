@@ -6,6 +6,9 @@ import java.io.UnsupportedEncodingException;
 import org.xml.sax.Attributes;
 
 /**
+ * Abstract class to handle the pain of XML element generation, e.g.
+ * indentation.
+ * 
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
  *         <a href="https://github.com/carlwilson">carlwilson AT github</a>
  *
@@ -15,17 +18,26 @@ import org.xml.sax.Attributes;
  */
 
 abstract class XmlFragmentGenerator {
-	private static final int defaultSpaces = 2;
-	private static final int defaultIndent = 0;
+	protected static final int defaultSpaces = 2;
+	protected static final int defaultIndent = 0;
 	protected final OutputHandler handler;
 	private final int indentSpaces;
 	private int indent;
 
+	/**
+	 * Constructs a default {@link XmlFragmentGenerator} instance with
+	 * {@link XmlFragmentGenerator.defaultSpaces} spaces and a
+	 * {@link XmlFragmentGenerator.defaultIndent} starting indent point. Output
+	 * defaults to STDOUT.
+	 * 
+	 * @throws UnsupportedEncodingException
+	 */
 	protected XmlFragmentGenerator() throws UnsupportedEncodingException {
 		this(defaultSpaces);
 	}
 
-	protected XmlFragmentGenerator(final int indentSpaces) throws UnsupportedEncodingException {
+	protected XmlFragmentGenerator(final int indentSpaces)
+			throws UnsupportedEncodingException {
 		this(OutputHandler.toStdOut(), indentSpaces, defaultIndent);
 	}
 
@@ -33,25 +45,28 @@ abstract class XmlFragmentGenerator {
 		this(handler, defaultSpaces, defaultIndent);
 	}
 
-	protected XmlFragmentGenerator(final OutputHandler handler, final int indentSpaces) {
+	protected XmlFragmentGenerator(final OutputHandler handler,
+			final int indentSpaces) {
 		this(handler, indentSpaces, defaultIndent);
 	}
 
-	protected XmlFragmentGenerator(final OutputHandler handler, final int indentSpaces, final int indent) {
+	protected XmlFragmentGenerator(final OutputHandler handler,
+			final int indentSpaces, final int indent) {
 		this.handler = handler;
 		this.indentSpaces = indentSpaces;
 		this.indent = indent;
 	}
 
-	public void outputEleStart(final String eleName, final Attributes attrs) throws IOException {
+	public void outputEleStart(final String eleName, final Attributes attrs)
+			throws IOException {
 		this.handler.nl();
 		this.indent();
 		this.handler.emit(XmlFormatter.eleStartTag(eleName, attrs));
 		this.indent++;
 	}
 
-	public void outputEleEnd(final String eleName,
-			final String eleVal) throws IOException {
+	public void outputEleEnd(final String eleName, final String eleVal)
+			throws IOException {
 		this.indent--;
 		if (eleVal == null || eleVal.trim().isEmpty()) {
 			this.handler.nl();

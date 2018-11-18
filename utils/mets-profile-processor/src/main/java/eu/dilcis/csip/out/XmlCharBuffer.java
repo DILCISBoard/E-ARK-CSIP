@@ -26,7 +26,7 @@ public final class XmlCharBuffer {
 	}
 
 	/**
-	 * Add text to the buffer / start a new bufer if necessary
+	 * Add text to the buffer / start a new buffer if necessary
 	 */
 	public void addToBuffer(final String toAdd) {
 		if (this.textBuffer == null) {

@@ -2,7 +2,6 @@ package eu.dilcis.csip.profile;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -35,10 +34,17 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private static final SAXParserFactory spf = SAXParserFactory.newInstance();
 	private static final String initSaxMess = "Couldn't initialise SAX XML Parser."; //$NON-NLS-1$
 	private static final String ioExcepMess = "IOException generating markdown tables."; //$NON-NLS-1$
+	private static final String sectIoMess = "Error opening example file for section %s."; //$NON-NLS-1$
 	private static final String empty = ""; //$NON-NLS-1$
+	private static final String space = " "; //$NON-NLS-1$
 	private static final String period = "."; //$NON-NLS-1$
 	private static final String headEle = "head"; //$NON-NLS-1$
+	private static final String appendixEle = "Appendix"; //$NON-NLS-1$
 	private static final String exampleEle = "Example"; //$NON-NLS-1$
+	private static final String exampleAtt = "EXAMPLES"; //$NON-NLS-1$
+	private static final String idAtt = "ID"; //$NON-NLS-1$
+	private static final String labelAtt = "LABEL"; //$NON-NLS-1$
+	private static final String numberAtt = "NUMBER"; //$NON-NLS-1$
 	private static final String paraEle = "p"; //$NON-NLS-1$
 	private static final String defTermEle = "dt"; //$NON-NLS-1$
 	private static final String defDefEle = "dd"; //$NON-NLS-1$
@@ -61,22 +67,22 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private final ProcessorOptions opts;
 	private boolean inRequirement = false;
 	private boolean inExample = false;
+	private boolean inAppendix = false;
 	private RequirementTableGenerator tableGen;
 	private Requirement.Builder reqBuilder = new Requirement.Builder();
 	private int reqCounter = 0;
 	private String currDefTerm = null;
 	private Section currentSect;
-	private final Path metsReqRoot;
+	private final Path projRoot;
 
 	private final Map<Section, Set<String>> exampleMap = new HashMap<>();
 	private final Map<Section, ExampleGenerator> exampleHandlers = new HashMap<>();
+	private ExampleGenerator appendixGenerator = null;
 
 	public MetsProfileXmlHandler(final ProcessorOptions opts) {
 		super();
 		this.opts = opts;
-		Path toReqRoot = Paths.get("..", "specification", "implementation", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				"metadata", "mets"); //$NON-NLS-1$ //$NON-NLS-2$
-		this.metsReqRoot = opts.profileFile.getParent().resolve(toReqRoot);
+		this.projRoot = opts.profileFile.getParent().getParent();
 	}
 	// ===========================================================
 	// SAX DocumentHandler methods
@@ -100,12 +106,12 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		} else if (exampleEle.equals(this.currEleName)) {
 			this.startExample(attrs);
 		} else if (this.inExample) {
-			try {
-				ExampleGenerator generator = this.getSectionExampleHandler(this.currentSect);
-				generator.outputEleStart(this.currEleName, attrs);
-			} catch (IOException excep) {
-				throw new SAXException(ioExcepMess, excep);
-			}
+			this.fragStart(this.getSectionExampleHandler(this.currentSect),
+					attrs);
+		} else if (appendixEle.equals(this.currEleName)) {
+			this.startAppendix(attrs);
+		} else if (this.inAppendix) {
+			this.fragStart(this.appendixGenerator, attrs);
 		}
 	}
 
@@ -119,28 +125,15 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		} else if (this.inRequirement) {
 			this.processRequirementChild();
 		} else if (exampleEle.equals(this.currEleName)) {
-			ExampleGenerator gene = this.getSectionExampleHandler(this.currentSect);
-			try {
-				gene.endExample();
-			} catch (IOException excep) {
-				throw new SAXException(ioExcepMess, excep);
-			}
-			this.inExample = false;
+			endExample();
 		} else if (this.inExample) {
-			try {
-				ExampleGenerator generator = this.getSectionExampleHandler(this.currentSect);
-				generator.outputEleEnd(this.currEleName, this.charBuff.voidBuffer());
-			} catch (IOException excep) {
-				throw new SAXException(ioExcepMess, excep);
-			}
+			fragEnd(this.getSectionExampleHandler(this.currentSect));
 		} else if (Section.isSection(this.currEleName)) {
-			this.currentSect = Section.fromEleName(this.currEleName);
-			try {
-				this.tableGen.toTable(OutputHandler.toSectionRequirements(this.metsReqRoot, this.currentSect));
-			} catch (IOException excep) {
-				throw new SAXException(ioExcepMess, excep);
-			}
-			this.reqCounter += this.tableGen.getRequirmentCount();
+			endSection();
+		} else if (appendixEle.equals(this.currEleName)) {
+			this.endAppendix();
+		} else if (this.inAppendix) {
+			fragEnd(this.appendixGenerator);
 		}
 		this.charBuff.voidBuffer();
 		this.currEleName = null;
@@ -175,7 +168,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			if (Requirement.empty.equals(aName))
 				aName = attrs.getQName(i);
 			this.reqBuilder.processAttr(aName, attrs.getValue(i));
-			if ("EXAMPLES".equals(aName)) {
+			if (exampleAtt.equals(aName)) {
 				this.processExampleAtt(attrs.getValue(i));
 			}
 		}
@@ -185,7 +178,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		if (attVal == null || attVal.isEmpty()) {
 			return;
 		}
-		String[] exampleIds = (attVal.contains(" ")) ? attVal.split(" ") : new String[] { attVal };
+		String[] exampleIds = (attVal.contains(space)) ? attVal.split(space)
+				: new String[] { attVal };
 		for (String exKey : exampleIds) {
 			this.exampleMap.get(this.currentSect).add(exKey);
 		}
@@ -209,7 +203,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			this.currDefTerm = this.charBuff.getBufferValue();
 			break;
 		case MetsProfileXmlHandler.defDefEle:
-			this.reqBuilder.defPair(this.currDefTerm, this.charBuff.getBufferValue());
+			this.reqBuilder.defPair(this.currDefTerm,
+					this.charBuff.getBufferValue());
 			break;
 		case MetsProfileXmlHandler.paraEle:
 			this.reqBuilder.description(this.charBuff.getBufferValue());
@@ -225,6 +220,17 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		this.tableGen = RequirementTableGenerator.instance();
 	}
 
+	private void endSection() throws SAXException {
+		this.currentSect = Section.fromEleName(this.currEleName);
+		try {
+			this.tableGen.toTable(OutputHandler
+					.toSectionRequirements(this.projRoot, this.currentSect));
+		} catch (IOException excep) {
+			throw new SAXException(ioExcepMess, excep);
+		}
+		this.reqCounter += this.tableGen.getRequirmentCount();
+	}
+
 	private void startExample(final Attributes attrs) throws SAXException {
 		this.inExample = true;
 		final String id = getId(attrs);
@@ -233,23 +239,60 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 				ExampleGenerator gene = this.getSectionExampleHandler(section);
 				try {
 					gene.startExample(getLabel(attrs));
-				} catch (IOException e) {
-					throw new SAXException(e);
+				} catch (IOException excep) {
+					throw new SAXException(ioExcepMess, excep);
 				}
 				return;
 			}
 		}
 	}
 
+	private void endExample() throws SAXException {
+		ExampleGenerator gene = this.getSectionExampleHandler(this.currentSect);
+		try {
+			gene.endExample();
+		} catch (IOException excep) {
+			throw new SAXException(ioExcepMess, excep);
+		}
+		this.inExample = false;
+	}
+
+	private void startAppendix(final Attributes attrs) throws SAXException {
+		this.inAppendix = true;
+		try {
+			if (this.appendixGenerator == null)
+				this.appendixGenerator = new ExampleGenerator(OutputHandler
+						.toAppendix(this.projRoot, exampleAtt.toLowerCase()));
+			this.appendixGenerator.startExample(getLabel(attrs),
+					getNumber(attrs));
+		} catch (IOException excep) {
+			throw new SAXException(ioExcepMess, excep);
+		}
+	}
+
+	private void endAppendix() throws SAXException {
+		try {
+			this.appendixGenerator.endExample();
+		} catch (IOException excep) {
+			throw new SAXException(ioExcepMess, excep);
+		}
+		this.inAppendix = false;
+	}
+
 	private static String getId(final Attributes attrs) {
-		return getAttValue(attrs, "ID");
+		return getAttValue(attrs, idAtt);
 	}
 
 	private static String getLabel(final Attributes attrs) {
-		return getAttValue(attrs, "LABEL");
+		return getAttValue(attrs, labelAtt);
 	}
 
-	private static String getAttValue(final Attributes attrs, final String attName) {
+	private static String getNumber(final Attributes attrs) {
+		return getAttValue(attrs, numberAtt);
+	}
+
+	private static String getAttValue(final Attributes attrs,
+			final String attName) {
 		if (attrs != null) {
 			for (int i = 0; i < attrs.getLength(); i++) {
 				String aName = attrs.getLocalName(i); // Attr name
@@ -262,16 +305,37 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		return empty;
 	}
 
-	private ExampleGenerator getSectionExampleHandler(Section section) throws SAXException {
+	private void fragStart(ExampleGenerator generator, final Attributes attrs)
+			throws SAXException {
+		try {
+			generator.outputEleStart(this.currEleName, attrs);
+		} catch (IOException excep) {
+			throw new SAXException(ioExcepMess, excep);
+		}
+	}
+
+	private void fragEnd(ExampleGenerator generator) throws SAXException {
+		try {
+			generator.outputEleEnd(this.currEleName,
+					this.charBuff.voidBuffer());
+		} catch (IOException excep) {
+			throw new SAXException(ioExcepMess, excep);
+		}
+	}
+
+	private ExampleGenerator getSectionExampleHandler(Section section)
+			throws SAXException {
 		ExampleGenerator gene = this.exampleHandlers.get(section);
 		try {
 			if (gene == null) {
-				OutputHandler handler = OutputHandler.toSectionExamples(this.metsReqRoot, section);
+				OutputHandler handler = OutputHandler
+						.toSectionExamples(this.projRoot, section);
 				gene = new ExampleGenerator(handler);
 				this.exampleHandlers.put(section, gene);
 			}
 		} catch (IOException e) {
-			throw new SAXException(String.format("Error opening example file for section %s.", section.sectName), e);
+			throw new SAXException(String.format(sectIoMess, section.sectName),
+					e);
 		}
 		this.currentSect = section;
 		return gene;

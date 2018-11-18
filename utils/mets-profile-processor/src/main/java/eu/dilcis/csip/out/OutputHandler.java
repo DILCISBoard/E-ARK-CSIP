@@ -24,8 +24,9 @@ public final class OutputHandler {
 	private static final String lineSepPropName = "line.separator"; //$NON-NLS-1$
 	private static final String lineEnd = System.getProperty(lineSepPropName);
 	private static final String utf8 = "UTF8"; //$NON-NLS-1$
-	private static final String reqsMd = "requirements.md"; //$NON-NLS-1$
-	private static final String examplesMd = "examples.md"; //$NON-NLS-1$
+	private static final String mdExt = ".md"; //$NON-NLS-1$
+	private static final String reqsMd = "requirements" + mdExt; //$NON-NLS-1$
+	private static final String examplesMd = "examples" + mdExt; //$NON-NLS-1$
 	private final Writer out;
 
 	/**
@@ -68,11 +69,29 @@ public final class OutputHandler {
 		return new OutputHandler();
 	}
 
-	public static OutputHandler toSectionRequirements(Path metsReqRoot, Section sect) throws IOException {
-		return new OutputHandler(metsReqRoot.resolve(Paths.get(sect.sectName, reqsMd)).toFile());
+	public static OutputHandler toSectionRequirements(Path projRoot,
+			Section sect) throws IOException {
+		return new OutputHandler(getSectionPath(projRoot, sect.sectName)
+				.resolve(Paths.get(reqsMd)).toFile());
 	}
 
-	public static OutputHandler toSectionExamples(Path metsReqRoot, Section sect) throws IOException {
-		return new OutputHandler(metsReqRoot.resolve(Paths.get(sect.sectName, examplesMd)).toFile());
+	public static OutputHandler toSectionExamples(Path projRoot, Section sect)
+			throws IOException {
+		return new OutputHandler(getSectionPath(projRoot, sect.sectName)
+				.resolve(Paths.get(examplesMd)).toFile());
 	}
+
+	public static OutputHandler toAppendix(Path metsReqRoot,
+			final String appndxName) throws IOException {
+		return new OutputHandler(metsReqRoot.resolve(Paths.get("specification",
+				"appendices", appndxName, appndxName + mdExt)).toFile());
+	}
+
+	private static Path getSectionPath(final Path projRoot,
+			final String sectName) {
+		Path toReqRoot = Paths.get("specification", "implementation", //$NON-NLS-1$ //$NON-NLS-2$
+				"metadata", "mets", sectName); //$NON-NLS-1$ //$NON-NLS-2$
+		return projRoot.resolve(toReqRoot);
+	}
+
 }

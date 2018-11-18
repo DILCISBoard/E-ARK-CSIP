@@ -58,6 +58,10 @@ Contents
 	    - [6.2.4.	An example for the Northwind database](implementation/considerations/#624-an-example-for-the-northwind-database)
 	    - [6.2.5.	Illustration of references between METS files in a segmented IP](implementation/considerations/#625-illustration-of-references-between-mets-files-in-a-segmented-ip)
 	  - [6.3.	Handling descriptive metadata within the Common Specification](implementation/considerations/#63-handling-descriptive-metadata-within-the-common-specification)
+- [Appendices](appendices/)
+	- [Appendix A: E-ARK Information Package METS examples](appendices/examples/)
+	- [Appendix B: External Schema and Vocabularies](appendices/schema/)
+	- [Appendix C: A Full List of E-ARK CSIP Requirements](appendices/requirements/)
 
 Acknowledgements
 ----------------
