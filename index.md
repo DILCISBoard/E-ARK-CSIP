@@ -18,9 +18,9 @@ An HTML version of the E-ARK Common Specification for Information Packages the
 e.g. "PART II: Implementation of the CS IP" is located at
 [/specification/implementation/](/specification/implementation/).
 - Lower level headings have page anchors, e.g. 5.3 Use of METS has the URL
-[/specification/implementation/metadata/#53-use-of-mets](/specification/implementation/metadata/#53-use-of-mets).
+[/specification/implementation/metadata/mets/#53-use-of-mets](/specification/implementation/metadata/mets/#53-use-of-mets).
 - Individual requirements also have page anchors and URLS, e.g.
-[/specification/implementation/metadata/#CSIP80](/specification/implementation/metadata/#CSIP80).
+[/specification/implementation/metadata/mets/structmap/#CSIP80](/specification/implementation/metadata/mets/structmap/#CSIP80).
 
 Archive
 -------

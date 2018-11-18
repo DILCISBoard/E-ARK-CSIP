@@ -6,6 +6,8 @@ import java.io.PrintStream;
 
 import org.xml.sax.SAXException;
 
+import eu.dilcis.csip.profile.MetsProfileXmlHandler;
+
 /**
  * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
  *         <a href="https://github.com/carlwilson">carlwilson AT github</a>
