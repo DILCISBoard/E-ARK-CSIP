@@ -1,7 +1,7 @@
 ---
 title: Use of PREMIS
 ---
-## 5.4.	Use of PREMIS
+## 5.4 Use of PREMIS
 The CS IP recommends and advocates the use of the PREMIS metadata standard for recording preservation and technical metadata about digital objects contained within CS IP Information Packages. The CS IP implements version 3.0 of the PREMIS Data Dictionary.  Note that use of PREMIS is not mandatory
 because a SIP will not always be able to include preservation metadata.
 

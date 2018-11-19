@@ -35,7 +35,7 @@ Buffers XML element text and handles output (for now.....)
 
 ToDo ?
 ------
-- [ ] Stronger data typing for [`eu.dilcis.csip.MetsProfileXmlHandler.Requirement`](./utils/mets-profile-processor/src/main/java/eu/dilcis/csip/MetsProfileXmlHandler.java)
+- [ ] Stronger data typing for [`eu.dilcis.csip.MetsProfileXmlHandler.Requirement`](./src/main/java/eu/dilcis/csip/MetsProfileXmlHandler.java)
 - [ ] Requirement validation, e.g. non-empty fields etc.
 - [ ] Group think for other validation activities.
 - [ ] Markdown table generation
