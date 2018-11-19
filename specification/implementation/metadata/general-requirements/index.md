@@ -24,7 +24,7 @@ case of SIPs, appropriate preservation metadata is not always available. As such
 
 The use of any additional metadata is not restricted in CS IP Information Packages.
 
-## 5.2.	General requirements for the use of metadata
+## 5.2 General requirements for the use of metadata
 Before we describe the detailed requirements for the use of METS and PREMIS we would like to highlight some general aspects which need to be implemented commonly across all metadata.
 
 ### The use of identifiers
@@ -40,6 +40,7 @@ Example 1: using a prefix which consists of the abbreviation of the identifier a
 ```
 
 Example 2: using a fixed prefix “ID”
+
 ```xml
 <dmdSec ID="ID906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-
 24T14:37:49.609+01:00">
@@ -69,6 +70,7 @@ In order to guarantee interoperability, all references within a CS IP Informatio
   - Further, the value of the XLink `@href` attribute SHOULD NOT use the protocol part of the URI (e.g. `file://` or `http://`) and, in this case, MUST be interpreted as a relative path to the file (from the metadata file into which the reference is included).
 
 Example:
+
 ```xml
 <mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis2.xml"
 ... />
