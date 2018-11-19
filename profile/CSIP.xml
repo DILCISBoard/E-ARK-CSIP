@@ -9,7 +9,7 @@
 <METS_Profile xmlns="http://www.loc.gov/METS_Profile/v2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:mets="http://www.loc.gov/METS/"
-    xmlns:csip="DILCIS"
+    xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xsi:schemaLocation="http://www.loc.gov/METS_Profile/v2 http://www.loc.gov/standards/mets/profile_docs/mets.profile.v2-0.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd" STATUS="provisional" REGISTRATION="unregistered">
     <!-- Karin: Link needed -->
@@ -18,8 +18,8 @@
     <!-- Karin: Abstract text updated -->
     <abstract>This base profile describes the Common Specification for Information Packages (CS IP) and the implementation of METS for packaging OAIS conformant Information Packages. The profile is accompanied with a textuall document explaning the details of use of this profile. 
         This will enable repository interoperability and assist in the management of the preservation of digital content. 
-        This profile is a base profile which is extended to E-ARK profiles for SIP, AIP and DIP.
-    The profile can be used as is, but it is recommended that the supplied extending profiles are used. Alternatively, an own extension fulfilling the extending needs of the implementer can be created.</abstract>
+        This profile is a base profile which is extended with E-ARK implementation of SIP, AIP and DIP.
+    The profile can be used as is, but it is recommended that the supplied extending implementation are used. Alternatively, an own extension fulfilling the extending needs of the implementer can be created.</abstract>
     <date>2018-06-13T12:00:00</date>
     <contact>
         <institution>DILCIS Board</institution>
@@ -29,41 +29,14 @@
     <related_profile>This profile has no related profiles</related_profile>
     <profile_context>
         <resource_model>
-            <!-- Karin: Updates needed -->
           <head>Principles for a package conforming to the Common Specification for Information Packages (CS IP)</head>
-            <p xmlns="http://www.w3.org/1999/xhtml"><a href="Link to the CS IP part with the description">CS IP Principles</a></p>
-            
-            <!-- Thes lines can be used for updateing the text in CS IP, here in the profile we will only reference the document -->
-            <!--<p xmlns="http://www.w3.org/1999/xhtml" id="CSIP1.1">It MUST be possible to include any data or metadata in a CS IP Information Package regardless of its type or format.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP1.2">The Information Package MUST NOT restrict the means, methods or tools for exchanging it.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP1.3">The MUST NOT define the scope of data and metadata which constitutes an Information Package.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP1.4">The Information Package SHOULD be scalable.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP1.5">The Information Package MUST be machine readable.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP1.6">The Information Package SHOULD be human readable.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP1.7">The Information Package MUST support the preservation method best suited for the data.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP2.1">The Information Package type (SIP, AIP or DIP) MUST be clearly indicated.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP2.2">Any Information Package MUST clearly identify the Content Information Type(s) of its data and metadata.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP2.3">Any Information Package MUST have an identifier which is unique and persistent within the repository.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP2.4">Any Information Package SHOULD have an identifier which is globally unique and persistent.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP2.5">All components of a Information Package MUST bear an identifier which is unique and persistent within the repository.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP3.1">The Information Package MUST be built in such a way that its data and metadata can be logically separated from one another.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP3.2">The Information Package SHOULD be built in such a way that its data and metadata can be physically separated from one another.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP3.3">The structure of the Information Package SHOULD allow for the separation of different types of metadata.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP3.4">The structure of the Information Package MUST allow for the separation of data and metadata representations.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP3.5">The structure of the Information Package MUST explicitly define the possibilities for adding additional components into the Information Package.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP3.6">The Information Package MUST follow a common conceptual structure regardless of its technical implementation.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP3.7">The Information Package MUST be implemented by ONLY ONE implementation at any point in time.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP4.1">Metadata in the Information Package MUST be based on standards.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP4.2">Metadata in the Information Package MUST allow for unambiguous use.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml" id="CSIP4.3">The Information Package MUST NOT restrict the addition of any additional metadata.</p>
-        -->
+            <p xmlns="http://www.w3.org/1999/xhtml"><a href="http://earkcsip.dilcis.eu/specification/specification/principles/">CS IP Principles</a></p>
         </resource_model>
     </profile_context>
     <external_schema>        
-        <name>E-ARK METS Extension</name>
-        <!-- Link needed-->
+        <name>E-ARK CS IP METS Extension</name>
         <URL>To be added</URL>
-        <context>Extension schema for this profile</context>
+        <context>https://dilcis.eu/XML/METS/CSIPExtensionMETS/CSIPExtensionMETS.xsd</context>
         <note>
             <p xmlns="http://www.w3.org/1999/xhtml">An extension schema with the added attributes for use in this profile.</p>
             <p xmlns="http://www.w3.org/1999/xhtml">The schema is used with a namespace prefix of csip</p>
@@ -81,12 +54,11 @@
         <p xmlns="http://www.w3.org/1999/xhtml">The filepath must be decoded consistently throughout all file references within the information package.</p> 
     </description_rules>
     <controlled_vocabularies>
-        <!-- Karin: Links to all needed when they are created -->
         <!-- Karin: Placed in a document named DILCISVocabulariesIP.xml -->
         <vocabulary ID="VocabularyContentInformationTypeSpecification">
             <name>Content information type specification name</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>Link to XML-document with our vocabulary</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/</URI>
             <context>Used in @csip:CONTENTINFORMATIONTYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the specific E-ARK content information type names supported or maintained in this METS profile.</p>
@@ -95,7 +67,7 @@
         <vocabulary ID="VocabularyType">
             <name>Content information type declaration</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>Link to XML-document with our vocabulary</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/</URI>
             <context>Used in mets/@type</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the broad information type classification</p>
@@ -104,7 +76,7 @@
         <vocabulary ID="VocabularyOAISPackageType">
             <name>OAIS Package type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>Link to XML-document with our vocabulary</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/</URI>
             <context>Used in @csip:OAISPACKAGETYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the OAIS type the package belongs to in the OAIS reference model.</p>
@@ -113,7 +85,7 @@
         <vocabulary ID="VocabularyNoteType">
             <name>Note type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>Link to XML-document with our vocabulary</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/</URI>
             <context>Used in @csip:NOTETYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of a note for an agent.</p>
@@ -122,7 +94,7 @@
         <vocabulary ID="VocabularyAgentOtherType">
             <name>Other agent type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>Link to XML-document with our vocabulary</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/</URI>
             <context>Used in metsHdr/agent/@OTHERTYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the other agent types supported by the profile</p>
@@ -140,7 +112,7 @@
         <vocabulary ID="VocabularyStatus">
             <name>dmdSec status</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>Link to XML-document with our vocabulary</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/</URI>
             <context>Used in dmdSec/@STATUS</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the status of the descriptive metadata section (dmdSec) which is supported by the profile.</p>
@@ -158,7 +130,7 @@
         <vocabulary ID="VocabularyFileGrpAndStructMapDivisionLabel">
             <name>File group names</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>Link to XML-document with our vocabulary</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/</URI>
             <context>Used in fileGrp/@USE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the uses of the file group (fileGrp) that are supported by the profile.</p>
@@ -168,7 +140,7 @@
         <vocabulary ID="VocabularyStructMapType">
             <name>Structural map typing</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>Link to XML-document with our vocabulary</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/</URI>
             <context>Used in structMap/@TYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of the structural map (structMap) that is supported by the profile.</p>
@@ -178,7 +150,7 @@
         <vocabulary ID="VocabularyStructMapLabel">
             <name>Structural map label</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>Link to XML-document with our vocabulary</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/</URI>
             <context>Used in structMap/@TYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the label of the structural map that is supported by the profile.</p>
@@ -367,7 +339,7 @@
                     <head>Classification of the agent additional information</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent note is typed with the fixed value of "SOFTWARE VERSION".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPAth</dt><dd>metsHdr/agent/note/@csip:NOTETYPE</dd>
+                        <dt>METS XPath</dt><dd>metsHdr/agent/note/@csip:NOTETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -856,7 +828,6 @@
                     <head>File section</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the section is used only one file section (fileSec) element is present.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer just descriptive metadata and/or adminsitrative metadata without files placed in this section.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml"></p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -911,7 +882,7 @@
                     <!-- Karin: Renamed -->
                     <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which describes the specific content information type specification used for the transferred content. The attribute is mandatory to use when the file group catagorization is Representations. The vocabulary is going to evolve under the care of the DILCIS Board as additional content information type specifications are developed.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/@csip:CONTENTINFORMATIONTYPE</dd>
+                        <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -924,7 +895,7 @@
                     <head>Other specific content type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must describe the content.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
+                        <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1077,7 +1048,7 @@
                    </dl>  
                </description>
             </requirement>
-            <requirement ID="CSIP77" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
+            <requirement ID="CSIP77" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <!-- Karin: done -->
                     <!-- Karin: text updated -->
@@ -1089,7 +1060,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP78" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
+            <requirement ID="CSIP78" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <!-- Karin: done -->
                     <!-- Karin: text updated -->
@@ -1101,7 +1072,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP79" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
+            <requirement ID="CSIP79" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <!-- Karin: done -->
                     <!-- Karin: Text updated -->
@@ -1478,7 +1449,7 @@
                     <head>Type of link</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS Xpath</dt><dd>structMap/div/div/mptr/@xlink:type</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/mptr/@xlink:type</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1488,7 +1459,7 @@
                     <!-- Karin: Done -->
                     <!-- Karin: Text updated -->
                     <head>Type of locator</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">TTe locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/mptr/@LOCTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1570,49 +1541,35 @@
             <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
         </note>
     </tool>
-    <Example ID="metsRootElementExample1" LABEL="METS root element example for a representation">
-        <!--Karin: Profile link will be updated -->
-        <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xmlns:mets="http://www.loc.gov/METS/" 
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
-            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
-            LABEL="Sample CS IP Information Package" 
-            TYPE="Database" 
-            csip:CONTENTINFORMATIONTYPE="SIARD2" 
-            PROFILE="http://www.eark-project.com/METS/IP.xml" 
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://DILCIS.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
-        </mets:mets>
-    </Example>
     <Example ID="metsRootElementExample2" LABEL="METS root element example with content not in the value list being transfered">
         <!-- Karin: Profile link will be updated -->
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
             xmlns:mets="http://www.loc.gov/METS/" 
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
             OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
             LABEL="Sample CS IP Information Package" 
             TYPE="OTHER" 
             csip:OTHERTYPE="Patterns"           
             PROFILE="http://www.eark-project.com/METS/IP.xml" 
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://DILCIS.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
          </mets:mets>  
     </Example>
     <Example ID="metsRootElementExample3" LABEL="METS root element example of content with a type from the value list and representation content not in the value list">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
             xmlns:mets="http://www.loc.gov/METS/" 
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
             OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
             LABEL="Sample CS IP Information Package" 
             TYPE="Datasets" 
             csip:CONTENTINFORMATIONTYPE="OTHER" 
             csip:OTHERCONTENTINFORMATIONTYPE="FGS Personal, version 1"
             PROFILE="http://www.eark-project.com/METS/IP.xml" 
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://DILCIS.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
         </mets:mets>
     </Example>
-    <Example ID="metsHdrElementExample1">
+    <Example ID="metsHdrElementExample1" LABEL="METS example of the mandatory agent">
         <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
             <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
                 <mets:name>RODA-in</mets:name>
@@ -1620,12 +1577,12 @@
             </mets:agent>
         </mets:metsHdr>
     </Example>
-    <Example ID="dmdSecExample1">
+    <Example ID="dmdSecExample1" LABEL="METS example of referencing descriptive metadata in the for of an EAD document">
         <mets:dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
             <mets:mdRef LOCTYPE="URL" MDTYPE="EAD" xlink:type="simple"  xlink:href="metadata/descriptive/ead2002.xml" mimetype="application/xml" SIZE="903" CREATED="2018-04-24T14:37:49.609+01:00" CHECKSUM="F24263BF09994749F335E1664DCE0086DB6DCA323FDB6996938BCD28EA9E8153" CHECKSUMTYPE="SHA-256"/>
         </mets:dmdSec>
     </Example>
-    <Example ID="amdSecExample1">
+    <Example ID="amdSecExample1" LABEL="METS example of referencing preservation metadata in the form of PREMIS metadata for describing the preservation objects and the events pertaining to the objects">
         <mets:amdSec>
             <mets:digiprovMD ID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F" CREATED="2018-04-24T14:37:52.783+01:00">
                 <mets:mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis1.xml" MDTYPE="PREMIS:EVENT" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="1211" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="8aa278038dbad54bbf142e7d72b493e2598a94946ea1304dc82a79c6b4bac3d5" CHECKSUMTYPE="SHA-256" LABEL="premis1.xml"/>
@@ -1635,7 +1592,7 @@
             </mets:digiprovMD>
         </mets:amdSec>
     </Example>
-    <Example ID="fileSecExample1">
+    <Example ID="fileSecExample1" LABEL="METS example of structuring the data in the file section">
         <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
             <!-- Main grouping starting names is Documentation, Schemas and Representations can be mirrored in the folder names-->
             <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H" USE="Documentation">
@@ -1662,13 +1619,13 @@
             </mets:fileGrp>
         </mets:fileSec>
     </Example>
-    <Example ID="fileSecExample2">
+    <Example ID="fileSecExample2" LABEL="METS example of structuring the data in the file section when there are representatins present">
             <!-- The fileGrp USE attribute gives the folder name including path to the where the data is found -->
         <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
             <!-- Main grouping starting names is Documetation, Schemas and Representations can be mirrored in the folder names-->        
             <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H" USE="Documentation">
                 <!-- Documentation is grouped in one or more fileGrp with the use being the path to the documentation -->
-                <!-- This documentation is for the whole package, the representations documetation is described in the mets for the representation -->
+                <!-- This documentation is for the whole package, the representations documentation is described in the mets for the representation -->
                 <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A81" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File.docx"/>
                 </mets:file>
@@ -1701,7 +1658,7 @@
             </mets:fileGrp>
         </mets:fileSec>
     </Example>
-    <Example ID="structMapExample1">
+    <Example ID="structMapExample1" LABEL="METS example of the mandatory structural map">
         <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CS IP StructMap">
             <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
                 <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/> 
@@ -1711,12 +1668,12 @@
             </mets:div>
         </mets:structMap>
     </Example>
-    <Example ID="structMapExample2">
+    <Example ID="structMapExample2" LABEL="METS example of the mandatory structural map when there are representations present">
         <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CS IP StructMap">
             <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
                <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/> 
                 <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
-                <!-- mptr Only present if representaitons is transferred and gives all the linked mets documents-->              
+                <!-- mptr Only present if representations is transferred and gives all the linked mets documents-->              
                 <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="representations/preingest" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C277">
                     <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml"/>
                 </mets:div>
@@ -1729,18 +1686,18 @@
             </mets:div>
         </mets:structMap> 
     </Example>
-    <Appendix NUMBER="1">
+    <Appendix NUMBER="1" LABEL="Example of a whole METS document describing an information package with no representations">
         <!--  Karin: update of profile link needed -->
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"     
             xmlns:mets="http://www.loc.gov/METS/" 
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
             OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
             LABEL="Sample CS IP Information Package with no representations" 
             TYPE="Database" 
             csip:CONTENTINFORMATIONTYPE="SIARDDK" 
             PROFILE="http://www.eark-project.com/METS/CSIP.xml" 
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://DILCIS.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
             <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
                 <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
                     <mets:name>RODA-in</mets:name>
@@ -1788,17 +1745,17 @@
             </mets:structMap> 
         </mets:mets>
     </Appendix>
-    <Appendix NUMBER="2">
+    <Appendix NUMBER="2" LABEL="Example of a whole METS document describing an information package with representations">
         <!--  Karin: update of profile link needed -->
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
             xmlns:mets="http://www.loc.gov/METS/" 
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
             OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
             LABEL="Sample CS IP Information Package with representations" 
             TYPE="Database" 
             PROFILE="http://www.eark-project.com/METS/CSIP.xml" 
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://DILCIS.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
             <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
                 <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
                     <mets:name>RODA-in</mets:name>

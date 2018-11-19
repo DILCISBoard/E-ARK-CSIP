@@ -1,0 +1,10 @@
+Gemfile.lock
+**/_site
+
+.classpath
+.project
+.settings
+**/*.jar
+**/target
+**/bin
+

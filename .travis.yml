@@ -1,0 +1,20 @@
+dist: trusty
+sudo: required
+
+language: java
+jdk:
+  - openjdk8
+  - oraclejdk8
+
+script:
+  - cd utils/mets-profile-processor
+  - mvn clean package
+  - java -jar target/mets-profile-proc.jar ../../profile/CSIP.xml
+  - cd ../..
+  - bundle install
+  - bundle exec jekyll build
+#  - bundle exec htmlproofer ./_site --file-ignore /javadoc/ --only-4xx --check-favicon --check-html
+  - bundle exec htmlproofer ./_site --file-ignore /javadoc/ --only-4xx --check-html
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
