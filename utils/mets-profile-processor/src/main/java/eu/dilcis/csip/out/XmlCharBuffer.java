@@ -1,13 +1,13 @@
 /**
  * 
  */
-package eu.dilcis.csip;
+package eu.dilcis.csip.out;
 
 /**
  * @author cfw
  *
  */
-final class XmlCharBuffer {
+public final class XmlCharBuffer {
 	private StringBuffer textBuffer = null;
 	/**
 	 * Get the value of the text buffer
@@ -26,7 +26,7 @@ final class XmlCharBuffer {
 	}
 
 	/**
-	 * Add text to the buffer / start a new bufer if necessary
+	 * Add text to the buffer / start a new buffer if necessary
 	 */
 	public void addToBuffer(final String toAdd) {
 		if (this.textBuffer == null) {

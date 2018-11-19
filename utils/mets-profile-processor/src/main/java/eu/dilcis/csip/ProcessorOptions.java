@@ -26,9 +26,9 @@ public final class ProcessorOptions {
 	final static String usageOpt = "-h"; //$NON-NLS-1$
 	final static String outputOpt = "-o"; //$NON-NLS-1$
 	final static String period = "."; //$NON-NLS-1$
-	final Path outDir;
-	final boolean isUsage;
-	final Path profileFile;
+	public final Path outDir;
+	public final boolean isUsage;
+	public final Path profileFile;
 
 	/**
 	 * 
