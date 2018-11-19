@@ -1,3 +1,6 @@
+---
+title: General requirements for metadata
+---
 ## 5.1. General requirements for metadata in a CS IP Information Package
 The number one consideration when discussing metadata requirements is, as with the rest of this specification, the need for interoperability. In more detail, the focus is on high-level technical interoperability and tasks which allow an Information Package to be prepared, transferred and received regardless of the institutions and tools involved. These tasks include:
 
@@ -12,7 +15,7 @@ In more technical terms the CS IP makes an effort to control metadata which allo
 Most crucially, we regard descriptive metadata and most of detailed technical metadata to not belong in the scope of the CS IP. As such, the CS IP itself does not aim to provide detailed semantic interoperability between different systems. However, as noted in Section 1.2, implementers are welcome to use the
 construct of Content Information Type Specifications to achieve an even higher level of interoperability.
 
-We implement the core metadata requirements with METS (Metadata Encoding & Transmission Standard, http://www.loc.gov/standards/mets/ ). In this specification we describe the core elements used, more elements are available in the METS standard and can be used in the own implementation. 
+We implement the core metadata requirements with METS (Metadata Encoding & Transmission Standard, http://www.loc.gov/standards/mets/ ). In this specification we describe the core elements used, more elements are available in the METS standard and can be used in the own implementation.
 
 Some of the core metadata requirements are already visible from the structure presented in the previous Section. As seen in the previous section one or more METS files can be present. The METS file describing the whole package is from now called "Root METS" and the METS file present in the Representation folder is called "Representation METS" in the rest of this document. The detailed specification of using METS within the CS IP is available in Section 5.3.
 
@@ -21,7 +24,7 @@ case of SIPs, appropriate preservation metadata is not always available. As such
 
 The use of any additional metadata is not restricted in CS IP Information Packages.
 
-## 5.2.	General requirements for the use of metadata
+## 5.2 General requirements for the use of metadata
 Before we describe the detailed requirements for the use of METS and PREMIS we would like to highlight some general aspects which need to be implemented commonly across all metadata.
 
 ### The use of identifiers
@@ -37,6 +40,7 @@ Example 1: using a prefix which consists of the abbreviation of the identifier a
 ```
 
 Example 2: using a fixed prefix “ID”
+
 ```xml
 <dmdSec ID="ID906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-
 24T14:37:49.609+01:00">
@@ -70,6 +74,7 @@ In order to guarantee interoperability, all references within a CS IP Informatio
 - Further, the value of the XLink `@href` attribute SHOULD NOT use the protocol part of the URI (e.g. `file://` or `http://`) and, in this case, MUST be interpreted as a relative path to the file (from the metadata file into which the reference is included).
 
 Example:
+
 ```xml
 <mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis2.xml"
 ... />

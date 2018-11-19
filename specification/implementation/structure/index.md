@@ -1,4 +1,7 @@
-# 4.	CS IP structure
+---
+title: CSIP structure
+---
+# 4.	CSIP structure
 The preferred implementation of the conceptual model described in Principle 3.6 is a fixed physical (folder) structure which follows exactly the conceptual structure. While the CS IP doesn't prohibited alternative implementations of the conceptual model such implementations aren't recommended.
 
 The main reason for such an implementation decision is that a fixed physical folder structure makes it clear for both human users and tools where to find what. The main benefit of such a clear decision is that many archival tasks (for example file format risk analysis) can be executed directly on the data portion of the package structure, as opposed to first processing potentially large amounts of metadata for the locations of the files. This, in turn, allows for more efficient processing which is valuable in the case of large collections and bulk operations. In short, we believe that a fixed folder structure allows for more efficiency and scalability.
@@ -8,6 +11,7 @@ However, we would like to note that the purpose of this specification is to supp
 to use the tools created by other users of the common specification, transfer AIPs more easily to new repository systems or storage solutions, and establish cross-repository duplicated storage solutions.
 
 ## Contents
-- [4.	CS IP structure](structure/)
-  - [4.1 Folder structure of the CS IP](structure/folders)
-  - [4.2 Implementing the structure](structure/implementation)
+
+- [4.	CS IP structure](./)
+  - [4.1 Folder structure of the CS IP](folders/)
+  - [4.2 Implementing the structure](implementation/)

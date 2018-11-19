@@ -6,12 +6,8 @@
             <p>Vocabulary derived from E-ARK</p>
         </Information>
         <Entry>
-            <Term lang="en">SMURFERMS</Term>
-            <Definition>A specification for Electronic records management is used</Definition>
-        </Entry>
-        <Entry>
-            <Term lang="en">SMURFSFSB</Term>
-            <Definition>A specification for random files is used</Definition>
+            <Term lang="en">ERMS</Term>
+            <Definition>The specification for Electronic records management is used</Definition>
         </Entry>
         <Entry>
             <Term lang="en">SIARD1</Term>
@@ -26,12 +22,8 @@
             <Definition>A relational database is described with SIARD version DK</Definition>
         </Entry>
         <Entry>
-            <Term lang="en">GeoVectorGML</Term>
-            <Definition>Geodata is described with a specification for Vector GML</Definition>
-        </Entry>
-        <Entry>
-            <Term lang="en">GeoRasterGeotiff</Term>
-            <Definition>Geodata is described with a specification for Raster Tiff</Definition>
+            <Term lang="en">GeoData</Term>
+            <Definition>The specification for Geodata is used</Definition>
         </Entry>
         <Entry>
             <Term lang="en">MIXED</Term>
@@ -200,10 +192,6 @@
         </Entry>
         <Entry>
             <Term lang="en">Datasets</Term>
-            <Definition>Definition needed</Definition>
-        </Entry>
-        <Entry>
-            <Term lang="en"></Term>
             <Definition>Definition needed</Definition>
         </Entry>
         <Entry>
