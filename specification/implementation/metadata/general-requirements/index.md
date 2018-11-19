@@ -28,7 +28,7 @@ The use of any additional metadata is not restricted in CS IP Information Packag
 Before we describe the detailed requirements for the use of METS and PREMIS we would like to highlight some general aspects which need to be implemented commonly across all metadata.
 
 ### The use of identifiers
-The ID data type in XML ( https://www.w3.org/TR/xml-id/ ) define that a legit value must begin with a letter, or the underscore character (‘_’), and contain no characters other than letters, digits, hyphens, underscores, full stops, and certain combining and extension characters. To overcome this limitation and in order to allow for interoperable package identification all identifiers within Common Specification metadata MUST start with a prefix, followed by the actual value of the identifier.
+The ID data type in XML ( https://www.w3.org/TR/xml-id/ ) states that a valid ID must begin with a letter, or an underscore character (‘_’), and contain no characters other than letters, digits, hyphens, underscores, full stops, and certain combining and extension characters. To overcome this limitation and allow for interoperable package identification all identifiers within Common Specification metadata MUST start with a prefix, followed by the value of the identifier.
 
 Examples:
 
@@ -81,5 +81,5 @@ Example:
 ```
 
 ### Referencing other packages
-As with internal referencing it is crucial that external references to other related packages are expressed in an interoperable manner. As such all references to other CS IP Information Packages MUST use the value of the **Content Identification**-element ( `mets/@OBJID` ) attribute of the package.
+It is important that external references to related packages, like internal references, are expressed consistently. All external references MUST USE `mets/@OBJID` attribute of the package.
 
