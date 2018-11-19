@@ -2,7 +2,7 @@
 title: Introduction
 ---
 # 1 Introduction
-This document introduces the concept of a Common Specification for Information Packages. It aims to serve three main purposes:
+This document introduces the concept of the Common Specification for Information Packages (CS IP). It aims to serve three main purposes:
 
 1.	Establish a common understanding of the requirements which need to be met in order to achieve interoperability of Information Packages;
 
@@ -23,7 +23,7 @@ submit data and metadata to digital repositories; store it in long-term preserva
 
 The main goal in the development of this specification has been to identify and standardise the common aspects of IPs which are equally relevant and implemented by any of the functional entities of the overall digital preservation process presented in OAIS (i.e. pre-ingest, ingest, archival storage, data management and access). The practical implementation is that the specification therefore allows for the development of generic tools and code libraries which can either be applied commonly across the whole lifecycle of digital data, or be reused as the basis for developing more specific, content or process-aware tools.
 
-However, to allow for interoperability on process level there is still a need for defining more detailed technical specifications for a SIP, AIP and DIP. This is also the case for the E-ARK specifications where, next to this Common Specification for Information Packages, more detailed E-ARK SIP, E-ARK AIP and E-ARK DIP profiles  have been created.
+To enable process level interoperability there needs to be detailed technical specifications for the OAIS information package types, e.g. SIP, AIP and DIP. For the E-ARK specifications this Common Specification for Information Packages is accompanied by detailed E-ARK SIP, E-ARK AIP and E-ARK DIP implementation profiles.
 
 <a name="fig2"></a>
 ![CS SCOPE](fig_2_cs_ip_scope.png "The scope of Common Specification for Information Packages in regard to OAIS Information Packages.")
@@ -42,16 +42,13 @@ As an interoperability standard, it must be possible to use the CS IP regardless
 
 To allow for such in-depth control over specific content types and formats, E-ARK specifications introduce the concept of Content Information Type Specifications.  A Content Information Type Specification can include detailed requirements on how content, metadata, and documentation for specific content types (for example relational databases or geospatial data) have to be handled within a CS IP (or E-ARK SIP, AIP or DIP).
 
-For now (February 2017) there are seven Content Information Type Specifications which have been created by the E-ARK project and have been verified for usage within the Common Specification for Information
-Packages:
+As of November 2018 these Content Information Type Specifications, created by the E-ARK project and enchanced by the DILCIS Board, have been verified for usage within the Common Specification for Information Packages:
 
-- SMURF SFSB: Semantically Marked-Up Records Format for Simple File-System Based records. This Content Information Type Specification describes the usage of the CS IP for the case of simple computer files organised in folder structures; and their description using the EAD encoding standard ;
+- E-ARK ERMS: Content Information Type Specification Electronic Records Management Systems. This Content Information Type Specification describes the use of the CS IP for the archiving of records exported from ERMS-type systems;
 
-- SMURF ERMS: Semantically Marked-Up Records Format for Electronic Records Management Systems. This Content Information Type Specification describes the use of the CS IP for the archiving of records exported from ERMS-type systems. The specification is built on top of SMURF SFSB and extends it with additional metadata requirements for ERMS-derived metadata;
+- E-ARK Geodata: This Content Information Type specifications build upon the INSPIRE directive and describes the storing geospatial information, within a CS IP compatible Information Package;
 
-- GeoVectorGML and GeoRasterGeoTIFF: These two Content Information Type specifications build upon the SMURF SFSB and add additional structural and metadata requirements for storing geospatial information, respectively in GML  and GeoTIFF  formats, within a CS IP compatible Information Package;
-
-- SIARD1, SIARD2 and SIARDDK: These three Content Information Type specifications describe the usage of the CS IP for the archiving, preservation and reuse of relational databases in one of the formats in the SIARD family (Software Independent Archiving of Relational Databases). Note, that SIARD1 and SIARDDK specifications are deemed outdated by the time of writing and are only intended to be used for packaging already available SIARD1 and SIARDDK packages in a CS IP compatible Information Packages. For new occurrences of archiving relational databases the use of the SIARD2 format  and according Content Information Type Specification is recommended.
+- E-ARK SIARD (SIARD1, SIARD2 and SIARDDK): This Content Information Type specification describe the usage of the CS IP for the archiving, preservation and reuse of relational databases in one of the formats in the SIARD family (Software Independent Archiving of Relational Databases). Note, that SIARD1 and SIARDDK specifications are deemed outdated by the time of writing and are only intended to be used for packaging already available SIARD1 and SIARDDK packages in a CS IP compatible Information Packages. For new occurrences of archiving relational databases the use of the SIARD2 format  and according Content Information Type Specification is recommended.
 
 <a name="fig3"></a>
 ![TYPE SPECS](fig_3_cs_ip_types.png "Common Specification for Information Packages and Content Information Type Specifications.")
