@@ -2,9 +2,11 @@
 title: Implementing the structure
 ---
 ## 4.2.	Implementing the structure
-The requirements presented in Section 4.1 leave room for quite a few decisions during implementation. For the sake of clarity we provide here examples for two extremes – the simplest and the full use of the structure.
+The requirements presented in Section 4.1 leave room for decisions during the implementation. For the sake of clarity we here provide examples for two extremes – the simplest and the full use of the structure.
 
 In the simplest case the structure can be implemented following mostly just the MUST requirements. An example of this is visible on Figure 9.
+
+**Karin: This simple case is invalid due to CSIPSTR12, how to handle it? Just remove? At the same time this simplicity is desireed!? Or is the simple case having all files in just one folder?**
 
 <a name="fig9"></a>
 ![CS IP Example](fig_9_cs_ip_simple.png "Example of a simple use of the CS IP structure.")
