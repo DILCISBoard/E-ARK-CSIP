@@ -41,6 +41,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private static final String headEle = "head"; //$NON-NLS-1$
 	private static final String appendixEle = "Appendix"; //$NON-NLS-1$
 	private static final String exampleEle = "Example"; //$NON-NLS-1$
+	private static final String extSchemaEle = "external_schema"; //$NON-NLS-1$
+	private static final String vocabEle = "vocabulary"; //$NON-NLS-1$
 	private static final String exampleAtt = "EXAMPLES"; //$NON-NLS-1$
 	private static final String idAtt = "ID"; //$NON-NLS-1$
 	private static final String labelAtt = "LABEL"; //$NON-NLS-1$
@@ -68,6 +70,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private boolean inRequirement = false;
 	private boolean inExample = false;
 	private boolean inAppendix = false;
+	private boolean inExtSchema = false;
+	private boolean inVocab = false;
 	private RequirementTableGenerator tableGen;
 	private Requirement.Builder reqBuilder = new Requirement.Builder();
 	private int reqCounter = 0;
@@ -78,6 +82,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private final Map<Section, Set<String>> exampleMap = new HashMap<>();
 	private final Map<Section, ExampleGenerator> exampleHandlers = new HashMap<>();
 	private ExampleGenerator appendixGenerator = null;
+	private RequirementTableGenerator reqsAppndxGen;
 
 	public MetsProfileXmlHandler(final ProcessorOptions opts) {
 		super();
@@ -89,6 +94,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	// ===========================================================
 
 	public void processProfile() throws SAXException, IOException {
+		this.reqsAppndxGen = RequirementTableGenerator.instance();
 		saxParser.parse(this.opts.profileFile.toFile(), this);
 	}
 
@@ -142,6 +148,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	@Override
 	public void endDocument() throws SAXException {
 		try {
+			this.reqsAppndxGen.toTable(OutputHandler.toAppendix(this.projRoot, "requirements"));
 			OutputHandler outHandler = OutputHandler.toStdOut();
 			for (Section sect : this.exampleMap.keySet()) {
 				System.out.println(sect.sectName);
@@ -191,6 +198,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		if (req.id == eu.dilcis.csip.profile.Requirement.RequirementId.DEFAULT_ID)
 			return;
 		this.tableGen.add(req);
+		this.reqsAppndxGen.add(req);
 		this.reqBuilder = new Requirement.Builder();
 	}
 

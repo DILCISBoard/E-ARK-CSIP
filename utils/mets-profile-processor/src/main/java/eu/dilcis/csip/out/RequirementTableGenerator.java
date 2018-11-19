@@ -25,9 +25,14 @@ public class RequirementTableGenerator {
 	}
 
 	public void toTable(final OutputHandler outHandler) throws IOException {
+		this.toTable(outHandler, true);
+	}
+
+	public void toTable(final OutputHandler outHandler, boolean addHeader) throws IOException {
 		if (this.requirements.isEmpty())
 			return;
-		tableHeading(outHandler);
+		if (addHeader)
+			tableHeading(outHandler);
 		for (Requirement req : this.requirements) {
 			tableRow(outHandler, req);
 		}

@@ -1,5 +1,5 @@
 ---
-title: Appendix B: External Schema and Vocabularies
+title: Appendix B External Schema and Vocabularies
 ---
 ## Appendix B: External Schema and Vocabularies
 
