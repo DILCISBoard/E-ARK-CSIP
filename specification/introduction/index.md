@@ -10,7 +10,7 @@ This document introduces the concept of the Common Specification for Information
 
 3.	Propose the details of an XML-based implementation of the requirements using, to the largest possible extent, standards which are widely used in international digital preservation.
 
-Ultimately the goal of the Common Specification for Information Packages (CS IP) is to reach a level of interoperability between all Information Packages so that tools implementing the CS IP can be taken up by institutions without needing further modifications or adaptations.
+Ultimately the goal of the Common Specification for Information Packages (CSIP) is to reach a level of interoperability between all Information Packages so that tools implementing the CS IP can be taken up by institutions without needing further modifications or adaptations.
 
 ## 1.1 The Common Specification for Information Packages and OAIS
 In the OAIS  framework three types of Information Packages (IPs) are present in a digital preservation ecosystem: Submission Information Packages (SIPs), Archival Information Packages (AIPs) and Dissemination Information Packages (DIPs) ([Figure 1](#fig1)). These three IP types are respectively used to
@@ -21,7 +21,7 @@ submit data and metadata to digital repositories; store it in long-term preserva
 
 **Figure 1:** OAIS Functional Entities and Information Packages
 
-This Common Specification for Information Packages aims to summarise the common aspects of all these IPs. The main goal in the development of this specification has been to identify and standardise the common aspects of IPs which are equally relevant and implemented by any of the functional entities of the overall digital preservation process presented in OAIS (i.e. pre-ingest, ingest, archival storage, data management and access). The practical implementation is that the specification therefore allows for the development of generic tools and code libraries which can either be applied commonly across the whole lifecycle of digital data, or be reused as the basis for developing more specific, content or process-aware tools.
+The main goal in the development of this specification has been to identify and standardise the common aspects of IPs which are equally relevant and implemented by any of the functional entities of the overall digital preservation process presented in OAIS (i.e. pre-ingest, ingest, archival storage, data management and access). The practical implementation is that the specification therefore allows for the development of generic tools and code libraries which can either be applied commonly across the whole lifecycle of digital data, or be reused as the basis for developing more specific, content or process-aware tools.
 
 To enable process level interoperability there needs to be detailed technical specifications for the OAIS information package types, e.g. SIP, AIP and DIP. For the E-ARK specifications this Common Specification for Information Packages is accompanied by detailed E-ARK SIP, E-ARK AIP and E-ARK DIP implementation profiles.
 
