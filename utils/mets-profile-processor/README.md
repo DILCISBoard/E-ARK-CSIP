@@ -26,7 +26,7 @@ the SAX handler.
 Parses the `String` args array and records the user options in a dedicated
 class.
 
-#### `eu.dilcis.csip.MetsProfileXmlHandler`
+#### `eu.dilcis.csip.profile.MetsProfileXmlHandler`
 SAX event driven handler for METS Profile, parses `Requirements` lists from
 Profile XML document.
 
@@ -35,7 +35,7 @@ Buffers XML element text and handles output (for now.....)
 
 ToDo ?
 ------
-- [ ] Stronger data typing for [`eu.dilcis.csip.MetsProfileXmlHandler.Requirement`](./src/main/java/eu/dilcis/csip/MetsProfileXmlHandler.java)
+- [ ] Stronger data typing for [`eu.dilcis.csip.profile.MetsProfileXmlHandler.Requirement`](./src/main/java/eu/dilcis/csip/profile/MetsProfileXmlHandler.java)
 - [ ] Requirement validation, e.g. non-empty fields etc.
 - [ ] Group think for other validation activities.
 - [ ] Markdown table generation
