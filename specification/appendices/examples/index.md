@@ -1,5 +1,5 @@
 ---
-title: Appendix A: E-ARK Information Package METS examples
+title: Appendix A E-ARK Information Package METS examples
 ---
 ## Appendix A: E-ARK Information Package METS examples
 
