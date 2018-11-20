@@ -52,11 +52,11 @@ public final class SchemaAppendixGenerator {
 			handler.nl();
 			handler.emit(MarkdownFormatter.h3(scheme.name));
 			handler.nl();
-			handler.emit(headString("Location: ", scheme.url.toString()));
+			handler.emit(headString("Location:", scheme.url.toString()));
 			handler.nl();
-			handler.emit(headString("Context: ", scheme.context));
+			handler.emit(headString("Context:", scheme.context));
 			handler.nl();
-			handler.emit(headString("Note: ", ""));
+			handler.emit(headString("Note:", " "));
 			handler.nl();
 			for (String para : scheme.note) {
 				handler.emit(para);
@@ -73,13 +73,13 @@ public final class SchemaAppendixGenerator {
 			handler.nl();
 			handler.emit(MarkdownFormatter.h3(vocab.name));
 			handler.nl();
-			handler.emit(headString("Maintained By: ", vocab.maintenanceAgency));
+			handler.emit(headString("Maintained By:", vocab.maintenanceAgency));
 			handler.nl();
-			handler.emit(headString("Location: ", vocab.uri.toString()));
+			handler.emit(headString("Location:", vocab.uri.toString()));
 			handler.nl();
-			handler.emit(headString("Context: ", vocab.context));
+			handler.emit(headString("Context:", vocab.context));
 			handler.nl();
-			handler.emit(headString("Description: ", " "));
+			handler.emit(headString("Description:", " "));
 			handler.nl();
 			for (String para : vocab.description) {
 				handler.emit(para);
