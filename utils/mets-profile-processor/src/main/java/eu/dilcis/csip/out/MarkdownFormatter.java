@@ -55,11 +55,40 @@ enum MarkdownFormatter {
 	}
 
 	static String anchorCell(final String cellVal, final boolean isFirst) {
-		StringBuffer buff = new StringBuffer(anchorOpen);
-		buff.append(cellVal);
-		buff.append(anchorClose);
+		StringBuffer buff = new StringBuffer(anchor(cellVal));
 		buff.append(makeBold(cellVal));
 		return cell(buff.toString(), isFirst);
+	}
+
+	static String anchor(final String val) {
+		StringBuffer buff = new StringBuffer(anchorOpen);
+		buff.append(val);
+		buff.append(anchorClose);
+		return buff.toString();
+	}
+
+	static String h1(final String heading) {
+		StringBuffer buff = new StringBuffer("# ");
+		buff.append(heading);
+		return buff.toString();
+	}
+
+	static String h2(final String heading) {
+		StringBuffer buff = new StringBuffer("## ");
+		buff.append(heading);
+		return buff.toString();
+	}
+
+	static String h3(final String heading) {
+		StringBuffer buff = new StringBuffer("### ");
+		buff.append(heading);
+		return buff.toString();
+	}
+
+	static String h4(final String heading) {
+		StringBuffer buff = new StringBuffer("#### ");
+		buff.append(heading);
+		return buff.toString();
 	}
 
 	static String cell(final String cellVal) {

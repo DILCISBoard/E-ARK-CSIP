@@ -20,9 +20,9 @@ public class Requirement {
 	static final String empty = ""; //$NON-NLS-1$
 
 	private Requirement() {
-		this(Requirement.RequirementId.DEFAULT_ID, Requirement.empty, Requirement.empty, Requirement.empty,
-				Collections.emptyList(), Collections.emptyList(), Requirement.empty,
-				Requirement.empty);
+		this(Requirement.RequirementId.DEFAULT_ID, Requirement.empty,
+				Requirement.empty, Requirement.empty, Collections.emptyList(),
+				Collections.emptyList(), Requirement.empty, Requirement.empty);
 	}
 
 	Requirement(final Requirement.RequirementId id, final String name,
@@ -33,11 +33,18 @@ public class Requirement {
 		this.id = id;
 		this.name = name;
 		this.reqLevel = reqLevel;
-		this.relMat = relMat;
+		this.relMat = relMat.trim();
 		this.description = description;
 		this.examples = examples;
 		this.xPath = xPath;
 		this.cardinality = cardinality;
+	}
+
+	public String[] relatedMatter() {
+		if (this.relMat == null || this.relMat.isEmpty())
+			return new String[] {};
+		return (this.relMat.contains(" ")) ? this.relMat.split(" ")
+				: new String[] { this.relMat };
 	}
 
 	/**
@@ -65,8 +72,7 @@ public class Requirement {
 				: this.description.hashCode());
 		result = prime * result
 				+ ((this.examples == null) ? 0 : this.examples.hashCode());
-		result = prime * result
-				+ ((this.id == null) ? 0 : this.id.hashCode());
+		result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
 		result = prime * result
 				+ ((this.name == null) ? 0 : this.name.hashCode());
 		result = prime * result
@@ -321,8 +327,8 @@ public class Requirement {
 
 		public Requirement build() {
 			return new Requirement(this.id, this.name, this.reqLevel,
-					this.relMat, this.description, this.examples,
-					this.xPath, this.cardinality);
+					this.relMat, this.description, this.examples, this.xPath,
+					this.cardinality);
 		}
 	}
 
@@ -332,17 +338,17 @@ public class Requirement {
 		public final static RequirementId DEFAULT_ID = new RequirementId();
 		public final String prefix;
 		public final int number;
-	
+
 		private RequirementId() {
 			this(defPrefix, defNumber);
 		}
-	
+
 		private RequirementId(final String prefix, final int number) {
 			super();
 			this.prefix = prefix;
 			this.number = number;
 		}
-	
+
 		/**
 		 * @see java.lang.Object#toString()
 		 */
@@ -351,7 +357,7 @@ public class Requirement {
 			return "RequirementId [prefix=" + this.prefix + ", number=" //$NON-NLS-1$ //$NON-NLS-2$
 					+ this.number + "]"; //$NON-NLS-1$
 		}
-	
+
 		@Override
 		public int compareTo(RequirementId other) {
 			if (other.prefix.equals(this.prefix)) {
@@ -360,7 +366,7 @@ public class Requirement {
 			}
 			return this.prefix.compareTo(other.prefix);
 		}
-	
+
 		/**
 		 * @see java.lang.Object#hashCode()
 		 */
@@ -373,7 +379,7 @@ public class Requirement {
 					+ ((this.prefix == null) ? 0 : this.prefix.hashCode());
 			return result;
 		}
-	
+
 		/**
 		 * @see java.lang.Object#equals(java.lang.Object)
 		 */
@@ -401,7 +407,7 @@ public class Requirement {
 			}
 			return true;
 		}
-	
+
 		static RequirementId fromIdString(final String idString) {
 			StringBuffer prefixBuff = new StringBuffer();
 			StringBuffer numBuff = new StringBuffer();

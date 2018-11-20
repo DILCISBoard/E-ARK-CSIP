@@ -9,6 +9,8 @@ import eu.dilcis.csip.profile.Requirement;
 public class RequirementTableGenerator {
 	final static String[] tableHeadings = { "ID", "Name & Location", //$NON-NLS-1$ //$NON-NLS-2$
 			"Description & usage", "Cardinality & Level" };  //$NON-NLS-1$ //$NON-NLS-2$
+	private static final String lineSepPropName = "line.separator"; //$NON-NLS-1$
+	private static final String lineEnd = System.getProperty(lineSepPropName);
 
 	final List<Requirement> requirements = new ArrayList<>();
 
@@ -28,7 +30,8 @@ public class RequirementTableGenerator {
 		this.toTable(outHandler, true);
 	}
 
-	public void toTable(final OutputHandler outHandler, boolean addHeader) throws IOException {
+	public void toTable(final OutputHandler outHandler, boolean addHeader)
+			throws IOException {
 		if (this.requirements.isEmpty())
 			return;
 		if (addHeader)
@@ -62,8 +65,10 @@ public class RequirementTableGenerator {
 		outputHandler.emit(MarkdownFormatter
 				.anchorCell(req.id.prefix + req.id.number, true));
 		outputHandler.emit(MarkdownFormatter.cell(nameString(req)));
-		outputHandler.emit(MarkdownFormatter
-				.cell(MarkdownFormatter.concatDescription(req.description)));
+		StringBuffer desc = new StringBuffer(
+				MarkdownFormatter.concatDescription(req.description));
+		desc = relatedMatter(desc, req.relatedMatter());
+		outputHandler.emit(MarkdownFormatter.cell(desc.toString()));
 		outputHandler.emit(MarkdownFormatter.cell(cardString(req)));
 		outputHandler.nl();
 	}
@@ -83,4 +88,27 @@ public class RequirementTableGenerator {
 		return buff.toString();
 	}
 
+	static StringBuffer relatedMatter(StringBuffer buff, String[] ids) {
+		if (ids == null || ids.length == 0)
+			return buff;
+		buff.append(lineEnd);
+		buff.append("<ul>"); //$NON-NLS-1$
+		for (String id : ids) {
+			buff.append(lineEnd);
+			buff.append("<li>"); //$NON-NLS-1$
+			buff.append("<a href=\""); //$NON-NLS-1$
+			buff.append(relMattHref(id));
+			buff.append("\" >"); //$NON-NLS-1$
+			buff.append(SchemaAppendixGenerator.getVocabName(id));
+			buff.append("</a></li>"); //$NON-NLS-1$
+		}
+		buff.append(lineEnd);
+		buff.append("</ul>"); //$NON-NLS-1$
+		buff.append(lineEnd);
+		return buff;
+	}
+	
+	private static String relMattHref(final String id) {
+		return "/specification/appendices/schema/#" + id;
+	}
 }
