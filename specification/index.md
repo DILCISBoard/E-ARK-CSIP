@@ -22,7 +22,7 @@ Contents
 	- [1.3 Common Specification for Information Packages, OAIS Information Packages’ specifications and Content Information Type Specifications](introduction#13-common-specification-for-information-packages-oais-information-packages-specifications-and-content-information-type-specifications)
 	- [1.4. Relation to other documents](introduction#14-relation-to-other-documents)
 		- [International standards and best-practices](introduction#international-standards-and-best-practices)
-		- [E-ARK project (2014 – 2017) deliverables](introduction#e-ark-project-2014-2017-deliverables)
+		- [E-ARK project (2014 – 2017) deliverables](introduction#e-ark-project-2014--2017-deliverables)
 		- [Other E-ARK specifications](introduction#other-e-ark-specifications)
 	- [1.5. Structure of the document](introduction#15-structure-of-the-document)
 - [PART I: Common Specification for Information Packages](specification#part-i-common-specification-for-information-packages)
@@ -46,7 +46,7 @@ Contents
 	    - [5.3.4.	Use of the METS administrative metadata section (element amdSec)](implementation/metadata/mets/amdsec/)
 	    - [5.3.5.	Use of the METS file section (element fileSec)](implementation/metadata/mets/filesec/)
 	    - [5.3.6.	Use of the METS structural map (element structMap)](implementation/metadata/mets/structmap/)
-		- [5.4. Use of PREMIS](implementation/metadata/premis/#54-use-of-premis/)
+		- [5.4. Use of PREMIS](implementation/metadata/premis/)
 	- [6. Implementation considerations](implementation/considerations/)
 	  - [6.1.	Content Information Type Specifications](implementation/considerations/#61-content-information-type-specifications)
 	    - [6.1.1.	What is a Content Information Type Specification?](implementation/considerations/#611-what-is-a-content-information-type-specification)
@@ -58,6 +58,10 @@ Contents
 	    - [6.2.4.	An example for the Northwind database](implementation/considerations/#624-an-example-for-the-northwind-database)
 	    - [6.2.5.	Illustration of references between METS files in a segmented IP](implementation/considerations/#625-illustration-of-references-between-mets-files-in-a-segmented-ip)
 	  - [6.3.	Handling descriptive metadata within the Common Specification](implementation/considerations/#63-handling-descriptive-metadata-within-the-common-specification)
+- [Appendices](appendices/)
+	- [Appendix A: E-ARK Information Package METS examples](appendices/examples/)
+	- [Appendix B: External Schema and Vocabularies](appendices/schema/)
+	- [Appendix C: A Full List of E-ARK CSIP Requirements](appendices/requirements/)
 
 Acknowledgements
 ----------------

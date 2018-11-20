@@ -1,7 +1,7 @@
 ---
-title: Principles for interoperable Information Packages
+title: Principles for Interoperable Information Packages
 ---
-# 3. Principles for interoperable Information Packages
+# 3 Principles for interoperable Information Packages
 At the heart of any standardisation activity has to be a clear understanding of the needs and aims which have to be addressed. This is also the goal of this Section, which presents a series of high level principles to guide the technical details delivered in Part II of this specification.
 
 Most of the principles are driven by the aim of interoperability –Information Packages shall be easy to exchange, identify, validate and (re)use with a wide variety of software tools and systems.
@@ -12,7 +12,7 @@ The principles present a conceptual view of an Information Package, including an
 
 Each principle has a sequential number and a short description. The description includes always a MoSCoW (MUST/MUST NOT, SHOULD/SHOULD NOT, COULD, WOULD) prioritisation statement.  The short description of each principle is followed by a rationale which describes the reason and background for the principle.
 
-## 3.1. General principles
+## 3.1 General principles
 
 ### Principle 1.1
 *It MUST be possible to include any data or metadata, regardless of its type or format, in a CS IP Information Package.*
@@ -57,7 +57,7 @@ In practice this means that any implementation of the CS IP should ensure that f
 
 Different preservation institutions and different types of data need to use different methods for long-term preservation; migration and emulation being the most usual choices. A CS IP Information Package implementation MUST NOT prescribe the use of a specific preservation method but instead allow to document and/or add any data or metadata which is needed for any method.
 
-## 3.2. Identification of the Information Package
+## 3.2 Identification of the Information Package
 
 ### Principle 2.1:
 *The Information Package type (SIP, AIP or DIP) MUST be clearly indicated.*

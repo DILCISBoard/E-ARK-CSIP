@@ -11,6 +11,6 @@ However, we would like to note that the purpose of this specification is to supp
 
 ## Contents
 
-- [4.	CS IP structure](#)
+- [4.	CS IP structure](./)
   - [4.1 Folder structure of the CS IP](folders/)
   - [4.2 Implementing the structure](implementation/)

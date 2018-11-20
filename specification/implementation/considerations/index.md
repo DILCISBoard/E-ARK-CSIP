@@ -22,8 +22,8 @@ As such, the following elements can be at the core of a Content Information Type
 - Clearly defined requirements for specific representation metadata that needs to be available in PREMIS for rendering and understanding the Content Data Object appropriately;
 - Clearly defined list of specific (binary) documentation or other components (like software, emulators, etc.) which have to be available for rendering and understanding the Content Data Object appropriately.
 
-However, for practical purposes it is not sufficient to only deal with the Information Object. Especially for complex Content Information Types and large IPs it might also be relevant to describe explicitly requirements for other metadata (descriptive, administrative) which are relevant and crucial only for this specific content type. For example, the SMURF Content Information Type Specification, developed within the E-ARK project, does set specific requirements for how data (i.e. computer files) need to be referenced
-from descriptive metadata (in EAD format) in order to guarantee the integrity of data and metadata. Setting these requirements in a central specification will allow archival institutions to receive SIPs including ERMS extracts or whole systems and still be able to understand and validate the potentially complex structure of the whole data and metadata composition within it.
+However, for practical purposes it is not sufficient to only deal with the Information Object. Especially for complex Content Information Types and large IPs it might also be relevant to describe explicitly requirements for other metadata (descriptive, administrative) which are relevant and crucial only for this specific content type. For example, the ERMS Content Information Type Specification, developed within the E-ARK project, does set specific requirements for how data (i.e. computer files) need to be referenced
+from descriptive metadata (in ERMS format) in order to guarantee the integrity of data and metadata. Setting these requirements in a central specification will allow archival institutions to receive SIPs including ERMS extracts or whole systems and still be able to understand and validate the potentially complex structure of the whole data and metadata composition within it.
 
 Concluding from the previous we can also see that Content Information Type Specification can potentially also be sector specific, and that there might be multiple specifications to cover a single content type. For example, archival institutions would be able to define a Content Information Type specification for archiving web sites along with descriptive metadata in EAD format, while libraries might define a specification for archiving web sites along with metadata in MARC.
 
@@ -34,7 +34,7 @@ The maintenance of such a living environment is the role of the DILCIS Board. Th
 
 - The DILCIS Board is responsible for establishing reasonable guidelines and quality requirements for new Content Information Type specifications, and publishing these on the Board website;
 - The Board has the responsibility and mandate to manage a registry of available Content Information Type specifications which meet the guidelines and quality requirements;
-- The Board does NOT take ownership of and have responsibility of maintaining and sustaining any Content Information Type specifications;
+- The Board does NOT take ownership of or have responsibility for maintaining and sustaining any Content Information Type specifications;
 - There shall be no limitations to who is allowed to propose additional Content Information Type specifications;
 - To ensure good quality of available specifications, the Board validates each proposed specification against the guidelines and quality requirements mentioned above. The validation shall be carried out free of charge and within a reasonable timeframe.
 
