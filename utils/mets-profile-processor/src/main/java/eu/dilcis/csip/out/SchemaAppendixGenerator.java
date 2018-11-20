@@ -79,7 +79,7 @@ public final class SchemaAppendixGenerator {
 			handler.nl();
 			handler.emit(headString("Context: ", vocab.context));
 			handler.nl();
-			handler.emit(headString("Description: ", ""));
+			handler.emit(headString("Description: ", " "));
 			handler.nl();
 			for (String para : vocab.description) {
 				handler.emit(para);
@@ -92,6 +92,7 @@ public final class SchemaAppendixGenerator {
 
 	private static String headString(final String head, final String val) {
 		StringBuffer buff = new StringBuffer(MarkdownFormatter.makeBold(head));
+		buff.append(" ");
 		buff.append(val);
 		buff.append(MarkdownFormatter.htmlBr);
 		return buff.toString();
