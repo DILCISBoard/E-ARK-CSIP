@@ -19,6 +19,7 @@ import eu.dilcis.csip.ProcessorOptions;
 import eu.dilcis.csip.out.ExampleGenerator;
 import eu.dilcis.csip.out.OutputHandler;
 import eu.dilcis.csip.out.RequirementTableGenerator;
+import eu.dilcis.csip.out.SchemaAppendixGenerator;
 import eu.dilcis.csip.out.XmlCharBuffer;
 
 /**
@@ -40,8 +41,13 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private static final String period = "."; //$NON-NLS-1$
 	private static final String headEle = "head"; //$NON-NLS-1$
 	private static final String appendixEle = "Appendix"; //$NON-NLS-1$
+	private static final String contextEle = "context"; //$NON-NLS-1$
 	private static final String exampleEle = "Example"; //$NON-NLS-1$
 	private static final String extSchemaEle = "external_schema"; //$NON-NLS-1$
+	private static final String maintEle = "maintenance_agency"; //$NON-NLS-1$
+	private static final String nameEle = "name"; //$NON-NLS-1$
+	private static final String uriEle = "URI"; //$NON-NLS-1$
+	private static final String urlEle = "URL"; //$NON-NLS-1$
 	private static final String vocabEle = "vocabulary"; //$NON-NLS-1$
 	private static final String exampleAtt = "EXAMPLES"; //$NON-NLS-1$
 	private static final String idAtt = "ID"; //$NON-NLS-1$
@@ -64,6 +70,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			throw new IllegalStateException(initSaxMess, excep);
 		}
 	}
+
 	private XmlCharBuffer charBuff = new XmlCharBuffer();
 	private String currEleName;
 	private final ProcessorOptions opts;
@@ -83,6 +90,10 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private final Map<Section, ExampleGenerator> exampleHandlers = new HashMap<>();
 	private ExampleGenerator appendixGenerator = null;
 	private RequirementTableGenerator reqsAppndxGen;
+
+	private final SchemaAppendixGenerator schemaGen = new SchemaAppendixGenerator();
+	private ExternalSchema.Builder schemaBuilder;
+	private ControlledVocabulary.Builder vocabBuilder;
 
 	public MetsProfileXmlHandler(final ProcessorOptions opts) {
 		super();
@@ -118,6 +129,12 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			this.startAppendix(attrs);
 		} else if (this.inAppendix) {
 			this.fragStart(this.appendixGenerator, attrs);
+		} else if (extSchemaEle.equals(this.currEleName)) {
+			this.inExtSchema = true;
+			this.schemaBuilder = new ExternalSchema.Builder();
+		} else if (vocabEle.equals(this.currEleName)) {
+			this.inVocab = true;
+			this.vocabBuilder = new ControlledVocabulary.Builder().id(getId(attrs));
 		}
 	}
 
@@ -140,6 +157,16 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			this.endAppendix();
 		} else if (this.inAppendix) {
 			fragEnd(this.appendixGenerator);
+		} else if (extSchemaEle.equals(this.currEleName)) {
+			this.inExtSchema = false;
+			this.schemaGen.add(this.schemaBuilder.build());
+		} else if (this.inExtSchema) {
+			this.processSchemaEle();
+		} else if (vocabEle.equals(this.currEleName)) {
+			this.inVocab = false;
+			this.schemaGen.add(this.vocabBuilder.build());
+		} else if (this.inVocab) {
+			this.processVocabEle();
 		}
 		this.charBuff.voidBuffer();
 		this.currEleName = null;
@@ -149,6 +176,8 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	public void endDocument() throws SAXException {
 		try {
 			this.reqsAppndxGen.toTable(OutputHandler.toAppendix(this.projRoot, "requirements"));
+			this.schemaGen.generateAppendix(this.projRoot);
+			
 			OutputHandler outHandler = OutputHandler.toStdOut();
 			for (Section sect : this.exampleMap.keySet()) {
 				System.out.println(sect.sectName);
@@ -204,18 +233,59 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 
 	private void processRequirementChild() {
 		switch (this.currEleName) {
-		case MetsProfileXmlHandler.headEle:
+		case headEle:
 			this.reqBuilder.name(this.charBuff.getBufferValue());
 			break;
-		case MetsProfileXmlHandler.defTermEle:
+		case defTermEle:
 			this.currDefTerm = this.charBuff.getBufferValue();
 			break;
-		case MetsProfileXmlHandler.defDefEle:
+		case defDefEle:
 			this.reqBuilder.defPair(this.currDefTerm,
 					this.charBuff.getBufferValue());
 			break;
-		case MetsProfileXmlHandler.paraEle:
+		case paraEle:
 			this.reqBuilder.description(this.charBuff.getBufferValue());
+			break;
+		default:
+			break;
+		}
+	}
+
+	private void processSchemaEle() {
+		switch (this.currEleName) {
+		case nameEle:
+			this.schemaBuilder.name(this.charBuff.getBufferValue());
+			break;
+		case urlEle:
+			this.schemaBuilder.url(this.charBuff.getBufferValue());
+			break;
+		case contextEle:
+			this.schemaBuilder.context(this.charBuff.getBufferValue());
+			break;
+		case paraEle:
+			this.schemaBuilder.note(this.charBuff.getBufferValue());
+			break;
+		default:
+			break;
+		}
+	}
+
+	private void processVocabEle() {
+		switch (this.currEleName) {
+		case nameEle:
+			this.vocabBuilder.name(this.charBuff.getBufferValue());
+			break;
+		case maintEle:
+			this.vocabBuilder.maintenanceAgency(this.charBuff.getBufferValue());
+			break;
+		case uriEle:
+			this.vocabBuilder.uri(this.charBuff.getBufferValue());
+			break;
+		case contextEle:
+			this.vocabBuilder.context(this.charBuff.getBufferValue());
+			break;
+		case paraEle:
+			this.vocabBuilder.description(this.charBuff.getBufferValue());
 			break;
 		default:
 			break;
