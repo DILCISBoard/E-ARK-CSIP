@@ -1,17 +1,17 @@
 ## External Schema
 
 ### E-ARK CS IP METS Extension
-**Location: ** https://dilcis.eu/XML/METS/CSIPExtensionMETS/CSIPExtensionMETS.xsd<br/>
-**Context: ** TODO: Add Me<br/>
-**Note: ** <br/>
+**Location:** https://dilcis.eu/XML/METS/CSIPExtensionMETS/CSIPExtensionMETS.xsd<br/>
+**Context:** TODO: Add Me<br/>
+**Note:**  <br/>
 An extension schema with the added attributes for use in this profile.<br/>
 The schema is used with a namespace prefix of csip<br/>
 
 
 ### PREMIS
-**Location: ** http://www.loc.gov/standards/premis/<br/>
-**Context: ** Used for preservation metadata<br/>
-**Note: ** <br/>
+**Location:** http://www.loc.gov/standards/premis/<br/>
+**Context:** Used for preservation metadata<br/>
+**Note:**  <br/>
 A rule set for use with this profile is under development.<br/>
 
 ## Controlled Vocabularies

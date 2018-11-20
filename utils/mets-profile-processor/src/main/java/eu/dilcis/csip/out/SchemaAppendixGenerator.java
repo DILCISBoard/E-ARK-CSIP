@@ -52,11 +52,11 @@ public final class SchemaAppendixGenerator {
 			handler.nl();
 			handler.emit(MarkdownFormatter.h3(scheme.name));
 			handler.nl();
-			handler.emit(headString("Location: ", scheme.url.toString()));
+			handler.emit(headString("Location:", scheme.url.toString()));
 			handler.nl();
-			handler.emit(headString("Context: ", scheme.context));
+			handler.emit(headString("Context:", scheme.context));
 			handler.nl();
-			handler.emit(headString("Note: ", ""));
+			handler.emit(headString("Note:", " "));
 			handler.nl();
 			for (String para : scheme.note) {
 				handler.emit(para);
