@@ -207,7 +207,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP5" REQLEVEL="MAY" RELATEDMAT="CSIP4" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP5" REQLEVEL="MAY" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
                 <description>
                     <!-- Karin: Done -->
                     <!-- Karin: Updated text -->
@@ -887,7 +887,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP63" REQLEVEL="MAY" RELATEDMAT="CSIP62" EXAMPLES="fileSecExample1 fileSecExample2">
+            <requirement ID="CSIP63" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <!-- Karin: Done -->
                     <!-- Karin: Updated text -->
