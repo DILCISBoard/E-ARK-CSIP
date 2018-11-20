@@ -2,7 +2,7 @@
 title: Use of METS
 ---
 ## 5.3 Use of METS
-The main requirement for METS files in a CSIP Information Package is that these need to follow the official METS Schema version 1.12 (by CSIP used version in November 2018) . As new versions of METS Schema become available the DILCIS Board will evaluate these and, if necessary, update the CSIP respectively.
+The main requirement for METS files in a CSIP Information Package is that these need to follow the official METS Schema version 1.12 (by CSIP used version in November 2018) and the extension schema developed for CSIP and published by the DILCIS Board. As new versions of METS Schema become available the DILCIS Board will evaluate these and, if necessary, update the CSIP respectively.
 
 The following text assumes knowledge of the principles of the METS specification. If this is not the case, please consult the official documentation  before continuing.
 
