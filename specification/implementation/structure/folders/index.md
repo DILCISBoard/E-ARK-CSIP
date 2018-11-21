@@ -1,15 +1,15 @@
 ---
 title: Folder structure of the CSIP
 ---
-## 4.1.	Folder structure of the CS IP
-The CS IP folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components. All folders described here are supposed to be present even if they are empty.
+## 4.1.	Folder structure of the CSIP
+The CSIP folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components. All folders described here are supposed to be present even if they are empty.
 
 <a name="fig8"></a>
-![IP Folder Structure](fig_8_cs_ip_struct.png "CS IP Information Package folder structure.")
+![IP Folder Structure](fig_8_cs_ip_struct.png "CSIP Information Package folder structure.")
 
-**Figure 8:** CS IP Information Package folder structure
+**Figure 8:** CSIP Information Package folder structure
 
-The implementation requirements of the CS IP Information Package structure are:
+The implementation requirements of the CSIP Information Package structure are:
 
 <a name="CSIPSTR1"></a>
 **CSIPSTR1**: Any Information Package **MUST** be included within a single physical root folder (known as the “Information Package root folder”). For packages presented in an archive format, [see CSIPSTR3](#CSIPSTR3), the archive **MUST** unpack to a single root folder.
@@ -45,7 +45,7 @@ The implementation requirements of the CS IP Information Package structure are:
 **CSIPSTR11**: The representation folder **MUST** include a sub-folder named `data` which includes all data constituting the representation.
 
 <a name="CSIPSTR12"></a>
-**CSIPSTR12**: The representation folder **MUST** include a metadata file named `METS.xml` which includes information about the identity and structure of the representation and its components.
+**CSIPSTR12**: The representation folder **SHOULD** include a metadata file named `METS.xml` which includes information about the identity and structure of the representation and its components. The recommended best practice is to always have a `METS.xml` in the representation folder.
 
 <a name="CSIPSTR13"></a>
 **CSIPSTR13**: The representation folder **MUST** include a sub-folder named `metadata` which CAN include all metadata about the specific representation.
