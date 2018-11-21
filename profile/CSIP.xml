@@ -16,8 +16,8 @@
     <URI LOCTYPE="URL" ASSIGNEDBY="local">Profile link</URI>
     <title>E-ARK CS IP METS Profile 2.0</title>
     <!-- Karin: Abstract text updated -->
-    <abstract>This base profile describes the Common Specification for Information Packages (CS IP) and the implementation of METS for packaging OAIS conformant Information Packages. The profile is accompanied with a textuall document explaning the details of use of this profile. 
-        This will enable repository interoperability and assist in the management of the preservation of digital content. 
+    <abstract>This base profile describes the Common Specification for Information Packages (CS IP) and the implementation of METS for packaging OAIS conformant Information Packages. The profile is accompanied with a textuall document explaning the details of use of this profile.
+        This will enable repository interoperability and assist in the management of the preservation of digital content.
         This profile is a base profile which is extended with E-ARK implementation of SIP, AIP and DIP.
     The profile can be used as is, but it is recommended that the supplied extending implementation are used. Alternatively, an own extension fulfilling the extending needs of the implementer can be created.</abstract>
     <date>2018-06-13T12:00:00</date>
@@ -33,16 +33,16 @@
             <p xmlns="http://www.w3.org/1999/xhtml"><a href="http://earkcsip.dilcis.eu/specification/specification/principles/">CS IP Principles</a></p>
         </resource_model>
     </profile_context>
-    <external_schema>        
+    <external_schema>
         <name>E-ARK CS IP METS Extension</name>
-        <URL>To be added</URL>
-        <context>https://dilcis.eu/XML/METS/CSIPExtensionMETS/CSIPExtensionMETS.xsd</context>
+        <URL>https://dilcis.eu/XML/METS/CSIPExtensionMETS/CSIPExtensionMETS.xsd</URL>
+        <context>TODO: Add Me</context>
         <note>
             <p xmlns="http://www.w3.org/1999/xhtml">An extension schema with the added attributes for use in this profile.</p>
             <p xmlns="http://www.w3.org/1999/xhtml">The schema is used with a namespace prefix of csip</p>
         </note>
     </external_schema>
-    <external_schema>        
+    <external_schema>
         <name>PREMIS</name>
         <URL>http://www.loc.gov/standards/premis/</URL>
         <context>Used for preservation metadata</context>
@@ -51,7 +51,7 @@
         </note>
     </external_schema>
     <description_rules>
-        <p xmlns="http://www.w3.org/1999/xhtml">The filepath must be decoded consistently throughout all file references within the information package.</p> 
+        <p xmlns="http://www.w3.org/1999/xhtml">The filepath must be decoded consistently throughout all file references within the information package.</p>
     </description_rules>
     <controlled_vocabularies>
         <!-- Karin: Placed in a document named DILCISVocabulariesIP.xml -->
@@ -207,7 +207,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP5" REQLEVEL="MAY" RELATEDMAT="CSIP4" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP5" REQLEVEL="MAY" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
                 <description>
                     <!-- Karin: Done -->
                     <!-- Karin: Updated text -->
@@ -331,7 +331,7 @@
                          <dt>METS XPath</dt><dd>metsHdr/agent/note</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
-                </description>               
+                </description>
             </requirement>
             <requirement ID="CSIP16" REQLEVEL="MUST" RELATEDMAT="VocabularyNoteType" EXAMPLES="metsHdrElementExample1">
                 <description>
@@ -436,7 +436,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>dmdSec/mdRef/@xlink:href</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>    
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP25" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
@@ -458,7 +458,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>dmdSec/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP27" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
@@ -469,7 +469,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>dmdSec/mdRef/@SIZE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP28" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
@@ -480,7 +480,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>dmdSec/mdRef/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP29" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
@@ -491,7 +491,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>dmdSec/mdRef/@CHECKSUM</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP30" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
@@ -502,7 +502,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>dmdSec/mdRef/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
         </dmdSec>
@@ -536,7 +536,7 @@
                     <!-- Karin: Done -->
                     <!-- Karin: Text updated -->
                     <head>Digital provenance metadata identfier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An identifier for the digital provenance metadata section (digiprovMD) used for referencing inside the package. It must be unique within the package.</p> 
+                    <p xmlns="http://www.w3.org/1999/xhtml">An identifier for the digital provenance metadata section (digiprovMD) used for referencing inside the package. It must be unique within the package.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The ID must follow the rules for xml:id described in the chapter of the textual description of CS IP named "General requirements for the use of metadata"</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/digiprovMD/@ID</dd>
@@ -553,7 +553,7 @@
                    <dl xmlns="http://www.w3.org/1999/xhtml">
                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/@STATUS</dd>
                        <dt>Cardinality</dt><dd>0..1</dd>
-                   </dl> 
+                   </dl>
                </description>
             </requirement>
             <requirement ID="CSIP35" REQLEVEL="SHOULD" EXAMPLES="amdSecExample1">
@@ -599,7 +599,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@xlink:href</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>    
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP39" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -621,7 +621,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP41" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -632,7 +632,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@SIZE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP42" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -643,7 +643,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP43" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -654,7 +654,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@CHECKSUM</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP44" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -665,7 +665,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP45" REQLEVEL="MAY" EXAMPLES="amdSecExample1">
@@ -678,20 +678,20 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
-            </requirement>            
+            </requirement>
             <requirement ID="CSIP46" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <!-- Karin: Done -->
                     <!-- Karin: Text updated -->
                     <head>Rights metadata identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An identifier for the rights metadata section (rightsMD) used for referencing inside the package. It must be unique within the package.</p>                    
+                    <p xmlns="http://www.w3.org/1999/xhtml">An identifier for the rights metadata section (rightsMD) used for referencing inside the package. It must be unique within the package.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The ID must follow the rules for xml:id described in the chapter of the textual description of CS IP named "General requirements for the use of metadata"</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP47" REQLEVEL="SHOULD" RELATEDMAT="VocabularyStatus" EXAMPLES="amdSecExample1">
@@ -703,7 +703,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>>amdSec/rightsMD/@STATUS</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP48" REQLEVEL="SHOULD" EXAMPLES="amdSecExample1">
@@ -714,7 +714,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP49" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -726,7 +726,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@LOCTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP50" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -739,7 +739,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@xlink:type</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP51" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -750,7 +750,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@xlink:href</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP52" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -761,7 +761,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@MDTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP53" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="amdSecExample1">
@@ -772,7 +772,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP54" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -783,7 +783,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@SIZE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP55" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -794,7 +794,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP56" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -805,7 +805,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@CHECKSUM</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP57" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
@@ -816,7 +816,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>  
+                    </dl>
                 </description>
             </requirement>
         </amdSec>
@@ -831,7 +831,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP59" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -839,7 +839,7 @@
                     <!-- Karin: Done -->
                     <!-- Karin: Text updated -->
                     <head>File section identfier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An identifier for the file section used for referencing inside the package. It must be unique within the package.</p> 
+                    <p xmlns="http://www.w3.org/1999/xhtml">An identifier for the file section used for referencing inside the package. It must be unique within the package.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The ID must follow the rules for xml:id described in the chapter of the textual description of CS IP named "General requirements for the use of metadata"</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/@ID</dd>
@@ -860,7 +860,7 @@
                       <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP61" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -871,7 +871,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP62" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -887,7 +887,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP63" REQLEVEL="MAY" RELATEDMAT="CSIP62" EXAMPLES="fileSecExample1 fileSecExample2">
+            <requirement ID="CSIP63" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <!-- Karin: Done -->
                     <!-- Karin: Updated text -->
@@ -908,7 +908,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@USE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP65" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -916,7 +916,7 @@
                     <!-- Karin: Done -->
                     <!-- Karin: Text updated -->
                     <head>File group identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An identifier for the file group used for referencing inside the package. It must be unique within the package.</p> 
+                    <p xmlns="http://www.w3.org/1999/xhtml">An identifier for the file group used for referencing inside the package. It must be unique within the package.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The ID must follow the rules for xml:id described in the chapter of the textual description of CS IP named "General requirements for the use of metadata"</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@ID</dd>
@@ -934,7 +934,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP67" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -946,7 +946,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP68" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -957,7 +957,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP69" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -968,7 +968,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@SIZE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP70" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -979,7 +979,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP71" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -990,7 +990,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>MES XPath</dt><dd>fileSec/fileGrp/file/@CHECKSUM</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP72" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -1001,7 +1001,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP73" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -1012,7 +1012,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@OWNERID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP74" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -1023,7 +1023,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP75" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -1034,7 +1034,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@DMDID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl> 
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP76" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -1045,7 +1045,7 @@
                    <dl xmlns="http://www.w3.org/1999/xhtml">
                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/FLocat</dd>
                        <dt>Cardinality</dt><dd>1..1</dd>
-                   </dl>  
+                   </dl>
                </description>
             </requirement>
             <requirement ID="CSIP77" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
@@ -1081,7 +1081,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file/FLocat/@xlink:href</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>    
+                    </dl>
                 </description>
             </requirement>
         </fileSec>
@@ -1095,7 +1095,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
-                    </dl>    
+                    </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP81" REQLEVEL="MUST" RELATEDMAT="VocabularyStructMapType" EXAMPLES="structMapExample1 structMapExample2">
@@ -1465,8 +1465,8 @@
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
-            </requirement>            
-         </structMap>       
+            </requirement>
+         </structMap>
          <structLink ID="structLinkElement">
             <requirement REQLEVEL="MAY">
                 <description>
@@ -1543,29 +1543,29 @@
     </tool>
     <Example ID="metsRootElementExample2" LABEL="METS root element example with content not in the value list being transfered">
         <!-- Karin: Profile link will be updated -->
-        <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xmlns:mets="http://www.loc.gov/METS/" 
+        <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
-            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
-            LABEL="Sample CS IP Information Package" 
-            TYPE="OTHER" 
-            csip:OTHERTYPE="Patterns"           
-            PROFILE="http://www.eark-project.com/METS/IP.xml" 
+            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
+            LABEL="Sample CS IP Information Package"
+            TYPE="OTHER"
+            csip:OTHERTYPE="Patterns"
+            PROFILE="http://www.eark-project.com/METS/IP.xml"
             xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
-         </mets:mets>  
+         </mets:mets>
     </Example>
     <Example ID="metsRootElementExample3" LABEL="METS root element example of content with a type from the value list and representation content not in the value list">
-        <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xmlns:mets="http://www.loc.gov/METS/" 
+        <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
-            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
-            LABEL="Sample CS IP Information Package" 
-            TYPE="Datasets" 
-            csip:CONTENTINFORMATIONTYPE="OTHER" 
+            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
+            LABEL="Sample CS IP Information Package"
+            TYPE="Datasets"
+            csip:CONTENTINFORMATIONTYPE="OTHER"
             csip:OTHERCONTENTINFORMATIONTYPE="FGS Personal, version 1"
-            PROFILE="http://www.eark-project.com/METS/IP.xml" 
+            PROFILE="http://www.eark-project.com/METS/IP.xml"
             xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
         </mets:mets>
     </Example>
@@ -1615,14 +1615,14 @@
                 <!-- All transfered data is stored in a folder, the filepath is shown in the href -->
                 <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FD" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Submission/Data/SIARD.xml"/>
-                </mets:file> 
+                </mets:file>
             </mets:fileGrp>
         </mets:fileSec>
     </Example>
     <Example ID="fileSecExample2" LABEL="METS example of structuring the data in the file section when there are representatins present">
             <!-- The fileGrp USE attribute gives the folder name including path to the where the data is found -->
         <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
-            <!-- Main grouping starting names is Documetation, Schemas and Representations can be mirrored in the folder names-->        
+            <!-- Main grouping starting names is Documetation, Schemas and Representations can be mirrored in the folder names-->
             <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H" USE="Documentation">
                 <!-- Documentation is grouped in one or more fileGrp with the use being the path to the documentation -->
                 <!-- This documentation is for the whole package, the representations documentation is described in the mets for the representation -->
@@ -1644,36 +1644,36 @@
             <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C277" USE="Representations/preingest" csip:CONTENTINFORMATIONTYPE="OTHER" csip:OTHERCONTENTINFORMATIONTYPE="Access database">
                 <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FE" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml"/>
-                </mets:file> 
+                </mets:file>
             </mets:fileGrp>
             <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C278" USE="Representations/submission/data" csip:CONTENTINFORMATIONTYPE="SIARDDK" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3">
                 <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FF" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Submission/METS.xml"/>
-                </mets:file> 
+                </mets:file>
             </mets:fileGrp>
             <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C279" USE="Representations/ingest/data" csip:CONTENTINFORMATIONTYPE="SIARD1" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4">
                 <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FG" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml"/>
-                </mets:file> 
+                </mets:file>
             </mets:fileGrp>
         </mets:fileSec>
     </Example>
     <Example ID="structMapExample1" LABEL="METS example of the mandatory structural map">
         <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CS IP StructMap">
             <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
-                <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/> 
+                <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
                 <mets:div ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86I" LABEL="Documentation" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H"/>
                 <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
-                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" />              
+                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" />
             </mets:div>
         </mets:structMap>
     </Example>
     <Example ID="structMapExample2" LABEL="METS example of the mandatory structural map when there are representations present">
         <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CS IP StructMap">
             <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
-               <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/> 
+               <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
                 <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
-                <!-- mptr Only present if representations is transferred and gives all the linked mets documents-->              
+                <!-- mptr Only present if representations is transferred and gives all the linked mets documents-->
                 <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="representations/preingest" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C277">
                     <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml"/>
                 </mets:div>
@@ -1682,21 +1682,21 @@
                 </mets:div>
                 <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6738" LABEL="representations/ingest" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C279">
                     <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml"/>
-                </mets:div> 
+                </mets:div>
             </mets:div>
-        </mets:structMap> 
+        </mets:structMap>
     </Example>
     <Appendix NUMBER="1" LABEL="Example of a whole METS document describing an information package with no representations">
         <!--  Karin: update of profile link needed -->
-        <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"     
-            xmlns:mets="http://www.loc.gov/METS/" 
+        <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
-            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
-            LABEL="Sample CS IP Information Package with no representations" 
-            TYPE="Database" 
-            csip:CONTENTINFORMATIONTYPE="SIARDDK" 
-            PROFILE="http://www.eark-project.com/METS/CSIP.xml" 
+            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
+            LABEL="Sample CS IP Information Package with no representations"
+            TYPE="Database"
+            csip:CONTENTINFORMATIONTYPE="SIARDDK"
+            PROFILE="http://www.eark-project.com/METS/CSIP.xml"
             xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
             <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
                 <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
@@ -1732,29 +1732,29 @@
                 <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" USE="Representations/Submission/Data" csip:CONTENTINFORMATIONTYPE="SIARDDK">
                     <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FD" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Submission/Data/SIARD.xml"/>
-                    </mets:file> 
+                    </mets:file>
                 </mets:fileGrp>
             </mets:fileSec>
             <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CS IP StructMap">
                 <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
-                    <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/> 
+                    <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
                     <mets:div ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86I" LABEL="Documentation" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H"/>
                     <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
-                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" />              
+                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" />
                 </mets:div>
-            </mets:structMap> 
+            </mets:structMap>
         </mets:mets>
     </Appendix>
     <Appendix NUMBER="2" LABEL="Example of a whole METS document describing an information package with representations">
         <!--  Karin: update of profile link needed -->
-        <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xmlns:mets="http://www.loc.gov/METS/" 
+        <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
-            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" 
-            LABEL="Sample CS IP Information Package with representations" 
-            TYPE="Database" 
-            PROFILE="http://www.eark-project.com/METS/CSIP.xml" 
+            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
+            LABEL="Sample CS IP Information Package with representations"
+            TYPE="Database"
+            PROFILE="http://www.eark-project.com/METS/CSIP.xml"
             xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
             <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
                 <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
@@ -1800,22 +1800,22 @@
                 <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C277" USE="Representations/preingest" csip:CONTENTINFORMATIONTYPE="Access database">
                     <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FE" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml"/>
-                    </mets:file> 
+                    </mets:file>
                 </mets:fileGrp>
                 <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C278" USE="Representations/submission/data" csip:CONTENTINFORMATIONTYPE="SIARDDK" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3">
                     <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FF" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Submission/METS.xml"/>
-                    </mets:file> 
+                    </mets:file>
                 </mets:fileGrp>
                 <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C279" USE="Representations/ingest/data" csip:CONTENTINFORMATIONTYPE="SIARD1" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4">
                     <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FG" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml"/>
-                    </mets:file> 
+                    </mets:file>
                 </mets:fileGrp>
             </mets:fileSec>
             <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CS IP StructMap">
                 <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
-                    <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/> 
+                    <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
                     <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
                     <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="representations/preingest" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C277">
                         <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml"/>
@@ -1825,9 +1825,9 @@
                     </mets:div>
                     <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6738" LABEL="representations/ingest" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C279">
                         <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml"/>
-                    </mets:div> 
+                    </mets:div>
                 </mets:div>
-            </mets:structMap> 
+            </mets:structMap>
         </mets:mets>
     </Appendix>
 </METS_Profile>
