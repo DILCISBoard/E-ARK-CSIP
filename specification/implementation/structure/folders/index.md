@@ -1,5 +1,5 @@
 ---
-title**: Folder structure of the CSIP
+title: Folder structure of the CSIP
 ---
 ## 4.1.	Folder structure of the CS IP
 The CS IP folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components. All folders described here are supposed to be present even if they are empty.
@@ -45,7 +45,7 @@ The implementation requirements of the CS IP Information Package structure are:
 **CSIPSTR11**: The representation folder **MUST** include a sub-folder named `data` which includes all data constituting the representation.
 
 <a name="CSIPSTR12"></a>
-**CSIPSTR12**: The representation folder **MUST** include a metadata file named `METS.xml` which then includes information about the identity and structure of the representation and its components.
+**CSIPSTR12**: The representation folder **MUST** include a metadata file named `METS.xml` which includes information about the identity and structure of the representation and its components.
 
 <a name="CSIPSTR13"></a>
 **CSIPSTR13**: The representation folder **MUST** include a sub-folder named `metadata` which CAN include all metadata about the specific representation.
