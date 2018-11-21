@@ -63,22 +63,7 @@ A common approach towards referencing between metadata, and between metadata and
 
 In order to guarantee interoperability, all references within a CS IP Information Package must follow the requirements stated in this specification.
 
-**Karin: I suggest total removal of the following text, bullet points and example to aviod duplication.**
 
-In order to guarantee interoperability, all references within a CS IP Information Package must follow the requirements below:
-
-- in all occurrences of the METS `@LOCTYPE` attribute the value of it MUST be “URL”;
-- the W3C recommendation XML Linking Language (XLink) version 1.1  MUST be used for expressing references in metadata;
-- The XLink `@type` attribute MUST be used with the fixed value “simple”;
-- The value of the XLink `@href` attribute MUST be expressed as a valid URI according to RFC 3986 ;
-- Further, the value of the XLink `@href` attribute SHOULD NOT use the protocol part of the URI (e.g. `file://` or `http://`) and, in this case, MUST be interpreted as a relative path to the file (from the metadata file into which the reference is included).
-
-Example:
-
-```xml
-<mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis2.xml"
-... />
-```
 
 ### Referencing other packages
 It is important that external references to related packages, like internal references, are expressed consistently. All external references MUST USE `mets/@OBJID` attribute of the package.
