@@ -144,11 +144,9 @@ This common structure MUST be followed throughout all specific physical implemen
 ### Principle 3.7:
 *The Information Package **MUST** be implemented by ONLY ONE implementation at any point in time.*
 
-The conceptual structure presented above can be implemented in various ways – for example the components might be defined by accompanying package metadata or explicitly through a physical structure. However, it is not reasonable to have multiple (competing) implementations available at once as this would lead to unnecessary complexity in developing interoperable tools for creating, processing and managing Information Packages.
+The conceptual structure presented above can be implemented in various ways – for example the components might be defined by accompanying package metadata or explicitly through a physical structure. However, it is not reasonable to have multiple implementations available at once as this would lead to unnecessary complexity in developing interoperable tools for creating, processing and managing Information Packages. In CSIP the implementation at the time being, mandated to use is a fixed physical folder structure (see Section 4) as the implementation of this in combination with the previous requirements.
 
 At the same time it is clear that any given technical implementation will become obsolete in time, for example as new transfer methods and storage solutions emerge. As such this requirement does not prohibit the take-up of any emerging logical of physical technical solutions but merely requires to have one and only one of these to be implemented at any given point in time.
-
-At the time being, the CSIP  mandates a fixed physical folder structure (see Section 4) as the implementation of this and the previous requirements.
 
 ## 3.4 Information Package Metadata
 
