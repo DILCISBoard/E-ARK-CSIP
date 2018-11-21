@@ -91,10 +91,11 @@ public class RequirementTableGenerator {
 	static StringBuffer relatedMatter(StringBuffer buff, String[] ids) {
 		if (ids == null || ids.length == 0)
 			return buff;
-		buff.append(lineEnd);
+		buff.append(MarkdownFormatter.htmlBr);
+		buff.append(MarkdownFormatter.makeBold("See also:"));
+		buff.append(MarkdownFormatter.htmlBr);
 		buff.append("<ul>"); //$NON-NLS-1$
 		for (String id : ids) {
-			buff.append(lineEnd);
 			buff.append("<li>"); //$NON-NLS-1$
 			buff.append("<a href=\""); //$NON-NLS-1$
 			buff.append(relMattHref(id));
@@ -102,9 +103,7 @@ public class RequirementTableGenerator {
 			buff.append(SchemaAppendixGenerator.getVocabName(id));
 			buff.append("</a></li>"); //$NON-NLS-1$
 		}
-		buff.append(lineEnd);
 		buff.append("</ul>"); //$NON-NLS-1$
-		buff.append(lineEnd);
 		return buff;
 	}
 	
