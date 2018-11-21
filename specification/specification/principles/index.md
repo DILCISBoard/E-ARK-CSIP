@@ -108,7 +108,7 @@ In addition to the logical separation of components it is beneficial to have dat
 In addition to the previous principle it is recommended to explicitly divide metadata into more specific components. While the definitions of metadata types vary a lot between implementations it is our recommendation to divide metadata logically and physically at least into descriptive and preservation metadata.
 
 ### Principle 3.4:
-*The structure of the Information Package MUST allow for the separation of data and metadata representations.*
+*The structure of the Information Package MUST allow for the creation of data and metadata in multiple representations.*
 
 The concept of representations is one of the fundamental building blocks in digital preservation. As technologies evolve and get obsolete, data and metadata is constantly updated in order to ensure long-term accessibility, therefore creating new versions or representations of the data and metadata.
 
