@@ -17,45 +17,45 @@ Each principle has a sequential number and a short description. The description 
 ### Principle 1.1
 *It **MUST** be possible to include any data or metadata in a Information Package regardless of its type or format.*
 
-This is one of the most crucial principles of the CS IP. In order to be truly “common”, technical implementations of the CS IP MUST NOT introduce limitations or restrictions which are only applicable to certain data or metadata types. If an Information Package implementation fails to meet this principle it is not possible to use it across different sectors and tools, thereby limiting practical interoperability.
+This is one of the most crucial principles of the CSIP. In order to be truly “common”, technical implementations of the CSIP MUST NOT introduce limitations or restrictions which are only applicable to certain data or metadata types. If an Information Package implementation fails to meet this principle it is not possible to use it across different sectors and tools, thereby limiting practical interoperability.
 
 ### Principle 1.2:
 *The Information Package **MUST NOT** restrict the means, methods or tools for exchanging it.*
 
-Tools and methods for transferring Information Packages between locations are constantly evolving. It is also possible that different methods are preferred for packages of varying sizes. In order to achieve that a CS IP Information Package is truly interoperable across different platforms it therefore MUST NOT introduce limitations or restrictions which would be impossible to be met by specific information exchange tools or channels.
+Tools and methods for transferring Information Packages between locations are constantly evolving. It is also possible that different methods are preferred for packages of varying sizes. In order to achieve that a CSIP Information Package is truly interoperable across different platforms it therefore MUST NOT introduce limitations or restrictions which would be impossible to be met by specific information exchange tools or channels.
 
-As such the CS IP does also not define the principle to use a particular transfer package or envelope. The scope of the CS IP is limited to the structure and requirements for data and metadata within the package. Different implementers are welcome to choose their own methods on top of the CS IP.
+As such the CSIP does also not define the principle to use a particular transfer package or envelope. The scope of the CSIP is limited to the structure and requirements for data and metadata within the package. Different implementers are welcome to choose their own methods on top of the CSIP.
 
 ### Principle 1.3
 *The package format **MUST NOT** define the scope of data and metadata which constitutes an Information Package.*
 
-One of the fundamental principles of the CS IP is that it MUST allow each individual repository to define the (intellectual) scope of an Information Package and its relations to real life entities. As such, any implementation of the CS IP MUST be equally usable for packaging, for example, the whole content of an ERMS as an single IP; or for extracting each record and its metadata from the ERMS individually and packaging each as a separate IP.
+One of the fundamental principles of the CSIP is that it MUST allow each individual repository to define the (intellectual) scope of an Information Package and its relations to real life entities. As such, any implementation of the CSIP MUST be equally usable for packaging, for example, the whole content of an ERMS as an single IP; or for extracting each record and its metadata from the ERMS individually and packaging each as a separate IP.
 
-Out of the previous we can also derive that a CS IP specification MUST NOT define that, for example, a SIP should conform to exactly one AIP. Instead the CS IP MUST allow for the inclusion of “anything that the implementer wants to define as a SIP, AIP or DIP” and allow for “any relationships (1-1; 1-n; n-1; n-m) between SIPs, AIPs and DIPs".
+Out of the previous we can also derive that a CSIP specification MUST NOT define that, for example, a SIP should conform to exactly one AIP. Instead the CSIP MUST allow for the inclusion of “anything that the implementer wants to define as a SIP, AIP or DIP” and allow for “any relationships (1-1; 1-n; n-1; n-m) between SIPs, AIPs and DIPs".
 
 ### Principle 1.4:
 *The Information Package **SHOULD** be scalable.*
 
 One of the practical concerns for Information Packages is their size. Many digital repositories have problems with data objects and metadata of increasing sizes, making it especially difficult to carry out tasks related to data or metadata validation, and identification and modification. For example, Information Packages including relational databases or born-digital 3D movies can easily reach TB sizes.
 
-Consequently, any current or future implementation of the CS IP is required to provide for appropriate scalability mechanisms (for example: mechanisms for splitting large-scale data or metadata).
+Consequently, any current or future implementation of the CSIP is required to provide for appropriate scalability mechanisms (for example: mechanisms for splitting large-scale data or metadata).
 
 ### Principle 1.5:
 *The Information Package **MUST** be machine-readable*
 
-To support the goal of automating ingest, preservation and access workflows each of the implementations of the CS IP must be machine-actionable. This means that decisions about the use of metadata syntax and semantics as well as the physical structure must be expressed explicitly and in a clear way. This, in turn, allows the specification to be implemented in the same way across different tools and environments.
+To support the goal of automating ingest, preservation and access workflows each of the implementations of the CSIP must be machine-actionable. This means that decisions about the use of metadata syntax and semantics as well as the physical structure must be expressed explicitly and in a clear way. This, in turn, allows the specification to be implemented in the same way across different tools and environments.
 
 ### Principle 1.6:
 *The Information Package **SHOULD** be human-readable*
 
 In long-term preservation we also need to take into account that “forgotten” Information Packages might be found long after details about the implementation are gone and no tools to access the package are available. For these scenarios it is crucial to ensure that the structure and metadata of the Information Package are understandable with minimal effort by using simple tools like text editors and file viewers.
 
-In practice this means that any implementation of the CS IP should ensure that folder and file naming conventions allow for the human identification of package components, and that the semantics of the package is explicit.
+In practice this means that any implementation of the CSIP should ensure that folder and file naming conventions allow for the human identification of package components, and that the semantics of the package is explicit.
 
 ### Principle 1.7:
 *The Information Package **MUST** support the preservation method best suited for the data.*
 
-Different preservation institutions and different types of data need to use different methods for long-term preservation; migration and emulation being the most usual choices. A CS IP Information Package implementation MUST NOT prescribe the use of a specific preservation method but instead allow to document and/or add any data or metadata which is needed for any method.
+Different preservation institutions and different types of data need to use different methods for long-term preservation; migration and emulation being the most usual choices. A CSIP Information Package implementation MUST NOT prescribe the use of a specific preservation method but instead allow to document and/or add any data or metadata which is needed for any method.
 
 ## 3.2 Identification of the Information Package
 
@@ -67,19 +67,19 @@ One of the first tasks in analysing any Information Package is to identify its c
 ### Principle 2.2:
 *Any Information Package **MUST** clearly identify the Content Information Type(s) of its data and metadata.*
 
-As stated in Principle 1.1 any Information Package MUST be able to include any kind of data and metadata. At the same time we have introduced in earlier Sections the concept of Content Information Types which allow users to achieve more detailed control and fine-grained interoperability. As such, any CS IP Information Package MUST include a statement about which Content Information Type specification(s) has been followed within the Information Package, or on the contrary, indicate clearly that no specific Content Information Type Specification has been followed.
+As stated in Principle 1.1 any Information Package MUST be able to include any kind of data and metadata. At the same time we have introduced in earlier Sections the concept of Content Information Types which allow users to achieve more detailed control and fine-grained interoperability. As such, any CSIP Information Package MUST include a statement about which Content Information Type specification(s) has been followed within the Information Package, or on the contrary, indicate clearly that no specific Content Information Type Specification has been followed.
 
 The practical implication of principles 1.1, 2.1 and 2.2 is that, once these have been followed in implementations, we can in fact develop modular identification and validation tools and workflows. While generic components can carry out high level tasks regardless of the Content Information Type, it is possible to detect automatically which additional content-aware modules need to be executed.
 
 ### Principle 2.3:
 *Any Information Package **MUST** have an identifier which is unique and persistent within the repository.*
 
-In order to manage a digital repository and provide access services each Information Package stored in the repository MUST be identified uniquely at least within the repository. At the same time a CS IP implementation MUST NOT limit the choice of the exact identification mechanism, as long as the mechanism is implemented consistently throughout the repository.
+In order to manage a digital repository and provide access services each Information Package stored in the repository MUST be identified uniquely at least within the repository. At the same time a CSIP implementation MUST NOT limit the choice of the exact identification mechanism, as long as the mechanism is implemented consistently throughout the repository.
 
 ### Principle 2.4:
 *Any Information Package **SHOULD** have an identifier which is globally unique and persistent.*
 
-In addition to the previous principle, it is recommended that the identification mechanism used at the repository provides for global uniqueness and persistence of Information Package IDs. The application of globally unique and persistent identifiers allows repositories to participate more easily in cross-institutional information exchange and reuse scenarios (for example participation in national or international portals, or cross-repository duplication of AIP preservation). However, the CS IP MUST NOT limit the choice of the exact identification mechanism.
+In addition to the previous principle, it is recommended that the identification mechanism used at the repository provides for global uniqueness and persistence of Information Package IDs. The application of globally unique and persistent identifiers allows repositories to participate more easily in cross-institutional information exchange and reuse scenarios (for example participation in national or international portals, or cross-repository duplication of AIP preservation). However, the CSIP MUST NOT limit the choice of the exact identification mechanism.
 
 ### Principle 2.5:
 *All components of an Information Package **MUST** have an identifier which is unique and persistent within the repository.*
@@ -119,12 +119,12 @@ Expressing representations within the logical and physical structure of an Infor
 
 In addition to data and metadata, institutions might have the need to include additional information in an Information Package. For example, implementers might decide that XML Schemas about metadata structures and additional binary documentation about the original IT environment have to be added to the package.
 
-If this is the case, the CS IP Information Package MUST NOT limit which components can constitute an Information Package, and MUST offer clearly defined extension points for the inclusion of these additional components into the Information Package. At the same time these extension points MUST be defined in a way which does not interfere with other components (i.e. the extension points MUST be clearly separated from other components of an Information Package).
+If this is the case, the CSIP Information Package MUST NOT limit which components can constitute an Information Package, and MUST offer clearly defined extension points for the inclusion of these additional components into the Information Package. At the same time these extension points MUST be defined in a way which does not interfere with other components (i.e. the extension points MUST be clearly separated from other components of an Information Package).
 
 ### Principle 3.6:
 *The Information Package **MUST** follow a common conceptual structure regardless of its technical implementation.*
 
-Based on principles 3.1 – 3.4 we now present a common structure for any CS IP Information Package ([Figure 7](#fig7)).
+Based on principles 3.1 – 3.4 we now present a common structure for any CSIP Information Package ([Figure 7](#fig7)).
 
 <a name="fig7"></a>
 ![Conceptual Structure](fig_7_cs_con_struct.png "Conceptual structure of the Common Specification")
@@ -133,13 +133,13 @@ Based on principles 3.1 – 3.4 we now present a common structure for any CS IP 
 
 Following Principle 3.4 the structure separates explicitly the representations of data and metadata into a separate structural component.
 
-Following Principle 3.1 the package MUST include a high-level structural component for metadata which includes at least relevant metadata for the whole package. In addition the representations MUST internally separate between data and metadata (though note that the CS IP does not mandate that both data and metadata must be available in all representations).
+Following Principle 3.1 the package MUST include a high-level structural component for metadata which includes at least relevant metadata for the whole package. In addition the representations MUST internally separate between data and metadata (though note that the CSIP does not mandate that both data and metadata must be available in all representations).
 
 In addition we highly recommend dividing the metadata portion of the Information Package to separate different types of metadata (SHOULD Principle 3.3).
 
 Following Principle 3.5 repositories and their users have the possibility to add any additional components (as an example for schemas and binary support documentation) either as extensions to the whole Information Package or into a specific representation.
 
-This common structure MUST be followed throughout all specific physical implementations of the CS IP.
+This common structure MUST be followed throughout all specific physical implementations of the CSIP.
 
 ### Principle 3.7:
 *The Information Package **MUST** be implemented by ONLY ONE implementation at any point in time.*
@@ -148,7 +148,7 @@ The conceptual structure presented above can be implemented in various ways – 
 
 At the same time it is clear that any given technical implementation will become obsolete in time, for example as new transfer methods and storage solutions emerge. As such this requirement does not prohibit the take-up of any emerging logical of physical technical solutions but merely requires to have one and only one of these to be implemented at any given point in time.
 
-At the time being, the CS IP  mandates a fixed physical folder structure (see Section 4) as the implementation of this and the previous requirements.
+At the time being, the CSIP  mandates a fixed physical folder structure (see Section 4) as the implementation of this and the previous requirements.
 
 ## 3.4 Information Package Metadata
 
@@ -164,16 +164,16 @@ In order to ensure that these metadata are understood and implemented in a commo
 
 Many metadata standards support multiple options for describing specific details of an Information Package. However, such interpretation possibilities can also lead to different implementations and ultimately to the loss of interoperability.
 
-To overcome this risk the CS IP requires that, while developing a specific implementation, the chosen metadata standard MUST be reviewed in regard to potential ambiguity. If needed, the selected metadata standard MUST be further refined to meet the needs of interoperability and automation.
+To overcome this risk the CSIP requires that, while developing a specific implementation, the chosen metadata standard MUST be reviewed in regard to potential ambiguity. If needed, the selected metadata standard MUST be further refined to meet the needs of interoperability and automation.
 
 ### Principle 4.3:
 *The Information Package **MUST NOT** restrict the addition of supplementary metadata.*
 
-Previous principles state the importance of controlled metadata for interoperability purposes. At the same time the opposite applies for other types of metadata, most prominently for resource discovery (also called descriptive) or Content Information Type specific technical and structural metadata. In order to not limit the widespread adoption of the CS IP it has to be possible for any implementer to add any metadata next to the mandatory metadata components needed for package level automation and interoperability.
+Previous principles state the importance of controlled metadata for interoperability purposes. At the same time the opposite applies for other types of metadata, most prominently for resource discovery (also called descriptive) or Content Information Type specific technical and structural metadata. In order to not limit the widespread adoption of the CSIP it has to be possible for any implementer to add any metadata next to the mandatory metadata components needed for package level automation and interoperability.
 
 In case organisations need to prescribe further details about descriptive or Content Information Type specific metadata for a deeper level of interoperability it is possible to use the mechanism of Content Information Type Specifications described above.
 
-To summarise the requirements above from a more technical perspective, the CS IP foresees a modular approach towards Information Package metadata:
+To summarise the requirements above from a more technical perspective, the CSIP foresees a modular approach towards Information Package metadata:
 
 - All Information Packages share a common core of metadata which allows for the common development of high-level package creation, validation, identification and reuse tools;
 
