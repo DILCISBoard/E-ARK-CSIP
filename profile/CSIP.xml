@@ -1349,14 +1349,13 @@
         </metadata_files>
     </technical_requirements>
     <tool>
-        <!--  Karin: Completion of this needed or are they only present in the profiles for SIP/AIP/DIP? -->
-        <name>ESSArch</name>
-        <URI>Link to it in Git?</URI>
+        <name>ESSArch (ETP, ETA, EPP, ECORE)</name>
+        <URI>https://github.com/ESSolutions</URI>
         <description>
-            <p xmlns="http://www.w3.org/1999/xhtml">What the tool does.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">A suite of tools for e-archiving and digital preservation. The tools provide functionality for producers to archive digital information, for archives to preserve digital information and for consumers to access archived information.</p>
         </description>
         <note>
-            <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">ES Solutions - www.essolutions.se</p>
         </note>
     </tool>
     <tool>
