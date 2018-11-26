@@ -749,7 +749,7 @@
             </requirement>
             <requirement ID="CSIP59" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
-                    <head>File section identfier</head>
+                    <head>File section identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An identifier for the file section used for referencing inside the package. It must be unique within the package.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The ID must follow the rules for xml:id described in the chapter of the textual description of CSIP named "General requirements for the use of metadata"</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
