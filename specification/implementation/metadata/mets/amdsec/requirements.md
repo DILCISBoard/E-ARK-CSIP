@@ -9,7 +9,7 @@
 | <a name="CSIP37"></a>**CSIP37** | **Type of link**<br/>`amdSec/digiprovMD/mdRef/@xlink:type` | Attribute used with the value “simple”. Value list is maintained by the xlink standard | **1..1**<br/>MUST |
 | <a name="CSIP38"></a>**CSIP38** | **Resource location**<br/>`amdSec/digiprovMD/mdRef/@xlink:href` | The actual location of the resource. This specification recommends recording a URL type filepath within this attribute. | **1..1**<br/>MUST |
 | <a name="CSIP39"></a>**CSIP39** | **Type of metadata**<br/>`amdSec/digiprovMD/mdRef/@MDTYPE` | Specifies the type of metadata in the linked file. Values are taken from the list provided by the standard. | **1..1**<br/>MUST |
-| <a name="CSIP40"></a>**CSIP40** | **File mime type**<br/>`amdSec/digiprovMD/mdRef/@MIMETYPE` | The IANA mime type for the linked file.<br/>**See also:**<br/><ul><li><a href="/specification/appendices/schema/#VocabularyIANAmediaTypes" >IANA media types</a></li></ul> | **1..1**<br/>MUST |
+| <a name="CSIP40"></a>**CSIP40** | **File mime type**<br/>`amdSec/digiprovMD/mdRef/@MIMETYPE` | The IANA mime type for the linked file.<br/>**See also:** <ul> <li> <a href="/specification/appendices/schema/#VocabularyIANAmediaTypes" >IANA media types </a> </li> </ul>  | **1..1**<br/>MUST |
 | <a name="CSIP41"></a>**CSIP41** | **File size**<br/>`amdSec/digiprovMD/mdRef/@SIZE` | Size of the linked file in bytes. | **1..1**<br/>MUST |
 | <a name="CSIP42"></a>**CSIP42** | **File creation date**<br/>`amdSec/digiprovMD/mdRef/@CREATED` | Date the linked file was created. | **1..1**<br/>MUST |
 | <a name="CSIP43"></a>**CSIP43** | **File checksum**<br/>`amdSec/digiprovMD/mdRef/@CHECKSUM` | The checksum of the linked file. | **1..1**<br/>MUST |
@@ -22,7 +22,7 @@
 | <a name="CSIP50"></a>**CSIP50** | <br/>`amdSec/rightsMD/mdRef/@xlink:type` | Attribute used with the value “simple”. Value list is maintained by the xlink standard | **1..1**<br/>MUST |
 | <a name="CSIP51"></a>**CSIP51** | **Resource location**<br/>`amdSec/rightsMD/mdRef/@xlink:href` | The actual location of the resource. We  recommend recording a URL type filepath within this attribute. | **1..1**<br/>MUST |
 | <a name="CSIP52"></a>**CSIP52** | **Type of metadata**<br/>`amdSec/rightsMD/mdRef/@MDTYPE` | Specifies the type of metadata in the linked file. Value is taken from the list provided by the standard. | **1..1**<br/>MUST |
-| <a name="CSIP53"></a>**CSIP53** | **File mime type**<br/>`amdSec/rightsMD/mdRef/@MIMETYPE` | The IANA mime type for the linked file.<br/>**See also:**<br/><ul><li><a href="/specification/appendices/schema/#VocabularyIANAmediaTypes" >IANA media types</a></li></ul> | **1..1**<br/>MUST |
+| <a name="CSIP53"></a>**CSIP53** | **File mime type**<br/>`amdSec/rightsMD/mdRef/@MIMETYPE` | The IANA mime type for the linked file.<br/>**See also:** <ul> <li> <a href="/specification/appendices/schema/#VocabularyIANAmediaTypes" >IANA media types </a> </li> </ul>  | **1..1**<br/>MUST |
 | <a name="CSIP54"></a>**CSIP54** | **File size**<br/>`amdSec/rightsMD/mdRef/@SIZE` | Size of the linked file in bytes. | **1..1**<br/>MUST |
 | <a name="CSIP55"></a>**CSIP55** | **File creation date**<br/>`amdSec/rightsMD/mdRef/@CREATED` | Date the linked file was created. | **1..1**<br/>MUST |
 | <a name="CSIP56"></a>**CSIP56** | **File checksum**<br/>`amdSec/rightsMD/mdRef/@CHECKSUM` | The checksum of the linked file. | **1..1**<br/>MUST |
