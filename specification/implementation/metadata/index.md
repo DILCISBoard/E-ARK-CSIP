@@ -1,6 +1,3 @@
----
-title: Use of metadata
----
 # 5. Use of metadata
 ## Contents
 

@@ -1,6 +1,3 @@
----
-title: Need for establishing common ground
----
 # 2	Need for establishing common ground
 
 **The vision:** *All digital preservation systems receive, store and provide access to information, regardless of its size, type or format, according to a set of agreed principles which allow institutions to identify, verify and validate the information in a uniform way.*
@@ -20,7 +17,7 @@ term and long-term management of information into different systems, for example
 systems on one hand and archival systems on the other (Figure 5).
 
 <a name="fig5"></a>
-![OAIS Entities](fig_5_oais_ent.png "Information flow between live and archival systems")
+![OAIS Entities](specification/specification/common-ground/fig_5_oais_ent.png "Information flow between live and archival systems")
 
 **Figure 5:** Information flow between live and archival systems
 
@@ -49,7 +46,7 @@ preservation systems;
 - Exchange of DIPs between various access platforms of portals.
 
 <a name="fig6"></a>
-![OAIS Entities](fig_6_arch_wrkflw.png "Archival workflow and tool ecosystem")
+![OAIS Entities](specification/specification/common-ground/fig_6_arch_wrkflw.png "Archival workflow and tool ecosystem")
 
 **Figure 6:** Archival workflow and tool ecosystem
 
