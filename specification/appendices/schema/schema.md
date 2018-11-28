@@ -1,8 +1,8 @@
 ## External Schema
 
-### E-ARK CS IP METS Extension
+### E-ARK CSIP METS Extension
 **Location:** https://dilcis.eu/XML/METS/CSIPExtensionMETS/CSIPExtensionMETS.xsd<br/>
-**Context:** TODO: Add Me<br/>
+**Context:** XML-schema for the attributes added by CSIP<br/>
 **Note:**  <br/>
 An extension schema with the added attributes for use in this profile.<br/>
 The schema is used with a namespace prefix of csip<br/>
