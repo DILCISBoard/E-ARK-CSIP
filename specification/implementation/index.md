@@ -1,6 +1,3 @@
----
-title: Implementation of the CSIP
----
 # PART II: Implementation of the CSIP
 
 In this part of the document we present an implementation of the requirements and principles presented in Part I of the specifciation for CS IP. The implementation consists of two core elements: a fixed physical structure of a CS IP Information Package (Section 4) and the exact use of metadata using the "Metadata Encoding & Transmission Standard" (METS) http://www.loc.gov/standards/mets/ and "PREservation Metadata Implementation Strategies" (PREMIS) http://www.loc.gov/standards/premis/ format (Section 5).

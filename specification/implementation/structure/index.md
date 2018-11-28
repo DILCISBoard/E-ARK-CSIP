@@ -1,6 +1,3 @@
----
-title: CSIP structure
----
 # 4.	CSIP structure
 The preferred implementation of the conceptual model described in [Principle 3.6](http://earkcsip.dilcis.eu/specification/specification/principles/#principle-36) is a fixed physical (folder) structure which follows exactly the conceptual structure. While the CS IP doesn't prohibited alternative implementations of the conceptual model such implementations aren't recommended.
 

@@ -1,6 +1,3 @@
----
-title: Principles for Interoperable Information Packages
----
 # 3 Principles for interoperable Information Packages
 At the heart of any standardisation activity has to be a clear understanding of the needs and aims which have to be addressed. This is also the goal of this Section, which presents a series of high level principles to guide the technical details delivered in Part II of this specification.
 
@@ -127,7 +124,7 @@ If this is the case, the CSIP Information Package MUST NOT limit which component
 Based on principles 3.1 – 3.4 we now present a common structure for any CSIP Information Package ([Figure 7](#fig7)).
 
 <a name="fig7"></a>
-![Conceptual Structure](fig_7_cs_con_struct.png "Conceptual structure of the Common Specification")
+![Conceptual Structure](specification/specification/principles/fig_7_cs_con_struct.png "Conceptual structure of the Common Specification")
 
 **Figure 7:** Conceptual structure of the Common Specification
 

@@ -1,6 +1,3 @@
----
-title: E-ARK CSIP Table Of Contents
----
 E-ARK CSIP Table Of Contents
 ============================
 
