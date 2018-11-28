@@ -134,7 +134,7 @@ Please note the following about the example:
 
 - The Master IP MUST NOT contain representations
 - A representation MAY be segmented
-- The IDs are not just unique but haves implicit value for example purposes only
+- The IDs are not just unique but have implicit value for example purposes only
 - In representation 0 the limits on folder size and amount of files requires three segments (0, 1 and 2)
 - In representation 1 these limits have been increased and we only need two segments. Further the .bin files have been migrated to .tif.
 
