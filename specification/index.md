@@ -9,7 +9,7 @@ November 28, 2018
 Contents
 --------
 - I. [Authors](#authors)
-- II. [Revision History](##revision-history)
+- II. [Revision History](#revision-history)
 - III. [Acknowledgements](#acknowledgements)
 - IV. [Contact & Feedback](#contact--feedback)
 - [1 Introduction](#1-introduction)
