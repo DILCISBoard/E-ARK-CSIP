@@ -32,13 +32,17 @@
 {% include_relative specification/implementation/metadata/mets/structmap/examples.md %}
 {% include_relative specification/implementation/metadata/premis/index.md %}
 {% include_relative specification/implementation/considerations/index.md %}
+
 # Appendices
 
 ## Appendix A: E-ARK Information Package METS examples
+
 {% include_relative specification/appendices/examples/examples.md %}
 
 ## Appendix B: External Schema and Vocabularies
+
 {% include_relative specification/appendices/schema/schema.md %}
 
 ## Appendix C: A Full List of E-ARK CSIP Requirements
+
 {% include_relative specification/appendices/requirements/requirements.md %}
