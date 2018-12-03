@@ -139,14 +139,14 @@ Please note the following about the example:
 Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The CS IP allows essentially for the inclusion of any kind of descriptive metadata in the IP. However, it is required that all descriptive metadata must be placed into the “metadata” folder of the IP, and that it is recommended (should) to also exploit the possibility of creating a specific sub-folder “descriptive” as seen in Figure 11 below (cf. EAD.xml).
 
 <a name="fig11"></a>
-![CS IP Example](specification/implementation/considerations/fig_11_eark_ip_desc_md.png "EARK IP descriptive metadata.")
+![CS IP Example](figs/fig_11_eark_ip_desc_md.png "EARK IP descriptive metadata.")
 
 **Figure 11:** E-ARK IP descriptive metadata
 
 Further, all descriptive metadata need itself to be described in and referenced from METS metadata (i.e. the METS.xml file) using the element `<dmdSec>` (Figure 12) and as such descriptive metadata are not to be embedded into the METS file directly.
 
 <a name="fig12"></a>
-![METS desc md](specification/implementation/considerations/fig_12_mets_desc_md.png "METS descriptive metadata.")
+![METS desc md](figs/fig_12_mets_desc_md.png "METS descriptive metadata.")
 
 **Figure 12:** METS descriptive metadata
 
