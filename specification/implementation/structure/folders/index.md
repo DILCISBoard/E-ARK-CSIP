@@ -2,7 +2,7 @@
 The CSIP folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components. All folders described here are supposed to be present even if they are empty.
 
 <a name="fig8"></a>
-![IP Folder Structure](specification/implementation/structure/folders/fig_8_cs_ip_struct.png "CSIP Information Package folder structure.")
+![IP Folder Structure](figs/fig_8_cs_ip_struct.png "CSIP Information Package folder structure.")
 
 **Figure 8:** CSIP Information Package folder structure
 
