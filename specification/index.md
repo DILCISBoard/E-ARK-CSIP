@@ -49,7 +49,7 @@ Contents
 	    - [6.1.2.	Maintaining Content Information Type Specifications](#612-maintaining-content-information-type-specifications)
 	  - [6.2. Handling large packages](#62-handling-large-packages)
 	    - [6.2.1.	The structure for IP, their representations and their segments](#621-the-structure-for-ip-their-representations-and-their-segments)
-	    - [6.2.2.	Using METS to refer from parent IP to child IP(#622-using-mets-to-refer-from-parent-ip-to-child-ips)
+	    - [6.2.2.	Using METS to refer from parent IP to child IP](#622-using-mets-to-refer-from-parent-ip-to-child-ips)
 	    - [6.2.3.	Using METS to refer from child IP to parent IP](#623-using-mets-to-refer-from-child-ip-to-parent-ip)
 	    - [6.2.4.	An example for the Northwind database](#624-an-example-for-the-northwind-database)
 	    - [6.2.5.	Illustration of references between METS files in a segmented IP](#625-illustration-of-references-between-mets-files-in-a-segmented-ip)
