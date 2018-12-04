@@ -9,8 +9,6 @@ import eu.dilcis.csip.profile.Requirement;
 public class RequirementTableGenerator {
 	final static String[] tableHeadings = { "ID", "Name & Location", //$NON-NLS-1$ //$NON-NLS-2$
 			"Description & usage", "Cardinality & Level" };  //$NON-NLS-1$ //$NON-NLS-2$
-	private static final String lineSepPropName = "line.separator"; //$NON-NLS-1$
-	private static final String lineEnd = System.getProperty(lineSepPropName);
 
 	final List<Requirement> requirements = new ArrayList<>();
 
@@ -92,22 +90,20 @@ public class RequirementTableGenerator {
 		if (ids == null || ids.length == 0)
 			return buff;
 		buff.append(MarkdownFormatter.htmlBr);
-		buff.append(MarkdownFormatter.makeBold("See also:"));
-		buff.append(MarkdownFormatter.htmlBr);
-		buff.append("<ul>"); //$NON-NLS-1$
+		buff.append(MarkdownFormatter.makeBold("See also:")); //$NON-NLS-1$
+		boolean hasPrevious = false;
 		for (String id : ids) {
-			buff.append("<li>"); //$NON-NLS-1$
-			buff.append("<a href=\""); //$NON-NLS-1$
-			buff.append(relMattHref(id));
-			buff.append("\" >"); //$NON-NLS-1$
-			buff.append(SchemaAppendixGenerator.getVocabName(id));
-			buff.append("</a></li>"); //$NON-NLS-1$
+			if (hasPrevious) {
+			    buff.append(", "); //$NON-NLS-1$
+			} else {
+				hasPrevious = true;
+			}
+			buff.append(MarkdownFormatter.href(relMattHref(id), SchemaAppendixGenerator.getVocabName(id)));
 		}
-		buff.append("</ul>"); //$NON-NLS-1$
 		return buff;
 	}
 	
 	private static String relMattHref(final String id) {
-		return "/specification/appendices/schema/#" + id;
+		return "#" + id;
 	}
 }

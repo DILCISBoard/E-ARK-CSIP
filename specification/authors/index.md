@@ -1,6 +1,3 @@
----
-title: E-ARK CSIP Authors
----
 Authors
 -------
 
@@ -18,3 +15,4 @@ Authors
 | Luis Faria                       | Keep Solutions                                     |
 | Helder Silva                     | Keep Solutions                                     |
 | Miguel Ferreira                  | Keep Solutions                                     |
+| Carl Wilson                      | Open Preservation Foundation                       |

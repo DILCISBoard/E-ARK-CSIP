@@ -1,6 +1,3 @@
----
-title: Use of the METS structural map
----
 ### 5.3.6.	Use of the METS structural map (element structMap)
 The METS structural map section is the only element mandatory in the METS specification and it is intended
 to provide an overview of components described in the METS document. It can also link the elements of that
@@ -21,11 +18,3 @@ The most crucial requirements for the CS IP mandated structural map are as follo
 - The structural map in the representations METS file use the structural map the same way with no exceptions
 
 The specific requirements for elements, sub-elements and attributes are listed in the following table. Note that the area, seq and par elements are not discussed below.
-
-{% comment %} PAGE TEMPLATING : DO NOT DELETE THIS OR THE FOLLOWING LINE {% endcomment %}
-{% include_relative requirements.md %}
-
-Full example of the Common Specification structMap element (root METS file):
-
-{% comment %} PAGE TEMPLATING : DO NOT DELETE THIS OR THE FOLLOWING LINE {% endcomment %}
-{% include_relative examples.md %}
