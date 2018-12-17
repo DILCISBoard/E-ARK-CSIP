@@ -142,7 +142,7 @@
             <name>Structural map label</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
             <URI>http://earkcsip.dilcis.eu/schema/</URI>
-            <context>Used in structMap/@TYPE</context>
+            <context>Used in structMap/@LABEL</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the label of the structural map that is supported by the profile.</p>
                 <p xmlns="http://www.w3.org/1999/xhtml">Own labels should be placed in an own extending vocabulary.</p>
