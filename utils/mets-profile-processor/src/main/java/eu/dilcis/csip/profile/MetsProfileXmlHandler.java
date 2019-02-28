@@ -53,6 +53,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 	private static final String idAtt = "ID"; //$NON-NLS-1$
 	private static final String labelAtt = "LABEL"; //$NON-NLS-1$
 	private static final String numberAtt = "NUMBER"; //$NON-NLS-1$
+	private static final String anchorEle = "a"; //$NON-NLS-1$
 	private static final String paraEle = "p"; //$NON-NLS-1$
 	private static final String defTermEle = "dt"; //$NON-NLS-1$
 	private static final String defDefEle = "dd"; //$NON-NLS-1$
@@ -115,9 +116,10 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			Attributes attrs) throws SAXException {
 		// Get the current ele name
 		this.currEleName = qName;
-		this.charBuff.voidBuffer();
 		if (Requirement.isRequirementEle(this.currEleName)) {
 			this.processRequirementAttrs(attrs);
+		} else if (this.inRequirement) {
+			this.processRequirementChildStart();
 		} else if (Section.isSection(this.currEleName)) {
 			this.startSection();
 		} else if (exampleEle.equals(this.currEleName)) {
@@ -136,6 +138,7 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 			this.inVocab = true;
 			this.vocabBuilder = new ControlledVocabulary.Builder().id(getId(attrs));
 		}
+		this.charBuff.voidBuffer();
 	}
 
 	@Override
@@ -231,6 +234,16 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 		this.reqBuilder = new Requirement.Builder();
 	}
 
+	private void processRequirementChildStart() {
+		switch (this.currEleName) {
+		case anchorEle:
+			this.reqBuilder.description(this.charBuff.getBufferValue());
+			break;
+		default:
+			break;
+		}
+	}
+
 	private void processRequirementChild() {
 		switch (this.currEleName) {
 		case headEle:
@@ -244,6 +257,9 @@ public final class MetsProfileXmlHandler extends DefaultHandler {
 					this.charBuff.getBufferValue());
 			break;
 		case paraEle:
+			this.reqBuilder.description(this.charBuff.getBufferValue());
+			break;
+		case anchorEle:
 			this.reqBuilder.description(this.charBuff.getBufferValue());
 			break;
 		default:

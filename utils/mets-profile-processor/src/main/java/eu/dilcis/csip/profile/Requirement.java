@@ -260,6 +260,8 @@ public class Requirement {
 		 *            the description to set
 		 */
 		public Requirement.Builder description(String dscrptn) {
+			if (dscrptn == null || dscrptn.isEmpty())
+				return this;
 			this.description.add(dscrptn);
 			return this;
 		}
