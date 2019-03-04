@@ -89,16 +89,18 @@ public class RequirementTableGenerator {
 	static StringBuffer relatedMatter(StringBuffer buff, String[] ids) {
 		if (ids == null || ids.length == 0)
 			return buff;
-		buff.append(MarkdownFormatter.htmlBr);
-		buff.append(MarkdownFormatter.makeBold("See also:")); //$NON-NLS-1$
-		boolean hasPrevious = false;
+		StringBuffer relMattBuff = new StringBuffer();
+		relMattBuff.append(MarkdownFormatter.htmlBr);
+		relMattBuff.append(MarkdownFormatter.makeBold("See also:")); //$NON-NLS-1$
+		String prefix = relMattBuff.toString();
+		relMattBuff = new StringBuffer();
 		for (String id : ids) {
-			if (hasPrevious) {
-			    buff.append(", "); //$NON-NLS-1$
-			} else {
-				hasPrevious = true;
+			String vocabName =  SchemaAppendixGenerator.getVocabName(id);
+			if (vocabName != null) {
+				buff.append(prefix);
+				buff.append(MarkdownFormatter.href(relMattHref(id), vocabName));
+				prefix = ", ";
 			}
-			buff.append(MarkdownFormatter.href(relMattHref(id), SchemaAppendixGenerator.getVocabName(id)));
 		}
 		return buff;
 	}
