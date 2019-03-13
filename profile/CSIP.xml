@@ -628,7 +628,7 @@
                     <head>Status of the rights metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Status of the metadata. Used to indicate the currency of the package. If used the two values “SUPERSEDED” or “CURRENT” from the vocabulary is used.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>>amdSec/rightsMD/@STATUS</dd>
+                        <dt>METS XPath</dt><dd>amdSec/rightsMD/@STATUS</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
