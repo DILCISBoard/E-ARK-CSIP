@@ -1138,7 +1138,7 @@
                     <head>Documentation file referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containg documentation described in the package are referenced via the relevant file group identifiers.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTID</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1179,7 +1179,7 @@
                     <head>Schema file referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containg schemas described in the package are referenced via the relevant file group identifiers.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTID</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1221,7 +1221,7 @@
                     <head>File division file referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the files described in the package are referenced via the relevant file group identifier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTID</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1262,7 +1262,7 @@
                     <head>Representations division file referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the files described in the package are referenced via the relevant file group identifier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTID</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
