@@ -400,7 +400,7 @@
             <requirement ID="CSIP25" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Type of metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the linked file. Values are taken from the list provided by the standard.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the linked file. Values are taken from the list provided by the METS standard.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>dmdSec/mdRef/@MDTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -544,7 +544,7 @@
             <requirement ID="CSIP39" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Type of metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the linked file. Values are taken from the list provided by the standard.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the linked file. Values are taken from the list provided by the METS standard.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@MDTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -677,7 +677,7 @@
             <requirement ID="CSIP52" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Type of metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the linked file. Value is taken from the list provided by the standard.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the linked file. Value is taken from the list provided by the METS standard.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@MDTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
