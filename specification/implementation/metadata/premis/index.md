@@ -7,7 +7,7 @@ Therefore, the main recommendation of the CS IP is that preservation metadata ar
 
 - All preservation metadata is created according to official PREMIS guidelines ;
 
-- All PREMIS metadata is either embedded in or referenced from the amdSec/digiprovMD element of the appropriate METS file.
+- All PREMIS metadata is referenced from the amdSec/digiprovMD element of the appropriate METS file.
 
 Further, to enhance the interoperability scope of the CS IP and to strengthen management of IPs in an archive, this specification imposes additional requirements with regard to use of PREMIS for describing Information Packages. The principles adopted in the CS IP for deciding the additional PREMIS semantic units required are:
 
