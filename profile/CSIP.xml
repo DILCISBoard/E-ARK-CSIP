@@ -761,11 +761,11 @@
             <requirement ID="CSIP60" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="fileSecExample1 fileSecExample2">
                   <description>
                     <head>File grouping</head>
-                      <p xmlns="http://www.w3.org/1999/xhtml">There are one or more file group (fileGrp) elements present grouping the transfered files in the main catagorization of; Documentation, Schemas and Representations.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorization of "Documentation" all documetation pertaining to the transfered information is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorization of "Schemas" all XML-schemas pertaining to the transfered XML documents is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorization of "Representations" the data being transfered is present or in one file group the data for each representation is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">To make the catagorization easier the different files being transfered should be placed in folders with names folowing the catagorization</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">There are one or more file group (fileGrp) elements present grouping the transferred files in the main catagorization of; Documentation, Schemas and Representations.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorization of "Documentation" all documetation pertaining to the transferred information is present.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorization of "Schemas" all XML-schemas pertaining to the transferred XML documents is present.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorization of "Representations" the data being transferred is present or in one file group the data for each representation is present.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">To make the catagorization easier the different files being transferred should be placed in folders with names folowing the catagorization</p>
                       <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
@@ -1188,7 +1188,7 @@
                 <description>
                     <head>File division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the transfer consist of only data and no representations there are one representation div present</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The transfered files referenced in the file section file group is described in the structural map with one sub division</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The transferred files referenced in the file section file group is described in the structural map with one sub division</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1380,7 +1380,7 @@
             <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
         </note>
     </tool>
-    <Example ID="metsRootElementExample2" LABEL="METS root element example with content not in the value list being transfered">
+    <Example ID="metsRootElementExample2" LABEL="METS root element example with content not in the value list being transferred">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1450,7 +1450,7 @@
             </mets:fileGrp>
             <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" USE="Representations/Submission/Data" csip:CONTENTINFORMATIONTYPE="SIARDDK">
                 <!-- The fileGrp USE attribute gives the folder name including path to the where the data is found -->
-                <!-- All transfered data is stored in a folder, the filepath is shown in the href -->
+                <!-- All transferred data is stored in a folder, the filepath is shown in the href -->
                 <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FD" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Submission/Data/SIARD.xml"/>
                 </mets:file>
@@ -1477,7 +1477,7 @@
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="schemas/ead2002.xsd"/>
                 </mets:file>
             </mets:fileGrp>
-            <!-- All transfered data is stored in a folder, the filepath is shown in the href -->
+            <!-- All transferred data is stored in a folder, the filepath is shown in the href -->
             <!-- For each representation the file referenced in the file group is the representation METS document -->
             <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C277" USE="Representations/preingest" csip:CONTENTINFORMATIONTYPE="OTHER" csip:OTHERCONTENTINFORMATIONTYPE="Access database">
                 <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FE" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
