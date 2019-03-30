@@ -775,7 +775,7 @@
             <requirement ID="CSIP61" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Reference to administrative metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">If administrative metadata is has been provided on the file group (fileGrp) level this attribute points to the correct administrative metadata section.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If administrative metadata has been provided on the file group (fileGrp) level this attribute points to the correct administrative metadata section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
