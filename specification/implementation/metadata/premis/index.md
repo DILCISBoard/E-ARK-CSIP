@@ -1,6 +1,3 @@
----
-title: Use of PREMIS
----
 ## 5.4.	Use of PREMIS
 The CS IP recommends and advocates the use of the PREservation Metadata Implementation Strategies (PREMIS, information available at http://www.loc.gov/standards/premis/) metadata standard for recording preservation and technical metadata about digital objects contained within CS IP Information Packages. The CS IP implements version 3.0 of the PREMIS Data Dictionary. Note that use of PREMIS is not mandatory.
 
@@ -10,7 +7,7 @@ Therefore, the main recommendation of the CS IP is that preservation metadata ar
 
 - All preservation metadata is created according to official PREMIS guidelines ;
 
-- All PREMIS metadata is either embedded in or referenced from the amdSec/digiprovMD element of the appropriate METS file.
+- All PREMIS metadata is referenced from the amdSec/digiprovMD element of the appropriate METS file.
 
 Further, to enhance the interoperability scope of the CS IP and to strengthen management of IPs in an archive, this specification imposes additional requirements with regard to use of PREMIS for describing Information Packages. The principles adopted in the CS IP for deciding the additional PREMIS semantic units required are:
 

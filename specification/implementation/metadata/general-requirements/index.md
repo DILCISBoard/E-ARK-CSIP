@@ -1,6 +1,3 @@
----
-title: General requirements for metadata
----
 ## 5.1. General requirements for metadata in a CS IP Information Package
 The number one consideration when discussing metadata requirements is, as with the rest of this specification, the need for interoperability. In more detail, the focus is on high-level technical interoperability and tasks which allow an Information Package to be prepared, transferred and received regardless of the institutions and tools involved. These tasks include:
 
@@ -67,4 +64,3 @@ In order to guarantee interoperability, all references within a CS IP Informatio
 
 ### Referencing other packages
 It is important that external references to related packages, like internal references, are expressed consistently. All external references MUST USE `mets/@OBJID` attribute of the package.
-

@@ -11,12 +11,12 @@ import eu.dilcis.csip.profile.ControlledVocabulary;
 import eu.dilcis.csip.profile.ExternalSchema;
 
 /**
- * @author  <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
- *          <a href="https://github.com/carlwilson">carlwilson AT github</a>
+ * @author <a href="mailto:carl@openpreservation.org">Carl Wilson</a>
+ *         <a href="https://github.com/carlwilson">carlwilson AT github</a>
  *
  * @version 0.1
  * 
- * Created 20 Nov 2018:00:45:00
+ *          Created 20 Nov 2018:00:45:00
  */
 
 public final class SchemaAppendixGenerator {
@@ -24,6 +24,7 @@ public final class SchemaAppendixGenerator {
 	final List<ExternalSchema> schema = new ArrayList<>();
 	final List<ControlledVocabulary> vocabs = new ArrayList<>();
 	static final Map<String, String> vocabLookup = new HashMap<>();
+
 	/**
 	 * 
 	 */
@@ -52,7 +53,7 @@ public final class SchemaAppendixGenerator {
 			handler.nl();
 			handler.emit(MarkdownFormatter.h3(scheme.name));
 			handler.nl();
-			handler.emit(headString("Location:", scheme.url.toString()));
+			handler.emit(headString("Location:", MarkdownFormatter.href(scheme.url.toString(), scheme.url.toString())));
 			handler.nl();
 			handler.emit(headString("Context:", scheme.context));
 			handler.nl();
@@ -75,7 +76,7 @@ public final class SchemaAppendixGenerator {
 			handler.nl();
 			handler.emit(headString("Maintained By:", vocab.maintenanceAgency));
 			handler.nl();
-			handler.emit(headString("Location:", vocab.uri.toString()));
+			handler.emit(headString("Location:", MarkdownFormatter.href(vocab.uri.toString(), vocab.uri.toString())));
 			handler.nl();
 			handler.emit(headString("Context:", vocab.context));
 			handler.nl();

@@ -544,7 +544,7 @@
             <requirement ID="CSIP39" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Type of metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the linked file. Values are taken from the list provided by the standard.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the linked file. Values are taken from the list provided by the METS standard.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@MDTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -628,7 +628,7 @@
                     <head>Status of the rights metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Status of the metadata. Used to indicate the currency of the package. If used the two values “SUPERSEDED” or “CURRENT” from the vocabulary is used.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>>amdSec/rightsMD/@STATUS</dd>
+                        <dt>METS XPath</dt><dd>amdSec/rightsMD/@STATUS</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -677,7 +677,7 @@
             <requirement ID="CSIP52" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Type of metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the linked file. Value is taken from the list provided by the standard.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the linked file. Value is taken from the list provided by the METS standard.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@MDTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -761,11 +761,11 @@
             <requirement ID="CSIP60" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="fileSecExample1 fileSecExample2">
                   <description>
                     <head>File grouping</head>
-                      <p xmlns="http://www.w3.org/1999/xhtml">There are one or more file group (fileGrp) elements present grouping the transfered files in the main catagorisation of; Documentation, Schemas and Representations.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Documentation" all documetation pertaining to the transfered information is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Schemas" all XML-schemas pertaining to the transfered XML documents is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Representations" the data being transfered is present or in one file group the data for each representation is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">To make the catagorisation easier the different files being transfered should be placed in folders with names folowing the catagorisation</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">There are one or more file group (fileGrp) elements present grouping the transferred files in the main catagorisation of; Documentation, Schemas and Representations.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Documentation" all documentation pertaining to the transferred information is present.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Schemas" all XML-schemas pertaining to the transferred XML documents are present.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Representations" the data being transferred is present or in one file group the data for each representation is present.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">To make the catagorisation easier the different files being transferred should be placed in folders with names folowing the catagorisation</p>
                       <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
@@ -775,7 +775,7 @@
             <requirement ID="CSIP61" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Reference to administrative metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">If administrative metadata is has been provided on the file group (fileGrp) level this attribute points to the correct administrative metadata section.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If administrative metadata has been provided on the file group (fileGrp) level this attribute points to the correct administrative metadata section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1138,7 +1138,7 @@
                     <head>Documentation file referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containg documentation described in the package are referenced via the relevant file group identifiers.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTID</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1179,7 +1179,7 @@
                     <head>Schema file referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containg schemas described in the package are referenced via the relevant file group identifiers.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTID</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1188,7 +1188,7 @@
                 <description>
                     <head>File division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the transfer consist of only data and no representations there are one representation div present</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The transfered files referenced in the file section file group is described in the structural map with one sub division</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The transferred files referenced in the file section file group is described in the structural map with one sub division</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1221,7 +1221,7 @@
                     <head>File division file referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the files described in the package are referenced via the relevant file group identifier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTID</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1262,7 +1262,7 @@
                     <head>Representations division file referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the files described in the package are referenced via the relevant file group identifier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTID</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1380,7 +1380,7 @@
             <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
         </note>
     </tool>
-    <Example ID="metsRootElementExample2" LABEL="METS root element example with transfered content type not present in the fixed value list for @TYPE">
+    <Example ID="metsRootElementExample2" LABEL="METS root element example with content not in the value list @TYPE being transferred">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1450,7 +1450,7 @@
             </mets:fileGrp>
             <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" USE="Representations/Submission/Data" csip:CONTENTINFORMATIONTYPE="SIARDDK">
                 <!-- The fileGrp USE attribute gives the folder name including path to the where the data is found -->
-                <!-- All transfered data is stored in a folder, the filepath is shown in the href -->
+                <!-- All transferred data is stored in a folder, the filepath is shown in the href -->
                 <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FD" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Submission/Data/SIARD.xml"/>
                 </mets:file>
@@ -1477,7 +1477,7 @@
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="schemas/ead2002.xsd"/>
                 </mets:file>
             </mets:fileGrp>
-            <!-- All transfered data is stored in a folder, the filepath is shown in the href -->
+            <!-- All transferred data is stored in a folder, the filepath is shown in the href -->
             <!-- For each representation the file referenced in the file group is the representation METS document -->
             <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C277" USE="Representations/preingest" csip:CONTENTINFORMATIONTYPE="OTHER" csip:OTHERCONTENTINFORMATIONTYPE="Access database">
                 <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FE" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
