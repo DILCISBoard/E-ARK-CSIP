@@ -132,9 +132,9 @@ Following Principle 3.1 the package MUST include a high-level structural compone
 
 Following Principle 3.2 this common structure is highly recommended to be implemented as a physical folder structure.
 
-Following Principle 3.4 the structure separates explicitly the representations of data and metadata into a separate structural component.
+Following Principle 3.3 we highly recommend dividing the metadata portion of the Information Package to separate different types of metadata.
 
-In addition we highly recommend dividing the metadata portion of the Information Package to separate different types of metadata (SHOULD Principle 3.3).
+Following Principle 3.4 the structure separates explicitly the representations of data and metadata into a separate structural component.
 
 Following Principle 3.5 repositories and their users have the possibility to add any additional components (as an example for schemas and binary support documentation) either as extensions to the whole Information Package or into a specific representation.
 
