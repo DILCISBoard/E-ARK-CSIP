@@ -154,7 +154,7 @@
             <requirement ID="CSIP1" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
                 <description>
                     <head>Content Identification</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">It is mandatory to use a content ID which is expressed with @OBJID. The value should be the same as the name or ID of the package (the name of the root folder) for the root METS document or the name and folder name for the representation. The OBJID must meet the principle of being unique at least across the repository.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is mandatory to use the @OBJID attribute as a string identifier for the package. The value should be identical to the name/ID of the package, i.e. the name of the root folder, for the root METS document or the name and folder name for a representation.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@OBJID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -350,7 +350,7 @@
             <requirement ID="CSIP20" REQLEVEL="SHOULD" RELATEDMAT="VocabularyStatus" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Status of the descriptive metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Status of the metadata. Used to indicate the currency of the package. If used the two values “SUPERSEDED” or “CURRENT” from the vocabulary is used.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Indicates the status of the package using a fixed vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>dmdSec/@STATUS</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -494,7 +494,7 @@
             <requirement ID="CSIP34" REQLEVEL="SHOULD" RELATEDMAT="VocabularyStatus" EXAMPLES="amdSecExample1">
                <description>
                     <head>Status of the digital provenance metadata</head>
-                   <p xmlns="http://www.w3.org/1999/xhtml">Status of the metadata. Used to indicate the currency of the package. If used the two values “SUPERSEDED” or “CURRENT” from the vocabulary is used.</p>
+                   <p xmlns="http://www.w3.org/1999/xhtml">Indicates the status of the package using a fixed vocabulary.</p>
                    <dl xmlns="http://www.w3.org/1999/xhtml">
                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/@STATUS</dd>
                        <dt>Cardinality</dt><dd>0..1</dd>
@@ -626,7 +626,7 @@
             <requirement ID="CSIP47" REQLEVEL="SHOULD" RELATEDMAT="VocabularyStatus" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Status of the rights metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Status of the metadata. Used to indicate the currency of the package. If used the two values “SUPERSEDED” or “CURRENT” from the vocabulary is used.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Indicates the status of the package using a fixed vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD/@STATUS</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -740,7 +740,7 @@
                 <description>
                     <head>File section</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the section is used only one file section (fileSec) element is present.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer just descriptive metadata and/or adminsitrative metadata without files placed in this section.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer just descriptive metadata and/or administrative metadata without files placed in this section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -761,11 +761,11 @@
             <requirement ID="CSIP60" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="fileSecExample1 fileSecExample2">
                   <description>
                     <head>File grouping</head>
-                      <p xmlns="http://www.w3.org/1999/xhtml">There are one or more file group (fileGrp) elements present grouping the transferred files in the main catagorization of; Documentation, Schemas and Representations.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorization of "Documentation" all documetation pertaining to the transferred information is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorization of "Schemas" all XML-schemas pertaining to the transferred XML documents is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorization of "Representations" the data being transferred is present or in one file group the data for each representation is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">To make the catagorization easier the different files being transferred should be placed in folders with names folowing the catagorization</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">There are one or more file group (fileGrp) elements present grouping the transferred files in the main catagorisation of; Documentation, Schemas and Representations.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Documentation" all documentation pertaining to the transferred information is present.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Schemas" all XML-schemas pertaining to the transferred XML documents are present.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Representations" the data being transferred is present or in one file group the data for each representation is present.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">To make the catagorisation easier the different files being transferred should be placed in folders with names folowing the catagorisation</p>
                       <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
@@ -785,7 +785,7 @@
             <requirement ID="CSIP62" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Specific content type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which describes the specific content information type specification used for the transferred content. The attribute is mandatory to use when the file group catagorization is Representations. The vocabulary is going to evolve under the care of the DILCIS Board as additional content information type specifications are developed.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which describes the specific content information type specification used for the transferred content. The attribute is mandatory when the file group catagorisation value is "Representations". The vocabulary will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1042,7 +1042,7 @@
             <requirement ID="CSIP87" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Sub structural division</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Each catagorization "Documentation", "Schemas" as well as each "Representation" within the package must be represented by an occurrence of the division (div) element.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Each catagorisation "Documentation", "Schemas" as well as each "Representation" within the package must be represented by an occurrence of the division (div) element.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Metadata in the administrative and descriptive metadata section has its own division</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
@@ -1380,7 +1380,7 @@
             <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
         </note>
     </tool>
-    <Example ID="metsRootElementExample2" LABEL="METS root element example with content not in the value list being transferred">
+    <Example ID="metsRootElementExample2" LABEL="METS root element example with content not in the value list @TYPE being transferred">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1393,7 +1393,7 @@
             xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
          </mets:mets>
     </Example>
-    <Example ID="metsRootElementExample3" LABEL="METS root element example of content with a type from the value list and representation content not in the value list">
+    <Example ID="metsRootElementExample3" LABEL="METS root element example with transfered content of a type from the fixed value list and the representation content is not part of the value list">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1407,7 +1407,7 @@
             xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
         </mets:mets>
     </Example>
-    <Example ID="metsHdrElementExample1" LABEL="METS example of the mandatory agent">
+    <Example ID="metsHdrElementExample1" LABEL="METS agent example of the mandatory agent">
         <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
             <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
                 <mets:name>RODA-in</mets:name>
@@ -1415,7 +1415,7 @@
             </mets:agent>
         </mets:metsHdr>
     </Example>
-    <Example ID="dmdSecExample1" LABEL="METS example of referencing descriptive metadata in the for of an EAD document">
+    <Example ID="dmdSecExample1" LABEL="METS example of referencing the descriptive metadata which is described with an EAD document">
         <mets:dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
             <mets:mdRef LOCTYPE="URL" MDTYPE="EAD" xlink:type="simple"  xlink:href="metadata/descriptive/ead2002.xml" MIMETYPE="application/xml" SIZE="903" CREATED="2018-04-24T14:37:49.609+01:00" CHECKSUM="F24263BF09994749F335E1664DCE0086DB6DCA323FDB6996938BCD28EA9E8153" CHECKSUMTYPE="SHA-256"/>
         </mets:dmdSec>
@@ -1430,7 +1430,7 @@
             </mets:digiprovMD>
         </mets:amdSec>
     </Example>
-    <Example ID="fileSecExample1" LABEL="METS example of structuring the data in the file section">
+    <Example ID="fileSecExample1" LABEL="METS example of how the structuring of the data is made in the file section">
         <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
             <!-- Main grouping starting names is Documentation, Schemas and Representations can be mirrored in the folder names-->
             <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H" USE="Documentation">
@@ -1457,7 +1457,7 @@
             </mets:fileGrp>
         </mets:fileSec>
     </Example>
-    <Example ID="fileSecExample2" LABEL="METS example of structuring the data in the file section when there are representatins present">
+    <Example ID="fileSecExample2" LABEL="METS example of how the structuring of the data including representations are made in the file section">
             <!-- The fileGrp USE attribute gives the folder name including path to the where the data is found -->
         <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
             <!-- Main grouping starting names is Documetation, Schemas and Representations can be mirrored in the folder names-->
@@ -1506,7 +1506,7 @@
             </mets:div>
         </mets:structMap>
     </Example>
-    <Example ID="structMapExample2" LABEL="METS example of the mandatory structural map when there are representations present">
+    <Example ID="structMapExample2" LABEL="METS example of the mandatory structural map including representations">
         <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP StructMap">
             <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
                <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
