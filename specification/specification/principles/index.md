@@ -119,7 +119,7 @@ In addition to data and metadata, institutions might have the need to include ad
 If this is the case, the CSIP Information Package MUST NOT limit which components can constitute an Information Package, and MUST offer clearly defined extension points for the inclusion of these additional components into the Information Package. At the same time these extension points MUST be defined in a way which does not interfere with other components (i.e. the extension points MUST be clearly separated from other components of an Information Package).
 
 ### Principle 3.6:
-*The Information Package **MUST** follow a common conceptual structure regardless of its technical implementation.*
+*The Information Package **SHOULD** follow a common conceptual structure regardless of its technical implementation.*
 
 Based on principles 3.1 – 3.4 we now present a common structure for any CSIP Information Package ([Figure 7](#fig7)).
 
