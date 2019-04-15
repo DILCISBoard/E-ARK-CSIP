@@ -3,7 +3,7 @@ The purpose of the METS root element is to describe the container for the inform
 
 In addition to its attributes the METS root element mets MUST define all relevant namespaces and XML schema locations used in the package employing the @xmlns and @xsi:schemaLocation attributes.
 
-When implementing and using XML schemas consideration of physical placement of the schemas needs to be considered taking into account unaccessability of the external resource which might host the XML schema used for validation.
+When implementing and using XML schemas the physical location of any schemas needs to be considered accounting for potential unavailability of any resources required for validation that are hosted externally.
 
 In case XML schemas have been included into the package (i.e. placed into the `schemas` folder) it is recommended to link to the schemas using the relative path of the schema file (i.e. `schemas/mets.xsd`).
 
