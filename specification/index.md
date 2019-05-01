@@ -72,5 +72,5 @@ Contact & Feedback
 The Common Specification for Information Packages is maintained by the Digital Information LifeCycle
 Interoperability Standard Board (DILCIS Board). For further information about the DILCIS Board or feedback
 on the current document please consult the website http://www.dilcis.eu/ or contact us at
-<dasboard@dlmforum.eu.>
+<dasboard@dlmforum.eu>.
  
