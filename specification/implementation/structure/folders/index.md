@@ -1,5 +1,5 @@
 ## 4.1.	Folder structure of the CSIP
-The CSIP folder structure is presented in Figure 8 below. The structure follows directly the principles of the conceptual data model by dividing the components of the package into stand-alone folders for representations, metadata, and other components. All folders described here are supposed to be present even if they are empty.
+The CSIP folder structure is presented in Figure 8 below. The structure directly follows the principles of the conceptual data model, dividing the package components into individual folders for representations, metadata, and other components. All of folders described **ought to** be present even if they are empty.
 
 <a name="fig8"></a>
 ![IP Folder Structure](figs/fig_8_cs_ip_struct.png "CSIP Information Package folder structure.")
@@ -21,7 +21,7 @@ The implementation requirements of the CSIP Information Package structure are:
 **CSIPSTR4**: The Information Package root folder **MUST** include a metadata file named `METS.xml`, which MUST include information about the identity and structure of the package and its components at a minimum down to a general description or pointer to each representation.
 
 <a name="CSIPSTR5"></a>
-**CSIPSTR5**: The Information Package root folder **MUST** include a folder named `metadata`, which SHOULD include metadata relevant to the whole package.
+**CSIPSTR5**: The Information Package root folder **SHOULD** include a folder named `metadata`, which SHOULD include metadata relevant to the whole package.
 
 <a name="CSIPSTR6"></a>
 **CSIPSTR6**: If preservation metadata are available, they **SHOULD** be included in sub-folder `preservation`.
@@ -33,19 +33,19 @@ The implementation requirements of the CSIP Information Package structure are:
 **CSIPSTR8**: If any other metadata are available, they **CAN** be included in separate sub-folders, for example an additional folder named `other`.
 
 <a name="CSIPSTR9"></a>
-**CSIPSTR9**: The Information Package folder **MUST** include a folder named `representations`.
+**CSIPSTR9**: The Information Package folder **SHOULD** include a folder named `representations`.
 
 <a name="CSIPSTR10"></a>
-**CSIPSTR10**: The `representations` folder **MUST** include a sub-folder for each individual representation (i.e. the “representation folder”) named with a string uniquely identifying the representation within the scope of the package (for example the name of the representation and/or its creation date could be good examples for a representation sub-folder).
+**CSIPSTR10**: The `representations` folder **SHOULD** include a sub-folder for each individual representation (i.e. the “representation folder”). Each representation folder should have a string name that is unique within the package scope. For example the name of the representation and/or its creation date might be good candidates as a representation sub-folder name.
 
 <a name="CSIPSTR11"></a>
-**CSIPSTR11**: The representation folder **MUST** include a sub-folder named `data` which includes all data constituting the representation.
+**CSIPSTR11**: The representation folder **SHOULD** include a sub-folder named `data` which includes all data constituting the representation.
 
 <a name="CSIPSTR12"></a>
 **CSIPSTR12**: The representation folder **SHOULD** include a metadata file named `METS.xml` which includes information about the identity and structure of the representation and its components. The recommended best practice is to always have a `METS.xml` in the representation folder.
 
 <a name="CSIPSTR13"></a>
-**CSIPSTR13**: The representation folder **MUST** include a sub-folder named `metadata` which CAN include all metadata about the specific representation.
+**CSIPSTR13**: The representation folder **SHOULD** include a sub-folder named `metadata` which **CAN** include all metadata about the specific representation.
 
 <a name="CSIPSTR14"></a>
 **CSIPSTR14**: The Information Package folder and representation folder **CAN** be extended with additional sub-folders.
