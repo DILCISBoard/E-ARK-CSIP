@@ -6,7 +6,7 @@ structure to associated content files and metadata. In CSIP the structMap descri
 The CSIP requires the inclusion of one mandatory structural map according to the principles described below.
 However, implementers are welcome to define additional structural maps for their internal purposes by
 repeating the structMap element.
-The most crucial requirements for the CS IP mandated structural map are as follows:
+The most crucial requirements for the CSIP mandated structural map are as follows:
 
 - The structMap element has a mandatory attribute @LABEL which has the fixed value of “CSIP structMap”. The @LABEL attribute is used to distinguish the Common Specification mandated structural map occurrence from any other, user-defined, structural maps. As such we can also derive the requirement, that any user-defined structural maps must not use the @LABEL value of “CSIP structMap”;
 - The internal structure of the structural map (expressed by div elements) follows the CSIP high level physical structure as described in Section 4, therefore grouping together metadata, representations, schemas, documentation and user-defined folders into their own div elements;

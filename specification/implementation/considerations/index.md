@@ -1,21 +1,21 @@
 # 6. Implementation considerations
-This Section touches on some additional issues which are relevant in respect to implementing the CS IP in real-life scenarios.
+This Section touches on some additional issues which are relevant in respect to implementing the CSIP in real-life scenarios.
 
 ## 6.1 Content Information Type Specifications
 
 ### 6.1.1 What is a Content Information Type Specification?
-The concept of Content Information Type Specification is essentially an extension method which allows for widening the interoperability scope of the CS IP into a content specific level.
+The concept of Content Information Type Specification is essentially an extension method which allows for widening the interoperability scope of the CSIP into a content specific level.
 
 As defined by the OAIS Reference Model, Content Information is “A set of information that is the original target of preservation or that includes part or all of that information. It is an Information Object composed of its Content Data Object and its Representation Information”.
 
 A Content Information Type can therefore be understood as a category of Content Information, for example relational databases, scientific data or digitised maps. And finally a Content Information Type Specification
-defines in technical terms how data and metadata (mainly in regard to the Information Object) must be formatted and placed within a CS IP Information Package in order to achieve interoperability in exchanging
+defines in technical terms how data and metadata (mainly in regard to the Information Object) must be formatted and placed within a CSIP Information Package in order to achieve interoperability in exchanging
 specific Content Information.
 
 As such, the following elements can be at the core of a Content Information Type Specification:
 
 - The required file format of data;
-- Description of how data must be placed and structured within the CS IP folder structure (i.e. a sub-structure for the “Data” folder);
+- Description of how data must be placed and structured within the CSIP folder structure (i.e. a sub-structure for the “Data” folder);
 - Clearly defined requirements for specific representation metadata that needs to be available in PREMIS for rendering and understanding the Content Data Object appropriately;
 - Clearly defined list of specific (binary) documentation or other components (like software, emulators, etc.) which have to be available for rendering and understanding the Content Data Object appropriately.
 
@@ -25,7 +25,7 @@ from descriptive metadata (in ERMS format) in order to guarantee the integrity o
 Concluding from the previous we can also see that Content Information Type Specification can potentially also be sector specific, and that there might be multiple specifications to cover a single content type. For example, archival institutions would be able to define a Content Information Type specification for archiving web sites along with descriptive metadata in EAD format, while libraries might define a specification for archiving web sites along with metadata in MARC.
 
 ### 6.1.2 Maintaining Content Information Type Specifications
-The number of possible Content Information Type Specifications is potentially unlimited. As well, it is the intention of the authors of the CS IP to allow everybody in the wider community to create new specifications.
+The number of possible Content Information Type Specifications is potentially unlimited. As well, it is the intention of the authors of the CSIP to allow everybody in the wider community to create new specifications.
 
 The maintenance of such a living environment is the role of the DILCIS Board. The core principles of the maintenance regime are as follows:
 
@@ -125,7 +125,7 @@ LOCTYPE="URN"/>
 ### 6.2.5 Illustration of references between METS files in a segmented IP
 We need to segment an IP at the data folder in the representations level, but according to the Common Specification this can only be done at the IP level. Therefore this IP has been segmented at the top IP level, and not at the representations level.
 
-![CS IP Example](figs/mets_file_ref.png "Illustration of references between files.")
+![CSIP Example](figs/mets_file_ref.png "Illustration of references between files.")
 
 Please note the following about the example:
 
@@ -136,10 +136,10 @@ Please note the following about the example:
 - In representation 1 these limits have been increased and we only need two segments. Further the .bin files have been migrated to .tif.
 
 ### 6.3 Handling descriptive metadata within the Common Specification
-Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The CS IP allows essentially for the inclusion of any kind of descriptive metadata in the IP. However, it is required that all descriptive metadata must be placed into the “metadata” folder of the IP, and that it is recommended (should) to also exploit the possibility of creating a specific sub-folder “descriptive” as seen in [Figure 11](#fig11) below (cf. EAD.xml).
+Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The CSIP allows essentially for the inclusion of any kind of descriptive metadata in the IP. However, it is required that all descriptive metadata must be placed into the “metadata” folder of the IP, and that it is recommended (should) to also exploit the possibility of creating a specific sub-folder “descriptive” as seen in [Figure 11](#fig11) below (cf. EAD.xml).
 
 <a name="fig11"></a>
-![CS IP Example](figs/fig_11_eark_ip_desc_md.png "EARK IP descriptive metadata.")
+![CSIP Example](figs/fig_11_eark_ip_desc_md.png "EARK IP descriptive metadata.")
 
 **Figure 11:** E-ARK IP descriptive metadata
 
@@ -152,4 +152,4 @@ Further, all descriptive metadata need itself to be described in and referenced 
 
 Following the requirement of explicitly and physically separating descriptive metadata and data we would also like to note, that for interoperability purposes appropriate descriptive metadata elements must explicitly refer to the data content they describe (unless the whole data portion is a single intellectual unit described as a discrete set of descriptive metadata). For example, in the case of EAD elements `<dao>` and `<daogrp>` shall be used to refer to content files from the descriptive metadata. However, regardless of the descriptive metadata standard in question the references from descriptive metadata must always follow the requirement posed in Section 5.1 above (i.e. create references according to the format defined in RFC 3986, or to express references as a relative path to the data files).
 
-Finally we would also note that the recommendation of the CS IP is to always include detailed metadata about intellectual access restrictions and copyright into descriptive metadata (i.e. not into the METS or PREMIS portions of the IP).
+Finally we would also note that the recommendation of the CSIP is to always include detailed metadata about intellectual access restrictions and copyright into descriptive metadata (i.e. not into the METS or PREMIS portions of the IP).
