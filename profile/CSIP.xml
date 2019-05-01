@@ -603,7 +603,7 @@
             <requirement ID="CSIP45" REQLEVEL="MAY" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Rights metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">For describing an overall access status for the package a simple rights statement may be used.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A simple rights statement may be used to describe general permissions for the package. Individual represenations should state their specifc rights in their representation METS file.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Standards possible to use includes <a href="http://rightsstatements.org">RightsStatements.org</a> used by Europeana (<a href="https://pro.europeana.eu/page/available-rights-statements">Europeana rights statements info</a>), <a href="https://github.com/mets/METS-Rights-Schema">METS Rights Schema</a> created and maintaned by the METS Board, the rights part of <a href="http://www.loc.gov/standards/premis/">PREMIS</a> as well as own local rights statements in use.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD</dd>
