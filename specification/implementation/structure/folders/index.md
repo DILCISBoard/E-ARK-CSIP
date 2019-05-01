@@ -36,7 +36,7 @@ The implementation requirements of the CSIP Information Package structure are:
 **CSIPSTR9**: The Information Package folder **MUST** include a folder named `representations`.
 
 <a name="CSIPSTR10"></a>
-**CSIPSTR10**: The `representations` folder **MUST** include a sub-folder for each individual representation (i.e. the “representation folder”) named with a string uniquely identifying the representation within the scope of the package (for example the name of the representation and/or its creation date could be good examples for an representation sub-folder).
+**CSIPSTR10**: The `representations` folder **MUST** include a sub-folder for each individual representation (i.e. the “representation folder”) named with a string uniquely identifying the representation within the scope of the package (for example the name of the representation and/or its creation date could be good examples for a representation sub-folder).
 
 <a name="CSIPSTR11"></a>
 **CSIPSTR11**: The representation folder **MUST** include a sub-folder named `data` which includes all data constituting the representation.
