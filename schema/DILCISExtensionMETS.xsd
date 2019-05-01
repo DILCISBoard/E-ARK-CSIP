@@ -16,7 +16,7 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:attribute>
-    <xs:attribute name="OTHERCONTENTTYPESPECIFICATION" type="xs:string"/>
+    <xs:attribute name="OTHERCONTENTINFORMATIONTYPE" type="xs:string"/>
     <xs:attribute name="OAISPACKAGETYPE">
         <xs:simpleType>
             <xs:restriction base="xs:string">
