@@ -7,7 +7,7 @@ This document introduces the concept of the Common Specification for Information
 
 3.	Propose the details of an XML-based implementation of the requirements using, to the largest possible extent, standards which are widely used in international digital preservation.
 
-Ultimately the goal of the Common Specification for Information Packages (CSIP) is to reach a level of interoperability between all Information Packages so that tools implementing the CS IP can be taken up by institutions without needing further modifications or adaptations.
+Ultimately the goal of the Common Specification for Information Packages is to reach a level of interoperability between all Information Packages so that tools implementing the CS IP can be taken up by institutions without needing further modifications or adaptations.
 
 ## 1.1 The Common Specification for Information Packages and OAIS
 In the OAIS  framework three types of Information Packages (IPs) are present in a digital preservation ecosystem: Submission Information Packages (SIPs), Archival Information Packages (AIPs) and Dissemination Information Packages (DIPs) ([Figure 1](#fig1)). These three IP types are respectively used to
@@ -55,7 +55,7 @@ As of November 2018 these Content Information Type Specifications, created by th
 The total number of Content Information Type specifications is, however, unlimited and the long-term commitment of the DILCIS Board  is to keep the overall environment open and inclusive. As such, interested bodies are welcome to develop their own Content Information Type Specifications, for example
 for 3D building projects or electronic publications. An appropriate management regime to facilitate the creation and approval of additional Content Information Type specifications by anyone in the broader community is implemented by the DILCIS Board.
 
-For more detailed information about the Content Information Type specifications please look also at [Section 6.1](#61-content-information-type-specifications) below and check www.dilcis.eu!
+For more detailed information about the Content Information Type specifications please look also at [Section 6.1](#61-content-information-type-specifications) below and check <http://www.dilcis.eu>!
 
 ## 1.3 Common Specification for Information Packages, OAIS Information Packages’ specifications and Content Information Type Specifications
 
@@ -79,11 +79,11 @@ This Common Specification for Information Packages is related to the following d
 
 ### International standards and best-practices
 - Reference Model for an Open Archival Information System (OAIS), 2012,
-public.ccsds.org/publications/archive/650x0m2.pdf
+<https://public.ccsds.org/Pubs/650x0m2.pdf>
 This specification has used the same terminology as introduced in the OAIS model and also the same division of information package types: Submission Information Package (SIP), Archival Information Package (AIP), Dissemination Information package (DIP).
 
 - Producer-Archive Interface Specification (PAIS) – CCSDS, 2014,
-public.ccsds.org/publications/archive/651x1b1.pdf
+<https://public.ccsds.org/Pubs/651x1b1.pdf>
 We have investigated the structure of a SIP presented in PAIS, but as the implementation of this specification is not very comprehensive yet (only few prototypes exist), we decided to rely mainly on the best practices introduced in other reports (see below).
 
 ### E-ARK project (2014 – 2017) deliverables
