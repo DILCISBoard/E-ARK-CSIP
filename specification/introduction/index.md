@@ -55,7 +55,7 @@ As of November 2018 these Content Information Type Specifications, created by th
 The total number of Content Information Type specifications is, however, unlimited and the long-term commitment of the DILCIS Board  is to keep the overall environment open and inclusive. As such, interested bodies are welcome to develop their own Content Information Type Specifications, for example
 for 3D building projects or electronic publications. An appropriate management regime to facilitate the creation and approval of additional Content Information Type specifications by anyone in the broader community is implemented by the DILCIS Board.
 
-For more detailed information about the Content Information Type specifications please look also at [Section 6.1](#61-content-information-type-specifications) below and check <http://www.dilcis.eu>!
+For more detailed information about the Content Information Type specifications please look also at [Section 6.1](#61-content-information-type-specifications) below and check <http://www.dilcis.eu>.
 
 ## 1.3 Common Specification for Information Packages, OAIS Information Packages’ specifications and Content Information Type Specifications
 
