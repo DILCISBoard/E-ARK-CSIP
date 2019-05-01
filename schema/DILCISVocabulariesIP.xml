@@ -116,7 +116,7 @@
             <p>Vocabulary derived from E-ARK</p>
         </Information>
         <Entry>
-            <Term lang="en">CS IP StructMap</Term>
+            <Term lang="en">CSIP structMap</Term>
             <Definition>A label for the mandatory structural map</Definition>
         </Entry>
     </Vocabulary>
