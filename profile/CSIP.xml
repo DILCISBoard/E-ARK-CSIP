@@ -27,7 +27,7 @@
     </profile_context>
     <external_schema>
         <name>E-ARK CSIP METS Extension</name>
-        <URL>https://dilcis.eu/XML/METS/CSIPExtensionMETS/CSIPExtensionMETS.xsd</URL>
+        <URL>http://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd</URL>
         <context>XML-schema for the attributes added by CSIP</context>
         <note>
             <p xmlns="http://www.w3.org/1999/xhtml">An extension schema with the added attributes for use in this profile.</p>
