@@ -33,7 +33,7 @@ Contents
 	  - [4.1 Folder structure of the CSIP](#41-folder-structure-of-the-csip)
 	  - [4.2 Implementing the structure](#42-implementing-the-structure)
 	- [5. Use of metadata](#5-use-of-metadata)
-		- [5.1. General requirements for metadata in a CSIP Information Package](#51-general-requirements-for-metadata-in-a-cs-ip-information-package)
+		- [5.1. General requirements for metadata in a CSIP Information Package](#51-general-requirements-for-metadata-in-a-csip-information-package)
 		- [5.2. General requirements for the use of metadata](#52-general-requirements-for-the-use-of-metadata)
 		- [5.3. Use of METS](#53-use-of-mets)
 	    - [5.3.1.	Use of the METS root element (element mets)](#531-use-of-the-mets-root-element-element-mets)
