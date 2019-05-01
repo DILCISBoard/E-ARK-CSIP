@@ -473,7 +473,7 @@
             <requirement ID="CSIP32" REQLEVEL="SHOULD" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Digital provenance metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">For recording information about preservation the standard PREMIS is used. It is mandatory to include one digiprovMD element for each part of PREMIS metadata.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">For recording information about preservation the standard PREMIS is used. It is mandatory to include one digiprovMD element for each piece of PREMIS metadata.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The use if PREMIS in METS is following the recommendations in <a href="http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf">2017 version of PREMIS in METS Guidelines</a></p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/digiprovMD</dd>
