@@ -23,11 +23,11 @@ Further, to enhance the interoperability scope of the CS IP and to strengthen ma
 
 - File format information for all files should be included as PUID values in the appropriate PREMIS semantic units.
 
-###Vocabularies
+### Vocabularies
 
 This specification does not present a definitive list of vocabularies for use with PREMIS semantic units but does recommend the use of the Library of Congress vocabularies developed specifically to provide values for various PREMIS semantic units. All relevant vocabularies is presented in the PREMIS Data Dictionary.
 
-###Identifiers
+### Identifiers
 
 In PREMIS each of the entities (objects, events, agents, rights) are identified by a generic set of identifier containers. These containers follow an identical syntax and structure consisting of an [entity]Identifier container holding two semantic units:
 
