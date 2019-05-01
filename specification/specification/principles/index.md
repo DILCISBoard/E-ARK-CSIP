@@ -119,24 +119,26 @@ In addition to data and metadata, institutions might have the need to include ad
 If this is the case, the CSIP Information Package MUST NOT limit which components can constitute an Information Package, and MUST offer clearly defined extension points for the inclusion of these additional components into the Information Package. At the same time these extension points MUST be defined in a way which does not interfere with other components (i.e. the extension points MUST be clearly separated from other components of an Information Package).
 
 ### Principle 3.6:
-*The Information Package **MUST** follow a common conceptual structure regardless of its technical implementation.*
+*The Information Package **SHOULD** follow a common conceptual structure regardless of its technical implementation.*
 
-Based on principles 3.1 – 3.4 we now present a common structure for any CSIP Information Package ([Figure 7](#fig7)).
+Based on principles 3.1 – 3.5 we now present a common structure for any CSIP Information Package ([Figure 7](#fig7)).
 
 <a name="fig7"></a>
 ![Conceptual Structure](figs/fig_7_cs_con_struct.png "Conceptual structure of the Common Specification")
 
 **Figure 7:** Conceptual structure of the Common Specification
 
-Following Principle 3.4 the structure separates explicitly the representations of data and metadata into a separate structural component.
-
 Following Principle 3.1 the package MUST include a high-level structural component for metadata which includes at least relevant metadata for the whole package. In addition the representations MUST internally separate between data and metadata (though note that the CSIP does not mandate that both data and metadata must be available in all representations).
 
-In addition we highly recommend dividing the metadata portion of the Information Package to separate different types of metadata (SHOULD Principle 3.3).
+Following Principle 3.2 this common structure is highly recommended to be implemented as a physical folder structure.
+
+Following Principle 3.3 we highly recommend dividing the metadata portion of the Information Package to separate different types of metadata.
+
+Following Principle 3.4 the structure separates explicitly the representations of data and metadata into a separate structural component.
 
 Following Principle 3.5 repositories and their users have the possibility to add any additional components (as an example for schemas and binary support documentation) either as extensions to the whole Information Package or into a specific representation.
 
-This common structure MUST be followed throughout all specific physical implementations of the CSIP.
+This common structure **SHOULD** be followed throughout all specific physical implementations of the CSIP.
 
 ### Principle 3.7:
 *The Information Package **MUST** be implemented by ONLY ONE implementation at any point in time.*
