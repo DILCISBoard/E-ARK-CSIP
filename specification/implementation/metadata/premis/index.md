@@ -34,4 +34,4 @@ In PREMIS each of the entities (objects, events, agents, rights) are identified 
 - [entity]IdentifierType
 - [entity]IdentifierValue
 
-The PREMIS data dictionary recognizes that the use of identifier types is an implementation specific issue and does not recommend or require particular vocabularies for identifier types. The Library of Congress has developed its own identifier type vocabulary  and the CSIP recommends its use in lieu of implementation specific identifier type vocabularies, where these have not yet been developed.
+The PREMIS data dictionary recognizes that the use of identifier types is an implementation specific issue and does not recommend or require particular vocabularies for identifier types. The Library of Congress has a Standard Identifiers Scheme: http://id.loc.gov/vocabulary/identifiers.html, and the CSIP recommends its use in lieu of implementation specific vocabularies.
