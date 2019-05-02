@@ -792,7 +792,7 @@
             <requirement ID="CSIP115" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Representations file grouping</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Representations" the content (data) being transferred is present.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Representations" the pointer to the METS document describing the representation or the content (data) being transferred is present.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
@@ -852,11 +852,11 @@
             <requirement ID="CSIP66" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The lowest level file group (fileGrp) contains the file elements which describe the transferred file objects.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the file element is categorised as "Representations" each representation file group contains one file which is the reference to the METS document describing the representation.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The file group (fileGrp) contains the file elements which describe the transferred file objects.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the file element is categorised as "Representations" each representation file group contains the reference to the METS document describing the representation.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
                 </description>
             </requirement>
