@@ -782,7 +782,7 @@
             <requirement ID="CSIP114" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Schemas file grouping</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Schemas" all XML-schemas pertaining to the transferred XML documents are present.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Schemas" all XML-schemas pertaining to the transferred content in the form of XML documents are present.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
