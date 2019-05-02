@@ -759,11 +759,40 @@
                   <description>
                     <head>File grouping</head>
                       <p xmlns="http://www.w3.org/1999/xhtml">There are one or more file group (fileGrp) elements present grouping the transferred files in the main catagorisation of: Documentation, Schemas and Representations.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Documentation" all documentation pertaining to the transferred information is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Schemas" all XML-schemas pertaining to the transferred XML documents are present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Representations" the data being transferred is present or in one file group the data for each representation is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">To make the catagorisation easier the different files being transferred should be placed in folders with names following the catagorisation</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">The file groups described are present even if there are no files referenced in the group to maintain the logical structure of the package.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">For each file group there are additional elements used which are described in their own requriments.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">Its possible to add other user defined file groups which then will use the same additional requriments</p>
                       <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
+                        <dt>Cardinality</dt><dd>1..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="CSIP113" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
+                <description>
+                    <head>Documentations file grouping</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Documentation" all documentation pertaining to the transferred information is present.</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
+                        <dt>Cardinality</dt><dd>1..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="CSIP114" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
+                <description>
+                    <head>Schemas file grouping</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Schemas" all XML-schemas pertaining to the transferred XML documents are present.</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
+                        <dt>Cardinality</dt><dd>1..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="CSIP115" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
+                <description>
+                    <head>Representations file grouping</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Representations" the data being transferred is present.</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
