@@ -965,7 +965,10 @@
             <requirement ID="CSIP80" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Structural description of the package</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Each METS file must include ONE structural map (structMap) element used exactly as described here. Institutions can add their own additional custom structural maps as separate structMap sections.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The structural map (structMap) element is the only mandatory element in the METS standard.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The structMap in CSIP describes the highest logical structure of the IP.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Each METS file must include ONE structural map (structMap) element used exactly as described here. </p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Institutions can add their own additional custom structural maps as separate structMap sections.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
