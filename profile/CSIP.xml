@@ -760,7 +760,7 @@
                   <description>
                     <head>File grouping</head>
                       <p xmlns="http://www.w3.org/1999/xhtml">There are one or more file group (fileGrp) elements present grouping the files in the main catagorisation of: Documentation, Schemas and Representations.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">The file groups described are present even if there are no files referenced in the group to maintain the logical structure of the package.</p>
+                      <p xmlns="http://www.w3.org/1999/xhtml">These main file groups described are present even if there are no files referenced in the group to maintain the logical structure of the package.</p>
                       <p xmlns="http://www.w3.org/1999/xhtml">For each file group there are additional elements used which are described in their own requriments.</p>
                       <p xmlns="http://www.w3.org/1999/xhtml">Its possible to add other user defined file groups which then will use the same additional requriments.</p>
                       <dl xmlns="http://www.w3.org/1999/xhtml">
@@ -852,8 +852,8 @@
             <requirement ID="CSIP66" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The file group (fileGrp) contains the file elements which describe the transferred file objects.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the file element is categorised as "Representations" each representation file group contains the reference to the METS document describing the representation.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The file group (fileGrp) contains the file elements which describe the file objects.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the METS document descibes as "Representations" each representation file group contains the reference to the METS document describing the representation.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
