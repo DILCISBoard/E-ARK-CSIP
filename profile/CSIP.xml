@@ -462,10 +462,11 @@
                 <description>
                     <head>Administrative metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If administrative / preservation metadata is available, it must be described using the administrative metadata section (amdSec) element.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All administrative metadata is present in one amdSec element.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec</dd>
-                        <dt>Cardinality</dt><dd>0..n</dd>
+                        <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
             </requirement>
