@@ -12,7 +12,7 @@ The implementation requirements of the CSIP Information Package structure are:
 **CSIPSTR1**: Any Information Package **MUST** be included within a single physical root folder (known as the “Information Package root folder”). For packages presented in an archive format, [see CSIPSTR3](#CSIPSTR3), the archive **MUST** unpack to a single root folder.
 
 <a name="CSIPSTR2"></a>
-**CSIPSTR2**: The Information Package root folder **SHOULD** be named with the ID or name of the Information Package.
+**CSIPSTR2**: The Information Package root folder **SHOULD** be named with the ID or name of the Information Package, that is the value of the package METS.xml's root `<mets>` element's `@OBJID` attribute.
 
 <a name="CSIPSTR3"></a>
 **CSIPSTR3**: The Information Package root folder **MAY** be compressed (for example by using TAR or ZIP).
