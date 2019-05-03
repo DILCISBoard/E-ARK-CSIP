@@ -1,5 +1,5 @@
 
-**Example:** METS example of structuring the data in the file section
+**Example:** METS example of how the structuring of the data is made in the file section
 
 ```xml
 <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
@@ -29,7 +29,7 @@
 ```
 
 
-**Example:** METS example of structuring the data in the file section when there are representatins present
+**Example:** METS example of how the structuring of the data including representations are made in the file section
 
 ```xml
 <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
