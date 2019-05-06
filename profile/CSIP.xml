@@ -462,10 +462,11 @@
                 <description>
                     <head>Administrative metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If administrative / preservation metadata is available, it must be described using the administrative metadata section (amdSec) element.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All administrative metadata is present in one amdSec element.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec</dd>
-                        <dt>Cardinality</dt><dd>0..n</dd>
+                        <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
             </requirement>
@@ -607,7 +608,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">Available standards include <a href="http://rightsstatements.org">RightsStatements.org</a> , <a href="https://pro.europeana.eu/page/available-rights-statements">Europeana rights statements info</a>), <a href="https://github.com/mets/METS-Rights-Schema">METS Rights Schema</a> created and maintaned by the METS Board, the rights part of <a href="http://www.loc.gov/standards/premis/">PREMIS</a> as well as own local rights statements in use.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
+                        <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
             </requirement>
