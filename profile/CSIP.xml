@@ -875,7 +875,7 @@
                     <head>File checksum</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The checksum of the linked file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>MES XPath</dt><dd>fileSec/fileGrp/file/@CHECKSUM</dd>
+                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@CHECKSUM</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
