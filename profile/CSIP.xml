@@ -1143,7 +1143,7 @@
             <requirement ID="CSIP97" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema division</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The schemas referenced in the file section file groups is described in the structural map with one sub division.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The schemas referenced in the file section file groups are described in the structural map within a single sub-division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1173,7 +1173,7 @@
             <requirement ID="CSIP100" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema file referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containg schemas described in the package are referenced via the relevant file group identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
