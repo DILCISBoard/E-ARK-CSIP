@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="DILCISVocabularies.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<Vocabularies xmlns="https://DILCIS.eu/XML/Vocabularies/IP">
+    <Vocabulary Name="VocabularyContentType">
+        <Information>
+            <p>Vocabulary derived from http://www.loc.gov/preservation/resources/rfs/TOC.html and http://www.dublincore.org/documents/dcmi-type-vocabulary/</p>
+            <p>Values are mixed and the terms "Mixed" and "Other" are derived from E-ARK</p>
+        </Information>
+        <Entry>
+            <Term lang="en">Textual works – Print</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Textual works – Digital</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Textual works – Electronic Serials</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Digital Musical Composition (score-based representations)</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Photographs – Print</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Photographs – Digital</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Other Graphic Images – Print</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Other Graphic Images – Digital</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Microforms</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Audio – On Tangible Medium (digital or analog)</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Audio – Media-independent (digital)</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Motion Pictures – Digital and Physical Media</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Video – File-based and Physical Media</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Software</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Datasets</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Geospatial Data</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Databases</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Websites</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Collection</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Event</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Interactive resource</Term>
+            <Definition>Definition needed</Definition>
+        </Entry><Entry>
+            <Term lang="en">Physical object</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Service</Term>
+            <Definition>Definition needed</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Mixed</Term>
+            <Definition>The package contains a mix of content types</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">Other</Term>
+            <Definition>A term other than present in the vocabulary is used</Definition>
+        </Entry>
+    </Vocabulary>
+</Vocabularies>
