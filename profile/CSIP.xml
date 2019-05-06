@@ -216,6 +216,16 @@
             </requirement>
         </metsRootElement>
         <metsHdr ID="metsHeaderElement">
+            <requirement ID="CSIP117" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
+                <description>
+                    <head>Package header</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">General element for describing the package.</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>metsHdr</dd>
+                        <dt>Cardinality</dt><dd>1..1</dd>
+                    </dl>
+                </description>
+            </requirement>
             <requirement ID="CSIP7" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Package creation date</head>
