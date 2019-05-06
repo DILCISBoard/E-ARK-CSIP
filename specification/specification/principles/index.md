@@ -50,9 +50,9 @@ In long-term preservation we also need to take into account that “forgotten”
 In practice this means that any implementation of the CSIP should ensure that folder and file naming conventions allow for the human identification of package components, and that the semantics of the package is explicit.
 
 ### Principle 1.7:
-*The Information Package **MUST** support the preservation method best suited for the data.*
+*The Information Package **MUST NOT** prescribe the use of a specific preservation method*
 
-Different preservation institutions and different types of data need to use different methods for long-term preservation; migration and emulation being the most usual choices. A CSIP Information Package implementation MUST NOT prescribe the use of a specific preservation method but instead allow to document and/or add any data or metadata which is needed for any method.
+Different preservation institutions and different types of data need to use different methods for long-term preservation; migration and emulation are typical examples. A CSIP implementation MUST NOT prescribe the use of a specific preservation method. Instead it should allow users to document and/or add arbitrary data or metadata as necessary for preservation purposes.
 
 ## 3.2 Identification of the Information Package
 
