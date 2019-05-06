@@ -18,7 +18,7 @@ submit data and metadata to digital repositories; store it in long-term preserva
 
 **Figure 1:** OAIS Functional Entities and Information Packages
 
-The main goal in the development of this specification has been to identify and standardise the common aspects of IPs which are equally relevant and implemented by any of the functional entities of the overall digital preservation process presented in OAIS (i.e. pre-ingest, ingest, archival storage, data management and access). The practical implementation is that the specification therefore allows for the development of generic tools and code libraries which can either be applied commonly across the whole lifecycle of digital data, or be reused as the basis for developing more specific, content or process-aware tools.
+The main goal in the development of this specification has been to identify and standardise the common aspects of IPs which are equally relevant and implemented by any of the functional entities of the overall digital preservation process presented in OAIS (i.e. pre-ingest, ingest, archival storage, data management and access). The practical implementation is that the specification allows for the development of generic tools and code libraries which can either be applied commonly across the whole lifecycle of digital data, or be reused as the basis for developing more specific, content or process-aware tools.
 
 To enable process level interoperability there needs to be detailed technical specifications for the OAIS information package types, e.g. SIP, AIP and DIP. For the E-ARK specifications this Common Specification for Information Packages is accompanied by detailed E-ARK SIP, E-ARK AIP and E-ARK DIP implementation profiles.
 
