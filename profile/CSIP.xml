@@ -141,7 +141,7 @@
         <vocabulary ID="VocabularyStructMapLabel">
             <name>Structural map label</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/VocabularyStructMapLabel</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapLabel.xml</URI>
             <context>Used in structMap/@LABEL</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the label of the structural map that is supported by the profile.</p>
