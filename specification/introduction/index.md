@@ -86,14 +86,6 @@ This specification has used the same terminology as introduced in the OAIS model
 <https://public.ccsds.org/Pubs/651x1b1.pdf>
 We have investigated the structure of a SIP presented in PAIS, but as the implementation of this specification is not very comprehensive yet (only few prototypes exist), we decided to rely mainly on the best practices introduced in other reports (see below).
 
-### E-ARK project (2014 – 2017) deliverables
-
-- Deliverable D3.1, E-ARK Report on Available Best Practices
-- Deliverable D4.1, Report on available formats and restrictions
-- Deliverable D5.1, GAP report between requirements for access and current access solutions
-
-These three deliverables document the best-practice survey carried out during the first six months of the E-ARK project. Many of the core principles and requirements highlighted in the following Sections have been derived from these surveys.
-
 ### Other E-ARK specifications
 
 - E-ARK SIP Specification
