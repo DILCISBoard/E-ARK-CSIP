@@ -59,7 +59,7 @@ Different preservation institutions and different types of data need to use diff
 ### Principle 2.1:
 *The Information Package OAIS type (SIP, AIP or DIP) **MUST** be clearly indicated.*
 
-One of the first tasks in analysing any Information Package is to identify its current status in the overall archival process. Therefore, any Information Package must explicitly and uniformly include metadata which identifies it as a SIP, AIP or DIP.
+One of the first tasks in analysing any Information Package is to identify its current status in the overall archival process. Therefore, any Information Package must explicitly and uniformly identify itself as a SIP, AIP or DIP.
 
 ### Principle 2.2:
 *Any Information Package **MUST** clearly identify the Content Information Type(s) of its data and metadata.*
