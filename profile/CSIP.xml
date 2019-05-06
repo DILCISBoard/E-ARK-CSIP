@@ -1074,20 +1074,22 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP91" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP91" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Metadata division administrative metadata referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All administrative metadata described in the package are referenced via the administrative sections different identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When there are administrative metadata and the amdSec is present, all administrative metadata MUST be referenced via the administrative sections different identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All the different identifiers is named in the same @AMDID using space as the divider.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP92" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP92" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Metadata division descriptive metadata referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All descriptive metadata described in the package are referenced via the descriptive section identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When there are descriptive metadata and one or more dmdSec is present, all descriptive metadata MUST be referenced via the descriptive section identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All the different identifiers is named in the same @DMDID using space as the divider.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@DMDID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
