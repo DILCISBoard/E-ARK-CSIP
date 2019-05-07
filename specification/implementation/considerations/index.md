@@ -43,9 +43,7 @@ The Common Specification itself can in principle be extended in multiple ways to
 However, it is worth noting that this is a “recommended approach” and is, at this point in time, not a part of the core Common Specification, as such it is also not expected that all tools support such a mechanism.
 
 ### 6.2.1 The structure for IP, their representations and their segments
-According to the E-ARK Common Specification for IPs an IP can have several representations. All representations contain the same intellectual content, but as the name implies is another representation; in its most simple form this could be another file format such as TIFF instead of JPEG.
-
-The segmenting approach described here is based on the following considerations:
+E-ARK Common Specification Information packages may comprise multiple representations of the same intellectual content. The segmenting approach described here is based on the following considerations:
 
 - Most of the size of an IP is the content (data) which according to the Common Specification resides in the representations folder of the IP. As such also any segmenting should take place within the representations layer of the Common Specification;
 - According to the Common Specification each representation is essentially a Common Specification IP itself, as it can consist of a METS metadata file, data, metadata, and any additional components;
