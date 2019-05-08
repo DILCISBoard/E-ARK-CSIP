@@ -1182,8 +1182,8 @@
             </requirement>
             <requirement ID="CSIP101" REQLEVEL="SHOULD" EXAMPLES="structMapExample1">
                 <description>
-                    <head>File division</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When there are no representations present the transferred files referenced in the file section file group are described in the structural map in a single sub division.</p>
+                    <head>Content division</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When there are no representations present the content referenced in the file section file group named "Representations" is described in the structural map in a single sub division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1192,7 +1192,7 @@
             </requirement>
             <requirement ID="CSIP102" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
-                    <head>File division identifier</head>
+                    <head>Content division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, xml:id identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
@@ -1202,8 +1202,8 @@
             </requirement>
             <requirement ID="CSIP103" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1">
                 <description>
-                    <head>File division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The file division (div) element in the package uses the value "Representations" as the value for the attribute LABEL.</p>
+                    <head>Content division label</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The content division (div) element in the package uses the value "Representations" from the vocabulary as the value for the attribute LABEL.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1212,8 +1212,8 @@
             </requirement>
             <requirement ID="CSIP104" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
-                    <head>File division file referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the files described in the package are referenced via the relevant file group identifier.</p>
+                    <head>Content division file referencing</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the content described in the package are referenced via the relevant file group identifier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1222,8 +1222,8 @@
             </requirement>
             <requirement ID="CSIP105" REQLEVEL="SHOULD" EXAMPLES="structMapExample2">
                 <description>
-                    <head>Representation divisions</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the transfer consist of representations there are one representation div present for each representation</p>
+                    <head>Representations divisions</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the content consist of different representations there are one representation div present for each representation</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
@@ -1232,7 +1232,7 @@
             </requirement>
             <requirement ID="CSIP106" REQLEVEL="MUST" EXAMPLES="structMapExample2">
                 <description>
-                    <head>Representation division identifier</head>
+                    <head>Representations division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, xml:id identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
@@ -1240,10 +1240,11 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP107" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample2">
+            <requirement ID="CSIP107" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="structMapExample2">
                 <description>
-                    <head>Representation division label</head>
+                    <head>Representations division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The representation division (div) element in the package uses the path to the METS document describing the representation as the value for the attribute LABEL.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">This requirement mirrors the requirement named "File group identifier"</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
