@@ -1,65 +1,55 @@
-# 6. Implementation considerations
+# 6. Implementation Considerations
 This Section touches on some additional issues which are relevant in respect to implementing the CSIP in real-life scenarios.
 
 ## 6.1 Content Information Type Specifications
 
 ### 6.1.1 What is a Content Information Type Specification?
-The concept of Content Information Type Specification is essentially an extension method which allows for widening the interoperability scope of the CSIP into a content specific level.
+A Content Information Type Specification is a mechanism used to extend the scope of the CSIP by defining additional requirements for specific Content Information. The OAIS Reference Model defines Content Information as “A set of information that is the original target of preservation or that includes part or all of that information. It is an Information Object composed of its Content Data Object and its Representation Information”.
 
-As defined by the OAIS Reference Model, Content Information is “A set of information that is the original target of preservation or that includes part or all of that information. It is an Information Object composed of its Content Data Object and its Representation Information”.
+Content Information Types can be regarded as categories of Content Information, e.g. relational databases, scientific data or digitised maps. A Content Information Type Specification defines the format and structure, mainly in regard to the Information Object, within an Information Package. This facilitates interoperability when exchanging specific Content Information Types.
 
-A Content Information Type can therefore be understood as a category of Content Information, for example relational databases, scientific data or digitised maps. And finally a Content Information Type Specification
-defines in technical terms how data and metadata (mainly in regard to the Information Object) must be formatted and placed within a CSIP Information Package in order to achieve interoperability in exchanging
-specific Content Information.
+The following elements should be at the core of a Content Information Type Specification:
 
-As such, the following elements can be at the core of a Content Information Type Specification:
+- Required file formats for content data;
+- Specification of information package structure, i.e. specific sub-folders under the "Data" folder for particular categories of content data;
+- Requirements for specific representation metadata that should be available in PREMIS for understanding and rendering the Content Data Object;
+- Details of specific (binary) documentation or other components (e.g. software, emulators, etc.) which must be available for rendering and understanding the Content Data Object.
 
-- The required file format of data;
-- Description of how data must be placed and structured within the CSIP folder structure (i.e. a sub-structure for the “Data” folder);
-- Clearly defined requirements for specific representation metadata that needs to be available in PREMIS for rendering and understanding the Content Data Object appropriately;
-- Clearly defined list of specific (binary) documentation or other components (like software, emulators, etc.) which have to be available for rendering and understanding the Content Data Object appropriately.
+Pragmatically it may not be sufficient to deal only with the Information Object. For complex Content Information Types or large IPs it may be necessary to provide explicit requirements for other metadata (descriptive, administrative) relevant to the specific content type. For example, the ERMS Content Information Type Specification does specific a method for referencing data (i.e. computer files) from descriptive metadata in ERMS format, to ensure the integrity of data and metadata. Stating these requirements in a general specification allows archival institutions receiving SIPs including ERMS extracts or whole systems to understand and validate potentially complex information packages.
 
-However, for practical purposes it is not sufficient to only deal with the Information Object. Especially for complex Content Information Types and large IPs it might also be relevant to describe explicitly requirements for other metadata (descriptive, administrative) which are relevant and crucial only for this specific content type. For example, the ERMS Content Information Type Specification, developed within the E-ARK project, does set specific requirements for how data (i.e. computer files) need to be referenced
-from descriptive metadata (in ERMS format) in order to guarantee the integrity of data and metadata. Setting these requirements in a central specification will allow archival institutions to receive SIPs including ERMS extracts or whole systems and still be able to understand and validate the potentially complex structure of the whole data and metadata composition within it.
-
-Concluding from the previous we can also see that Content Information Type Specification can potentially also be sector specific, and that there might be multiple specifications to cover a single content type. For example, archival institutions would be able to define a Content Information Type specification for archiving web sites along with descriptive metadata in EAD format, while libraries might define a specification for archiving web sites along with metadata in MARC.
+Content Information Type Specification can be domain specific and there might be multiple specifications to cover a particular domain. For example, archival institutions might define a Content Information Type Specification for archiving web sites with descriptive metadata in EAD format, while libraries might define a specification for archiving web sites with MARC metadata.
 
 ### 6.1.2 Maintaining Content Information Type Specifications
-The number of possible Content Information Type Specifications is potentially unlimited. As well, it is the intention of the authors of the CSIP to allow everybody in the wider community to create new specifications.
+We hope to see the development of many Content Information Type Specifications with the wider community to creating new specifications for domains of interest to them. The DILCIS Board aims to work with the community to maintain a list of available specifications following some simple principles:
 
-The maintenance of such a living environment is the role of the DILCIS Board. The core principles of the maintenance regime are as follows:
-
-- The DILCIS Board is responsible for establishing reasonable guidelines and quality requirements for new Content Information Type specifications, and publishing these on the Board website;
-- The Board has the responsibility and mandate to manage a registry of available Content Information Type specifications which meet the guidelines and quality requirements;
-- The Board does NOT take ownership of or have responsibility for maintaining and sustaining any Content Information Type specifications;
-- There shall be no limitations to who is allowed to propose additional Content Information Type specifications;
-- To ensure good quality of available specifications, the Board validates each proposed specification against the guidelines and quality requirements mentioned above. The validation shall be carried out free of charge and within a reasonable timeframe.
+- The DILCIS Board is responsible for establishing reasonable guidelines and quality requirements for new Content Information Type Specifications, and publishing these on the Board website;
+- The Board has the responsibility and mandate to manage a registry of available Content Information Type Specifications which meet the guidelines and quality requirements;
+- The Board does NOT take ownership of or have responsibility for maintaining and sustaining any Content Information Type Specifications;
+- There shall be no limitations to who is allowed to propose additional Content Information Type specifications; and
+- To ensure the quality of available specifications, the Board validates each proposed specification against the guidelines and quality requirements mentioned above. The validation shall be carried out free of charge and within a reasonable time-frame.
 
 ## 6.2. Handling large packages
-By default a Common Specification IP is supposed to reside in a single folder or file (in case compression has been applied). However, the amount of data and metadata within a single IP can easily grow into sizes of several GB or even TB and as such can become difficult to manage and inefficient to process because, for example, of lacking media capacity.
+By default a Common Specification IP should be contained in a single folder or archive file. However, the amount of data and metadata within a single IP can easily grow to several GB or even TB and become difficult to manage and inefficient to process e.g. due to insufficient storage capacity.
 
-The Common Specification itself can in principle be extended in multiple ways to support the segmenting of large packages into more manageable physical pieces. This Section describes one way which exploits the Common Specification “representation METS” concept and extends it into a physical segmentation scenario.
+The Common Specification can, in principle, be extended in different ways to support the segmentation of large packages into more manageable parts. This Section describes such an extension which exploits the Common Specification “representation METS” concept and extends it to cover physical segmentation.
 
-However, it is worth noting that this is a “recommended approach” and is, at this point in time, not a part of the core Common Specification, as such it is also not expected that all tools support such a mechanism.
+Please be aware that this is a “recommended approach” and, at this point in time, is not a part of the Common Specification. It is also not expected that all tools will support such a mechanism.
 
 ### 6.2.1 The structure for IP, their representations and their segments
-E-ARK Common Specification Information packages may comprise multiple representations of the same intellectual content. The segmenting approach described here is based on the following considerations:
+E-ARK Common Specification Information packages may comprise multiple representations of the same intellectual content. The segmentation approach described here is based on the following considerations:
 
-- Most of the size of an IP is the content (data) which according to the Common Specification resides in the representations folder of the IP. As such also any segmenting should take place within the representations layer of the Common Specification;
-- According to the Common Specification each representation is essentially a Common Specification IP itself, as it can consist of a METS metadata file, data, metadata, and any additional components;
-- A segment of an IP must also be in the Common Specification format, i.e. it shall be possible to validate each individual segment as a Common Specification IP;
+- The majority of the size of an IP consists of the content (data) which, according to the Common Specification, resides in the representations folder of the IP. As such any segmentation should take place within the representations layer of the Common Specification;
+- According to the Common Specification each representation is essentially a Common Specification IP itself, consisting of a METS metadata file, data, metadata, and any additional components;
+- A segment of an IP must also adhere to the Common Specification format, i.e. it shall be possible to validate each individual segment as a Common Specification IP;
 - Each IP shall consist of a parent segment (including at least the root METS file) and any number of child segments;
-- It shall be possible to add new physical child segments (as an example a new representation) to the whole IP without having to update other child segments.
+- It shall be possible to add new physical child segments (as an example a new representation) to the whole IP without necessitating the update of other child segments.
 
 ### 6.2.2 Using METS to refer from parent IP to child IP(s)
-The method used to refer from parent to child is based on the ID of the IP of the child.
-
-One reason for using ID and not URL or other more direct references to a location of the referenced METS file is the flexibility it gives to move the segmented IPs around in different storage locations. This is a flexibility often needed for segmented IPs that accumulated can be very large.
+The method used to refer from parent to child is based on the ID of the IP of the child. One reason for using ID and not URL or other more direct references to a location of the referenced METS file is the flexibility it gives to move the segmented IPs across storage locations. This flexibility is often needed for segmented IPs that can be very large.
 
 The value of the xlink:href attribute in the <mptr> element in the METS file of the parent IP is used.
 
-This value is to be set to the value of the OBJID attribute of the <mets> element in the METS file of the child IP. According to the Common Specification, the OBJID attribute must have the value of the ID of the IP.
-This is therefore sufficient for having the parent know the ID of the child, but the parent does not know the exact child location.
+This vis to be set to the value of the OBJID attribute of the <mets> element in the METS file of the child IP. According to the Common Specification, the OBJID attribute must have the value of the ID of the IP. This is therefore sufficient for having the parent know the ID of the child, but the parent does not know the exact child location.
 
 ### 6.2.3 Using METS to refer from child IP to parent IP
 The optional reference from child to the parent is based on the ID of the IP of the parent.
