@@ -737,8 +737,8 @@
             <requirement ID="CSIP58" REQLEVEL="SHOULD" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File section</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The content being transferred is placed in the file section in different file groups (described in other requirements)</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the section is used only one file section (fileSec) element is present.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The transferred content is placed in the file section in different file group elements, described in other requirements.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">No more than one file section (fileSec) element should be present.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer just descriptive metadata and/or administrative metadata without files placed in this section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec</dd>
@@ -756,14 +756,11 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP60" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="fileSecExample1 fileSecExample2">
-                  <description>
-                    <head>File grouping</head>
-                      <p xmlns="http://www.w3.org/1999/xhtml">There are one or more file group (fileGrp) elements present, which divide the files into categories: Documentation, Schemas and Representations.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">The file groups MUST be present even if there are no referenced files to maintain the logical structure of the package.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">There are additional elements used for each file group, these are described in their own requirements.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">It's possible for users to define additional file groups, these should comply with the same additional requirements.</p>
-                      <dl xmlns="http://www.w3.org/1999/xhtml">
+            <requirement ID="CSIP60" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
+                <description>
+                    <head>Documentation file group</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All documentation pertaining to the transferred content is placed in one or more file group elements with @USE attribute value "Documentation".</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
@@ -771,8 +768,8 @@
             </requirement>
             <requirement ID="CSIP113" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
-                    <head>Documentations file grouping</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All documentation pertaining to the transferred content is present in one or more file groups categorised as "Documentation".</p>
+                    <head>Schema file group</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All XML schemas used in the information package should be referenced from one or more file groups with @USE attribute value "Schemas".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
@@ -781,17 +778,7 @@
             </requirement>
             <requirement ID="CSIP114" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
-                    <head>Schemas file grouping</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All XML-schemas pertaining to the transferred content, in the form of XML documents, are present In one or more file groups with the categorisation "Schemas".</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
-                        <dt>Cardinality</dt><dd>1..n</dd>
-                    </dl>
-                </description>
-            </requirement>
-            <requirement ID="CSIP115" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
-                <description>
-                    <head>Representations file grouping</head>
+                    <head>Representations file group</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with the categorisation "Representations".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
