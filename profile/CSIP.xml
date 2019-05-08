@@ -207,7 +207,7 @@
             <requirement ID="CSIP6" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
                 <description>
                     <head>METS Profile</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The PROFILE attribute has to have as its value the URL of the profile used for describing the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The URL of the METS profile used to describe the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@PROFILE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
