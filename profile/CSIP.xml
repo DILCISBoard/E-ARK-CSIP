@@ -1136,7 +1136,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups contaning documentation described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
-                        <dt>Cardinality</dt><dd>1..n</dd>
+                        <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1186,7 +1186,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1196,7 +1196,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the file group. NAME AND LINK TO CORRECT REQURIMENT NEEDED!!!!!!!</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
-                        <dt>Cardinality</dt><dd>1..n</dd>
+                        <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
             </requirement>
