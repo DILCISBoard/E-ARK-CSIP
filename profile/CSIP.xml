@@ -1026,10 +1026,10 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP86" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP86" REQLEVEL="MUST" RELATEDMAT="CSIP1" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Main structural division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The main division (div) element in the package uses the package ID as the value for the attribute LABEL.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The main division (div) element in the package uses the element named "Content Identification" (CSIP1) as the value for the attribute LABEL.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
