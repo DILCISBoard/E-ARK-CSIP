@@ -1244,7 +1244,7 @@
                 <description>
                     <head>Representations division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The representation division (div) element in the package uses the path to the METS document describing the representation as the value for the attribute LABEL.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">This requirement mirrors the requirement named "File group identifier"</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">This requirement mirrors the requirement named "File group identifier" (CSIP64)</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
