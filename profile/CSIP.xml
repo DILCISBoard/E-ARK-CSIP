@@ -1183,8 +1183,7 @@
             <requirement ID="CSIP101" REQLEVEL="SHOULD" EXAMPLES="structMapExample1">
                 <description>
                     <head>File division</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The transferred files referenced in the file section file group are described in the structural map in a single sub division.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the transfer comprises of only data and no representations there should still be a single empty representation div present.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When there are no representations present the transferred files referenced in the file section file group are described in the structural map in a single sub division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1244,7 +1243,7 @@
             <requirement ID="CSIP107" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample2">
                 <description>
                     <head>Representation division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The representation division (div) element in the package uses the path to the METS document as the value for the attribute LABEL.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The representation division (div) element in the package uses the path to the METS document describing the representation as the value for the attribute LABEL.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
