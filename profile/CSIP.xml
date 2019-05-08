@@ -1036,17 +1036,6 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP87" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
-                <description>
-                    <head>Sub structural division</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Each catagorisation "Documentation", "Schemas" as well as each "Representation" within the package must be represented by an occurrence of the division (div) element.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Metadata in the administrative and descriptive metadata section has its own division.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div</dd>
-                        <dt>Cardinality</dt><dd>1..n</dd>
-                    </dl>
-                </description>
-            </requirement>
             <requirement ID="CSIP88" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Metadata division</head>
