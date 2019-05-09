@@ -1138,7 +1138,7 @@
             <requirement ID="CSIP95" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The documentation division (div) element in the package uses the value "Documentation" as the value for the attribute LABEL.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The documentation division (div) element in the package uses the value "Documentation" from the vocabulary as the value for the attribute LABEL.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1155,10 +1155,11 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP116" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP116" REQLEVEL="MUST" RELATEDMAT="CSIP60 CSIP65" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
-                    <head>Documentation file referencing pointer</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the file group. NAME AND LINK TO CORRECT REQURIMENT NEEDED!!!!!!!</p>
+                    <head>Documentation file group reference pointer</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identfier for the "Documentation" file group.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP60 which describes the "Documentation" file group and CSIP65 which describes the file group identfier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1188,7 +1189,7 @@
             <requirement ID="CSIP99" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The schema division (div) element in the package uses the value "Schemas" as the value for the attribute LABEL.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The schema division (div) element in the package uses the value "Schemas" from the vocabulary as the value for the attribute LABEL.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1205,10 +1206,11 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP117" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP118" REQLEVEL="MUST" RELATEDMAT="CSIP113 CSIP65" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
-                    <head>Schema file referencing pointer</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the file group. NAME AND LINK TO CORRECT REQURIMENT NEEDED!!!!!!!</p>
+                    <head>Schema file group reference pointer</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identfier for the "Schema" file group.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP113 which describes the "Schema" file group and CSIP65 which describes the file group identfier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1249,9 +1251,20 @@
             <requirement ID="CSIP104" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
                     <head>File division file referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the files described in the package are referenced via the relevant file group identifier.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing content described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="CSIP119" REQLEVEL="MUST" RELATEDMAT="CSIP114 CSIP65" EXAMPLES="structMapExample1 structMapExample2">
+                <description>
+                    <head>Schema file group reference pointer</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identfier for the "Representations" file group.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP114 which describes the "Representations" file group and CSIP65 which describes the file group identfier.</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
