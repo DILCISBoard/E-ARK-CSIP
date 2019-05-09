@@ -1224,8 +1224,8 @@
             <requirement ID="CSIP105" REQLEVEL="SHOULD" EXAMPLES="structMapExample2">
                 <description>
                     <head>Representation divisions</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the transfer consist of content divded into representations described by its own METS.xml documents there are one representation div present for each representation.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The different representation divisions gives pointers to the METS-document thus providing the structural map display of the whole package and its different representations.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When a package consists of multiple representations, each described by a representation level METS.xml document, there is a discrete representation div element for each representation.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Each representation div references the representation level METS.xml document, documenting the structure of the package and its constituent representations.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
