@@ -1183,7 +1183,7 @@
             <requirement ID="CSIP101" REQLEVEL="SHOULD" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When there are no representations present the content referenced in the file section file group named "Representations" is described in the structural map in a single sub division.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When no representations are present the content referenced in the file section file group with @USE attribute value "Representations" is described in the structural map as a single sub division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1203,7 +1203,7 @@
             <requirement ID="CSIP103" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The content division (div) element in the package uses the value "Representations" from the vocabulary as the value for the attribute LABEL.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The package's content division (div) element must have the @LABEL attribute value "Representations", taken from the vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1213,7 +1213,7 @@
             <requirement ID="CSIP104" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division file referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the content described in the package are referenced via the relevant file group identifier.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the content described in the package are referenced using the relevant file group identifier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1223,7 +1223,7 @@
             <requirement ID="CSIP105" REQLEVEL="SHOULD" EXAMPLES="structMapExample2">
                 <description>
                     <head>Representations divisions</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the content consist of different representations there are one representation div present for each representation</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the content is comprised of multiple representations there should be one representation div present for each representation.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
@@ -1243,8 +1243,8 @@
             <requirement ID="CSIP107" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="structMapExample2">
                 <description>
                     <head>Representations division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The representation division (div) element in the package uses the path to the METS document describing the representation as the value for the attribute LABEL.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">This requirement mirrors the requirement named "File group identifier" (CSIP64)</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The package's representation division (div) element @LABEL attribute value must be the path to the representation level METS document.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">This requirement gives the same value to be used as the requirement named "File group identifier" (CSIP64)</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
