@@ -49,7 +49,7 @@
         <vocabulary ID="VocabularyContentInformationTypeSpecification">
             <name>Content information type specification name</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in @csip:CONTENTINFORMATIONTYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the specific E-ARK content information type names supported or maintained in this METS profile.</p>
@@ -58,7 +58,7 @@
         <vocabulary ID="VocabularyType">
             <name>Content information type declaration</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in mets/@type</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the broad information type classification.</p>
@@ -67,7 +67,7 @@
         <vocabulary ID="VocabularyOAISPackageType">
             <name>OAIS Package type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in @csip:OAISPACKAGETYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the OAIS type the package belongs to in the OAIS reference model.</p>
@@ -76,7 +76,7 @@
         <vocabulary ID="VocabularyNoteType">
             <name>Note type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in @csip:NOTETYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of a note for an agent.</p>
@@ -85,7 +85,7 @@
         <vocabulary ID="VocabularyAgentOtherType">
             <name>Other agent type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in metsHdr/agent/@OTHERTYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the other agent types supported by the profile.</p>
@@ -103,7 +103,7 @@
         <vocabulary ID="VocabularyStatus">
             <name>dmdSec status</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in dmdSec/@STATUS</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the status of the descriptive metadata section (dmdSec) which is supported by the profile.</p>
@@ -121,7 +121,7 @@
         <vocabulary ID="VocabularyFileGrpAndStructMapDivisionLabel">
             <name>File group names</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in fileGrp/@USE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the uses of the file group (fileGrp) that are supported by the profile.</p>
@@ -131,7 +131,7 @@
         <vocabulary ID="VocabularyStructMapType">
             <name>Structural map typing</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in structMap/@TYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of the structural map (structMap) that is supported by the profile.</p>
@@ -141,7 +141,7 @@
         <vocabulary ID="VocabularyStructMapLabel">
             <name>Structural map label</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in structMap/@LABEL</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the label of the structural map that is supported by the profile.</p>
@@ -151,17 +151,20 @@
     </controlled_vocabularies>
     <structural_requirements>
         <metsRootElement ID="metsRootElement">
-            <requirement ID="CSIP1" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP1" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Content Identification</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">It is mandatory to use the @OBJID attribute as a string identifier for the package. The value should be identical to the name/ID of the package, i.e. the name of the root folder, for the root METS document or the name and folder name for a representation.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The @OBJID attribute is mandatory, its value is a string identifier for the METS document.
+                      For the package root METS document, this should be the name/ID of the package, i.e. the name of the package root folder.
+                      For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level
+                      representation folder.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@OBJID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP2" REQLEVEL="MUST" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP2" REQLEVEL="MUST" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>General content type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The @type attribute must be used to provide a general description of the content information type of the package. A fixed vocabulary is used which will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
@@ -171,7 +174,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP3" REQLEVEL="SHOULD" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP3" REQLEVEL="SHOULD" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Other general content type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The @csip:OTHERTYPE attribute must be used for stating the general type of the package (genre) when @TYPE has the value "OTHER"</p>
@@ -181,17 +184,17 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP4" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP4" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                <description>
                     <head>Specific content type</head>
                    <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which describes the specific content information type specification used for the transferred content. The attribute is mandatory to use when the METS document describes a representation. The vocabulary is going to evolve under the care of the DILCIS Board as additional content information type specifications are developed.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@csip:CONTENTINFORMATIONTYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP5" REQLEVEL="MAY" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP5" REQLEVEL="MAY" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Other specific content type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must describe the content.</p>
@@ -201,10 +204,10 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP6" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP6" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>METS Profile</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The PROFILE attribute has to have as its value the URL of the profile used for describing the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The URL of the METS profile used to describe the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@PROFILE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -462,10 +465,11 @@
                 <description>
                     <head>Administrative metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If administrative / preservation metadata is available, it must be described using the administrative metadata section (amdSec) element.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All administrative metadata is present in one amdSec element.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec</dd>
-                        <dt>Cardinality</dt><dd>0..n</dd>
+                        <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
             </requirement>
@@ -604,10 +608,10 @@
                 <description>
                     <head>Rights metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A simple rights statement may be used to describe general permissions for the package. Individual representations should state their specific rights in their representation METS file.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Standards possible to use includes <a href="http://rightsstatements.org">RightsStatements.org</a> used by Europeana (<a href="https://pro.europeana.eu/page/available-rights-statements">Europeana rights statements info</a>), <a href="https://github.com/mets/METS-Rights-Schema">METS Rights Schema</a> created and maintaned by the METS Board, the rights part of <a href="http://www.loc.gov/standards/premis/">PREMIS</a> as well as own local rights statements in use.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Available standards include <a href="http://rightsstatements.org">RightsStatements.org</a> , <a href="https://pro.europeana.eu/page/available-rights-statements">Europeana rights statements info</a>), <a href="https://github.com/mets/METS-Rights-Schema">METS Rights Schema</a> created and maintaned by the METS Board, the rights part of <a href="http://www.loc.gov/standards/premis/">PREMIS</a> as well as own local rights statements in use.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>amdSec/rightsMD</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
+                        <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
             </requirement>
@@ -891,7 +895,7 @@
                     <head>File checksum</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The checksum of the linked file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>MES XPath</dt><dd>fileSec/fileGrp/file/@CHECKSUM</dd>
+                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@CHECKSUM</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1030,7 +1034,7 @@
             </requirement>
             <requirement ID="CSIP85" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
-                    <head>Main division identifier</head>
+                    <head>Main structural division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, xml:id identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/@ID</dd>
@@ -1090,20 +1094,22 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP91" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP91" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Metadata division administrative metadata referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All administrative metadata described in the package are referenced via the administrative sections different identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When there are administrative metadata and the amdSec is present, all administrative metadata MUST be referenced via the administrative sections different identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All the different identifiers is named in the same @AMDID using space as the divider.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP92" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP92" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Metadata division descriptive metadata referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All descriptive metadata described in the package are referenced via the descriptive section identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When there are descriptive metadata and one or more dmdSec is present, all descriptive metadata MUST be referenced via the descriptive section identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All the different identifiers is named in the same @DMDID using space as the divider.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@DMDID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1153,7 +1159,7 @@
             <requirement ID="CSIP97" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema division</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The schemas referenced in the file section file groups is described in the structural map with one sub division.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The schemas referenced in the file section file groups are described in the structural map within a single sub-division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1183,7 +1189,7 @@
             <requirement ID="CSIP100" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema file referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containg schemas described in the package are referenced via the relevant file group identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1384,7 +1390,7 @@
             <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
         </note>
     </tool>
-    <Example ID="metsRootElementExample2" LABEL="METS root element example with content not in the value list @TYPE being transferred">
+    <Example ID="metsRootElementExample1" LABEL="METS root element example with content not in the value list @TYPE being transferred">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1397,7 +1403,7 @@
             xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
          </mets:mets>
     </Example>
-    <Example ID="metsRootElementExample3" LABEL="METS root element example with transferred content of a type from the fixed value list and the representation content is not part of the value list, but is instead a value decided upon in the submission agreement.">
+    <Example ID="metsRootElementExample2" LABEL="METS root element example with transferred content of a type from the fixed value list and the representation content is not part of the value list, but is instead a value decided upon in the submission agreement.">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"

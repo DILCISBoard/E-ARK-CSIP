@@ -7,10 +7,10 @@ This document introduces the concept of the Common Specification for Information
 
 3.	Propose the details of an XML-based implementation of the requirements using, to the largest possible extent, standards which are widely used in international digital preservation.
 
-Ultimately the goal of the Common Specification for Information Packages is to reach a level of interoperability between all Information Packages so that tools implementing the CSIP can be taken up by institutions without needing further modifications or adaptations.
+Ultimately the goal of the Common Specification for Information Packages is to provide a level of interoperability between Information Packages so that tools implementing the CSIP can be taken up by institutions without the need for major modifications or adaptations.
 
 ## 1.1 The Common Specification for Information Packages and OAIS
-In the OAIS  framework three types of Information Packages (IPs) are present in a digital preservation ecosystem: Submission Information Packages (SIPs), Archival Information Packages (AIPs) and Dissemination Information Packages (DIPs) ([Figure 1](#fig1)). These three IP types are respectively used to
+The OAIS framework defines three types of Information Packages (IPs) present in the digital preservation ecosystem: Submission Information Packages (SIPs), Archival Information Packages (AIPs) and Dissemination Information Packages (DIPs) ([Figure 1](#fig1)). These three IP types are respectively used to
 submit data and metadata to digital repositories; store it in long-term preservation facilities; and deliver to consumers.
 
 <a name="fig1"></a>
@@ -18,9 +18,9 @@ submit data and metadata to digital repositories; store it in long-term preserva
 
 **Figure 1:** OAIS Functional Entities and Information Packages
 
-The main goal in the development of this specification has been to identify and standardise the common aspects of IPs which are equally relevant and implemented by any of the functional entities of the overall digital preservation process presented in OAIS (i.e. pre-ingest, ingest, archival storage, data management and access). The practical implementation is that the specification therefore allows for the development of generic tools and code libraries which can either be applied commonly across the whole lifecycle of digital data, or be reused as the basis for developing more specific, content or process-aware tools.
+The main goal in the development of this specification has been to identify and standardise the common aspects of IPs which are equally relevant and implemented by any of the functional entities of the overall digital preservation process presented in OAIS (i.e. pre-ingest, ingest, archival storage, data management and access). The practical implementation is that the specification allows for the development of generic tools and code libraries which can either be applied commonly across the whole lifecycle of digital data, or be reused as the basis for developing more specific, content or process-aware tools.
 
-To enable process level interoperability there needs to be detailed technical specifications for the OAIS information package types, e.g. SIP, AIP and DIP. For the E-ARK specifications this Common Specification for Information Packages is accompanied by detailed E-ARK SIP, E-ARK AIP and E-ARK DIP implementation profiles.
+Process level interoperability requires detailed technical specifications for the OAIS information package types, i.e. SIP, AIP and DIP. The Common Specification for Information Packages is accompanied by corresponding implementation profiles for E-ARK SIP, E-ARK AIP and E-ARK DIP.
 
 <a name="fig2"></a>
 ![CS SCOPE](figs/fig_2_cs_ip_scope.png "The scope of Common Specification for Information Packages in regard to OAIS Information Packages.")
@@ -85,14 +85,6 @@ This specification has used the same terminology as introduced in the OAIS model
 - Producer-Archive Interface Specification (PAIS) – CCSDS, 2014,
 <https://public.ccsds.org/Pubs/651x1b1.pdf>
 We have investigated the structure of a SIP presented in PAIS, but as the implementation of this specification is not very comprehensive yet (only few prototypes exist), we decided to rely mainly on the best practices introduced in other reports (see below).
-
-### E-ARK project (2014 – 2017) deliverables
-
-- Deliverable D3.1, E-ARK Report on Available Best Practices
-- Deliverable D4.1, Report on available formats and restrictions
-- Deliverable D5.1, GAP report between requirements for access and current access solutions
-
-These three deliverables document the best-practice survey carried out during the first six months of the E-ARK project. Many of the core principles and requirements highlighted in the following Sections have been derived from these surveys.
 
 ### Other E-ARK specifications
 
