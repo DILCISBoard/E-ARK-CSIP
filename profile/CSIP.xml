@@ -1374,7 +1374,7 @@
             <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
         </note>
     </tool>
-    <Example ID="metsRootElementExample2" LABEL="METS root element example with content not in the value list @TYPE being transferred">
+    <Example ID="metsRootElementExample1" LABEL="METS root element showing use of csip:@OTHERTYPE attribute when an appropriate package content type value isnt' available in the vocabulary. The @TYPE attribute value is set to OTHER.">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1387,7 +1387,7 @@
             xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
          </mets:mets>
     </Example>
-    <Example ID="metsRootElementExample3" LABEL="METS root element example with transferred content of a type from the fixed value list and the representation content is not part of the value list, but is instead a value decided upon in the submission agreement.">
+    <Example ID="metsRootElementExample2" LABEL="METS root element illustrating the use of a custom csip:@OTHERCONTENTINFORMATIONTYPE attribute value when an appropriate content type value could not be found in the vocabulary. The csip:@CONTENTINFORMATIONTYPE attribute value is set to OTHER.">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
