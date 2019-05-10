@@ -1,5 +1,5 @@
 ### 5.3.5.	Use of the METS file section (element fileSec)
-Use of the METS fileSec element is highly recommended by the CSIP (although not mandatory). It should describe all components of the IP which have not been already included in the amdSec and dmdSec elements. For all files the location and checksum need to be available. Therefore the main purpose of the
+Use of the METS fileSec element is highly recommended by the CSIP (although not mandatory). It should describe all components of the IP which have not been already included in the amdSec and dmdSec elements. For all files the location and checksum need to be available. The METS file section serves as a manifest, allowing users to check that all files are present and a package is complete as well as testing the integrity of package files using checksum values.
 
 The METS file section serves as a manifest, allowing users to check that all files are present and a package is complete as well as testing the integrity of package files using checksum values.
 
