@@ -154,10 +154,8 @@
             <requirement ID="CSIP1" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Package Identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The @OBJID attribute is mandatory, its value is a string identifier for the METS document.
-                      For the package root METS document, this should be the name/ID of the package, i.e. the name of the package root folder.
-                      For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level
-                      representation folder.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The @OBJID attribute is mandatory, its value is a string identifier for the METS document. For the package root METS document, this should be the name/ID of the package, i.e. the name of the package root folder.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level representation folder.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@OBJID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
