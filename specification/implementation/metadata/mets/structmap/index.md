@@ -9,8 +9,8 @@ repeating the structMap element.
 The most crucial requirements for the CSIP mandated structural map are as follows:
 
 - The structMap element has a mandatory attribute @LABEL which has the fixed value of “CSIP structMap”. The @LABEL attribute is used to distinguish the Common Specification mandated structural map occurrence from any other, user-defined, structural maps. As such we can also derive the requirement, that any user-defined structural maps must not use the @LABEL value of “CSIP structMap”;
-- The structure is expressed with division elements (div). The div element can be nested in a tree structure and the implementation used in CSIP gathers the div elements described below in one main structural division element. 
-  - The main structural division use the attribute LABEL with the value being the string value of the content identification element of the package
+- The package structure is documented using METS division (div) elements which can be arranged in nested tree structures. The CSIP organises it's constituent div elements in a single root structural division element. 
+  - This top level structural division must use the package identifier as the value of its @LABEL attribute.
 - The internal structure of the structural map (expressed by div elements) follows the CSIP high level physical structure as described in Section 4, therefore grouping together metadata, representations, schemas, documentation and user-defined folders into their own div elements;
   - All div elements must use the attribute LABEL with the value being the name of the folder (as an example “metadata”)
 - In  case both root and representation METS files exist, the structural map in the root METS file
