@@ -1,5 +1,5 @@
 
-**Example:** METS example of the mandatory agent
+**Example:** METS agent example of the mandatory agent
 
 ```xml
 <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" OAISPACKAGETYPE="SIP">

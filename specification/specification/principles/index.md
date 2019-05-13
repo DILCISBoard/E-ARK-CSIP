@@ -50,16 +50,16 @@ In long-term preservation we also need to take into account that “forgotten”
 In practice this means that any implementation of the CSIP should ensure that folder and file naming conventions allow for the human identification of package components, and that the semantics of the package is explicit.
 
 ### Principle 1.7:
-*The Information Package **MUST** support the preservation method best suited for the data.*
+*The Information Package **MUST NOT** prescribe the use of a specific preservation method*
 
-Different preservation institutions and different types of data need to use different methods for long-term preservation; migration and emulation being the most usual choices. A CSIP Information Package implementation MUST NOT prescribe the use of a specific preservation method but instead allow to document and/or add any data or metadata which is needed for any method.
+Different preservation institutions and different types of data need to use different methods for long-term preservation; migration and emulation are typical examples. A CSIP implementation MUST NOT prescribe the use of a specific preservation method. Instead it should allow users to document and/or add arbitrary data or metadata as necessary for preservation purposes.
 
 ## 3.2 Identification of the Information Package
 
 ### Principle 2.1:
 *The Information Package OAIS type (SIP, AIP or DIP) **MUST** be clearly indicated.*
 
-One of the first tasks in analysing any Information Package is to identify its current status in the overall archival process. Therefore, any Information Package must explicitly and uniformly include metadata which identifies it as a SIP, AIP or DIP.
+One of the first tasks in analysing any Information Package is to identify its current status in the overall archival process. Therefore, any Information Package must explicitly and uniformly identify itself as a SIP, AIP or DIP.
 
 ### Principle 2.2:
 *Any Information Package **MUST** clearly identify the Content Information Type(s) of its data and metadata.*

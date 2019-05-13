@@ -9,6 +9,9 @@ The CSIP (and METS) categorises preservation metadata as administrative metadata
 
 The METS amdSec element must include references to all relevant metadata located in the folder “metadata/preservation”. This means also that the root level `METS.xml` file must refer only to the root level preservation metadata and the representation `METS.xml` file must refer only to the representation level preservation metadata.
 
-Decision regarding placement of PREMIS in this section is following the guide lines available from PREMIS EC <http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf>.
+The METS amdSec element must include references to all relevant metadata which should be locat
+ed in the “metadata/preservation” folder. This means also that the root level `METS.xml` file must refer only to the root level preservation metadata and the representation `METS.xml` file must refer only to the representation level preservation metadata.
+
+The placement of PREMIS metadata for preservation in this section follows the PREMIS EC guidelines: <http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf>
 
 The specific requirements for the amdSec element, its sub-elements and attributes are presented in the following table.
