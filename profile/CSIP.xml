@@ -811,10 +811,10 @@
             <requirement ID="CSIP62" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification CSIP2 CSIP114" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Specific content type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which describes the specific content information type specification used for the transferred content.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which indentifies the specific content information type specification used for the transferred content.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The vocabulary will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The attribute is mandatory when the file group catagorisation value is "Representations".</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the "Package type" is described with the value "Mixed" and or the file group describes a "Representation" this element describes the content type transferred in the file group.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">This attribute is mandatory when the file group @LABEL attribute value is "Representations".</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the "Package type" value is "Mixed" and/or the file group describes a "Representation", then this element describes the content type transferred in the file group.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
