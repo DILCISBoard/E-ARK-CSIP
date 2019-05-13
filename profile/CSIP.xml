@@ -151,20 +151,18 @@
     </controlled_vocabularies>
     <structural_requirements>
         <metsRootElement ID="metsRootElement">
-            <requirement ID="CSIP1" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP1" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
-                    <head>Content Identification</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The @OBJID attribute is mandatory, its value is a string identifier for the METS document.
-                      For the package root METS document, this should be the name/ID of the package, i.e. the name of the package root folder.
-                      For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level
-                      representation folder.</p>
+                    <head>Package Identifier</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The @OBJID attribute is mandatory, its value is a string identifier for the METS document. For the package root METS document, this should be the name/ID of the package, i.e. the name of the package root folder.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level representation folder.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@OBJID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP2" REQLEVEL="MUST" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP2" REQLEVEL="MUST" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Content Category</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The @TYPE attribute MUST be used to declare the category of the content held in the package, e.g. book, journal, stereograph, video, etc.. Legal values are defined in a fixed vocabulary. When the content type used falls outside of the defined vocabulary the @TYPE value must be set to "OTHER" and the specific value declared in @csip:OTHERTYPE. The vocabulary will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
@@ -174,7 +172,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP3" REQLEVEL="SHOULD" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP3" REQLEVEL="SHOULD" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Custom Content Category</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the @TYPE attribute has the value "OTHER" the @csip:OTHERTYPE attribute MUST be used to declare the content type of the package/representation.</p>
@@ -184,7 +182,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP4" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP4" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                <description>
                     <head>Content Information Type Specification</head>
                    <p xmlns="http://www.w3.org/1999/xhtml">Used to declare the Content Information Type Specification used when creating the package. Legal values are defined in a fixed vocabulary. The attribute is mandatory for representation level METS documents. The vocabulary will evolve under the care of the DILCIS Board as additional content information type specifications are developed.</p>
@@ -194,7 +192,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP5" REQLEVEL="MAY" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP5" REQLEVEL="MAY" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Other specific content type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must describe the content.</p>
@@ -204,7 +202,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP6" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2 metsRootElementExample3">
+            <requirement ID="CSIP6" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>METS Profile</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The URL of the METS profile that the information package conforms with.</p>
@@ -216,6 +214,16 @@
             </requirement>
         </metsRootElement>
         <metsHdr ID="metsHeaderElement">
+            <requirement ID="CSIP117" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
+                <description>
+                    <head>Package header</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">General element for describing the package.</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>metsHdr</dd>
+                        <dt>Cardinality</dt><dd>1..1</dd>
+                    </dl>
+                </description>
+            </requirement>
             <requirement ID="CSIP7" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Package creation date</head>
@@ -741,7 +749,8 @@
             <requirement ID="CSIP58" REQLEVEL="SHOULD" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File section</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the section is used only one file section (fileSec) element is present.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The transferred content is placed in the file section in different file group elements, described in other requirements.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">No more than one file section (fileSec) element should be present.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer just descriptive metadata and/or administrative metadata without files placed in this section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec</dd>
@@ -759,15 +768,31 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP60" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="fileSecExample1 fileSecExample2">
-                  <description>
-                    <head>File grouping</head>
-                      <p xmlns="http://www.w3.org/1999/xhtml">There are one or more file group (fileGrp) elements present grouping the transferred files in the main catagorisation of: Documentation, Schemas and Representations.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Documentation" all documentation pertaining to the transferred information is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Schemas" all XML-schemas pertaining to the transferred XML documents are present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">In one or more file groups with the catagorisation of "Representations" the data being transferred is present or in one file group the data for each representation is present.</p>
-                      <p xmlns="http://www.w3.org/1999/xhtml">To make the catagorisation easier the different files being transferred should be placed in folders with names following the catagorisation</p>
-                      <dl xmlns="http://www.w3.org/1999/xhtml">
+            <requirement ID="CSIP60" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
+                <description>
+                    <head>Documentation file group</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All documentation pertaining to the transferred content is placed in one or more file group elements with @USE attribute value "Documentation".</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
+                        <dt>Cardinality</dt><dd>1..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="CSIP113" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
+                <description>
+                    <head>Schema file group</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All XML schemas used in the information package should be referenced from one or more file groups with @USE attribute value "Schemas".</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
+                        <dt>Cardinality</dt><dd>1..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="CSIP114" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
+                <description>
+                    <head>Representations file group</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with the categorisation "Representations".</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
@@ -783,10 +808,13 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP62" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification" EXAMPLES="fileSecExample1 fileSecExample2">
+            <requirement ID="CSIP62" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification CSIP2 CSIP114" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Specific content type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which describes the specific content information type specification used for the transferred content. The attribute is mandatory when the file group catagorisation value is "Representations". The vocabulary will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which indentifies the specific content information type specification used for the transferred content.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The vocabulary will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">This attribute is mandatory when the file group @LABEL attribute value is "Representations".</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the "Package type" value is "Mixed" and/or the file group describes a "Representation", then this element describes the content type transferred in the file group.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -826,11 +854,10 @@
             <requirement ID="CSIP66" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The lowest level file group (fileGrp) contains the file elements which describe the transferred file objects.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the file element is categorised as "Representations" each representation file group contains one file which is the reference to the METS document describing the representation.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The file group (fileGrp) contains the file elements which describe the file objects.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/file</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1026,24 +1053,13 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP86" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP86" REQLEVEL="MUST" RELATEDMAT="CSIP1" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Main structural division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The main division (div) element in the package uses the package ID as the value for the attribute LABEL.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The package's top-level structural division (div) element must have an @LABEL attribute value identical to the package identifier, i.e. the same value as the mets/@OBJID attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
-                </description>
-            </requirement>
-            <requirement ID="CSIP87" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
-                <description>
-                    <head>Sub structural division</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Each catagorisation "Documentation", "Schemas" as well as each "Representation" within the package must be represented by an occurrence of the division (div) element.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Metadata in the administrative and descriptive metadata section has its own division.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div</dd>
-                        <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1182,9 +1198,8 @@
             </requirement>
             <requirement ID="CSIP101" REQLEVEL="SHOULD" EXAMPLES="structMapExample1">
                 <description>
-                    <head>File division</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The transferred files referenced in the file section file group are described in the structural map in a single sub division.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the transfer comprises of only data and no representations there should still be a single empty representation div present.</p>
+                    <head>Content division</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When no representations are present the content referenced in the file section file group with @USE attribute value "Representations" is described in the structural map as a single sub division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1193,7 +1208,7 @@
             </requirement>
             <requirement ID="CSIP102" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
-                    <head>File division identifier</head>
+                    <head>Content division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, xml:id identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
@@ -1203,8 +1218,8 @@
             </requirement>
             <requirement ID="CSIP103" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1">
                 <description>
-                    <head>File division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The file division (div) element in the package uses the value "Representations" as the value for the attribute LABEL.</p>
+                    <head>Content division label</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The package's content division (div) element must have the @LABEL attribute value "Representations", taken from the vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1213,8 +1228,8 @@
             </requirement>
             <requirement ID="CSIP104" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
-                    <head>File division file referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the files described in the package are referenced via the relevant file group identifier.</p>
+                    <head>Content division file referencing</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the content described in the package are referenced using the relevant file group identifier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1223,8 +1238,9 @@
             </requirement>
             <requirement ID="CSIP105" REQLEVEL="SHOULD" EXAMPLES="structMapExample2">
                 <description>
-                    <head>Representation divisions</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the transfer consist of representations there are one representation div present for each representation</p>
+                    <head>Representation division</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When a package consists of multiple representations, each described by a representation level METS.xml document, there is a discrete representation div element for each representation.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Each representation div references the representation level METS.xml document, documenting the structure of the package and its constituent representations.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
@@ -1233,7 +1249,7 @@
             </requirement>
             <requirement ID="CSIP106" REQLEVEL="MUST" EXAMPLES="structMapExample2">
                 <description>
-                    <head>Representation division identifier</head>
+                    <head>Representations division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, xml:id identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
@@ -1241,10 +1257,11 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP107" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample2">
+            <requirement ID="CSIP107" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="structMapExample2">
                 <description>
-                    <head>Representation division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The representation division (div) element in the package uses the path to the METS document as the value for the attribute LABEL.</p>
+                    <head>Representations division label</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The package's representation division (div) element @LABEL attribute value must be the path to the representation level METS document.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">This requirement gives the same value to be used as the requirement named "File group identifier" (CSIP64)</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
