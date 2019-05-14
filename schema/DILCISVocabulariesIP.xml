@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="DILCISVocabularies.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <Vocabularies xmlns="https://DILCIS.eu/XML/Vocabularies/IP">
-    <Vocabulary Name="VocabularyContentTypeSpecification">
+    <Vocabulary Name="VocabularyDetailedContentType">
         <Information>
             <p>Vocabulary derived from E-ARK</p>
         </Information>
@@ -129,10 +129,10 @@
             <Definition>Describes the version of a software</Definition>
         </Entry>
     </Vocabulary>
-    <Vocabulary Name="VocabularyType">
+    <Vocabulary Name="VocabularyContentType">
         <Information>
             <p>Vocabulary derived from http://www.loc.gov/preservation/resources/rfs/TOC.html and http://www.dublincore.org/documents/dcmi-type-vocabulary/</p>
-            <p>Values mixed and other derived from E-ARK</p>
+            <p>Values are mixed and the terms "Mixed" and "Other" are derived from E-ARK</p>
         </Information>
         <Entry>
             <Term lang="en">Textual works – Print</Term>
