@@ -14,7 +14,7 @@ The OAIS framework defines three types of Information Packages (IPs) present in 
 submit data and metadata to digital repositories; store it in long-term preservation facilities; and deliver to consumers.
 
 <a name="fig1"></a>
-![OAIS Entities](figs/fig_1_oais_ele_ip.png "OAIS Functional Entities and Information Packages")
+![OAIS Entities](figs/fig_1_oais_ele_ip.svg "OAIS Functional Entities and Information Packages")
 
 **Figure 1:** OAIS Functional Entities and Information Packages
 
@@ -23,7 +23,7 @@ The main goal in the development of this specification has been to identify and 
 Process level interoperability requires detailed technical specifications for the OAIS information package types, i.e. SIP, AIP and DIP. The Common Specification for Information Packages is accompanied by corresponding implementation profiles for E-ARK SIP, E-ARK AIP and E-ARK DIP.
 
 <a name="fig2"></a>
-![CS SCOPE](figs/fig_2_cs_ip_scope.png "The scope of Common Specification for Information Packages in regard to OAIS Information Packages.")
+![CS SCOPE](figs/fig_2_csip_scope.svg "The scope of Common Specification for Information Packages in regard to OAIS Information Packages.")
 
 **Figure 2:** The scope of Common Specification for Information Packages in regard to OAIS Information Packages.
 
@@ -48,7 +48,7 @@ As of November 2018 these Content Information Type Specifications, created by th
 - E-ARK SIARD (SIARD1, SIARD2 and SIARDDK): This Content Information Type specification describe the usage of the CSIP for the archiving, preservation and reuse of relational databases in one of the formats in the SIARD family (Software Independent Archiving of Relational Databases). Note, that SIARD1 and SIARDDK specifications are deemed outdated by the time of writing and are only intended to be used for packaging already available SIARD1 and SIARDDK packages in a CSIP compatible Information Packages. For new occurrences of archiving relational databases the use of the SIARD2 format  and according Content Information Type Specification is recommended.
 
 <a name="fig3"></a>
-![TYPE SPECS](figs/fig_3_cs_ip_types.png "Common Specification for Information Packages and Content Information Type Specifications.")
+![TYPE SPECS](figs/fig_3_csip_types.svg "Common Specification for Information Packages and Content Information Type Specifications.")
 
 **Figure 3:** Common Specification for Information Packages and Content Information Type Specifications
 
@@ -68,7 +68,7 @@ Following the discussions in the previous two Sections we can state that the ove
 - The Content Information Type Specifications define detailed requirements for embedding and describing specific content types within a CSIP.
 
 <a name="fig4"></a>
-![TYPE SPECS](figs/fig_4_cs_vs_ip.png "Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications.")
+![TYPE SPECS](figs/fig_4_cs_vs_ip.svg "Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications.")
 
 **Figure 4:** Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications
 
