@@ -31,7 +31,7 @@
         <context>XML-schema for the attributes added by CSIP</context>
         <note>
             <p xmlns="http://www.w3.org/1999/xhtml">An extension schema with the added attributes for use in this profile.</p>
-            <p xmlns="http://www.w3.org/1999/xhtml">The schema is used with a namespace prefix of csip.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">The schema is identified using the namespace prefix csip.</p>
         </note>
     </external_schema>
     <external_schema>
@@ -49,16 +49,16 @@
         <vocabulary ID="VocabularyContentInformationTypeSpecification">
             <name>Content information type specification</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyContentInformationType.xml</URI>
             <context>Used in @csip:CONTENTINFORMATIONTYPE</context>
             <description>
-                <p xmlns="http://www.w3.org/1999/xhtml">Describes the specific E-ARK content information type names supported or maintained in this METS profile.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Lists the names of specific E-ARK content information type specifications supported or maintained in this METS profile.</p>
             </description>
         </vocabulary>
         <vocabulary ID="VocabularyContentCategory">
             <name>Content Category</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyContentCategory.xml</URI>
             <context>Used in mets/@type</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Declares the categorical classification of package content.</p>
@@ -67,7 +67,7 @@
         <vocabulary ID="VocabularyOAISPackageType">
             <name>OAIS Package type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyOAISPackageType.xml</URI>
             <context>Used in @csip:OAISPACKAGETYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the OAIS type the package belongs to in the OAIS reference model.</p>
@@ -76,16 +76,16 @@
         <vocabulary ID="VocabularyNoteType">
             <name>Note type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyNoteType.xml</URI>
             <context>Used in @csip:NOTETYPE</context>
             <description>
-                <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of a note for an agent.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Provides values for the type of a note for an agent.</p>
             </description>
         </vocabulary>
         <vocabulary ID="VocabularyAgentOtherType">
             <name>Other agent type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyAgentOtherType.xml</URI>
             <context>Used in metsHdr/agent/@OTHERTYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the other agent types supported by the profile.</p>
@@ -103,7 +103,7 @@
         <vocabulary ID="VocabularyStatus">
             <name>dmdSec status</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyStatus.xml</URI>
             <context>Used in dmdSec/@STATUS</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the status of the descriptive metadata section (dmdSec) which is supported by the profile.</p>
@@ -115,13 +115,13 @@
                 <URI>https://www.iana.org/assignments/media-types/media-types.xhtml</URI>
             <context>Used in @MIMETYPE</context>
             <description>
-                <p xmlns="http://www.w3.org/1999/xhtml">Describes the mime type of a referenced file.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Valid values for the mime types of referenced files.</p>
             </description>
         </vocabulary>
         <vocabulary ID="VocabularyFileGrpAndStructMapDivisionLabel">
             <name>File group names</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyFileGrpAndStructMapDivisionLabel.xml</URI>
             <context>Used in fileGrp/@USE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the uses of the file group (fileGrp) that are supported by the profile.</p>
@@ -131,7 +131,7 @@
         <vocabulary ID="VocabularyStructMapType">
             <name>Structural map typing</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapType.xml</URI>
             <context>Used in structMap/@TYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of the structural map (structMap) that is supported by the profile.</p>
@@ -141,7 +141,7 @@
         <vocabulary ID="VocabularyStructMapLabel">
             <name>Structural map label</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapLabel.xml</URI>
             <context>Used in structMap/@LABEL</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the label of the structural map that is supported by the profile.</p>
