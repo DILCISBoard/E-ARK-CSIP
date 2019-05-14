@@ -124,7 +124,7 @@ If this is the case, the CSIP Information Package MUST NOT limit which component
 Based on principles 3.1 – 3.5 we present a common structure for any CSIP Information Package ([Figure 7](#fig7)).
 
 <a name="fig7"></a>
-![Conceptual Structure](figs/fig_7_cs_con_struct.png "Conceptual structure of the Common Specification")
+![Conceptual Structure](figs/fig_7_cs_con_struct.svg "Conceptual structure of the Common Specification")
 
 **Figure 7:** Conceptual structure of the Common Specification
 
