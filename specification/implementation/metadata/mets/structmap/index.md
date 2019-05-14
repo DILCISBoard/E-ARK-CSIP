@@ -17,6 +17,6 @@ The most crucial requirements for the CSIP mandated structural map are as follow
   - Reference the fileGrp which describes all files in all folders with the exception of the content of the representation folders
   - Lists all representations (as separate div elements)
   - Lists only the appropriate representation METS file using the mptr element as the content of the representation
-- The structural map in the representations METS file use the structural map the same way with no exceptions
+- The structural map in the representations METS file use the structural map the same way describing the representation structural map with no exceptions
 
 The specific requirements for elements, sub-elements and attributes are listed in the following table. Note that the area, seq and par elements are not discussed below.
