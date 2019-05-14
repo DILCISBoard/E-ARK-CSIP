@@ -1,66 +1,67 @@
 ## 5.1. General requirements for metadata in a CSIP Information Package
-The number one consideration when discussing metadata requirements is, as with the rest of this specification, the need for interoperability. In more detail, the focus is on high-level technical interoperability and tasks which allow an Information Package to be prepared, transferred and received regardless of the institutions and tools involved. These tasks include:
+The primary consideration with metadata is, as with the rest of this specification, interoperability. Specifically the high-level technical interoperability and tasks that allow an Information Package to be prepared, transferred and received, regardless of the institutions or tools involved. These tasks include:
 
 - Identifying uniquely an Information Package and its components;
-- Validating an Information Package;
-- Validating the contents of an Information Package;
-- Proving the authenticity of the Information Package;
+- Validating an Information Package and it's contents;
+- Establishing the authenticity of the Information Package;
 - Accessing the contents of an Information Package.
 
-In more technical terms the CSIP makes an effort to control metadata which allows any tool or user to negotiate the data and metadata components of the package (i.e. packaging metadata), to validate that no component has come to harm during transfer or preservation (i.e. fixity information), to understand the processes behind the creation and management of the package (i.e. provenance and preservation metadata) and finally to understand how the data within the package could be accessed (i.e. representation information).
+In technical terms, the CSIP tries to control metadata needed by tools or users to:
 
-Most crucially, we regard descriptive metadata and most of detailed technical metadata to not belong in the scope of the CSIP. As such, the CSIP itself does not aim to provide detailed semantic interoperability between different systems. However, as noted in Section 1.2, implementers are welcome to use the
-construct of Content Information Type Specifications to achieve an even higher level of interoperability.
+- navigate data and metadata components within the package (i.e. packaging metadata);
+- to validate that no component has been damaged during transfer or preservation (i.e. fixity information);
+- to understand the processes used when creating and managing the package (i.e. provenance and preservation metadata); and
+- to understand how the data within the package can be accessed (i.e. representation information).
 
-We implement the core metadata requirements with METS (Metadata Encoding & Transmission Standard, <http://www.loc.gov/standards/mets/>). In this specification we describe the core elements used, more elements are available in the METS standard and can be used in the own implementation.
+We regard descriptive metadata and most detailed technical metadata as outside the scope of the CSIP. As such, the CSIP does not aim to provide detailed semantic interoperability between different systems. However, as noted in Section 1.2, implementers are welcome to use the Content Information Type Specifications to achieve interoperability at a more detailed level.
 
-Some of the core metadata requirements are already visible from the structure presented in the previous Section. As seen in the previous section one or more METS files can be present. The METS file describing the whole package is from now called "Root METS" and the METS file present in the Representation folder is called "Representation METS" in the rest of this document. The detailed specification of using METS within the CSIP is available in Section 5.3.
+We describe the core metadata requirements using METS (Metadata Encoding & Transmission Standard, <http://www.loc.gov/standards/mets/>). We describe the core elements used, METS describes other available elements which may be used in addition to those detailed in the CSIP.
 
-In addition to the METS files the CSIP recommends the inclusion of PREMIS metadata (PREservation Metadata Implementation Strategies, <http://www.loc.gov/standards/premis/>) in appropriate preservation metadata folders. This is especially relevant when aiming for an interoperable approach towards provenance and access to Information Packages. However, we recognise that, especially in the
-case of SIPs, appropriate preservation metadata is not always available. As such this is also not an absolute requirement though highly desirable. The detailed specification of the use of PREMIS within the CSIP is available in Section 5.4.
+Some metadata requirements are implied by the structure presented in the previous Section. As seen, one or more METS files can be present in a package. The METS file describing the whole package is from now called the "Package METS" and the METS file in the Representation folders are called "Representation METS". The detailed specification of using METS within the CSIP is available in Section 5.3.
 
-The use of any additional metadata is not restricted in CSIP Information Packages.
+In addition to the METS files the CSIP recommends the inclusion of PREMIS metadata (PREservation Metadata Implementation Strategies, <http://www.loc.gov/standards/premis/>), placed in appropriate preservation metadata folders. This facilitates interoperable approach towards provenance and access to Information Packages. However, we recognise that, especially in the case of SIPs, appropriate preservation metadata is not always available. As such this is also not an absolute requirement though highly desirable. The detailed specification of the use of PREMIS within the CSIP is available in Section 5.4.
+
+The specification does not prohibit the use of additional metadata within Information Packages.
 
 ## 5.2 General requirements for the use of metadata
-Before we describe the detailed requirements for the use of METS and PREMIS we would like to highlight some general aspects which need to be implemented commonly across all metadata.
+Before detailing the requirements covering the use of METS and PREMIS, we would like to highlight some general metadata concerns which should be handled consistently.
 
 ### The use of identifiers
-The ID data type in XML (<https://www.w3.org/TR/xml-id/>) states that a valid ID must begin with a letter, or an underscore character (‘_’), and contain no characters other than letters, digits, hyphens, underscores, full stops, and certain combining and extension characters. To overcome this limitation and allow for interoperable package identification all identifiers within Common Specification metadata MUST start with a prefix, followed by the value of the identifier.
+Both METS, and by derivation the CSIP, make extensive use of the XML ID data type (see: <https://www.w3.org/TR/xml-id/>). Valid XML IDs must also conform to the NCName restrictions (see: <https://www.w3.org/TR/REC-xml-names/#NT-NCName>), and must begin a letter or an underscore character (‘_’), and contain no characters other than letters, digits, hyphens, underscores, full stops, plus some extension and combination characters.
+
+If your package makes use of IDs that don't conform to this specification one mitigating strategy is to add a prefix to all identifiers. For example UUIDs are a common choice for arbitrary identifiers and comprise of hex characters and hyphens, e.g. the value `906F4F12-BA52-4779-AE2C-178F9206111F`. NCName and xml:id values can't legally begin with numeric characters making many UUIDs, including the example, invalid. The examples below show two possible solutions, using prefixes:
 
 Examples:
 
-Example 1: using a prefix which consists of the abbreviation of the identifier and a hyphen.
+Example 1: The prefix consists of the identifier type acronym and a hyphen: `uuid-`.
 
 ```xml
 <dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-
 24T14:37:49.609+01:00">
 ```
 
-Example 2: using a fixed prefix “ID”
+Example 2: A generic prefix:`ID`.
 
 ```xml
 <dmdSec ID="ID906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-
 24T14:37:49.609+01:00">
 ```
 
-Note that identifier-type elements and attributes specified within the CSIP are mainly used for internal referencing between the components of an Information Package. As such there is no need to require the use of any specific prefix syntax but it is required that any selected prefix is used
-consistently throughout the package.
+Note that the identifiers specified within the CSIP are mainly used as internal references between Information Package components. Prefixes are not mandatory, but if they are used, we recommend choosing a single prefix and using it consistently across all IDs in the package.
 
 ### Referencing between files within a CSIP Information Package
-This specification recommends strongly to format all components of the information package (i.e. all data, metadata and other parts) as distinct computer files within the package. While such an approach simplifies the overall management of the Information Package and makes it easier to
-include, validate and modify the package, it also brings the need for a clear method for referencing between these various files.
+The CSIP strongly recommends that all components of an information package (i.e. all data, metadata and other parts) are stored as discrete files within the package. While this approach simplifies the management of the Information Package, making it easier to aggregate, validate and modify the package, it also necessitates a clear method for recording and resolving referencing between files.
 
-For example, when using the CSIP utilized with the METS specification referencing can occur to and between:
+For example, when using the CSIP METS Profile referencing can occur between:
 
 - descriptive and administrative metadata files described in the `amdSec` and `dmdSec` elements;
-- content (data) files, components of documentation and schemas described in the `fileSec` element;
-- representation METS files described in the root METS file’s `fileSec`as well as the `structMap` element.
+- content (data) files, components of documentation, and schemas described in the `fileSec` element;
+- representation METS files described in the Package METS file’s `fileSec` and `structMap` elements.
 
-A common approach towards referencing between metadata, and between metadata and other components of the package, is one of the core needs in Information Package validation and integrity checking. Different technical solutions are available for referencing and not all of these are supported across all digital preservation tools.
-
-In order to guarantee interoperability, all references within a CSIP Information Package must follow the requirements stated in this specification.
-
-
+A consistent approach to referencing between package components is a fundamental requirement for Information Package validation and integrity checking. Different technical solutions exist for referencing and resolving but they're not universally supported by all digital preservation tools. To ensure interoperability, all references within a CSIP Information Package must adhere the requirements stated in this specification.
 
 ### Referencing other packages
-It is important that external references to related packages, like internal references, are expressed consistently. All external references MUST USE `mets/@OBJID` attribute of the package.
+It is important that external references, i.e. to other packages, are expressed consistently, in the same manner as internal references. All references to other packages MUST USE the `mets/@OBJID` value of the target package.
+
+### Examples
+This document illustrates use of the specification using generic examples These examples use values from vocabularies and elements defined by the CSIP to demonstrate some specific uses of the specification. Outside these CSIP specific values the METS values are fictive and are not meant to constitute real life examples. More complete examples will be provided in the CSIP user guidelines that will be published at a future date.

@@ -2,7 +2,7 @@
 The CSIP folder structure is presented in Figure 8 below. The structure directly follows the principles of the conceptual data model, dividing the package components into individual folders for representations, metadata, and other components. All of folders described **ought to** be present even if they are empty.
 
 <a name="fig8"></a>
-![IP Folder Structure](figs/fig_8_cs_ip_struct.png "CSIP Information Package folder structure.")
+![IP Folder Structure](figs/fig_8_csip_struct.svg "CSIP Information Package folder structure.")
 
 **Figure 8:** CSIP Information Package folder structure
 
@@ -18,7 +18,7 @@ The implementation requirements of the CSIP Information Package structure are:
 **CSIPSTR3**: The Information Package root folder **MAY** be compressed (for example by using TAR or ZIP).
 
 <a name="CSIPSTR4"></a>
-**CSIPSTR4**: The Information Package root folder **MUST** include a metadata file named `METS.xml`, which MUST include information about the identity and structure of the package and its constituent representations at least including a general description or pointer to each representation.
+**CSIPSTR4**: The Information Package root folder **MUST** include a file named `METS.xml`. This file **MUST** contain metadata that identifies the package, provides a high-level package description, and describes its structure, including pointers to constituent representations.
 
 <a name="CSIPSTR5"></a>
 **CSIPSTR5**: The Information Package root folder **SHOULD** include a folder named `metadata`, which SHOULD include metadata relevant to the whole package.
@@ -51,7 +51,7 @@ The implementation requirements of the CSIP Information Package structure are:
 **CSIPSTR14**: The Information Package folder and representation folder **MAY** be extended with additional sub-folders.
 
 <a name="CSIPSTR15"></a>
-**CSIPSTR15**: We recommend including all schema documents for any structured metadata within package. These schema documents **SHOULD** be placed in a sub-folder called `schemas` within the Information Package root folder and/or the representation folder.
+**CSIPSTR15**: We recommend including all XML schema documents for any structured metadata within package. These schema documents **SHOULD** be placed in a sub-folder called `schemas` within the Information Package root folder and/or the representation folder.
 
 <a name="CSIPSTR16"></a>
 **CSIPSTR16**: We recommend including any supplementary documentation for the package or a specific representation within the package. Supplementary documentation **SHOULD** be placed in a sub-folder called `documentation` within the Information Package root folder and/or the representation folder.
