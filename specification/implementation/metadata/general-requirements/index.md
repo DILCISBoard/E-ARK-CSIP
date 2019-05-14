@@ -14,7 +14,7 @@ construct of Content Information Type Specifications to achieve an even higher l
 
 We implement the core metadata requirements with METS (Metadata Encoding & Transmission Standard, <http://www.loc.gov/standards/mets/>). In this specification we describe the core elements used, more elements are available in the METS standard and can be used in the own implementation.
 
-Some of the core metadata requirements are already visible from the structure presented in the previous Section. As seen in the previous section one or more METS files can be present. The METS file describing the whole package is from now called "Root METS" and the METS file present in the Representation folder is called "Representation METS" in the rest of this document. The detailed specification of using METS within the CSIP is available in Section 5.3.
+Some of the core metadata requirements are already visible from the structure presented in the previous Section. As seen in the previous section one or more METS files can be present. The METS file describing the whole package is from now called "Package METS" and the METS file present in the Representation folder is called "Representation METS" in the rest of this document. The detailed specification of using METS within the CSIP is available in Section 5.3.
 
 In addition to the METS files the CSIP recommends the inclusion of PREMIS metadata (PREservation Metadata Implementation Strategies, <http://www.loc.gov/standards/premis/>) in appropriate preservation metadata folders. This is especially relevant when aiming for an interoperable approach towards provenance and access to Information Packages. However, we recognise that, especially in the
 case of SIPs, appropriate preservation metadata is not always available. As such this is also not an absolute requirement though highly desirable. The detailed specification of the use of PREMIS within the CSIP is available in Section 5.4.
@@ -54,7 +54,7 @@ For example, when using the CSIP utilized with the METS specification referencin
 
 - descriptive and administrative metadata files described in the `amdSec` and `dmdSec` elements;
 - content (data) files, components of documentation and schemas described in the `fileSec` element;
-- representation METS files described in the root METS file’s `fileSec`as well as the `structMap` element.
+- representation METS files described in the Package METS file’s `fileSec`as well as the `structMap` element.
 
 A common approach towards referencing between metadata, and between metadata and other components of the package, is one of the core needs in Information Package validation and integrity checking. Different technical solutions are available for referencing and not all of these are supported across all digital preservation tools.
 
