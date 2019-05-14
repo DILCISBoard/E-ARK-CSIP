@@ -1,10 +1,16 @@
 ### 5.3.4.	Use of the METS administrative metadata section (element amdSec)
-The purpose of the METS administrative data section is to embed or refer to files containing administrative metadata about the IP content objects. CSIP is only using referencing of files containing administrative metadata. The CSIP (and METS) categorises preservation metadata as administrative metadata, specifically Digital Provenance metadata (following the avaiable guidelines), hence all preservation metadata should be referenced from a digiprovMD element within the amdSec.
+METS defines an administrative metadata section, used to embed metadata or provide references to files containing metadata for the information package content. The CSIP encourages the use of references to metadata files, rather than embedding metadata in the `amdSec` element, and the examples reflect this.
 
-The administrative metadata section also contains rights statements. Regardless of used standard used to record the rights metadata it should be referenced from a rightsMD element within the amdSec. Suitable standards include the collaborative work from RIGHTSTATMENTS.ORG <http://rightsstatements.org> , Europena right statements <https://pro.europeana.eu/page/available-rights-statements> , the METS Rights Schema <https://github.com/mets/METS-Rights-Schema> created and maintained by the METS Board, the rights sections of PREMIS <http://www.loc.gov/standards/premis/> as well as any local rights statements.
+The administrative metadata section contains four sub-sections each used to record different types of metadata for package content:
+- technical metadata (element techMD) records technical metadata;
+- rights metadata (element rightsMD) records intellectual property rights information;
+- source metadata (element sourceMD) records descriptive, technical or rights metadata for an analog source for a digital library object; and
+- digital provenance metadata (element digiprovMD) records digital preservation information, e.g. audit information covering a digital library object's life-cycle.
 
-The METS amdSec element must include references to all relevant metadata which should be located in the “metadata/preservation” folder. This means also that the root level `METS.xml` file must refer only to the root level preservation metadata and the representation `METS.xml` file must refer only to the representation level preservation metadata.
+The CSIP only describes use of the elements `digiprovMD` and `rightsMD`. The population of the other metadata sections are left to local policy and practise.
 
-The placement of PREMIS metadata for preservation in this section follows the PREMIS EC guidelines: <http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf>
+The CSIP (and METS) categorises preservation metadata as administrative metadata, specifically Digital Provenance metadata (following the avaiable guidelines published by the PREMIS EC guidelines: <http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf>), hence all preservation metadata should be referenced from a `digiprovMD` element within the `amdSec`.
 
-The specific requirements for the amdSec element, its sub-elements and attributes are presented in the following table.
+The METS `amdSec` element SHOULD include references to all relevant metadata located in the folder “metadata/preservation”. The package level `METS.xml` file SHOULD only reference package level preservation metadata. Representation level `METS.xml` files SHOULD only reference representation level preservation metadata.
+
+The specific requirements for the `amdSec` element, its sub-elements and attributes are presented in the following table.

@@ -55,13 +55,13 @@
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the specific E-ARK content information type names supported or maintained in this METS profile.</p>
             </description>
         </vocabulary>
-        <vocabulary ID="VocabularyType">
-            <name>Content information type declaration</name>
+        <vocabulary ID="VocabularyContentCategory">
+            <name>Content Category</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
             <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in mets/@type</context>
             <description>
-                <p xmlns="http://www.w3.org/1999/xhtml">Describes the broad information type classification.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Declares the categorical classification of package content.</p>
             </description>
         </vocabulary>
         <vocabulary ID="VocabularyOAISPackageType">
@@ -162,20 +162,20 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP2" REQLEVEL="MUST" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
+            <requirement ID="CSIP2" REQLEVEL="MUST" RELATEDMAT="VocabularyContentCategory" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
-                    <head>General content type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The @type attribute must be used to provide a general description of the content information type of the package. A fixed vocabulary is used which will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
+                    <head>Content Category</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The @TYPE attribute MUST be used to declare the category of the content held in the package, e.g. book, journal, stereograph, video, etc.. Legal values are defined in a fixed vocabulary. When the content category used falls outside of the defined vocabulary the @TYPE value must be set to "OTHER" and the specific value declared in @csip:OTHERTYPE. The vocabulary will develop under the curation of the DILCIS Board as additional content information type specifications are produced.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@TYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP3" REQLEVEL="SHOULD" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
+            <requirement ID="CSIP3" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentCategory" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
-                    <head>Other general content type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The @csip:OTHERTYPE attribute must be used for stating the general type of the package (genre) when @TYPE has the value "OTHER"</p>
+                    <head>Other Content Category</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the @TYPE attribute has the value "OTHER" the @csip:OTHERTYPE attribute MUST be used to declare the content category of the package/representation.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@csip:OTHERTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -184,8 +184,8 @@
             </requirement>
             <requirement ID="CSIP4" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                <description>
-                    <head>Specific content type</head>
-                   <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which describes the specific content information type specification used for the transferred content. The attribute is mandatory to use when the METS document describes a representation. The vocabulary is going to evolve under the care of the DILCIS Board as additional content information type specifications are developed.</p>
+                    <head>Content Information Type Specification</head>
+                   <p xmlns="http://www.w3.org/1999/xhtml">Used to declare the Content Information Type Specification used when creating the package. Legal values are defined in a fixed vocabulary. The attribute is mandatory for representation level METS documents. The vocabulary will evolve under the care of the DILCIS Board as additional Content Information Type Specifications are developed.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -194,7 +194,7 @@
             </requirement>
             <requirement ID="CSIP5" REQLEVEL="MAY" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
-                    <head>Other specific content type</head>
+                    <head>Other Content Information Type Specification</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must describe the content.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
@@ -205,7 +205,7 @@
             <requirement ID="CSIP6" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>METS Profile</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The URL of the METS profile used to describe the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The URL of the METS profile that the information package conforms with.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@PROFILE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -810,11 +810,11 @@
             </requirement>
             <requirement ID="CSIP62" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification CSIP2 CSIP114" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
-                    <head>Specific content type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which indentifies the specific content information type specification used for the transferred content.</p>
+                    <head>Content Information Type Specification</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which states the name of the content information type specification used to create the package.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The vocabulary will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">This attribute is mandatory when the file group @LABEL attribute value is "Representations".</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the "Package type" value is "Mixed" and/or the file group describes a "Representation", then this element describes the content type transferred in the file group.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the "Package type" value is "Mixed" and/or the file group describes a "Representation", then this element states the content information type specification used for the file group.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -823,8 +823,8 @@
             </requirement>
             <requirement ID="CSIP63" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
-                    <head>Other specific content type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must describe the content.</p>
+                    <head>Other Content Information Type Specification</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must state a value for the Content Information Type Specification used.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1391,7 +1391,7 @@
             <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
         </note>
     </tool>
-    <Example ID="metsRootElementExample1" LABEL="METS root element example with content not in the value list @TYPE being transferred">
+    <Example ID="metsRootElementExample1" LABEL="METS root element showing use of csip:@OTHERTYPE attribute when an appropriate package content category value is not available in the vocabulary. The @TYPE attribute value is set to OTHER.">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1404,7 +1404,7 @@
             xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
          </mets:mets>
     </Example>
-    <Example ID="metsRootElementExample2" LABEL="METS root element example with transferred content of a type from the fixed value list and the representation content is not part of the value list, but is instead a value decided upon in the submission agreement.">
+    <Example ID="metsRootElementExample2" LABEL="METS root element illustrating the use of a custom csip:@OTHERCONTENTINFORMATIONTYPE attribute value when the correct content type value does note exist in the vocabulary. The csip:@CONTENTINFORMATIONTYPE attribute value is set to OTHER.">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
