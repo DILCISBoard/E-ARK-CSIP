@@ -4,7 +4,7 @@ The requirements presented in Section 4.1 leave scope for decisions during the i
 In the simple case the structure can be implemented for the most part by adhering to only the MUST requirements. An example of this is shown in Figure 9.
 
 <a name="fig9"></a>
-![CSIP Example](figs/fig_9_cs_ip_simple.png "A simple CSIP structure example.")
+![CSIP Example](figs/fig_9_csip_simple.svg "A simple CSIP structure example.")
 
 **Figure 9:** A simple CSIP structure example.
 
@@ -13,10 +13,10 @@ PREMIS metadata) are located in the Information Package folder rather than in th
 
 Such a simple implementation is reasonable in scenarios where the amount of data and metadata is limited. However, in the case of large Information Packages (e.g. packages comprising several representations, each with 1,000,000 files) the size of both the `METS.xml` file and preservation metadata can become too large to manage efficiently. In such large data scenarios it might prove necessary to implement all the features of the structure presented in the previous Section.
 
-An example of a full implementation is illustrated in Figure 10. One observation is that the representations of the complete example essentially repeat the simple structure. Structural and preservation metadata in METS and PREMIS formats are available in both the Information Package folder, package level metadata, and the representation folders, representation level metadata. This illustrates how the full structure facilitates the management of single representations bringing benefits such as simpler metadata versioning. It is worth noting, to avoid confusion, that we recommend adoption of a common approach, either adding metadata to representations or not. That is, we recommend placing all representation-relevant metadata in a single location. You may use either the root, package level metadata folder or the representation level metadata folder, but do not divide metadata between the two inconsistently, with representation metadata stored at both package and representation level. We also do not recommend duplication of metadata or content of optional folders, e.g. schemas, documentation, etc., between the Information Package folder and representation folders.
+An example of a full implementation is illustrated in Figure 10. One observation is that the representations of the complete example essentially repeat the simple structure. Structural and preservation metadata in METS and PREMIS formats are available in both the Information Package folder, package level metadata, and the representation folders, representation level metadata. This illustrates how the full structure facilitates the management of single representations bringing benefits such as simpler metadata versioning. It is worth noting, to avoid confusion, that we recommend adoption of a common approach, either adding metadata to representations or not. That is, we recommend placing all representation-relevant metadata in a single location. You may use either the package level metadata folder or the representation level metadata folder, but do not divide metadata between the two inconsistently, with representation metadata stored at both package and representation level. We also do not recommend duplication of metadata or content of optional folders, e.g. schemas, documentation, etc., between the Information Package folder and representation folders.
 
 <a name="fig10"></a>
-![CSIP Example](figs/fig_10_cs_ip_full.png "Example of the full use of the CSIP structure.")
+![CSIP Example](figs/fig_10_csip_full.svg "Example of the full use of the CSIP structure.")
 
 **Figure 10:** Example of the full use of the CSIP structure
  

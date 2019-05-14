@@ -1,5 +1,6 @@
 | ID | Name & Location | Description & usage | Cardinality & Level |
 | -- | --------------- | ------------------- | ------------------- |
+| <a name="CSIP117"></a>**CSIP117** | **Package header** <br/> `metsHdr` | General element for describing the package. | **1..1** <br/> MUST |
 | <a name="CSIP7"></a>**CSIP7** | **Package creation date** <br/> `metsHdr/@CREATEDATE` | @CREATEDATE describes the date of creation of the package. | **1..1** <br/> MUST |
 | <a name="CSIP8"></a>**CSIP8** | **Package last modification date** <br/> `metsHdr/@LASTMODDATE` | @LASTMODDATE is mandatory if the package has been modified. | **0..1** <br/> SHOULD |
 | <a name="CSIP9"></a>**CSIP9** | **OAIS Package type information** <br/> `metsHdr/@csip:OAISPACKAGETYPE` | @csip:OAISPACKAGETYPE is an attribute added by the CSIP for describing the type of the IP. <br/> **See also:** <a href="#VocabularyOAISPackageType" >OAIS Package type</a> | **1..1** <br/> MUST |
