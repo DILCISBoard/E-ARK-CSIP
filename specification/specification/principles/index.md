@@ -26,7 +26,7 @@ As such the CSIP does also not define the principle to use a particular transfer
 ### Principle 1.3
 *The package format **MUST NOT** define the scope of data and metadata which constitutes an Information Package.*
 
-One of the fundamental principles of the CSIP is that it MUST allow each individual repository to define the (intellectual) scope of an Information Package and its relations to real life entities. As such, any implementation of the CSIP MUST be equally usable for packaging, for example, the whole content of an ERMS as an single IP; or for extracting each record and its metadata from the ERMS individually and packaging each as a separate IP.
+One of the fundamental principles of the CSIP is that it MUST allow each individual repository to define the (intellectual) scope of an Information Package and its relations to real life entities. As such, any implementation of the CSIP MUST be equally usable for packaging, for example, the entire content of an ERMS as an single IP; or for extracting each record and its metadata from the ERMS individually and packaging each as a separate IP.
 
 Out of the previous we can also derive that a CSIP specification MUST NOT define that, for example, a SIP should conform to exactly one AIP. Instead the CSIP MUST allow for the inclusion of “anything that the implementer wants to define as a SIP, AIP or DIP” and allow for “any relationships (1-1; 1-n; n-1; n-m) between SIPs, AIPs and DIPs".
 
@@ -64,7 +64,7 @@ One of the first tasks in analysing any Information Package is to identify its c
 ### Principle 2.2:
 *Any Information Package **MUST** clearly identify the Content Information Type(s) of its data and metadata.*
 
-As stated in Principle 1.1 any Information Package MUST be able to include any kind of data and metadata. At the same time we have introduced in earlier Sections the concept of Content Information Types which allow users to achieve more detailed control and fine-grained interoperability. As such, any CSIP Information Package MUST include a statement about which Content Information Type specification(s) has been followed within the Information Package, or on the contrary, indicate clearly that no specific Content Information Type Specification has been followed.
+As stated in Principle 1.1 any Information Package MUST be able to include any kind of data and metadata. At the same time we have introduced in earlier Sections the concept of Content Information Types which allow users to achieve more detailed control and fine-grained interoperability. As such, any CSIP Information Package MUST include a statement about which Content Information Type Specification(s) has been followed within the Information Package, or on the contrary, indicate clearly that no specific Content Information Type Specification has been followed.
 
 The practical implication of principles 1.1, 2.1 and 2.2 is that, once these have been followed in implementations, we can in fact develop modular identification and validation tools and workflows. While generic components can carry out high level tasks regardless of the Content Information Type, it is possible to detect automatically which additional content-aware modules need to be executed.
 
@@ -124,7 +124,7 @@ If this is the case, the CSIP Information Package MUST NOT limit which component
 Based on principles 3.1 – 3.5 we present a common structure for any CSIP Information Package ([Figure 7](#fig7)).
 
 <a name="fig7"></a>
-![Conceptual Structure](figs/fig_7_cs_con_struct.png "Conceptual structure of the Common Specification")
+![Conceptual Structure](figs/fig_7_cs_con_struct.svg "Conceptual structure of the Common Specification")
 
 **Figure 7:** Conceptual structure of the Common Specification
 

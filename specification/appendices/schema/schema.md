@@ -25,13 +25,13 @@ A rule set for use with this profile is under development. <br/>
 Describes the specific E-ARK content information type names supported or maintained in this METS profile. <br/> 
 
 
-<a name="VocabularyType"></a>
-### Content information type declaration
+<a name="VocabularyContentCategory"></a>
+### Content Category
 **Maintained By:** DILCIS Board <br/> 
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml" >http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</a> <br/> 
 **Context:** Used in mets/@type <br/> 
 **Description:**   <br/> 
-Describes the broad information type classification. <br/> 
+Declares the categorical classification of package content. <br/> 
 
 
 <a name="VocabularyOAISPackageType"></a>

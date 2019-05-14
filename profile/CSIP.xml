@@ -55,13 +55,13 @@
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the specific E-ARK content information type names supported or maintained in this METS profile.</p>
             </description>
         </vocabulary>
-        <vocabulary ID="VocabularyType">
-            <name>Content information type declaration</name>
+        <vocabulary ID="VocabularyContentCategory">
+            <name>Content Category</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
             <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in mets/@type</context>
             <description>
-                <p xmlns="http://www.w3.org/1999/xhtml">Describes the broad information type classification.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Declares the categorical classification of package content.</p>
             </description>
         </vocabulary>
         <vocabulary ID="VocabularyOAISPackageType">
@@ -154,7 +154,7 @@
             <requirement ID="CSIP1" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Package Identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The @OBJID attribute is mandatory, its value is a string identifier for the METS document. For the package root METS document, this should be the name/ID of the package, i.e. the name of the package root folder.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The @OBJID attribute is mandatory, its value is a string identifier for the METS document. For the package METS document, this should be the name/ID of the package, i.e. the name of the package root folder.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level representation folder.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@OBJID</dd>
@@ -162,20 +162,20 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP2" REQLEVEL="MUST" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
+            <requirement ID="CSIP2" REQLEVEL="MUST" RELATEDMAT="VocabularyContentCategory" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
-                    <head>General content type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The @type attribute must be used to provide a general description of the content information type of the package. A fixed vocabulary is used which will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
+                    <head>Content Category</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The @TYPE attribute MUST be used to declare the category of the content held in the package, e.g. book, journal, stereograph, video, etc.. Legal values are defined in a fixed vocabulary. When the content category used falls outside of the defined vocabulary the @TYPE value must be set to "OTHER" and the specific value declared in @csip:OTHERTYPE. The vocabulary will develop under the curation of the DILCIS Board as additional content information type specifications are produced.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@TYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP3" REQLEVEL="SHOULD" RELATEDMAT="VocabularyType" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
+            <requirement ID="CSIP3" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentCategory" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
-                    <head>Other general content type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The @csip:OTHERTYPE attribute must be used for stating the general type of the package (genre) when @TYPE has the value "OTHER"</p>
+                    <head>Other Content Category</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the @TYPE attribute has the value "OTHER" the @csip:OTHERTYPE attribute MUST be used to declare the content category of the package/representation.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@csip:OTHERTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -184,8 +184,8 @@
             </requirement>
             <requirement ID="CSIP4" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                <description>
-                    <head>Specific content type</head>
-                   <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which describes the specific content information type specification used for the transferred content. The attribute is mandatory to use when the METS document describes a representation. The vocabulary is going to evolve under the care of the DILCIS Board as additional content information type specifications are developed.</p>
+                    <head>Content Information Type Specification</head>
+                   <p xmlns="http://www.w3.org/1999/xhtml">Used to declare the Content Information Type Specification used when creating the package. Legal values are defined in a fixed vocabulary. The attribute is mandatory for representation level METS documents. The vocabulary will evolve under the care of the DILCIS Board as additional Content Information Type Specifications are developed.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -194,7 +194,7 @@
             </requirement>
             <requirement ID="CSIP5" REQLEVEL="MAY" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
-                    <head>Other specific content type</head>
+                    <head>Other Content Information Type Specification</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must describe the content.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
@@ -205,7 +205,7 @@
             <requirement ID="CSIP6" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>METS Profile</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The URL of the METS profile used to describe the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The URL of the METS profile that the information package conforms with.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@PROFILE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -810,21 +810,21 @@
             </requirement>
             <requirement ID="CSIP62" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification CSIP2 CSIP114" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
-                    <head>Specific content type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which indentifies the specific content information type specification used for the transferred content.</p>
+                    <head>Content Information Type Specification</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which states the name of the content information type specification used to create the package.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The vocabulary will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">This attribute is mandatory when the file group @LABEL attribute value is "Representations".</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the "Package type" value is "Mixed" and/or the file group describes a "Representation", then this element describes the content type transferred in the file group.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the "Package type" value is "Mixed" and/or the file group describes a "Representation", then this element states the content information type specification used for the file group.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP63" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
-                    <head>Other specific content type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must describe the content.</p>
+                    <head>Other Content Information Type Specification</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must state a value for the Content Information Type Specification used.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -996,7 +996,10 @@
             <requirement ID="CSIP80" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Structural description of the package</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Each METS file must include ONE structural map (structMap) element used exactly as described here. Institutions can add their own additional custom structural maps as separate structMap sections.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The structural map (structMap) element is the only mandatory element in the METS standard.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The structMap in CSIP describes the highest logical structure of the IP.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Each METS file must include ONE structural map (structMap) element used exactly as described here. </p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Institutions can add their own additional custom structural maps as separate structMap sections.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
@@ -1139,7 +1142,7 @@
             <requirement ID="CSIP95" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The documentation division (div) element in the package uses the value "Documentation" as the value for the attribute LABEL.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The documentation division (div) element in the package uses the value "Documentation" from the vocabulary as the value for the attribute LABEL.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1149,9 +1152,20 @@
             <requirement ID="CSIP96" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation file referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containg documentation described in the package are referenced via the relevant file group identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups contaning documentation described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="CSIP116" REQLEVEL="MUST" RELATEDMAT="CSIP60 CSIP65" EXAMPLES="structMapExample1 structMapExample2">
+                <description>
+                    <head>Documentation file group reference pointer</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identfier for the "Documentation" file group.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP60 which describes the "Documentation" file group and CSIP65 which describes the file group identfier.</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1179,7 +1193,7 @@
             <requirement ID="CSIP99" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The schema division (div) element in the package uses the value "Schemas" as the value for the attribute LABEL.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The schema division (div) element in the package uses the value "Schemas" from the vocabulary as the value for the attribute LABEL.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1189,9 +1203,20 @@
             <requirement ID="CSIP100" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema file referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="CSIP118" REQLEVEL="MUST" RELATEDMAT="CSIP113 CSIP65" EXAMPLES="structMapExample1 structMapExample2">
+                <description>
+                    <head>Schema file group reference pointer</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identfier for the "Schema" file group.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP113 which describes the "Schema" file group and CSIP65 which describes the file group identfier.</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1228,10 +1253,21 @@
             </requirement>
             <requirement ID="CSIP104" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
-                    <head>Content division file referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the content described in the package are referenced using the relevant file group identifier.</p>
+                    <head>File division file referencing</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing content described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
+                        <dt>Cardinality</dt><dd>0..n</dd>
+                    </dl>
+                </description>
+            </requirement>
+            <requirement ID="CSIP119" REQLEVEL="MUST" RELATEDMAT="CSIP114 CSIP65" EXAMPLES="structMapExample1 structMapExample2">
+                <description>
+                    <head>Schema file group reference pointer</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identfier for the "Representations" file group.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP114 which describes the "Representations" file group and CSIP65 which describes the file group identfier.</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
+                        <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1268,12 +1304,13 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP108" REQLEVEL="MUST" EXAMPLES="structMapExample2">
+            <requirement ID="CSIP108" REQLEVEL="MUST" RELATEDMAT="CSIP114 CSIP65" EXAMPLES="structMapExample2">
                 <description>
                     <head>Representations division file referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the files described in the package are referenced via the relevant file group identifier.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP114 which describes the "Representations" file group and CSIP65 which describes the file group identfier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@CONTENTIDS</dd>
+                        <dt>METS XPath</dt><dd>structMap/div/div/mptr/@xlink:title</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1391,7 +1428,7 @@
             <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
         </note>
     </tool>
-    <Example ID="metsRootElementExample1" LABEL="METS root element example with content not in the value list @TYPE being transferred">
+    <Example ID="metsRootElementExample1" LABEL="METS root element showing use of csip:@OTHERTYPE attribute when an appropriate package content category value is not available in the vocabulary. The @TYPE attribute value is set to OTHER.">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1404,7 +1441,7 @@
             xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
          </mets:mets>
     </Example>
-    <Example ID="metsRootElementExample2" LABEL="METS root element example with transferred content of a type from the fixed value list and the representation content is not part of the value list, but is instead a value decided upon in the submission agreement.">
+    <Example ID="metsRootElementExample2" LABEL="METS root element illustrating the use of a custom csip:@OTHERCONTENTINFORMATIONTYPE attribute value when the correct content type value does note exist in the vocabulary. The csip:@CONTENTINFORMATIONTYPE attribute value is set to OTHER.">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1511,9 +1548,15 @@
         <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP structMap">
             <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
                 <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
-                <mets:div ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86I" LABEL="Documentation" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H"/>
-                <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
-                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" />
+                <mets:div ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86I" LABEL="Documentation">
+                    <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H"/>
+                </mets:div>    
+                <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas">
+                    <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
+                </mets:div>
+                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations">
+                    <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G"/>
+                </mets:div>
             </mets:div>
         </mets:structMap>
     </Example>
@@ -1521,16 +1564,18 @@
         <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP structMap">
             <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
                <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
-                <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
+                <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas">
+                    <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
+                </mets:div>
                 <!-- mptr Only present if representations is transferred and gives all the linked mets documents-->
-                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="representations/preingest" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C277">
-                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml"/>
+                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="representations/preingest">
+                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C277"/>
                 </mets:div>
-                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="representations/submission" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C278">
-                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/METS.xml"/>
+                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="representations/submission">
+                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C278"/>
                 </mets:div>
-                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6738" LABEL="representations/ingest" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C279">
-                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml"/>
+                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6738" LABEL="representations/ingest">
+                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C279"/>
                 </mets:div>
             </mets:div>
         </mets:structMap>
@@ -1586,9 +1631,15 @@
             <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP structMap">
                 <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
                     <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
-                    <mets:div ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86I" LABEL="Documentation" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H"/>
-                    <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
-                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" />
+                    <mets:div ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86I" LABEL="Documentation">
+                        <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H"/>
+                    </mets:div>
+                    <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas">
+                        <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
+                    </mets:div>
+                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations">
+                        <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G"/>
+                    </mets:div>
                 </mets:div>
             </mets:structMap>
         </mets:mets>
@@ -1663,15 +1714,17 @@
             <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP structMap">
                 <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
                     <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
-                    <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
-                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="representations/preingest" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C277">
-                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml"/>
+                    <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="">
+                        <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
                     </mets:div>
-                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="representations/submission" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C278">
-                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/METS.xml"/>
+                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="representations/preingest">
+                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C277"/>
                     </mets:div>
-                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6738" LABEL="representations/ingest" CONTENTIDS="uuid-5811D494-6045-4741-924C-A1CFA340C279">
-                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml"/>
+                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="representations/submission">
+                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C278"/>
+                    </mets:div>
+                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6738" LABEL="representations/ingest">
+                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C279"/>
                     </mets:div>
                 </mets:div>
             </mets:structMap>
