@@ -47,7 +47,7 @@
     </description_rules>
     <controlled_vocabularies>
         <vocabulary ID="VocabularyContentInformationTypeSpecification">
-            <name>Content information type specification name</name>
+            <name>Content information type specification</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
             <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in @csip:CONTENTINFORMATIONTYPE</context>
@@ -1550,7 +1550,7 @@
                 <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
                 <mets:div ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86I" LABEL="Documentation">
                     <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H"/>
-                </mets:div>    
+                </mets:div>
                 <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas">
                     <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
                 </mets:div>
