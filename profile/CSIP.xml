@@ -46,19 +46,19 @@
         <p xmlns="http://www.w3.org/1999/xhtml">The filepath must be decoded consistently throughout all file references within the information package.</p>
     </description_rules>
     <controlled_vocabularies>
-        <vocabulary ID="VocabularyDetailedContentType">
-            <name>Detailed Content Type</name>
+        <vocabulary ID="VocabularyContentInformationTypeSpecification">
+            <name>Content information type specification</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyDetailedContentType.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in @csip:CONTENTINFORMATIONTYPE</context>
             <description>
-                <p xmlns="http://www.w3.org/1999/xhtml">Describes the specific E-ARK content information type used to describe the content of the package.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Describes the specific E-ARK content information type names supported or maintained in this METS profile.</p>
             </description>
         </vocabulary>
         <vocabulary ID="VocabularyContentCategory">
             <name>Content Category</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyContentType.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in mets/@type</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Declares the categorical classification of package content.</p>
@@ -67,7 +67,7 @@
         <vocabulary ID="VocabularyOAISPackageType">
             <name>OAIS Package type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyOAISPackageType.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in @csip:OAISPACKAGETYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the OAIS type the package belongs to in the OAIS reference model.</p>
@@ -76,7 +76,7 @@
         <vocabulary ID="VocabularyNoteType">
             <name>Note type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyNoteType.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in @csip:NOTETYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of a note for an agent.</p>
@@ -85,7 +85,7 @@
         <vocabulary ID="VocabularyAgentOtherType">
             <name>Other agent type</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyAgentOtherType.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in metsHdr/agent/@OTHERTYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the other agent types supported by the profile.</p>
@@ -103,7 +103,7 @@
         <vocabulary ID="VocabularyStatus">
             <name>dmdSec status</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyStatus.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in dmdSec/@STATUS</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the status of the descriptive metadata section (dmdSec) which is supported by the profile.</p>
@@ -121,7 +121,7 @@
         <vocabulary ID="VocabularyFileGrpAndStructMapDivisionLabel">
             <name>File group names</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyFileGrpAndStructMapDivisionLabel.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in fileGrp/@USE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the uses of the file group (fileGrp) that are supported by the profile.</p>
@@ -131,7 +131,7 @@
         <vocabulary ID="VocabularyStructMapType">
             <name>Structural map typing</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapType.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in structMap/@TYPE</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of the structural map (structMap) that is supported by the profile.</p>
@@ -141,7 +141,7 @@
         <vocabulary ID="VocabularyStructMapLabel">
             <name>Structural map label</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
-            <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapLabel.xml</URI>
+            <URI>http://earkcsip.dilcis.eu/schema/DILCISVocabulariesIP.xml</URI>
             <context>Used in structMap/@LABEL</context>
             <description>
                 <p xmlns="http://www.w3.org/1999/xhtml">Describes the label of the structural map that is supported by the profile.</p>
@@ -1550,7 +1550,7 @@
                 <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
                 <mets:div ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86I" LABEL="Documentation">
                     <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H"/>
-                </mets:div>    
+                </mets:div>
                 <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas">
                     <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
                 </mets:div>
