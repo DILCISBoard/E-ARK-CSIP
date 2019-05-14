@@ -4,7 +4,7 @@ This Section touches on some additional issues which are relevant in respect to 
 ## 6.1 Content Information Type Specifications
 
 ### 6.1.1 What is a Content Information Type Specification?
-A Content Information Type Specification is a mechanism used to extend the scope of the CSIP by defining additional requirements for specific Content Information. The OAIS Reference Model defines Content Information as “A set of information that is the original target of preservation or that includes part or all of that information. It is an Information Object composed of its Content Data Object and its Representation Information”.
+A Content Information Type Specification is a mechanism used to extend the scope of the CSIP by defining additional requirements for specific Content Information Types. The OAIS Reference Model defines Content Information as “A set of information that is the original target of preservation or that includes part or all of that information. It is an Information Object composed of its Content Data Object and its Representation Information”.
 
 Content Information Types can be regarded as categories of Content Information, e.g. relational databases, scientific data or digitised maps. A Content Information Type Specification defines the format and structure, mainly in regard to the Information Object, within an Information Package. This facilitates interoperability when exchanging specific Content Information Types.
 
@@ -25,7 +25,7 @@ We hope to see the development of many Content Information Type Specifications w
 - The DILCIS Board is responsible for establishing reasonable guidelines and quality requirements for new Content Information Type Specifications, and publishing these on the Board website;
 - The Board has the responsibility and mandate to manage a registry of available Content Information Type Specifications which meet the guidelines and quality requirements;
 - The Board does NOT take ownership of or have responsibility for maintaining and sustaining any Content Information Type Specifications;
-- There shall be no limitations to who is allowed to propose additional Content Information Type specifications; and
+- There shall be no limitations to who is allowed to propose additional Content Information Type Specifications; and
 - To ensure the quality of available specifications, the Board validates each proposed specification against the guidelines and quality requirements mentioned above. The validation shall be carried out free of charge and within a reasonable time-frame.
 
 ## 6.2. Handling large packages
