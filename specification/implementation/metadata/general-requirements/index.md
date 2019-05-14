@@ -62,3 +62,6 @@ A consistent approach to referencing between package components is a fundamental
 
 ### Referencing other packages
 It is important that external references, i.e. to other packages, are expressed consistently, in the same manner as internal references. All references to other packages MUST USE the `mets/@OBJID` value of the target package.
+
+### Examples
+This document illustrates use of the specification using generic examples These examples use values from vocabularies and elements defined by the CSIP to demonstrate some specific uses of the specification. Outside these CSIP specific values the METS values are fictive and are not meant to constitute real life examples. More complete examples will be provided in the CSIP user guidelines that will be published at a future date.
