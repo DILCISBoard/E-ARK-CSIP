@@ -37,25 +37,25 @@ Regarding the E-ARK AIP format, it is important to note that it does not extend 
 ## 1.2 The Common Specification for Information Packages and Content Information Type Specifications
 As an interoperability standard, it must be possible to use the CSIP regardless of the type and format of the content users need to handle. At the same time, each individual content type and file format can have specific characteristics which need to be taken into account for purposes of validation, preservation and curation.
 
-To allow for such in-depth control over specific content types and formats, E-ARK specifications introduce the concept of Content Information Type Specifications.  A Content Information Type Specification can include detailed requirements on how content, metadata, and documentation for specific content types (for example relational databases or geospatial data) have to be handled within a CSIP (or E-ARK SIP, AIP or DIP).
+To allow for such in-depth control over specific content types and formats, E-ARK specifications introduce the concept of Content Information Type Specifications.  A Content Information Type Specification can include detailed requirements as to how content, metadata, and documentation for specific content types (for example relational databases or geospatial data) have to be handled within a CSIP (or E-ARK SIP, AIP or DIP).
 
 As of November 2018 these Content Information Type Specifications, created by the E-ARK project and enchanced by the DILCIS Board, have been verified for usage within the Common Specification for Information Packages:
 
 - E-ARK ERMS: Content Information Type Specification Electronic Records Management Systems. This Content Information Type Specification describes the use of the CSIP for the archiving of records exported from ERMS-type systems;
 
-- E-ARK Geodata: This Content Information Type specifications build upon the INSPIRE directive and describes the storing geospatial information, within a CSIP compatible Information Package;
+- E-ARK Geodata: This Content Information Type Specifications build upon the INSPIRE directive and describes the storing geospatial information, within a CSIP compatible Information Package;
 
-- E-ARK SIARD (SIARD1, SIARD2 and SIARDDK): This Content Information Type specification describe the usage of the CSIP for the archiving, preservation and reuse of relational databases in one of the formats in the SIARD family (Software Independent Archiving of Relational Databases). Note, that SIARD1 and SIARDDK specifications are deemed outdated by the time of writing and are only intended to be used for packaging already available SIARD1 and SIARDDK packages in a CSIP compatible Information Packages. For new occurrences of archiving relational databases the use of the SIARD2 format  and according Content Information Type Specification is recommended.
+- E-ARK SIARD (SIARD1, SIARD2 and SIARDDK): This Content Information Type Specification describe the usage of the CSIP for the archiving, preservation and reuse of relational databases in one of the formats in the SIARD family (Software Independent Archiving of Relational Databases). Note, that SIARD1 and SIARDDK specifications are deemed outdated by the time of writing and are only intended to be used for packaging already available SIARD1 and SIARDDK packages in a CSIP compatible Information Packages. For new occurrences of archiving relational databases the use of the SIARD2 format  and according Content Information Type Specification is recommended.
 
 <a name="fig3"></a>
 ![TYPE SPECS](figs/fig_3_cs_ip_types.png "Common Specification for Information Packages and Content Information Type Specifications.")
 
 **Figure 3:** Common Specification for Information Packages and Content Information Type Specifications
 
-The total number of Content Information Type specifications is, however, unlimited and the long-term commitment of the DILCIS Board  is to keep the overall environment open and inclusive. As such, interested bodies are welcome to develop their own Content Information Type Specifications, for example
-for 3D building projects or electronic publications. An appropriate management regime to facilitate the creation and approval of additional Content Information Type specifications by anyone in the broader community is implemented by the DILCIS Board.
+The total number of Content Information Type Specifications is, however, unlimited and the long-term commitment of the DILCIS Board  is to keep the overall environment open and inclusive. As such, interested bodies are welcome to develop their own Content Information Type Specifications, for example
+for 3D building projects or electronic publications. An appropriate management regime to facilitate the creation and approval of additional Content Information Type Specifications by anyone in the broader community is implemented by the DILCIS Board.
 
-For more detailed information about the Content Information Type specifications please look also at [Section 6.1](#61-content-information-type-specifications) below and check <http://www.dilcis.eu>.
+For more detailed information about the Content Information Type Specifications please look also at [Section 6.1](#61-content-information-type-specifications) below and check <http://www.dilcis.eu>.
 
 ## 1.3 Common Specification for Information Packages, OAIS Information Packages’ specifications and Content Information Type Specifications
 
@@ -113,7 +113,7 @@ Information Package.
 - [Section 5](#5-use-of-metadata) presents a detailed overview of metadata requirements within CSIP Information Packages with a special focus on the use of metadata elements which are needed for the automation and interoperability of archival validation and identification tasks
 
 - [Section 6](#6-implementation-considerations) describes additional (optional) components extending the practical implementation in regard to specific aspects
-  - How to create new Content Information Type specifications
+  - How to create new Content Information Type Specifications
   - How to split large content objects between multiple physical IPs
   - Generic guidelines on adding (any) descriptive metadata into a CSIP Information Package
 
