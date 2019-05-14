@@ -5,8 +5,8 @@ The following text assumes knowledge of the principles of the METS specification
 
 METS allows metadata to be both embedded and referenced. The CSIP itself allows both the embedding of metadata within the `METS.xml` file but note that for scalability concerns the CSIP only recommends the use of referencing. This means that the CSIP only describes referencing of metadata.
 
-The rest of this Section is structured according to the METS elements: `mets`, `metsHdr`, `dmdSec`, `amdSec`, `fileSec` and `structMap`. In each of these sections we explain in a concise way limitations imposed by the CSIP implementation when compared to the official METS documentation. When an implementation of the CSIP is created a choice can be made to extend the limitations with limitations needed by the implementation. If this is the case follow the offical documentation and create an implementation which base is CSIP.
+The rest of this Section describes the use of each of the METS elements: mets, metsHdr, dmdSec, amdSec, fileSec and structMap. For each element we concisely explain restrictions imposed by the CSIP on top or those in the official METS documentation. A CSIP implementation can choose to extend the restrictions in line with requirements specific to the implementation. In these cases follow the METS documentation and create an implementation which uses the CSIP as a base profile.
 
-Differences between creating a root METS file and representation METS file are described when relevant.
+Differences between creating a package METS file and representation METS file are described when relevant.
 
 All names of elements and attributes below are expressed using the XPath notation (i.e. `element/sub-element/@attribute`)

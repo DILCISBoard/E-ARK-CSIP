@@ -7,23 +7,23 @@ This document introduces the concept of the Common Specification for Information
 
 3.	Propose the details of an XML-based implementation of the requirements using, to the largest possible extent, standards which are widely used in international digital preservation.
 
-Ultimately the goal of the Common Specification for Information Packages is to reach a level of interoperability between all Information Packages so that tools implementing the CSIP can be taken up by institutions without needing further modifications or adaptations.
+Ultimately the goal of the Common Specification for Information Packages is to provide a level of interoperability between Information Packages so that tools implementing the CSIP can be taken up by institutions without the need for major modifications or adaptations.
 
 ## 1.1 The Common Specification for Information Packages and OAIS
-In the OAIS  framework three types of Information Packages (IPs) are present in a digital preservation ecosystem: Submission Information Packages (SIPs), Archival Information Packages (AIPs) and Dissemination Information Packages (DIPs) ([Figure 1](#fig1)). These three IP types are respectively used to
+The OAIS framework defines three types of Information Packages (IPs) present in the digital preservation ecosystem: Submission Information Packages (SIPs), Archival Information Packages (AIPs) and Dissemination Information Packages (DIPs) ([Figure 1](#fig1)). These three IP types are respectively used to
 submit data and metadata to digital repositories; store it in long-term preservation facilities; and deliver to consumers.
 
 <a name="fig1"></a>
-![OAIS Entities](figs/fig_1_oais_ele_ip.png "OAIS Functional Entities and Information Packages")
+![OAIS Entities](figs/fig_1_oais_ele_ip.svg "OAIS Functional Entities and Information Packages")
 
 **Figure 1:** OAIS Functional Entities and Information Packages
 
-The main goal in the development of this specification has been to identify and standardise the common aspects of IPs which are equally relevant and implemented by any of the functional entities of the overall digital preservation process presented in OAIS (i.e. pre-ingest, ingest, archival storage, data management and access). The practical implementation is that the specification therefore allows for the development of generic tools and code libraries which can either be applied commonly across the whole lifecycle of digital data, or be reused as the basis for developing more specific, content or process-aware tools.
+The main goal in the development of this specification has been to identify and standardise the common aspects of IPs which are equally relevant and implemented by any of the functional entities of the overall digital preservation process presented in OAIS (i.e. pre-ingest, ingest, archival storage, data management and access). The practical implementation is that the specification allows for the development of generic tools and code libraries which can either be applied commonly across the whole lifecycle of digital data, or be reused as the basis for developing more specific, content or process-aware tools.
 
-To enable process level interoperability there needs to be detailed technical specifications for the OAIS information package types, e.g. SIP, AIP and DIP. For the E-ARK specifications this Common Specification for Information Packages is accompanied by detailed E-ARK SIP, E-ARK AIP and E-ARK DIP implementation profiles.
+Process level interoperability requires detailed technical specifications for the OAIS information package types, i.e. SIP, AIP and DIP. The Common Specification for Information Packages is accompanied by corresponding implementation profiles for E-ARK SIP, E-ARK AIP and E-ARK DIP.
 
 <a name="fig2"></a>
-![CS SCOPE](figs/fig_2_cs_ip_scope.png "The scope of Common Specification for Information Packages in regard to OAIS Information Packages.")
+![CS SCOPE](figs/fig_2_csip_scope.svg "The scope of Common Specification for Information Packages in regard to OAIS Information Packages.")
 
 **Figure 2:** The scope of Common Specification for Information Packages in regard to OAIS Information Packages.
 
@@ -37,25 +37,25 @@ Regarding the E-ARK AIP format, it is important to note that it does not extend 
 ## 1.2 The Common Specification for Information Packages and Content Information Type Specifications
 As an interoperability standard, it must be possible to use the CSIP regardless of the type and format of the content users need to handle. At the same time, each individual content type and file format can have specific characteristics which need to be taken into account for purposes of validation, preservation and curation.
 
-To allow for such in-depth control over specific content types and formats, E-ARK specifications introduce the concept of Content Information Type Specifications.  A Content Information Type Specification can include detailed requirements on how content, metadata, and documentation for specific content types (for example relational databases or geospatial data) have to be handled within a CSIP (or E-ARK SIP, AIP or DIP).
+To allow for such in-depth control over specific content types and formats, E-ARK specifications introduce the concept of Content Information Type Specifications.  A Content Information Type Specification can include detailed requirements as to how content, metadata, and documentation for specific content types (for example relational databases or geospatial data) have to be handled within a CSIP (or E-ARK SIP, AIP or DIP).
 
 As of November 2018 these Content Information Type Specifications, created by the E-ARK project and enchanced by the DILCIS Board, have been verified for usage within the Common Specification for Information Packages:
 
 - E-ARK ERMS: Content Information Type Specification Electronic Records Management Systems. This Content Information Type Specification describes the use of the CSIP for the archiving of records exported from ERMS-type systems;
 
-- E-ARK Geodata: This Content Information Type specifications build upon the INSPIRE directive and describes the storing geospatial information, within a CSIP compatible Information Package;
+- E-ARK Geodata: This Content Information Type Specifications build upon the INSPIRE directive and describes the storing geospatial information, within a CSIP compatible Information Package;
 
-- E-ARK SIARD (SIARD1, SIARD2 and SIARDDK): This Content Information Type specification describe the usage of the CSIP for the archiving, preservation and reuse of relational databases in one of the formats in the SIARD family (Software Independent Archiving of Relational Databases). Note, that SIARD1 and SIARDDK specifications are deemed outdated by the time of writing and are only intended to be used for packaging already available SIARD1 and SIARDDK packages in a CSIP compatible Information Packages. For new occurrences of archiving relational databases the use of the SIARD2 format  and according Content Information Type Specification is recommended.
+- E-ARK SIARD (SIARD1, SIARD2 and SIARDDK): This Content Information Type Specification describe the usage of the CSIP for the archiving, preservation and reuse of relational databases in one of the formats in the SIARD family (Software Independent Archiving of Relational Databases). Note, that SIARD1 and SIARDDK specifications are deemed outdated by the time of writing and are only intended to be used for packaging already available SIARD1 and SIARDDK packages in a CSIP compatible Information Packages. For new occurrences of archiving relational databases the use of the SIARD2 format  and according Content Information Type Specification is recommended.
 
 <a name="fig3"></a>
-![TYPE SPECS](figs/fig_3_cs_ip_types.png "Common Specification for Information Packages and Content Information Type Specifications.")
+![TYPE SPECS](figs/fig_3_csip_types.svg "Common Specification for Information Packages and Content Information Type Specifications.")
 
 **Figure 3:** Common Specification for Information Packages and Content Information Type Specifications
 
-The total number of Content Information Type specifications is, however, unlimited and the long-term commitment of the DILCIS Board  is to keep the overall environment open and inclusive. As such, interested bodies are welcome to develop their own Content Information Type Specifications, for example
-for 3D building projects or electronic publications. An appropriate management regime to facilitate the creation and approval of additional Content Information Type specifications by anyone in the broader community is implemented by the DILCIS Board.
+The total number of Content Information Type Specifications is, however, unlimited and the long-term commitment of the DILCIS Board  is to keep the overall environment open and inclusive. As such, interested bodies are welcome to develop their own Content Information Type Specifications, for example
+for 3D building projects or electronic publications. An appropriate management regime to facilitate the creation and approval of additional Content Information Type Specifications by anyone in the broader community is implemented by the DILCIS Board.
 
-For more detailed information about the Content Information Type specifications please look also at [Section 6.1](#61-content-information-type-specifications) below and check <http://www.dilcis.eu>.
+For more detailed information about the Content Information Type Specifications please look also at [Section 6.1](#61-content-information-type-specifications) below and check <http://www.dilcis.eu>.
 
 ## 1.3 Common Specification for Information Packages, OAIS Information Packages’ specifications and Content Information Type Specifications
 
@@ -68,7 +68,7 @@ Following the discussions in the previous two Sections we can state that the ove
 - The Content Information Type Specifications define detailed requirements for embedding and describing specific content types within a CSIP.
 
 <a name="fig4"></a>
-![TYPE SPECS](figs/fig_4_cs_vs_ip.png "Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications.")
+![TYPE SPECS](figs/fig_4_cs_vs_ip.svg "Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications.")
 
 **Figure 4:** Relations between the Common Specification for Information Packages; E-ARK SIP, AIP and DIP specifications; and Content Information Type Specifications
 
@@ -85,14 +85,6 @@ This specification has used the same terminology as introduced in the OAIS model
 - Producer-Archive Interface Specification (PAIS) – CCSDS, 2014,
 <https://public.ccsds.org/Pubs/651x1b1.pdf>
 We have investigated the structure of a SIP presented in PAIS, but as the implementation of this specification is not very comprehensive yet (only few prototypes exist), we decided to rely mainly on the best practices introduced in other reports (see below).
-
-### E-ARK project (2014 – 2017) deliverables
-
-- Deliverable D3.1, E-ARK Report on Available Best Practices
-- Deliverable D4.1, Report on available formats and restrictions
-- Deliverable D5.1, GAP report between requirements for access and current access solutions
-
-These three deliverables document the best-practice survey carried out during the first six months of the E-ARK project. Many of the core principles and requirements highlighted in the following Sections have been derived from these surveys.
 
 ### Other E-ARK specifications
 
@@ -121,7 +113,7 @@ Information Package.
 - [Section 5](#5-use-of-metadata) presents a detailed overview of metadata requirements within CSIP Information Packages with a special focus on the use of metadata elements which are needed for the automation and interoperability of archival validation and identification tasks
 
 - [Section 6](#6-implementation-considerations) describes additional (optional) components extending the practical implementation in regard to specific aspects
-  - How to create new Content Information Type specifications
+  - How to create new Content Information Type Specifications
   - How to split large content objects between multiple physical IPs
   - Generic guidelines on adding (any) descriptive metadata into a CSIP Information Package
 
