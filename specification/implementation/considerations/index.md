@@ -41,7 +41,7 @@ E-ARK Common Specification Information packages may comprise multiple representa
 - The majority of the size of an IP consists of the content (data) which, according to the Common Specification, resides in the representations folder of the IP. As such any segmentation should take place within the representations layer of the Common Specification;
 - According to the Common Specification each representation is essentially a Common Specification IP itself, consisting of a METS metadata file, data, metadata, and any additional components;
 - A segment of an IP must also adhere to the Common Specification format, i.e. it shall be possible to validate each individual segment as a Common Specification IP;
-- Each IP shall consist of a parent segment (including at least the root METS file) and any number of child segments;
+- Each IP shall consist of a parent segment (including at least the package METS file) and any number of child segments;
 - It shall be possible to add new physical child segments (as an example a new representation) to the whole IP without necessitating the update of other child segments.
 
 ### 6.2.2 Using METS to refer from parent IP to child IP(s)
@@ -64,21 +64,21 @@ This is therefore sufficient for having the child know the ID of the parent, but
 ### 6.2.4 An example for the Northwind database
 Here follows a partial example, where the value of the xlink:href attribute in the `<mptr>` element (inside the `<div>` element inside the `<structMap>` element) is `ID.AVID.RA.18005.rep0.seg0` after the urn NID part (`urn:<NID>:<NSS>`).
 
-The value `ID.AVID.RA.18005.rep0.seg0` must now match the value of the OBJID attribute for the `<mets>` element in the child IP root METS file.
+The value `ID.AVID.RA.18005.rep0.seg0` must now match the value of the OBJID attribute for the `<mets>` element in the child IP package METS file.
 (Note that in order to save space in this example the CS mandatory ID attribute for the `<div>` elements have been left out.)
 Parent METS file
 
 ```xml
-<!-- this top root level METS.xml IP only refers to the root level METS files in the representations using the <mptr> element -->
+<!-- this top package level METS.xml IP only refers to the package level METS files in the representations using the <mptr> element -->
 <div LABEL="representations">
 <!-- the value of the attribute LABEL is the ID of the representation -->
    <div LABEL="representations/ID.AVID.RA.18005.rep0" ORDER="0" >
 <!-- we use the attribute LABEL value 'child IP' in the 'div' element for representations in accordance with the AIP spec.3.3.1.9 -->
       <div LABEL="child IP" TYPE="representation child">
-<!-- each root level METS file in the representations refer to its own METS files in the segments and in the representations folder using
+<!-- each package level METS file in the representations refer to its own METS files in the segments and in the representations folder using
 the <mptr> element -->
 <!-- this is a METS reference to another METS file, and this file is in another segment -->
-        <mptr xlink:href="urn:sa.dk:ID.AVID.RA.18005.rep0.seg0" xlink:title="root level METS file for representation 0" xlink:type="simple"
+        <mptr xlink:href="urn:sa.dk:ID.AVID.RA.18005.rep0.seg0" xlink:title="package level METS file for representation 0" xlink:type="simple"
 LOCTYPE="URN"/>
       </div>
    </div>
@@ -86,7 +86,7 @@ LOCTYPE="URN"/>
    <div LABEL="representations/ID.AVID.RA.18005.rep1" ORDER="1">
       <div LABEL="child IP" TYPE="representation child">
 <!-- this is an indirect METS reference to another METS file, and this file is in another segment -->
-         <mptr xlink:href="urn:sa.dk:ID.AVID.RA.18005.rep1.seg0" xlink:title="root level METS file for representation 1" xlink:type="simple"
+         <mptr xlink:href="urn:sa.dk:ID.AVID.RA.18005.rep1.seg0" xlink:title="package level METS file for representation 1" xlink:type="simple"
 LOCTYPE="URN"/>
       </div>
    </div>
@@ -99,14 +99,14 @@ Child METS file
 <mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/METS/"
 xmlns:xlink="http://www.w3.org/1999/xlink"
 xsi:schemaLocation="http://www.loc.gov/METS/ schemas/mets.xsd"
-PROFILE="http://www.ra.ee/METS/v01/IP.xml" TYPE="Database segment child" OBJID="ID.AVID.RA.18005.rep0.seg0" LABEL="root
+PROFILE="http://www.ra.ee/METS/v01/IP.xml" TYPE="Database segment child" OBJID="ID.AVID.RA.18005.rep0.seg0" LABEL="package
 level METS file for a representation segment">
 ..
 ..
 ..
    <div LABEL="parent IP" TYPE="Godfather IP"> <!-- working title - maybe master IP is more appropriate -->
 <!-- this is an indirect METS reference to another METS file. However, the referenced file is in another segment -->
-      <mptr xlink:href="urn:sa.dk:ID.AVID.RA.18005.godfather" xlink:title="root level METS file for godfather IP" xlink:type="simple"
+      <mptr xlink:href="urn:sa.dk:ID.AVID.RA.18005.godfather" xlink:title="package level METS file for godfather IP" xlink:type="simple"
 LOCTYPE="URN"/>
    </div>
 ```

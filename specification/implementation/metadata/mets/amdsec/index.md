@@ -7,7 +7,6 @@ The administrative metadata section contains four sub-sections each used to reco
 - source metadata (element sourceMD) records descriptive, technical or rights metadata for an analog source for a digital library object; and
 - digital provenance metadata (element digiprovMD) records digital preservation information, e.g. audit information covering a digital library object's life-cycle.
 
-
 The CSIP only describes use of the elements `digiprovMD` and `rightsMD`. The population of the other metadata sections are left to local policy and practise.
 
 The CSIP (and METS) categorises preservation metadata as administrative metadata, specifically Digital Provenance metadata (following the avaiable guidelines published by the PREMIS EC guidelines: <http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf>), hence all preservation metadata should be referenced from a `digiprovMD` element within the `amdSec`.
