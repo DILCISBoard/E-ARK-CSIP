@@ -174,7 +174,7 @@
             </requirement>
             <requirement ID="CSIP3" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentCategory" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
-                    <head>Custom Content Category</head>
+                    <head>Other Content Category</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the @TYPE attribute has the value "OTHER" the @csip:OTHERTYPE attribute MUST be used to declare the content category of the package/representation.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@csip:OTHERTYPE</dd>
@@ -194,7 +194,7 @@
             </requirement>
             <requirement ID="CSIP5" REQLEVEL="MAY" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
-                    <head>Custom Content Information Type Specification</head>
+                    <head>Other Content Information Type Specification</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must describe the content.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
@@ -823,8 +823,8 @@
             </requirement>
             <requirement ID="CSIP63" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
-                    <head>Custom Content Information Type Specification</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must state a custom value for the Content Information Type Specification used.</p>
+                    <head>Other Content Information Type Specification</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must state a value for the Content Information Type Specification used.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
