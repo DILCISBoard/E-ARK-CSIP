@@ -110,6 +110,7 @@ level METS file for a representation segment">
 LOCTYPE="URN"/>
    </div>
 ```
+
 ### 6.2.5 Illustration of references between METS files in a segmented IP
 We need to segment an IP at the data folder in the representations level, but according to the Common Specification this can only be done at the IP level. Therefore this IP has been segmented at the top IP level, and not at the representations level.
 
