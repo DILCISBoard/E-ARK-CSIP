@@ -31,20 +31,16 @@ Both METS, and by derivation the CSIP, make extensive use of the XML ID data typ
 
 If your package makes use of IDs that don't conform to this specification one mitigating strategy is to add a prefix to all identifiers. For example UUIDs are a common choice for arbitrary identifiers and comprise of hex characters and hyphens, e.g. the value `906F4F12-BA52-4779-AE2C-178F9206111F`. NCName and xml:id values can't legally begin with numeric characters making many UUIDs, including the example, invalid. The examples below show two possible solutions, using prefixes:
 
-Examples:
-
 Example 1: The prefix consists of the identifier type acronym and a hyphen: `uuid-`.
 
 ```xml
-<dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-
-24T14:37:49.609+01:00">
+<dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
 ```
 
 Example 2: A generic prefix:`ID`.
 
 ```xml
-<dmdSec ID="ID906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-
-24T14:37:49.609+01:00">
+<dmdSec ID="ID906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
 ```
 
 Note that the identifiers specified within the CSIP are mainly used as internal references between Information Package components. Prefixes are not mandatory, but if they are used, we recommend choosing a single prefix and using it consistently across all IDs in the package.

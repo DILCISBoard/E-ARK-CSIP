@@ -70,9 +70,9 @@ public final class SchemaAppendixGenerator {
 		handler.nl();
 		for (ControlledVocabulary vocab : this.vocabs) {
 			handler.nl();
-			handler.emit(MarkdownFormatter.anchor(vocab.id));
-			handler.nl();
 			handler.emit(MarkdownFormatter.h3(vocab.name));
+			handler.nl();
+			handler.emit(MarkdownFormatter.anchor(vocab.id));
 			handler.nl();
 			handler.emit(headString("Maintained By:", vocab.maintenanceAgency));
 			handler.nl();

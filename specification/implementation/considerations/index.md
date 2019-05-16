@@ -110,10 +110,11 @@ level METS file for a representation segment">
 LOCTYPE="URN"/>
    </div>
 ```
+
 ### 6.2.5 Illustration of references between METS files in a segmented IP
 We need to segment an IP at the data folder in the representations level, but according to the Common Specification this can only be done at the IP level. Therefore this IP has been segmented at the top IP level, and not at the representations level.
 
-![CSIP Example](figs/mets_file_ref.png "Illustration of references between files.")
+![CSIP Example](figs/mets_file_ref.svg "Illustration of references between files.")
 
 Please note the following about the example:
 
@@ -127,14 +128,14 @@ Please note the following about the example:
 Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The CSIP allows essentially for the inclusion of any kind of descriptive metadata in the IP. However, it is required that all descriptive metadata must be placed into the “metadata” folder of the IP, and that it is recommended (should) to also exploit the possibility of creating a specific sub-folder “descriptive” as seen in [Figure 11](#fig11) below (cf. EAD.xml).
 
 <a name="fig11"></a>
-![CSIP Example](figs/fig_11_eark_ip_desc_md.png "EARK IP descriptive metadata.")
+![CSIP Example](figs/fig_11_eark_ip_desc_md.svg "EARK IP descriptive metadata.")
 
 **Figure 11:** E-ARK IP descriptive metadata
 
 Further, all descriptive metadata need itself to be described in and referenced from METS metadata (i.e. the `METS.xml` file) using the element `<dmdSec>` ([Figure 12](#fig12)) and as such descriptive metadata are not to be embedded into the METS file directly.
 
 <a name="fig12"></a>
-![METS desc md](figs/fig_12_mets_desc_md.png "METS descriptive metadata.")
+![METS desc md](figs/fig_12_mets_desc_md.svg "METS descriptive metadata.")
 
 **Figure 12:** METS descriptive metadata
 
