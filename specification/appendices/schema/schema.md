@@ -16,8 +16,8 @@ A rule set for use with this profile is under development. <br/>
 
 ## Controlled Vocabularies
 
-<a name="VocabularyContentInformationTypeSpecification"></a>
 ### Content information type specification
+<a name="VocabularyContentInformationTypeSpecification"></a>
 **Maintained By:** DILCIS Board <br/> 
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/CSIPVocabularyContentInformationType.xml" >http://earkcsip.dilcis.eu/schema/CSIPVocabularyContentInformationType.xml</a> <br/> 
 **Context:** Used in @csip:CONTENTINFORMATIONTYPE <br/> 
@@ -25,8 +25,8 @@ A rule set for use with this profile is under development. <br/>
 Lists the names of specific E-ARK content information type specifications supported or maintained in this METS profile. <br/> 
 
 
-<a name="VocabularyContentCategory"></a>
 ### Content Category
+<a name="VocabularyContentCategory"></a>
 **Maintained By:** DILCIS Board <br/> 
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/CSIPVocabularyContentCategory.xml" >http://earkcsip.dilcis.eu/schema/CSIPVocabularyContentCategory.xml</a> <br/> 
 **Context:** Used in mets/@type <br/> 
@@ -34,8 +34,8 @@ Lists the names of specific E-ARK content information type specifications suppor
 Declares the categorical classification of package content. <br/> 
 
 
-<a name="VocabularyOAISPackageType"></a>
 ### OAIS Package type
+<a name="VocabularyOAISPackageType"></a>
 **Maintained By:** DILCIS Board <br/> 
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/CSIPVocabularyOAISPackageType.xml" >http://earkcsip.dilcis.eu/schema/CSIPVocabularyOAISPackageType.xml</a> <br/> 
 **Context:** Used in @csip:OAISPACKAGETYPE <br/> 
@@ -43,8 +43,8 @@ Declares the categorical classification of package content. <br/>
 Describes the OAIS type the package belongs to in the OAIS reference model. <br/> 
 
 
-<a name="VocabularyNoteType"></a>
 ### Note type
+<a name="VocabularyNoteType"></a>
 **Maintained By:** DILCIS Board <br/> 
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/CSIPVocabularyNoteType.xml" >http://earkcsip.dilcis.eu/schema/CSIPVocabularyNoteType.xml</a> <br/> 
 **Context:** Used in @csip:NOTETYPE <br/> 
@@ -52,8 +52,8 @@ Describes the OAIS type the package belongs to in the OAIS reference model. <br/
 Provides values for the type of a note for an agent. <br/> 
 
 
-<a name="VocabularyAgentOtherType"></a>
 ### Other agent type
+<a name="VocabularyAgentOtherType"></a>
 **Maintained By:** DILCIS Board <br/> 
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/CSIPVocabularyAgentOtherType.xml" >http://earkcsip.dilcis.eu/schema/CSIPVocabularyAgentOtherType.xml</a> <br/> 
 **Context:** Used in metsHdr/agent/@OTHERTYPE <br/> 
@@ -61,8 +61,8 @@ Provides values for the type of a note for an agent. <br/>
 Describes the other agent types supported by the profile. <br/> 
 
 
-<a name="VocabularyIdentifierType"></a>
 ### Identifier type
+<a name="VocabularyIdentifierType"></a>
 **Maintained By:** Library of Congress <br/> 
 **Location:**  <a href="http://id.loc.gov/vocabulary/identifiers.html" >http://id.loc.gov/vocabulary/identifiers.html</a> <br/> 
 **Context:** Used in metsHdr/altRecordID/@TYPE <br/> 
@@ -70,8 +70,8 @@ Describes the other agent types supported by the profile. <br/>
 Describes the type of the identifier. <br/> 
 
 
-<a name="VocabularyStatus"></a>
 ### dmdSec status
+<a name="VocabularyStatus"></a>
 **Maintained By:** DILCIS Board <br/> 
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/CSIPVocabularyStatus.xml" >http://earkcsip.dilcis.eu/schema/CSIPVocabularyStatus.xml</a> <br/> 
 **Context:** Used in dmdSec/@STATUS <br/> 
@@ -79,8 +79,8 @@ Describes the type of the identifier. <br/>
 Describes the status of the descriptive metadata section (dmdSec) which is supported by the profile. <br/> 
 
 
-<a name="VocabularyIANAmediaTypes"></a>
 ### IANA media types
+<a name="VocabularyIANAmediaTypes"></a>
 **Maintained By:** IANAs <br/> 
 **Location:**  <a href="https://www.iana.org/assignments/media-types/media-types.xhtml" >https://www.iana.org/assignments/media-types/media-types.xhtml</a> <br/> 
 **Context:** Used in @MIMETYPE <br/> 
@@ -88,8 +88,8 @@ Describes the status of the descriptive metadata section (dmdSec) which is suppo
 Valid values for the mime types of referenced files. <br/> 
 
 
-<a name="VocabularyFileGrpAndStructMapDivisionLabel"></a>
 ### File group names
+<a name="VocabularyFileGrpAndStructMapDivisionLabel"></a>
 **Maintained By:** DILCIS Board <br/> 
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/CSIPVocabularyFileGrpAndStructMapDivisionLabel.xml" >http://earkcsip.dilcis.eu/schema/CSIPVocabularyFileGrpAndStructMapDivisionLabel.xml</a> <br/> 
 **Context:** Used in fileGrp/@USE <br/> 
@@ -98,8 +98,8 @@ Describes the uses of the file group (fileGrp) that are supported by the profile
 Own names should be placed in an own extending vocabulary. <br/> 
 
 
-<a name="VocabularyStructMapType"></a>
 ### Structural map typing
+<a name="VocabularyStructMapType"></a>
 **Maintained By:** DILCIS Board <br/> 
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapType.xml" >http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapType.xml</a> <br/> 
 **Context:** Used in structMap/@TYPE <br/> 
@@ -108,8 +108,8 @@ Describes the type of the structural map (structMap) that is supported by the pr
 Own types should be placed in an own extending vocabulary. <br/> 
 
 
-<a name="VocabularyStructMapLabel"></a>
 ### Structural map label
+<a name="VocabularyStructMapLabel"></a>
 **Maintained By:** DILCIS Board <br/> 
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapLabel.xml" >http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapLabel.xml</a> <br/> 
 **Context:** Used in structMap/@LABEL <br/> 
