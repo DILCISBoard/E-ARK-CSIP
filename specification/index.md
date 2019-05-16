@@ -1,9 +1,9 @@
 E-ARK CSIP Table Of Contents
 ============================
 
-Version: 2.0.0-DRAFT
+Version: 2.0.0-RC
 
-November 28, 2018
+May 16, 2019
 
 
 Contents
