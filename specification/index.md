@@ -40,7 +40,7 @@ Contents
 	    - [5.3.3 Use of the METS descriptive metadata section (element dmdSec)](#533-use-of-the-mets-descriptive-metadata-section-element-dmdsec)
 	    - [5.3.4.	Use of the METS administrative metadata section (element amdSec)](#534-use-of-the-mets-administrative-metadata-section-element-amdsec)
 	    - [5.3.5.	Use of the METS file section (element fileSec)](#535-use-of-the-mets-file-section-element-filesec)
-	    - [5.3.6.	Use of the METS structural map (element structMap)](#536-use-of-the-mets-structural-map-element-structmap)
+	    - `[5.3.6.	Use of the METS structural map (element structMap)](#536-use-of-the-mets-structural-map-element-structmap)`
 		- [5.4. Use of PREMIS](#54-use-of-premis)
 	- [6. Implementation considerations](#6-implementation-considerations)
 	  - [6.1.	Content Information Type Specifications](#61-content-information-type-specifications)

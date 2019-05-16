@@ -6,8 +6,8 @@
             <p>Vocabulary derived from E-ARK</p>
         </Information>
         <Entry>
-            <Term lang="en">CSIP structMap</Term>
-            <Definition>A label for the mandatory structural map</Definition>
+            <Term lang="en">CSIP</Term>
+            <Definition>The label value of the mandatory CSIP `&lt;structMap&gt;` element.</Definition>
         </Entry>
     </Vocabulary>
 </Vocabularies>
