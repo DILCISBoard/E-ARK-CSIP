@@ -94,7 +94,7 @@ Valid values for the mime types of referenced files. <br/>
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/CSIPVocabularyFileGrpAndStructMapDivisionLabel.xml" >http://earkcsip.dilcis.eu/schema/CSIPVocabularyFileGrpAndStructMapDivisionLabel.xml</a> <br/> 
 **Context:** Values for `fileGrp/@USE` <br/> 
 **Description:**   <br/> 
-Describes the uses of the file group (fileGrp) that are supported by the profile. <br/> 
+Describes the uses of the file group `<fileGrp>` that are supported by the profile. <br/> 
 Own names should be placed in an own extending vocabulary. <br/> 
 
 
@@ -102,9 +102,9 @@ Own names should be placed in an own extending vocabulary. <br/>
 <a name="VocabularyStructMapType"></a>
 **Maintained By:** DILCIS Board <br/> 
 **Location:**  <a href="http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapType.xml" >http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapType.xml</a> <br/> 
-**Context:** Values for `structMap/@TYPE <br/> 
+**Context:** Values for `structMap/@TYPE` <br/> 
 **Description:**   <br/> 
-Describes the type of the structural map (structMap) that is supported by the profile. <br/> 
+Describes the type of the structural map `<structMap>` that is supported by the profile. <br/> 
 Own types should be placed in an own extending vocabulary. <br/> 
 
 
