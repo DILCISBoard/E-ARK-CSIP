@@ -1019,9 +1019,9 @@
             <requirement ID="CSIP82" REQLEVEL="MUST" RELATEDMAT="VocabularyStructMapLabel" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Name of the structural description</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The `mets/structMap/@LABEL` attribute value is set to “CSIP structMap” from the vocabulary.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The `mets/structMap/@LABEL` attribute value is set to “CSIP” from the vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1031,7 +1031,7 @@
                     <head>Structural description identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the structural description (structMap) used for internal package references. It must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1041,7 +1041,7 @@
                     <head>Main structural division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The structural map comprises a single division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1051,7 +1051,7 @@
                     <head>Main structural division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1061,7 +1061,7 @@
                     <head>Main structural division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The package's top-level structural division `&lt;div&gt;` element's `@LABEL` attribute value must be identical to the package identifier, i.e. the same value as the `mets/@OBJID` attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/@LABEL</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1072,7 +1072,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The metadata referenced in the administrative and/or descriptive metadata section is described in the structural map with one sub division.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the transfer consist of only administrative and/or descriptive metadata this is the only sub division that occurs.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Metadata']</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1082,7 +1082,7 @@
                     <head>Metadata division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Metadata']/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1092,7 +1092,7 @@
                     <head>Metadata division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The metadata division `&lt;div&gt;` element's `@LABEL` attribute value must be "Metadata".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Metadata']</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1103,7 +1103,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">When there is administrative metadata and the amdSec is present, all administrative metadata MUST be referenced via the administrative sections different identifiers.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">All of the `&lt;amdSec&gt;` identifiers are listed in a single `@AMDID` using spaces as delimeters.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Metadata']/@ADMID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1114,7 +1114,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">When there are descriptive metadata and one or more dmdSec is present, all descriptive metadata MUST be referenced via the descriptive section identifiers.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Every `&lt;dmdSec&gt;` identifier is listed in a single `@DMDID` attribute using spaces as delimeters.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Metadata']/@DMDID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@DMDID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1124,7 +1124,7 @@
                     <head>Documentation division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The documentation referenced in the file section file groups is described in the structural map with one sub division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Documentation']</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1132,9 +1132,9 @@
             <requirement ID="CSIP94" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, xml:id identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Documentation']/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1144,7 +1144,7 @@
                     <head>Documentation division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The documentation division `&lt;div&gt;` element in the package uses the value "Documentation" from the vocabulary as the value for the `@LABEL` attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Documentation']</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1154,7 +1154,7 @@
                     <head>Documentation file referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups contaning documentation described in the package are referenced via the relevant file group identifiers. There MUST be one file group refrence per `&lt;fptr&gt;` element.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Documentation']/fptr</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
@@ -1165,7 +1165,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">A reference, by ID, to the "Documentation" file group.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP60 which describes the "Documentation" file group and CSIP65 which describes the file group identfier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Documentation']/fptr/@FILEID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1175,7 +1175,7 @@
                     <head>Schema division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The schemas referenced in the file section file groups are described in the structural map within a single sub-division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Schemas']</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1185,7 +1185,7 @@
                     <head>Schema division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Schemas']/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1195,7 +1195,7 @@
                     <head>Schema division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The schema division `&lt;div&gt;` element's `@LABEL` attribute has the value "Schemas" from the vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Schemas']</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1205,7 +1205,7 @@
                     <head>Schema file reference</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Schemas']/fptr</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
@@ -1216,7 +1216,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identfier for the "Schema" file group.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP113 which describes the "Schema" file group and CSIP65 which describes the file group identfier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Schemas']/fptr/@FILEID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1226,7 +1226,7 @@
                     <head>Content division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When no representations are present the content referenced in the file section file group with `@USE` attribute value "Representations" is described in the structural map as a single sub division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Representations']</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1236,7 +1236,7 @@
                     <head>Content division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Representations']/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1246,7 +1246,7 @@
                     <head>Content division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The package's content division `&lt;div&gt;` element must have the `@LABEL` attribute value "Representations", taken from the vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Representations']</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1256,7 +1256,7 @@
                     <head>Content division file references</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing content described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Representations']/fptr</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
@@ -1267,7 +1267,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identfier for the "Representations" file group.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP114 which describes the "Representations" file group and CSIP65 which describes the file group identfier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div[@LABEL='Representations']/fptr/@FILEID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1278,7 +1278,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">When a package consists of multiple representations, each described by a representation level METS.xml document, there is a discrete representation div element for each representation.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Each representation div references the representation level METS.xml document, documenting the structure of the package and its constituent representations.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
@@ -1288,7 +1288,7 @@
                     <head>Representations division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1299,7 +1299,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The package's representation division `&lt;div&gt;` element `@LABEL` attribute value must be the path to the representation level METS document.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">This requirement gives the same value to be used as the requirement named "File group identifier" (CSIP64)</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div/@LABEL</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1310,7 +1310,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the files described in the package are referenced via the relevant file group identifier.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP114 which describes the "Representations" file group and CSIP65 which describes the file group identfier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div/mptr/@xlink:title</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/mptr/@xlink:title</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1320,7 +1320,7 @@
                     <head>Representation METS pointer</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The division `&lt;div&gt;` of the specific representation includes one occurrence of the METS pointer `&lt;mptr&gt;` element, pointing to the appropriate representation METS file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL' and @LABEL='CSIP structMap']/div/div/mptr</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/mptr</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
