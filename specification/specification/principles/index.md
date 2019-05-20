@@ -130,7 +130,7 @@ Based on principles 3.1 – 3.5 we present a common structure for any CSIP Infor
 
 Following Principle 3.1 the package MUST include a high-level structural component for metadata which includes at least relevant metadata for the whole package. In addition the representations MUST internally separate between data and metadata (though note that the CSIP does not mandate that both data and metadata must be available in all representations).
 
-Following Principle 3.2 we strongly recommend this logical structure is implemented as a physical folder structure.
+Following Principle 3.2 we strongly recommend this logical structure to be manifested as a physical folder structure.
 
 Following Principle 3.3 we strongly recommend sub-dividing any package metadata into separate metadata sub-types.
 
