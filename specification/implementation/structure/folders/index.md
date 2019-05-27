@@ -39,7 +39,7 @@ The implementation requirements of the CSIP Information Package structure are:
 **CSIPSTR10**: The `representations` folder **SHOULD** include a sub-folder for each individual representation (i.e. the “representation folder”). Each representation folder should have a string name that is unique within the package scope. For example the name of the representation and/or its creation date might be good candidates as a representation sub-folder name.
 
 <a name="CSIPSTR11"></a>
-**CSIPSTR11**: The representation folder **SHOULD** include a sub-folder named `data` which includes all data constituting the representation.
+**CSIPSTR11**: The representation folder **SHOULD** include a sub-folder named `data` which **MAY** include all data constituting the representation.
 
 <a name="CSIPSTR12"></a>
 **CSIPSTR12**: The representation folder **SHOULD** include a metadata file named `METS.xml` which includes information about the identity and structure of the representation and its components. The recommended best practice is to always have a `METS.xml` in the representation folder.
