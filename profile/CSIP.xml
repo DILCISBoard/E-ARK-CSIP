@@ -124,7 +124,7 @@
             <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyFileGrpAndStructMapDivisionLabel.xml</URI>
             <context>Values for `fileGrp/@USE`</context>
             <description>
-                <p xmlns="http://www.w3.org/1999/xhtml">Describes the uses of the file group (fileGrp) that are supported by the profile.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Describes the uses of the file group `&lt;fileGrp&gt;` that are supported by the profile.</p>
                 <p xmlns="http://www.w3.org/1999/xhtml">Own names should be placed in an own extending vocabulary.</p>
             </description>
         </vocabulary>
@@ -132,9 +132,9 @@
             <name>Structural map typing</name>
             <maintenance_agency>DILCIS Board</maintenance_agency>
             <URI>http://earkcsip.dilcis.eu/schema/CSIPVocabularyStructMapType.xml</URI>
-            <context>Values for `structMap/@TYPE</context>
+            <context>Values for `structMap/@TYPE`</context>
             <description>
-                <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of the structural map (structMap) that is supported by the profile.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Describes the type of the structural map `&lt;structMap&gt;` that is supported by the profile.</p>
                 <p xmlns="http://www.w3.org/1999/xhtml">Own types should be placed in an own extending vocabulary.</p>
             </description>
         </vocabulary>
@@ -177,7 +177,7 @@
                     <head>Other Content Category</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the `mets/@TYPE` attribute has the value "OTHER" the `mets/@csip:OTHERTYPE` attribute MUST be used to declare the content category of the package/representation.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/@csip:OTHERTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets[@TYPE='OTHER']/@csip:OTHERTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -197,7 +197,7 @@
                     <head>Other Content Information Type Specification</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the `mets/@csip:CONTENTINFORMATIONTYPE` has the value "OTHER" the `mets/@csip:OTHERCONTENTINFORMATIONTYPE` must state the content information type.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -219,7 +219,7 @@
                     <head>Package header</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">General element for describing the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>metsHdr</dd>
+                        <dt>METS XPath</dt><dd>mets/metsHdr</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -229,7 +229,7 @@
                     <head>Package creation date</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">`mets/metsHdr/@CREATEDATE` records the date the package was created.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>metsHdr/@CREATEDATE</dd>
+                        <dt>METS XPath</dt><dd>mets/metsHdr/@CREATEDATE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -239,7 +239,7 @@
                     <head>Package last modification date</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">`mets/metsHdr/@LASTMODDATE` is mandatory when the package has been modified.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>metsHdr/@LASTMODDATE</dd>
+                        <dt>METS XPath</dt><dd>mets/metsHdr/@LASTMODDATE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -249,7 +249,7 @@
                     <head>OAIS Package type information</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">`mets/metsHdr/@csip:OAISPACKAGETYPE` is an additional CSIP attribute that declares the type of the IP.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>metsHdr/@csip:OAISPACKAGETYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/metsHdr/@csip:OAISPACKAGETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -259,7 +259,7 @@
                     <head>Agent</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A mandatory agent element records the software used to create the package. Other uses of agents may be described in any local implementations that extend the profile.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>metsHdr/agent</dd>
+                        <dt>METS XPath</dt><dd>mets/metsHdr/agent</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
                 </description>
@@ -269,7 +269,7 @@
                     <head>Agent role</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent element MUST have a `@ROLE` attribute with the value “CREATOR”.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>metsHdr/agent/@ROLE</dd>
+                        <dt>METS XPath</dt><dd>mets/metsHdr/agent[@ROLE='CREATOR']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -279,7 +279,7 @@
                     <head>Agent type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent element MUST have a `@TYPE` attribute with the value “OTHER”.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>metsHdr/agent/@TYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/metsHdr/agent[@TYPE='OTHER']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -289,7 +289,7 @@
                     <head>Agent other type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent element MUST have a `@OTHERTYPE` attribute with the value “SOFTWARE”.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>metsHdr/agent/@OTHERTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/metsHdr/agent[@OTHERTYPE='SOFTWARE']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -299,7 +299,7 @@
                     <head>Agent name</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent's name element records the name of the software tool used to create the IP.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>metsHdr/agent/name</dd>
+                        <dt>METS XPath</dt><dd>mets/metsHdr/agent/name</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -309,7 +309,7 @@
                     <head>Agent additional information</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent's note element records the version of the tool used to create the IP.</p>
                      <dl xmlns="http://www.w3.org/1999/xhtml">
-                         <dt>METS XPath</dt><dd>metsHdr/agent/note</dd>
+                         <dt>METS XPath</dt><dd>mets/metsHdr/agent/note</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -319,7 +319,7 @@
                     <head>Classification of the agent additional information</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent element's note child has a `@csip:NOTETYPE` attribute with a fixed value of "SOFTWARE VERSION".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>metsHdr/agent/note/@csip:NOTETYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/metsHdr/agent/note[@csip:NOTETYPE='SOFTWARE VERSION']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -332,7 +332,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">Must be used if descriptive metadata for the package content is available. Each descriptive metadata section (`&lt;dmdSec&gt;`) contains a single description and must be repeated for mulitple descriptions, when available.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
@@ -342,7 +342,7 @@
                     <head>Descriptive metadata identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the descriptive metadata section (`&lt;dmdSec&gt;`) used for internal package references. It must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -352,7 +352,7 @@
                     <head>Descriptive metadata creation date</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Creation date of the descriptive metadata in this section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/@CREATED</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -362,7 +362,7 @@
                     <head>Status of the descriptive metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Indicates the status of the package using a fixed vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/@STATUS</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/@STATUS</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -372,7 +372,7 @@
                     <head>Reference to the document with the descriptive metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Reference to the descriptive metadata file located in the “metadata” section of the IP.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/mdRef</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -382,7 +382,7 @@
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/mdRef/@LOCTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef[@LOCTYPE='URL']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -392,7 +392,7 @@
                     <head>Type of link</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/mdRef/@xlink:type</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef[@xlink:type='simple']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -402,7 +402,7 @@
                     <head>Resource location</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The actual location of the resource. This specification recommends recording a URL type filepath in this attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/mdRef/@xlink:href</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@xlink:href</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -412,7 +412,7 @@
                     <head>Type of metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the referenced file. Values are taken from the list provided by the METS.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/mdRef/@MDTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@MDTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -422,7 +422,7 @@
                     <head>File mime type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/mdRef/@MIMETYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -432,7 +432,7 @@
                     <head>File size</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Size of the referenced file in bytes.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/mdRef/@SIZE</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@SIZE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -442,7 +442,7 @@
                     <head>File creation date</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The creation date of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/mdRef/@CREATED</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -452,7 +452,7 @@
                     <head>File checksum</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The checksum of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/mdRef/@CHECKSUM</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@CHECKSUM</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -462,7 +462,7 @@
                     <head>File checksum type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The type of checksum following the value list in the standard which used for the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>dmdSec/mdRef/@CHECKSUMTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -476,7 +476,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">All administrative metadata is present in a single `&lt;amdSec&gt;` element.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -487,7 +487,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">For recording information about preservation the standard PREMIS is used. It is mandatory to include one `&lt;digiprovMD&gt;' element for each piece of PREMIS metadata.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The use if PREMIS in METS is following the recommendations in <a href="http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf">2017 version of PREMIS in METS Guidelines</a></p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
@@ -497,7 +497,7 @@
                     <head>Digital provenance metadata identfier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the digital provenance metadata section `mets/amdSec/digiprovMD` used for internal package references. It must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -507,7 +507,7 @@
                     <head>Status of the digital provenance metadata</head>
                    <p xmlns="http://www.w3.org/1999/xhtml">Indicates the status of the package using a fixed vocabulary.</p>
                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                       <dt>METS XPath</dt><dd>amdSec/digiprovMD/@STATUS</dd>
+                       <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/@STATUS</dd>
                        <dt>Cardinality</dt><dd>0..1</dd>
                    </dl>
                </description>
@@ -517,7 +517,7 @@
                     <head>Reference to the document with the digital provenance metdata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Reference to the digital provenance metadata file stored in the “metadata” section of the IP.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -527,7 +527,7 @@
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@LOCTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef[@LOCTYPE='URL']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -537,7 +537,7 @@
                     <head>Type of link</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@xlink:type</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef[@xlink:type='simple']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -547,7 +547,7 @@
                     <head>Resource location</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The actual location of the resource. This specification recommends recording a URL type filepath within this attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@xlink:href</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@xlink:href</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -557,7 +557,7 @@
                     <head>Type of metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the referenced file. Values are taken from the list provided by the METS.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@MDTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@MDTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -567,7 +567,7 @@
                     <head>File mime type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@MIMETYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -577,7 +577,7 @@
                     <head>File size</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Size of the referenced file in bytes.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@SIZE</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@SIZE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -587,7 +587,7 @@
                     <head>File creation date</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Creation date of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@CREATED</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -597,7 +597,7 @@
                     <head>File checksum</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The checksum of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@CHECKSUM</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@CHECKSUM</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -607,7 +607,7 @@
                     <head>File checksum type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The type of checksum following the value list in the standard which used for the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/digiprovMD/mdRef/@CHECKSUMTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -618,7 +618,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">A simple rights statement may be used to describe general permissions for the package. Individual representations should state their specific rights in their representation METS file.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Available standards include <a href="http://rightsstatements.org">RightsStatements.org</a> , <a href="https://pro.europeana.eu/page/available-rights-statements">Europeana rights statements info</a>), <a href="https://github.com/mets/METS-Rights-Schema">METS Rights Schema</a> created and maintaned by the METS Board, the rights part of <a href="http://www.loc.gov/standards/premis/">PREMIS</a> as well as own local rights statements in use.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
@@ -626,9 +626,9 @@
             <requirement ID="CSIP46" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Rights metadata identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An xml:id identifier for the rights metadata section (`&lt;rightsMD&gt;`) used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the rights metadata section (`&lt;rightsMD&gt;`) used for internal package references. It must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -638,7 +638,7 @@
                     <head>Status of the rights metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Indicates the status of the package using a fixed vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/@STATUS</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/@STATUS</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -648,7 +648,7 @@
                     <head>Reference to the document with the rights metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Reference to the rights metadata file stored in the “metadata” section of the IP.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -658,7 +658,7 @@
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@LOCTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef[@LOCTYPE=`URL`]</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -669,7 +669,7 @@
                     <head></head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@xlink:type</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef[@xlink:type='simple']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -679,7 +679,7 @@
                     <head>Resource location</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The actual location of the resource. We  recommend recording a URL type filepath within this attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@xlink:href</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@xlink:href</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -689,7 +689,7 @@
                     <head>Type of metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the referenced file. Value is taken from the list provided by the METS.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@MDTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@MDTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -699,7 +699,7 @@
                     <head>File mime type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@MIMETYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -709,7 +709,7 @@
                     <head>File size</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Size of the referenced file in bytes.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@SIZE</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@SIZE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -719,7 +719,7 @@
                     <head>File creation date</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Creation date of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@CREATED</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -729,7 +729,7 @@
                     <head>File checksum</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The checksum of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@CHECKSUM</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@CHECKSUM</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -739,7 +739,7 @@
                     <head>File checksum type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The type of checksum following the value list in the standard which used for the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>amdSec/rightsMD/mdRef/@CHECKSUMTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -753,7 +753,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">Only a single file section (`&lt;fileSec&gt;`) element should be present.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer just descriptive metadata and/or administrative metadata without files placed in this section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -763,7 +763,7 @@
                     <head>File section identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file section used for internal package references. It must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -773,7 +773,7 @@
                     <head>Documentation file group</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All documentation pertaining to the transferred content is placed in one or more file group elements with `mets/fileSec/fileGrp/@USE` attribute value "Documentation".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@USE='Documentation']</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
                 </description>
@@ -783,7 +783,7 @@
                     <head>Schema file group</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All XML schemas used in the information package should be referenced from one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value "Schemas".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@USE='Schemas']</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
                 </description>
@@ -793,7 +793,7 @@
                     <head>Representations file group</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value "Representations".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@USE='Representations']</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
                 </description>
@@ -803,7 +803,7 @@
                     <head>Reference to administrative metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If administrative metadata has been provided at file group  `mets/fileSec/fileGrp` level this attribute refers to its administrative metadata section by ID.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/@ADMID</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -816,7 +816,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">This attribute is mandatory when the `mets/fileSec/fileGrp/@LABEL` attribute value is "Representations".</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the "Package type" value is "Mixed" and/or the file group describes a "Representation", then this element states the content information type specification used for the file group.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@LABEL='Representations']/@csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -826,7 +826,7 @@
                     <head>Other Content Information Type Specification</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the `mets/fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE` attribute has the value "OTHER" the `mets/fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE` must state a value for the Content Information Type Specification used.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -836,7 +836,7 @@
                     <head>Description of the use of the file group</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The value in the `mets/fileSec/fileGrp/@USE` is the name of the whole folder structure to the data, e.g "Documentation", "Schemas", "Representations/preingest" or "Representations/submission/data".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/@USE</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/@USE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -846,7 +846,7 @@
                     <head>File group identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file group used for internal package references. It must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -856,7 +856,7 @@
                     <head>File</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The file group (`&lt;fileGrp&gt;`) contains the file elements which describe the file objects.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
                 </description>
@@ -866,7 +866,7 @@
                     <head>File identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A unique `xml:id` identifier for this file across the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -876,7 +876,7 @@
                     <head>File mimetype</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@MIMETYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -886,7 +886,7 @@
                     <head>File size</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Size of the referenced file in bytes.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@SIZE</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@SIZE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -896,7 +896,7 @@
                     <head>File creation date</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Creation date of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@CREATED</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -906,7 +906,7 @@
                     <head>File checksum</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The checksum of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@CHECKSUM</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@CHECKSUM</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -916,7 +916,7 @@
                     <head>File checksum type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The type of checksum following the value list in the standard which used for the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@CHECKSUMTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -926,7 +926,7 @@
                     <head>File original identfication</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If an identifier for the file was supplied by the owner it can be recorded in this attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@OWNERID</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@OWNERID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -936,7 +936,7 @@
                     <head>File reference to administrative metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If administrative metadata has been provided for the file this attribute refers to the file's administrative metadata by ID.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@ADMID</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -946,7 +946,7 @@
                     <head>File reference to descriptive metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If descriptive metadata has been provided per file this attribute refers to the file's descriptive metadata by ID.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/@DMDID</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@DMDID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -956,7 +956,7 @@
                     <head>File locator reference</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The location of each external file must be defined by the file location `&lt;FLocat&gt;` element using the same rules as for referencing metadata files. All references to files should be made using the XLink href attribute and the file protocol using the relative location of the file.</p>
                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                       <dt>METS XPath</dt><dd>fileSec/fileGrp/file/FLocat</dd>
+                       <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/FLocat</dd>
                        <dt>Cardinality</dt><dd>1..1</dd>
                    </dl>
                </description>
@@ -966,7 +966,7 @@
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/FLocat/@LOCTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/FLocat[@LOCTYPE='URL']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -976,7 +976,7 @@
                     <head>Type of link</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/FLocat/@xlink:type</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/FLocat[@xlink:type='simple']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -986,7 +986,7 @@
                     <head>Resource location</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The actual location of the resource. We  recommend recording a URL type filepath within this attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>fileSec/fileGrp/file/FLocat/@xlink:href</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/FLocat/@xlink:href</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1001,7 +1001,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">Each METS file must include ONE structural map `&lt;structMap&gt;` element used exactly as described here.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Institutions can add their own additional custom structural maps as separate `&lt;structMap&gt;` sections.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
                     </dl>
                 </description>
@@ -1011,7 +1011,7 @@
                     <head>Type of structural description</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The `mets/structMap/@TYPE` attribute must take the value “PHYSICAL” from the vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/@TYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1019,9 +1019,9 @@
             <requirement ID="CSIP82" REQLEVEL="MUST" RELATEDMAT="VocabularyStructMapLabel" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Name of the structural description</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The `mets/structMap/@LABEL` attribute value is set to “CSIP structMap” from the vocabulary.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The `mets/structMap/@LABEL` attribute value is set to “CSIP” from the vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/@LABEL</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1031,7 +1031,7 @@
                     <head>Structural description identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the structural description (structMap) used for internal package references. It must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1041,7 +1041,7 @@
                     <head>Main structural division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The structural map comprises a single division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1051,7 +1051,7 @@
                     <head>Main structural division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1061,7 +1061,7 @@
                     <head>Main structural division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The package's top-level structural division `&lt;div&gt;` element's `@LABEL` attribute value must be identical to the package identifier, i.e. the same value as the `mets/@OBJID` attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/@LABEL</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1072,7 +1072,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The metadata referenced in the administrative and/or descriptive metadata section is described in the structural map with one sub division.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the transfer consist of only administrative and/or descriptive metadata this is the only sub division that occurs.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1082,7 +1082,7 @@
                     <head>Metadata division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1092,7 +1092,7 @@
                     <head>Metadata division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The metadata division `&lt;div&gt;` element's `@LABEL` attribute value must be "Metadata".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1103,7 +1103,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">When there is administrative metadata and the amdSec is present, all administrative metadata MUST be referenced via the administrative sections different identifiers.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">All of the `&lt;amdSec&gt;` identifiers are listed in a single `@AMDID` using spaces as delimeters.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@ADMID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1114,7 +1114,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">When there are descriptive metadata and one or more dmdSec is present, all descriptive metadata MUST be referenced via the descriptive section identifiers.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Every `&lt;dmdSec&gt;` identifier is listed in a single `@DMDID` attribute using spaces as delimeters.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@DMDID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@DMDID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1124,7 +1124,7 @@
                     <head>Documentation division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The documentation referenced in the file section file groups is described in the structural map with one sub division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1132,9 +1132,9 @@
             <requirement ID="CSIP94" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, xml:id identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1144,7 +1144,7 @@
                     <head>Documentation division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The documentation division `&lt;div&gt;` element in the package uses the value "Documentation" from the vocabulary as the value for the `@LABEL` attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1154,7 +1154,7 @@
                     <head>Documentation file referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups contaning documentation described in the package are referenced via the relevant file group identifiers. There MUST be one file group refrence per `&lt;fptr&gt;` element.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
@@ -1165,7 +1165,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">A reference, by ID, to the "Documentation" file group.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP60 which describes the "Documentation" file group and CSIP65 which describes the file group identfier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1175,7 +1175,7 @@
                     <head>Schema division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The schemas referenced in the file section file groups are described in the structural map within a single sub-division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1185,7 +1185,7 @@
                     <head>Schema division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1195,7 +1195,7 @@
                     <head>Schema division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The schema division `&lt;div&gt;` element's `@LABEL` attribute has the value "Schemas" from the vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1205,7 +1205,7 @@
                     <head>Schema file reference</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
@@ -1216,7 +1216,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identfier for the "Schema" file group.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP113 which describes the "Schema" file group and CSIP65 which describes the file group identfier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1226,7 +1226,7 @@
                     <head>Content division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When no representations are present the content referenced in the file section file group with `@USE` attribute value "Representations" is described in the structural map as a single sub division.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
@@ -1236,7 +1236,7 @@
                     <head>Content division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1246,7 +1246,7 @@
                     <head>Content division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The package's content division `&lt;div&gt;` element must have the `@LABEL` attribute value "Representations", taken from the vocabulary.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1256,18 +1256,18 @@
                     <head>Content division file references</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing content described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
             </requirement>
             <requirement ID="CSIP119" REQLEVEL="MUST" RELATEDMAT="CSIP114 CSIP65" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
-                    <head>Schema file group reference pointer</head>
+                    <head>Content division file group references</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identfier for the "Representations" file group.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP114 which describes the "Representations" file group and CSIP65 which describes the file group identfier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1278,7 +1278,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">When a package consists of multiple representations, each described by a representation level METS.xml document, there is a discrete representation div element for each representation.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Each representation div references the representation level METS.xml document, documenting the structure of the package and its constituent representations.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
@@ -1288,7 +1288,7 @@
                     <head>Representations division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1299,7 +1299,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The package's representation division `&lt;div&gt;` element `@LABEL` attribute value must be the path to the representation level METS document.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">This requirement gives the same value to be used as the requirement named "File group identifier" (CSIP64)</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1310,7 +1310,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the files described in the package are referenced via the relevant file group identifier.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP114 which describes the "Representations" file group and CSIP65 which describes the file group identfier.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/mptr/@xlink:title</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/mptr/@xlink:title</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1320,7 +1320,7 @@
                     <head>Representation METS pointer</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The division `&lt;div&gt;` of the specific representation includes one occurrence of the METS pointer `&lt;mptr&gt;` element, pointing to the appropriate representation METS file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/mptr</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/mptr</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1330,7 +1330,7 @@
                     <head>Resource location</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The actual location of the resource. We  recommend recording a URL type filepath within this attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/mptr/@xlink:href</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap/div/div/mptr/@xlink:href</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1340,7 +1340,7 @@
                     <head>Type of link</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/mptr/@xlink:type</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap/div/div/mptr[@xlink:type='simple']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -1350,7 +1350,7 @@
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>structMap/div/div/mptr/@LOCTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/structMap/div/div/mptr[@LOCTYPE='URL']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
