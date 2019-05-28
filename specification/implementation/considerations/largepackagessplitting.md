@@ -1,3 +1,10 @@
+- [6.2. Handling large packages](#62-handling-large-packages)
+	    - [6.2.1.	The structure for IP, their representations and their segments](#621-the-structure-for-ip-their-representations-and-their-segments)
+	    - [6.2.2.	Using METS to refer from parent IP to child IP](#622-using-mets-to-refer-from-parent-ip-to-child-ips)
+	    - [6.2.3.	Using METS to refer from child IP to parent IP](#623-using-mets-to-refer-from-child-ip-to-parent-ip)
+	    - [6.2.4.	An example for the Northwind database](#624-an-example-for-the-northwind-database)
+	    - [6.2.5.	Illustration of references between METS files in a segmented IP](#625-illustration-of-references-between-mets-files-in-a-segmented-ip)
+	  - 
 ## 6.2. Handling large packages
 By default a Common Specification IP should be contained in a single folder or archive file. However, the amount of data and metadata within a single IP can easily grow to several GB or even TB and become difficult to manage and inefficient to process e.g. due to insufficient storage capacity.
 
