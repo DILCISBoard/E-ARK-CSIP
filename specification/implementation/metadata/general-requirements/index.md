@@ -48,7 +48,7 @@ Note that the identifiers specified within the CSIP are mainly used as internal 
 ### Referencing between files within a CSIP Information Package
 The CSIP strongly recommends that all components of an information package (i.e. all data, metadata and other parts) are stored as discrete files within the package. While this approach simplifies the management of the Information Package, making it easier to aggregate, validate and modify the package, it also necessitates a clear method for recording and resolving referencing between files.
 
-For example, when using the CSIP METS Profile referencing can occur between:
+For example, when using the CSIP referencing can occur between:
 
 - descriptive and administrative metadata files described in the `amdSec` and `dmdSec` elements;
 - content (data) files, components of documentation, and schemas described in the `fileSec` element;
