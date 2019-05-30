@@ -1407,25 +1407,26 @@
         </note>
     </tool>
     <tool>
-        <!--  Karin: Completion of this needed or are they only present in the profiles for SIP/AIP/DIP? -->
         <name>RODA</name>
-        <URI>Link to it in Git?</URI>
+        <URI>http://github.com/keeps/roda</URI>
         <description>
-            <p xmlns="http://www.w3.org/1999/xhtml">What the tool does.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">RODA is a digital repository solution that delivers functionality for all the main units of the OAIS reference model. RODA is capable of ingesting, managing and providing access to the various types of digital objects produced by large corporations or public bodies. RODA is based on open-source technologies and is supported by existing standards such as the Open Archival Information System (OAIS), Metadata Encoding and Transmission Standard (METS), Encoded Archival Description (EAD), Dublin Core (DC) and PREMIS (Preservation Metadata).</p>
         </description>
         <note>
-            <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">RODA is licensed under LGPLv3 for all source-code including interoperability libraries like SIP manipulation libraries.</p>
         </note>
     </tool>
     <tool>
-        <!--  Karin: Completion of this needed or are they only present in the profiles for SIP/AIP/DIP? -->
-        <name>E-ARK Web</name>
-        <URI>Link to it in Git?</URI>
+        <name>RODA-in</name>
+        <URI>https://rodain.roda-community.org</URI>
         <description>
-            <p xmlns="http://www.w3.org/1999/xhtml">What the tool does.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">RODA-in is a tool specially designed for producers and archivists to create Submission Information Packages (SIP) ready to be submitted to an Open Archival Information System (OAIS). The tool creates SIPs from files and folders available on the local file system.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">
+                RODA-in supports several Submission Information Package formats such as BagIt, E-ARK SIP and the Hungarian SIP format.
+            </p>
         </description>
         <note>
-            <p xmlns="http://www.w3.org/1999/xhtml">Do we need a note?</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">RODA-in is licensed under LGPLv3.</p>
         </note>
     </tool>
     <Example ID="metsRootElementExample1" LABEL="METS root element showing use of `csip:@OTHERTYPE` attribute when an appropriate package content category value is not available in the vocabulary. The `@TYPE` attribute value is set to OTHER.">
