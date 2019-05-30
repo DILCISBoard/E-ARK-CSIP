@@ -13,4 +13,4 @@
 | <a name="CSIP27"></a>**CSIP27** | **File size** <br/> `mets/dmdSec/mdRef/@SIZE` | Size of the referenced file in bytes. | **1..1** <br/> MUST |
 | <a name="CSIP28"></a>**CSIP28** | **File creation date** <br/> `mets/dmdSec/mdRef/@CREATED` | The creation date of the referenced file. | **1..1** <br/> MUST |
 | <a name="CSIP29"></a>**CSIP29** | **File checksum** <br/> `mets/dmdSec/mdRef/@CHECKSUM` | The checksum of the referenced file. | **1..1** <br/> MUST |
-| <a name="CSIP30"></a>**CSIP30** | **File checksum type** <br/> `mets/dmdSec/mdRef/@CHECKSUMTYPE` | The type of checksum following the value list in the standard which used for the referenced file. | **1..1** <br/> MUST |
+| <a name="CSIP30"></a>**CSIP30** | **File checksum type** <br/> `mets/dmdSec/mdRef/@CHECKSUMTYPE` | The type of checksum following the value list present in the METS-standard which has been used for calculating the checksum for the referenced file. | **1..1** <br/> MUST |
