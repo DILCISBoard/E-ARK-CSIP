@@ -138,7 +138,7 @@ Following Principle 3.4 the structure separates explicitly the representations o
 
 Following Principle 3.5 repositories and their users have the possibility to add any additional components (as an example for schemas and binary support documentation) either as extensions to the whole Information Package or into a specific representation.
 
-This common structure **SHOULD** be followed throughout all specific physical implementations of the CSIP.
+This common structure **SHOULD** be followed throughout all implementations of the CSIP.
 
 ### Principle 3.7:
 *The Information Package **MUST** be implemented by ONLY ONE implementation at any point in time.*
