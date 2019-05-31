@@ -26,7 +26,7 @@ As such the CSIP does also not define the principle to use a particular transfer
 ### Principle 1.3
 *The package format **MUST NOT** define the scope of data and metadata which constitutes an Information Package.*
 
-One of the fundamental principles of the CSIP is that it MUST allow each individual repository to define the (intellectual) scope of an Information Package and its relations to real life entities. As such, any implementation of the CSIP MUST be equally usable for packaging, for example, the whole content of an ERMS as an single IP; or for extracting each record and its metadata from the ERMS individually and packaging each as a separate IP.
+One of the fundamental principles of the CSIP is that it MUST allow each individual repository to define the (intellectual) scope of an Information Package and its relations to real life entities. As such, any implementation of the CSIP MUST be equally usable for packaging, for example, the entire content of an ERMS as an single IP; or for extracting each record and its metadata from the ERMS individually and packaging each as a separate IP.
 
 Out of the previous we can also derive that a CSIP specification MUST NOT define that, for example, a SIP should conform to exactly one AIP. Instead the CSIP MUST allow for the inclusion of “anything that the implementer wants to define as a SIP, AIP or DIP” and allow for “any relationships (1-1; 1-n; n-1; n-m) between SIPs, AIPs and DIPs".
 
@@ -50,21 +50,21 @@ In long-term preservation we also need to take into account that “forgotten”
 In practice this means that any implementation of the CSIP should ensure that folder and file naming conventions allow for the human identification of package components, and that the semantics of the package is explicit.
 
 ### Principle 1.7:
-*The Information Package **MUST** support the preservation method best suited for the data.*
+*The Information Package **MUST NOT** prescribe the use of a specific preservation method*
 
-Different preservation institutions and different types of data need to use different methods for long-term preservation; migration and emulation being the most usual choices. A CSIP Information Package implementation MUST NOT prescribe the use of a specific preservation method but instead allow to document and/or add any data or metadata which is needed for any method.
+Different preservation institutions and different types of data need to use different methods for long-term preservation; migration and emulation are typical examples. A CSIP implementation MUST NOT prescribe the use of a specific preservation method. Instead it should allow users to document and/or add arbitrary data or metadata as necessary for preservation purposes.
 
 ## 3.2 Identification of the Information Package
 
 ### Principle 2.1:
 *The Information Package OAIS type (SIP, AIP or DIP) **MUST** be clearly indicated.*
 
-One of the first tasks in analysing any Information Package is to identify its current status in the overall archival process. Therefore, any Information Package must explicitly and uniformly include metadata which identifies it as a SIP, AIP or DIP.
+One of the first tasks in analysing any Information Package is to identify its current status in the overall archival process. Therefore, any Information Package must explicitly and uniformly identify itself as a SIP, AIP or DIP.
 
 ### Principle 2.2:
 *Any Information Package **MUST** clearly identify the Content Information Type(s) of its data and metadata.*
 
-As stated in Principle 1.1 any Information Package MUST be able to include any kind of data and metadata. At the same time we have introduced in earlier Sections the concept of Content Information Types which allow users to achieve more detailed control and fine-grained interoperability. As such, any CSIP Information Package MUST include a statement about which Content Information Type specification(s) has been followed within the Information Package, or on the contrary, indicate clearly that no specific Content Information Type Specification has been followed.
+As stated in Principle 1.1 any Information Package MUST be able to include any kind of data and metadata. At the same time we have introduced in earlier Sections the concept of Content Information Types which allow users to achieve more detailed control and fine-grained interoperability. As such, any CSIP Information Package MUST include a statement about which Content Information Type Specification(s) has been followed within the Information Package, or on the contrary, indicate clearly that no specific Content Information Type Specification has been followed.
 
 The practical implication of principles 1.1, 2.1 and 2.2 is that, once these have been followed in implementations, we can in fact develop modular identification and validation tools and workflows. While generic components can carry out high level tasks regardless of the Content Information Type, it is possible to detect automatically which additional content-aware modules need to be executed.
 
@@ -92,7 +92,7 @@ The components of a Information Package are explained in more detail in the foll
 ### Principle 3.1:
 *The Information Package **MUST** ensure that data and metadata are logically separated from one another.*
 
-At the highest level each Information Package can be divided into data and metadata. In order to minimise the effort needed for the identification and validation of both, and to simplify long-term preservation actions it is reasonable to clearly separate data and metadata. This allows, for example, ingest tools to streamline and separate metadata identification and validation tasks, and file format identification and normalisation. Throughout long-term preservation such a separation allows also The most crucial (MUST) aspect of such separation is that it is achieved on the logical level of the Information Package.
+At it's highest level, each Information Package can be logically sub-divided into data and metadata. This logical separation minimises the effort required to identify or validate content/metadata and simplifies long term preservation actions. For example, ingest tools may implement separate, efficient metadata identification and validation tasks as opposed to content format identification and normalisation tasks. Over a package's lifetime this separation also facilitates long-term preservation tasks, such as partial metadata or data updates that don't put the package's integrity at risk. Regardless of a package's physical structure, the Information Package **MUST** provide logical separation of data and metadata in the package's manifest.
 
 ### Principle 3.2:
 *The Information Package **SHOULD** ensure that data and metadata are physically separated from one another.*
@@ -114,29 +114,31 @@ Expressing representations within the logical and physical structure of an Infor
 ### Principle 3.5:
 *The structure of the Information Package **MUST** explicitly define the possibilities for adding additional components into the Information Package.*
 
-In addition to data and metadata, institutions might have the need to include additional information in an Information Package. For example, implementers might decide that XML Schemas about metadata structures and additional binary documentation about the original IT environment have to be added to the package.
+In addition to data and metadata, institutions might have the need to include additional components in an Information Package. For example, implementers might decide that XML Schemas about metadata structures and additional binary documentation about the original IT environment have to be added to the package.
 
 If this is the case, the CSIP Information Package MUST NOT limit which components can constitute an Information Package, and MUST offer clearly defined extension points for the inclusion of these additional components into the Information Package. At the same time these extension points MUST be defined in a way which does not interfere with other components (i.e. the extension points MUST be clearly separated from other components of an Information Package).
 
 ### Principle 3.6:
-*The Information Package **MUST** follow a common conceptual structure regardless of its technical implementation.*
+*The Information Package **SHOULD** follow a common conceptual structure regardless of its technical implementation.*
 
-Based on principles 3.1 – 3.4 we now present a common structure for any CSIP Information Package ([Figure 7](#fig7)).
+Based on principles 3.1 – 3.5 we present a common structure for any CSIP Information Package ([Figure 7](#fig7)).
 
 <a name="fig7"></a>
-![Conceptual Structure](figs/fig_7_cs_con_struct.png "Conceptual structure of the Common Specification")
+![Conceptual Structure](figs/fig_7_cs_con_struct.svg "Conceptual structure of the Common Specification")
 
 **Figure 7:** Conceptual structure of the Common Specification
 
-Following Principle 3.4 the structure separates explicitly the representations of data and metadata into a separate structural component.
-
 Following Principle 3.1 the package MUST include a high-level structural component for metadata which includes at least relevant metadata for the whole package. In addition the representations MUST internally separate between data and metadata (though note that the CSIP does not mandate that both data and metadata must be available in all representations).
 
-In addition we highly recommend dividing the metadata portion of the Information Package to separate different types of metadata (SHOULD Principle 3.3).
+Following Principle 3.2 we strongly recommend this logical structure to be manifested as a physical folder structure.
+
+Following Principle 3.3 we strongly recommend sub-dividing any package metadata into separate metadata sub-types.
+
+Following Principle 3.4 the structure separates explicitly the representations of data and metadata into a separate structural component.
 
 Following Principle 3.5 repositories and their users have the possibility to add any additional components (as an example for schemas and binary support documentation) either as extensions to the whole Information Package or into a specific representation.
 
-This common structure MUST be followed throughout all specific physical implementations of the CSIP.
+This common structure **SHOULD** be followed throughout all specific physical implementations of the CSIP.
 
 ### Principle 3.7:
 *The Information Package **MUST** be implemented by ONLY ONE implementation at any point in time.*

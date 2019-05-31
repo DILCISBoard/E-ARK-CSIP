@@ -1,9 +1,9 @@
 E-ARK CSIP Table Of Contents
 ============================
 
-Version: 2.0.0-DRAFT
+Version: 2.0.0-RC
 
-November 28, 2018
+May 16, 2019
 
 
 Contents
@@ -18,22 +18,21 @@ Contents
 	- [1.3 Common Specification for Information Packages, OAIS Information Packages’ specifications and Content Information Type Specifications](#13-common-specification-for-information-packages-oais-information-packages-specifications-and-content-information-type-specifications)
 	- [1.4. Relation to other documents](#14-relation-to-other-documents)
 		- [International standards and best-practices](#international-standards-and-best-practices)
-		- [E-ARK project (2014 – 2017) deliverables](#e-ark-project-2014--2017-deliverables)
 		- [Other E-ARK specifications](#other-e-ark-specifications)
 	- [1.5. Structure of the document](#15-structure-of-the-document)
 - [PART I: Common Specification for Information Packages](#part-i-common-specification-for-information-packages)
 	- [2.	Need for establishing common ground](#2-need-for-establishing-common-ground)
-	- [3. Requirements for CS IP Information Packages](#3-principles-for-interoperable-information-packages)
+	- [3. Requirements for CSIP Information Packages](#3-principles-for-interoperable-information-packages)
 		- [3.1. General principles](#31-general-principles)
 		- [3.2. Identification of the Information Package](#32-identification-of-the-information-package)
 		- [3.3.	Structure of the Information Package](#33-structure-of-the-information-package)
 		- [3.4.	Information Package Metadata](#34-information-package-metadata)
-- [PART II: Implementation of the CS IP](#part-ii-implementation-of-the-csip)
+- [PART II: Implementation of the CSIP](#part-ii-implementation-of-the-csip)
 	- [4.	CSIP structure](#4-csip-structure)
-	  - [4.1 Folder structure of the CS IP](#41-folder-structure-of-the-csip)
+	  - [4.1 Folder structure of the CSIP](#41-folder-structure-of-the-csip)
 	  - [4.2 Implementing the structure](#42-implementing-the-structure)
 	- [5. Use of metadata](#5-use-of-metadata)
-		- [5.1. General requirements for metadata in a CS IP Information Package](#51-general-requirements-for-metadata-in-a-cs-ip-information-package)
+		- [5.1. General requirements for metadata in a CSIP Information Package](#51-general-requirements-for-metadata-in-a-csip-information-package)
 		- [5.2. General requirements for the use of metadata](#52-general-requirements-for-the-use-of-metadata)
 		- [5.3. Use of METS](#53-use-of-mets)
 	    - [5.3.1.	Use of the METS root element (element mets)](#531-use-of-the-mets-root-element-element-mets)
@@ -41,7 +40,7 @@ Contents
 	    - [5.3.3 Use of the METS descriptive metadata section (element dmdSec)](#533-use-of-the-mets-descriptive-metadata-section-element-dmdsec)
 	    - [5.3.4.	Use of the METS administrative metadata section (element amdSec)](#534-use-of-the-mets-administrative-metadata-section-element-amdsec)
 	    - [5.3.5.	Use of the METS file section (element fileSec)](#535-use-of-the-mets-file-section-element-filesec)
-	    - [5.3.6.	Use of the METS structural map (element structMap)](#536-use-of-the-mets-structural-map-element-structmap)
+	    - `5.3.6.	Use of the METS structural map (element structMap)](#536-use-of-the-mets-structural-map-structmap)
 		- [5.4. Use of PREMIS](#54-use-of-premis)
 	- [6. Implementation considerations](#6-implementation-considerations)
 	  - [6.1.	Content Information Type Specifications](#61-content-information-type-specifications)
@@ -72,5 +71,5 @@ Contact & Feedback
 The Common Specification for Information Packages is maintained by the Digital Information LifeCycle
 Interoperability Standard Board (DILCIS Board). For further information about the DILCIS Board or feedback
 on the current document please consult the website http://www.dilcis.eu/ or contact us at
-<dasboard@dlmforum.eu.>
+<info@dilcis.eu>.
  

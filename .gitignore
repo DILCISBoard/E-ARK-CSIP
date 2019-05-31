@@ -7,5 +7,7 @@ Gemfile.lock
 **/*.jar
 **/target
 **/bin
-
+**/*.class
+.vagrant*
+.venv
 vendor

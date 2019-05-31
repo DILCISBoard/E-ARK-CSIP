@@ -12,12 +12,11 @@ The amount of digital information being created, held and exchanged is continuou
 - to satisfy historical, cultural, scientific and business interest.
 
 As of now, most tools and systems used to create information are not built for coping with long-term
-requirements of keeping information safe and accessible. Instead, implementations separate the short-
-term and long-term management of information into different systems, for example business and records
-systems on one hand and archival systems on the other (Figure 5).
+requirements of keeping information safe and accessible. Instead, implementations separate the short-term and long-term management of information into different systems, for example business and records
+systems on one hand and archival systems on the other ([Figure 5](#fig5)).
 
 <a name="fig5"></a>
-![OAIS Entities](figs/fig_5_oais_ent.png "Information flow between live and archival systems")
+![OAIS Entities](figs/fig_5_oais_ent.svg "Information flow between live and archival systems")
 
 **Figure 5:** Information flow between live and archival systems
 
@@ -33,7 +32,7 @@ As such, what we need in order to make the long-term availability of crucial inf
 (usually limited) resources is a set of principles which allow exchanging information in a common way
 across the systems participating in archival workflows and processes, i.e. create a set of interoperability
 specifications. For archival information packages we have identified the following interoperability scenarios
-(Figure 6):
+([Figure 6](#fig6)):
 
 - Export of data and metadata from source systems and transfer to SIP creation tools (or directly, as
 an SIP, into preservation systems);
@@ -46,12 +45,12 @@ preservation systems;
 - Exchange of DIPs between various access platforms of portals.
 
 <a name="fig6"></a>
-![OAIS Entities](figs/fig_6_arch_wrkflw.png "Archival workflow and tool ecosystem")
+![OAIS Entities](figs/fig_6_arch_wrkflw.svg "Archival workflow and tool ecosystem")
 
 **Figure 6:** Archival workflow and tool ecosystem
 
 As of 2014 (the start of the development of this specification) the state of interoperability in digital preservation was rather poor. While national and institutional practical implementation-level specifications existed to serve the need for data and metadata packaging and exchange, these were by large not
-interoperable with each other. On the contrary, available and widely used international specifications (most notably METS  and PREMIS ) lack the necessary implementation-level detail, needed in order to serve as an authoritative source for practical interoperability.
+interoperable with each other. On the contrary, available and widely used international specifications (most notably METS and PREMIS) lack the necessary implementation-level detail, needed in order to serve as an authoritative source for practical interoperability.
 
 This situation has a remarkable effect on the cost of digital preservation. Namely, the tools developed in individual institutions are not reusable across institutional and state borders and therefore need to be redeveloped at each single location. Globally, this raises the cost of digital preservation to a level which makes it not affordable for smaller institutions and, at the same time, does often not allow developing tools which would be sufficiently mature, user-friendly and prone to errors. As well, the multitude of national or institutional specifications does not allow internationally active source system providers (e.g. Oracle, Microsoft) to build a single native archiving functionality into their products, meaning that there is a need for bespoke development (and therefore added cost) for each installation of these source systems across all sectors and countries.
 

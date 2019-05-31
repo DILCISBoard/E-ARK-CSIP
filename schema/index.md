@@ -6,22 +6,22 @@ CSIP Associated Schema Files
 
 - [METS XSD Schema](./mets.xsd)
   Version 1.12 of the METS schema
-- [DILCIS METS Extensions](./DILCISExtensionMETS.xsd)
+- [DILCIS METS Extensions](DILCISExtensionMETS.xsd)
   Enumerated restrictions and types for attributes:
   + `CONTENTINFORMATIONTYPE`
-  + `OTHERCONTENTTYPESPECIFICATION`
+  + `OTHERCONTENTINFORMATIONTYPE`
   + `OAISPACKAGETYPE`
   + `NOTETYPE`
-- [RELAX grammer for describing vocabularies](DILCISVocabularies.rng)
+- [RELAX grammar for describing vocabularies](DILCISVocabularies.rng)
   Used for vocabulary definitions below.
-- [DILCIS IP Vocabulary Definitions](./DILCISVocabulariesIP.xml)
+- DILCIS IP Vocabulary Definitions
   Fixed vocabularies for:
-  + `ContentTypeSpecification`
-  + `OAISPackageType`
-  + `AgentOtherType`
-  + `Status`
-  + `FileGrpAndStructMapDivisionLabel`
-  + `StructMapType`
-  + `StructMapLabel`
-  + `NoteType`
-  + `Type`
+  + [`OAISPackageType`](CSIPVocabularyOAISPackageType.xml)
+  + [`AgentOtherType`](CSIPVocabularyAgentOtherType.xml)
+  + [`ContentCategory`](CSIPVocabularyContentCategory.xml)
+  + [`ContentInformationTypeSpecification`](CSIPVocabularyContentInformationType.xml)
+  + [`Status`](CSIPVocabularyStatus.xml)
+  + [`FileGrpAndStructMapDivisionLabel`](CSIPVocabularyFileGrpAndStructMapDivisionLabel.xml)
+  + [`StructMapType`](CSIPVocabularyStructMapType.xml)
+  + [`StructMapLabel`](CSIPVocabularyStructMapLabel.xml)
+  + [`NoteType`](CSIPVocabularyNoteType.xml)
