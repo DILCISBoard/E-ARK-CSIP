@@ -1357,18 +1357,20 @@
             </requirement>
          </structMap>
          <structLink ID="structLinkElement">
-            <requirement REQLEVEL="MAY">
+            <requirement REQLEVEL="MAY" ID="REF_METS_1">
                 <description>
                     <head>structLink</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Section not defined or used in CSIP, additional own uses may occur.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Information regarding the structural links is found in the <a href="http://www.loc.gov/standards/mets/METSPrimer.pdf">METS Primer</a></p>
                 </description>
             </requirement>
         </structLink>
         <behaviorSec ID="behaviorSecElement">
-            <requirement REQLEVEL="MAY">
+            <requirement REQLEVEL="MAY" ID="REF_METS_2">
                 <description>
                     <head>behaviorSec</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Section not defined or used in CSIP, additional own uses may occur.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Information regarding the behavior section is found in the <a href="http://www.loc.gov/standards/mets/METSPrimer.pdf">METS Primer</a></p>
                 </description>
             </requirement>
         </behaviorSec>
