@@ -1384,7 +1384,7 @@
             </requirement>
         </content_files>
         <behavior_files>
-            <requirement ID="REF_METS_">
+            <requirement>
                 <description>
                     <p xmlns="http://www.w3.org/1999/xhtml">Requriments not stated in CSIP</p>
                 </description>
