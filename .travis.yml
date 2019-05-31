@@ -2,30 +2,29 @@ dist: trusty
 sudo: required
 language: java
 jdk:
-- openjdk8
-- oraclejdk8
+  - openjdk8
+  - oraclejdk8
 before_install:
-- sudo apt-get update
-- sudo apt-get install -y texlive texlive-base texlive-latex-extra texlive-fonts-extra
-  python-virtualenv librsvg2-bin
-- wget https://github.com/jgm/pandoc/releases/download/2.5/pandoc-2.5-linux.tar.gz
-- tar -xzvf pandoc-2.5-linux.tar.gz
-- rm pandoc-2.5-linux.tar.gz
-- sudo mv pandoc-2.5 /opt
-- sudo chmod +x /opt/pandoc-2.5/bin/pandoc
-- sudo ln -s /opt/pandoc-2.5/bin/pandoc /usr/local/bin/pandoc
-- sudo ln -s /opt/pandoc-2.5/bin/pandoc-citeproc /usr/local/bin/pandoc-citeproc
+  - sudo apt-get update
+  - sudo apt-get install -y texlive texlive-base texlive-latex-extra texlive-fonts-extra
+    python-virtualenv librsvg2-bin
+  - wget https://github.com/jgm/pandoc/releases/download/2.5/pandoc-2.5-linux.tar.gz
+  - tar -xzvf pandoc-2.5-linux.tar.gz
+  - rm pandoc-2.5-linux.tar.gz
+  - sudo mv pandoc-2.5 /opt
+  - sudo chmod +x /opt/pandoc-2.5/bin/pandoc
+  - sudo ln -s /opt/pandoc-2.5/bin/pandoc /usr/local/bin/pandoc
+  - sudo ln -s /opt/pandoc-2.5/bin/pandoc-citeproc /usr/local/bin/pandoc-citeproc
 script:
-- cd spec-publisher
-- mvn clean package
-- java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
-- cd ..
-- bash create-site.sh
-- bash create-pdf.sh
-- bundle install
-- bundle exec jekyll build -s ./docs -d ./_site
-- bundle exec htmlproofer ./_site --file-ignore /javadoc/ --only-4xx --check-html
-
+  - cd spec-publisher
+  - mvn clean package
+  - java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
+  - cd ..
+  - bash create-site.sh
+  - bash create-pdf.sh
+  - bundle install
+  - bundle exec jekyll build -s ./docs -d ./_site
+  - bundle exec htmlproofer ./_site --file-ignore /javadoc/ --only-4xx --check-html
 deploy:
   provider: pages
   skip_cleanup: true

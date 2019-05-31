@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
+echo "Generating GitHub pages site from markdown"
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR" || exit
+
 if [ ! -d ./docs ]
 then
   mkdir ./docs
@@ -25,3 +27,4 @@ cp -R specification/figs docs/
 cp -R spec-publisher/res/md/figs docs/
 cp -R profile docs/
 cp -R schema docs/
+cp -R archive docs/

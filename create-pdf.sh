@@ -22,9 +22,9 @@ pandoc  --from markdown \
         --template eisvogel \
         --listings \
         --toc \
+        --metadata-file ../pandoc/metadata.yaml \
         eark-csip-pdf.md \
-        "$SCRIPT_DIR/pandoc/metadata.yaml" \
-        -o "$SCRIPT_DIR/docs/pdf/eark-csip.pdf"
+        -o /pdf/eark-csip.pdf
 
 cd "$SCRIPT_DIR" || exit
 # if [ -e docs/eark-csip-pdf.md ]
