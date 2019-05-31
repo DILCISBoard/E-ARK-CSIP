@@ -24,7 +24,7 @@ pandoc  --from markdown \
         --toc \
         --metadata-file ../pandoc/metadata.yaml \
         eark-csip-pdf.md \
-        -o /pdf/eark-csip.pdf
+        -o pdf/eark-csip.pdf
 
 cd "$SCRIPT_DIR" || exit
 # if [ -e docs/eark-csip-pdf.md ]
