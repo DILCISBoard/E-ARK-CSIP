@@ -48,7 +48,7 @@ The implementation requirements of the CSIP Information Package structure are:
 **CSIPSTR13**: The representation folder **SHOULD** include a sub-folder named `metadata` which **MAY** include all metadata about the specific representation.
 
 <a name="CSIPSTR14"></a>
-**CSIPSTR14**: The Information Package folder and representation folder **MAY** be extended with additional sub-folders.
+**CSIPSTR14**: The Information Package **MAY** be extended with additional sub-folders.
 
 <a name="CSIPSTR15"></a>
 **CSIPSTR15**: We recommend including all XML schema documents for any structured metadata within package. These schema documents **SHOULD** be placed in a sub-folder called `schemas` within the Information Package root folder and/or the representation folder.
