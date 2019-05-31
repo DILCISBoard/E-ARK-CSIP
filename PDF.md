@@ -1,9 +1,11 @@
----
-title: "The E-ARK Common Specification for Information Packages"
-date: "16-04-2019"
-version: "2.0-DRAFT"
-...
+
+!INCLUDE "spec-publisher/res/md/common-intro.md"
+
 !INCLUDE "specification/index.md"
+
+!INCLUDE "specification/authors/index.md"
+
+!INCLUDE "specification/history/index.md"
 
 !INCLUDE "specification/introduction/index.md"
 

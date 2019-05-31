@@ -1,14 +1,13 @@
 dist: trusty
 sudo: required
-
 language: java
 jdk:
   - openjdk8
   - oraclejdk8
-
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y texlive texlive-base texlive-latex-extra texlive-fonts-extra python-virtualenv librsvg2-bin
+  - sudo apt-get install -y texlive texlive-base texlive-latex-extra texlive-fonts-extra
+    python-virtualenv librsvg2-bin
   - wget https://github.com/jgm/pandoc/releases/download/2.5/pandoc-2.5-linux.tar.gz
   - tar -xzvf pandoc-2.5-linux.tar.gz
   - rm pandoc-2.5-linux.tar.gz
@@ -16,35 +15,25 @@ before_install:
   - sudo chmod +x /opt/pandoc-2.5/bin/pandoc
   - sudo ln -s /opt/pandoc-2.5/bin/pandoc /usr/local/bin/pandoc
   - sudo ln -s /opt/pandoc-2.5/bin/pandoc-citeproc /usr/local/bin/pandoc-citeproc
-  - virtualenv -p python3 .venv/markdown
-  - source .venv/markdown/bin/activate
-  - pip install markdownPP
-  - deactivate
-
 script:
-  - cd utils/mets-profile-processor
+  - cd spec-publisher
   - mvn clean package
-  - java -jar target/mets-profile-proc.jar ../../profile/CSIP.xml
-  - cd ../..
+  - java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
+  - cd ..
+  - bash create-site.sh
+  - bash create-pdf.sh
   - bundle install
-  - bundle exec jekyll build
+  - bundle exec jekyll build -s ./docs -d ./_site
   - bundle exec htmlproofer ./_site --file-ignore /javadoc/ --only-4xx --check-html
-  - source .venv/markdown/bin/activate
-  - markdown-pp pandoc/pan-index.md -o pandoc/pdf.md
-  - deactivate
-  - >
-    pandoc  --include-before-body pandoc/include-before.tex
-    --reference-links
-    --filter pandoc-citeproc
-    --from markdown
-    --template pandoc/templates/eisvogel.latex
-    --listings
-    --toc
-    --number-sections
-    pandoc/pdf.md
-    pandoc/metadata.yaml
-    -o csip-specification.pdf
-
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  keep_history: true
+  local_dir: docs
+  on:
+    branch: master
 env:
   global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+    - secure: hI697DAe+XfkG4Ouf0HnU4lkysBZMSzwRJJPKLR46fG5VaLcwvpKO0WCavHB8EK2WWJh4zVPQVmt/Sc/dQRoG/bBIOxl8RRoxZxynqr9DSoeJzJY7NaapmovfH3mr8kSMGJiM6al/U0SpHCxUu2SLXKfPeuJKwynrwTDhCRr6QhI9mOJC1FMJl2cBgax5ScHGPxO/LiyeWCJpCfwoDWO6w5Qq689PwvwCnKJIgywG0zzBhD2Gxv3IN4j5Oi0KHFYns5bc7B0JtrPQjEBCtTMlrFnbKvB0dQQlIUCe+wSRVOpxvD4RtyRQBDhHmW9tNMpz148m1wL6TGTRvP5JYRyruIciloxlx9JBH3gm5C5xyVv7sUB4p8gO/h+zngugoQrMQckmrmC7bR5PMH9NLB7vGfSjYmpNb9JOPNbsih4kApt1k2WlJ2a3OjaRnyA2R34tBspChF+iwAwkjid58+1BnwZq0iLy6lPJqfPSqthq7Zz5xIHP5c/6u1X2wDrK69wxuphd/EFOVg1U1zh1tSSqgJIZAieoYwPLKQ+r4J2vVKEL87wZacruMD2uPCusHOp+fkKT/DTYH9k+UC24Q3sGkdWikZaBySIwUmZZ2bN07XWRXX7w1Miaqt5LH8TKinjBROySQFkgecqQQDJU9VM/8stGRrh5m+PMeXiFruMtrg=
