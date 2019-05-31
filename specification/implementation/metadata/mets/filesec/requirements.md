@@ -16,7 +16,7 @@
 | <a name="CSIP69"></a>**CSIP69** | **File size** <br/> `mets/fileSec/fileGrp/file/@SIZE` | Size of the referenced file in bytes. | **1..1** <br/> MUST |
 | <a name="CSIP70"></a>**CSIP70** | **File creation date** <br/> `mets/fileSec/fileGrp/file/@CREATED` | Creation date of the referenced file. | **1..1** <br/> MUST |
 | <a name="CSIP71"></a>**CSIP71** | **File checksum** <br/> `mets/fileSec/fileGrp/file/@CHECKSUM` | The checksum of the referenced file. | **1..1** <br/> MUST |
-| <a name="CSIP72"></a>**CSIP72** | **File checksum type** <br/> `mets/fileSec/fileGrp/file/@CHECKSUMTYPE` | The type of checksum following the value list in the standard which used for the referenced file. | **1..1** <br/> MUST |
+| <a name="CSIP72"></a>**CSIP72** | **File checksum type** <br/> `mets/fileSec/fileGrp/file/@CHECKSUMTYPE` | The type of checksum following the value list present in the METS-standard which has been used for calculating the checksum for the referenced file. | **1..1** <br/> MUST |
 | <a name="CSIP73"></a>**CSIP73** | **File original identfication** <br/> `mets/fileSec/fileGrp/file/@OWNERID` | If an identifier for the file was supplied by the owner it can be recorded in this attribute. | **0..1** <br/> MAY |
 | <a name="CSIP74"></a>**CSIP74** | **File reference to administrative metadata** <br/> `mets/fileSec/fileGrp/file/@ADMID` | If administrative metadata has been provided for the file this attribute refers to the file's administrative metadata by ID. | **0..1** <br/> MAY |
 | <a name="CSIP75"></a>**CSIP75** | **File reference to descriptive metadata** <br/> `mets/fileSec/fileGrp/file/@DMDID` | If descriptive metadata has been provided per file this attribute refers to the file's descriptive metadata by ID. | **0..1** <br/> MAY |

@@ -8,5 +8,6 @@ Gemfile.lock
 **/target
 **/bin
 **/*.class
-
+.vagrant*
+.venv
 vendor

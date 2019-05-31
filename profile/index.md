@@ -4,4 +4,4 @@ title: CSIP METS Profile
 CSIP METS Profile
 =================
 
-- [Current METS Profile XML document](./CSIP.xml)
+- [Current METS Profile XML document](./E-ARK-CSIP.xml)
