@@ -19,7 +19,7 @@ We describe the core metadata requirements using METS (Metadata Encoding & Trans
 
 Some metadata requirements are implied by the structure presented in the previous Section. As seen, one or more METS files can be present in a package. The METS file describing the whole package is from now called the "Package METS" and the METS file in the Representation folders are called "Representation METS". The detailed specification of using METS within the CSIP is available in Section 5.3.
 
-In addition to the METS files the CSIP recommends the inclusion of PREMIS metadata (PREservation Metadata Implementation Strategies, <http://www.loc.gov/standards/premis/>), placed in appropriate preservation metadata folders. This facilitates interoperable approach towards provenance and access to Information Packages. However, we recognise that, especially in the case of SIPs, appropriate preservation metadata is not always available. As such this is also not an absolute requirement though highly desirable. The detailed specification of the use of PREMIS within the CSIP is available in Section 5.4.
+In addition to the METS files the CSIP recommends the inclusion of PREMIS metadata (PREservation Metadata Implementation Strategies, <http://www.loc.gov/standards/premis/>), placed in appropriate preservation metadata folders. This facilitates interoperable approach towards provenance and access to Information Packages. However, we recognise that, especially in the case of SIPs, appropriate preservation metadata is not always available. As such this is also not an absolute requirement though highly desirable. A specification of the use of PREMIS within the CSIP is available in Section 5.4.
 
 The specification does not prohibit the use of additional metadata within Information Packages.
 
@@ -48,7 +48,7 @@ Note that the identifiers specified within the CSIP are mainly used as internal 
 ### Referencing between files within a CSIP Information Package
 The CSIP strongly recommends that all components of an information package (i.e. all data, metadata and other parts) are stored as discrete files within the package. While this approach simplifies the management of the Information Package, making it easier to aggregate, validate and modify the package, it also necessitates a clear method for recording and resolving referencing between files.
 
-For example, when using the CSIP METS Profile referencing can occur between:
+For example, when using the CSIP referencing can occur between:
 
 - descriptive and administrative metadata files described in the `amdSec` and `dmdSec` elements;
 - content (data) files, components of documentation, and schemas described in the `fileSec` element;

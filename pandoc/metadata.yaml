@@ -15,16 +15,16 @@ abstract: |
 margin-left:    1in
 margin-right:   1in
 
-version:	"2.0-DRAFT"
-date: "15.04.2019"
+version:	"2.0.0"
+date: "31.05.2019"
 titlepage: true
 titlepage-color: "186b9e"
 titlepage-text-color: "3adeca"
 titlepage-rule-color: "3adeca"
 titlepage-rule-height: 1
-logo:	pandoc/img/DILCISlogo.png
+logo:	../spec-publisher/pandoc/img/DILCISlogo.png
 toc-title:	'Table of contents'
-footer-center:	"Version "
+footer-center:	"v2.0.0"
 header-right:	DILCIS Board
 bibliography:	pandoc/bibliography.bib
 reference-section-title:	'Bibliography'

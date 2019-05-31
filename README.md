@@ -34,6 +34,15 @@ Project root
      Tools and utilities used to create and QA the specification documents.
 ```
 
+Publication Workflow
+--------------------
+
+## Requirement tables from Profile
+
+## Prepare final copy Markdown
+
+## Create and test web site
+
 Git
 ---
 

@@ -20,7 +20,7 @@ submit data and metadata to digital repositories; store it in long-term preserva
 
 The main goal in the development of this specification has been to identify and standardise the common aspects of IPs which are equally relevant and implemented by any of the functional entities of the overall digital preservation process presented in OAIS (i.e. pre-ingest, ingest, archival storage, data management and access). The practical implementation is that the specification allows for the development of generic tools and code libraries which can either be applied commonly across the whole lifecycle of digital data, or be reused as the basis for developing more specific, content or process-aware tools.
 
-Process level interoperability requires detailed technical specifications for the OAIS information package types, i.e. SIP, AIP and DIP. The Common Specification for Information Packages is accompanied by corresponding implementation profiles for E-ARK SIP, E-ARK AIP and E-ARK DIP.
+Process level interoperability requires detailed technical specifications for the OAIS information package types, i.e. SIP, AIP and DIP. The Common Specification for Information Packages is accompanied by corresponding extending implementation specifications for E-ARK SIP, E-ARK AIP and E-ARK DIP.
 
 <a name="fig2"></a>
 ![CS SCOPE](figs/fig_2_csip_scope.svg "The scope of Common Specification for Information Packages in regard to OAIS Information Packages.")
@@ -41,11 +41,11 @@ To allow for such in-depth control over specific content types and formats, E-AR
 
 As of November 2018 these Content Information Type Specifications, created by the E-ARK project and enchanced by the DILCIS Board, have been verified for usage within the Common Specification for Information Packages:
 
-- E-ARK ERMS: Content Information Type Specification Electronic Records Management Systems. This Content Information Type Specification describes the use of the CSIP for the archiving of records exported from ERMS-type systems;
+- E-ARK ERMS: Content Information Type Specification Electronic Records Management Systems. (<https://github.com/DILCISBoard/E-ARK-ERMS>) This Content Information Type Specification describes the use of the CSIP for the archiving of records exported from ERMS-type systems;
 
-- E-ARK Geodata: This Content Information Type Specifications build upon the INSPIRE directive and describes the storing geospatial information, within a CSIP compatible Information Package;
+- E-ARK Geodata: This Content Information Type Specifications build upon the INSPIRE directive and describes the storing geospatial information (<https://github.com/DILCISBoard/E-ARK-Geodata>), within a CSIP compatible Information Package;
 
-- E-ARK SIARD (SIARD1, SIARD2 and SIARDDK): This Content Information Type Specification describe the usage of the CSIP for the archiving, preservation and reuse of relational databases in one of the formats in the SIARD family (Software Independent Archiving of Relational Databases). Note, that SIARD1 and SIARDDK specifications are deemed outdated by the time of writing and are only intended to be used for packaging already available SIARD1 and SIARDDK packages in a CSIP compatible Information Packages. For new occurrences of archiving relational databases the use of the SIARD2 format  and according Content Information Type Specification is recommended.
+- E-ARK SIARD (SIARD1, SIARD2 and SIARDDK): This Content Information Type Specification describe the usage of the CSIP for the archiving, preservation and reuse of relational databases in one of the formats in the SIARD family (Software Independent Archiving of Relational Databases). (<https://github.com/DILCISBoard/SIARD>) Note, that SIARD1 and SIARDDK specifications are deemed outdated by the time of writing and are only intended to be used for packaging already available SIARD1 and SIARDDK packages in a CSIP compatible Information Packages. For new occurrences of archiving relational databases the use of the SIARD2 format  and according Content Information Type Specification is recommended.
 
 <a name="fig3"></a>
 ![TYPE SPECS](figs/fig_3_csip_types.svg "Common Specification for Information Packages and Content Information Type Specifications.")
@@ -88,9 +88,9 @@ We have investigated the structure of a SIP presented in PAIS, but as the implem
 
 ### Other E-ARK specifications
 
-- E-ARK SIP Specification
-- E-ARK AIP Specification
-- E-ARK DIP Specification
+- E-ARK SIP Specification (<https://github.com/DILCISBoard/E-ARK-SIP>)
+- E-ARK AIP Specification (<https://github.com/DILCISBoard/E-ARK-AIP>)
+- E-ARK DIP Specification (<https://github.com/DILCISBoard/E-ARK-DIP>)
 
 The E-ARK SIP, AIP and DIP specifications build on the Common Specification for
 Information Packages and extend it in regard to requirements derived from pre-ingest and ingest, archival storage, and access processes.
