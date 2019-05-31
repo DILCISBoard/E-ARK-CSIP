@@ -33,7 +33,7 @@ By default a Common Specification IP should be contained in a single folder or a
 
 The Common Specification can, in principle, be extended in different ways to support the segmentation of large packages into more manageable parts. 
 
-More guidance on to handle large packages will be given in a later version of CSIP. Please be aware that this will be a “recommended approach” and, at this point in time, is not a part of the CSIP. It is also not expected that all tools will support such a mechanism.
+The handling of large packages will be specified in a later version of CSIP. Please be aware that this will be a “recommended approach” and, at this point in time, it is not a part of the CSIP instead segmentation of large packages is depending on the local implementation. It is also not expected that all tools will support segmentation of large packages.
 
 ### 6.3 Handling descriptive metadata within the Common Specification
 Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The CSIP allows essentially for the inclusion of any kind of descriptive metadata in the IP. However, it is required that all descriptive metadata must be placed into the “metadata” folder of the IP, and that it is recommended (should) to also exploit the possibility of creating a specific sub-folder “descriptive” as seen in [Figure 11](#fig11) below (cf. EAD.xml).
