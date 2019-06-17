@@ -7,10 +7,6 @@ May 31, 2019
 
 Contents
 --------
-- I. [Authors](#authors)
-- II. [Revision History](#revision-history)
-- III. [Acknowledgements](#acknowledgements)
-- IV. [Contact & Feedback](#contact--feedback)
 - [1 Introduction](#1-introduction)
 	- [1.1 The Common Specification for Information Packages and OAIS](#11-the-common-specification-for-information-packages-and-oais)
 	- [1.2 The Common Specification for Information Packages and Content Information Type Specifications](#12-the-common-specification-for-information-packages-and-content-information-type-specifications)
