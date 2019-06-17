@@ -3,6 +3,22 @@ Authors
 
 | Name                             | Organisation                                       |
 | -------------------------------- | -------------------------------------------------- |
+| Sven Schlarb                     | Austrian Institute of Technology                   |
+| Anders Bo Nielsen                | Danish National Archives                           |
+| Phillip Mike Tømmerholt          | Danish National Archives                           |
+| Kuldar Aas                       | Estonian National Archives                         |
+| Koit Saarevet                    | Estonian National Archives                         |
+| Jaime Kaminski                   | Highbury IVS                                       |
+| Miguel Ferreira                  | Keep Solutions                                     |
+| Helder Silva                     | Keep Solutions                                     |
+| Carl Wilson                      | Open Preservation Foundation                       |
+| Karin Bredenberg                 | Swedish National Archives                          |
+
+Contributors to previous version
+-------
+
+| Name                             | Organisation                                       |
+| -------------------------------- | -------------------------------------------------- |
 | Karin Bredenberg                 | National Archives of Sweden                        |
 | Björn Skog                       | ES Solutions                                       |
 | Anders Bo Nielsen                | Danish National Archives                           |
