@@ -1,5 +1,6 @@
-Authors
--------
+
+I Authors
+---------
 
 | Name                             | Organisation                                       |
 | -------------------------------- | -------------------------------------------------- |
@@ -14,8 +15,7 @@ Authors
 | Carl Wilson                      | Open Preservation Foundation                       |
 | Karin Bredenberg                 | Swedish National Archives                          |
 
-Contributors to previous version
--------
+### Contributors to previous version
 
 | Name                             | Organisation                                       |
 | -------------------------------- | -------------------------------------------------- |

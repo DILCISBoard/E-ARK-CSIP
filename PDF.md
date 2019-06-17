@@ -3,10 +3,6 @@
 
 !INCLUDE "specification/index.md"
 
-!INCLUDE "specification/authors/index.md"
-
-!INCLUDE "specification/history/index.md"
-
 !INCLUDE "specification/introduction/index.md"
 
 !INCLUDE "specification/specification/index.md"
@@ -69,16 +65,6 @@
 
 !INCLUDE "specification/implementation/considerations/index.md"
 
-# Appendices
+!INCLUDE "specification/appendices/appendices.md"
 
-## Appendix A: E-ARK Information Package METS examples
-
-!INCLUDE "specification/appendices/examples/examples.md"
-
-## Appendix B: External Schema and Vocabularies
-
-!INCLUDE "specification/appendices/schema/schema.md"
-
-## Appendix C: A Full List of E-ARK CSIP Requirements
-
-!INCLUDE "specification/appendices/requirements/requirements.md"
+!INCLUDE "specification/postface/postface.md"
