@@ -2,8 +2,6 @@
 title: E-ARK Submission Information Package
 ---
 
-!TOC
-
 
 # Preface
 ## I. Aim of the specification
@@ -13,38 +11,61 @@ The foundation upon which the specifications are built is the Reference model fo
 A visualisation of the current specification network can be seen here:
 
 <a name="figi-dip"></a>
-![OAIS Entities](figs/Fig1DIP.svg "Diagram showing E-ARK specification dependency hierarchy.")
+![OAIS Entities](figs/fig_1_dip.svg "Diagram showing E-ARK specification dependency hierarchy")
 
 **Figure I:** Diagram showing E-ARK specification dependency hierarchy.
 
-| Specification | Aim and Goals  |
-|---------------|----------------|
-| Common Specification for Information Packages | This document introduces the concept of a Common Specification for Information Packages (CSIP). Its three main purposes are to: <ul><li>Establish a common understanding of the requirements which need to be met in order to achieve interoperability of Information Packages.</li><li>Establish a common base for the development of more specific Information Package definitions and tools within the digital preservation community.</li><li>Propose the details of an XML-based implementation of the requirements using, to the largest possible extent, standards which are widely used in international digital preservation. </li></ul>Ultimately the goal of the Common Specification is to reach a level of interoperability between all Information Packages so that tools implementing the Common Specification can be adopted by institutions without the need for further modifications or adaptations. |
-| E-ARK SIP | The main aims of this specification are to:<ul><li>Define a general structure for a Submission Information Package format suitable for a wide variety of archival scenarios, e.g. document and image collections, databases or geographical data.</li><li>Enhance interoperability between Producers and Archives.</li><li>Recommend best practices regarding metadata, content and structure of Submission Information Packages.</li></ul> |
-| E-ARK AIP | The main aims of this specification are to:<ul><li>Define a generic structure of the AIP format suitable for a wide variety of data types, such as document and image collections, archival records, databases or geographical data.</li><li>Recommend a set of metadata related to the structural and the preservation aspects of the AIP as implemented by the reference implementation (earkweb).</li><li>Ensure the format is suitable to store large quantities of data.</li></ul> |
-| E-ARK DIP | The main aims of this specification are to:<ul><li>Define a generic structure of the DIP format suitable for a wide variety of archival records, such as document and image collections, databases or geographical data.</li><li>Recommend a set of metadata related to the structural and access aspects of the DIP.</li></ul>  |
-| Content Information Type Specifications | The main aim and goal of a Content Information Type Specification is to:<ul><li>Define, in technical terms, how data and metadata must be formatted and placed within a CSIP Information Package in order to achieve interoperability in exchanging specific Content Information.</li></ul>The number of possible Content Information Type Specifications is unlimited. For at list of existing Content Information Type Specifications see, and read more about  Content Information Type Specifications in the Common Specification for Information Packages |
+### Overview of the E-ARK Specifications
+
+#### Common Specification for Information Packages (E-ARK CSIP)
+This document introduces the concept of a Common Specification for Information Packages (CSIP). Its three main purposes are to:
+
+- Establish a common understanding of the requirements which need to be met in order to achieve interoperability of Information Packages.
+- Establish a common base for the development of more specific Information Package definitions and tools within the digital preservation community.
+- Propose the details of an XML-based implementation of the requirements using, to the largest possible extent, standards which are widely used in international digital preservation.
+- Ultimately the goal of the Common Specification is to reach a level of interoperability between all Information Packages so that tools implementing the Common Specification can be adopted by institutions without the need for further modifications or adaptations.
+
+#### Specification for Submission Information Packages (E-ARK SIP)
+The main aims of this specification are to:
+
+- Define a general structure for a Submission Information Package format suitable for a wide variety of archival scenarios, e.g. document and image collections, databases or geographical data.
+- Enhance interoperability between Producers and Archives.
+- Recommend best practices regarding metadata, content and structure of Submission Information Packages.
+
+#### Specification for Archival Information Packages (E-ARK AIP)
+The main aims of this specification are to:
+
+- Define a generic structure of the AIP format suitable for a wide variety of data types, such as document and image collections, archival records, databases or geographical data.
+- Recommend a set of metadata related to the structural and the preservation aspects of the AIP as implemented by the reference implementation (earkweb).
+- Ensure the format is suitable to store large quantities of data.
+
+#### Specifcation for Dissemination Information Packages (E-ARK DIP)
+The main aims of this specification are to:
+
+- Define a generic structure of the DIP format suitable for a wide variety of archival records, such as document and image collections, databases or geographical data.
+- Recommend a set of metadata related to the structural and access aspects of the DIP.
+
+#### Content Information Type Specifications (E-ARK CITS)
+The main aims of a Content Information Type Specification are to:
+
+- Define, in technical terms, how data and metadata must be formatted and placed within a CSIP Information Package in order to achieve interoperability in exchanging specific Content Information.
+- The number of possible Content Information Type Specifications is unlimited. For at list of existing Content Information Type Specifications see, and read more about  Content Information Type Specifications in the Common Specification for Information Packages.
 
 ## II Organisational support
-This specification is maintained by the Digital Information LifeCycle Interoperability Standards Board (DILCIS Board, http://dilcis.eu/). The DILCIS Board was created to enhance and maintain the draft specifications developed in the European Archival Records and Knowledge Preservation Project (E-ARK project, http://eark-project.com/) which concluded in January 2017. The Board consists of eight members, but there is no restriction on the number of participants in the work. All Board documents and specifications are stored in GitHub (https://github.com/DILCISBoard) while published versions are made available on the Board webpage. Since 2018 the DILCIS Board has been responsible for the core specifications in the Connecting Europe Facility eArchiving Building Block https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/eArchiving.
+This specification is maintained by the Digital Information LifeCycle Interoperability Standards Board (DILCIS Board, <http://dilcis.eu/>). The DILCIS Board was created to enhance and maintain the draft specifications developed in the European Archival Records and Knowledge Preservation Project (E-ARK project, <http://eark-project.com/>) which concluded in January 2017. The Board consists of eight members, but there is no restriction on the number of participants in the work. All Board documents and specifications are stored in GitHub (<https://github.com/DILCISBoard/>) while published versions are made available on the Board webpage. Since 2018 the DILCIS Board has been responsible for the core specifications in the Connecting Europe Facility eArchiving Building Block <https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/eArchiving/>.
 
-## III Authors
-A full list of contributors to this specification, as well as the revision history can be found in Appendix 1.
+## III Authors & Revision History
+A full list of contributors to this specification, as well as the revision history can be found in the [Postface material](#postface).
 
 E-ARK CSIP Table Of Contents
 ============================
 
-Version: 2.0.0-RC
+Version: 2.0.0
 
-May 16, 2019
-
+May 31, 2019
 
 Contents
 --------
-- I. [Authors](#authors)
-- II. [Revision History](#revision-history)
-- III. [Acknowledgements](#acknowledgements)
-- IV. [Contact & Feedback](#contact--feedback)
 - [1 Introduction](#1-introduction)
 	- [1.1 The Common Specification for Information Packages and OAIS](#11-the-common-specification-for-information-packages-and-oais)
 	- [1.2 The Common Specification for Information Packages and Content Information Type Specifications](#12-the-common-specification-for-information-packages-and-content-information-type-specifications)
@@ -85,69 +106,7 @@ Contents
 	- [Appendix A: E-ARK Information Package METS examples](#appendix-a-e-ark-information-package-mets-examples)
 	- [Appendix B: External Schema and Vocabularies](#appendix-b-external-schema-and-vocabularies)
 	- [Appendix C: A Full List of E-ARK CSIP Requirements](#appendix-c-a-full-list-of-e-ark-csip-requirements)
-
-Acknowledgements
-----------------
-The Common Specification for Information Packages was first developed within the E-ARK project in 2014 – 2017. E-ARK was an EC-funded pilot action project in the Competiveness and Innovation Programme 2007- 2013, Grant Agreement no. 620998 under the Policy Support Programme.
-
-We would like to thank the National Archives of Sweden and Karin Bredenberg for their support and the availability of the Swedish national Common Specifications, upon which most of this document has been built.
-
-The authors of this deliverable would like to thank all national archives, tool developers and other stakeholders who provided valuable knowledge about their requirements for information packages and feedback to this specification!
-
-Contact & Feedback
-------------------
-The Common Specification for Information Packages is maintained by the Digital Information LifeCycle
-Interoperability Standard Board (DILCIS Board). For further information about the DILCIS Board or feedback
-on the current document please consult the website http://www.dilcis.eu/ or contact us at
-<info@dilcis.eu>.
- 
-
-Authors
--------
-
-| Name                             | Organisation                                       |
-| -------------------------------- | -------------------------------------------------- |
-| Karin Bredenberg                 | National Archives of Sweden                        |
-| Björn Skog                       | ES Solutions                                       |
-| Anders Bo Nielsen                | Danish National Archives                           |
-| Kathrine Hougaard Edsen Johansen | Danish National Archives                           |
-| Alex Thirifays                   | Danish National Archives // Magenta ApS            |
-| Sven Schlarb                     | Austrian Institute of Technology                   |
-| Andrew Wilson                    | University of Portsmouth // University of Brighton |
-| Tarvo Kärberg                    | National Archives of Estonia                       |
-| Kuldar Aas                       | National Archives of Estonia                       |
-| Luis Faria                       | Keep Solutions                                     |
-| Helder Silva                     | Keep Solutions                                     |
-| Miguel Ferreira                  | Keep Solutions                                     |
-| Carl Wilson                      | Open Preservation Foundation                       |
-
-Revision History
-----------------
-
-| Revision No. | Date       | Authors(s)                | Organisation | Description                                |
-| ------------ | ---------- | ------------------------- | ------------ | ------------------------------------------ |
-| 0.1          | 17.02.2014 | Björn Skog                | ESS          | First version.                             |
-| 0.2          | 21.02.2014 | Karin Bredenberg          | ESS          | Updating content.                          |
-| 0.3          | 24.02.2014 | Björn Skog                | ESS          | Updating content.                          |
-| 0.4          | 24.10.2014 | Tarvo Kärberg             | NAE          | Updating content.                          |
-| 0.41         | 05.11.2014 | Tarvo Kärberg             | NAE          | Adding content from Anders Bo Nielsen.     |
-| 0.42         | 08.12.2014 | Tarvo Kärberg             | NAE          | Updating content.                          |
-| 0.43         | 19.12.2014 | Tarvo Kärberg             | NAE          | Updating content.                          |
-| 0.5          | 26.01.2015 | Kathrine Hougaard Edsen   | DNA          | Updating content.                          |
-| 0.6          | 11.02.2015 | Tarvo Kärberg             | NAE          | Rearranging content.                       |
-| 0.7          | 31.05.2015 | Kathrine Hougaard Edsen   | DNA          | Significant changes suggested              |
-| 0.8          | 27.07.2015 | Tarvo Kärberg             | NAE          | Merging content                            |
-| 0.9          | 05.08.2015 | Andrew Wilson             | UPHEC        | Updating content                           |
-| 0.10         | 07.10.2015 | Kuldar Aas                | NAE          | Major update to include additional details |
-| 0.11         | 30.11.2015 | Kuldar Aas                | NAE          | Intermediate update to include outcomes and decisions from Common Specification meetings |
-| 0.12         | 08.12.2015 | Kuldar Aas                | NAE          | Update on the implementation, include comments from Sven, Jan (AIT) and Andrew (UPHEC) |
-| 0.13         | 05.01.2016 | Kuldar Aas, all           | NAE, all     | Update to include additional comments from E-ARK WPLs and Common Specification group members version sent for external review |
-| 0.14         | 04.07.2016 | Kuldar Aas                | NAE          | Updated structure -> basis for addressing review comments and required updates |
-| 0.15         | 26.08.2016 | Kuldar Aas                | NAE          | Adding available contributions to individual Sections |
-| 0.16         | 05.12.2016 | Andrew Wilson, Kuldar Aas | UoB, NAE     | Major update. Added section on PREMIS. Revision of tables describing use of METS. General text revisions arising from CS meetings. Updates to requirements. |
-| 0.17         | 16.12.2016        | All                | All          | Final discussions, changes and proofreading before delivering the CS to public comment. |
-| 1.0          | 31.01.2017        | Kuldar Aas         | NAE          | Final small editorial additions |
-| 1.1          | 14.05.2018        | Kuldar Aas (editor), DILCIS Board | NAE | Limited proofreading and updates throughout the document. Updates in terminology. Updates in use of METS, ID and referencing section. Improved (more consistent) examples in METS section. |
+- [Postface](#postface)
 
 # 1 Introduction
 This document introduces the concept of the Common Specification for Information Packages (CSIP). It aims to serve three main purposes:
@@ -704,8 +663,8 @@ When using XML schemas the availability of the actual schema resources should be
 
 The specific requirements for the root element and its attributes are described in the following table.
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
+|  ID  | Name & Loc | Description & usage | Card & Level |
+| ---- | ---------- | ------------------- | ------------ |
 | <a name="CSIP1"></a>**CSIP1** | **Package Identifier** <br/> `mets/@OBJID` | The `mets/@OBJID` attribute is mandatory, its value is a string identifier for the METS document. For the package METS document, this should be the name/ID of the package, i.e. the name of the package root folder. <br/> For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level representation folder. | **1..1** <br/> MUST |
 | <a name="CSIP2"></a>**CSIP2** | **Content Category** <br/> `mets/@TYPE` | The `mets/@TYPE` attribute MUST be used to declare the category of the content held in the package, e.g. book, journal, stereograph, video, etc.. Legal values are defined in a fixed vocabulary. When the content category used falls outside of the defined vocabulary the `mets/@TYPE` value must be set to "OTHER" and the specific value declared in `mets/@csip:OTHERTYPE`. The vocabulary will develop under the curation of the DILCIS Board as additional content information type specifications are produced. <br/> **See also:** <a href="#VocabularyContentCategory" >Content Category</a> | **1..1** <br/> MUST |
 | <a name="CSIP3"></a>**CSIP3** | **Other Content Category** <br/> `mets[@TYPE='OTHER']/@csip:OTHERTYPE` | When the `mets/@TYPE` attribute has the value "OTHER" the `mets/@csip:OTHERTYPE` attribute MUST be used to declare the content category of the package/representation. <br/> **See also:** <a href="#VocabularyContentCategory" >Content Category</a> | **0..1** <br/> SHOULD |
@@ -735,8 +694,8 @@ The purpose of the METS header section is to describe the METS document itself, 
 about the creator of the IP. The requirements for the metsHdr element, its sub-elements and attributes are presented in the following
 table.
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
+|  ID  | Name & Loc | Description & usage | Card & Level |
+| ---- | ---------- | ------------------- | ------------ |
 | <a name="CSIP117"></a>**CSIP117** | **Package header** <br/> `mets/metsHdr` | General element for describing the package. | **1..1** <br/> MUST |
 | <a name="CSIP7"></a>**CSIP7** | **Package creation date** <br/> `mets/metsHdr/@CREATEDATE` | `mets/metsHdr/@CREATEDATE` records the date the package was created. | **1..1** <br/> MUST |
 | <a name="CSIP8"></a>**CSIP8** | **Package last modification date** <br/> `mets/metsHdr/@LASTMODDATE` | `mets/metsHdr/@LASTMODDATE` is mandatory when the package has been modified. | **0..1** <br/> SHOULD |
@@ -770,8 +729,8 @@ The CSIP as such does not make any assumptions on the use of specific descriptiv
 
 Specific elements for which the exact use is fixed within this specification are highlighted in the following table.
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
+|  ID  | Name & Loc | Description & usage | Card & Level |
+| ---- | ---------- | ------------------- | ------------ |
 | <a name="CSIP17"></a>**CSIP17** | **Descriptive metadata** <br/> `mets/dmdSec` | Must be used if descriptive metadata for the package content is available. Each descriptive metadata section (`<dmdSec>`) contains a single description and must be repeated for mulitple descriptions, when available. <br/> It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section. | **0..n** <br/> SHOULD |
 | <a name="CSIP18"></a>**CSIP18** | **Descriptive metadata identifier** <br/> `mets/dmdSec/@ID` | An `xml:id` identifier for the descriptive metadata section (`<dmdSec>`) used for internal package references. It must be unique within the package. | **1..1** <br/> MUST |
 | <a name="CSIP19"></a>**CSIP19** | **Descriptive metadata creation date** <br/> `mets/dmdSec/@CREATED` | Creation date of the descriptive metadata in this section. | **1..1** <br/> MUST |
@@ -815,8 +774,8 @@ The METS `amdSec` element SHOULD include references to all relevant metadata loc
 
 The specific requirements for the `amdSec` element, its sub-elements and attributes are presented in the following table.
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
+|  ID  | Name & Loc | Description & usage | Card & Level |
+| ---- | ---------- | ------------------- | ------------ |
 | <a name="CSIP31"></a>**CSIP31** | **Administrative metadata** <br/> `mets/amdSec` | If administrative / preservation metadata is available, it must be described using the administrative metadata section (`<amdSec>`) element. <br/> All administrative metadata is present in a single `<amdSec>` element. <br/> It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section. | **0..1** <br/> SHOULD |
 | <a name="CSIP32"></a>**CSIP32** | **Digital provenance metadata** <br/> `mets/amdSec/digiprovMD` | For recording information about preservation the standard PREMIS is used. It is mandatory to include one `<digiprovMD>` element for each piece of PREMIS metadata. <br/> The use if PREMIS in METS is following the recommendations in  <br/> 2017 version of PREMIS in METS Guidelines | **0..n** <br/> SHOULD |
 | <a name="CSIP33"></a>**CSIP33** | **Digital provenance metadata identifier** <br/> `mets/amdSec/digiprovMD/@ID` | An `xml:id` identifier for the digital provenance metadata section `mets/amdSec/digiprovMD` used for internal package references. It must be unique within the package. | **1..1** <br/> MUST |
@@ -873,8 +832,8 @@ The CSIP requires that both package and representation level METS files include 
 
 The specific requirements for elements, sub-elements and attributes are listed in the following table. Note that the use of the stream and transformFile elements is not discussed below. Implementers wishing to use either of these METS elements should follow the requirements in the METS documentation.
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
+|  ID  | Name & Loc | Description & usage | Card & Level |
+| ---- | ---------- | ------------------- | ------------ |
 | <a name="CSIP58"></a>**CSIP58** | **File section** <br/> `mets/fileSec` | The transferred content is placed in the file section in different file group elements, described in other requirements. <br/> Only a single file section (`<fileSec>`) element should be present. <br/> It is possible to transfer just descriptive metadata and/or administrative metadata without files placed in this section. | **0..1** <br/> SHOULD |
 | <a name="CSIP59"></a>**CSIP59** | **File section identifier** <br/> `mets/fileSec/@ID` | An `xml:id` identifier for the file section used for internal package references. It must be unique within the package. | **1..1** <br/> MUST |
 | <a name="CSIP60"></a>**CSIP60** | **Documentation file group** <br/> `mets/fileSec/fileGrp[@USE='Documentation']` | All documentation pertaining to the transferred content is placed in one or more file group elements with `mets/fileSec/fileGrp/@USE` attribute value "Documentation". <br/> **See also:** <a href="#VocabularyFileGrpAndStructMapDivisionLabel" >File group names</a> | **1..n** <br/> MUST |
@@ -993,8 +952,8 @@ The most crucial requirements for the CSIP mandated structural map are as follow
 
 The specific requirements for elements, sub-elements and attributes are listed in the following table. Note that the `<area>`, `<seq>` and `<par>` elements are not discussed below.
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
+|  ID  | Name & Loc | Description & usage | Card & Level |
+| ---- | ---------- | ------------------- | ------------ |
 | <a name="CSIP80"></a>**CSIP80** | **Structural description of the package** <br/> `mets/structMap` | The structural map `<structMap>` element is the only mandatory element in the METS. <br/> The `<structMap>` in the CSIP describes the highest logical structure of the IP. <br/> Each METS file must include ONE structural map `<structMap>` element used exactly as described here. <br/> Institutions can add their own additional custom structural maps as separate `<structMap>` sections. | **1..n** <br/> MUST |
 | <a name="CSIP81"></a>**CSIP81** | **Type of structural description** <br/> `mets/structMap[@TYPE='PHYSICAL']` | The `mets/structMap/@TYPE` attribute must take the value “PHYSICAL” from the vocabulary. <br/> **See also:** <a href="#VocabularyStructMapType" >Structural map typing</a> | **1..1** <br/> MUST |
 | <a name="CSIP82"></a>**CSIP82** | **Name of the structural description** <br/> `mets/structMap[@LABEL='CSIP']` | The `mets/structMap/@LABEL` attribute value is set to “CSIP” from the vocabulary. <br/> **See also:** <a href="#VocabularyStructMapLabel" >Structural map label</a> | **1..1** <br/> MUST |
@@ -1177,6 +1136,10 @@ Further, all descriptive metadata need itself to be described in and referenced 
 Following the requirement of explicitly and physically separating descriptive metadata and data we would also like to note, that for interoperability purposes appropriate descriptive metadata elements must explicitly refer to the data content they describe (unless the whole data portion is a single intellectual unit described as a discrete set of descriptive metadata). For example, in the case of EAD elements `<dao>` and `<daogrp>` shall be used to refer to content files from the descriptive metadata. However, regardless of the descriptive metadata standard in question the references from descriptive metadata must always follow the requirement posed in Section 5.1 above (i.e. create references according to the format defined in RFC 3986, or to express references as a relative path to the data files).
 
 Finally we would also note that the recommendation of the CSIP is to always include detailed metadata about intellectual access restrictions and copyright into descriptive metadata (i.e. not into the METS or PREMIS portions of the IP).
+
+---
+title: Appendices
+---
 
 # Appendices
 
@@ -1471,8 +1434,8 @@ Own labels should be placed in an own extending vocabulary. <br/>
 
 ## Appendix C: A Full List of E-ARK CSIP Requirements
 
-| ID | Name & Location | Description & usage | Cardinality & Level |
-| -- | --------------- | ------------------- | ------------------- |
+|  ID  | Name & Loc | Description & usage | Card & Level |
+| ---- | ---------- | ------------------- | ------------ |
 | <a name="CSIP1"></a>**CSIP1** | **Package Identifier** <br/> `mets/@OBJID` | The `mets/@OBJID` attribute is mandatory, its value is a string identifier for the METS document. For the package METS document, this should be the name/ID of the package, i.e. the name of the package root folder. <br/> For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level representation folder. | **1..1** <br/> MUST |
 | <a name="CSIP2"></a>**CSIP2** | **Content Category** <br/> `mets/@TYPE` | The `mets/@TYPE` attribute MUST be used to declare the category of the content held in the package, e.g. book, journal, stereograph, video, etc.. Legal values are defined in a fixed vocabulary. When the content category used falls outside of the defined vocabulary the `mets/@TYPE` value must be set to "OTHER" and the specific value declared in `mets/@csip:OTHERTYPE`. The vocabulary will develop under the curation of the DILCIS Board as additional content information type specifications are produced. <br/> **See also:** <a href="#VocabularyContentCategory" >Content Category</a> | **1..1** <br/> MUST |
 | <a name="CSIP3"></a>**CSIP3** | **Other Content Category** <br/> `mets[@TYPE='OTHER']/@csip:OTHERTYPE` | When the `mets/@TYPE` attribute has the value "OTHER" the `mets/@csip:OTHERTYPE` attribute MUST be used to declare the content category of the package/representation. <br/> **See also:** <a href="#VocabularyContentCategory" >Content Category</a> | **0..1** <br/> SHOULD |
@@ -1592,3 +1555,71 @@ Own labels should be placed in an own extending vocabulary. <br/>
 | <a name="CSIP112"></a>**CSIP112** | **Type of locator** <br/> `mets/structMap/div/div/mptr[@LOCTYPE='URL']` | The locator type is always used with the value "URL" from the vocabulary in the attribute. | **1..1** <br/> MUST |
 | <a name="REF_METS_1"></a>**REF_METS_1** | **structLink** <br/>  | Section not defined or used in CSIP, additional own uses may occur. <br/> Information regarding the structural links is found in the  <br/> METS Primer |  <br/> MAY |
 | <a name="REF_METS_2"></a>**REF_METS_2** | **behaviorSec** <br/>  | Section not defined or used in CSIP, additional own uses may occur. <br/> Information regarding the behavior section is found in the  <br/> METS Primer |  <br/> MAY |
+
+# Postface
+
+
+I Authors
+---------
+
+| Name                             | Organisation                                       |
+| -------------------------------- | -------------------------------------------------- |
+| Sven Schlarb                     | Austrian Institute of Technology                   |
+| Anders Bo Nielsen                | Danish National Archives                           |
+| Phillip Mike Tømmerholt          | Danish National Archives                           |
+| Kuldar Aas                       | Estonian National Archives                         |
+| Koit Saarevet                    | Estonian National Archives                         |
+| Jaime Kaminski                   | Highbury IVS                                       |
+| Miguel Ferreira                  | Keep Solutions                                     |
+| Helder Silva                     | Keep Solutions                                     |
+| Carl Wilson                      | Open Preservation Foundation                       |
+| Karin Bredenberg                 | Swedish National Archives                          |
+
+### Contributors to previous version
+
+| Name                             | Organisation                                       |
+| -------------------------------- | -------------------------------------------------- |
+| Karin Bredenberg                 | National Archives of Sweden                        |
+| Björn Skog                       | ES Solutions                                       |
+| Anders Bo Nielsen                | Danish National Archives                           |
+| Kathrine Hougaard Edsen Johansen | Danish National Archives                           |
+| Alex Thirifays                   | Danish National Archives // Magenta ApS            |
+| Sven Schlarb                     | Austrian Institute of Technology                   |
+| Andrew Wilson                    | University of Portsmouth // University of Brighton |
+| Tarvo Kärberg                    | National Archives of Estonia                       |
+| Kuldar Aas                       | National Archives of Estonia                       |
+| Luis Faria                       | Keep Solutions                                     |
+| Helder Silva                     | Keep Solutions                                     |
+| Miguel Ferreira                  | Keep Solutions                                     |
+| Carl Wilson                      | Open Preservation Foundation                       |
+
+
+II Revision History
+----------------
+
+| Revision No. | Date       | Authors(s)                | Organisation | Description                                |
+| ------------ | ---------- | ------------------------- | ------------ | ------------------------------------------ |
+| 0.1          | 17.02.2014 | Björn Skog                | ESS          | First version.                             |
+| 0.2          | 21.02.2014 | Karin Bredenberg          | ESS          | Updating content.                          |
+| 0.3          | 24.02.2014 | Björn Skog                | ESS          | Updating content.                          |
+| 0.4          | 24.10.2014 | Tarvo Kärberg             | NAE          | Updating content.                          |
+| 0.41         | 05.11.2014 | Tarvo Kärberg             | NAE          | Adding content from Anders Bo Nielsen.     |
+| 0.42         | 08.12.2014 | Tarvo Kärberg             | NAE          | Updating content.                          |
+| 0.43         | 19.12.2014 | Tarvo Kärberg             | NAE          | Updating content.                          |
+| 0.5          | 26.01.2015 | Kathrine Hougaard Edsen   | DNA          | Updating content.                          |
+| 0.6          | 11.02.2015 | Tarvo Kärberg             | NAE          | Rearranging content.                       |
+| 0.7          | 31.05.2015 | Kathrine Hougaard Edsen   | DNA          | Significant changes suggested              |
+| 0.8          | 27.07.2015 | Tarvo Kärberg             | NAE          | Merging content                            |
+| 0.9          | 05.08.2015 | Andrew Wilson             | UPHEC        | Updating content                           |
+| 0.10         | 07.10.2015 | Kuldar Aas                | NAE          | Major update to include additional details |
+| 0.11         | 30.11.2015 | Kuldar Aas                | NAE          | Intermediate update to include outcomes and decisions from Common Specification meetings |
+| 0.12         | 08.12.2015 | Kuldar Aas                | NAE          | Update on the implementation, include comments from Sven, Jan (AIT) and Andrew (UPHEC) |
+| 0.13         | 05.01.2016 | Kuldar Aas, all           | NAE, all     | Update to include additional comments from E-ARK WPLs and Common Specification group members version sent for external review |
+| 0.14         | 04.07.2016 | Kuldar Aas                | NAE          | Updated structure -> basis for addressing review comments and required updates |
+| 0.15         | 26.08.2016 | Kuldar Aas                | NAE          | Adding available contributions to individual Sections |
+| 0.16         | 05.12.2016 | Andrew Wilson, Kuldar Aas | UoB, NAE     | Major update. Added section on PREMIS. Revision of tables describing use of METS. General text revisions arising from CS meetings. Updates to requirements. |
+| 0.17         | 16.12.2016        | All                | All          | Final discussions, changes and proofreading before delivering the CS to public comment. |
+| 1.0          | 31.01.2017        | Kuldar Aas         | NAE          | Final small editorial additions |
+| 1.1          | 14.05.2018        | Kuldar Aas (editor), DILCIS Board | NAE | Limited proofreading and updates throughout the document. Updates in terminology. Updates in use of METS, ID and referencing section. Improved (more consistent) examples in METS section. |
+| Draft 2.0    | 28.11.2018        | DILCIS Board, E-ARK4ALL | DILCIS Board | Specification updated and released for open review. |
+| 2.0          | 31.05.2019        | DILCIS Board, E-ARK4ALL | DILCIS Board | Specification updated after open review. |
