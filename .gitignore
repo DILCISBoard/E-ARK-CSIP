@@ -1,3 +1,6 @@
+# Site publication file
+docs/
+
 Gemfile.lock
 **/_site
 

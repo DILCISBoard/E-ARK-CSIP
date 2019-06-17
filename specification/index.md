@@ -1,17 +1,12 @@
 E-ARK CSIP Table Of Contents
 ============================
 
-Version: 2.0.0-RC
+Version: 2.0.0
 
-May 16, 2019
-
+May 31, 2019
 
 Contents
 --------
-- I. [Authors](#authors)
-- II. [Revision History](#revision-history)
-- III. [Acknowledgements](#acknowledgements)
-- IV. [Contact & Feedback](#contact--feedback)
 - [1 Introduction](#1-introduction)
 	- [1.1 The Common Specification for Information Packages and OAIS](#11-the-common-specification-for-information-packages-and-oais)
 	- [1.2 The Common Specification for Information Packages and Content Information Type Specifications](#12-the-common-specification-for-information-packages-and-content-information-type-specifications)
@@ -52,19 +47,4 @@ Contents
 	- [Appendix A: E-ARK Information Package METS examples](#appendix-a-e-ark-information-package-mets-examples)
 	- [Appendix B: External Schema and Vocabularies](#appendix-b-external-schema-and-vocabularies)
 	- [Appendix C: A Full List of E-ARK CSIP Requirements](#appendix-c-a-full-list-of-e-ark-csip-requirements)
-
-Acknowledgements
-----------------
-The Common Specification for Information Packages was first developed within the E-ARK project in 2014 – 2017. E-ARK was an EC-funded pilot action project in the Competiveness and Innovation Programme 2007- 2013, Grant Agreement no. 620998 under the Policy Support Programme.
-
-We would like to thank the National Archives of Sweden and Karin Bredenberg for their support and the availability of the Swedish national Common Specifications, upon which most of this document has been built.
-
-The authors of this deliverable would like to thank all national archives, tool developers and other stakeholders who provided valuable knowledge about their requirements for information packages and feedback to this specification!
-
-Contact & Feedback
-------------------
-The Common Specification for Information Packages is maintained by the Digital Information LifeCycle
-Interoperability Standard Board (DILCIS Board). For further information about the DILCIS Board or feedback
-on the current document please consult the website http://www.dilcis.eu/ or contact us at
-<info@dilcis.eu>.
- 
+- [Postface](#postface)

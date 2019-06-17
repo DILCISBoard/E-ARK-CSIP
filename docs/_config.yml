@@ -7,3 +7,10 @@ future: true
 jailed: false
 theme: jekyll-theme-primer
 gfm_quirks: paragraph_end
+
+gems:
+- jekyll-github-metadata
+- jekyll-mentions
+- jekyll-redirect-from
+- jekyll-sitemap
+- jemoji

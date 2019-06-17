@@ -1,4 +1,5 @@
-Revision History
+
+II Revision History
 ----------------
 
 | Revision No. | Date       | Authors(s)                | Organisation | Description                                |
@@ -25,3 +26,5 @@ Revision History
 | 0.17         | 16.12.2016        | All                | All          | Final discussions, changes and proofreading before delivering the CS to public comment. |
 | 1.0          | 31.01.2017        | Kuldar Aas         | NAE          | Final small editorial additions |
 | 1.1          | 14.05.2018        | Kuldar Aas (editor), DILCIS Board | NAE | Limited proofreading and updates throughout the document. Updates in terminology. Updates in use of METS, ID and referencing section. Improved (more consistent) examples in METS section. |
+| Draft 2.0    | 28.11.2018        | DILCIS Board, E-ARK4ALL | DILCIS Board | Specification updated and released for open review. |
+| 2.0          | 31.05.2019        | DILCIS Board, E-ARK4ALL | DILCIS Board | Specification updated after open review. |
