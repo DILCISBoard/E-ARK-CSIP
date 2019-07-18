@@ -813,10 +813,10 @@
                     <head>Content Information Type Specification</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An added attribute which states the name of the content information type specification used to create the package.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The vocabulary will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">This attribute is mandatory when the `mets/fileSec/fileGrp/@LABEL` attribute value is "Representations".</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">This attribute is mandatory when the `mets/fileSec/fileGrp/@USE` attribute value is "Representations".</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the "Package type" value is "Mixed" and/or the file group describes a "Representation", then this element states the content information type specification used for the file group.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@LABEL='Representations']/@csip:CONTENTINFORMATIONTYPE</dd>
+                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@USE='Representations']/@csip:CONTENTINFORMATIONTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
                     </dl>
                 </description>
