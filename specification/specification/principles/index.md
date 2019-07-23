@@ -1,4 +1,4 @@
-# 3 Principles for interoperable Information Packages
+# Principles for interoperable Information Packages
 At the heart of any standardisation activity has to be a clear understanding of the needs and aims which have to be addressed. This is also the goal of this Section, which presents a series of high level principles to guide the technical details delivered in Part II of this specification.
 
 Most of the principles are driven by the aim of interoperability –Information Packages shall be easy to exchange, identify, validate and (re)use with a wide variety of software tools and systems.
@@ -9,7 +9,7 @@ The principles present a conceptual view of an Information Package, including an
 
 Each principle has a sequential number and a short description. The description includes always a MoSCoW (MUST/MUST NOT, SHOULD/SHOULD NOT, COULD, WOULD) prioritisation statement.  The short description of each principle is followed by a rationale which describes the reason and background for the principle.
 
-## 3.1 General principles
+## General principles
 
 ### Principle 1.1
 *It **MUST** be possible to include any data or metadata in a Information Package regardless of its type or format.*
@@ -54,7 +54,7 @@ In practice this means that any implementation of the CSIP should ensure that fo
 
 Different preservation institutions and different types of data need to use different methods for long-term preservation; migration and emulation are typical examples. A CSIP implementation MUST NOT prescribe the use of a specific preservation method. Instead it should allow users to document and/or add arbitrary data or metadata as necessary for preservation purposes.
 
-## 3.2 Identification of the Information Package
+## Identification of the Information Package
 
 ### Principle 2.1:
 *The Information Package OAIS type (SIP, AIP or DIP) **MUST** be clearly indicated.*
@@ -87,7 +87,7 @@ It is also worth mentioning that in any implementation it is only necessary to a
 
 The components of a Information Package are explained in more detail in the following section.
 
-## 3.3 Structure of the Information Package
+## Structure of the Information Package
 
 ### Principle 3.1:
 *The Information Package **MUST** ensure that data and metadata are logically separated from one another.*
@@ -145,7 +145,7 @@ The conceptual structure presented above can be implemented in various ways – 
 
 At the same time it is clear that any given technical implementation will become obsolete in time, for example as new transfer methods and storage solutions emerge. As such this specification does not prohibit the take-up of any emerging logical or physical technical solutions.
 
-## 3.4 Information Package Metadata
+## Information Package Metadata
 
 ### Principle 4.1:
 *Metadata in the Information Package **MUST** conform to a standard.*

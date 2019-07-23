@@ -1,4 +1,4 @@
-## 4.2.	Implementing the structure
+## Implementing the structure
 The requirements presented in Section 4.1 leave scope for decisions during the implementation. For clarity we provide two extreme examples – both the simplest and the most complete use of the structure.
 
 In the simple case the structure can be implemented for the most part by adhering to only the MUST requirements. An example of this is shown in [Figure 9](#fig9).

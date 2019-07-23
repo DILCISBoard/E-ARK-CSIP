@@ -1,10 +1,11 @@
 ---
-title:  'E-ARK Common Specification for Information Packages (CSIP)'
+title: E-ARK CSIP
+subtitle: Common Specification for Information Packages
 abstract: |
         This base profile describes the Common Specification for Information
         Packages (CSIP) and the implementation of METS for packaging OAIS
         conformant Information Packages. The profile is accompanied with a
-        textuall document explaning the details of use of this profile.
+        textual document explaining the details of use of this profile.
         This will enable repository interoperability and assist in the
         management of the preservation of digital content.
         This profile is a base profile which is extended with E-ARK
@@ -12,22 +13,6 @@ abstract: |
         it is recommended that the supplied extending implementation are used.
         Alternatively, an own extension fulfilling the extending needs of the
         implementer can be created.
-margin-left:    1in
-margin-right:   1in
-
-version:	"2.0.0"
-date: "31.05.2019"
-titlepage: true
-titlepage-color: "186b9e"
-titlepage-text-color: "3adeca"
-titlepage-rule-color: "3adeca"
-titlepage-rule-height: 1
-logo:	../spec-publisher/pandoc/img/DILCISlogo.png
-toc-title:	'Table of contents'
-footer-center:	"v2.0.0"
-header-right:	DILCIS Board
-bibliography:	pandoc/bibliography.bib
-reference-section-title:	'Bibliography'
-autoSectionLabels: True
-listings-disable-line-numbers:	True
-...
+version: 2.0.1
+date: 15.07.2019
+---

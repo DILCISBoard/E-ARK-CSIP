@@ -616,7 +616,7 @@
                 <description>
                     <head>Rights metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A simple rights statement may be used to describe general permissions for the package. Individual representations should state their specific rights in their representation METS file.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Available standards include <a href="http://rightsstatements.org">RightsStatements.org</a> , <a href="https://pro.europeana.eu/page/available-rights-statements">Europeana rights statements info</a>), <a href="https://github.com/mets/METS-Rights-Schema">METS Rights Schema</a> created and maintaned by the METS Board, the rights part of <a href="http://www.loc.gov/standards/premis/">PREMIS</a> as well as own local rights statements in use.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Available standards include <a href="http://rightsstatements.org">RightsStatements.org</a>, <a href="https://pro.europeana.eu/page/available-rights-statements">Europeana rights statements info</a>, <a href="https://github.com/mets/METS-Rights-Schema">METS Rights Schema</a> created and maintaned by the METS Board, the rights part of <a href="http://www.loc.gov/standards/premis/">PREMIS</a> as well as own local rights statements in use.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/rightsMD</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
@@ -658,7 +658,7 @@
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef[@LOCTYPE=`URL`]</dd>
+                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef[@LOCTYPE='URL']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
@@ -666,7 +666,6 @@
             <requirement ID="CSIP50" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Type of locator</head>
-                    <head></head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef[@xlink:type='simple']</dd>

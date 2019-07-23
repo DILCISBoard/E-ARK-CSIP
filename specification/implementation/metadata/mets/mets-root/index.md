@@ -1,4 +1,4 @@
-### 5.3.1.	Use of the METS root element (element mets)
+### 	Use of the METS root element (element mets)
 The METS document's root element (`<mets>`) describes the container for the information being stored and/or transmitted. The `<mets>` element of a CSIP conformant METS document uses attributes from the METS specification and additional attributes defined in the CSIP extension schema.
 
 As well as the METS and CSIP extension attributes, the METS document's root `<mets>` element must define all of the relevant namespaces and locations for XML schema used in the package. This is done using the `@xmlns` and `@xsi:schemaLocation` attributes as described in ["Referencing a Schema in an XML Document"](https://www.w3schools.com/xml/schema_schema.asp). The schema identifiers and locations for a typical CSIP `<mets>` element are shown below:

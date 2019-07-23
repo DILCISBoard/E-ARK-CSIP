@@ -1,4 +1,4 @@
-## 5.1. General requirements for metadata in a CSIP Information Package
+## General requirements for metadata in a CSIP Information Package
 The primary consideration with metadata is, as with the rest of this specification, interoperability. Specifically the high-level technical interoperability and tasks that allow an Information Package to be prepared, transferred and received, regardless of the institutions or tools involved. These tasks include:
 
 - Identifying uniquely an Information Package and its components;
@@ -23,7 +23,7 @@ In addition to the METS files the CSIP recommends the inclusion of PREMIS metada
 
 The specification does not prohibit the use of additional metadata within Information Packages.
 
-## 5.2 General requirements for the use of metadata
+## General requirements for the use of metadata
 Before detailing the requirements covering the use of METS and PREMIS, we would like to highlight some general metadata concerns which should be handled consistently.
 
 ### The use of identifiers

@@ -1,18 +1,18 @@
-- [6.2. Handling large packages](#62-handling-large-packages)
-	    - [6.2.1.	The structure for IP, their representations and their segments](#621-the-structure-for-ip-their-representations-and-their-segments)
-	    - [6.2.2.	Using METS to refer from parent IP to child IP](#622-using-mets-to-refer-from-parent-ip-to-child-ips)
-	    - [6.2.3.	Using METS to refer from child IP to parent IP](#623-using-mets-to-refer-from-child-ip-to-parent-ip)
-	    - [6.2.4.	An example for the Northwind database](#624-an-example-for-the-northwind-database)
-	    - [6.2.5.	Illustration of references between METS files in a segmented IP](#625-illustration-of-references-between-mets-files-in-a-segmented-ip)
-	  - 
-## 6.2. Handling large packages
+- [Handling large packages](#handling-large-packages)
+	    - [The structure for IP, their representations and their segments](#the-structure-for-ip-their-representations-and-their-segments)
+	    - [Using METS to refer from parent IP to child IP](#using-mets-to-refer-from-parent-ip-to-child-ips)
+	    - [Using METS to refer from child IP to parent IP](#using-mets-to-refer-from-child-ip-to-parent-ip)
+	    - [An example for the Northwind database](#an-example-for-the-northwind-database)
+	    - [Illustration of references between METS files in a segmented IP](#illustration-of-references-between-mets-files-in-a-segmented-ip)
+	  -
+## Handling large packages
 By default a Common Specification IP should be contained in a single folder or archive file. However, the amount of data and metadata within a single IP can easily grow to several GB or even TB and become difficult to manage and inefficient to process e.g. due to insufficient storage capacity.
 
 The Common Specification can, in principle, be extended in different ways to support the segmentation of large packages into more manageable parts. This Section describes such an extension which exploits the Common Specification “representation METS” concept and extends it to cover physical segmentation.
 
 Please be aware that this is a “recommended approach” and, at this point in time, is not a part of the Common Specification. It is also not expected that all tools will support such a mechanism.
 
-### 6.2.1 The structure for IP, their representations and their segments
+### The structure for IP, their representations and their segments
 E-ARK Common Specification Information packages may comprise multiple representations of the same intellectual content. The segmentation approach described here is based on the following considerations:
 
 - The majority of the size of an IP consists of the content (data) which, according to the Common Specification, resides in the representations folder of the IP. As such any segmentation should take place within the representations layer of the Common Specification;
@@ -21,14 +21,14 @@ E-ARK Common Specification Information packages may comprise multiple representa
 - Each IP shall consist of a parent segment (including at least the package METS file) and any number of child segments;
 - It shall be possible to add new physical child segments (as an example a new representation) to the whole IP without necessitating the update of other child segments.
 
-### 6.2.2 Using METS to refer from parent IP to child IP(s)
+### Using METS to refer from parent IP to child IP(s)
 The method used to refer from parent to child is based on the ID of the IP of the child. One reason for using ID and not URL or other more direct references to a location of the referenced METS file is the flexibility it gives to move the segmented IPs across storage locations. This flexibility is often needed for segmented IPs that can be very large.
 
 The value of the xlink:href attribute in the <mptr> element in the METS file of the parent IP is used.
 
 This vis to be set to the value of the OBJID attribute of the <mets> element in the METS file of the child IP. According to the Common Specification, the OBJID attribute must have the value of the ID of the IP. This is therefore sufficient for having the parent know the ID of the child, but the parent does not know the exact child location.
 
-### 6.2.3 Using METS to refer from child IP to parent IP
+### Using METS to refer from child IP to parent IP
 The optional reference from child to the parent is based on the ID of the IP of the parent.
 
 The value of the xlink:href attribute in <mptr> element in the METS file of the child IP is used.
@@ -38,7 +38,7 @@ IP.
 
 This is therefore sufficient for having the child know the ID of the parent, but the child does not know the exact parent location.
 
-### 6.2.4 An example for the Northwind database
+### An example for the Northwind database
 Here follows a partial example, where the value of the xlink:href attribute in the `<mptr>` element (inside the `<div>` element inside the `<structMap>` element) is `ID.AVID.RA.18005.rep0.seg0` after the urn NID part (`urn:<NID>:<NSS>`).
 
 The value `ID.AVID.RA.18005.rep0.seg0` must now match the value of the OBJID attribute for the `<mets>` element in the child IP package METS file.
@@ -88,7 +88,7 @@ LOCTYPE="URN"/>
    </div>
 ```
 
-### 6.2.5 Illustration of references between METS files in a segmented IP
+### Illustration of references between METS files in a segmented IP
 We need to segment an IP at the data folder in the representations level, but according to the Common Specification this can only be done at the IP level. Therefore this IP has been segmented at the top IP level, and not at the representations level.
 
 ![CSIP Example](figs/mets_file_ref.svg "Illustration of references between files.")
