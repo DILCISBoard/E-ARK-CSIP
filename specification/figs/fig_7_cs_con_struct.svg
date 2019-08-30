@@ -69,7 +69,7 @@
 		</g>
 		<g id="shape8-26" v:mID="8" v:groupContext="shape" transform="translate(144.515,-219.315)">
 			<title>Rectangle.1927</title>
-			<desc>Metadata</desc>
+			<desc>metadata</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -80,7 +80,7 @@
 				<rect x="0" y="320.051" width="127.559" height="42.5197" class="st2"/>
 			</g>
 			<rect x="0" y="320.051" width="127.559" height="42.5197" class="st3"/>
-			<text x="37.77" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Metadata</text>		</g>
+			<text x="37.77" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>metadata</text>		</g>
 		<g id="shape9-32" v:mID="9" v:groupContext="shape" transform="translate(206.357,172.077) rotate(-90)">
 			<title>Sheet.9</title>
 			<path d="M0 362.57 L28.35 362.57" class="st7"/>
@@ -91,7 +91,7 @@
 		</g>
 		<g id="shape11-38" v:mID="11" v:groupContext="shape" transform="translate(1.99869,-133.8)">
 			<title>Rectangle.1930</title>
-			<desc>Descriptive</desc>
+			<desc>descriptive</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -102,10 +102,10 @@
 				<rect x="0" y="320.051" width="127.559" height="42.5197" class="st2"/>
 			</g>
 			<rect x="0" y="320.051" width="127.559" height="42.5197" class="st3"/>
-			<text x="31.43" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Descriptive</text>		</g>
+			<text x="31.43" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>descriptive</text>		</g>
 		<g id="shape12-44" v:mID="12" v:groupContext="shape" transform="translate(144.623,-133.792)">
 			<title>Rectangle.1931</title>
-			<desc>Preservation</desc>
+			<desc>preservation</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -116,10 +116,10 @@
 				<rect x="0" y="320.051" width="127.559" height="42.5197" class="st2"/>
 			</g>
 			<rect x="0" y="320.051" width="127.559" height="42.5197" class="st3"/>
-			<text x="27.43" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Preservation</text>		</g>
+			<text x="27.43" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>preservation</text>		</g>
 		<g id="shape13-50" v:mID="13" v:groupContext="shape" transform="translate(285.463,-133.8)">
 			<title>Rectangle.1932</title>
-			<desc>Other</desc>
+			<desc>other</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -130,7 +130,7 @@
 				<rect x="0" y="320.051" width="127.559" height="42.5197" class="st2"/>
 			</g>
 			<rect x="0" y="320.051" width="127.559" height="42.5197" class="st3"/>
-			<text x="47.78" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Other</text>		</g>
+			<text x="47.78" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>other</text>		</g>
 		<g id="shape14-56" v:mID="14" v:groupContext="shape" transform="translate(455.542,-133.8)">
 			<title>Rectangle.1933</title>
 			<desc>Representation A</desc>
@@ -155,7 +155,7 @@
 		</g>
 		<g id="shape17-68" v:mID="17" v:groupContext="shape" transform="translate(505.148,-218.84)">
 			<title>Rectangle.1936</title>
-			<desc>Representations</desc>
+			<desc>representations</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -166,10 +166,10 @@
 				<rect x="0" y="320.051" width="127.559" height="42.5197" class="st2"/>
 			</g>
 			<rect x="0" y="320.051" width="127.559" height="42.5197" class="st3"/>
-			<text x="16.77" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Representations</text>		</g>
+			<text x="16.77" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>representations</text>		</g>
 		<g id="shape18-74" v:mID="18" v:groupContext="shape" transform="translate(646.881,-218.84)">
 			<title>Rectangle.1937</title>
-			<desc>Schemas</desc>
+			<desc>schemas</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -180,10 +180,10 @@
 				<rect x="0" y="320.051" width="127.559" height="42.5197" class="st2"/>
 			</g>
 			<rect x="0" y="320.051" width="127.559" height="42.5197" class="st3"/>
-			<text x="37.43" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Schemas</text>		</g>
+			<text x="37.43" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>schemas</text>		</g>
 		<g id="shape19-80" v:mID="19" v:groupContext="shape" transform="translate(788.613,-218.84)">
 			<title>Rectangle.1938</title>
-			<desc>Documentation</desc>
+			<desc>documentation</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -194,7 +194,7 @@
 				<rect x="0" y="320.051" width="127.559" height="42.5197" class="st2"/>
 			</g>
 			<rect x="0" y="320.051" width="127.559" height="42.5197" class="st3"/>
-			<text x="20.11" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Documentation</text>		</g>
+			<text x="20.11" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>documentation</text>		</g>
 		<g id="shape20-86" v:mID="20" v:groupContext="shape" transform="translate(930.345,-218.84)">
 			<title>Rectangle.1939</title>
 			<desc>...</desc>
@@ -211,7 +211,7 @@
 			<text x="58.78" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>...</text>		</g>
 		<g id="shape21-92" v:mID="21" v:groupContext="shape" transform="translate(490.975,-91.2807)">
 			<title>Rectangle.1940</title>
-			<desc>Data</desc>
+			<desc>data</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -222,10 +222,10 @@
 				<rect x="0" y="334.224" width="92.126" height="28.3465" class="st2"/>
 			</g>
 			<rect x="0" y="334.224" width="92.126" height="28.3465" class="st3"/>
-			<text x="33.06" y="352" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Data</text>		</g>
+			<text x="33.06" y="352" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>data</text>		</g>
 		<g id="shape22-98" v:mID="22" v:groupContext="shape" transform="translate(490.975,-48.761)">
 			<title>Rectangle.1941</title>
-			<desc>Metadata</desc>
+			<desc>metadata</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -236,7 +236,7 @@
 				<rect x="0" y="334.224" width="92.126" height="28.3465" class="st2"/>
 			</g>
 			<rect x="0" y="334.224" width="92.126" height="28.3465" class="st3"/>
-			<text x="20.06" y="352" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Metadata</text>		</g>
+			<text x="20.06" y="352" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>metadata</text>		</g>
 		<g id="shape23-104" v:mID="23" v:groupContext="shape" transform="translate(490.975,-6.24131)">
 			<title>Rectangle.1942</title>
 			<desc>...</desc>
@@ -303,7 +303,7 @@
 			<text x="14.1" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Representation B</text>		</g>
 		<g id="shape34-143" v:mID="34" v:groupContext="shape" transform="translate(632.707,-91.2807)">
 			<title>Rectangle.1986</title>
-			<desc>Data</desc>
+			<desc>data</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -314,10 +314,10 @@
 				<rect x="0" y="334.224" width="92.126" height="28.3465" class="st2"/>
 			</g>
 			<rect x="0" y="334.224" width="92.126" height="28.3465" class="st3"/>
-			<text x="33.06" y="352" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Data</text>		</g>
+			<text x="33.06" y="352" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>data</text>		</g>
 		<g id="shape35-149" v:mID="35" v:groupContext="shape" transform="translate(632.707,-48.761)">
 			<title>Rectangle.1987</title>
-			<desc>Metadata</desc>
+			<desc>metadata</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -328,7 +328,7 @@
 				<rect x="0" y="334.224" width="92.126" height="28.3465" class="st2"/>
 			</g>
 			<rect x="0" y="334.224" width="92.126" height="28.3465" class="st3"/>
-			<text x="20.06" y="352" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Metadata</text>		</g>
+			<text x="20.06" y="352" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>metadata</text>		</g>
 		<g id="shape36-155" v:mID="36" v:groupContext="shape" transform="translate(632.707,-6.24131)">
 			<title>Rectangle.1988</title>
 			<desc>...</desc>
