@@ -12,11 +12,11 @@ Content Information Types can be regarded as categories of Content Information, 
 The following elements should be at the core of a Content Information Type Specification:
 
 - Required file formats for content data;
-- Specification of information package structure, i.e. specific sub-folders under the "Data" folder for particular categories of content data;
+- Specification of information package structure, i.e. specific sub-folders under the "data" folder for particular categories of content data;
 - Requirements for specific representation metadata that should be available in PREMIS for understanding and rendering the Content Data Object;
 - Details of specific (binary) documentation or other components (e.g. software, emulators, etc.) which must be available for rendering and understanding the Content Data Object.
 
-Pragmatically it may not be sufficient to deal only with the Information Object. For complex Content Information Types or large IPs it may be necessary to provide explicit requirements for other metadata (descriptive, administrative) relevant to the specific content type. For example, the ERMS Content Information Type Specification does specific a method for referencing data (i.e. computer files) from descriptive metadata in ERMS format, to ensure the integrity of data and metadata. Stating these requirements in a general specification allows archival institutions receiving SIPs including ERMS extracts or whole systems to understand and validate potentially complex information packages.
+Pragmatically it may not be sufficient to deal only with the Information Object. For complex Content Information Types or large IPs it may be necessary to provide explicit requirements for other metadata relevant to the specific content type. For example, the ERMS Content Information Type Specification prescribes a method for referencing data (i.e. computer files) from descriptive metadata in ERMS format, ensuring package integrity. Stating these requirements in a general specification allows archival institutions receiving SIPs including ERMS extracts or whole systems to understand and validate potentially complex information packages.
 
 Content Information Type Specification can be domain specific and there might be multiple specifications to cover a particular domain. For example, archival institutions might define a Content Information Type Specification for archiving web sites with descriptive metadata in EAD format, while libraries might define a specification for archiving web sites with MARC metadata.
 
