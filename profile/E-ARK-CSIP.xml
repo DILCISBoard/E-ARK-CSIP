@@ -1151,7 +1151,7 @@
             <requirement ID="CSIP96" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation file referencing</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups contaning documentation described in the package are referenced via the relevant file group identifiers. There MUST be one file group refrence per `&lt;fptr&gt;` element.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing documentation described in the package are referenced via the relevant file group identifiers. There MUST be one file group reference per `&lt;fptr&gt;` element.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
@@ -1202,7 +1202,7 @@
             <requirement ID="CSIP100" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema file reference</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers. One file group reference per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
@@ -1253,7 +1253,7 @@
             <requirement ID="CSIP104" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division file references</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing content described in the package are referenced via the relevant file group identifiers. One file group refrence per fptr-element</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing content described in the package are referenced via the relevant file group identifiers. One file group reference per fptr-element</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
