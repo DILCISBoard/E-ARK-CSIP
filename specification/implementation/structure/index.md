@@ -1,5 +1,5 @@
 # CSIP structure
-The preferred implementation of the logical model described in [Principle 3.6](#principle36) is a strict physical (folder) structure precisely following the logical structure. While the specification doesn't prohibit alternative implementations of the conceptual model, the practise is not recommended.
+The preferred implementation of the logical model described in [Principle 3.6](#principle3.6:) is a strict physical (folder) structure precisely following the logical structure. While the specification doesn't prohibit alternative implementations of the conceptual model, the practise is not recommended.
 
 The main reason for this implementation decision is that a fixed and documented folder structure makes the package layout clear to both human users and automated tools. The main benefit this clarity is that many archival tasks, e.g. file format risk analysis, can be executed directly on the data portion of the package structure, as opposed to first processing potentially large amounts of metadata for file locations. This allows for more efficient processing which is valuable in the case of large collections and bulk operations. In short, we believe that a fixed folder structure provides efficiency and scalability.
 
