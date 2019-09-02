@@ -32,7 +32,7 @@ In general, the E-ARK SIP and E-ARK DIP specifications reuse and apply fully all
 For example, the E-ARK SIP specification extends the CSIP with further requirements about recording relevant information on a submission agreement and the actors of the submission process. On the other hand, the E-ARK DIP provides possibilities for describing complex access environments needed to reuse the content of a DIP.
 
 Regarding the E-ARK AIP format, it is important to note that it does not extend the CSIP in the same way the E-ARK SIP and E-ARK DIP formats do, i.e. in the sense of a format specification inheriting all general properties from the CSIP which is then augmented by specific AIP requirements. The reason for this is that while the SIP and the DIP are like "snapshots" in time – one capturing the state of an information package at time of submission (SIP), the other one capturing one form of delivery of the information for access (DIP)
-– then the AIP needs to deal with an “evolving object” which is constantly updated by preservation actions undertaken in the course of the objects life-cycle. As such, while the E-ARK AIP specification does implement all of the core metadata requirements defined in the Common Specification and extends these (for example it describes a means to record preservation actions about the IP), it does also extend the default structure of the CSIP (defined in [Section 4](#csip-structure)). Essentially the AIP introduces a more complex structure which allows at the same time to securely hold an E-ARK SIP (which itself follows in full the CSIP) and at the same time add and modify additional representations over a series of preservation actions.
+– then the AIP needs to deal with an “evolving object” which is constantly updated by preservation actions undertaken in the course of the objects life-cycle. As such, while the E-ARK AIP specification does implement all of the core metadata requirements defined in the Common Specification and extends these (for example it describes a means to record preservation actions about the IP), it does also extend the default structure of the CSIP (defined in [Section 4](#csipstructure)). Essentially the AIP introduces a more complex structure which allows at the same time to securely hold an E-ARK SIP (which itself follows in full the CSIP) and at the same time add and modify additional representations over a series of preservation actions.
 
 ## The Common Specification for Information Packages and Content Information Type Specifications
 As an interoperability standard, it must be possible to use the CSIP regardless of the type and format of the content users need to handle. At the same time, each individual content type and file format can have specific characteristics which need to be taken into account for purposes of validation, preservation and curation.
@@ -55,7 +55,7 @@ As of May 2019 these Content Information Type Specifications, created by the E-A
 The total number of Content Information Type Specifications is, however, unlimited and the long-term commitment of the DILCIS Board  is to keep the overall environment open and inclusive. As such, interested bodies are welcome to develop their own Content Information Type Specifications, for example
 for 3D building projects or electronic publications. An appropriate management regime to facilitate the creation and approval of additional Content Information Type Specifications by anyone in the broader community is implemented by the DILCIS Board.
 
-For more detailed information about the Content Information Type Specifications please look also at [Section 6.1](#content-information-type-specifications) below and check <http://www.dilcis.eu>.
+For more detailed information about the Content Information Type Specifications please look also at [Section 6.1](#contentinformationtypespecifications) below and check <http://www.dilcis.eu>.
 
 ## Common Specification for Information Packages, OAIS Information Packages’ specifications and Content Information Type Specifications
 
@@ -98,21 +98,21 @@ Information Packages and extend it in regard to requirements derived from pre-in
 ## Structure of the document
 The rest of this document describes the CSIP and its practical implementation. The document is divided into two logical parts.
 
-The first part ([Section 2](#need-for-establishing-common-ground) and [Section 3](#principles-for-interoperable-information-packages)) describes the generic principles of the CSIP. The main aim of these Sections is to first identify a common set of needs and thereafter present a series of requirements which an Information Package needs to follow regardless of the implementation at any given point in time:
+The first part ([Section 2](#needforestablishingcommonground) and [Section 3](#principlesforinteroperableinformationpackages)) describes the generic principles of the CSIP. The main aim of these Sections is to first identify a common set of needs and thereafter present a series of requirements which an Information Package needs to follow regardless of the implementation at any given point in time:
 
-- [Section 2](#need-for-establishing-common-ground) provides an explanation of the need for a CSIP. The Section therefore presents some practical use cases which highlight the potential savings and increased functionality of digital archives when following internationally standardised approaches.
+- [Section 2](#needforestablishingcommonground) provides an explanation of the need for a CSIP. The Section therefore presents some practical use cases which highlight the potential savings and increased functionality of digital archives when following internationally standardised approaches.
 
-- [Section 3](#principles-for-interoperable-information-packages) presents the core principles which need to be met in order to achieve the interoperability goal described in Section 2. Based on these requirements a set of high-level solutions are introduced regarding, for example, the structure and use of metadata within any implementation of an Information Package.
+- [Section 3](#principlesforinteroperableinformationpackages) presents the core principles which need to be met in order to achieve the interoperability goal described in Section 2. Based on these requirements a set of high-level solutions are introduced regarding, for example, the structure and use of metadata within any implementation of an Information Package.
 
-The second part of this document ([Section 4](#csip-structure), [Section 5](#use-of-metadata) and [Section 6](#implementation-considerations)) presents a practical implementation of the principles described in previous Sections, as implemented according to current state-of-the-art technologies. As such, this part of the document describes the requirements which are needed to achieve
+The second part of this document ([Section 4](#csipstructure), [Section 5](#useofmetadata) and [Section 6](#implementationconsiderations)) presents a practical implementation of the principles described in previous Sections, as implemented according to current state-of-the-art technologies. As such, this part of the document describes the requirements which are needed to achieve
 practical IP interoperability:
 
-- [Section 4](#csip-structure) presents a detailed description of the structure which must be implemented in any CSIP
+- [Section 4](#csipstructure) presents a detailed description of the structure which must be implemented in any CSIP
 Information Package.
 
-- [Section 5](#use-of-metadata) presents a detailed overview of metadata requirements within CSIP Information Packages with a special focus on the use of metadata elements which are needed for the automation and interoperability of archival validation and identification tasks
+- [Section 5](#useofmetadata) presents a detailed overview of metadata requirements within CSIP Information Packages with a special focus on the use of metadata elements which are needed for the automation and interoperability of archival validation and identification tasks
 
-- [Section 6](#implementation-considerations) describes additional (optional) components extending the practical implementation in regard to specific aspects
+- [Section 6](#implementationconsiderations) describes additional (optional) components extending the practical implementation in regard to specific aspects
   - How to create new Content Information Type Specifications
   - How to split large content objects between multiple physical IPs
   - Generic guidelines on adding (any) descriptive metadata into a CSIP Information Package

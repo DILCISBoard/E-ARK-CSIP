@@ -13,14 +13,10 @@ then
   rm -rf ./docs/figs
 fi
 
-if [ -e ./docs/index.md ]
-then
-  rm docs/index.md
-fi
-
 bash "$SCRIPT_DIR/spec-publisher/utils/create-venv.sh"
 source "$SCRIPT_DIR/.venv/markdown/bin/activate"
-markdown-pp SITE.md -o docs/index.md -e tableofcontents
+markdown-pp SITE_BASE.md -o /tmp/site.md
+markdown-pp SITE.md -o ./docs/index.md
 deactivate
 
 cp -R specification/figs docs/

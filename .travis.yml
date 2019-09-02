@@ -21,10 +21,10 @@ script:
   - java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
   - cd ..
   - bash create-site.sh
-  - bash create-pdf.sh
   - bundle install
   - bundle exec jekyll build -s ./docs -d ./_site
   - bundle exec htmlproofer ./_site --file-ignore /javadoc/ --only-4xx --check-html
+  - bash create-pdf.sh
 deploy:
   provider: pages
   skip_cleanup: true
