@@ -12,9 +12,15 @@ if [ -d ./docs/figs ]
 then
   rm -rf ./docs/figs
 fi
-
-bash "$SCRIPT_DIR/spec-publisher/utils/create-venv.sh"
-source "$SCRIPT_DIR/.venv/markdown/bin/activate"
+tmpdir=$(dirname $(mktemp -u))
+if [ ! -d "$tmpdir/.venv-markdown/" ]
+then
+  virtualenv -p python3 "$tmpdir/.venv-markdown"
+  source "$tmpdir/.venv-markdown/bin/activate"
+  pip install markdownPP
+  deactivate
+fi
+source "$tmpdir/.venv-markdown/bin/activate"
 markdown-pp SITE_BASE.md -o /tmp/site.md
 markdown-pp SITE.md -o ./docs/index.md
 deactivate
