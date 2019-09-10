@@ -4,7 +4,18 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR" || exit
 
 echo "PANDOC: Processing postface markdown"
+tmpdir=$(dirname $(mktemp -u))
+if [ ! -d "$tmpdir/.venv-markdown/" ]
+then
+  virtualenv -p python3 "$tmpdir/.venv-markdown"
+  source "$tmpdir/.venv-markdown/bin/activate"
+  pip install markdownPP
+  deactivate
+fi
+
+source "$tmpdir/.venv-markdown/bin/activate"
 markdown-pp "./specification/postface/postface-pdf.md" -o ./docs/postface.md -e tableofcontents
+deactivate
 
 cd docs || exit
 
@@ -47,7 +58,9 @@ then
 fi
 
 echo "MARKDOWN-PP: Preparing PDF markdown"
+source "$tmpdir/.venv-markdown/bin/activate"
 markdown-pp PDF.md -o docs/eark-csip-pdf.md -e tableofcontents
+deactivate
 sed -i 's%fig_2_csip_scope.svg%fig_2_csip_scope.png%' docs/eark-csip-pdf.md
 
 cp -R specification/figs docs/
