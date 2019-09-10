@@ -62,7 +62,7 @@
 | 1.1       | 14.05.2018 | Kuldar Aas (editor), DILCIS Board | NAE | Limited proofreading and updates throughout the document. Updates in terminology. Updates in use of METS, ID and referencing section. Improved (more consistent) examples in METS section. |
 | 2.0-DRAFT | 28.11.2018 | DILCIS Board, E-ARK4ALL | DILCIS Board | Specification updated and released for open review. |
 | 2.0.0     | 31.05.2019 | DILCIS Board, E-ARK4ALL | DILCIS Board | Specification updated after open review. |
-| 2.0.1     | 09.09.2019 | Karin Bredenberg,C. Wilson | NAS, OPF | Correction @LABEL attribute to @USE, typos, layout and PDF formatting. |
+| 2.0.1     | 09.09.2019 | K.Bredenberg, C. Wilson, & H. Silva | NAS, OPF & KEEPS | Correction @LABEL and @USE attributes, typos, layout and PDF formatting. |
 
 ## III. Acknowledgements
 
