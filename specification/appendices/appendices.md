@@ -5,10 +5,14 @@
 
 !INCLUDE "examples/examples.md"
 
-## Appendix B: External Schema and Vocabularies
+## Appendix B: External Schema
 
 !INCLUDE "schema/schema.md"
 
-## Appendix C: A Full List of E-ARK CSIP Requirements
+## Appendix C: External Vocabularies
+
+!INCLUDE "vocabs/vocabs.md"
+
+## Appendix D: A Full List of E-ARK CSIP Requirements
 
 !INCLUDE "requirements/requirements.md"
