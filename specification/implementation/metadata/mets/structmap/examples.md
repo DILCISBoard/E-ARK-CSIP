@@ -34,15 +34,15 @@
       <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F">
       </mets:fptr>
     </mets:div>
-    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="representations/preingest">
+    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="Representations/preingest">
       <mets:mptr LOCTYPE="URL" type="simple" href="representations/preingest/METS.xml" title="uuid-5811D494-6045-4741-924C-A1CFA340C277">
       </mets:mptr>
     </mets:div>
-    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="representations/submission">
+    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations/submission">
       <mets:mptr LOCTYPE="URL" type="simple" href="representations/submission/METS.xml" title="uuid-5811D494-6045-4741-924C-A1CFA340C278">
       </mets:mptr>
     </mets:div>
-    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6738" LABEL="representations/ingest">
+    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6738" LABEL="Representations/ingest">
       <mets:mptr LOCTYPE="URL" type="simple" href="representations/ingest/METS.xml" title="uuid-5811D494-6045-4741-924C-A1CFA340C279">
       </mets:mptr>
     </mets:div>

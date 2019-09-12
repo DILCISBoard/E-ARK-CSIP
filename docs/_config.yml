@@ -7,8 +7,8 @@ future: true
 jailed: false
 theme: jekyll-theme-primer
 gfm_quirks: paragraph_end
-
-gems:
+repository: DILCISBoard/E-ARK-CSIP
+plugins:
 - jekyll-github-metadata
 - jekyll-mentions
 - jekyll-redirect-from

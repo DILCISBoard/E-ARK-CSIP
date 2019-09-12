@@ -1,4 +1,4 @@
-### 5.3.4.	Use of the METS administrative metadata section (element amdSec)
+### 	Use of the METS administrative metadata section (element amdSec)
 METS defines an administrative metadata section, used to embed metadata or provide references to files containing metadata for the information package content. The CSIP encourages the use of references to metadata files, rather than embedding metadata in the `amdSec` element, and the examples reflect this.
 
 The administrative metadata section contains four sub-sections each used to record different types of metadata for package content:

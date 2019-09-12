@@ -1,4 +1,4 @@
-### 5.3.3 Use of the METS descriptive metadata section (element dmdSec)
+### Use of the METS descriptive metadata section (element dmdSec)
 
 The purpose of the METS descriptive data section is to embed or refer to files containing descriptive metadata. CSIP is only using referencing of files containing descriptive metadata.
 
