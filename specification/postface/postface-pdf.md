@@ -105,6 +105,10 @@
   2.0.1   09.09.2019  Karin Bredenberg,        NAS,         Correction for @LABEL and @USE attributes, typos,
                       C. Wilson, &             OPF          layout and PDF formatting.
                       H. Silva                 KEEPS
+
+  2.0.2   28.10.2019  Karin                    SYD          Fixed schema paths
+                      Bredenberg
+
 ---------------------------------------------------------------------------------------------------------------
 
 ## III. Acknowledgements
