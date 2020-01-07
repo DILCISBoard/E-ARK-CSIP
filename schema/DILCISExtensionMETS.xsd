@@ -29,7 +29,8 @@
     <xs:attribute name="NOTETYPE">
         <xs:simpleType>
             <xs:restriction base="xs:string">
-                <xs:enumeration value="SOFTWARE VERSION"/>
+              <xs:enumeration value="SOFTWARE VERSION"/>
+              <xs:enumeration value="IDENTIFICATIONCODE"/>
             </xs:restriction>
         </xs:simpleType>
     </xs:attribute>
