@@ -15,6 +15,24 @@ then
   rm -rf ./docs/figs
 fi
 
+if [ -d ./docs/profile ]
+then
+  echo " - removing existing profile directory"
+  rm -rf ./docs/profile
+fi
+
+if [ -d ./docs/schema ]
+then
+  echo " - removing existing schema directory"
+  rm -rf ./docs/schema
+fi
+
+if [ -d ./docs/archive ]
+then
+  echo " - removing existing archive directory"
+  rm -rf ./docs/archive
+fi
+
 bash "$SCRIPT_DIR/spec-publisher/utils/create-venv.sh"
 
 command -v markdown-pp >/dev/null 2>&1 || {
