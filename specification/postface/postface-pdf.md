@@ -109,6 +109,8 @@
   2.0.2   28.10.2019  Karin                    SYD          Fixed schema paths
                       Bredenberg
 
+  2.0.3   08.01.2020  Karin Bredenberg, &      SYD          Fixed error in value list note type.
+                      C. Wilson                OPF
 ---------------------------------------------------------------------------------------------------------------
 
 ## III. Acknowledgements

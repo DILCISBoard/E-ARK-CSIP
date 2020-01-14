@@ -64,6 +64,7 @@
 | 2.0.0     | 31.05.2019 | DILCIS Board, E-ARK4ALL | DILCIS Board | Specification updated after open review. |
 | 2.0.1     | 09.09.2019 | K.Bredenberg, C. Wilson, & H. Silva | NAS, OPF & KEEPS | Correction @LABEL and @USE attributes, typos, layout and PDF formatting. |
 | 2.0.2     | 28.10.2019 | Karin Bredenberg | SYD | Fixed schema paths. |
+| 2.0.3 | 08.01.2020 | K. Bredenberg, C.Wilson | SYD & OPF | Fixed error in value list note type. |
 
 ## III. Acknowledgements
 
