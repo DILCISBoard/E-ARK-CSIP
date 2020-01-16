@@ -14,13 +14,13 @@
 | Miguel Ferreira           | Keep Solutions                    |
 | Helder Silva              | Keep Solutions                    |
 | Carl Wilson               | Open Preservation Foundation      |
-| Karin Bredenberg          | Swedish National Archives         |
+| Karin Bredenberg          | Kommunalförbundet Sydarkivera     |
 
 ### I.I. Contributors to previous version
 
 | Name                      | Organisation                      |
 | ------------------------- | --------------------------------- |
-| Karin Bredenberg                 | National Archives of Sweden                       |
+| Karin Bredenberg                 | Kommunalförbundet Sydarkivera                     |
 | Björn Skog                       | ES Solutions                                      |
 | Anders Bo Nielsen                | Danish National Archives                          |
 | Kathrine Hougaard Edsen Johansen | Danish National Archives                          |
@@ -62,8 +62,9 @@
 | 1.1       | 14.05.2018 | Kuldar Aas (editor), DILCIS Board | NAE | Limited proofreading and updates throughout the document. Updates in terminology. Updates in use of METS, ID and referencing section. Improved (more consistent) examples in METS section. |
 | 2.0-DRAFT | 28.11.2018 | DILCIS Board, E-ARK4ALL | DILCIS Board | Specification updated and released for open review. |
 | 2.0.0     | 31.05.2019 | DILCIS Board, E-ARK4ALL | DILCIS Board | Specification updated after open review. |
-| 2.0.1     | 09.09.2019 | K.Bredenberg, C. Wilson, & H. Silva | NAS, OPF & KEEPS | Correction @LABEL and @USE attributes, typos, layout and PDF formatting. |
+| 2.0.1     | 09.09.2019 | Karin Bredenberg, C. Wilson, & H. Silva | NAS, OPF & KEEPS | Correction @LABEL and @USE attributes, typos, layout and PDF formatting. |
 | 2.0.2     | 28.10.2019 | Karin Bredenberg | SYD | Fixed schema paths. |
+| 2.0.3 | 08.01.2020 | Karin Bredenberg, C.Wilson | SYD & OPF | Fixed error in value list note type. |
 
 ## III. Acknowledgements
 

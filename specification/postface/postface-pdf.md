@@ -14,13 +14,13 @@
 | Miguel Ferreira           | Keep Solutions                    |
 | Helder Silva              | Keep Solutions                    |
 | Carl Wilson               | Open Preservation Foundation      |
-| Karin Bredenberg          | Swedish National Archives         |
+| Karin Bredenberg          | Kommunalförbundet Sydarkivera     |
 
 ### I.I. Contributors to previous version
 
 | Name                      | Organisation                      |
 | ------------------------- | --------------------------------- |
-| Karin Bredenberg                 | National Archives of Sweden                       |
+| Karin Bredenberg                 | Kommunalförbundet Sydarkivera                     |
 | Björn Skog                       | ES Solutions                                      |
 | Anders Bo Nielsen                | Danish National Archives                          |
 | Kathrine Hougaard Edsen Johansen | Danish National Archives                          |
@@ -109,6 +109,8 @@
   2.0.2   28.10.2019  Karin                    SYD          Fixed schema paths
                       Bredenberg
 
+  2.0.3   08.01.2020  Karin Bredenberg, &      SYD          Fixed error in value list note type.
+                      C. Wilson                OPF
 ---------------------------------------------------------------------------------------------------------------
 
 ## III. Acknowledgements
