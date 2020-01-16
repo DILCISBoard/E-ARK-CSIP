@@ -1,4 +1,4 @@
-dist: xenial
+dist: trusty
 sudo: required
 language: java
 jdk:
@@ -19,7 +19,7 @@ script:
   - mvn clean package
   - java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
   - cd ..
-  - docker run -it --rm -v "$PWD:/source" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
+  - docker run -it --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
   - bundle install
   - bundle exec jekyll build -s ./docs -d ./_site
   - bundle exec htmlproofer ./_site --file-ignore /javadoc/ --only-4xx --check-html
