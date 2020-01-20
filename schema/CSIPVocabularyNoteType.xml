@@ -9,5 +9,9 @@
             <Term lang="en">SOFTWARE VERSION</Term>
             <Definition>Describes the version of a software</Definition>
         </Entry>
+        <Entry>
+            <Term lang="en">IDENTIFICATIONCODE</Term>
+            <Definition>Describes the identification code of an agent</Definition>
+        </Entry>
     </Vocabulary>
 </Vocabularies>

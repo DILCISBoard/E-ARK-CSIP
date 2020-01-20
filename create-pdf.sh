@@ -7,7 +7,8 @@ echo "Generating PDF from markdown"
 bash "$SCRIPT_DIR/spec-publisher/utils/create-venv.sh"
 
 command -v markdown-pp >/dev/null 2>&1 || {
-  tmpdir=$(dirname $(mktemp -u))
+  tmpdir=$(dirname "$(mktemp -u)")
+  # shellcheck source=/tmp/.venv-markdown/bin/activate
   source "$tmpdir/.venv-markdown/bin/activate"
 }
 echo " - MARKDOWN-PP: Preparing Postface markdown"
@@ -42,7 +43,8 @@ then
 fi
 
 command -v markdown-pp >/dev/null 2>&1 || {
-  tmpdir=$(dirname $(mktemp -u))
+  tmpdir=$(dirname "$(mktemp -u)")
+  # shellcheck source=/tmp/.venv-markdown/bin/activate
   source "$tmpdir/.venv-markdown/bin/activate"
 }
 echo " - MARKDOWN-PP: Preparing PDF markdown"

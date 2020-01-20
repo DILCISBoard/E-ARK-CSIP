@@ -3,7 +3,6 @@ sudo: required
 language: java
 jdk:
   - openjdk8
-  - oraclejdk8
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y texlive texlive-base texlive-latex-extra texlive-fonts-extra
@@ -20,7 +19,7 @@ script:
   - mvn clean package
   - java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
   - cd ..
-  - bash create-site.sh
+  - docker run -it --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
   - bundle install
   - bundle exec jekyll build -s ./docs -d ./_site
   - bundle exec htmlproofer ./_site --file-ignore /javadoc/ --only-4xx --check-html
