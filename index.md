@@ -13,8 +13,8 @@ abstract: |
         it is recommended that the supplied extending implementation are used.
         Alternatively, an own extension fulfilling the extending needs of the
         implementer can be created.
-version: 2.0.2
-date: 28.10.2019
+version: 2.0.3
+date: 08.01.2020
 ---
 
 {{ page.subtitle }}
@@ -830,7 +830,7 @@ The specific requirements for the root element and its attributes are described 
 **Example:** METS root element showing use of `csip:@OTHERTYPE` attribute when an appropriate package content category value is not available in the vocabulary. The `@TYPE` attribute value is set to OTHER.
 
 ```xml
-<mets:mets xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" LABEL="Sample CSIP Information Package" TYPE="OTHER" csip:OTHERTYPE="Patterns" PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
+<mets:mets xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" LABEL="Sample CSIP Information Package" TYPE="OTHER" csip:OTHERTYPE="Patterns" PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
 </mets:mets>
 ```
 
@@ -838,7 +838,7 @@ The specific requirements for the root element and its attributes are described 
 **Example:** METS root element illustrating the use of a custom `csip:@OTHERCONTENTINFORMATIONTYPE` attribute value when the correct content type value does note exist in the vocabulary. The `csip:@CONTENTINFORMATIONTYPE` attribute value is set to OTHER.
 
 ```xml
-<mets:mets xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" LABEL="Sample CSIP Information Package" TYPE="Datasets" csip:CONTENTINFORMATIONTYPE="OTHER" csip:OTHERCONTENTINFORMATIONTYPE="FGS Personal, version 1" PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
+<mets:mets xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" LABEL="Sample CSIP Information Package" TYPE="Datasets" csip:CONTENTINFORMATIONTYPE="OTHER" csip:OTHERCONTENTINFORMATIONTYPE="FGS Personal, version 1" PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
 </mets:mets>
 ```
 
@@ -1333,7 +1333,7 @@ Finally we would also note that the recommendation of the CSIP is to always incl
 **Example 1:** Example of a whole METS document describing an information package with no representations
 
 ```xml
-<mets:mets xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" LABEL="Sample CSIP Information Package with no representations" TYPE="Database" csip:CONTENTINFORMATIONTYPE="SIARDDK" PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
+<mets:mets xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" LABEL="Sample CSIP Information Package with no representations" TYPE="Database" csip:CONTENTINFORMATIONTYPE="SIARDDK" PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
   <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
     <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
       <mets:name>RODA-in</mets:name>
@@ -1403,7 +1403,7 @@ Finally we would also note that the recommendation of the CSIP is to always incl
 **Example 2:** Example of a whole METS document describing an information package with representations
 
 ```xml
-<mets:mets xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" LABEL="Sample CSIP Information Package with representations" TYPE="Database" PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
+<mets:mets xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:mets="http://www.loc.gov/METS/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182" LABEL="Sample CSIP Information Package with representations" TYPE="Database" PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml" xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
   <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
     <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
       <mets:name>RODA-in</mets:name>
@@ -1449,7 +1449,7 @@ Finally we would also note that the recommendation of the CSIP is to always incl
         </mets:FLocat>
       </mets:file>
     </mets:fileGrp>
-    <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C277" USE="Representations/preingest" csip:CONTENTINFORMATIONTYPE="Access database">
+    <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C277" USE="Representations/preingest" csip:CONTENTINFORMATIONTYPE="OTHER">
       <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FE" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml">
         </mets:FLocat>
@@ -1851,13 +1851,13 @@ Own labels should be placed in an own extending vocabulary.
 | Miguel Ferreira           | Keep Solutions                    |
 | Helder Silva              | Keep Solutions                    |
 | Carl Wilson               | Open Preservation Foundation      |
-| Karin Bredenberg          | Swedish National Archives         |
+| Karin Bredenberg          | Kommunalförbundet Sydarkivera     |
 
 ### I.I. Contributors to previous version
 
 | Name                      | Organisation                      |
 | ------------------------- | --------------------------------- |
-| Karin Bredenberg                 | National Archives of Sweden                       |
+| Karin Bredenberg                 | Kommunalförbundet Sydarkivera                     |
 | Björn Skog                       | ES Solutions                                      |
 | Anders Bo Nielsen                | Danish National Archives                          |
 | Kathrine Hougaard Edsen Johansen | Danish National Archives                          |
@@ -1899,8 +1899,9 @@ Own labels should be placed in an own extending vocabulary.
 | 1.1       | 14.05.2018 | Kuldar Aas (editor), DILCIS Board | NAE | Limited proofreading and updates throughout the document. Updates in terminology. Updates in use of METS, ID and referencing section. Improved (more consistent) examples in METS section. |
 | 2.0-DRAFT | 28.11.2018 | DILCIS Board, E-ARK4ALL | DILCIS Board | Specification updated and released for open review. |
 | 2.0.0     | 31.05.2019 | DILCIS Board, E-ARK4ALL | DILCIS Board | Specification updated after open review. |
-| 2.0.1     | 09.09.2019 | K.Bredenberg, C. Wilson, & H. Silva | NAS, OPF & KEEPS | Correction @LABEL and @USE attributes, typos, layout and PDF formatting. |
+| 2.0.1     | 09.09.2019 | Karin Bredenberg, C. Wilson, & H. Silva | NAS, OPF & KEEPS | Correction @LABEL and @USE attributes, typos, layout and PDF formatting. |
 | 2.0.2     | 28.10.2019 | Karin Bredenberg | SYD | Fixed schema paths. |
+| 2.0.3 | 08.01.2020 | Karin Bredenberg, C.Wilson | SYD & OPF | Fixed error in value list note type. |
 
 ## III. Acknowledgements
 
