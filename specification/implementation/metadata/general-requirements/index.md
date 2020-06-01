@@ -29,7 +29,7 @@ Before detailing the requirements covering the use of METS and PREMIS, we would 
 ### The use of identifiers
 Both METS, and by derivation the CSIP, make extensive use of the XML ID data type (see: <https://www.w3.org/TR/xml-id/>). Valid XML IDs must also conform to the NCName restrictions (see: <https://www.w3.org/TR/REC-xml-names/#NT-NCName>), and must begin a letter or an underscore character (‘_’), and contain no characters other than letters, digits, hyphens, underscores, full stops, plus some extension and combination characters.
 
-If your package makes use of IDs that don't conform to this specification one mitigating strategy is to add a prefix to all identifiers. For example UUIDs are a common choice for arbitrary identifiers and comprise of hex characters and hyphens, e.g. the value `906F4F12-BA52-4779-AE2C-178F9206111F`. NCName and xml:id values can't legally begin with numeric characters making many UUIDs, including the example, invalid. The examples below show two possible solutions, using prefixes:
+If your package makes use of IDs that don't conform to this specification one mitigating strategy is to add a prefix to all identifiers. For example UUIDs are a common choice for arbitrary unique identifiers and comprise of hex characters and hyphens, e.g. the value `906F4F12-BA52-4779-AE2C-178F9206111F`. NCName and xml:id values can't legally begin with numeric characters making many UUIDs, including the example, invalid. Below are two examples that show variations on using prefixes as a solution:
 
 Example 1: The prefix consists of the identifier type acronym and a hyphen: `uuid-`.
 
@@ -43,7 +43,9 @@ Example 2: A generic prefix:`ID`.
 <dmdSec ID="ID906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
 ```
 
-Note that the identifiers specified within the CSIP are mainly used as internal references between Information Package components. Prefixes are not mandatory, but if they are used, we recommend choosing a single prefix and using it consistently across all IDs in the package.
+The identifiers specified within the CSIP generally represent internal references between Information Package components. Prefixes are not mandatory, but if they are used, we recommend choosing a single prefix and using it consistently across all IDs in the package.
+
+Note that while we recommend the use of generated unique IDs in real world information packages we used logical unique names for the examples in this document. This is for readability purposes, particularly for any readers trying to follow reference links.
 
 ### Referencing between files within a CSIP Information Package
 The CSIP strongly recommends that all components of an information package (i.e. all data, metadata and other parts) are stored as discrete files within the package. While this approach simplifies the management of the Information Package, making it easier to aggregate, validate and modify the package, it also necessitates a clear method for recording and resolving referencing between files.
