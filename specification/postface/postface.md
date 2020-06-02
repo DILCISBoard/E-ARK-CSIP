@@ -65,6 +65,7 @@
 | 2.0.1     | 09.09.2019 | Karin Bredenberg, C. Wilson, & H. Silva | NAS, OPF & KEEPS | Correction @LABEL and @USE attributes, typos, layout and PDF formatting. |
 | 2.0.2     | 28.10.2019 | Karin Bredenberg | SYD | Fixed schema paths. |
 | 2.0.3 | 08.01.2020 | Karin Bredenberg, C.Wilson | SYD & OPF | Fixed error in value list note type. |
+| 2.0.4 | 01.06.2020 | K. Bredenberg, C.Wilson & J. Kaminski | SYD, OPF & HIGH | Update in example ID:s, preface text and output display update | 
 
 ## III. Acknowledgements
 
