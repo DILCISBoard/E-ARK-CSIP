@@ -15,4 +15,10 @@
 
 ## Appendix D: A Full List of E-ARK CSIP Requirements
 
+### Structural Requirements
+
+!INCLUDE "requirements/structure.md"
+
+### Metadata Requirements
+
 !INCLUDE "requirements/requirements.md"
