@@ -22,13 +22,14 @@ script:
   - docker run -it --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
   - bundle install
   - bundle exec jekyll build -s ./docs -d ./_site
-  - bundle exec htmlproofer ./_site --file-ignore /javadoc/ --only-4xx --check-html
   - cd spec-publisher
+  - git stash
   - git checkout feat/pdf-publication
   - mvn clean package
   - java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
   - cd ..
   - bash create-pdf.sh
+  - bundle exec htmlproofer ./_site --file-ignore /javadoc/ --only-4xx --check-html
 deploy:
   provider: pages
   skip_cleanup: true
