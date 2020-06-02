@@ -15,6 +15,12 @@ then
   rm -rf ./docs/figs
 fi
 
+if [ -d ./docs/pdf ]
+then
+  echo " - removing existing pdf directory"
+  rm -rf ./docs/pdf]
+fi
+
 if [ -d ./docs/profile ]
 then
   echo " - removing existing profile directory"
@@ -90,3 +96,4 @@ cp -Rf spec-publisher/site/* docs/
 cp -R profile docs/
 cp -R schema docs/
 cp -R archive docs/
+cp -R examples docs/
