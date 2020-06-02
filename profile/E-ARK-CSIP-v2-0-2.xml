@@ -3,16 +3,16 @@
 <METS_Profile xmlns="http://www.loc.gov/METS_Profile/v2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:mets="http://www.loc.gov/METS/"
-    xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+    xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    xsi:schemaLocation="http://www.loc.gov/METS_Profile/v2 http://www.loc.gov/standards/mets/profile_docs/mets.profile.v2-0.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd" STATUS="provisional" REGISTRATION="unregistered" ID="V2.0.4">
+    xsi:schemaLocation="http://www.loc.gov/METS_Profile/v2 http://www.loc.gov/standards/mets/profile_docs/mets.profile.v2-0.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd" STATUS="provisional" REGISTRATION="unregistered" ID="V2.0.1">
     <URI LOCTYPE="URL" ASSIGNEDBY="local">https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml</URI>
     <title>E-ARK CSIP METS Profile</title>
     <abstract>This base profile describes the Common Specification for Information Packages (CSIP) and the implementation of METS for packaging OAIS conformant Information Packages. The profile is accompanied with a textuall document explaning the details of use of this profile.
         This will enable repository interoperability and assist in the management of the preservation of digital content.
         This profile is a base profile which is extended with E-ARK implementation of SIP, AIP and DIP.
     The profile can be used as is, but it is recommended that the supplied extending implementation are used. Alternatively, an own extension fulfilling the extending needs of the implementer can be created.</abstract>
-    <date>2020-06-01T12:00:00</date>
+    <date>2019-09-09T16:30:00</date>
     <contact>
         <institution>DILCIS Board</institution>
         <address>http://dilcis.eu/</address>
@@ -1100,7 +1100,7 @@
                 <description>
                     <head>Metadata division administrative metadata referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When there is administrative metadata and the amdSec is present, all administrative metadata MUST be referenced via the administrative sections different identifiers.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All of the `&lt;amdSec&gt;` identifiers are listed in a single `@ADMID` using spaces as delimeters.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All of the `&lt;amdSec&gt;` identifiers are listed in a single `@AMDID` using spaces as delimeters.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1434,27 +1434,27 @@
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
-            OBJID="csip-mets-example"
+            xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
+            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
             LABEL="Sample CSIP Information Package"
             TYPE="OTHER"
             csip:OTHERTYPE="Patterns"
             PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml"
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
          </mets:mets>
     </Example>
     <Example ID="metsRootElementExample2" LABEL="METS root element illustrating the use of a custom `csip:@OTHERCONTENTINFORMATIONTYPE` attribute value when the correct content type value does note exist in the vocabulary. The `csip:@CONTENTINFORMATIONTYPE` attribute value is set to OTHER.">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
-            OBJID="csip-mets-example"
+            xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
+            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
             LABEL="Sample CSIP Information Package"
             TYPE="Datasets"
             csip:CONTENTINFORMATIONTYPE="OTHER"
             csip:OTHERCONTENTINFORMATIONTYPE="FGS Personal, version 1"
             PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml"
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
         </mets:mets>
     </Example>
     <Example ID="metsHdrElementExample1" LABEL="METS agent example of the mandatory agent">
@@ -1466,42 +1466,42 @@
         </mets:metsHdr>
     </Example>
     <Example ID="dmdSecExample1" LABEL="METS example of referencing the descriptive metadata which is described with an EAD document">
-        <mets:dmdSec ID="dmd-ead-file" CREATED="2018-04-24T14:37:49.609+01:00">
+        <mets:dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
             <mets:mdRef LOCTYPE="URL" MDTYPE="EAD" xlink:type="simple"  xlink:href="metadata/descriptive/ead2002.xml" MIMETYPE="application/xml" SIZE="903" CREATED="2018-04-24T14:37:49.609+01:00" CHECKSUM="F24263BF09994749F335E1664DCE0086DB6DCA323FDB6996938BCD28EA9E8153" CHECKSUMTYPE="SHA-256"/>
         </mets:dmdSec>
     </Example>
     <Example ID="amdSecExample1" LABEL="METS example of referencing preservation metadata in the form of PREMIS metadata for describing the preservation objects and the events pertaining to the objects">
         <mets:amdSec>
-            <mets:digiprovMD ID="digiprov-premis-file-1" CREATED="2018-04-24T14:37:52.783+01:00">
+            <mets:digiprovMD ID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F" CREATED="2018-04-24T14:37:52.783+01:00">
                 <mets:mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis1.xml" MDTYPE="PREMIS" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="1211" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="8aa278038dbad54bbf142e7d72b493e2598a94946ea1304dc82a79c6b4bac3d5" CHECKSUMTYPE="SHA-256" LABEL="premis1.xml"/>
             </mets:digiprovMD>
-            <mets:digiprovMD ID="digiprov-premis-file-2" CREATED="2018-04-24T14:47:52.783+01:00">
+            <mets:digiprovMD ID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" CREATED="2018-04-24T14:47:52.783+01:00">
                 <mets:mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis2.xml" MDTYPE="PREMIS" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="2854" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="d1dfa585dcc9d87268069dc58d5e47956434ec3db4087a75a3885d287f15126f" CHECKSUMTYPE="SHA-256" LABEL="premis2.xml"/>
             </mets:digiprovMD>
         </mets:amdSec>
     </Example>
     <Example ID="fileSecExample1" LABEL="METS example of how the structuring of the data is made in the file section">
-        <mets:fileSec ID="file-sec-example">
+        <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
             <!-- Main grouping starting names is Documentation, Schemas and Representations can be mirrored in the folder names-->
-            <mets:fileGrp ID="file-grp-doc" USE="Documentation">
+            <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H" USE="Documentation">
                 <!-- Documentation is grouped in one or more fileGrp with the use being the path to the documentation -->
-                <mets:file ID="file-docx" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
+                <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A81" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File.docx"/>
                 </mets:file>
-                <mets:file ID="file2-docx" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
+                <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A82" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File2.docx"/>
                 </mets:file>
             </mets:fileGrp>
-            <mets:fileGrp ID="file-grp-schema" USE="Schemas">
+            <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F" USE="Schemas">
                 <!-- XML-schemas is grouped in one or more fileGrp with the use being the path to the documentation -->
-                <mets:file ID="file-ead-schema" MIMETYPE="text/xsd" SIZE="123917" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="0BF9E16ADE296EF277C7B8E5D249D300F1E1EB59F2DCBD89644B676D66F72DCC" CHECKSUMTYPE="SHA-256">
+                <mets:file ID="uuid-A1B7B0DA-E129-48EF-B431-E553F2977FD6" MIMETYPE="text/xsd" SIZE="123917" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="0BF9E16ADE296EF277C7B8E5D249D300F1E1EB59F2DCBD89644B676D66F72DCC" CHECKSUMTYPE="SHA-256">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="schemas/ead2002.xsd"/>
                 </mets:file>
             </mets:fileGrp>
-            <mets:fileGrp ID="file-grp-rep-subdata" USE="Representations/submission/data" csip:CONTENTINFORMATIONTYPE="SIARDDK">
+            <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" USE="Representations/submission/data" csip:CONTENTINFORMATIONTYPE="SIARDDK">
                 <!-- The fileGrp USE attribute gives the folder name including path to the where the data is found -->
                 <!-- All transferred data is stored in a folder, the filepath is shown in the href -->
-                <mets:file ID="file-siard-xml" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="digiprov-premis-file-2 digiprov-premis-file-1">
+                <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FD" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/data/SIARD.xml"/>
                 </mets:file>
             </mets:fileGrp>
@@ -1509,75 +1509,75 @@
     </Example>
     <Example ID="fileSecExample2" LABEL="METS example of how the structuring of the data including representations are made in the file section">
             <!-- The fileGrp USE attribute gives the folder name including path to the where the data is found -->
-        <mets:fileSec ID="file-sec-example">
+        <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
             <!-- Main grouping starting names is Documetation, Schemas and Representations can be mirrored in the folder names-->
-            <mets:fileGrp ID="file-grp-doc" USE="Documentation">
+            <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H" USE="Documentation">
                 <!-- Documentation is grouped in one or more fileGrp with the use being the path to the documentation -->
                 <!-- This documentation is for the whole package, the representations documentation is described in the mets for the representation -->
-                <mets:file ID="file-docx" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
+                <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A81" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File.docx"/>
                 </mets:file>
-                <mets:file ID="file2-docx" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
+                <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A82" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File2.docx"/>
                 </mets:file>
             </mets:fileGrp>
-            <mets:fileGrp ID="file-grp-schema" USE="Schemas">
+            <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F" USE="Schemas">
                 <!-- XML-schemas is grouped in one or more fileGrp with the use being the path to the documentation -->
-                <mets:file ID="file-ead-schema" MIMETYPE="text/xsd" SIZE="123917" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="0BF9E16ADE296EF277C7B8E5D249D300F1E1EB59F2DCBD89644B676D66F72DCC" CHECKSUMTYPE="SHA-256">
+                <mets:file ID="uuid-A1B7B0DA-E129-48EF-B431-E553F2977FD6" MIMETYPE="text/xsd" SIZE="123917" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="0BF9E16ADE296EF277C7B8E5D249D300F1E1EB59F2DCBD89644B676D66F72DCC" CHECKSUMTYPE="SHA-256">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="schemas/ead2002.xsd"/>
                 </mets:file>
             </mets:fileGrp>
             <!-- All transferred data is stored in a folder, the filepath is shown in the href -->
             <!-- For each representation the file referenced in the file group is the representation METS document -->
-            <mets:fileGrp ID="file-grp-rep-preing" USE="Representations/preingest" csip:CONTENTINFORMATIONTYPE="OTHER" csip:OTHERCONTENTINFORMATIONTYPE="Access database">
-                <mets:file ID="file-preing-mets-xml" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="digiprov-premis-file-2 digiprov-premis-file-1">
+            <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C277" USE="Representations/preingest" csip:CONTENTINFORMATIONTYPE="OTHER" csip:OTHERCONTENTINFORMATIONTYPE="Access database">
+                <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FE" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml"/>
                 </mets:file>
             </mets:fileGrp>
-            <mets:fileGrp ID="file-grp-rep-sub" USE="Representations/submission" csip:CONTENTINFORMATIONTYPE="SIARDDK" ADMID="digiprov-premis-file-1 digiprov-premis-file-2">
-                <mets:file ID="file-sub-mets-xml" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="digiprov-premis-file-2 digiprov-premis-file-1">
+            <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C278" USE="Representations/submission" csip:CONTENTINFORMATIONTYPE="SIARDDK" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3">
+                <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FF" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/METS.xml"/>
                 </mets:file>
             </mets:fileGrp>
-            <mets:fileGrp ID="file-grp-rep-ing" USE="Representations/ingest" csip:CONTENTINFORMATIONTYPE="SIARD1" ADMID="digiprov-premis-file-3 digiprov-premis-file-4">
-                <mets:file ID="file-ing-mets-xml" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="digiprov-premis-file-2 digiprov-premis-file-1">
+            <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C279" USE="Representations/ingest" csip:CONTENTINFORMATIONTYPE="SIARD1" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4">
+                <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FG" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                     <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml"/>
                 </mets:file>
             </mets:fileGrp>
         </mets:fileSec>
     </Example>
     <Example ID="structMapExample1" LABEL="METS example of the mandatory structural map">
-        <mets:structMap ID="struct-map-example-1" TYPE="PHYSICAL" LABEL="CSIP">
-            <mets:div ID="struct-map-example-div" LABEL="csip-mets-example">
-                <mets:div ID="struct-map-metadata-div" LABEL="Metadata" ADMID="digiprov-premis-file-1 digiprov-premis-file-2" DMDID="dmd-ead-file"/>
-                <mets:div ID="struct-map-doc-div" LABEL="Documentation">
-                    <mets:fptr FILEID="file-ptr-doc"/>
+        <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP">
+            <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
+                <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
+                <mets:div ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86I" LABEL="Documentation">
+                    <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H"/>
                 </mets:div>
-                <mets:div ID="struct-map-schema-div" LABEL="Schemas">
-                    <mets:fptr FILEID="file-grp-schema"/>
+                <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas">
+                    <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
                 </mets:div>
-                <mets:div ID="struct-map-reps-sub-div" LABEL="Representations">
-                    <mets:fptr FILEID="file-grp-rep-subdata"/>
+                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations">
+                    <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G"/>
                 </mets:div>
             </mets:div>
         </mets:structMap>
     </Example>
     <Example ID="structMapExample2" LABEL="METS example of the mandatory structural map including representations">
-        <mets:structMap ID="struct-map-example-1" TYPE="PHYSICAL" LABEL="CSIP">
-            <mets:div ID="struct-map-example-div" LABEL="csip-mets-example">
-               <mets:div ID="struct-map-metadata-div" LABEL="Metadata" ADMID="digiprov-premis-file-1 digiprov-premis-file-2 digiprov-premis-file-3 digiprov-premis-file-4" DMDID="dmd-ead-file"/>
-                <mets:div ID="struct-map-schema-div" LABEL="Schemas">
-                    <mets:fptr FILEID="file-ptr-schema"/>
+        <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP">
+            <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
+               <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
+                <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas">
+                    <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
                 </mets:div>
                 <!-- mptr Only present if representations is transferred and gives all the linked mets documents-->
-                <mets:div ID="struct-map-reps-preing-div" LABEL="Representations/preingest">
-                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml" xlink:title="file-grp-rep-preing"/>
+                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="Representations/preingest">
+                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C277"/>
                 </mets:div>
-                <mets:div ID="struct-map-reps-sub-div" LABEL="Representations/submission">
-                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/METS.xml" xlink:title="file-grp-rep-sub"/>
+                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations/submission">
+                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C278"/>
                 </mets:div>
-                <mets:div ID="struct-map-reps-ing-div" LABEL="Representations/ingest">
-                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml" xlink:title="file-grp-rep-ing"/>
+                <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6738" LABEL="Representations/ingest">
+                    <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C279"/>
                 </mets:div>
             </mets:div>
         </mets:structMap>
@@ -1586,61 +1586,61 @@
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
-            OBJID="csip-mets-example"
+            xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
+            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
             LABEL="Sample CSIP Information Package with no representations"
             TYPE="Database"
             csip:CONTENTINFORMATIONTYPE="SIARDDK"
             PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml"
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
             <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
                 <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
                     <mets:name>RODA-in</mets:name>
                     <mets:note csip:NOTETYPE="SOFTWARE VERSION">2.1.0-beta.7</mets:note>
                 </mets:agent>
             </mets:metsHdr>
-            <mets:dmdSec ID="dmd-ead-file" CREATED="2018-04-24T14:37:49.609+01:00">
+            <mets:dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
                 <mets:mdRef LOCTYPE="URL" MDTYPE="EAD" MDTYPEVERSION="2002" xlink:type="simple"  xlink:href="metadata/descriptive/ead2002.xml" SIZE="903" CREATED="2018-04-24T14:37:49.609+01:00" CHECKSUM="F24263BF09994749F335E1664DCE0086DB6DCA323FDB6996938BCD28EA9E8153" CHECKSUMTYPE="SHA-256"/>
             </mets:dmdSec>
             <mets:amdSec>
-                <mets:digiprovMD ID="digiprov-premis-file-1" CREATED="2018-04-24T14:37:52.783+01:00">
+                <mets:digiprovMD ID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F" CREATED="2018-04-24T14:37:52.783+01:00">
                     <mets:mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis1.xml" MDTYPE="PREMIS" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="1211" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="8aa278038dbad54bbf142e7d72b493e2598a94946ea1304dc82a79c6b4bac3d5" CHECKSUMTYPE="SHA-256" LABEL="premis1.xml"/>
                 </mets:digiprovMD>
-                <mets:digiprovMD ID="digiprov-premis-file-2" CREATED="2018-04-24T14:47:52.783+01:00">
+                <mets:digiprovMD ID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" CREATED="2018-04-24T14:47:52.783+01:00">
                     <mets:mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis2.xml" MDTYPE="PREMIS" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="2854" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="d1dfa585dcc9d87268069dc58d5e47956434ec3db4087a75a3885d287f15126f" CHECKSUMTYPE="SHA-256" LABEL="premis2.xml"/>
                 </mets:digiprovMD>
             </mets:amdSec>
-            <mets:fileSec ID="file-sec-example">
-                <mets:fileGrp ID="file-grp-doc" USE="Documentation">
-                    <mets:file ID="file-docx" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
+            <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
+                <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H" USE="Documentation">
+                    <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A81" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File.docx"/>
                     </mets:file>
-                    <mets:file ID="file2-docx" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
+                    <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A82" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File2.docx"/>
                     </mets:file>
                 </mets:fileGrp>
-                <mets:fileGrp ID="file-grp-schema" USE="Schemas">
-                    <mets:file ID="file-ead-schema" MIMETYPE="text/xsd" SIZE="123917" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="0BF9E16ADE296EF277C7B8E5D249D300F1E1EB59F2DCBD89644B676D66F72DCC" CHECKSUMTYPE="SHA-256">
+                <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F" USE="Schemas">
+                    <mets:file ID="uuid-A1B7B0DA-E129-48EF-B431-E553F2977FD6" MIMETYPE="text/xsd" SIZE="123917" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="0BF9E16ADE296EF277C7B8E5D249D300F1E1EB59F2DCBD89644B676D66F72DCC" CHECKSUMTYPE="SHA-256">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="schemas/ead2002.xsd"/>
                     </mets:file>
                 </mets:fileGrp>
-                <mets:fileGrp ID="file-grp-rep-subdata" USE="Representations/Submission/Data" csip:CONTENTINFORMATIONTYPE="SIARDDK">
-                    <mets:file ID="file-siard-xml" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="digiprov-premis-file-2 digiprov-premis-file-1">
+                <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G" USE="Representations/Submission/Data" csip:CONTENTINFORMATIONTYPE="SIARDDK">
+                    <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FD" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/data/SIARD.xml"/>
                     </mets:file>
                 </mets:fileGrp>
             </mets:fileSec>
-            <mets:structMap ID="struct-map-example-1" TYPE="PHYSICAL" LABEL="CSIP">
-                <mets:div ID="struct-map-example-div" LABEL="csip-mets-example">
-                    <mets:div ID="struct-map-metadata-div" LABEL="Metadata" ADMID="digiprov-premis-file-1 digiprov-premis-file-2" DMDID="dmd-ead-file"/>
-                    <mets:div ID="struct-map-doc-div" LABEL="Documentation">
-                        <mets:fptr FILEID="file-ptr-doc"/>
+            <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP">
+                <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
+                    <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
+                    <mets:div ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86I" LABEL="Documentation">
+                        <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H"/>
                     </mets:div>
-                    <mets:div ID="struct-map-schema-div" LABEL="Schemas">
-                        <mets:fptr FILEID="file-ptr-schema"/>
+                    <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas">
+                        <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
                     </mets:div>
-                    <mets:div ID="struct-map-reps-sub-div" LABEL="Representations">
-                        <mets:fptr FILEID="file-grp-rep-subdata"/>
+                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations">
+                        <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86G"/>
                     </mets:div>
                 </mets:div>
             </mets:structMap>
@@ -1650,83 +1650,83 @@
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
-            OBJID="csip-mets-example"
+            xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
+            OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
             LABEL="Sample CSIP Information Package with representations"
             TYPE="Database"
             PROFILE="https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml"
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
             <mets:metsHdr CREATEDATE="2018-04-24T14:37:49.602+01:00" LASTMODDATE="2018-04-24T14:37:49.602+01:00" RECORDSTATUS="NEW" csip:OAISPACKAGETYPE="SIP">
                 <mets:agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
                     <mets:name>RODA-in</mets:name>
                     <mets:note csip:NOTETYPE="SOFTWARE VERSION">2.1.0-beta.7</mets:note>
                 </mets:agent>
             </mets:metsHdr>
-            <mets:dmdSec ID="dmd-ead-file" CREATED="2018-04-24T14:37:49.609+01:00">
+            <mets:dmdSec ID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
                 <!-- Archival description on the highest level pertaining to the whole package -->
                 <mets:mdRef LOCTYPE="URL" MDTYPE="EAD" MDTYPEVERSION="2002" xlink:type="simple"  xlink:href="metadata/descriptive/ead2002.xml" SIZE="903" CREATED="2018-04-24T14:37:49.609+01:00" CHECKSUM="F24263BF09994749F335E1664DCE0086DB6DCA323FDB6996938BCD28EA9E8153" CHECKSUMTYPE="SHA-256"/>
             </mets:dmdSec>
             <mets:amdSec>
                 <!-- Administritive metadata pertaining to the whole package and its representations -->
                 <!-- PREMIS information relating to the creation of the SIARDDK of the Access database -->
-                <mets:digiprovMD ID="digiprov-premis-file-1" CREATED="2018-04-24T14:37:52.783+01:00">
+                <mets:digiprovMD ID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F" CREATED="2018-04-24T14:37:52.783+01:00">
                     <mets:mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis1.xml" MDTYPE="PREMIS" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="1211" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="8aa278038dbad54bbf142e7d72b493e2598a94946ea1304dc82a79c6b4bac3d5" CHECKSUMTYPE="SHA-256" LABEL="premis1.xml"/>
                 </mets:digiprovMD>
-                <mets:digiprovMD ID="digiprov-premis-file-2" CREATED="2018-04-24T14:47:52.783+01:00">
+                <mets:digiprovMD ID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3" CREATED="2018-04-24T14:47:52.783+01:00">
                     <mets:mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis2.xml" MDTYPE="PREMIS" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="2854" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="d1dfa585dcc9d87268069dc58d5e47956434ec3db4087a75a3885d287f15126f" CHECKSUMTYPE="SHA-256" LABEL="premis2.xml"/>
                 </mets:digiprovMD>
                 <!-- PREMIS information relating to the creation of the SIARD1 of the SIARDDK -->
-                <mets:digiprovMD ID="digiprov-premis-file-3" CREATED="2018-04-24T14:37:52.783+01:00">
+                <mets:digiprovMD ID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943G" CREATED="2018-04-24T14:37:52.783+01:00">
                     <mets:mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis3.xml" MDTYPE="PREMIS" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="1211" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="8aa278038dbad54bbf142e7d72b493e2598a94946ea1304dc82a79c6b4bac3d5" CHECKSUMTYPE="SHA-256" LABEL="premis1.xml"/>
                 </mets:digiprovMD>
-                <mets:digiprovMD ID="digiprov-premis-file-4" CREATED="2018-04-24T14:47:52.783+01:00">
+                <mets:digiprovMD ID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B4" CREATED="2018-04-24T14:47:52.783+01:00">
                     <mets:mdRef LOCTYPE="URL" xlink:type="simple" xlink:href="metadata/preservation/premis4.xml" MDTYPE="PREMIS" MDTYPEVERSION="3.0" MIMETYPE="text/xml" SIZE="2854" CREATED="2018-04-24T14:37:52.783+01:00" CHECKSUM="d1dfa585dcc9d87268069dc58d5e47956434ec3db4087a75a3885d287f15126f" CHECKSUMTYPE="SHA-256" LABEL="premis2.xml"/>
                 </mets:digiprovMD>
             </mets:amdSec>
-            <mets:fileSec ID="file-sec-example">
-                <mets:fileGrp ID="file-grp-doc" USE="Documentation">
-                    <mets:file ID="file-docx" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
+            <mets:fileSec ID="uuid-CA580D47-8C8B-4E91-ABD5-142EBBE15B84">
+                <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86H" USE="Documentation">
+                    <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A81" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File.docx"/>
                     </mets:file>
-                    <mets:file ID="file2-docx" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
+                    <mets:file ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A82" MIMETYPE="application/vnd.openxmlformats-officedocument.wordprocessingml.document" SIZE="2554366" CREATED="2012-08-15T12:08:15.432+01:00" CHECKSUM="91B7A2C0A1614AA8F3DAF11DB4A1C981F14BAA25E6A0336F715B7C513E7A1557" CHECKSUMTYPE="SHA-256">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File2.docx"/>
                     </mets:file>
                 </mets:fileGrp>
-                <mets:fileGrp ID="file-grp-schema" USE="Schemas">
-                    <mets:file ID="file-ead-schema" MIMETYPE="text/xsd" SIZE="123917" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="0BF9E16ADE296EF277C7B8E5D249D300F1E1EB59F2DCBD89644B676D66F72DCC" CHECKSUMTYPE="SHA-256">
+                <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F" USE="Schemas">
+                    <mets:file ID="uuid-A1B7B0DA-E129-48EF-B431-E553F2977FD6" MIMETYPE="text/xsd" SIZE="123917" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="0BF9E16ADE296EF277C7B8E5D249D300F1E1EB59F2DCBD89644B676D66F72DCC" CHECKSUMTYPE="SHA-256">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="schemas/ead2002.xsd"/>
                     </mets:file>
                 </mets:fileGrp>
-                <mets:fileGrp ID="file-grp-rep-preing" USE="Representations/preingest" csip:CONTENTINFORMATIONTYPE="OTHER">
-                    <mets:file ID="file-preing-mets-xml" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="digiprov-premis-file-2 digiprov-premis-file-1">
+                <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C277" USE="Representations/preingest" csip:CONTENTINFORMATIONTYPE="Access database">
+                    <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FE" MIMETYPE="xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml"/>
                     </mets:file>
                 </mets:fileGrp>
-                <mets:fileGrp ID="file-grp-rep-sub" USE="Representations/submission" csip:CONTENTINFORMATIONTYPE="SIARDDK" ADMID="digiprov-premis-file-1 digiprov-premis-file-2">
-                    <mets:file ID="file-sub-mets-xml" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="digiprov-premis-file-2 digiprov-premis-file-1">
+                <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C278" USE="Representations/submission" csip:CONTENTINFORMATIONTYPE="SIARDDK" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3">
+                    <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FF" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/METS.xml"/>
                     </mets:file>
                 </mets:fileGrp>
-                <mets:fileGrp ID="file-grp-rep-ing" USE="Representations/ingest" csip:CONTENTINFORMATIONTYPE="SIARD1" ADMID="digiprov-premis-file-3 digiprov-premis-file-4">
-                    <mets:file ID="file-ing-mets-xml" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="digiprov-premis-file-2 digiprov-premis-file-1">
+                <mets:fileGrp ID="uuid-5811D494-6045-4741-924C-A1CFA340C279" USE="Representations/ingest" csip:CONTENTINFORMATIONTYPE="SIARD1" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4">
+                    <mets:file ID="uuid-EE23344D-4F64-40C1-8E18-75839EF661FG" MIMETYPE="application/xml" SIZE="1338744" CREATED="2018-04-24T14:37:49.617+01:00" CHECKSUM="7176A627870CFA3854468EC43C5A56F9BD8B30B50A983B8162BF56298A707667" CHECKSUMTYPE="SHA-256" ADMID="uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943F">
                         <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml"/>
                     </mets:file>
                 </mets:fileGrp>
             </mets:fileSec>
-            <mets:structMap ID="struct-map-example-1" TYPE="PHYSICAL" LABEL="CSIP">
-                <mets:div ID="struct-map-example-div" LABEL="csip-mets-example">
-                    <mets:div ID="struct-map-metadata-div" LABEL="Metadata" ADMID="digiprov-premis-file-1 digiprov-premis-file-2 digiprov-premis-file-3 digiprov-premis-file-4" DMDID="dmd-ead-file"/>
-                    <mets:div ID="struct-map-schema-div" LABEL="Schemas" CONTENTIDS="">
-                        <mets:fptr FILEID="file-ptr-schema"/>
+            <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP">
+                <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
+                    <mets:div ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81" LABEL="Metadata" ADMID="uuid-9124DA4D-3736-4F69-8355-EB79A22E943F uuid-48C18DD8-2561-4315-AC39-F941CBB138B3 uuid-9124DA4D-3736-4F69-8355-EB79A22E943G uuid-48C18DD8-2561-4315-AC39-F941CBB138B4" DMDID="uuid-906F4F12-BA52-4779-AE2C-178F9206111F"/>
+                    <mets:div ID="uuid-26757DC2-4C0F-4431-85B5-5943D1AB5CA3" LABEL="Schemas" CONTENTIDS="">
+                        <mets:fptr FILEID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F"/>
                     </mets:div>
-                    <mets:div ID="struct-map-reps-preing-div" LABEL="Representations/preingest">
-                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml" xlink:title="file-grp-rep-preing"/>
+                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6737" LABEL="Representations/preingest">
+                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/preingest/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C277"/>
                     </mets:div>
-                    <mets:div ID="struct-map-reps-sub-div" LABEL="Representations/submission">
-                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/METS.xml" xlink:title="file-grp-rep-sub"/>
+                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6736" LABEL="Representations/submission">
+                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C278"/>
                     </mets:div>
-                    <mets:div ID="struct-map-reps-ing-div" LABEL="Representations/ingest">
-                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml" xlink:title="file-grp-rep-ing"/>
+                    <mets:div ID="uuid-35CB3341-D731-4AC3-9622-DB8901CD6738" LABEL="Representations/ingest">
+                        <mets:mptr LOCTYPE="URL" xlink:type="simple" xlink:href="representations/ingest/METS.xml" xlink:title="uuid-5811D494-6045-4741-924C-A1CFA340C279"/>
                     </mets:div>
                 </mets:div>
             </mets:structMap>
