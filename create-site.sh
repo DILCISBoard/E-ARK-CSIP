@@ -15,6 +15,12 @@ then
   rm -rf ./docs/figs
 fi
 
+if [ -d ./docs/pdf ]
+then
+  echo " - removing existing pdf directory"
+  rm -rf ./docs/pdf]
+fi
+
 if [ -d ./docs/profile ]
 then
   echo " - removing existing profile directory"
@@ -33,6 +39,43 @@ then
   rm -rf ./docs/archive
 fi
 
+if [ -d ./docs/_data ]
+then
+  echo " - removing existing menu data"
+  rm -rf ./docs/_data
+fi
+
+if [ -d ./docs/_includes ]
+then
+  echo " - removing existing includes"
+  rm -rf ./docs/_includes
+fi
+
+if [ -d ./docs/_layouts ]
+then
+  echo " - removing existing layouts"
+  rm -rf ./docs/_layouts
+fi
+
+if [ -d ./docs/_layouts ]
+then
+  echo " - removing existing layouts"
+  rm -rf ./docs/_layouts
+fi
+
+if [ -d ./docs/img ]
+then
+  echo " - removing existing images"
+  rm -rf ./docs/img
+fi
+
+if [ -d ./docs/css ]
+then
+  echo " - removing existing css"
+  rm -rf ./docs/css
+fi
+
+
 bash "$SCRIPT_DIR/spec-publisher/utils/create-venv.sh"
 
 command -v markdown-pp >/dev/null 2>&1 || {
@@ -49,6 +92,8 @@ markdown-pp SITE.md -o ./docs/index.md
 echo " - copying files to docs directory"
 cp -R specification/figs docs/
 cp -R spec-publisher/res/md/figs docs/
+cp -Rf spec-publisher/site/* docs/
 cp -R profile docs/
 cp -R schema docs/
 cp -R archive docs/
+cp -R examples docs/
