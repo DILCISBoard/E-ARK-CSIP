@@ -4,7 +4,7 @@ title: Archived Versions of the Common Specification
 Archived Versions of the Common Specification
 =============================================
 
-- [Version 2.0.4](v2_0/eark-csip-v2-0-4.pdf)
+- [Version 2.0.4](/pdf/eark-csip.pdf)
 - [Version 2.0.3](v2_0/eark-csip-v2-0-3.pdf)
 - [Version 2.0.2](v2_0/eark-csip-v2-0-2.pdf)
 - [Version 2.0.1](v2_0/eark-csip-v2-0-1.pdf)
