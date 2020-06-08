@@ -46,7 +46,7 @@ Example 2: A generic prefix:`ID`.
 Note that the identifiers specified within the CSIP are mainly used as internal references between Information Package components. Prefixes are not mandatory, but if they are used, it is recommended that a single prefix is chosen and used consistently across all IDs in the package.
 
 ### Referencing between files within a CSIP Information Package
-It is strongly recommends that all components of an information package (i.e. all data, metadata and other parts) are stored as discrete files within the package. While this approach simplifies the management of the Information Package, making it easier to aggregate, validate and modify the package, it also necessitates a clear method for recording and resolving referencing between files.
+It is strongly recommended that all components of an information package (i.e. all data, metadata and other parts) are stored as discrete files within the package. While this approach simplifies the management of the Information Package, making it easier to aggregate, validate and modify the package, it also necessitates a clear method for recording and resolving referencing between files.
 
 For example, when using the CSIP referencing can occur between:
 
