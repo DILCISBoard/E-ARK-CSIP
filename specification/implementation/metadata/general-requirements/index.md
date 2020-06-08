@@ -43,7 +43,9 @@ Example 2: A generic prefix:`ID`.
 <dmdSec ID="ID906F4F12-BA52-4779-AE2C-178F9206111F" CREATED="2018-04-24T14:37:49.609+01:00">
 ```
 
-Note that the identifiers specified within the CSIP are mainly used as internal references between Information Package components. Prefixes are not mandatory, but if they are used, it is recommended that a single prefix is chosen and used consistently across all IDs in the package.
+The identifiers specified within the CSIP are mainly used as internal references between Information Package components. Prefixes are not mandatory, but if they are used, it is recommended that a single prefix is chosen and used consistently across all IDs in the package.
+
+Note that while we recommend the use of generated unique IDs in real world information packages we used logical unique names for the examples in this document. This is for readability purposes, particularly for any readers trying to follow reference links.
 
 ### Referencing between files within a CSIP Information Package
 It is strongly recommended that all components of an information package (i.e. all data, metadata and other parts) are stored as discrete files within the package. While this approach simplifies the management of the Information Package, making it easier to aggregate, validate and modify the package, it also necessitates a clear method for recording and resolving referencing between files.
