@@ -329,7 +329,7 @@
             <requirement ID="CSIP17" REQLEVEL="SHOULD" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Descriptive metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Must be used if descriptive metadata for the package content is available. Each descriptive metadata section (`&lt;dmdSec&gt;`) contains a single description and must be repeated for mulitple descriptions, when available.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Must be used if descriptive metadata for the package content is available. Each descriptive metadata section (`&lt;dmdSec&gt;`) contains a single description and must be repeated for multiple descriptions, when available.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/dmdSec</dd>
@@ -485,7 +485,7 @@
                 <description>
                     <head>Digital provenance metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">For recording information about preservation the standard PREMIS is used. It is mandatory to include one `&lt;digiprovMD&gt;` element for each piece of PREMIS metadata.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The use if PREMIS in METS is following the recommendations in <a href="http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf">2017 version of PREMIS in METS Guidelines</a></p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The use if PREMIS in METS is following the recommendations in <a href="http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf"> the 2017 version of PREMIS in METS Guidelines.</a></p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
@@ -514,7 +514,7 @@
             </requirement>
             <requirement ID="CSIP35" REQLEVEL="SHOULD" EXAMPLES="amdSecExample1">
                 <description>
-                    <head>Reference to the document with the digital provenance metdata</head>
+                    <head>Reference to the document with the digital provenance metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Reference to the digital provenance metadata file stored in the “metadata” section of the IP.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef</dd>
@@ -1069,7 +1069,7 @@
                 <description>
                     <head>Metadata division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The metadata referenced in the administrative and/or descriptive metadata section is described in the structural map with one sub division.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the transfer consist of only administrative and/or descriptive metadata this is the only sub division that occurs.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the transfer consists of only administrative and/or descriptive metadata this is the only sub division that occurs.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1100,7 +1100,7 @@
                 <description>
                     <head>Metadata division administrative metadata referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When there is administrative metadata and the amdSec is present, all administrative metadata MUST be referenced via the administrative sections different identifiers.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All of the `&lt;amdSec&gt;` identifiers are listed in a single `@ADMID` using spaces as delimeters.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All of the `&lt;amdSec&gt;` identifiers are listed in a single `@ADMID` using spaces as delimiters.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1111,7 +1111,7 @@
                 <description>
                     <head>Metadata division descriptive metadata referencing</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When there are descriptive metadata and one or more dmdSec is present, all descriptive metadata MUST be referenced via the descriptive section identifiers.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Every `&lt;dmdSec&gt;` identifier is listed in a single `@DMDID` attribute using spaces as delimeters.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Every `&lt;dmdSec&gt;` identifier is listed in a single `@DMDID` attribute using spaces as delimiters.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@DMDID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -1253,7 +1253,7 @@
             <requirement ID="CSIP104" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division file references</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing content described in the package are referenced via the relevant file group identifiers. One file group reference per fptr-element</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing content described in the package are referenced via the relevant file group identifiers. One file group reference per fptr-element.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
@@ -1369,7 +1369,7 @@
                 <description>
                     <head>behaviorSec</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Section not defined or used in CSIP, additional own uses may occur.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Information regarding the behavior section is found in the <a href="http://www.loc.gov/standards/mets/METSPrimer.pdf">METS Primer</a></p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Information regarding the behaviour section is found in the <a href="http://www.loc.gov/standards/mets/METSPrimer.pdf">METS Primer</a></p>
                 </description>
             </requirement>
         </behaviorSec>
