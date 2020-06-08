@@ -57,12 +57,6 @@ then
   rm -rf ./docs/_layouts
 fi
 
-if [ -d ./docs/_layouts ]
-then
-  echo " - removing existing layouts"
-  rm -rf ./docs/_layouts
-fi
-
 if [ -d ./docs/img ]
 then
   echo " - removing existing images"
@@ -74,7 +68,6 @@ then
   echo " - removing existing css"
   rm -rf ./docs/css
 fi
-
 
 bash "$SCRIPT_DIR/spec-publisher/utils/create-venv.sh"
 
