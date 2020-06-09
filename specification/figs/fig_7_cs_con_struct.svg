@@ -133,7 +133,7 @@
 			<text x="47.78" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>other</text>		</g>
 		<g id="shape14-56" v:mID="14" v:groupContext="shape" transform="translate(455.542,-133.8)">
 			<title>Rectangle.1933</title>
-			<desc>Representation A</desc>
+			<desc>&lt;representationID&gt;</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -144,7 +144,7 @@
 				<rect x="0" y="320.051" width="127.559" height="42.5197" class="st2"/>
 			</g>
 			<rect x="0" y="320.051" width="127.559" height="42.5197" class="st3"/>
-			<text x="14.1" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Representation A</text>		</g>
+			<text x="14.1" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>&lt;representationID&gt;</text>		</g>
 		<g id="shape15-62" v:mID="15" v:groupContext="shape" transform="translate(711.814,163.662) rotate(90.001)">
 			<title>Sheet.15</title>
 			<path d="M0 362.57 L22.59 362.57" class="st6"/>
@@ -289,7 +289,7 @@
 		</g>
 		<g id="shape33-137" v:mID="33" v:groupContext="shape" transform="translate(597.274,-133.8)">
 			<title>Rectangle.1985</title>
-			<desc>Representation B</desc>
+			<desc>&lt;representationID&gt;</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(11):26"/>
 			</v:userDefs>
@@ -300,7 +300,7 @@
 				<rect x="0" y="320.051" width="127.559" height="42.5197" class="st2"/>
 			</g>
 			<rect x="0" y="320.051" width="127.559" height="42.5197" class="st3"/>
-			<text x="14.1" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Representation B</text>		</g>
+			<text x="14.1" y="344.91" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>&lt;representationID&gt;</text>		</g>
 		<g id="shape34-143" v:mID="34" v:groupContext="shape" transform="translate(632.707,-91.2807)">
 			<title>Rectangle.1986</title>
 			<desc>data</desc>
