@@ -111,4 +111,4 @@ Information Package.
   - How to split large content objects between multiple physical IPs
   - Generic guidelines on adding (any) descriptive metadata into a CSIP Information Package
 
-Finally, in addition to this document, full examples of IPs conforming to the Common Specification for Information implementation details are available at <https://github.com/DILCISBoard/E-ARK-CSIP>.
+Finally, in addition to this document, full examples of IPs conforming to the Common Specification for Information implementation details are available in [the examples directory on this site](/examples/).
