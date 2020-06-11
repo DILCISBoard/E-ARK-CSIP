@@ -14,5 +14,5 @@ abstract: |
         Alternatively, an own extension fulfilling the extending needs of the
         implementer can be created.
 version: 2.0.4
-date: 01.06.2020
+date: 12.06.2020
 ---
