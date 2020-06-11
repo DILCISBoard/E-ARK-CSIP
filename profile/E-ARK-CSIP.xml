@@ -12,7 +12,7 @@
         This will enable repository interoperability and assist in the management of the preservation of digital content.
         This profile is a base profile which is extended with E-ARK implementation of SIP, AIP and DIP.
     The profile can be used as is, but it is recommended that the supplied extending implementation are used. Alternatively, an own extension fulfilling the extending needs of the implementer can be created.</abstract>
-    <date>2020-06-01T12:00:00</date>
+    <date>2020-06-12T09:00:00</date>
     <contact>
         <institution>DILCIS Board</institution>
         <address>http://dilcis.eu/</address>
