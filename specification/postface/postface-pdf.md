@@ -111,8 +111,8 @@
 
   2.0.3   08.01.2020  Karin Bredenberg, &      SYD          Fixed error in value list note type.
                       C. Wilson                OPF
-                      
-  2.0.4   01.06.2020  K.Bredenberg,            SYD          Update in example ID:s, preface text and
+
+  2.0.4   12.06.2020  K.Bredenberg,            SYD          Update in example ID:s, preface text and
                       C. Wilson, &             OPF          output display update
                       J. Kaminski              HIGH                    
 ---------------------------------------------------------------------------------------------------------------
