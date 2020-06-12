@@ -6,9 +6,9 @@ Archived Versions of the Common Specification
 
 Version 2.0
 -----------
-- [PDF Version 2.0.4 12.06.2020](/pdf/eark-csip.pdf)
-- [PDF Version 2.0.3 08.01.2020](v2_0/eark-csip-v2-0-3.pdf)
-- [PDF Version 2.0.2 28.10.2019](v2_0/eark-csip-v2-0-2.pdf)
+- [PDF Version 2.0.4 12-06-2020](/pdf/eark-csip.pdf)
+- [PDF Version 2.0.3 08-01-2020](v2_0/eark-csip-v2-0-3.pdf)
+- [PDF Version 2.0.2 28-10-2019](v2_0/eark-csip-v2-0-2.pdf)
 - [PDF Version 2.0.1 09-09-2019](v2_0/eark-csip-v2-0-1.pdf)
 - [PDF Version 2.0.0 31-05-2019](v2_0/eark-csip-v2-0-0.pdf)
 
