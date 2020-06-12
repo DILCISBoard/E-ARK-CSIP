@@ -17,7 +17,7 @@ script:
   - cd ..
   - docker run -it --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-pdf.sh eark4all/spec-pdf-publisher
   - mkdir site
-  - docker run -it --rm -v "$PWD"/docs:/usr/src/app -v "$PWD"/site:/_site starefossen/github-pages jekyll build -d /_site
+  - docker run -it --rm -v "$PWD"/docs:/usr/src/app -v "$PWD"/site:/_site -u "$(id -u):$(id -g)" starefossen/github-pages jekyll build -d /_site
   - bundle install
   - bundle exec htmlproofer ./site --file-ignore /javadoc/ --only-4xx --check-html
 deploy:
