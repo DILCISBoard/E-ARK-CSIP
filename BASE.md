@@ -13,6 +13,8 @@
 
 !INCLUDE "specification/implementation/structure/folders/index.md"
 
+!INCLUDE "specification/implementation/structure/folders/structure.md"
+
 !INCLUDE "specification/implementation/structure/implementation/index.md"
 
 !INCLUDE "specification/implementation/metadata/index.md"
