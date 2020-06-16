@@ -69,6 +69,14 @@ then
   rm -rf ./docs/css
 fi
 
+if [ -d ./docs/release-notes ]
+then
+  echo " - removing existing release notes"
+  rm -rf ./docs/release-notes
+fi
+mkdir ./docs/release-notes
+cp ./RELEASENOTES.md ./docs/release-notes/index.md
+
 bash "$SCRIPT_DIR/spec-publisher/utils/create-venv.sh"
 
 command -v markdown-pp >/dev/null 2>&1 || {
