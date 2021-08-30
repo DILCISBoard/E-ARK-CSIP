@@ -9,6 +9,13 @@
                 <xs:enumeration value="SIARD2"/>
                 <xs:enumeration value="SIARDDK"/>
                 <xs:enumeration value="GeoData"/>
+                <xs:enumeration value="citcarchival_v1_0"/>
+                <xs:enumeration value="citspremis_v1_0"/>
+                <xs:enumeration value="citserms_v2_1"/>
+                <xs:enumeration value="citsehpj_v1_0"/>
+                <xs:enumeration value="citsehcr_v1_0"/>
+                <xs:enumeration value="citssiard_v1_0"/>
+                <xs:enumeration value="citsgeospatial_v3_0"/>
                 <xs:enumeration value="MIXED"/>
                 <xs:enumeration value="OTHER"/>
             </xs:restriction>
