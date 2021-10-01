@@ -781,7 +781,7 @@
             <requirement ID="CSIP113" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Schema file group</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">All XML schemas used in the information package should be referenced from one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value "Schemas".</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">All XML schemas used in the information package must be referenced from one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value "Schemas".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@USE='Schemas']</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
