@@ -1,4 +1,4 @@
-### 	Use of the METS structural map (`<structMap>`)
+### 	Use of the METS structural map (element structMap)
 The METS structural map element is the only mandatory element in the METS specification. It provides an overview of the components described in the METS document. It can also link the elements in the structure to associated content files and metadata. In the CSIP the `<structMap>` describes the higher level structure of all the content in the package and may link to representations.
 
 The CSIP requires the inclusion of one mandatory structural map according to the principles described below.
