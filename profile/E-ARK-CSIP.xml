@@ -173,10 +173,10 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP3" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentCategory" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
+            <requirement ID="CSIP3" REQLEVEL="SHOULD" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Other Content Category</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the `mets/@TYPE` attribute has the value "OTHER" the `mets/@csip:OTHERTYPE` attribute MUST be used to declare the content category of the package/representation.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the `mets/@TYPE` attribute has the value "OTHER" the `mets/@csip:OTHERTYPE` attribute MUST be used to declare the content category of the package/representation. The value can either be "OTHER" or any other string that are not present in the vocabulary used in the `mets/@TYPE` attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets[@TYPE='OTHER']/@csip:OTHERTYPE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
