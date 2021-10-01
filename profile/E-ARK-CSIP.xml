@@ -922,7 +922,7 @@
             </requirement>
             <requirement ID="CSIP73" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
-                    <head>File original identfication</head>
+                    <head>File original identification</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If an identifier for the file was supplied by the owner it can be recorded in this attribute.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@OWNERID</dd>
