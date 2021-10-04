@@ -166,7 +166,7 @@
             <requirement ID="CSIP2" REQLEVEL="MUST" RELATEDMAT="VocabularyContentCategory" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Content Category</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The `mets/@TYPE` attribute MUST be used to declare the category of the content held in the package, e.g. book, journal, stereograph, video, etc.. Legal values are defined in a fixed vocabulary. When the content category used falls outside of the defined vocabulary the `mets/@TYPE` value must be set to "OTHER" and the specific value declared in `mets/@csip:OTHERTYPE`. The vocabulary will develop under the curation of the DILCIS Board as additional content information type specifications are produced.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The `mets/@TYPE` attribute MUST be used to declare the category of the content held in the package, e.g. "Datasets", "Websites", "Mixes" , "Other", etc.. Legal values are defined in a fixed vocabulary. When the content category used falls outside of the defined vocabulary the `mets/@TYPE` value must be set to "OTHER" and the specific value declared in `mets/@csip:OTHERTYPE`. The vocabulary will develop under the curation of the DILCIS Board as additional content information type specifications are produced.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@TYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
