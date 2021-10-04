@@ -998,8 +998,8 @@
                     <head>Structural description of the package</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The structural map `&lt;structMap&gt;` element is the only mandatory element in the METS.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The `&lt;structMap&gt;` in the CSIP describes the highest logical structure of the IP.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Each METS file must include ONE structural map `&lt;structMap&gt;` element used exactly as described here.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Institutions can add their own additional custom structural maps as separate `&lt;structMap&gt;` sections.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Each METS file compliant to CSIP must include ONE structural map `&lt;structMap&gt;` element used exactly as described in this section of requriments.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Institutions can add their own additional custom structural maps as separate `&lt;structMap&gt;` sections following their own requriments.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
@@ -1020,6 +1020,7 @@
                 <description>
                     <head>Name of the structural description</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The `mets/structMap/@LABEL` attribute value is set to “CSIP” from the vocabulary.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">This requriment is the indentification of the CSIP compliant structural map `&lt;structMap&gt;` element.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
