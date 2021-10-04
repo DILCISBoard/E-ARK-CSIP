@@ -1276,7 +1276,7 @@
             <requirement ID="CSIP105" REQLEVEL="SHOULD" EXAMPLES="structMapExample2">
                 <description>
                     <head>Representation division</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When a package consists of multiple representations, each described by a representation level METS.xml document, there is a discrete representation div element for each representation.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When a package consists of multiple representations, each described by a representation level METS.xml document, there should be a discrete representation div element for each representation.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Each representation div references the representation level METS.xml document, documenting the structure of the package and its constituent representations.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div</dd>
