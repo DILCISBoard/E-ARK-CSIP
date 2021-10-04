@@ -999,7 +999,7 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The structural map `&lt;structMap&gt;` element is the only mandatory element in the METS.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The `&lt;structMap&gt;` in the CSIP describes the highest logical structure of the IP.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Every CSIP compliant METS file must include ONE structural map `&lt;structMap&gt;` element used exactly as described in this section of requirements.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Institutions can add their own additional custom structural maps as separate `&lt;structMap&gt;` sections following their own requriments.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Institutions can add their own additional custom structural maps as separate `&lt;structMap&gt;` sections following their own requirements.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
