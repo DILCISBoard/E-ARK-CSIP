@@ -12,7 +12,7 @@ As well as the METS and CSIP extension attributes, the METS document's root `<me
                        http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd
                        https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd">
 ```
-#### Location of XML schema
+
 When using XML schemas the availability of the actual schema resources should be considered. Externally hosted resources are not guaranteed to be available in the future, or in restricted operating environments. We recommend that copies of all XML schema resources should be included in the information package, located in appropriate 'schemas' folders at package or representation level. When schemas have been included in the package `schemas` folder, links to the schema documents should refer to the relative path of the schema file within the package, i.e. `schemas/mets.xsd`.
 
 The specific requirements for the root element and its attributes are described in the following table.
