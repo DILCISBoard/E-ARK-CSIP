@@ -10,16 +10,16 @@
 	<![CDATA[
 		.st1 {visibility:visible}
 		.st2 {fill:#000000;fill-opacity:0.4;filter:url(#filter_2.6666667461395);stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.4}
-		.st3 {fill:#c6d8f0;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st3 {fill:#c6d8f0;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.5}
 		.st4 {fill:#000000;font-family:Arial;font-size:1.00001em;font-weight:bold}
 		.st5 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
-		.st6 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.25}
-		.st7 {fill:#f9dc53;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.24}
+		.st6 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
+		.st7 {fill:#f9dc53;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
 		.st8 {fill:#000000;fill-opacity:0.4;filter:url(#filter_2.6666667461395);stroke:#000000;stroke-dasharray:21,15;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.4}
-		.st9 {fill:#f9dc53;stroke:#000000;stroke-dasharray:21,15;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
+		.st9 {fill:#f9dc53;stroke:#000000;stroke-dasharray:21,15;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
 		.st10 {fill:#000000;font-family:Arial;font-size:1.00001em;font-style:italic;font-weight:bold}
-		.st11 {fill:#c6d8f0;stroke:#000000;stroke-dasharray:21,15;stroke-linecap:round;stroke-linejoin:round;stroke-width:3}
-		.st12 {fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-width:4.5}
+		.st11 {fill:#c6d8f0;stroke:#000000;stroke-dasharray:21,15;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st12 {fill:none;stroke:#ff0000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
 		.st13 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
 	</style>
@@ -192,7 +192,7 @@
 				<rect x="0" y="205.809" width="127.559" height="28.3378" class="st2"/>
 			</g>
 			<rect x="0" y="205.809" width="127.559" height="28.3378" class="st3"/>
-			<text x="48.44" y="223.58" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>representationID</text>		</g>
+			<text x="18.44" y="223.58" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>representationID</text>		</g>
 		<g id="shape21-85" v:mID="21" v:groupContext="shape" transform="translate(898.141,43.735) rotate(89.4448)">
 			<title>Sheet.21</title>
 			<path d="M0 234.15 L13.94 234.15" class="st5"/>
