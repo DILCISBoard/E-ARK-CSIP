@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="DILCISVocabularies.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <Vocabularies xmlns="https://DILCIS.eu/XML/Vocabularies/IP">
-    <Vocabulary Name="VocabularyDetailedContentType">
+    <Vocabulary Name="ContentInformationTypeSpecification">
         <Information>
             <p>Vocabulary derived from E-ARK</p>
         </Information>
