@@ -227,8 +227,8 @@
             </requirement>
             <requirement ID="CSIP7" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
                 <description>
-                    <head>Package creation date</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">`mets/metsHdr/@CREATEDATE` records the date the package was created.</p>
+                    <head>Package creation datetime</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">`mets/metsHdr/@CREATEDATE` records the date and time the package was created.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/metsHdr/@CREATEDATE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -237,8 +237,8 @@
             </requirement>
             <requirement ID="CSIP8" REQLEVEL="SHOULD" EXAMPLES="metsHdrElementExample1">
                 <description>
-                    <head>Package last modification date</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">`mets/metsHdr/@LASTMODDATE` is mandatory when the package has been modified.</p>
+                    <head>Package last modification datetime</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">`mets/metsHdr/@LASTMODDATE` records the data and time the package was modified and is mandatory when the package has been modified.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/metsHdr/@LASTMODDATE</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -350,8 +350,8 @@
             </requirement>
             <requirement ID="CSIP19" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
-                    <head>Descriptive metadata creation date</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Creation date of the descriptive metadata in this section.</p>
+                    <head>Descriptive metadata creation datetime</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Creation date and time of the descriptive metadata in this section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/dmdSec/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -440,8 +440,8 @@
             </requirement>
             <requirement ID="CSIP28" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
-                    <head>File creation date</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The creation date of the referenced file.</p>
+                    <head>File creation datetime</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The creation date and time of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -585,8 +585,8 @@
             </requirement>
             <requirement ID="CSIP42" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
-                    <head>File creation date</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Creation date of the referenced file.</p>
+                    <head>File creation datetime</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Creation date and time of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -716,8 +716,8 @@
             </requirement>
             <requirement ID="CSIP55" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
-                    <head>File creation date</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Creation date of the referenced file.</p>
+                    <head>File creation datetime </head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Creation date and time of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -749,9 +749,9 @@
             <requirement ID="CSIP58" REQLEVEL="SHOULD" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File section</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The transferred content is placed in the file section in different file group elements, described in other requirements.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">References to all transferred content SHOULD be placed in the file section in the different file group elements, described in other requirements.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Only a single file section (`&lt;fileSec&gt;`) element should be present.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer just descriptive metadata and/or administrative metadata without files placed in this section.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">In the case that a package only contains metadata updates, i.e. exclusively metadata files, then no file references need to be added to this section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -893,8 +893,8 @@
             </requirement>
             <requirement ID="CSIP70" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
-                    <head>File creation date</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Creation date of the referenced file.</p>
+                    <head>File creation datetime</head>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Creation date and time of the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@CREATED</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
