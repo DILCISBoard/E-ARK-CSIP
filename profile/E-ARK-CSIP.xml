@@ -1057,16 +1057,6 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP86" REQLEVEL="MUST" RELATEDMAT="CSIP1" EXAMPLES="structMapExample1 structMapExample2">
-                <description>
-                    <head>Main structural division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The package's top-level structural division `&lt;div&gt;` element's `@LABEL` attribute value must be identical to the package identifier, i.e. the same value as the `mets/@OBJID` attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/@LABEL</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
-                </description>
-            </requirement>
             <requirement ID="CSIP88" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Metadata division</head>
