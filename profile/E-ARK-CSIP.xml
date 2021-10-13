@@ -749,9 +749,9 @@
             <requirement ID="CSIP58" REQLEVEL="SHOULD" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File section</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The transferred content is placed in the file section in different file group elements, described in other requirements.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">References to all transferred content SHOULD be placed in the file section in the different file group elements, described in other requirements.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Only a single file section (`&lt;fileSec&gt;`) element should be present.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer just descriptive metadata and/or administrative metadata without files placed in this section.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">In the case that a package only contains metadata updates, i.e. exclusively metadata files, then no file references need to be added to this section.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
