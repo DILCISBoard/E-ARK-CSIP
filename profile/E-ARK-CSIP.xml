@@ -798,7 +798,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP61" REQLEVEL="MAY" RELATEDMAT-"CSIP31" EXAMPLES="fileSecExample1 fileSecExample2">
+            <requirement ID="CSIP61" REQLEVEL="MAY" RELATEDMAT="CSIP31" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Reference to administrative metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If administrative metadata has been provided at file group `mets/fileSec/fileGrp` level this attribute refers to its administrative metadata section by ID.</p>
