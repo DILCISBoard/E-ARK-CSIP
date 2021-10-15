@@ -193,7 +193,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP5" REQLEVEL="MAY" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
+            <requirement ID="CSIP5" REQLEVEL="MAY" RELATEDMAT="CSIP4" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Other Content Information Type Specification</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the `mets/@csip:CONTENTINFORMATIONTYPE` has the value "OTHER" the `mets/@csip:OTHERCONTENTINFORMATIONTYPE` must state the content information type.</p>
@@ -461,7 +461,7 @@
             <requirement ID="CSIP30" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>File checksum type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The type of checksum following the value list present in the METS-standard which has been used for calculating the checksum for the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -606,7 +606,7 @@
             <requirement ID="CSIP44" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File checksum type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The type of checksum following the value list present in the METS-standard which has been used for calculating the checksum for the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -737,7 +737,7 @@
             <requirement ID="CSIP57" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File checksum type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The type of checksum following the value list present in the METS-standard which has been used for calculating the checksum for the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -798,10 +798,10 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP61" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
+            <requirement ID="CSIP61" REQLEVEL="MAY" RELATEDMAT-"CSIP31" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Reference to administrative metadata</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">If administrative metadata has been provided at file group  `mets/fileSec/fileGrp` level this attribute refers to its administrative metadata section by ID.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">If administrative metadata has been provided at file group `mets/fileSec/fileGrp` level this attribute refers to its administrative metadata section by ID.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
@@ -821,7 +821,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP63" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
+            <requirement ID="CSIP63" REQLEVEL="MAY" RELATEDMAT="CSIP62" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Other Content Information Type Specification</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the `mets/fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE` attribute has the value "OTHER" the `mets/fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE` must state a value for the Content Information Type Specification used.</p>
@@ -914,7 +914,7 @@
             <requirement ID="CSIP72" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File checksum type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The type of checksum following the value list present in the METS-standard which has been used for calculating the checksum for the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@CHECKSUMTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
