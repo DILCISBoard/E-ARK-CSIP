@@ -51,8 +51,8 @@ echo " - MARKDOWN-PP: Preparing PDF markdown"
 markdown-pp PDF.md -o docs/eark-csip-pdf.md -e tableofcontents
 sed -i 's%fig_2_csip_scope.svg%fig_2_csip_scope.png%' docs/eark-csip-pdf.md
 
-cp -R specification/figs docs/
-cp -R spec-publisher/res/md/figs docs/
+cp -Rf specification/figs docs/
+cp -Rf spec-publisher/res/md/figs docs/
 
 cd docs || exit
 
