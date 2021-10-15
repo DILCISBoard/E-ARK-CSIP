@@ -59,6 +59,8 @@
 
 !INCLUDE "specification/implementation/metadata/mets/structmap/examples.md"
 
+!INCLUDE "specification/implementation/metadata/mets/deprecated.md"
+
 !INCLUDE "specification/implementation/metadata/premis/index.md"
 
 !INCLUDE "specification/implementation/considerations/index.md"

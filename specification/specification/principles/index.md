@@ -7,7 +7,7 @@ Another crucial factor to take into account is long-term sustainability. Practic
 
 The principles present a conceptual view of an Information Package, including an overall IP data model, and use of data and metadata. An implementation of this conceptual view is presented later, in Part II of this document.
 
-Each principle has a sequential number and a short description. The description always includes a MoSCoW (MUST/MUST NOT, SHOULD/SHOULD NOT, COULD, WOULD) prioritisation statement. The short description of each principle is followed by a rationale which describes the reason and background for the principle.
+Each principle has a sequential number and a short description. The description always includes an [RFC2119](https://www.ietf.org/rfc/rfc2119.txt) keyword (MUST/MUST NOT, SHOULD/SHOULD NOT, MAY) to indicate the requirement level. The short description of each principle is followed by a rationale which describes the reason and background for the principle.
 
 ## General principles
 
