@@ -22,7 +22,7 @@ pandoc  --from gfm \
         --metadata-file "../spec-publisher/pandoc/metadata.yaml" \
         "../spec-publisher/res/md/common-intro.md" \
         -o "./preface.tex"
-sed -i 's%fig_1_dip.svg%fig_1_dip.png%' ./preface.tex
+# sed -i 's%fig_1_dip.svg%fig_1_dip.png%' ./preface.tex
 sed -i 's%section{%section*{%' ./preface.tex
 
 echo " - PANDOC: Generating Postface from markdown"
