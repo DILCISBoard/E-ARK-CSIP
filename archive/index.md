@@ -11,7 +11,7 @@ Latest
 Archived Versions
 -----------------
 ### 2.0.x
-- [PDF Version 2.0.4](/pdf/eark-csip-v2-0-4.pdf) 12-06-2020
+- [PDF Version 2.0.4](v2_0/eark-csip-v2-0-4.pdf) 12-06-2020
 - [PDF Version 2.0.3](v2_0/eark-csip-v2-0-3.pdf) 08-01-2020
 - [PDF Version 2.0.2](v2_0/eark-csip-v2-0-2.pdf) 28-10-2019
 - [PDF Version 2.0.1](v2_0/eark-csip-v2-0-1.pdf) 09-09-2019
