@@ -9,7 +9,6 @@ gfm_quirks: paragraph_end
 repository: DILCISBoard/E-ARK-CSIP
 plugins:
 - jekyll-github-metadata
-- jekyll-mentions
 - jekyll-redirect-from
 - jekyll-sitemap
 - jemoji

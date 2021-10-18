@@ -22,7 +22,6 @@ pandoc  --from gfm \
         --metadata-file "../spec-publisher/pandoc/metadata.yaml" \
         "../spec-publisher/res/md/common-intro.md" \
         -o "./preface.tex"
-sed -i 's%fig_1_dip.svg%fig_1_dip.png%' ./preface.tex
 sed -i 's%section{%section*{%' ./preface.tex
 
 echo " - PANDOC: Generating Postface from markdown"
@@ -51,8 +50,8 @@ echo " - MARKDOWN-PP: Preparing PDF markdown"
 markdown-pp PDF.md -o docs/eark-csip-pdf.md -e tableofcontents
 sed -i 's%fig_2_csip_scope.svg%fig_2_csip_scope.png%' docs/eark-csip-pdf.md
 
-cp -R specification/figs docs/
-cp -R spec-publisher/res/md/figs docs/
+cp -Rf specification/figs docs/
+cp -Rf spec-publisher/res/md/figs docs/
 
 cd docs || exit
 
