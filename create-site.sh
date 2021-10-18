@@ -94,6 +94,7 @@ echo " - copying files to docs directory"
 cp -Rf specification/figs docs/
 cp -Rf spec-publisher/res/md/figs docs/
 cp -Rf spec-publisher/site/* docs/
+# Copy remaining collaterel
 cp -Rf profile docs/
 cp -Rf schema docs/
 cp -Rf archive docs/
