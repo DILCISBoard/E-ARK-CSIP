@@ -75,7 +75,7 @@ then
   rm -rf ./docs/release-notes
 fi
 mkdir ./docs/release-notes
-cp ./RELEASENOTES.md ./docs/release-notes/index.md
+cp -f ./RELEASENOTES.md ./docs/release-notes/index.md
 
 bash "$SCRIPT_DIR/spec-publisher/utils/create-venv.sh"
 
@@ -91,10 +91,11 @@ echo " - MARKDOWN-PP: generating site index.md"
 markdown-pp SITE.md -o ./docs/index.md
 
 echo " - copying files to docs directory"
-cp -R specification/figs docs/
-cp -R spec-publisher/res/md/figs docs/
+cp -Rf specification/figs docs/
+cp -Rf spec-publisher/res/md/figs docs/
 cp -Rf spec-publisher/site/* docs/
-cp -R profile docs/
-cp -R schema docs/
-cp -R archive docs/
-cp -R examples docs/
+# Copy remaining collaterel
+cp -Rf profile docs/
+cp -Rf schema docs/
+cp -Rf archive docs/
+cp -Rf examples docs/

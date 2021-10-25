@@ -47,6 +47,12 @@ The identifiers specified within the CSIP are mainly used as internal references
 
 Note that while we recommend the use of generated unique IDs in real world information packages we used logical unique names for the examples in this document. This is for readability purposes, particularly for any readers trying to follow reference links.
 
+### XML Dates and times
+The METS schema prescribes several attributes named `CREATEDATE` OR `LASTMODDATE`, used to record the temporal creation and modification details of package files. While these attributes
+are simply named `DATE`, they are in fact XML Schema [`datetime`](https://www.w3.org/TR/xmlschema-2/#dateTime) and must include a time as well as a date. To use the date and current time of writing as an example, the legal attribute value is `2021-10-12T14:35:10+01:00`, where the `+01:00` denotes the `BST` timezone, one hour in front of Coordinated Universal Time (UTC).
+In many cases implementers won't have an accurate time, only a date. In these cases simply apply the time of mid-night to the datetime, so the previous example expressed as a date would
+read `2021-10-12T00:00:00+01:00`.
+
 ### Referencing between files within a CSIP Information Package
 It is strongly recommended that all components of an information package (i.e. all data, metadata and other parts) are stored as discrete files within the package. While this approach simplifies the management of the Information Package, making it easier to aggregate, validate and modify the package, it also necessitates a clear method for recording and resolving referencing between files.
 
