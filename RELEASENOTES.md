@@ -119,7 +119,7 @@ None
 [#455]: https://github.com/DILCISBoard/E-ARK-CSIP/issues/455
 [#419]: https://github.com/DILCISBoard/E-ARK-CSIP/issues/419
 [#408]: https://github.com/DILCISBoard/E-ARK-CSIP/issues/408
-[#243]: https://github.com/DILCISBoard/E-ARK-SIP/issues/243
+[#243]: https://github.com/DILCISBoard/E-ARK-CSIP/issues/243
 
 Version 2.0.4
 -------------
