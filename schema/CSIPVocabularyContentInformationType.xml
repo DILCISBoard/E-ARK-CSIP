@@ -1,29 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="DILCISVocabularies.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <Vocabularies xmlns="https://DILCIS.eu/XML/Vocabularies/IP">
-    <Vocabulary Name="VocabularyDetailedContentType">
+    <Vocabulary Name="ContentInformationTypeSpecification">
         <Information>
             <p>Vocabulary derived from E-ARK</p>
         </Information>
         <Entry>
             <Term lang="en">ERMS</Term>
-            <Definition>The specification for Electronic records management is used</Definition>
+            <Definition>A predecessor to the CITS specification for Electronic records management is used.</Definition>
         </Entry>
         <Entry>
             <Term lang="en">SIARD1</Term>
-            <Definition>A relational database is described with SIARD version 1</Definition>
+            <Definition>The content is a relational database described with SIARD version 1.</Definition>
         </Entry>
         <Entry>
             <Term lang="en">SIARD2</Term>
-            <Definition>A relational database is described with SIARD version 2</Definition>
+            <Definition>The content is a relational database described with SIARD version 2.</Definition>
         </Entry>
         <Entry>
             <Term lang="eb">SIARDDK</Term>
-            <Definition>A relational database is described with SIARD version DK</Definition>
+            <Definition>The content is a relational database described with SIARD version DK.</Definition>
         </Entry>
         <Entry>
             <Term lang="en">GeoData</Term>
-            <Definition>The specification for Geodata is used</Definition>
+            <Definition>A predecessor to the CITS specification for Geodata is used.</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">citscarchival_v1_0</Term>
+            <Definition>Version 1.0 of the Specification for E-ARK Content Information Type Specification for Archival Information (CITS Archival Information) is used.</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">citserms_v2_1</Term>
+            <Definition>Version 2.1 of the Specification for the E-ARK Content Information Type Specification for Electronic Records Management Systems (CITS ERMS) is used to describe the content.</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">citspremis_v1_0</Term>
+            <Definition>Version 1.0 of the Specification for the E-ARK Content Information Type Specification for Preservation Metadata using PREMIS (CITS PREMIS) is used.</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">citsehpj_v1_0</Term>
+            <Definition>Version 1.0 of the Specification for the E-ARK Content Information Type Specification for Patient Journals (CITS eHealth1) is used</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">citsehcr_v1_0</Term>
+            <Definition>Version 1.0 of the Specification for the E-ARK Content Information Type Specification for Cancer Registry export (CITS eHealth2) is used</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">citssiard_v1_0</Term>
+            <Definition>Version 1.0 of the Specification for the E-ARK Content Information Type Specification for Relational Databases using SIARD (CITS SIARD) is used</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">citsgeospatial_v3_0</Term>
+            <Definition>Version 3.0 of the </Definition>
         </Entry>
         <Entry>
             <Term lang="en">MIXED</Term>
