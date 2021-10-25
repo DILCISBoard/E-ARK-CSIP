@@ -115,6 +115,11 @@
   2.0.4   12.06.2020  K.Bredenberg,            SYD          Update in example ID:s, preface text and
                       C. Wilson, &             OPF          output display update
                       J. Kaminski              HIGH                    
+
+  2.1.0   15.10.2021  K.Bredenberg &           SYD          Specification updated to version 2.1.
+                      C. Wilson                OPF          Language updates and clarifications to requirements.
+                                                            Updated list of approved CITS specifications.
+                                                            Removed redundant requirement.
 ---------------------------------------------------------------------------------------------------------------
 
 ## III. Acknowledgements
