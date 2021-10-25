@@ -23,6 +23,104 @@ to change the meaning of the specification.
 ### Administrative:
 Standard changes between versions, e.g. version number and release date.
 
+Version 2.1.0
+-------------
+October 15th 2021
+
+### Specification Changes
+Update of specification to version 2.1. Language updates and clarifications added in the requriments. Updated value list for approved CITS specifications. Removal of redundant requriment. Layout updates.
+
+#### Major
+None
+
+#### Minor
+None
+
+#### Corrections
+- Creation of METS profile for SIP version 2.1 [[#662][]], [[#664][]].
+- Corrected example NS identifier [[#656][]], [[#661][]]
+- Update of valuelist for new approved CITS specifications [[#658][]].
+- Language updates and clarifications added in the text [[#243][]], [[#419][]], [[#455][]], [[#632][]], [[#636][]], [[#639][]], [[#640][]], [[#642][]], [[#644][]], [[#645][]], [[#647][]], [[#648][]], [[#650][]], [[#652][]], [[#653][]], [[#655][]], [[#657][]], [[#659][]], [[#662][]], [[#663][]], [[#665][]], [[#666][]], [[#667][]], [[#669][]], [[#675][]],  [[#676][]], [[#680][]], [[#681][]], [[#683][]], [[#684][]], [[#685][]], [[#687][]], [[#688][]], [[#689][]], [[#690][]], [[#691][]].                  
+- Updated the chapter regarding preservation metadata to reflect the new CITS Preservation metadata [[#671][]], [[#672][]].
+- Updated the chapter regarding descriptive metadata to reflect the new CITS Archival Information [[#673][]], [[#674][]].
+- Removal of redundant requriment [[#686][]], [[#694][]], [[#649][]],
+- Move of issue to validation work [[#408][]].
+
+#### Administrative
+- Version number increment and revision history [[#636][]].
+- Headings updating [[#635][]], [[#660][]], [[#668][]], [[#670][]], [[#677][]], [[#678][]], [[#679][]].  
+- Image update [[#637][]], [[#682][]].
+
+### Web site and PDF presentation
+- Uniform site structure and DILCIS branding:
+  + Update to the common introduction [[#693][]].
+  + Update to publication process [[#692][]], [[#693][]].
+  + Removal of redundant files, stale token and force copies of all collateral [[#693][]].
+  + Layout updates [[#633][]], [[#634][]], [[#643][]],
+
+[#694]: https://github.com/DILCISBoard/E-ARK-SIP/pull/694
+[#693]: https://github.com/DILCISBoard/E-ARK-SIP/pull/693
+[#692]: https://github.com/DILCISBoard/E-ARK-SIP/pull/692
+[#691]: https://github.com/DILCISBoard/E-ARK-SIP/pull/691
+[#690]: https://github.com/DILCISBoard/E-ARK-SIP/pull/690
+[#689]: https://github.com/DILCISBoard/E-ARK-SIP/pull/689
+[#688]: https://github.com/DILCISBoard/E-ARK-SIP/pull/688
+[#687]: https://github.com/DILCISBoard/E-ARK-SIP/pull/687
+[#686]: https://github.com/DILCISBoard/E-ARK-SIP/pull/686
+[#685]: https://github.com/DILCISBoard/E-ARK-SIP/pull/685
+[#684]: https://github.com/DILCISBoard/E-ARK-SIP/pull/684
+[#683]: https://github.com/DILCISBoard/E-ARK-SIP/pull/683
+[#682]: https://github.com/DILCISBoard/E-ARK-SIP/pull/682
+[#681]: https://github.com/DILCISBoard/E-ARK-SIP/pull/681
+[#680]: https://github.com/DILCISBoard/E-ARK-SIP/pull/680
+[#679]: https://github.com/DILCISBoard/E-ARK-SIP/pull/679
+[#678]: https://github.com/DILCISBoard/E-ARK-SIP/pull/678
+[#676]: https://github.com/DILCISBoard/E-ARK-SIP/pull/676
+[#675]: https://github.com/DILCISBoard/E-ARK-SIP/pull/675
+[#674]: https://github.com/DILCISBoard/E-ARK-SIP/pull/674
+[#672]: https://github.com/DILCISBoard/E-ARK-SIP/pull/672
+[#670]: https://github.com/DILCISBoard/E-ARK-SIP/pull/670
+[#669]: https://github.com/DILCISBoard/E-ARK-SIP/pull/669
+[#668]: https://github.com/DILCISBoard/E-ARK-SIP/pull/668
+[#667]: https://github.com/DILCISBoard/E-ARK-SIP/pull/667
+[#666]: https://github.com/DILCISBoard/E-ARK-SIP/pull/666
+[#665]: https://github.com/DILCISBoard/E-ARK-SIP/pull/665
+[#664]: https://github.com/DILCISBoard/E-ARK-SIP/pull/664
+[#663]: https://github.com/DILCISBoard/E-ARK-SIP/pull/663
+[#662]: https://github.com/DILCISBoard/E-ARK-SIP/pull/662
+[#661]: https://github.com/DILCISBoard/E-ARK-SIP/pull/661
+[#658]: https://github.com/DILCISBoard/E-ARK-SIP/pull/658
+[#656]: https://github.com/DILCISBoard/E-ARK-SIP/pull/656
+[#677]: https://github.com/DILCISBoard/E-ARK-SIP/issues/677
+[#673]: https://github.com/DILCISBoard/E-ARK-SIP/issues/673
+[#671]: https://github.com/DILCISBoard/E-ARK-SIP/issues/671
+[#660]: https://github.com/DILCISBoard/E-ARK-SIP/issues/660
+[#659]: https://github.com/DILCISBoard/E-ARK-SIP/issues/659
+[#657]: https://github.com/DILCISBoard/E-ARK-SIP/issues/657
+[#655]: https://github.com/DILCISBoard/E-ARK-SIP/issues/655
+[#653]: https://github.com/DILCISBoard/E-ARK-SIP/issues/653
+[#652]: https://github.com/DILCISBoard/E-ARK-SIP/issues/652
+[#650]: https://github.com/DILCISBoard/E-ARK-SIP/issues/650
+[#649]: https://github.com/DILCISBoard/E-ARK-SIP/issues/649
+[#648]: https://github.com/DILCISBoard/E-ARK-SIP/issues/648
+[#647]: https://github.com/DILCISBoard/E-ARK-SIP/issues/647
+[#645]: https://github.com/DILCISBoard/E-ARK-SIP/issues/645
+[#644]: https://github.com/DILCISBoard/E-ARK-SIP/issues/644
+[#643]: https://github.com/DILCISBoard/E-ARK-SIP/issues/643
+[#642]: https://github.com/DILCISBoard/E-ARK-SIP/issues/642
+[#640]: https://github.com/DILCISBoard/E-ARK-SIP/issues/640
+[#639]: https://github.com/DILCISBoard/E-ARK-SIP/issues/639
+[#637]: https://github.com/DILCISBoard/E-ARK-SIP/issues/637
+[#636]: https://github.com/DILCISBoard/E-ARK-SIP/issues/636
+[#635]: https://github.com/DILCISBoard/E-ARK-SIP/issues/635
+[#634]: https://github.com/DILCISBoard/E-ARK-SIP/issues/634
+[#633]: https://github.com/DILCISBoard/E-ARK-SIP/issues/633
+[#632]: https://github.com/DILCISBoard/E-ARK-SIP/issues/632
+[#455]: https://github.com/DILCISBoard/E-ARK-SIP/issues/455
+[#419]: https://github.com/DILCISBoard/E-ARK-SIP/issues/419
+[#408]: https://github.com/DILCISBoard/E-ARK-SIP/issues/408
+[#243]: https://github.com/DILCISBoard/E-ARK-SIP/issues/243
+
 Version 2.0.4
 -------------
 June 12th 2020
