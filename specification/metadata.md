@@ -13,6 +13,6 @@ abstract: |
         it is recommended that the supplied extending implementation are used.
         Alternatively, an own extension fulfilling the extending needs of the
         implementer can be created.
-version: __RELEASE_VERSION__
-date: __RELEASE_DATE__
+version: ${RELEASE_VERSION}
+date: ${RELEASE_DATE}
 ---
