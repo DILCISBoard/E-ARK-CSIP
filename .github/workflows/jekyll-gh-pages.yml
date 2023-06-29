@@ -28,12 +28,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Build the spec-publisher project & produce site artifacts
+        run: |
+          cd spec-publisher
+          mvn clean package
+          java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
+      - name: Run Docker job for site publication
+        run: docker run -it --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
+      - name: Build the spec-publisher project & produce PDF artifacts
+        run: |
+          cd spec-publisher
+          git checkout feat/pdf-publication
+          git pull
+          mvn clean package
+          java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
+      - name: Run Docker job for PDF publication
+        run: |
+          docker run -it --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-pdf.sh eark4all/spec-pdf-publisher
+          mkdir site
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
+          source: ./docs
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
