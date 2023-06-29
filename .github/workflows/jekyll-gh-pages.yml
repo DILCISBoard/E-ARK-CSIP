@@ -41,9 +41,9 @@ jobs:
         run: |
           cd spec-publisher
           git fetch
-          git pull
           git config -f .gitmodules submodule.spec-publisher.branch feat/pdf-publication
           git branch -u origin/feat/pdf-publication feat/pdf-publication
+          git pull
           mvn clean package
           java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
       - name: Run Docker job for PDF publication
