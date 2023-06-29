@@ -39,7 +39,7 @@ jobs:
         run: docker run --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
       - name: Build the spec-publisher project & produce PDF artifacts
         run: |
-          git submodule sync --recursive --remote
+          git submodule update --recursive --remote
           cd spec-publisher
           git remote -v
           git branch -vvv -a
