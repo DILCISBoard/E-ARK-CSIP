@@ -42,7 +42,7 @@ jobs:
           git submodule sync --recursive
           cd spec-publisher
           git remote -v
-          git branch
+          git branch -v -a
           git fetch
           git checkout feat/pdf-publication
           git pull
