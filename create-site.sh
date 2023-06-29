@@ -81,7 +81,6 @@ bash "$SCRIPT_DIR/spec-publisher/utils/create-venv.sh"
 
 command -v markdown-pp >/dev/null 2>&1 || {
   tmpdir=$(dirname "$(mktemp -u)")
-  # shellcheck source=/tmp/.venv-markdown/bin/activate
   source "$tmpdir/.venv-markdown/bin/activate"
 }
 
@@ -93,7 +92,12 @@ markdown-pp SITE.md -o ./docs/index.md
 echo " - copying files to docs directory"
 cp -Rf specification/figs docs/
 cp -Rf spec-publisher/res/md/figs docs/
-cp -Rf spec-publisher/site/* docs/
+cp -Rf spec-publisher/site/_data docs/
+cp -Rf spec-publisher/site/_includes docs/
+cp -Rf spec-publisher/site/_layouts docs/
+cp -Rf spec-publisher/site/css docs/
+cp -Rf spec-publisher/site/img docs/
+cp -Rf spec-publisher/site/favicon.ico docs/
 # Copy remaining collaterel
 cp -Rf profile docs/
 cp -Rf schema docs/
