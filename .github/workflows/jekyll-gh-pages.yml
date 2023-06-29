@@ -53,7 +53,8 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Build with Jekyll docker box
         run: |
-          docker run --rm -v "$PWD"/docs:/usr/src/app -v "$PWD"/site:/_site -u "$(id -u):$(id -g)" starefossen/github-pages jekyll build -d /_site
+          mkdir _site
+          docker run --rm -v "$PWD"/docs:/usr/src/app -v "$PWD"/_site:/_site -u "$(id -u):$(id -g)" starefossen/github-pages jekyll build -d /_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
