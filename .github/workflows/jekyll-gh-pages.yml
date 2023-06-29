@@ -36,7 +36,7 @@ jobs:
           mvn clean package
           java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
       - name: Run Docker job for site publication
-        run: docker run -it --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
+        run: docker run --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
       - name: Build the spec-publisher project & produce PDF artifacts
         run: |
           cd spec-publisher
@@ -46,7 +46,7 @@ jobs:
           java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
       - name: Run Docker job for PDF publication
         run: |
-          docker run -it --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-pdf.sh eark4all/spec-pdf-publisher
+          docker run --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-pdf.sh eark4all/spec-pdf-publisher
           mkdir site
       - name: Setup Pages
         uses: actions/configure-pages@v3
