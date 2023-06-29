@@ -69,11 +69,4 @@ pandoc  --from markdown \
 
 rm eark-csip-pdf.md preface.tex postface.tex
 
-cp -Rf spec-publisher/site/_data docs/
-cp -Rf spec-publisher/site/_includes docs/
-cp -Rf spec-publisher/site/_layouts docs/
-cp -Rf spec-publisher/site/css docs/
-cp -Rf spec-publisher/site/img docs/
-cp -Rf spec-publisher/site/favicon.ico docs/
-
 echo " - Finished"

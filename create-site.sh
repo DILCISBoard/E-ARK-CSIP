@@ -92,12 +92,7 @@ markdown-pp SITE.md -o ./docs/index.md
 echo " - copying files to docs directory"
 cp -Rf specification/figs docs/
 cp -Rf spec-publisher/res/md/figs docs/
-cp -Rf spec-publisher/site/_data docs/
-cp -Rf spec-publisher/site/_includes docs/
-cp -Rf spec-publisher/site/_layouts docs/
-cp -Rf spec-publisher/site/css docs/
-cp -Rf spec-publisher/site/img docs/
-cp -Rf spec-publisher/site/favicon.ico docs/
+cp -Rf spec-publisher/site/* docs/
 # Copy remaining collaterel
 cp -Rf profile docs/
 cp -Rf schema docs/
