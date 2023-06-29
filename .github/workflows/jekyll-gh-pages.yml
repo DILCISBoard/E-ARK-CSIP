@@ -29,13 +29,15 @@ jobs:
           submodules: recursive
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
       - uses: franzbischoff/replace_envs@v1
         env:
           RELEASE_DATE: ${{ steps.date.outputs.date }}
+          RELEASE_VERSION: ${{ github.event.release.tag_name }}
         with:
           from_file: 'specification/metadata.md'
           to_file: 'specification/metadata.md'
+          commit: false
       - name: Build the spec-publisher project & produce site artifacts
         run: |
           cd spec-publisher
