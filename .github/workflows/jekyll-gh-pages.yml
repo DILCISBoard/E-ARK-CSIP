@@ -39,13 +39,8 @@ jobs:
         run: docker run --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
       - name: Build the spec-publisher project & produce PDF artifacts
         run: |
-          git submodule update --recursive --remote
-          cd spec-publisher
-          git remote -v
-          git branch -vvv -a
-          git fetch
-          git switch feat/pdf-publication
-          git pull
+          git clone --branch feat/pdf-publication https://github.com/DILCISBoard/spec-publisher.git pdf-publisher
+          cd pdf-publisher
           mvn clean package
           java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
       - name: Run Docker job for PDF publication
