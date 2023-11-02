@@ -255,10 +255,11 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP10" REQLEVEL="MUST">
+            <requirement ID="CSIP10" RELATEDMAT="CSIP15" REQLEVEL="MUST">
                 <description>
                     <head>Agent</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A mandatory agent element records the software used to create the package. Other uses of agents may be described in any local implementations that extend the profile.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is possible according to METS to use more note elements but in this implementation for this agent describing the software used it is one mandatory note for describing the version of the software.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/metsHdr/agent</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
@@ -308,8 +309,8 @@
             <requirement ID="CSIP15" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Agent additional information</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent's note element records the version of the tool used to create the IP.</p>
-                     <dl xmlns="http://www.w3.org/1999/xhtml">
+                    <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent's mandatory note element records the version of the tool used to create the IP.</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
                          <dt>METS XPath</dt><dd>mets/metsHdr/agent/note</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
