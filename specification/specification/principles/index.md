@@ -148,11 +148,11 @@ At the same time, it is clear that any given technical implementation will becom
 ## Information Package Metadata
 
 ### Principle 4.1:
-*Metadata in the Information Package **MUST** conform to a standard.*
+*Metadata in the Information Package **MUST** conform to a standard or be in a well-formed format.*
 
-To exchange, validate, process and reuse Information Packages in an interoperable and automated way, it is necessary to standardise how crucial metadata are presented in the package. “Crucial metadata” is defined in this specification as the core information about how the package content has been created and managed (administrative and preservation metadata), explicit descriptions about of the structure of the package (structural metadata) and the technical details of the data themselves (technical metadata).
+To exchange, validate, process and reuse Information Packages in an interoperable and automated way, it is necessary to standardise how metadata and especially what can be considered as crucial metadata are presented in the package. “Crucial metadata” is defined in this specification as the core information about how the package content has been created and managed (administrative and preservation metadata), explicit descriptions about of the structure of the package (structural metadata) and the technical details of the data themselves (technical metadata).
 
-To ensure that these metadata are understood and implemented in a common and interoperable way in any Information Package, the use of established and widely used metadata standards is highly recommended. In the current implementation, a large proportion of such metadata is covered by the widely used METS and PREMIS standards (see Section 5).
+To ensure that these metadata are understood and implemented in a common and interoperable way in any Information Package, the use of established and widely used metadata standards is highly recommended. At the same time there are well-formed formats that can fulfill the same purpose. In the current implementation, a large proportion of such metadata is covered by the widely used METS and PREMIS standards (see Section 5).
 
 ### Principle 4.2:
 *Metadata in the Information Package **MUST** allow for unambiguous use.*
