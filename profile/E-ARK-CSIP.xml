@@ -114,9 +114,9 @@
             <name>IANA media types</name>
             <maintenance_agency>IANAs</maintenance_agency>
                 <URI>https://www.iana.org/assignments/media-types/media-types.xhtml</URI>
-            <context>Values for `@MIMETYPE`</context>
+            <context>Suggested values for `@MIMETYPE`</context>
             <description>
-                <p xmlns="http://www.w3.org/1999/xhtml">Valid values for the mime types of referenced files.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Its a strong recommendation to use the IANA values for the mime types of referenced files. It is possible to use another list if an agreement has been reached between sender and receiver.</p>
             </description>
         </vocabulary>
         <vocabulary ID="VocabularyFileGrpAndStructMapDivisionLabel">
@@ -421,7 +421,9 @@
             <requirement ID="CSIP26" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>File mime type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type of the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Other list can be used upon a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -566,7 +568,9 @@
             <requirement ID="CSIP40" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File mime type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Other list can be used upon a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -697,7 +701,9 @@
             <requirement ID="CSIP53" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File mime type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Other list can be used upon a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -874,7 +880,9 @@
             <requirement ID="CSIP68" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File mimetype</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Other list can be used upon a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
