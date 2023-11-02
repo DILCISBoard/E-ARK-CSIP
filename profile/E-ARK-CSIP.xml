@@ -341,7 +341,7 @@
             <requirement ID="CSIP18" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Descriptive metadata identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the descriptive metadata section (`&lt;dmdSec&gt;`) used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the descriptive metadata section (`&lt;dmdSec&gt;`) used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/dmdSec/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -496,7 +496,7 @@
             <requirement ID="CSIP33" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Digital provenance metadata identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the digital provenance metadata section `mets/amdSec/digiprovMD` used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the digital provenance metadata section `mets/amdSec/digiprovMD` used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -627,7 +627,7 @@
             <requirement ID="CSIP46" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Rights metadata identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the rights metadata section (`&lt;rightsMD&gt;`) used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the rights metadata section (`&lt;rightsMD&gt;`) used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -761,7 +761,7 @@
             <requirement ID="CSIP59" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File section identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file section used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file section used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -844,7 +844,7 @@
             <requirement ID="CSIP65" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File group identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file group used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file group used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -864,7 +864,7 @@
             <requirement ID="CSIP67" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">A unique `xml:id` identifier for this file across the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A unique `xml:id` identifier for this file within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1030,7 +1030,7 @@
             <requirement ID="CSIP83" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Structural description identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the structural description (structMap) used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the structural description (structMap) used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1050,7 +1050,7 @@
             <requirement ID="CSIP85" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Main structural division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1071,7 +1071,7 @@
             <requirement ID="CSIP89" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Metadata division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1125,7 +1125,7 @@
             <requirement ID="CSIP94" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1176,7 +1176,7 @@
             <requirement ID="CSIP98" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1227,7 +1227,7 @@
             <requirement ID="CSIP102" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1279,7 +1279,7 @@
             <requirement ID="CSIP106" REQLEVEL="MUST" EXAMPLES="structMapExample2">
                 <description>
                     <head>Representations division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
