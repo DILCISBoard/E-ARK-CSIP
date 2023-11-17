@@ -1,4 +1,9 @@
 - [Handling large packages](#handling-large-packages)
+	    - [Definition of concepts](#definition-of-concepts)
+  	    	    - [Logical and physical package](#logical-and-physical-package)
+  	    	    - [Segmentation](#segmentation)
+  	    	    - [Splitting](#splitting)
+  	    	    - [Differential package](#differential-package)
 	    - [The structure for IP, their representations and their segments](#the-structure-for-ip-their-representations-and-their-segments)
 	    - [Using METS to refer from parent IP to child IP](#using-mets-to-refer-from-parent-ip-to-child-ips)
 	    - [Using METS to refer from child IP to parent IP](#using-mets-to-refer-from-child-ip-to-parent-ip)
@@ -41,8 +46,8 @@ A differential package is an incomplete form of an information package which con
 
 The differential information package is relevant for the physical container files and concerns changes of metadata and/or content of the AIP. In case of large AIPs, this allows adding or overriding data or metadata to an physical container containing parts of an information package or the entire information package content.
 
-### The structure for IP, their representations and their segments
-E-ARK Common Specification Information packages may comprise multiple representations of the same intellectual content. The segmentation approach described here is based on the following considerations:
+## The structure for IP, their representations and their segments
+The segmentation approach described here is based on the following considerations:
 
 - The majority of the size of an IP consists of the content (data) which, according to the Common Specification, resides in the representations folder of the IP. As such any segmentation should take place within the representations layer of the Common Specification;
 - According to the Common Specification each representation is essentially a Common Specification IP itself, consisting of a METS metadata file, data, metadata, and any additional components;
@@ -50,33 +55,30 @@ E-ARK Common Specification Information packages may comprise multiple representa
 - Each IP shall consist of a parent segment (including at least the package METS file) and any number of child segments;
 - It shall be possible to add new physical child segments (as an example a new representation) to the whole IP without necessitating the update of other child segments.
 
-### Parent-Child relationship
+The divided METS structure supports the separation of representations or representation parts and allows physically dividing these components into a set of physical information packages.
 
-The divided METS structure supports the physical separation of representations or representation parts and allow distributing these components over a sequence of information package.
-
-As shown in Figure [Parent-child](#fig-parent-child) The composition of a logical AIP can be expressed by a parent-child relationship. It is a bidirectional relationship where each child-AIP bears the information about the parent-AIP to which they belong and, vice versa, the parent-AIP references the child-AIPs.
+As shown in Figure [Parent-child](#fig-parent-child) The composition of a logical AIP can be expressed by a parent-child relationship. It is a bidirectional relationship where each child-package bears the information about the parent-package to which they belong and, vice versa, the parent-package references the child-package.
 
 <a name="fig-parent-child"></a>
-![Information Package structure](figs/visio/fig_parent_child.svg "Parent-child relationship between information package.")
+![Information Package structure](figs/fig_parent_child.svg "Parent-child relationship between information package.")
 **Figure Parent-child:**
-Parent-child relationship between AIPs
+Parent-child relationship between packages
 
-Even though this parent-child relationship could be used to create a hierarchical structure of information packages, it is in this scope limited to a flat list where the segments are are subordinated to one parent information package.
+Even though this parent-child relationship could be used to create a hierarchical structure of information packages, it is in the scope of this specification limited to a flat list where the segments are are subordinated to one parent information package.
 
-#### Using METS to refer from parent IP to child IP(s) 
+### Using METS to refer from parent IP to child IP(s) 
 The method used to refer from parent to child is based on the ID of the IP of the child. One reason for using ID and not URL or other more direct references to a location of the referenced METS file is the flexibility it gives to move the segmented IPs across storage locations. This flexibility is often needed for segmented IPs that can be very large.
 
-The value of the xlink:href attribute in the <mptr> element in the METS file of the parent IP is used.
+The value of the `xlink:href` attribute in the `<mptr>` element in the METS file of the parent IP is used.
 
-This vis to be set to the value of the OBJID attribute of the <mets> element in the METS file of the child IP. According to the Common Specification, the OBJID attribute must have the value of the ID of the IP. This is therefore sufficient for having the parent know the ID of the child, but the parent does not know the exact child location.
+This is to be set to the value of the `OBJID` attribute of the `<mets>` element in the METS file of the child IP. According to the Common Specification, the `OBJID` attribute must have the value of the ID of the IP. This means that it is sufficient for having the parent referencing the ID of the child(s), but the parent does not know the exact location of the child(s).
 
-#### Using METS to refer from child IP to parent IP
-The optional reference from child to the parent is based on the ID of the IP of the parent.
+### Using METS to refer from child IP to parent IP
+The reference from child to the parent is based on the ID of the IP of the parent.
 
-The value of the xlink:href attribute in <mptr> element in the METS file of the child IP is used.
+The value of the `xlink:href` attribute in `<mptr>` element in the METS file of the child IP is used.
 
-This value is to be set to the value of the OBJID attribute of the <mets> element in the METS file of the parent IP. According to the Common Specification, the OBJID attribute must have the value of the ID of the
-IP.
+This value is to be set to the value of the OBJID attribute of the `<mets>` element in the METS file of the parent IP. According to the Common Specification, the OBJID attribute must have the value of the ID of the IP.
 
 ### An example for the Northwind database
 Here follows a partial example, where the value of the xlink:href attribute in the `<mptr>` element (inside the `<div>` element inside the `<structMap>` element) is `ID.AVID.RA.18005.rep0.seg0` after the urn NID part (`urn:<NID>:<NSS>`).
