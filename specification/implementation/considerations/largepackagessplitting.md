@@ -31,7 +31,7 @@ Result of the segmentation is a *segmented information package*, and each part o
 
 The segments of an information package are held together in a parent-child structure. The segments are the physical child packages and there is a physical parent package which represents the intellectual entity as a whole. The physical parent package contains references to the child elements and their order. Vice versa, the physical child packages contain a reference to the parent package to which they belong and indicate their order in the complete set of child packages (e.g., child package 2 out of 5). Each segment contains therefore its own structural metadata.
 
-## Splitting
+### Splitting
 
 *Definition:* *Splitting* is a special case of segmentation where large files (e.g. large representation content files) are divided into parts of a fixed byte length. However, the splitted content files are wrapped by segments, i.e. they are contained in an information package which references the parent information package to which they belong.
 
