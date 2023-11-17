@@ -63,7 +63,7 @@ Parent-child relationship between AIPs
 
 Even though this parent-child relationship could be used to create a hierarchical structure of information packages, it is in this scope limited to a flat list where the segments are are subordinated to one parent information package.
 
-#### Using METS to refer from parent IP to child IP(s)
+#### Using METS to refer from parent IP to child IP(s) 
 The method used to refer from parent to child is based on the ID of the IP of the child. One reason for using ID and not URL or other more direct references to a location of the referenced METS file is the flexibility it gives to move the segmented IPs across storage locations. This flexibility is often needed for segmented IPs that can be very large.
 
 The value of the xlink:href attribute in the <mptr> element in the METS file of the parent IP is used.
