@@ -35,9 +35,9 @@ The segments of an information package are held together in a parent-child struc
 
 *Definition:* *Splitting* is a special case of segmentation where large files (e.g. large representation content files) are divided into parts of a fixed byte length. However, the splitted content files are wrapped by segments, i.e. they are contained in an information package which references the parent information package to which they belong.
 
-## Differential or delta package
+### Differential package
 
-A differential package is an incomplete form of an information package which contains only part of the original package it is derived from. The purpose of the differential package is to allow persisting updates. This is sometimes also referred to as delta package. In the context of this specification we use the term "Differential package" and understand it synonymously with the term "Delta package".
+A differential package is an incomplete form of an information package which contains only part of the original package it is derived from. The purpose of the differential package is to allow persisting updates. This is also referred to as *delta package*. 
 
 The differential information package is relevant for the physical container files and concerns changes of metadata and/or content of the AIP. In case of large AIPs, this allows adding or overriding data or metadata to an physical container containing parts of an information package or the entire information package content.
 
