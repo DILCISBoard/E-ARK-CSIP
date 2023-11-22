@@ -1142,7 +1142,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP96" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP96" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation file references</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing documentation described in the package are referenced via the relevant file group identifiers. There MUST be one file group reference per `&lt;fptr&gt;` element.</p>
@@ -1193,7 +1193,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP100" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP100" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema file reference</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers. One file group reference per fptr-element</p>
@@ -1244,7 +1244,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP104" REQLEVEL="MUST" EXAMPLES="structMapExample1">
+            <requirement ID="CSIP104" REQLEVEL="SHOULD" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division file references</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing content described in the package are referenced via the relevant file group identifiers. One file group reference per fptr-element.</p>
