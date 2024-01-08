@@ -30,12 +30,11 @@ jobs:
       - name: Get current date
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-      - name: Set env vars
+      - name: Substitute env vars in files
+        uses: chris-peterson/virgo@v1
         env:
           RELEASE_DATE: ${{ steps.date.outputs.date }}
           RELEASE_VERSION: ${{ github.event.release.tag_name }}
-      - name: Substitute env vars in files
-        uses: chris-peterson/virgo@v1
         with:
           templates: "specification/metadata.md"
       - name: Build the spec-publisher project & produce site artifacts
