@@ -156,41 +156,95 @@
                     <head>Package Identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The `mets/@OBJID` attribute is mandatory, its value is a string identifier for the METS document. For the package METS document, this should be the name/ID of the package, i.e. the name of the package root folder.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level representation folder.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/@OBJID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST1-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testWrap>
+                            <!--as far as my understanding goes, this XPATH wouldn't evaluate correctly in practice without the mets namespace prefix, though I could certainly be incorrect and it might need to be pruned in the interpolation to the published PDF-->
+                            <testXML>mets/@OBJID</testXML>
+                        </testWrap>
+                    </test>
+                    <test ID="TEST1-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets">
+                                    <!--the schematron test expressed in the python validator goes simply @OBJID, of course being the root element a count of one is implied but to make it implicit in the test I have modified to include a count, may require discussion-->
+                                    <!--NB precedent for this is the proposed interpolation of CSIP10, pyvalidator schematron tests plainly for mets:agent proposed profile test adds cardinality test-->
+                                    <iso:assert id="CSIP1" role="ERROR" test="count(@OBJID)=1">The mets/@OBJID attribute is mandatory, its value is a string identifier for the METS document. For the package METS document, this should be the name/ID of the package, i.e. the name of the package root folder. For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level representation folder.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP2" REQLEVEL="MUST" RELATEDMAT="VocabularyContentCategory" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Content Category</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The `mets/@TYPE` attribute MUST be used to declare the category of the content held in the package, e.g. "Datasets", "Websites", "Mixes" , "Other", etc.. Legal values are defined in a fixed vocabulary. When the content category used falls outside of the defined vocabulary the `mets/@TYPE` value must be set to "OTHER" and the specific value declared in `mets/@csip:OTHERTYPE`. The vocabulary will develop under the curation of the DILCIS Board as additional content information type specifications are produced.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/@TYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST2-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testWrap>
+                            <testXML>mets/@TYPE</testXML>
+                        </testWrap>
+                    </test>
+                    <test ID="TEST2-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets">
+                                    <!--ignoring the issue raised with casing incogruity-->
+                                    <iso:assert id="CSIP2" role="ERROR" test="count(@TYPE)=1">The mets/@TYPE attibute MUST be used to declare the category of the content held in the package, e.g. book, journal, stereograph, video, etc.. Legal values are defined in a fixed vocabulary.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP3" REQLEVEL="SHOULD" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Other Content Category</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the `mets/@TYPE` attribute has the value "OTHER" the `mets/@csip:OTHERTYPE` attribute MUST be used to declare the content category of the package/representation. The value can either be "OTHER" or any other string that are not present in the vocabulary used in the `mets/@TYPE` attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets[@TYPE='OTHER']/@csip:OTHERTYPE</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST3-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testWrap>
+                            <!--case of the 'other' casing issue, as such I am leaving this alone for now-->
+                            <testXML>mets[@TYPE='OTHER']/@csip:OTHERTYPE</testXML>
+                        </testWrap>
+                    </test>
+                    <test ID="TEST3-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="">
+                                    <!--I have made cardinality implicit in this test (modified from pyvalidator), but it could be confusing because of the 'should conditional must' situation. It's probably best to discuss this-->
+                                    <iso:assert id="CSIP3" role="WARN" test="(@TYPE = 'OTHER' and count(@csip:OTHERTYPE)=1) or @TYPE != 'OTHER'">When the content category used falls outside of the defined vocabulary the mets/@TYPE value must be set to “OTHER” and the specific value declared in mets/@csip:OTHERTYPE. The vocabulary will develop under the curation of the DILCIS Board as additional content information type specifications are produced.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP4" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                <description>
                     <head>Content Information Type Specification</head>
-                   <p xmlns="http://www.w3.org/1999/xhtml">Used to declare the Content Information Type Specification used when creating the package. Legal values are defined in a fixed vocabulary. The attribute is mandatory for representation level METS documents. The vocabulary will evolve under the care of the DILCIS Board as additional Content Information Type Specifications are developed.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/@csip:CONTENTINFORMATIONTYPE</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Used to declare the Content Information Type Specification used when creating the package. Legal values are defined in a fixed vocabulary. The attribute is mandatory for representation level METS documents. The vocabulary will evolve under the care of the DILCIS Board as additional Content Information Type Specifications are developed.</p>
                 </description>
+                <tests>
+                    <test ID="TEST4-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testWrap>
+                            <testXML>mets/@csip:CONTENTINFORMATIONTYPE</testXML>
+                        </testWrap>
+                    </test>
+                    <test ID="TEST4-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets">
+                                    <iso:assert id="CSIP4" role="WARN" test="count(@csip:CONTENTINFORMATIONTYPE)<=1">Used to declare the Content Information Type Specification used when creating the package. Legal values are defined in a fixed vocabulary. The attribute is mandatory for representation level METS documents.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP5" REQLEVEL="MAY" RELATEDMAT="CSIP4" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
