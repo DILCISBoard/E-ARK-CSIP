@@ -165,7 +165,7 @@
                         <testWrap>
                             <testXML>
                                 <iso:rule context="/mets:mets">
-                                    <!--combination of assertion role and test evaluation to ascertain cardinality, error+attributeRef = 1..1, warn+attributeRef = 0..1 etc-->
+                                    <!--combination of assertion role, element position and test evaluation to ascertain cardinality, error on root = 1..1, warn on root = 0..1 etc-->
                                     <iso:assert id="CSIP1" role="ERROR" test="@OBJID">The mets/@OBJID attribute is mandatory, its value is a string identifier for the METS document. For the package METS document, this should be the name/ID of the package, i.e. the name of the package root folder. For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level representation folder.</iso:assert>
                                 </iso:rule>
                             </testXML>
@@ -284,111 +284,221 @@
                 <description>
                     <head>Package header</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">General element for describing the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/metsHdr</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST117-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:metsHdr</testString>
+                    </test>
+                    <test ID="TEST117-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets">
+                                    <iso:assert id="CSIP117" role="ERROR" test="mets:metsHdr">There MUST be a general element that describes the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP7" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Package creation datetime</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">`mets/metsHdr/@CREATEDATE` records the date and time the package was created.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/metsHdr/@CREATEDATE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST7-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:metsHdr/@CREATEDATE</testString>
+                    </test>
+                    <test ID="TEST7-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:metsHdr">
+                                    <iso:assert id="CSIP7" role="ERROR" test="@CREATEDATE">The metsHdr element MUST have a CREATEDATE attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP8" REQLEVEL="SHOULD" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Package last modification datetime</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">`mets/metsHdr/@LASTMODDATE` records the data and time the package was modified and is mandatory when the package has been modified.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/metsHdr/@LASTMODDATE</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST8-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:metsHdr/@LASTMODDATE</testString>
+                    </test>
+                    <test ID="TEST8-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:metsHdr">
+                                    <iso:assert id="CSIP8" role="WARN" test="@LASTMODDATE">The metsHdr element SHOULD have a LASTMODDATE attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP9" REQLEVEL="MUST" RELATEDMAT="VocabularyOAISPackageType" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>OAIS Package type information</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">`mets/metsHdr/@csip:OAISPACKAGETYPE` is an additional CSIP attribute that declares the type of the IP.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/metsHdr/@csip:OAISPACKAGETYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST9-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:metsHdr/@csip:OAISPACKAGETYPE</testString>
+                    </test>
+                    <test ID="TEST9-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:metsHdr">
+                                    <iso:assert id="CSIP9" role="ERROR" test="@csip:OAISPACKAGETYPE">The metsHdr element MUST have a csip:OAISPACKAGETYPE attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP10" REQLEVEL="MUST">
                 <description>
                     <head>Agent</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A mandatory agent element records the software used to create the package. Other uses of agents may be described in any local implementations that extend the profile.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/metsHdr/agent</dd>
-                        <dt>Cardinality</dt><dd>1..n</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST10-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:metsHdr/mets:agent</testString>
+                    </test>
+                    <test ID="TEST10-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:metsHdr">
+                                    <iso:assert id="CSIP10" role="MUST" test="mets:agent">The metsHdr element MUST contain an agent element that records the software used to create the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
-           <requirement ID="CSIP11" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
+            <requirement ID="CSIP11" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Agent role</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent element MUST have a `@ROLE` attribute with the value “CREATOR”.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/metsHdr/agent[@ROLE='CREATOR']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST11-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:metsHdr/mets:agent[@ROLE='CREATOR']</testString>
+                    </test>
+                    <test ID="TEST11-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:metsHdr/mets:agent">
+                                    <iso:assert id="CSIP11" role="ERROR" test="@ROLE = 'CREATOR'">The agent element MUST have a ROLE attribute with the value "CREATOR".</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP12" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Agent type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent element MUST have a `@TYPE` attribute with the value “OTHER”.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/metsHdr/agent[@TYPE='OTHER']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST12-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:metsHdr/mets:agent[@TYPE='OTHER']</testString>
+                    </test>
+                    <test ID="TEST12-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/merts:metsHdr/mets:agent">
+                                    <iso:assert id="CSIP12" role="ERROR" test="@TYPE = 'OTHER'">The agent element MUST have a TYPE attribute with the value "OTHER".</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP13" REQLEVEL="MUST" RELATEDMAT="VocabularyAgentOtherType" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Agent other type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent element MUST have a `@OTHERTYPE` attribute with the value “SOFTWARE”.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/metsHdr/agent[@OTHERTYPE='SOFTWARE']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST13-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:metsHdr/mets:agent[@OTHERTYPE='SOFTWARE']</testString>
+                    </test>
+                    <test ID="TEST13-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:metsHdr/mets:agent">
+                                    <iso:assert id="CSIP13" role="ERROR" test="@OTHERTYPE = 'SOFTWARE'">The agent element MUST have a OTHERTYPE attribute with the value "SOFTWARE".</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP14" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Agent name</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent's name element records the name of the software tool used to create the IP.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/metsHdr/agent/name</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST14-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:metsHdr/mets:agent/mets:name</testString>
+                    </test>
+                    <test ID="TEST14-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:metsHdr/mets:agent">
+                                    <iso:assert id="CSIP14" role="ERROR" test="mets:name">The agent element MUST have a child name element that records the name of the software tool used to create the IP.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP15" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Agent additional information</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent's note element records the version of the tool used to create the IP.</p>
-                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                         <dt>METS XPath</dt><dd>mets/metsHdr/agent/note</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST15-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:metsHdr/mets:agent/mets:note</testString>
+                    </test>
+                    <test ID="TEST15-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:metsHdr/mets:agent">
+                                    <iso:assert id="CSIP15" role="ERROR" test="mets:note">The agent element MUST have a child note element that records the version of the tool used to create the IP.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP16" REQLEVEL="MUST" RELATEDMAT="VocabularyNoteType" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Classification of the agent additional information</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent element's note child has a `@csip:NOTETYPE` attribute with a fixed value of "SOFTWARE VERSION".</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/metsHdr/agent/note[@csip:NOTETYPE='SOFTWARE VERSION']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST16-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:metsHdr/mets:agent/mets:note[@csip:NOTETYPE='SOFTWARE VERSION']</testString>
+                    </test>
+                    <test ID="TEST16-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:metsHdr/mets:agent">
+                                    <iso:assert id="CSIP16" role="ERROR" test="mets:note[@csip:NOTETYPE = 'SOFTWARE VERSION']">The mandatory agent element’s note child has a @csip:NOTETYPE attribute with a fixed value of “SOFTWARE VERSION”.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
         </metsHdr>
         <dmdSec ID="dmdSecElement">
