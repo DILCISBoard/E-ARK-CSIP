@@ -507,141 +507,286 @@
                     <head>Descriptive metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Must be used if descriptive metadata for the package content is available. Each descriptive metadata section (`&lt;dmdSec&gt;`) contains a single description and must be repeated for multiple descriptions, when available.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec</dd>
-                        <dt>Cardinality</dt><dd>0..n</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST17-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec</testString>
+                    </test>
+                    <test ID="TEST17-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets">
+                                    <!--Conditional must, difficult to test with no fixed dmd schema, inferring cardinality will be interesting-->
+                                    <iso:assert id="CSIP17" role="WARN" test="mets:dmdSec">Must be used if descriptive metadata about the package content is available. NOTE: According to official METS documentation each metadata section must describe one and only one set of metadata. As such, if implementers want to include multiple occurrences of descriptive metadata into the package this must be done by repeating the whole dmdSec element for each individual metadata.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP18" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Descriptive metadata identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the descriptive metadata section (`&lt;dmdSec&gt;`) used for internal package references. It must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST18-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/@ID</testString>
+                    </test>
+                    <test ID="TEST18-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec">
+                                    <iso:assert id="CSIP18" role="ERROR" test="@ID">Mandatory, identifier must be unique within the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP19" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Descriptive metadata creation datetime</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Creation date and time of the descriptive metadata in this section.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/@CREATED</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST19-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/@CREATED</testString>
+                    </test>
+                    <test ID="TEST19-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec">
+                                    <iso:assert id="CSIP19" role="ERROR" test="@CREATED">Mandatory, creation date of the descriptive metadata in this section.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP20" REQLEVEL="SHOULD" RELATEDMAT="VocabularyStatus" EXAMPLES="dmdSecExample1">
+                <!--The dmdSec element in dmdSecExample1 does not contain an @STATUS attribute-->
                 <description>
                     <head>Status of the descriptive metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Indicates the status of the package using a fixed vocabulary.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/@STATUS</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST20-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/@STATUS</testString>
+                    </test>
+                    <test ID="TEST20-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec">
+                                    <!-- Doesn't implement fixed vocab-->
+                                    <iso:assert id="CSIP20" role="WARN" test="@STATUS">SHOULD be used to indicated the status of the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP21" REQLEVEL="SHOULD" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Reference to the document with the descriptive metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Reference to the descriptive metadata file located in the “metadata” section of the IP.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST21-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/mets:mdRef</testString>
+                    </test>
+                    <test ID="TEST21-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec">
+                                    <!--The pyvalidator schematron test for CSIP21 has a typo in the mdRef element "mdref", I have submitted the change and proactively changed it here-->
+                                    <!--The same typo appears for the context of all mdRef related tests in pyvalidator, updated in all these profile rules-->
+                                    <iso:assert id="CSIP21" role="WARN" test="mets:mdRef">SHOULD provide a reference to the descriptive metadata file located in the “metadata” section of the IP..</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP22" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef[@LOCTYPE='URL']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST22-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/mets:mdRef[@LOCTYPE='URL']</testString>
+                    </test>
+                    <test ID="TEST22-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec/mets:mdRef">
+                                    <iso:assert id="CSIP22" role="ERROR" test="@LOCTYPE='URL">The locator type is always used with the value “URL” from the vocabulary in the attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP23" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Type of link</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef[@xlink:type='simple']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST23-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/mets:mdRef[@xlink:type='simple']</testString>
+                    </test>
+                    <test ID="TEST23-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec/mets:mdRef">
+                                    <iso:assert id="CSIP23" role="ERROR" test="@xlink:type = 'simple'">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP24" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Resource location</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The actual location of the resource. This specification recommends recording a URL type filepath in this attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@xlink:href</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST24-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/mets:mdRef/@xlink:href</testString>
+                    </test>
+                    <test ID="TEST24-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec/mets:mdRef">
+                                    <iso:assert id="CSIP24" role="ERROR" test="@xlink:href">The actual location of the resource. This specification recommends recording a URL type filepath in this attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP25" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Type of metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the referenced file. Values are taken from the list provided by the METS.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@MDTYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST25-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/mets:mdRef/@MDTYPE</testString>
+                    </test>
+                    <test ID="TEST25-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec/mets:mdRef">
+                                    <iso:assert id="CSIP25" role="ERROR" test="@MDTYPE">Specifies the type of metadata in the referenced file. Values are taken from the list provided by the METS.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP26" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>File mime type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type of the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@MIMETYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST26-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/mets:mdRef/@MIMETYPE</testString>
+                    </test>
+                    <test ID="TEST26-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec/mets:mdRef">
+                                    <iso:assert id="CSIP26" role="ERROR" test="@MIMETYPE">MUST hold the IANA mime type of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP27" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>File size</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Size of the referenced file in bytes.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@SIZE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST27-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/mets:mdRef/@SIZE</testString>
+                    </test>
+                    <test ID="TEST27-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec/mets:mdRef">
+                                    <iso:assert id="CSIP27" role="ERROR" test="@SIZE">MUST hold the size of the referenced file in bytes.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP28" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>File creation datetime</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The creation date and time of the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@CREATED</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST28-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/mets:mdRef/@CREATED</testString>
+                    </test>
+                    <test ID="TEST28-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec/mets:mdRef">
+                                    <iso:assert id="CSIP28" role="ERROR" test="@CREATED">MUST hold the creation date of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP29" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>File checksum</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The checksum of the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@CHECKSUM</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST29-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/mets:mdRef/@CHECKSUM </testString>
+                    </test>
+                    <test ID="TEST29-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec/mets:mdRef">
+                                    <iso:assert id="CSIP29" role="ERROR" test="@CHECKSUM">MUST hold the checksum of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP30" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>File checksum type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@CHECKSUMTYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST30-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:dmdSec/mets:mdRef/@CHECKSUMTYPE</testString>
+                    </test>
+                    <test ID="TEST30-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:dmdSec/mets:mdRef">
+                                    <iso:assert id="CSIP30" role="ERROR" test="@CHECKSUMTYPE">MUST hold the algorithm type of checksum of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
         </dmdSec>
         <amdSec ID="amdSecElement">
@@ -651,273 +796,545 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">If administrative / preservation metadata is available, it must be described using the administrative metadata section (`&lt;amdSec&gt;`) element.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">All administrative metadata is present in a single `&lt;amdSec&gt;` element.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST31-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec</testString>
+                    </test>
+                    <test ID="TEST31-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets">
+                                    <iso:assert id="CSIP31" role="WARN" test="mets:amdSec">If administrative / preservation metadata is available, it must be described using the administrative metadata section (amdSec) element. All administrative metadata is present in a single amdSec element.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP32" REQLEVEL="SHOULD" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Digital provenance metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">For recording information about preservation the standard PREMIS is used. It is mandatory to include one `&lt;digiprovMD&gt;` element for each piece of PREMIS metadata.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The use if PREMIS in METS is following the recommendations in <a href="http://www.loc.gov/standards/premis/guidelines2017-premismets.pdf"> the 2017 version of PREMIS in METS Guidelines.</a></p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD</dd>
-                        <dt>Cardinality</dt><dd>0..n</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST32-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD</testString>
+                    </test>
+                    <test ID="TEST32-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets">
+                                    <iso:assert id="CSIP32" role="WARN" test="mets:digiprovMD">Sould be used to record information about preservation the standard PREMIS is used.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP33" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Digital provenance metadata identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the digital provenance metadata section `mets/amdSec/digiprovMD` used for internal package references. It must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST33-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/@ID</testString>
+                    </test>
+                    <test ID="TEST33-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD">
+                                    <iso:assert id="CSIP33" role="ERROR" test="@ID">Mandatory, unique id for the digital provenance.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP34" REQLEVEL="SHOULD" RELATEDMAT="VocabularyStatus" EXAMPLES="amdSecExample1">
+                <!--Like @STATUS examples for dmdSec, amdSecExample1 does not include the @STATUS attribute-->
                <description>
                     <head>Status of the digital provenance metadata</head>
-                   <p xmlns="http://www.w3.org/1999/xhtml">Indicates the status of the package using a fixed vocabulary.</p>
-                   <dl xmlns="http://www.w3.org/1999/xhtml">
-                       <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/@STATUS</dd>
-                       <dt>Cardinality</dt><dd>0..1</dd>
-                   </dl>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Indicates the status of the package using a fixed vocabulary.</p>
                </description>
+               <tests>
+                    <test ID="TEST34-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/@STATUS</testString>
+                    </test>
+                    <test ID="TEST34-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD">
+                                    <iso:assert id="CSIP34" role="WARN" test="@STATUS">Should be used to indicate the status of the package.e</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP35" REQLEVEL="SHOULD" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Reference to the document with the digital provenance metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Reference to the digital provenance metadata file stored in the “metadata” section of the IP.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST35-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef</testString>
+                    </test>
+                    <test ID="TEST35-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD">
+                                    <iso:assert id="CSIP35" role="WARN" test="mets:mdRef">Should provide a reference to the digital provenance metadata file stored in the “metadata” section of the IP.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP36" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef[@LOCTYPE='URL']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST36-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef[@LOCTYPE='URL']</testString>
+                    </test>
+                    <test ID="TEST36-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef">
+                                    <iso:assert id="CSIP36" role="ERROR" test="@LOCTYPE = 'URL'">Mandatory, locator type is always used with the value “URL” from the vocabulary in the attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP37" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Type of link</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef[@xlink:type='simple']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST37-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef[@xlink:type='simple']</testString>
+                    </test>
+                    <test ID="TEST37-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef">
+                                    <iso:assert id="CSIP37" role="ERROR" test="@xlink:type = 'simple'">Attribute MUST be used with the value “simple”. Value list is maintained by the xlink standard.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP38" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Resource location</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The actual location of the resource. This specification recommends recording a URL type filepath within this attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@xlink:href</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST38-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef/@xlink:href</testString>
+                    </test>
+                    <test ID="TEST38-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef">
+                                    <iso:assert id="CSIP38" role="ERROR" test="@xhlink:href">MUST record the actual location of the resource. This specification recommends recording a URL type filepath within this attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP39" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Type of metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the referenced file. Values are taken from the list provided by the METS.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@MDTYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST39-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef/@MDTYPE</testString>
+                    </test>
+                    <test ID="TEST39-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef">
+                                    <iso:assert id="CSIP39" role="ERROR" test="@MDTYPE">MUST record the type of metadata at the referenced location.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP40" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File mime type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@MIMETYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST40-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef/@MIMETYPE</testString>
+                    </test>
+                    <test ID="TEST40-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef">
+                                    <iso:assert id="CSIP40" role="ERROR" test="@MIMETYPE">MUST record the MIME type of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP41" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File size</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Size of the referenced file in bytes.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@SIZE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST41-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef/@SIZE</testString>
+                    </test>
+                    <test ID="TEST41-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef">
+                                    <iso:assert id="CSIP41" role="ERROR" test="@SIZE">MUST record the size in bytes of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP42" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File creation datetime</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Creation date and time of the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@CREATED</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST42-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef/@CREATED</testString>
+                    </test>
+                    <test ID="TEST42-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef">
+                                    <iso:assert id="CSIP42" role="ERROR" test="@CREATED">MUST record the date the referenced file was created.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP43" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File checksum</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The checksum of the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@CHECKSUM</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST43-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef/@CHECKSUM</testString>
+                    </test>
+                    <test ID="TEST43-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef">
+                                    <iso:assert id="CSIP43" role="ERROR" test="@CHECKSUM">MUST record the checksum of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP44" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File checksum type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@CHECKSUMTYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST44-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:digiprovMD/mets:mdRef/@CHECKSUMTYPE</testString>
+                    </test>
+                    <test ID="TEST44-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="">
+                                    <iso:assert id="CSIP44" role="ERROR" test="@CHECKSUMTYPE">MUST record the checksum type of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP45" REQLEVEL="MAY" EXAMPLES="amdSecExample1">
+                <!--amdSecExample1 does not include any rightsMD elements. This nullifies the listed examples for all requirements that depend on rightsMD. 45 to 56.-->
                 <description>
                     <head>Rights metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A simple rights statement may be used to describe general permissions for the package. Individual representations should state their specific rights in their representation METS file.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Available standards include <a href="http://rightsstatements.org">RightsStatements.org</a>, <a href="https://pro.europeana.eu/page/available-rights-statements">Europeana rights statements info</a>, <a href="https://github.com/mets/METS-Rights-Schema">METS Rights Schema</a> created and maintained by the METS Board, the rights part of <a href="http://www.loc.gov/standards/premis/">PREMIS</a> as well as own local rights statements in use.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD</dd>
-                        <dt>Cardinality</dt><dd>0..n</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST45-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD</testString>
+                    </test>
+                    <test ID="TEST45-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec">
+                                    <iso:assert id="CSIP45" role="INFO" test="mets:rightsMD">A simple rights statement may be used to describe general permissions for the package. Individual representations should state their specific rights in their representation METS file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP46" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Rights metadata identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the rights metadata section (`&lt;rightsMD&gt;`) used for internal package references. It must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST46-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/@ID</testString>
+                    </test>
+                    <test ID="TEST46-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:rightsMD">
+                                    <iso:assert id="CSIP46" role="ERROR" test="@ID">Mandatory, unique id for the rights metadata.e</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP47" REQLEVEL="SHOULD" RELATEDMAT="VocabularyStatus" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Status of the rights metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Indicates the status of the package using a fixed vocabulary.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/@STATUS</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST47-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/@STATUS</testString>
+                    </test>
+                    <test ID="TEST47-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:rightsMD">
+                                    <iso:assert id="CSIP47" role="WARN" test="@STATUS">Should be used to indicate the status of the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP48" REQLEVEL="SHOULD" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Reference to the document with the rights metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Reference to the rights metadata file stored in the “metadata” section of the IP.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST48-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef</testString>
+                    </test>
+                    <test ID="TEST48-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:rightsMD">
+                                    <iso:assert id="CSIP48" role="WARN" test="mets:mdRef">Should provide a reference to the digital provenance metadata file stored in the “metadata” section of the IP.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP49" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef[@LOCTYPE='URL']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST49-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef[@LOCTYPE='URL']</testString>
+                    </test>
+                    <test ID="TEST49-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef">
+                                    <iso:assert id="CSIP49" role="ERROR" test="@LOCTYPE = 'URL'">Mandatory, locator type is always used with the value “URL” from the vocabulary in the attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP50" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef[@xlink:type='simple']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST50-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef[@xlink:type='simple']</testString>
+                    </test>
+                    <test ID="TEST50-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="">
+                                    <iso:assert id="CSIP50" role="ERROR" test="@xlink:type = 'simple'">Attribute MUST be used with the value “simple”. Value list is maintained by the xlink standard.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP51" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Resource location</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The actual location of the resource. We  recommend recording a URL type filepath within this attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@xlink:href</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST51-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef/@xlink:href</testString>
+                    </test>
+                    <test ID="TEST51-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef">
+                                    <iso:assert id="CSIP51" role="ERROR" test="@xlink:href">MUST record the actual location of the resource. This specification recommends recording a URL type filepath within this attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP52" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Type of metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Specifies the type of metadata in the referenced file. Value is taken from the list provided by the METS.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@MDTYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST52-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef/@MDTYPE</testString>
+                    </test>
+                    <test ID="TEST52-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef">
+                                    <iso:assert id="CSIP52" role="ERROR" test="@MDTYPE">MUST record the type of metadata at the referenced location.e</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP53" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File mime type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@MIMETYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST53-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef/@MIMETYPE</testString>
+                    </test>
+                    <test ID="TEST53-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef">
+                                    <iso:assert id="CSIP53" role="ERROR" test="@MIMETYPE">MUST record the MIME type of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP54" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File size</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Size of the referenced file in bytes.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@SIZE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST54-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef/@SIZE</testString>
+                    </test>
+                    <test ID="TEST54-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef">
+                                    <iso:assert id="CSIP54" role="ERROR" test="@SIZE">MUST record the size in bytes of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP55" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File creation datetime </head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Creation date and time of the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@CREATED</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST55-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef/@CREATED</testString>
+                    </test>
+                    <test ID="TEST55-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef">
+                                    <iso:assert id="CSIP55" role="ERROR" test="@CREATED">MUST record the date the referenced file was created.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP56" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File checksum</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The checksum of the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@CHECKSUM</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST56-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef/@CHECKSUM</testString>
+                    </test>
+                    <test ID="TEST56-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef">
+                                    <iso:assert id="CSIP56" role="ERROR" test="@CHECKSUM">MUST record the checksum of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP57" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File checksum type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@CHECKSUMTYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST57-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef/@CHECKSUMTYPE</testString>
+                    </test>
+                    <test ID="TEST57-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:amdSec/mets:rightsMD/mets:mdRef">
+                                    <iso:assert id="CSIP57" role="ERROR" test="@CHECKSUMTYPE">MUST record the checksum type of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
         </amdSec>
         <fileSec ID="fileSecElement">
