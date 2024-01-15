@@ -1344,61 +1344,125 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">References to all transferred content SHOULD be placed in the file section in the different file group elements, described in other requirements.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Only a single file section (`&lt;fileSec&gt;`) element should be present.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">In the case that a package only contains metadata updates, i.e. exclusively metadata files, then no file references need to be added to this section.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST58-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec</testString>
+                    </test>
+                    <test ID="TEST58-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets">
+                                    <iso:assert id="CSIP58" role="WARN" test="mets:fileSec">The transferred content is placed in the file section in different file group elements, described in other requirements.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP59" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File section identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file section used for internal package references. It must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST59-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/@ID</testString>
+                    </test>
+                    <test ID="TEST59-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec">
+                                    <iso:assert id="CSIP59" role="ERROR" test="@ID">An xml:id identifier for the file section used for internal package references.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP60" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Documentation file group</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All documentation pertaining to the transferred content is placed in one or more file group elements with `mets/fileSec/fileGrp/@USE` attribute value "Documentation".</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@USE='Documentation']</dd>
-                        <dt>Cardinality</dt><dd>1..n</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST60-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp[@USE='Documentation']</testString>
+                    </test>
+                    <test ID="TEST60-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec">
+                                    <iso:assert id="CSIP60" role="ERROR" test="mets:fileGrp[@USE = 'Documentation']">All documentation pertaining to the transferred content is placed in one or more file group elements with mets/fileSec/fileGrp/@USE attribute value “Documentation”.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP113" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Schema file group</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All XML schemas used in the information package must be referenced from one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value "Schemas".</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@USE='Schemas']</dd>
-                        <dt>Cardinality</dt><dd>1..n</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST113-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp[@USE='Schemas']</testString>
+                    </test>
+                    <test ID="TEST113-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec">
+                                    <iso:assert id="CSIP113" role="ERROR" test="mets:fileGrp[@USE = 'Schemas']">All XML schemas used in the information package should be referenced from one or more file groups with mets/fileSec/fileGrp/@USE attribute value “Schemas”.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test> 
+                </tests>
             </requirement>
             <requirement ID="CSIP114" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Representations file group</head>
+                    <!--instructions on usage of "Representations" value for @USE attribute are unclear-->
                     <p xmlns="http://www.w3.org/1999/xhtml">A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value starting with "Representations" followed by the path to the folder where the representation level METS document is placed. For example "Representation/submission" and "Representation/ingest".</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]</dd>
-                        <dt>Cardinality</dt><dd>1..n</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST114-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <!--improper usage of xml function starts-with in original version fixed here-->
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp[starts-with(@USE,'Representations')]</testString>
+                    </test>
+                    <test ID="TEST114-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <!-- the pyvalidator schematron test for CSIP 114 only allows for the @USE attribute value "Representations", the specification calls for affixes to be added-->
+                                <!-- new test, below proposed on github, validation message will also need to be updated-->
+                                <iso:rule context="/mets:mets/mets:fileSec">
+                                    <iso:assert id="CSIP114" role="ERROR" test="mets:fileGrp[starts-with(@USE, 'Representations')]">A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with mets/fileSec/fileGrp/@USE attribute value “Representations”.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP61" REQLEVEL="MAY" RELATEDMAT="CSIP31" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Reference to administrative metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If administrative metadata has been provided at file group `mets/fileSec/fileGrp` level this attribute refers to its administrative metadata section by ID.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/@ADMID</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST61-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/@ADMID</testString>
+                    </test>
+                    <test ID="TEST61-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp">
+                                    <iso:assert id="CSIP61" role="INFO" test="@ADMID">ADMID attribute used.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP62" REQLEVEL="SHOULD" RELATEDMAT="VocabularyContentInformationTypeSpecification CSIP4 CSIP114" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
@@ -1407,181 +1471,365 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The vocabulary will evolve under the curation of the DILCIS Board as additional content information type specifications are developed.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the element "Content Information Type Specification" (CSIP4) has the value "MIXED" or the file group describes a representation, then this element states the content information type specification used for the file group.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the element "Representations file group" (CSIP114), the file group describes a representation with the `mets/fileSec/fileGrp/@USE` attribute value is starting with "Representations", then this element must state the content information type specification used for the representation.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/@csip:CONTENTINFORMATIONTYPE="MIXED"|mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]/@csip:CONTENTINFORMATIONTYPE</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST62-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/@csip:CONTENTINFORMATIONTYPE="MIXED"|mets:mets/mets:fileSec/mets:fileGrp[starts-with(@USE, 'Representations')]/@csip:CONTENTINFORMATIONTYPE</testString>
+                    </test>
+                    <test ID="TEST62-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <!-- original pyvalidator schematron does not account for the case of a root mets with the othertype value mixed, a change here requires reducing the context of the test-->
+                                <!-- could be placed by: context="/mets:mets/" test="@csip:CONTENTINFORMATIONTYPE='MIXED' or mets:fileSec/mets:fileGrp[starts-with(@USE, 'Representations')]/@csip:CONTENTINFORMATIONTYPE"-->
+                                <!-- NB this and the original pyvalidator test hardcode an attribute value from a fixed vocab-->
+                                <iso:rule context="/mets:mets/">
+                                    <iso:assert id="CSIP62" role="INFO" test="(@USE = 'Representations' and @csip:CONTENTINFORMATIONTYPE) or @USE != 'Representations'"></iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP63" REQLEVEL="MAY" RELATEDMAT="CSIP62" EXAMPLES="fileSecExample1 fileSecExample2">
+            <!--Only fileSecExample2 seems relevant to this requirement-->
                 <description>
                     <head>Other Content Information Type Specification</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the `mets/fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE` attribute has the value "OTHER" the `mets/fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE` must state a value for the Content Information Type Specification used.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST63-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</testString>
+                    </test>
+                    <test ID="TEST63-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp">
+                                    <iso:assert id="CSIP63" role="ERROR" test="(@csip:CONTENTINFORMATIONTYPE = 'OTHER' and @csip:OTHERCONTENTINFORMATIONTYPE) or @csip:CONTENTINFORMATIONTYPE != 'OTHER' or not(@csip:CONTENTINFORMATIONTYPE)"></iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP64" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Description of the use of the file group</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The value in the `mets/fileSec/fileGrp/@USE` is the name of the whole folder structure to the data, e.g "Documentation", "Schemas", "Representations/preingest" or "Representations/submission/data".</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/@USE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST64-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/@USE</testString>
+                    </test>
+                    <test ID="TEST64-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp">
+                                    <iso:assert id="CSIP64" role="ERROR" test="@USE">This attribute is mandatory.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP65" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File group identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file group used for internal package references. It must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST65-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp</testString>
+                    </test>
+                    <test ID="TEST65-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp">
+                                    <iso:assert id="CSIP65" role="ERROR" test="@ID">This attribute is mandatory. An xml:id identifier for the file group used for internal package references. It must be unique within the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP66" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The file group (`&lt;fileGrp&gt;`) contains the file elements which describe the file objects.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file</dd>
-                        <dt>Cardinality</dt><dd>1..n</dd>
-                    </dl>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The file group (`&lt;fileGrp&gt;`) contains the file elements which describe the file objects.</p>   
                 </description>
+                <tests>
+                    <test ID="TEST66-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file</testString>
+                    </test>
+                    <test ID="TEST66-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp">
+                                    <iso:assert id="CSIP66" role="ERROR" test="mets:file">The file group contains the file elements which describe the file objects.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP67" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A unique `xml:id` identifier for this file across the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST67-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString></testString>
+                    </test>
+                    <test ID="TEST67-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+                                    <iso:assert id="CSIP67" role="ERROR" test="@ID">This attribute is mandatory. An xml:id identifier for the file group used for internal package references. It must be unique within the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP68" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File mimetype</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@MIMETYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST68-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/@MIMETYPE</testString>
+                    </test>
+                    <test ID="TEST68-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+                                    <iso:assert id="CSIP68" role="ERROR" test="@MIMETYPE">MUST record the MIME type of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP69" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File size</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Size of the referenced file in bytes.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@SIZE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST69-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/@SIZE</testString>
+                    </test>
+                    <test ID="TEST69-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+                                    <iso:assert id="CSIP69" role="ERROR" test="@SIZE">MUST record the size in bytes of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP70" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File creation datetime</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Creation date and time of the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@CREATED</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST70-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/@CREATED</testString>
+                    </test>
+                    <test ID="TEST70-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+                                    <iso:assert id="CSIP70" role="ERROR" test="@CREATED">MUST record the date the referenced file was created.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP71" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File checksum</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The checksum of the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@CHECKSUM</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST71-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/@CHECKSUM</testString>
+                    </test>
+                    <test ID="TEST71-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+                                    <iso:assert id="CSIP71" role="ERROR" test="@CHECKSUM">MUST record the checksum of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP72" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File checksum type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@CHECKSUMTYPE</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST72-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/@CHECKSUMTYPE</testString>
+                    </test>
+                    <test ID="TEST72-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+                                    <iso:assert id="CSIP72" role="ERROR" test="@CHECKSUMTYPE">MUST record the checksum type of the referenced file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP73" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File original identification</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If an identifier for the file was supplied by the owner it can be recorded in this attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@OWNERID</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST73-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/@OWNERID</testString>
+                    </test>
+                    <test ID="TEST73-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+                                    <iso:assert id="CSIP73" role="INFO" test="@OWNERID">A file element has an OWNERID attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP74" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File reference to administrative metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If administrative metadata has been provided for the file this attribute refers to the file's administrative metadata by ID.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@ADMID</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST74-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/@ADMID</testString>
+                    </test>
+                    <test ID="TEST74-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+                                    <iso:assert id="CSIP74" role="INFO" test="">A file element has an ADMID attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP75" REQLEVEL="MAY" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File reference to descriptive metadata</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">If descriptive metadata has been provided per file this attribute refers to the file's descriptive metadata by ID.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@DMDID</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST75-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/@DMDID</testString>
+                    </test>
+                    <test ID="TEST75-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+                                    <iso:assert id="CSIP75" role="INFO" test="@DMDID">A file element has an DMDID attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP76" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                <description>
                     <head>File locator reference</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The location of each external file must be defined by the file location `&lt;FLocat&gt;` element using the same rules as references for metadata files. All references to files should be made using the XLink href attribute and the file protocol using the relative location of the file.</p>
-                   <dl xmlns="http://www.w3.org/1999/xhtml">
-                       <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/FLocat</dd>
-                       <dt>Cardinality</dt><dd>1..1</dd>
-                   </dl>
                </description>
+               <tests>
+                    <test ID="TEST76-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/mets:FLocat</testString>
+                    </test>
+                    <test ID="TEST76-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file">
+                                    <iso:assert id="CSIP76" role="ERROR" test="mets:FLocat">The location of each external file must be defined by the file location FLocat element.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP77" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/FLocat[@LOCTYPE='URL']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST77-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/mets:FLocat[@LOCTYPE='URL']</testString>
+                    </test>
+                    <test ID="TEST77-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file/mets:FLocat">
+                                    <iso:assert id="CSIP77" role="ERROR" test="@LOCTYPE = 'URL'">Mandatory, locator type is always used with the value “URL” from the vocabulary in the attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP78" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Type of link</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/FLocat[@xlink:type='simple']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST78-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/mets:FLocat[@xlink:type='simple']</testString>
+                    </test>
+                    <test ID="TEST78-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file/mets:FLocat">
+                                    <iso:assert id="CSIP78" role="ERROR" test="@xlink:type = 'simple'">Attribute MUST be used with the value “simple”. Value list is maintained by the xlink standard.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP79" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>Resource location</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The actual location of the resource. We  recommend recording a URL type filepath within this attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/FLocat/@xlink:href</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST79-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:fileSec/mets:fileGrp/mets:file/mets:FLocat/@xlink:href</testString>
+                    </test>
+                    <test ID="TEST79-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:fileSec/mets:fileGrp/mets:file/mets:FLocat">
+                                    <iso:assert id="CSIP79" role="ERROR" test="@xlink:href">MUST record the actual location of the resource. This specification recommends recording a URL type filepath within this attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
         </fileSec>
         <structMap ID="structMapElement">
@@ -1592,42 +1840,82 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The `&lt;structMap&gt;` in the CSIP describes the highest logical structure of the IP.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Every CSIP compliant METS file must include ONE structural map `&lt;structMap&gt;` element used exactly as described in this section of requirements.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Institutions can add their own additional custom structural maps as separate `&lt;structMap&gt;` sections following their own requirements.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap</dd>
-                        <dt>Cardinality</dt><dd>1..n</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST80-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap</testString>
+                    </test>
+                    <test ID="TEST80-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets">
+                                    <iso:assert id="CSIP80" role="ERROR" test="mets:structMap">Each METS file must include ONE structural map structMap element used exactly as described here.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP81" REQLEVEL="MUST" RELATEDMAT="VocabularyStructMapType" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Type of structural description</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The `mets/structMap/@TYPE` attribute must take the value “PHYSICAL” from the vocabulary.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@TYPE='PHYSICAL']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST81-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@TYPE = 'PHYSICAL']</testString>
+                    </test>
+                    <test ID="TEST81-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap">
+                                    <iso:assert id="CSIP81" role="ERROR" test="@TYPE = 'PHYSICAL'">The mets/structMap/@TYPE attribute must take the value “PHYSICAL” from the vocabulary.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP82" REQLEVEL="MUST" RELATEDMAT="VocabularyStructMapLabel" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Name of the structural description</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The `mets/structMap/@LABEL` attribute value is set to “CSIP” from the vocabulary.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">This requirement identifies the CSIP compliant structural map `&lt;structMap&gt;` element.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST82-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']</testString>
+                    </test>
+                    <test ID="TEST82-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap">
+                                    <iso:assert id="CSIP82" role="ERROR" test="@LABEL = 'CSIP'">The mets/structMap/@LABEL attribute value is set to “CSIP” from the vocabulary.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP83" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Structural description identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the structural description (structMap) used for internal package references. It must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST83-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/@ID</testString>
+                    </test>
+                    <test ID="TEST83-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']">
+                                    <iso:assert id="CSIP83" role="ERROR" test="@ID">An xml:id identifier for the structural description (structMap) used for internal package references. It must be unique within the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP84" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
