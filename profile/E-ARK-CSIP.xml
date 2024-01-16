@@ -265,7 +265,7 @@
                     </dl>
                 </description>
             </requirement>
-           <requirement ID="CSIP11" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
+            <requirement ID="CSIP11" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Agent role</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent element MUST have a `@ROLE` attribute with the value “CREATOR”.</p>
