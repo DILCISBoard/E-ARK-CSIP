@@ -29,13 +29,26 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: recursive
-      - name: Get current date
-        id: date
-        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-      - uses: franzbischoff/replace_envs@v1
+      - if: github.event.release != null
+        name: Update metadata
+        uses: franzbischoff/replace_envs@v1
         env:
-          RELEASE_DATE: ${{ steps.date.outputs.date }}
+          RELEASE_DATE: ${{ github.event.release.published_at }}
           RELEASE_VERSION: ${{ github.event.release.tag_name }}
+        with:
+          from_file: 'specification/metadata.md'
+          to_file: 'specification/metadata.md'
+          commit: false
+      - if: github.event.release == null
+        name: Get previous tag
+        id: previoustag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+      - if: github.event.release == null
+        name: Update metadata
+        uses: franzbischoff/replace_envs@v1
+        env:
+          RELEASE_DATE: ${{ steps.previoustag.outputs.timestamp }}
+          RELEASE_VERSION: ${{ steps.previoustag.outputs.tag }}
         with:
           from_file: 'specification/metadata.md'
           to_file: 'specification/metadata.md'
