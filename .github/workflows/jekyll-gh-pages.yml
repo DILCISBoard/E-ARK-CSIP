@@ -93,14 +93,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-
-  update_version:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Update version
-        run: |
-          git config --global user.name "GitHub Action"
-          git config --global user.email "
