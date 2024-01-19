@@ -1921,52 +1921,103 @@
                 <description>
                     <head>Main structural division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The structural map comprises a single division.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST84-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div</testString>
+                    </test>
+                    <test ID="TEST84-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']">
+                                    <iso:assert id="CSIP84" role="ERROR" test="mets:div">The structural map MUST comprises a single division.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP85" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Main structural division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST85-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/@ID</testString>
+                    </test>
+                    <test ID="TEST85-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div">
+                                    <iso:assert id="CSIP85" role="ERROR" test="@ID">An xml:id identifier must be unique within the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP88" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Metadata division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The metadata referenced in the administrative and/or descriptive metadata section is described in the structural map with one sub division.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">When the transfer consists of only administrative and/or descriptive metadata this is the only sub division that occurs.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST88-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Metadata']</testString>
+                    </test>
+                    <test ID="TEST88-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div">
+                                    <iso:assert id="CSIP88" role="ERROR" test="mets:div[@LABEL='Metadata']">The metadata referenced in the administrative and/or descriptive metadata section is described in the structural map with one sub division.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP89" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Metadata division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST89-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Metadata']/@ID</testString>
+                    </test>
+                    <test ID="TEST89-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Metadata']">
+                                    <iso:assert id="CSIP89" role="ERROR" test="@ID">An xml:id identifier must be unique within the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP90" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Metadata division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The metadata division `&lt;div&gt;` element's `@LABEL` attribute value must be "Metadata".</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <!--CSIP90 is missing from the pyvalidator rules. This could have been because it is functionally identical to the test in CSIP88, but unlike other cases they do not contradict eachother. For completeness I have added it.-->
+                <tests>
+                    <test ID="TEST90-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Metadata']</testString>
+                    </test>
+                    <test ID="TEST90-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div">
+                                    <iso:assert id="CSIP90" role="ERROR" test="mets:div[@LABEL = 'Metadata']">The metadata division `&lt;div&gt;` element's `@LABEL` attribute value must be "Metadata".</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP91" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
@@ -1974,11 +2025,21 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The admimistrative metadata division should reference all current administrative metadata sections.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">All `&lt;amdSec&gt;`s with `@STATUS='CURRENT'` SHOULD be referenced by their identifier, @ID.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The current `&lt;amdSec&gt;` @IDs are recorded in the `div[@LABEL='Metadata']/@ADMID` attribute in a space delimited list.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ADMID</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST91-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Metadata']/@ADMID</testString>
+                    </test>
+                    <test ID="TEST91-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Metadata']">
+                                    <iso:assert id="CSIP91" role="WARN" test="@ADMID">When there is administrative metadata and the amdSec is present, all administrative metadata MUST be referenced via the administrative sections different identifiers.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP92" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
@@ -1986,164 +2047,327 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">The descriptive metadata division should reference all current descriptive metadata sections.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">All `&lt;dmdSec&gt;`s with `@STATUS='CURRENT'` SHOULD be referenced by their identifier, @ID.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">The current `&lt;dmdSec&gt;` @IDs are recorded in the `div[@LABEL='Metadata']/@DMDID` attribute in a space delimited list.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@DMDID</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST92-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Metadata']/@DMDID</testString>
+                    </test>
+                    <test ID="TEST92-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Metadata']">
+                                    <iso:assert id="CSIP92" role="WARN" test="@DMDID">When there are descriptive metadata and one or more dmdSec is present, all descriptive metadata MUST be referenced via the descriptive section identifiers.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP93" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The documentation referenced in the file section file groups is described in the structural map with one sub division.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST93-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Documentation']</testString>
+                    </test>
+                    <test ID="TEST93-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL = 'CSIP']/mets:div">
+                                    <iso:assert id="CSIP93" role="WARN" test="mets:div[@LABEL='Documentation']">The documentation referenced in the file section file groups is described in the structural map with one sub division.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP94" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST94-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Documentation']/@ID</testString>
+                    </test>
+                    <test ID="TEST94-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL = 'CSIP']/mets:div[@LABEL = 'Documentation']">
+                                    <iso:assert id="CSIP94" role="ERROR" test="@ID">An xml:id identifier must be unique within the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP95" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The documentation division `&lt;div&gt;` element in the package uses the value "Documentation" from the vocabulary as the value for the `@LABEL` attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST95-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Documentation']</testString>
+                    </test>
+                    <test ID="TEST95-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div">
+                                    <!--pyvalidator is missing a validation rule for CSIP95 because of conflict with 93. Solution would require references to other elements to extend the condition of the test. Needs discussion-->
+                                    <iso:assert id="CSIP95" role="ERROR" test="mets:div[@LABEL='Documentation']">The structural map must contain a division `&lt;div&gt;` element that uses the value "Documentation" from the vocabulary as the value for the `@LABEL` attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP96" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation file references</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing documentation described in the package are referenced via the relevant file group identifiers. There MUST be one file group reference per `&lt;fptr&gt;` element.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr</dd>
-                        <dt>Cardinality</dt><dd>0..n</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST96-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Documentation']/mets:fptr</testString>
+                    </test>
+                    <test ID="TEST96-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL = 'CSIP']/mets:div[@LABEL = 'Documentation']">
+                                    <iso:assert id="CSIP96" role="ERROR" test="mets:fptr">All file groups containing documentation described in the package are referenced via the relevant file group identifiers. There MUST be one file group reference per fptr element.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP116" REQLEVEL="MUST" RELATEDMAT="CSIP60 CSIP65" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation file group reference pointer</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A reference, by ID, to the "Documentation" file group.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP60 which describes the "Documentation" file group and CSIP65 which describes the file group identifier.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr/@FILEID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST116-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Documentation']/mets:fptr/@FILEID</testString>
+                    </test>
+                    <test ID="TEST116-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL = 'CSIP']/mets:div/mets:div[@LABEL = 'Documentation']/mets:fptr">
+                                    <iso:assert id="CSIP116" role="ERROR" test="@FILEID">A reference, by ID, to the “Documentation” file group.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP97" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The schemas referenced in the file section file groups are described in the structural map within a single sub-division.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST97-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Schemas']</testString>
+                    </test>
+                    <test ID="TEST97-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL = 'CSIP']/mets:div">
+                                    <iso:assert id="CSIP97" role="WARN" test="mets:div[@LABEL = 'Schemas']">The schemas referenced in the file section file groups are described in the structural map within a single sub-division.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP98" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST98-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Schemas']/@ID</testString>
+                    </test>
+                    <test ID="TEST98-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL = 'CSIP']/mets:div/mets:div[@LABEL = 'Schemas']">
+                                    <iso:assert id="CSIP98" role="ERROR" test="@ID">An xml:id identifier must be unique within the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP99" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The schema division `&lt;div&gt;` element's `@LABEL` attribute has the value "Schemas" from the vocabulary.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST99-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Schemas']</testString>
+                    </test>
+                    <test ID="TEST99-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div">
+                                    <!--like the other package folder baseline requirements this is missing from the pyvalidator likely because it matches prior tests-->
+                                    <iso:assert id="CSIP99" role="ERROR" test="mets:div[@LABEL='Schemas']">The schema division `&lt;div&gt;` element's `@LABEL` attribute has the value "Schemas" from the vocabulary.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP100" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema file reference</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers. One file group reference per fptr-element</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr</dd>
-                        <dt>Cardinality</dt><dd>0..n</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST100-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Schemas']/mets:fptr</testString>
+                    </test>
+                    <test ID="TEST100-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL = 'CSIP']/mets:div/mets:div[@LABEL = 'Schemas']">
+                                    <iso:assert id="CSIP100" role="ERROR" test="mets:fptr">All file groups containing schemas described in the package are referenced via the relevant file group identifiers. There MUST be one file group reference per fptr element.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP118" REQLEVEL="MUST" RELATEDMAT="CSIP113 CSIP65" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema file group reference</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identifier for the "Schema" file group.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP113 which describes the "Schema" file group and CSIP65 which describes the file group identifier.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr/@FILEID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST118-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Schemas']/mets:fptr/@FILEID</testString>
+                    </test>
+                    <test ID="TEST118-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL = 'CSIP']/mets:div[@LABEL = 'Schemas']/fptr">
+                                    <iso:assert id="CSIP118" role="ERROR" test="@FILEID">The pointer to the identifier for the “Schema” file group.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP101" REQLEVEL="SHOULD" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When no representations are present the content referenced in the file section file group with `@USE` attribute value "Representations" is described in the structural map as a single sub division.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</dd>
-                        <dt>Cardinality</dt><dd>0..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST101-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Representations']</testString>
+                    </test>
+                    <test ID="TEST101-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div">
+                                    <iso:assert id="CSIP101" role="WARN" test="mets:div[@LABEL = 'Representations']">When no representations are present the content referenced in the file section file group with @USE attribute value “Representations” is described in the structural map as a single sub division.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP102" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/@ID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST102-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Representations']/@ID</testString>
+                    </test>
+                    <test ID="TEST102-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Representations']">
+                                    <iso:assert id="CSIP102" role="ERROR" test="@ID">An xml:id identifier must be unique within the package.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP103" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The package's content division `&lt;div&gt;` element must have the `@LABEL` attribute value "Representations", taken from the vocabulary.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST103-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Representations']</testString>
+                    </test>
+                    <test ID="TEST103-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                            <!--test contradicts CSIP101, without referencing other elements, will discuss-->
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div">
+                                    <iso:assert id="CSIP103" role="ERROR" test="">The package's content division `&lt;div&gt;` element must have the `@LABEL` attribute value "Representations", taken from the vocabulary.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP104" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division file references</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing content described in the package are referenced via the relevant file group identifiers. One file group reference per fptr-element.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr</dd>
-                        <dt>Cardinality</dt><dd>0..n</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST104-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Representations']/mets:fptr</testString>
+                    </test>
+                    <test ID="TEST104-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Representations']">
+                                    <iso:assert id="CSIP104" role="ERROR" test="mets:fptr">All file groups containing documentation described in the package are referenced via the relevant file group identifiers. There MUST be one file group reference per fptr element.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP119" REQLEVEL="MUST" RELATEDMAT="CSIP114 CSIP65" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Content division file group references</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The pointer to the identifier for the "Representations" file group.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP114 which describes the "Representations" file group and CSIP65 which describes the file group identifier.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr/@FILEID</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST119-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Representations']/mets:fptr/@FILEID</testString>
+                    </test>
+                    <test ID="TEST119-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[@LABEL='Representations']/mets:fptr">
+                                    <iso:assert id="CSIP119" role="ERROR" test="@FILEID">The pointer to the identifier for the Representations file group.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP105" REQLEVEL="SHOULD" EXAMPLES="structMapExample2">
                 <description>
@@ -2151,20 +2375,54 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">When a package consists of multiple representations, each described by a representation level METS.xml document, there should be a discrete representation div element for each representation.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Each representation div references the representation level METS.xml document, documenting the structure of the package and its constituent representations.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div</dd>
+                        <dt>METS XPath</dt><dd>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
                     </dl>
                 </description>
+                <tests>
+                    <test ID="TEST105-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div</testString>
+                    </test>
+                    <test ID="TEST105-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <!-- no pyvalidator test for CSIP105, possibly because this introduces weirdness for lots of other structmap tests by extending the structure, -->
+                                <!--if I am correct that these discrete divs would be child elements of the main structural div to maintain CSIP84-->
+                                <!--you can test this and see the results for the XPATH are different for structMapExamples 1 and 2.-->
+                                <!--changing the XPATH to something more specific could be beneficial  /mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div[starts-with(@LABEL, 'Representations/')]-->
+                                <!--this alternative path returns representation divs in a multi-rep package, and finds no match in a single rep structure-->
+                                <iso:rule context="">
+                                    <iso:assert id="CSIP105" role="" test="">Report message</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP106" REQLEVEL="MUST" EXAMPLES="structMapExample2">
                 <description>
                     <head>Representations division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/@ID</dd>
+                        <dt>METS XPath</dt><dd></dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
+                <tests>
+                    <test ID="TEST106-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div/@ID</testString>
+                    </test>
+                    <test ID="TEST106-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="">
+                                    <!-- see notes above in CSIP105, needs discussion-->
+                                    <iso:assert id="CSIP106" role="" test="">Report message</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP107" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="structMapExample2">
                 <description>
@@ -2176,6 +2434,21 @@
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
                 </description>
+                <tests>
+                    <test ID="TEST107-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString></testString>
+                    </test>
+                    <test ID="TEST107-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="">
+                                    <!-- see above, needs discussion-->
+                                    <iso:assert id="CSIP107" role="" test="">Report message</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP108" REQLEVEL="MUST" RELATEDMAT="CSIP114 CSIP65" EXAMPLES="structMapExample2">
                 <description>
@@ -2437,7 +2710,7 @@
         </mets:structMap>
     </Example>
     <Example ID="structMapExample2" LABEL="METS example of the mandatory structural map including representations">
-        <mets:structMap ID="struct-map-example-1" TYPE="PHYSICAL" LABEL="CSIP">
+        <mets:structMap ID="struct-map-example-2" TYPE="PHYSICAL" LABEL="CSIP">
             <mets:div ID="struct-map-example-div" LABEL="csip-mets-example">
                <mets:div ID="struct-map-metadata-div" LABEL="Metadata" ADMID="digiprov-premis-file-1 digiprov-premis-file-2 digiprov-premis-file-3 digiprov-premis-file-4" DMDID="dmd-ead-file"/>
                 <mets:div ID="struct-map-schema-div" LABEL="Schemas">
