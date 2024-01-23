@@ -32,8 +32,8 @@ jobs:
       - if: github.event.release != null
         name: set release vars from release event
         run: |
-          echo "RELEASE_DATE=${{ github.event.release.published_at }}" >> $GITHUB_ENV
-          echo "RELEASE_VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+          echo "LONG_DATE=${{ github.event.release.published_at }}" >> $GITHUB_ENV
+          echo "LONG_VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
       - if: github.event.release == null
         name: Get previous release
         id: previousrelease
@@ -45,13 +45,25 @@ jobs:
       - if: github.event.release == null
         name: set release vars from previous release
         run: |
-          echo "RELEASE_DATE=${{ steps.previousrelease.outputs.created_at }}" >> $GITHUB_ENV
-          echo "RELEASE_VERSION=${{ steps.previousrelease.outputs.tag_name }}" >> $GITHUB_ENV
+          echo "LONG_DATE=${{ steps.previousrelease.outputs.created_at }}" >> $GITHUB_ENV
+          echo "LONG_VERSION=${{ steps.previousrelease.outputs.tag_name }}" >> $GITHUB_ENV
+      - name: Cut release date
+        uses: bhowell2/github-substring-action@1.0.2
+        id: cut_release_date
+        with:
+          value: ${{ env.LONG_DATE }}
+          length_from_start: 10
+      - name: Cut release versopm
+        uses: bhowell2/github-substring-action@1.0.2
+        id: cut_release_version
+        with:
+          value: ${{ env.LONG_VERSION }}
+          index_of_str: "v"
       - name: Substitute env vars in files
         uses: chris-peterson/virgo@v1
         env:
-          RELEASE_DATE: ${{ env.RELEASE_DATE }}
-          RELEASE_VERSION: ${{ env.RELEASE_VERSION }}
+          RELEASE_DATE: ${{ steps.cut_release_date.outputs.substring }}
+          RELEASE_VERSION: ${{ steps.cut_release_version.outputs.substring }}
         with:
           templates: "specification/metadata.md"
       - name: Build the spec-publisher project & produce site artifacts
@@ -73,6 +85,7 @@ jobs:
         run: |
           docker run --rm -v "$PWD:/source" --entrypoint /source/create-pdf.sh eark4all/spec-pdf-publisher
           ls -alh ./docs
+          ls -alh ./docs/pdf
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll docker box
