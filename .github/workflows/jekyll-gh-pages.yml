@@ -30,25 +30,40 @@ jobs:
         with:
           submodules: recursive
       - if: github.event.release != null
-        name: Substitute env vars in files
+        name: set release vars from release event
+        run: |
+          echo "LONG_DATE=${{ github.event.release.published_at }}" >> $GITHUB_ENV
+          echo "LONG_VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+      - if: github.event.release == null
+        name: Get previous release
+        id: previousrelease
+        uses: InsonusK/get-latest-release@v1.0.1
+        with:
+          myToken: ${{ github.token }}
+          exclude_types: draft|prerelease
+          view_top: 1
+      - if: github.event.release == null
+        name: set release vars from previous release
+        run: |
+          echo "LONG_DATE=${{ steps.previousrelease.outputs.created_at }}" >> $GITHUB_ENV
+          echo "LONG_VERSION=${{ steps.previousrelease.outputs.tag_name }}" >> $GITHUB_ENV
+      - name: Cut release date
+        uses: bhowell2/github-substring-action@1.0.2
+        id: cut_release_date
+        with:
+          value: ${{ env.LONG_DATE }}
+          length_from_start: 10
+      - name: Cut release versopm
+        uses: bhowell2/github-substring-action@1.0.2
+        id: cut_release_version
+        with:
+          value: ${{ env.LONG_VERSION }}
+          index_of_str: "v"
+      - name: Substitute env vars in files
         uses: chris-peterson/virgo@v1
         env:
-          RELEASE_DATE: ${{ github.event.release.published_at }}
-          RELEASE_VERSION: ${{ github.event.release.tag_name }}
-        with:
-          templates: "specification/metadata.md"
-      - if: github.event.release == null
-        name: Get previous tag
-        id: previoustag
-        uses: "WyriHaximus/github-action-get-previous-tag@v1"
-        with:
-          fallback: "v2.1.0"
-      - if: github.event.release == null
-        name: Substitute env vars in files
-        uses: chris-peterson/virgo@v1
-        env:
-          RELEASE_DATE: ${{ steps.previoustag.outputs.timestamp }}
-          RELEASE_VERSION: ${{ steps.previoustag.outputs.tag }}
+          RELEASE_DATE: ${{ steps.cut_release_date.outputs.substring }}
+          RELEASE_VERSION: ${{ steps.cut_release_version.outputs.substring }}
         with:
           templates: "specification/metadata.md"
       - name: Build the spec-publisher project & produce site artifacts
@@ -58,7 +73,7 @@ jobs:
           java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
       - name: Run Docker job for site publication
         run: |
-          docker run --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
+          docker run --rm -v "$PWD:/source" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
           ls -alh ./docs
       - name: Build the spec-publisher project & produce PDF artifacts
         run: |
@@ -68,14 +83,15 @@ jobs:
           java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
       - name: Run Docker job for PDF publication
         run: |
-          docker run --rm -v "$PWD:/source" -u "$(id -u):$(id -g)" --entrypoint /source/create-pdf.sh eark4all/spec-pdf-publisher
+          docker run --rm -v "$PWD:/source" --entrypoint /source/create-pdf.sh eark4all/spec-pdf-publisher
           ls -alh ./docs
+          ls -alh ./docs/pdf
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll docker box
         run: |
           mkdir _site
-          docker run --rm -v "$PWD"/docs:/usr/src/app -v "$PWD"/_site:/_site -u "$(id -u):$(id -g)" starefossen/github-pages jekyll build -d /_site
+          docker run --rm -v "$PWD"/docs:/usr/src/app -v "$PWD"/_site:/_site starefossen/github-pages jekyll build -d /_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 

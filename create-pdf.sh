@@ -61,7 +61,6 @@ pandoc  --from markdown \
         --listings \
         --table-of-contents \
         --metadata-file "../pdf-publisher/pandoc/metadata.yaml" \
-        --include-before-body "../eu-ack.pdf" \
         --include-before-body "./preface.tex" \
         --include-after-body "./postface.tex" \
         --number-sections \
