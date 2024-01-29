@@ -2374,10 +2374,6 @@
                     <head>Representation division</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">When a package consists of multiple representations, each described by a representation level METS.xml document, there should be a discrete representation div element for each representation.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Each representation div references the representation level METS.xml document, documenting the structure of the package and its constituent representations.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div</dd>
-                        <dt>Cardinality</dt><dd>0..n</dd>
-                    </dl>
                 </description>
                 <tests>
                     <test ID="TEST105-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
@@ -2403,10 +2399,6 @@
                 <description>
                     <head>Representations division identifier</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd></dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
                 <tests>
                     <test ID="TEST106-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
@@ -2429,14 +2421,10 @@
                     <head>Representations division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The package's representation division `&lt;div&gt;` element `@LABEL` attribute value must be the path to the representation level METS document starting with the value "Representations" followed by the main folder name for example "Representations/submission" and "Representations/ingest".</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">This requirement gives the same value to be used as the requirement named "Description of the use of the file group" (CSIP64)</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/@LABEL</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
                 <tests>
                     <test ID="TEST107-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
-                        <testString></testString>
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div/@LABEL</testString>
                     </test>
                     <test ID="TEST107-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
                         <testWrap>
@@ -2455,51 +2443,101 @@
                     <head>Representations division file references</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The file group containing the files described in the package are referenced via the relevant file group identifier.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">Related to the requirements CSIP114 which describes the "Representations" file group and CSIP65 which describes the file group identifier.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/mptr/@xlink:title</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST108-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div/mets:mptr/@xlink:title</testString>
+                    </test>
+                    <test ID="TEST108-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div/mets:mptr">
+                                    <iso:assert id="CSIP108" role="ERROR" test="@xlink:title">The file group containing the files described in the package are referenced via the relevant file group identifier.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP109" REQLEVEL="MUST" EXAMPLES="structMapExample2">
                 <description>
                     <head>Representation METS pointer</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The division `&lt;div&gt;` of the specific representation includes one occurrence of the METS pointer `&lt;mptr&gt;` element, pointing to the appropriate representation METS file.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/mptr</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST109-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div/mets:mptr</testString>
+                    </test>
+                    <test ID="TEST109-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL='CSIP']/mets:div/mets:div">
+                                    <iso:assert id="CSIP109" role="ERROR" test="mets:mptr">The division div of the specific representation includes one occurrence of the METS pointer mptr element, pointing to the appropriate representation METS file.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP110" REQLEVEL="MUST" EXAMPLES="structMapExample2">
                 <description>
                     <head>Resource location</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The actual location of the resource. We  recommend recording a URL type filepath within this attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap/div/div/mptr/@xlink:href</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST110-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap/mets:div/mets:div/mets:mptr/@xlink:href</testString>
+                    </test>
+                    <test ID="TEST110-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL = 'CSIP']/mets:div/mets:div[@LABEL = 'Representations']/mets:mptr">
+                                    <iso:assert id="CSIP110" role="ERROR" test="@xlink:href">MUST point to the actual location of the resource. We recommend recording a URL type filepath within this attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP111" REQLEVEL="MUST" EXAMPLES="structMapExample2">
                 <description>
                     <head>Type of link</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap/div/div/mptr[@xlink:type='simple']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST111-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap/mets:div/mets:div/mets:mptr[@xlink:type='simple']</testString>
+                    </test>
+                    <test ID="TEST111-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL = 'CSIP']/mets:div/mets:div[@LABEL = 'Representations']/mets:mptr">
+                                    <iso:assert id="CSIP111" role="ERROR" test="@xlink:type='simple'">Attribute used with the value “simple”. Value list is maintained by the xlink standard.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
             <requirement ID="CSIP112" REQLEVEL="MUST" EXAMPLES="structMapExample2">
                 <description>
                     <head>Type of locator</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The locator type is always used with the value "URL" from the vocabulary in the attribute.</p>
-                    <dl xmlns="http://www.w3.org/1999/xhtml">
-                        <dt>METS XPath</dt><dd>mets/structMap/div/div/mptr[@LOCTYPE='URL']</dd>
-                        <dt>Cardinality</dt><dd>1..1</dd>
-                    </dl>
                 </description>
+                <tests>
+                    <test ID="TEST112-1" TESTLANGUAGE="XPath" TESTLANGUAGEVERSION="3.1">
+                        <testString>/mets:mets/mets:structMap/mets:div/mets:div/mets:mptr[@LOCTYPE='URL']</testString>
+                    </test>
+                    <test ID="TEST112-2" TESTLANGUAGE="Schematron" TESTLANGUAGEVERSION="ISO" TESTLANGUAGEURI="http://purl.oclc.org/dsdl/schematron">
+                        <testWrap>
+                            <testXML>
+                                <iso:rule context="/mets:mets/mets:structMap[@LABEL = 'CSIP']/mets:div/mets:div[@LABEL = 'Representations']/mets:mptr">
+                                    <iso:assert id="CSIP112" role="ERROR" test="@LOCTYPE = 'URL'">The locator type is always used with the value “URL” from the vocabulary in the attribute.</iso:assert>
+                                </iso:rule>
+                            </testXML>
+                        </testWrap>
+                    </test>
+                </tests>
             </requirement>
          </structMap>
          <structLink ID="structLinkElement">
