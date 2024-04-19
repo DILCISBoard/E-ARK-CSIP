@@ -1,1 +1,1 @@
-../../implementation/structure/folders/structure.md
+../../implementation/structure/folders/requirements.md

@@ -65,7 +65,7 @@ jobs:
           RELEASE_DATE: ${{ steps.cut_release_date.outputs.substring }}
           RELEASE_VERSION: ${{ steps.cut_release_version.outputs.substring }}
         with:
-          templates: "specification/metadata.md"
+          templates: "metadata.md"
       - name: Build the spec-publisher project & produce site artifacts
         run: |
           cd spec-publisher
