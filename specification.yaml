@@ -1,0 +1,153 @@
+---
+preface:
+  - name: common-intro
+    type: file
+    source: spec-publisher/res/md/common-intro.md
+
+body:
+  - name: introduction
+    type: file
+    source: "specification/introduction/index.md"
+
+  - name: common-ground
+    type: file
+    source: "specification/specification/common-ground/index.md"
+
+  - name: principles
+    type: file
+    source: "specification/specification/principles/index.md"
+
+  - name: implementation
+    type: file
+    source: "specification/implementation/index.md"
+
+  - name: structure
+    type: file
+    source: "specification/implementation/structure/index.md"
+
+  - name: structure-folders
+    type: file
+    source: "specification/implementation/structure/folders/index.md"
+
+  - name: structure-reqs
+    type: file
+    source: "specification/implementation/structure/folders/requirements.md"
+
+  - name: structure-implementation
+    type: file
+    source: "specification/implementation/structure/implementation/index.md"
+
+  - name: metadata-implementation
+    type: file
+    source: "specification/implementation/metadata/index.md"
+
+  - name: metadata-general
+    type: file
+    source: "specification/implementation/metadata/general-requirements/index.md"
+
+  - name: metadata-mets
+    type: file
+    source: "specification/implementation/metadata/mets/index.md"
+
+  - name: metadata-metsroot
+    type: file
+    source: "specification/implementation/metadata/mets/mets-root/index.md"
+
+  - name: metadata-root-requirments
+    heading: Mets Root Element Requirements
+    type: requirements
+    section: metsRootElement
+    examples: true
+
+  - name: metadata-metshdr
+    type: file
+    source: "specification/implementation/metadata/mets/metshdr/index.md"
+
+  - name: metadata-metsHdr-requirments
+    heading: Mets Header Element Requirements
+    type: requirements
+    section: metsHdr
+    examples: true
+
+  - name: metadata-dmdSec
+    type: file
+    source: "specification/implementation/metadata/mets/dmdsec/index.md"
+
+  - name: metadata-dmdSec-requirments
+    heading: Mets DmdSec Element Requirements
+    type: requirements
+    section: dmdSec
+    examples: true
+
+  - name: metadata-amdSec
+    type: file
+    source: "specification/implementation/metadata/mets/amdsec/index.md"
+
+  - name: metadata-amdSec-requirments
+    heading: Mets amdSec Element Requirements
+    type: requirements
+    section: amdSec
+    examples: true
+
+  - name: metadata-filesec
+    type: file
+    source: "specification/implementation/metadata/mets/filesec/index.md"
+
+  - name: metadata-filesec-requirements
+    heading: Mets FileSec Element Requirements
+    type: requirements
+    section: fileSec
+    examples: true
+
+  - name: metadata-structmap
+    type: file
+    source: "specification/implementation/metadata/mets/structmap/index.md"
+
+  - name: metadata-strctmap-requirements
+    heading: Mets StructMap Element Requirements
+    type: requirements
+    section: structMap
+    examples: true
+
+  - name: metadata-deprecated
+    type: file
+    source: "specification/implementation/metadata/mets/deprecated.md"
+
+  - name: metadata-premis
+    type: file
+    source: "specification/implementation/metadata/premis/index.md"
+
+  - name: considerations
+    type: file
+    source: "specification/implementation/considerations/index.md"
+
+appendices:
+  - name: mets.examples
+    heading: "E-ARK Information Package METS Examples"
+    label: "A"
+    type: mets
+    section: Appendix
+
+  - name: mets.schema
+    heading: "External Schema"
+    label: "B"
+    type: mets
+    section: external_schema
+
+  - name: mets.vocabs
+    heading: "External Vocabularies"
+    label: "C"
+    type: mets
+    section: vocabulary
+
+  - name: csip.structural
+    heading: "E-ARK CSIP Structural Requirements"
+    label: "D"
+    type: file
+    source: "specification/implementation/structure/folders/requirements.md"
+
+  - name: mets.metadata.requirments
+    heading: "E-ARK CSIP Metadata Requirements"
+    label: "E"
+    type: mets
+    section: requirements
