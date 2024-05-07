@@ -34,5 +34,5 @@ cp -rf profile archive examples specification/figs site/
 if [ -d _site ]
 then
   echo " - Removing old site directory"
-  rm -rf _site
+  rm -rf _site/*
 fi
