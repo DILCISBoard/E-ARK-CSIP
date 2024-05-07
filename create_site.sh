@@ -22,7 +22,7 @@ command -v markdown-pp >/dev/null 2>&1 || {
 markdown-pp body.md -o body_toc.md
 
 echo " - MARKDOWN-PP: generating site index.md..."
-markdown-pp SITE.md -o index.md
+markdown-pp SITE.md -o ../../site/index.md
 
 cd "$SCRIPT_DIR" || exit
 
