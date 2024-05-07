@@ -4,7 +4,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR" || exit
 
 echo "Generating PDF from markdown"
-bash "$SCRIPT_DIR/spec-publisher/utils/create-venv.sh"
+bash "$SCRIPT_DIR/pdf-publisher/utils/create-venv.sh"
 
 command -v markdown-pp >/dev/null 2>&1 || {
   tmpdir=$(dirname "$(mktemp -u)")
@@ -19,15 +19,15 @@ cd docs || exit
 echo " - PANDOC: Generating Preface from markdown"
 pandoc  --from gfm \
         --to latex \
-        --metadata-file "../spec-publisher/pandoc/metadata.yaml" \
-        "../spec-publisher/res/md/common-intro.md" \
+        --metadata-file "../pdf-publisher/pandoc/metadata.yaml" \
+        "../pdf-publisher/res/md/common-intro.md" \
         -o "./preface.tex"
 sed -i 's%section{%section*{%' ./preface.tex
 
 echo " - PANDOC: Generating Postface from markdown"
 pandoc  --from markdown \
         --to latex \
-        --metadata-file "../spec-publisher/pandoc/metadata.yaml" \
+        --metadata-file "../pdf-publisher/pandoc/metadata.yaml" \
         "./postface.md" \
         -o "./postface.tex"
 sed -i 's%section{%section*{%' ./postface.tex
@@ -51,16 +51,16 @@ markdown-pp PDF.md -o docs/eark-csip-pdf.md -e tableofcontents
 sed -i 's%fig_2_csip_scope.svg%fig_2_csip_scope.png%' docs/eark-csip-pdf.md
 
 cp -Rf specification/figs docs/
-cp -Rf spec-publisher/res/md/figs docs/
+cp -Rf pdf-publisher/res/md/figs docs/
 
 cd docs || exit
 
 echo " - PANDOC: Generating PDF document from markdown and Tex sources"
 pandoc  --from markdown \
-        --template ../spec-publisher/pandoc/templates/eisvogel.latex \
+        --template ../pdf-publisher/pandoc/templates/eisvogel.latex \
         --listings \
         --table-of-contents \
-        --metadata-file "../spec-publisher/pandoc/metadata.yaml" \
+        --metadata-file "../pdf-publisher/pandoc/metadata.yaml" \
         --include-before-body "./preface.tex" \
         --include-after-body "./postface.tex" \
         --number-sections \

@@ -13,6 +13,6 @@ abstract: |
         it is recommended that the supplied extending implementation are used.
         Alternatively, an own extension fulfilling the extending needs of the
         implementer can be created.
-version: 2.1.0
-date: 15.10.2021
+version: ${RELEASE_VERSION}
+date: ${RELEASE_DATE}
 ---
