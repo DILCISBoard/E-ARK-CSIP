@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 echo "Generating GitHub pages site from markdown"
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd "$SCRIPT_DIR" || exit-site
+cd "$SCRIPT_DIR" || exit
 
 echo " - Cleaning up site directory and copying spec-publisher site..."
-git clean -f site/ specification/
-cp -rf spec-publisher/site/* site/
+git clean -f doc/ site/ specification/
 cp specification/postface/postface.md doc/site/
-echo " - Generating main site specification and PDF markdown..."
+cp -rf spec-publisher/site/* site/
+cp -rf spec-publisher/res/md/figs site/
+# Copy remaining collaterel
+cp -rf profile archive examples specification/figs site/
 
+echo " - Generating main site specification and PDF markdown..."
 mvn clean package -f spec-publisher/pom.xml
-java -jar ./spec-publisher/target/mets-profile-processor-0.1.0-SNAPSHOT.jar -f ./specification.yaml -o doc/site profile/E-ARK-CSIP.xml
+java -jar ./spec-publisher/target/mets-profile-processor-0.1.0-SNAPSHOT.jar -f ./specification.yaml -o doc/site profile/E-ARK-CSIP-v2-2-0.xml
 
 echo " - MARKDOWN-PP: generating site page with TOC..."
 cd doc/site || exit
@@ -25,11 +28,6 @@ echo " - MARKDOWN-PP: generating site index.md..."
 markdown-pp SITE.md -o ../../site/index.md
 
 cd "$SCRIPT_DIR" || exit
-
-echo " - copying files to site directory..."
-cp -rf spec-publisher/res/md/figs site/
-# Copy remaining collaterel
-cp -rf profile archive examples specification/figs site/
 
 if [ -d _site ]
 then

@@ -66,7 +66,8 @@
 | 2.0.2     | 28.10.2019 | Karin Bredenberg | SYD | Fixed schema paths. |
 | 2.0.3 | 08.01.2020 | Karin Bredenberg, C.Wilson | SYD & OPF | Fixed error in value list note type. |
 | 2.0.4 | 12.06.2020 | K. Bredenberg, C.Wilson & J. Kaminski | SYD, OPF & HIGH | Update in example IDs, preface text and output display update |
-| 2.1.0 | 15.10.2021 | K. Bredenberg, C.Wilson & J. Kaminski | SYD, OPF & HIGH | Specification updated to version 2.1. Language updates and clarifications to requirements. Updated list of approved CITS specifications. Removed redundant requirement. | 
+| 2.1.0 | 15.10.2021 | K. Bredenberg, C.Wilson & J. Kaminski | SYD, OPF & HIGH | Specification updated to version 2.1. Language updates and clarifications to requirements. Updated list of approved CITS specifications. Removed redundant requirement. |
+| 2.2.0 | 17.05.2024 | K. Bredenberg & C.Wilson | SYD, OPF | Specification updated to version 2.2. Language updates and clarifications to requirements. |
 
 ## III. Acknowledgements
 
