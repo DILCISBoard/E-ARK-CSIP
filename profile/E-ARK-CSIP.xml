@@ -423,7 +423,7 @@
                     <head>File mime type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Other list can be used upon a documented agreement between the sender and the receiver.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Another list can be used following a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -570,7 +570,7 @@
                     <head>File mime type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Other list can be used upon a documented agreement between the sender and the receiver.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Another list can be used following a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -703,7 +703,7 @@
                     <head>File mime type</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Other list can be used upon a documented agreement between the sender and the receiver.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Another list can be used following a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -882,7 +882,7 @@
                     <head>File mimetype</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Other list can be used upon a documented agreement between the sender and the receiver.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Another list can be used following a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
