@@ -11,7 +11,7 @@ title: Archived Versions of the Common Specification
 
 ### 2.1.x
 
-- [PDF Version 2.1.0](/pdf/eark-csip.pdf) 15-10-2021
+- [PDF Version 2.1.0](/v2_1/eark-csip-v2-1-0.pdf) 15-10-2021
 
 ### 2.0.x
 

@@ -7,6 +7,9 @@
 - title: "Profile"
   href: "/profile/"
 
+- title: "Schema"
+  href: "/schema/"
+
 - title: "Archive"
   href: "/archive/"
 
