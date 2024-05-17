@@ -7,6 +7,9 @@
 - title: "Profile"
   href: "/profile/"
 
+- title: "Schema"
+  href: "/schema/"
+
 - title: "Archive"
   href: "/archive/"
 
@@ -18,6 +21,8 @@
   subcategories:
     - subtitle: "Release Notes"
       subextref: "/release-notes/"
+    - subtitle: "Acknowledgements"
+      subextref: "/acknowledgements/"
     - subtitle: "DILCIS"
       subextref: "https://dilcis.eu/"
     - subtitle: "On GitHub"

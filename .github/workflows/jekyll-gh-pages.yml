@@ -65,33 +65,19 @@ jobs:
           RELEASE_DATE: ${{ steps.cut_release_date.outputs.substring }}
           RELEASE_VERSION: ${{ steps.cut_release_version.outputs.substring }}
         with:
-          templates: "specification/metadata.md"
+          templates: "metadata.yaml"
       - name: Build the spec-publisher project & produce site artifacts
         run: |
-          cd spec-publisher
-          mvn clean package
-          java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
-      - name: Run Docker job for site publication
-        run: |
-          docker run --rm -v "$PWD:/source" --entrypoint /source/create-site.sh eark4all/spec-pdf-publisher
-          ls -alh ./docs
-      - name: Build the spec-publisher project & produce PDF artifacts
-        run: |
-          git clone --branch feat/pdf-publication https://github.com/DILCISBoard/spec-publisher.git pdf-publisher
-          cd pdf-publisher
-          mvn clean package
-          java -jar target/mets-profile-proc.jar ../profile/E-ARK-CSIP.xml
+          ./create_site.sh
       - name: Run Docker job for PDF publication
         run: |
-          docker run --rm -v "$PWD:/source" --entrypoint /source/create-pdf.sh eark4all/spec-pdf-publisher
-          ls -alh ./docs
-          ls -alh ./docs/pdf
+          docker run --rm -v "$PWD:/source" --entrypoint /source/create_pdf.sh eark4all/spec-pdf-publisher
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll docker box
         run: |
           mkdir _site
-          docker run --rm -v "$PWD"/docs:/usr/src/app -v "$PWD"/_site:/_site starefossen/github-pages jekyll build -d /_site
+          docker run --rm -v "$PWD"/site:/usr/src/app -v "$PWD"/_site:/_site starefossen/github-pages jekyll build -d /_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 

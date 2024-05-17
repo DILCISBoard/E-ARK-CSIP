@@ -92,7 +92,7 @@
   1.0     31.01.2017  Kuldar Aas               NAE          Final small editorial additions
 
   1.1     14.05.2018  Kuldar Aas (editor),     NAE          Limited proofreading and updates throughout the
-                      DILCIS Board           DILCIS Board   document. Updates in terminology. Updates in use of
+                      DILCIS Board             DILCIS Board document. Updates in terminology. Updates in use of
                                                             METS, ID and referencing section. Improved
                                                             (more consistent) examples in METS section.
 
@@ -120,6 +120,9 @@
                       C. Wilson                OPF          Language updates and clarifications to requirements.
                                                             Updated list of approved CITS specifications.
                                                             Removed redundant requirement.
+
+  2.2.0   17.05.2024  K.Bredenberg &           SYD          Specification updated to version 2.1.
+                      C. Wilson                OPF          Language updates and clarifications to requirements.
 ---------------------------------------------------------------------------------------------------------------
 
 ## III. Acknowledgements
