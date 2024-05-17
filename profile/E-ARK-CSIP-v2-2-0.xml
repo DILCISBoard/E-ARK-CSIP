@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 2023-11-02 Draft of E-ARK CSIP METS Profile 2.2 -->
 <!-- 2021-10-01 Draft of E-ARK CSIP METS Profile 2.1 -->
 <!-- Draft of E-ARK CSIP METS Profile 2.0 -->
 <METS_Profile xmlns="http://www.loc.gov/METS_Profile/v2"
@@ -6,14 +7,14 @@
     xmlns:mets="http://www.loc.gov/METS/"
     xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    xsi:schemaLocation="http://www.loc.gov/METS_Profile/v2 http://www.loc.gov/standards/mets/profile_docs/mets.profile.v2-0.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd" STATUS="provisional" REGISTRATION="unregistered" ID="V2.1.0">
+    xsi:schemaLocation="http://www.loc.gov/METS_Profile/v2 http://www.loc.gov/standards/mets/profile_docs/mets.profile.v2-0.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd" STATUS="provisional" REGISTRATION="unregistered" ID="V2.2.0">
     <URI LOCTYPE="URL" ASSIGNEDBY="local">https://earkcsip.dilcis.eu/profile/E-ARK-CSIP.xml</URI>
     <title>E-ARK CSIP METS Profile</title>
     <abstract>This base profile describes the Common Specification for Information Packages (CSIP) and the implementation of METS for packaging OAIS conformant Information Packages. The profile is accompanied with a text document explaning the details of use of this profile.
         This will enable repository interoperability and assist in the management of the preservation of digital content.
         This profile is a base profile which is extended with E-ARK implementation of SIP, AIP and DIP.
     The profile can be used as is, but it is recommended that the supplied extending implementation are used. Alternatively, an own extension fulfilling the extending needs of the implementer can be created.</abstract>
-    <date>2021-10-01T09:00:00</date>
+    <date>2024-05-17T09:00:00</date>
     <contact>
         <institution>DILCIS Board</institution>
         <address>http://dilcis.eu/</address>
@@ -114,9 +115,9 @@
             <name>IANA media types</name>
             <maintenance_agency>IANAs</maintenance_agency>
                 <URI>https://www.iana.org/assignments/media-types/media-types.xhtml</URI>
-            <context>Values for `@MIMETYPE`</context>
+            <context>Suggested values for `@MIMETYPE`</context>
             <description>
-                <p xmlns="http://www.w3.org/1999/xhtml">Valid values for the mime types of referenced files.</p>
+                <p xmlns="http://www.w3.org/1999/xhtml">Its a strong recommendation to use the IANA values for the mime types of referenced files. It is possible to use another list if an agreement has been reached between sender and receiver.</p>
             </description>
         </vocabulary>
         <vocabulary ID="VocabularyFileGrpAndStructMapDivisionLabel">
@@ -155,8 +156,9 @@
             <requirement ID="CSIP1" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1 metsRootElementExample2">
                 <description>
                     <head>Package Identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The `mets/@OBJID` attribute is mandatory, its value is a string identifier for the METS document. For the package METS document, this should be the name/ID of the package, i.e. the name of the package root folder.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level representation folder.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The `mets/@OBJID` attribute is mandatory, its value is a string identifier for the METS document. For the package METS document following <a href="https://earkcsip.dilcis.eu/#CSIPSTR2">CSIPSTR2</a>, this should be the name/ID of the package, i.e. the name of the package root folder.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">For a representation level METS document this value records the name/ID of the representation following <a href="https://earkcsip.dilcis.eu/#CSIPSTR10">CSIPSTR10</a>, i.e. the name of the top-level representation folder.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Observe that the name/ID used in the `mets/@OBJID` attribute might not be possible to directly transform into a folder name due to limitations in the used file system. If there are illegal characters present there are different character mapping techniques to use to transform the `mets/@OBJID` into a valid folder name.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@OBJID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -255,10 +257,11 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP10" REQLEVEL="MUST">
+            <requirement ID="CSIP10" RELATEDMAT="CSIP15" REQLEVEL="MUST">
                 <description>
                     <head>Agent</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">A mandatory agent element records the software used to create the package. Other uses of agents may be described in any local implementations that extend the profile.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is possible according to METS to use more note elements but in this implementation for this agent describing the software used it is one mandatory note for describing the version of the software.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/metsHdr/agent</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
@@ -308,8 +311,8 @@
             <requirement ID="CSIP15" REQLEVEL="MUST" EXAMPLES="metsHdrElementExample1">
                 <description>
                     <head>Agent additional information</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent's note element records the version of the tool used to create the IP.</p>
-                     <dl xmlns="http://www.w3.org/1999/xhtml">
+                    <p xmlns="http://www.w3.org/1999/xhtml">The mandatory agent's mandatory note element records the version of the tool used to create the IP.</p>
+                    <dl xmlns="http://www.w3.org/1999/xhtml">
                          <dt>METS XPath</dt><dd>mets/metsHdr/agent/note</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
                     </dl>
@@ -341,7 +344,7 @@
             <requirement ID="CSIP18" REQLEVEL="MUST" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>Descriptive metadata identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the descriptive metadata section (`&lt;dmdSec&gt;`) used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the descriptive metadata section (`&lt;dmdSec&gt;`) used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/dmdSec/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -421,7 +424,9 @@
             <requirement ID="CSIP26" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="dmdSecExample1">
                 <description>
                     <head>File mime type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type of the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Another list can be used following a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/dmdSec/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -496,7 +501,7 @@
             <requirement ID="CSIP33" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Digital provenance metadata identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the digital provenance metadata section `mets/amdSec/digiprovMD` used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the digital provenance metadata section `mets/amdSec/digiprovMD` used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -566,7 +571,9 @@
             <requirement ID="CSIP40" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File mime type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Another list can be used following a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/digiprovMD/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -627,7 +634,7 @@
             <requirement ID="CSIP46" REQLEVEL="MUST" EXAMPLES="amdSecExample1">
                 <description>
                     <head>Rights metadata identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the rights metadata section (`&lt;rightsMD&gt;`) used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the rights metadata section (`&lt;rightsMD&gt;`) used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -697,7 +704,9 @@
             <requirement ID="CSIP53" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="amdSecExample1">
                 <description>
                     <head>File mime type</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Another list can be used following a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/amdSec/rightsMD/mdRef/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -761,7 +770,7 @@
             <requirement ID="CSIP59" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File section identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file section used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file section used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -844,7 +853,7 @@
             <requirement ID="CSIP65" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File group identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file group used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the file group used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -864,7 +873,7 @@
             <requirement ID="CSIP67" REQLEVEL="MUST" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">A unique `xml:id` identifier for this file across the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">A unique `xml:id` identifier for this file within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -874,7 +883,9 @@
             <requirement ID="CSIP68" REQLEVEL="MUST" RELATEDMAT="VocabularyIANAmediaTypes" EXAMPLES="fileSecExample1 fileSecExample2">
                 <description>
                     <head>File mimetype</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The IANA mime type for the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The mime type of the referenced file.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">It is a strong recommendation to use a qualified list like the IANA Media Type list.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Another list can be used following a documented agreement between the sender and the receiver.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/fileSec/fileGrp/file/@MIMETYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1030,7 +1041,7 @@
             <requirement ID="CSIP83" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Structural description identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the structural description (structMap) used for internal package references. It must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">An `xml:id` identifier for the structural description (structMap) used for internal references within the XML-document. It must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1050,7 +1061,7 @@
             <requirement ID="CSIP85" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Main structural division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1071,7 +1082,7 @@
             <requirement ID="CSIP89" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Metadata division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1125,7 +1136,7 @@
             <requirement ID="CSIP94" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1142,7 +1153,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP96" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP96" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Documentation file references</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing documentation described in the package are referenced via the relevant file group identifiers. There MUST be one file group reference per `&lt;fptr&gt;` element.</p>
@@ -1176,7 +1187,7 @@
             <requirement ID="CSIP98" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1193,7 +1204,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP100" REQLEVEL="MUST" EXAMPLES="structMapExample1 structMapExample2">
+            <requirement ID="CSIP100" REQLEVEL="SHOULD" EXAMPLES="structMapExample1 structMapExample2">
                 <description>
                     <head>Schema file reference</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing schemas described in the package are referenced via the relevant file group identifiers. One file group reference per fptr-element</p>
@@ -1227,7 +1238,7 @@
             <requirement ID="CSIP102" REQLEVEL="MUST" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1244,7 +1255,7 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP104" REQLEVEL="MUST" EXAMPLES="structMapExample1">
+            <requirement ID="CSIP104" REQLEVEL="SHOULD" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division file references</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">All file groups containing content described in the package are referenced via the relevant file group identifiers. One file group reference per fptr-element.</p>
@@ -1279,7 +1290,7 @@
             <requirement ID="CSIP106" REQLEVEL="MUST" EXAMPLES="structMapExample2">
                 <description>
                     <head>Representations division identifier</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the package.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Mandatory, `xml:id` identifier must be unique within the XML-document.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>

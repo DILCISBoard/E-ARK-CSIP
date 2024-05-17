@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <grammar ns="https://DILCIS.eu/XML/Vocabularies/IP" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
   <!-- Schema for vocabularies in E-ARK for Information Packages -->
+  <!-- 2024-05-17, Version 2.0, addition of the possibility to add revision date and source -->
   <start>
     <element name="Vocabularies">
       <oneOrMore>
@@ -29,6 +30,21 @@
               <element name="Definition">
                 <text/>
               </element>
+              <optional>
+                <oneOrMore>
+              <element name="RevisionInformation">
+                <attribute name="RevisionDate">
+                  <data type="date"/>
+                </attribute>
+                <text/>
+              </element>
+                </oneOrMore>
+              </optional>
+              <optional>
+              <element name="Source">
+                <text/>
+              </element>
+              </optional>
             </element>            
           </oneOrMore>
         </element>

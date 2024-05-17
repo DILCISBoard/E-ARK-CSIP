@@ -1,6 +1,5 @@
----
-title: E-ARK CSIP
-subtitle: Common Specification for Information Packages
+title: "E-ARK CSIP"
+subtitle: "Common Specification for Information Packages"
 abstract: |
         This base profile describes the Common Specification for Information
         Packages (CSIP) and the implementation of METS for packaging OAIS
@@ -15,4 +14,3 @@ abstract: |
         implementer can be created.
 version: ${RELEASE_VERSION}
 date: ${RELEASE_DATE}
----
