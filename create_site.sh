@@ -9,7 +9,7 @@ cp specification/postface/postface.md doc/site/
 cp -rf spec-publisher/site/* site/
 cp -rf spec-publisher/res/md/figs site/
 # Copy remaining collaterel
-cp -rf profile archive examples specification/figs site/
+cp -rf profile archive examples specification/figs schema site/
 
 echo " - Generating main site specification and PDF markdown..."
 mvn clean package -f spec-publisher/pom.xml
