@@ -30,16 +30,32 @@
             <Definition>Version 1.0 of the Specification for E-ARK Content Information Type Specification for Archival Information (CITS Archival Information) is used.</Definition>
         </Entry>
         <Entry>
+            <Term lang="en">cscarchival_v1_0</Term>
+            <Definition>Version 1.0 of the Specification for E-ARK Common Specification for Archival Information (CS Archival Information) is used.</Definition>
+        </Entry>
+        <Entry>
             <Term lang="en">citserms_v2_1</Term>
             <Definition>Version 2.1 of the Specification for the E-ARK Content Information Type Specification for Electronic Records Management Systems (CITS ERMS) is used to describe the content.</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">citserms_v3_0</Term>
+            <Definition>Version 3.0 of the Specification for the E-ARK Content Information Type Specification for Electronic Records Management Systems (CITS ERMS) is used to describe the content.</Definition>
         </Entry>
         <Entry>
             <Term lang="en">citspremis_v1_0</Term>
             <Definition>Version 1.0 of the Specification for the E-ARK Content Information Type Specification for Preservation Metadata using PREMIS (CITS PREMIS) is used.</Definition>
         </Entry>
         <Entry>
+            <Term lang="en">cspremis_v1_0</Term>
+            <Definition>Version 1.0 of the Specification for the E-ARK Conmmon Specification for Preservation Metadata using PREMIS (CS PREMIS) is used.</Definition>
+        </Entry>
+        <Entry>
             <Term lang="en">citsehpj_v1_0</Term>
             <Definition>Version 1.0 of the Specification for the E-ARK Content Information Type Specification for Patient Journals (CITS eHealth1) is used</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">citsehpj_v2_0</Term>
+            <Definition>Version 2.0 of the Specification for the E-ARK Content Information Type Specification for Patient Journals (CITS eHealth1) is used</Definition>
         </Entry>
         <Entry>
             <Term lang="en">citsehcr_v1_0</Term>
