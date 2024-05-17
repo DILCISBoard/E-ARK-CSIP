@@ -2,6 +2,6 @@
 
 The purpose of the METS descriptive metadata section is to embed or refer to files containing descriptive metadata. CSIP is only using referencing of files containing descriptive metadata.
 
-The CSIP does not prescribe or assume the use of specific descriptive metadata schemas. This means implementers are free to use descriptive metadata  standards of their choosing inside a CSIP package following the recommendations in the "E-ARK Content Information Type Specification for Archival Information" (CITS Archival Information) found at <https://citsarchival.dilcis.eu/specification/> . 
+The CSIP does not prescribe or assume the use of specific descriptive metadata schemas. This means implementers are free to use descriptive metadata  standards of their choosing inside a CSIP package following the recommendations in the "E-ARK Conmmon Specification for Archival Information" (CS Archival Information) found at <https://citsarchival.dilcis.eu/specification/> . 
 
 Specific elements for which the exact use is fixed within this specification are highlighted in the following table.
