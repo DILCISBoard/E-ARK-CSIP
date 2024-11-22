@@ -1245,10 +1245,11 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP103" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel" EXAMPLES="structMapExample1">
+            <requirement ID="CSIP103" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP107" EXAMPLES="structMapExample1">
                 <description>
                     <head>Content division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The package's content division `&lt;div&gt;` element must have the `@LABEL` attribute value "Representations", taken from the vocabulary.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the package consists of more than one Representation the naming convention described in CSIP107 will be used as an extension to this requriment.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1297,10 +1298,10 @@
                     </dl>
                 </description>
             </requirement>
-            <requirement ID="CSIP107" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64" EXAMPLES="structMapExample2">
+            <requirement ID="CSIP107" REQLEVEL="MUST" RELATEDMAT="VocabularyFileGrpAndStructMapDivisionLabel CSIP64 CSIP103" EXAMPLES="structMapExample2">
                 <description>
                     <head>Representations division label</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The package's representation division `&lt;div&gt;` element `@LABEL` attribute value must be the path to the representation level METS document starting with the value "Representations" followed by the main folder name for example "Representations/submission" and "Representations/ingest".</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The package's representation division `&lt;div&gt;` element `@LABEL` attribute value must be the path to the representation level METS document starting with the value "Representations", taken from the vocabulary followed by the main folder name for example "Representations/submission" and "Representations/ingest".</p>
                     <p xmlns="http://www.w3.org/1999/xhtml">This requirement gives the same value to be used as the requirement named "Description of the use of the file group" (CSIP64)</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div/@LABEL</dd>
