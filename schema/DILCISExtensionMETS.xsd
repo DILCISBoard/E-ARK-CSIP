@@ -21,6 +21,7 @@
                 <xs:enumeration value="citsehcr_v1_0"/>
                 <xs:enumeration value="citssiard_v1_0"/>
                 <xs:enumeration value="citsgeospatial_v3_0"/>
+                <xs:enumeration value="cits3dpm_v1_0"/>
                 <xs:enumeration value="MIXED"/>
                 <xs:enumeration value="OTHER"/>
             </xs:restriction>
