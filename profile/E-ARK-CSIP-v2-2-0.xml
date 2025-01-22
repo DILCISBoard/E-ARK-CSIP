@@ -1249,7 +1249,7 @@
                 <description>
                     <head>Content division label</head>
                     <p xmlns="http://www.w3.org/1999/xhtml">The package's content division `&lt;div&gt;` element must have the `@LABEL` attribute value "Representations", taken from the vocabulary.</p>
-                    <p xmlns="http://www.w3.org/1999/xhtml">When the package consists of more than one Representation the naming convention described in CSIP107 will be used as an extension to this requriment.</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">When the package consists of more than one Representation the naming convention described in CSIP107 will be used as an extension to this requirement.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -1384,21 +1384,21 @@
         <content_files>
             <requirement>
                 <description>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Requriments not stated in CSIP</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Requirements not stated in CSIP</p>
                 </description>
             </requirement>
         </content_files>
         <behavior_files>
             <requirement>
                 <description>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Requriments not stated in CSIP</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Requirements not stated in CSIP</p>
                 </description>
             </requirement>
         </behavior_files>
         <metadata_files>
             <requirement>
                 <description>
-                    <p xmlns="http://www.w3.org/1999/xhtml">Requriments not stated in CSIP</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">Requirements not stated in CSIP</p>
                 </description>
             </requirement>
         </metadata_files>
