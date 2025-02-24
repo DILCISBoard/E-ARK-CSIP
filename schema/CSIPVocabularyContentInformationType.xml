@@ -67,7 +67,12 @@
         </Entry>
         <Entry>
             <Term lang="en">citsgeospatial_v3_0</Term>
-            <Definition>Version 3.0 of the </Definition>
+            <Definition>Version 3.0 of the Specification for the E-ARK Content Information Type Specification for digital geospatial data records archiving (CITS Geospatial) is used</Definition>
+        </Entry>
+        <Entry>
+            <Term lang="en">cits3dpm_v1_0</Term>
+            <Definition>Version 1.0 of the Specification for the E-ARK Content Information Type Specification for 3D Product Model Data (CITS 3DPM) is used.</Definition>
+            <RevisionInformation RevisionDate="2024-12-19">The value has been added following the reakese of the specification</RevisionInformation>
         </Entry>
         <Entry>
             <Term lang="en">MIXED</Term>
