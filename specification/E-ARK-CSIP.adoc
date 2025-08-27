@@ -1,0 +1,75 @@
+// E-ARK Specification for Submission Information Packages as AsciiDoc
+= E-ARK CSIP: Common Specification for Information Packages
+Sven Schlarb; Anders Bo Nielsen; Phillip Mike Tømmerholt; Kuldar Aas; Koit Saarevet; Jaime Kaminski; Miguel Ferreira; Helder Silva; Carl Wilson; Karin Bredenberg
+:revnumber: v${RELEASE_VERSION}
+:revdate: ${RELEASE_DATE}
+:revremark: Specification updated to version 2.2. Language updates and clarifications to requirements.
+:doctype: book
+:source-highlighter: rouge
+:rouge-style: github
+:org: Austrian Institute of Technology
+:org_1: Danish National Archives
+:org_2: Danish National Archives
+:org_3: Estonian National Archives
+:org_4: Estonian National Archives
+:org_5: Highbury IVS
+:org_6: Keep Solutions
+:org_7: Keep Solutions
+:org_8: Open Preservation Foundation
+:org_9: Kommunalförbundet Sydarkivera
+:sectnums:
+:partnums:
+:!chapter-signifier:
+:toc: macro
+:description: This base profile describes the Common Specification for Information \
+Packages (CSIP) and the implementation of METS for packaging OAIS \
+conformant Information Packages. The profile is accompanied with a \
+textual document explaining the details of use of this profile. \
+This will enable repository interoperability and assist in the \
+management of the preservation of digital content. \
+This profile is a base profile which is extended with E-ARK \
+implementation of SIP, AIP and DIP. The profile can be used as is, but \
+it is recommended that the supplied extending implementation are used. \
+Alternatively, an own extension fulfilling the extending needs of the \
+implementer can be created.
+
+:sectnums!:
+:partnums!:
+include::common-intro.adoc[]
+
+toc::[]
+
+:sectnums:
+:partnums:
+include::introduction/index.adoc[]
+include::specification/common-ground/index.adoc[]
+include::specification/principles/index.adoc[]
+include::implementation/index.adoc[]
+include::implementation/structure/index.adoc[]
+include::implementation/structure/folders/index.adoc[]
+include::implementation/structure/folders/requirements.adoc[]
+include::implementation/structure/implementation/index.adoc[]
+include::implementation/metadata/index.adoc[]
+include::implementation/metadata/general-requirements/index.adoc[]
+include::implementation/metadata/mets/index.adoc[]
+include::implementation/metadata/mets/mets-root/index.adoc[]
+include::tables/metadata-root-requirements.adoc[]
+include::implementation/metadata/mets/metshdr/index.adoc[]
+include::tables/metadata-metshdr-requirements.adoc[]
+include::implementation/metadata/mets/dmdsec/index.adoc[]
+include::tables/metadata-dmdsec-requirements.adoc[]
+include::implementation/metadata/mets/amdsec/index.adoc[]
+include::tables/metadata-amdsec-requirements.adoc[]
+include::implementation/metadata/mets/filesec/index.adoc[]
+include::tables/metadata-filesec-requirements.adoc[]
+include::implementation/metadata/mets/structmap/index.adoc[]
+include::tables/metadata-structmap-requirements.adoc[]
+include::implementation/metadata/mets/deprecated.adoc[]
+include::implementation/metadata/premis/index.adoc[]
+include::implementation/considerations/index.adoc[]
+include::appendices/mets.examples.adoc[]
+include::appendices/mets.schema.adoc[]
+include::appendices/mets.vocabs.adoc[]
+include::implementation/structure/folders/requirements.adoc[]
+include::appendices/mets.metadata.requirements.adoc[]
+include::postface/postface.adoc[]
