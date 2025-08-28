@@ -17,10 +17,10 @@ Sven Schlarb; Anders Bo Nielsen; Phillip Mike Tømmerholt; Kuldar Aas; Koit Saar
 :org_7: Keep Solutions
 :org_8: Open Preservation Foundation
 :org_9: Kommunalförbundet Sydarkivera
-:sectnums:
-:partnums:
-:!chapter-signifier:
+:sectnums: all
+:partnums: all
 :toc: macro
+:toclevels: 3
 :description: This base profile describes the Common Specification for Information \
 Packages (CSIP) and the implementation of METS for packaging OAIS \
 conformant Information Packages. The profile is accompanied with a \
@@ -33,43 +33,45 @@ it is recommended that the supplied extending implementation are used. \
 Alternatively, an own extension fulfilling the extending needs of the \
 implementer can be created.
 
-:sectnums!:
-:partnums!:
+
+[discrete]
+== Preface
 include::common-intro.adoc[]
+
+= E-ARK CSIP: Common Specification for Information Packages
+
+Version: {{revnumber}}
+
+Date: {{revdate}}
 
 toc::[]
 
-:sectnums:
-:partnums:
 include::introduction/index.adoc[]
+
+[discrete]
+= Generic Principles of the CSIP
+
 include::specification/common-ground/index.adoc[]
 include::specification/principles/index.adoc[]
-include::implementation/index.adoc[]
+
+[discrete]
+= Implementation of the CSIP
+
 include::implementation/structure/index.adoc[]
-include::implementation/structure/folders/index.adoc[]
-include::implementation/structure/folders/requirements.adoc[]
-include::implementation/structure/implementation/index.adoc[]
 include::implementation/metadata/index.adoc[]
-include::implementation/metadata/general-requirements/index.adoc[]
-include::implementation/metadata/mets/index.adoc[]
-include::implementation/metadata/mets/mets-root/index.adoc[]
-include::tables/metadata-root-requirements.adoc[]
-include::implementation/metadata/mets/metshdr/index.adoc[]
-include::tables/metadata-metshdr-requirements.adoc[]
-include::implementation/metadata/mets/dmdsec/index.adoc[]
-include::tables/metadata-dmdsec-requirements.adoc[]
-include::implementation/metadata/mets/amdsec/index.adoc[]
-include::tables/metadata-amdsec-requirements.adoc[]
-include::implementation/metadata/mets/filesec/index.adoc[]
-include::tables/metadata-filesec-requirements.adoc[]
-include::implementation/metadata/mets/structmap/index.adoc[]
-include::tables/metadata-structmap-requirements.adoc[]
-include::implementation/metadata/mets/deprecated.adoc[]
-include::implementation/metadata/premis/index.adoc[]
 include::implementation/considerations/index.adoc[]
 include::appendices/mets.examples.adoc[]
 include::appendices/mets.schema.adoc[]
 include::appendices/mets.vocabs.adoc[]
-include::implementation/structure/folders/requirements.adoc[]
+[appendix]
+== E-ARK CSIP Structural Requirements
+
+include::appendices/structural_requirements.adoc[]
 include::appendices/mets.metadata.requirements.adoc[]
+
+:!sectnums:
+:!partnums:
+
+[discrete]
+= Postface
 include::postface/postface.adoc[]

@@ -1,4 +1,5 @@
-= Introduction
+
+== Introduction
 
 This document introduces the concept of the Common Specification for Information Packages (CSIP). Its three main purposes are to:
 
@@ -8,7 +9,7 @@ This document introduces the concept of the Common Specification for Information
 
 Ultimately the goal of the Common Specification for Information Packages is to provide a level of interoperability between Information Packages so that tools implementing the CSIP can be taken up by institutions without the need for major modifications or adaptations.
 
-== The Common Specification for Information Packages and OAIS
+=== The Common Specification for Information Packages and OAIS
 
 The OAIS framework defines three types of Information Packages (IPs) present in the digital preservation ecosystem: Submission Information Packages (SIPs), Archival Information Packages (AIPs) and Dissemination Information Packages (DIPs) (<<fig1,Figure 1>>). These three IP types are respectively used to submit data and metadata to digital repositories, store it in long-term preservation facilities, and deliver it to consumers.
 
@@ -32,7 +33,7 @@ For example, the E-ARK SIP specification extends the CSIP with further requireme
 
 It is important to note that the E-ARK AIP format does not extend the CSIP in the same way the E-ARK SIP and E-ARK DIP formats do, i.e. in the sense of a format specification inheriting all general properties from the CSIP which is then augmented by specific AIP requirements. The reason for this is that while the SIP and the DIP are like "snapshots" in time -- one capturing the state of an information package at the time of submission (SIP), the other one capturing one form of delivery of the information for access (DIP) -- then the AIP needs to deal with an "`evolving object`" which is constantly updated by preservation actions undertaken in the course of the object's lifecycle. As such, while the E-ARK AIP specification does implement all of the core metadata requirements defined in the Common Specification and extends these (for example it describes a means to record preservation actions about the IP), it does also extend the default structure of the CSIP (defined in <<csipstructure,Section 4>>). Essentially the AIP introduces a more complex structure which allows at the same time to securely hold an E-ARK SIP (which itself follows in full the CSIP) and at the same time add and modify additional representations over a series of preservation actions.
 
-== The Common Specification for Information Packages and Content Information Type Specifications
+=== The Common Specification for Information Packages and Content Information Type Specifications
 
 As an interoperability standard, it must be possible to use the CSIP regardless of the type and format of the content users need to handle. At the same time, each individual content type and file format can have specific characteristics which need to be taken into account for purposes of validation, preservation and curation.
 
@@ -53,7 +54,7 @@ The total number of Content Information Type Specifications is unlimited, and th
 
 For more detailed information about the Content Information Type Specifications see <<contentinformationtypespecifications,Section 6.1>> below and check http://www.dilcis.eu.
 
-== Common Specification for Information Packages, OAIS Information Packages`' specifications and Content Information Type Specifications
+=== Common Specification for Information Packages, OAIS Information Packages`' specifications and Content Information Type Specifications
 
 The overall ecosystem of the E-ARK Common Specifications consists of three layers (<<fig4,Figure 4>>):
 
@@ -68,18 +69,18 @@ image:figs/fig_4_cs_vs_ip.svg[TYPE SPECS]
 
 Therefore the "`thing encountered in the wild`" is the E-ARK SIP, AIP or DIP including data according to one or many Content Information Type Specifications.
 
-== Relation to other documents
+=== Relation to other documents
 
 This Common Specification for Information Packages is related to the following documents:
 
-=== International standards and best-practices
+==== International standards and best-practices
 
 * Reference Model for an Open Archival Information System (OAIS), 2012, https://public.ccsds.org/Pubs/650x0m2.pdf
 This specification uses the same terminology as introduced in the OAIS model and also the same division of information package types: Submission Information Package (SIP), Archival Information Package (AIP) and Dissemination Information Package (DIP).
 * Producer-Archive Interface Specification (PAIS) -- CCSDS, 2014, https://public.ccsds.org/Pubs/651x1b1.pdf
 The structure of a SIP presented in PAIS has been investigated, but because the implementation of this specification is not very comprehensive yet (only a few prototypes exist), it was decided to rely mainly on the best practices introduced in other reports (see below).
 
-=== Other E-ARK specifications
+==== Other E-ARK specifications
 
 * E-ARK SIP Specification (https://github.com/DILCISBoard/E-ARK-SIP)
 * E-ARK AIP Specification (https://github.com/DILCISBoard/E-ARK-AIP)
@@ -88,7 +89,7 @@ The structure of a SIP presented in PAIS has been investigated, but because the 
 The E-ARK SIP, AIP and DIP specifications build on the Common Specification for
 Information Packages and extend it in regard to requirements derived from pre-ingest and ingest, archival storage and access processes.
 
-== Structure of the document
+=== Structure of the document
 
 The rest of this document describes the CSIP and its practical implementation. The document is divided into two logical parts.
 

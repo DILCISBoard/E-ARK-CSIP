@@ -1,7 +1,8 @@
-= Postface
 
+[discrete]
 == I. Authors
 
+[%header,cols="1,1"]
 |===
 | Name | Organisation
 
@@ -36,8 +37,10 @@
 | Kommunalförbundet Sydarkivera
 |===
 
+[discrete]
 === I.I. Contributors to previous version
 
+[%header,cols="1,1"]
 |===
 | Name | Organisation
 
@@ -81,8 +84,10 @@
 | Open Preservation Foundation
 |===
 
+[discrete]
 == II. Revision History
 
+[%header,cols="1,1,2,1,5"]
 |===
 | Revision | Date | Authors(s) | Organisation | Description
 
@@ -267,6 +272,7 @@
 | Specification updated to version 2.2. Language updates and clarifications to requirements.
 |===
 
+[discrete]
 == III. Acknowledgements
 
 The Common Specification for Information Packages was first developed within the E-ARK project in 2014 -- 2017. E-ARK was an EC-funded pilot action project in the Competiveness and Innovation Programme 2007- 2013, Grant Agreement no. 620998 under the Policy Support Programme.
@@ -275,6 +281,7 @@ We would like to thank the National Archives of Sweden and Karin Bredenberg for 
 
 The authors of this deliverable would like to thank all national archives, tool developers and other stakeholders who provided valuable knowledge about their requirements for information packages and feedback to this specification!
 
+[discrete]
 == IV. Contact & Feedback
 
 The Common Specification for Information Packages is maintained by the Digital Information LifeCycle
